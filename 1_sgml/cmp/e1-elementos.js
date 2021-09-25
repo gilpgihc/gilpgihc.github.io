@@ -13,7 +13,7 @@ export class E1Elementos extends Diapositiva {
      <li>
       <p>
        Un <dfn>elemento</dfn> es un objeto que representa una forma de
-       procesar el texto y se escribe como una etiqueta.
+       procesar el texto.
       </p>
      </li>
      <li>

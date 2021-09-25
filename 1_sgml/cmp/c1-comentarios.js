@@ -28,7 +28,7 @@ export class C1Comentarios extends Diapositiva {
       <p>No se despliegan en la página.</p>
      </li>
      <li>
-      <p>Permite añadir información para entender mejor el código.</p>
+      <p>Permiten añadir información para entender mejor el código.</p>
      </li>
      <li>
       <p>
