@@ -2,7 +2,7 @@ import "../../js/config.js";
 import { Diapositiva } from "../../lib/Diapositiva.js";
 import "../../lib/muestra-codigo.js";
 
-export class G1elementosConContenido extends Diapositiva {
+export class G1ElementosConContenido extends Diapositiva {
  /** @override */
  connectedCallback() {
   super.connectedCallback();
@@ -107,4 +107,4 @@ export class G1elementosConContenido extends Diapositiva {
  }
 }
 
-customElements.define("g1-elementos-con-contenido", G1elementosConContenido);
+customElements.define("g1-elementos-con-contenido", G1ElementosConContenido);

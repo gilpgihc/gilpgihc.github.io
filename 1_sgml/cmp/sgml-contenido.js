@@ -46,6 +46,16 @@ export class SGMLContenido extends Diapositiva {
        <a href="/1_sgml/h_elementos_sin_contenido.html">Elementos sin contenido</a>
       </p>
      </li>
+     <li>
+      <p>
+       <a href="/1_sgml/i_padres.html">Elementos padres</a>
+      </p>
+     </li>
+     <li>
+      <p>
+       <a href="/1_sgml/j_hijos.html">Elementos hijos</a>
+      </p>
+     </li>
     </ol>`;
  }
 }
