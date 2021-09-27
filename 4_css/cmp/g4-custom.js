@@ -12,40 +12,102 @@ export class G4Custom extends Diapositiva {
     <ul>
      <li>
       <p>
-       El elemento
-       <dfn><code class="language-html">nav</code></dfn>
-       es una sección de la página que contiene enlaces a otras páginas o a
-       otras partes de la misma página..
+       En CSS3 se pueden definir constantes y usar su valor a lo largo del
+       código CSS.
       </p>
      </li>
      <li>
       <p>
-       Su especificación está en
-       <a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element"
-         target="_blank">https://html.spec.whatwg.org/multipage/sections.html#the-body-element</a>
+       El nombre de la propiedad personalizada debe iniciar con 2 guiones
+       (<code class="language-css">--</code>).
       </p>
+     </li>
+     <li>
+      <p>
+       Deben definirse en la regla para
+       (<code class="language-html">html</code>).
+      </p>
+     </li>
+     <li>
+      <p>
+       Para usar el valor, debe colocarse dentro de la expresión
+       <code class="language-css">var(--propiedad)</code>.
+      </p>
+     </li>
      </li>
     </ul>
     <h2>Ejemplo</h2>
    </div>
+   <div class="horizontal">
+   <div>
+    <h3>Salida</h3>
+    <iframe src="/4_css/src/4g_custom.html" height="300"></iframe>
+    <p class="noPrint">
+     <a target="_blank" href="/4_css/src/4g_custom.html">Ábrelo en otra
+      pestaña.</a>
+    </p>
+    <p class="noPrint">
+     <a target="_blank"
+       href="https://gilpgedit.github.io/#%3Chead%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colTexto%3A%20yellow%3B%0A%20%20%20--colFondo%3A%20blue%3B%0A%20%20%7D%0A%0A%20%20h1%20%7B%0A%20%20%20color%3A%20var(--colTexto)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colFondo)%3B%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20color%3A%20var(--colTexto)%3B%0A%20%20%20background-color%3A%20black%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3ECSS%3C%2Fh1%3E%0A%20%3Cp%3EEste%20es%20un%20ejemplo.%3C%2Fp%3E%0A%20%3Cp%3EAprende%20CSS.%3C%2Fp%3E%0A%20%3Ch2%3ESubsecci%C3%B3n%3C%2Fh2%3E%0A%20%3Cp%3EJuega%20con%20colores.%3C%2Fp%3E%0A%20%3Cfooter%3E%0A%20%20%3Cp%3E%0A%20%20%20%C2%A9%202021%0A%20%20%20Gilberto%20Pacheco%20Gallegos.%0A%20%20%3C%2Fp%3E%0A%20%3C%2Ffooter%3E%0A%3C%2Fbody%3E">
+      Revísalo en gilpgedit.
+     </a>
+    </p>
+   </div>
    <muestra-codigo>
    <div>
-   <div><span style="color: #800000;">&lt;nav&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;h2&gt;</span>Enlaces<span
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">html</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--colTexto</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">--colFondo</span>:&nbsp;<span
+      style="color: #0451a5;">blue</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div class=resaltado>&nbsp;&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div>
+   <div class=resaltado>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colTexto</span>);</div>
+   <div class=resaltado>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">background-color</span>:
+   </div>
+   <div class=resaltado>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colFondo</span>);</div>
+   <div class=resaltado>&nbsp;&nbsp;}</div><br>
+   <div class=resaltado2>&nbsp;&nbsp;<span style="color: #800000;">p</span>&nbsp;{</div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--colTexto</span>);</div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">black</span>;</div>
+   <div class=resaltado2>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class=resaltado>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>CSS<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div class=resaltado2>&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>Este&nbsp;es&nbsp;un&nbsp;ejemplo.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div class=resaltado2>&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>Aprende&nbsp;CSS.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;h2&gt;</span>Subsección<span
       style="color: #800000;">&lt;/h2&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;a</span>&nbsp;<span
-      style="color: #ff0000;">href</span>=<span
-      style="color: #0000ff;">"&nbsp;https://google.com&nbsp;"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">target</span>=<span
-      style="color: #0000ff;">"_blank"</span><span
-      style="color: #800000;">&gt;</span>Google<span
-      style="color: #800000;">&lt;/a&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/nav&gt;</span></div>
+   <div class=resaltado2>&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>Juega&nbsp;con&nbsp;colores.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div>
+   <div class=resaltado2>&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;©&nbsp;2021</div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.</div>
+   <div class=resaltado2>&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
   </div>
-     </muestra-codigo>`;
+       </muestra-codigo>
+  </div>`;
  }
 }
 

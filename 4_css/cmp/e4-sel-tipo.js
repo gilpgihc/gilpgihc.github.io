@@ -7,56 +7,140 @@ export class E4SelTipo extends Diapositiva {
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
-   `<h1>E. Selector de estilo</h1>
+   `<h1>E. Selector de tipo</h1>
    <div class="lectura">
-    <ul class="columnas-4">
-     <li><code class="language-html">address</code></li>
-     <li><code class="language-html">article</code></li>
-     <li><code class="language-html">aside</code></li>
-     <li><code class="language-html">blockquote</code></li>
-     <li><code class="language-html">details</code></li>
-     <li><code class="language-html">div</code></li>
-     <li><code class="language-html">dl</code></li>
-     <li><code class="language-html">fieldset</code></li>
-     <li><code class="language-html">figcaption</code></li>
-     <li><code class="language-html">figure</code></li>
-     <li><code class="language-html">footer</code></li>
-     <li><code class="language-html">form</code></li>
-     <li><code class="language-html">h1</code></li>
-     <li><code class="language-html">h2</code></li>
-     <li><code class="language-html">h3</code></li>
-     <li><code class="language-html">h4</code></li>
-     <li><code class="language-html">h5</code></li>
-     <li><code class="language-html">h6</code></li>
-     <li><code class="language-html">header</code></li>
-     <li><code class="language-html">hgroup</code></li>
-     <li><code class="language-html">hr</code></li>
-     <li><code class="language-html">main</code></li>
-     <li><code class="language-html">menu</code></li>
-     <li><code class="language-html">nav</code></li>
-     <li><code class="language-html">ol</code></li>
-     <li><code class="language-html">p</code></li>
-     <li><code class="language-html">pre</code></li>
-     <li><code class="language-html">section</code></li>
-     <li><code class="language-html">table</code></li>
-     <li><code class="language-html">ul</code></li>
+    <ul>
+     <li>
+      <p>
+       Una forma simple de selector es el <dfn>selector de tipo</dfn>, que
+       consiste en usar el tipo de un elemento. Hace que una regla se aplique
+       a todos los elementos de ese tipo.
+      </p>
+     </li>
+     <li>
+      <p>
+       La definición de una selector de tipo está en
+       <a href="https://www.w3.org/TR/selectors-3/#type-selectors"
+         target="_blank">https://www.w3.org/TR/selectors-3/#type-selectors</a>
+      </p>
+     </li>
     </ul>
-    <p>
-     El elemento
-     <code class="language-html">p</code>
-     también cierra si no hay más contenido en el elemento padre, el cual no es:
-    </p>
-    <ul class="columnas-4">
-     <li><code class="language-html">a</code></li>
-     <li><code class="language-html">audio</code></li>
-     <li><code class="language-html">del</code></li>
-     <li><code class="language-html">ins</code></li>
-     <li><code class="language-html">map</code></li>
-     <li><code class="language-html">noscript</code></li>
-     <li><code class="language-html">video</code></li>
-     <li>elemento personalizado autónomo</li>
-    </ul>
-   </div>`;
+   </div>
+   <h2>Ejemplo</h2>
+  </div>
+  <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;El&nbsp;selector</span></div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;h1</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;hace&nbsp;que&nbsp;las&nbsp;propiedades&nbsp;de</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;esta&nbsp;regla&nbsp;se&nbsp;apliquen&nbsp;a&nbsp;todos</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;los&nbsp;elementos&nbsp;de&nbsp;tipo</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;h1.&nbsp;*/</span>
+   </div>
+   <div class=resaltado>&nbsp;&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">blue</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;El&nbsp;selector</span></div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;p</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;hace&nbsp;que&nbsp;las&nbsp;propiedades&nbsp;de</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;esta&nbsp;regla&nbsp;se&nbsp;apliquen&nbsp;a&nbsp;todos</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;los&nbsp;elementos&nbsp;de&nbsp;tipo</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;p.&nbsp;*/</span>
+   </div>
+   <div class=resaltado2>&nbsp;&nbsp;<span style="color: #800000;">p</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">white</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">black</span>;</div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;h1</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
+   </div>
+   <div>&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class=resaltado>&nbsp;&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>CSS<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;p</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
+   </div>
+   <div class=resaltado2>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>Este&nbsp;es&nbsp;un&nbsp;ejemplo.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;p</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
+   </div>
+   <div class=resaltado2>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>Aprende&nbsp;CSS.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h2&gt;</span>Subsección<span
+      style="color: #800000;">&lt;/h2&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;p</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
+   </div>
+   <div class=resaltado2>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>Juega&nbsp;con&nbsp;colores.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
+   </div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;&nbsp;©&nbsp;2021</div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.</div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div>
+  </div>
+   </muestra-codigo>`;
  }
 }
 

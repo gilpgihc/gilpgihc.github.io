@@ -9,22 +9,45 @@ export class A4Ejemplo extends Diapositiva {
   this.innerHTML = /* html */
    `<h1>A. CSS</h1>
    <div class="lectura">
-    <p>
-     Este es un ejemplo típico de un archivo HTML.
-    </p>
+    <ul>
+     <li>
+      <p>
+       Las
+       <dfn>hojas de estilo</dfn>,
+       también conocidas como
+       <dfn>Cascade Style Sheets (CSS)</dfn>
+       permiten definir la apariencia de una página escrita en un lenguaje de
+       marcas.
+      </p>
+     </li>
+     <li>
+      <p>
+       La página oficial de CSS3 está en
+       <a href="https://www.w3.org/Style/CSS/"
+         target="_blank">https://www.w3.org/Style/CSS/</a>
+      </p>
+     </li>
+     <li>
+      <p>
+       La sintaxis de CSS3 está en
+       <a href="https://www.w3.org/TR/css-syntax-3/"
+         target="_blank">https://www.w3.org/TR/css-syntax-3/</a>
+      </p>
+     </li>
+    </ul>
    <h2>Ejemplo</h2>
   </div>
   <div class="horizontal">
    <div>
     <h3>Salida</h3>
-    <iframe src="/3_elementos/src/3a_ejemplo.html" height="330"></iframe>
+    <iframe src="/4_css/src/4a_ejemplo.html" height="300"></iframe>
     <p class="noPrint">
-     <a target="_blank" href="/3_elementos/src/3a_ejemplo.html">Ábrelo en otra
+     <a target="_blank" href="/4_css/src/4a_ejemplo.html">Ábrelo en otra
       pestaña.</a>
     </p>
     <p class="noPrint">
      <a target="_blank"
-       href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%F0%9F%8F%A1Estructura%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3C!--%20T%C3%ADtulo%20en%20el%20contenido%20--%3E%0A%20%3Ch1%3E%F0%9F%8F%A1Estructura%3C%2Fh1%3E%0A%20%3C!--%20Navegaci%C3%B3n%20--%3E%0A%20%3Cnav%3E%0A%20%20%3C!--%20T%C3%ADtulo%20de%20secci%C3%B3n%20--%3E%0A%20%20%3Ch2%3EEnlaces%3C%2Fh2%3E%0A%20%20%3C!--%20P%C3%A1rrafo%20--%3E%0A%20%20%3Cp%3E%0A%20%20%20%3C!--%20hiperv%C3%ADnculo%20--%3E%0A%20%20%20%3Ca%20href%3D%22%20https%3A%2F%2Fgoogle.com%20%22%0A%20%20%20%20%20target%3D%22_blank%22%3EGoogle%3C%2Fa%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fnav%3E%0A%20%3C!--%20P%C3%A1rrafos%20--%3E%0A%20%3Cp%3E%F0%9F%8C%8EHola%20Mundo.%3C%2Fp%3E%0A%20%3Cp%3E%F0%9F%A7%BBM%C3%A1s%20texto.%3C%2Fp%3E%0A%20%3C!--%20Pie%20de%20pagina%20--%3E%0A%20%3Cfooter%3E%0A%20%20%C2%A9%202021%20Gilberto%20Pacheco%20Gallegos%0A%20%3C%2Ffooter%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+       href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ECSS%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20h1%20%7B%0A%20%20%20color%3A%20yellow%3B%0A%20%20%20background-color%3A%20blue%3B%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20color%3A%20white%3B%0A%20%20%20background-color%3A%20black%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3ECSS%3C%2Fh1%3E%0A%20%3Cp%3EEste%20es%20un%20ejemplo.%3C%2Fp%3E%0A%20%3Cp%3EAprende%20CSS.%3C%2Fp%3E%0A%20%3Ch2%3ESubsecci%C3%B3n%3C%2Fh2%3E%0A%20%3Cp%3EJuega%20con%20colores.%3C%2Fp%3E%0A%20%3Cfooter%3E%0A%20%20%3Cp%3E%0A%20%20%20%C2%A9%202021%0A%20%20%20Gilberto%20Pacheco%20Gallegos.%0A%20%20%3C%2Fp%3E%0A%20%3C%2Ffooter%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
       Revísalo en gilpgedit.
      </a>
     </p>
@@ -49,56 +72,49 @@ export class A4Ejemplo extends Diapositiva {
    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
       style="color: #0000ff;">"width=device-width"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>🏡Estructura<span
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>CSS<span
       style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">blue</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">p</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">white</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">black</span>;</div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
    <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Título&nbsp;en&nbsp;el&nbsp;contenido&nbsp;--&gt;</span>
-   </div>
-   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>🏡Estructura<span
+   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>CSS<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
    <div>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Navegación&nbsp;--&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;nav&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Título&nbsp;de&nbsp;sección&nbsp;--&gt;</span>
-   </div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;h2&gt;</span>Enlaces<span
+      style="color: #800000;">&lt;p&gt;</span>Este&nbsp;es&nbsp;un&nbsp;ejemplo.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>Aprende&nbsp;CSS.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;h2&gt;</span>Subsección<span
       style="color: #800000;">&lt;/h2&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Párrafo&nbsp;--&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;hipervínculo&nbsp;--&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;a</span>&nbsp;<span
-      style="color: #ff0000;">href</span>=<span
-      style="color: #0000ff;">"&nbsp;https://google.com&nbsp;"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">target</span>=<span
-      style="color: #0000ff;">"_blank"</span><span
-      style="color: #800000;">&gt;</span>Google<span
-      style="color: #800000;">&lt;/a&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/nav&gt;</span></div>
    <div>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Párrafos&nbsp;--&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>🌎Hola&nbsp;Mundo.<span
+      style="color: #800000;">&lt;p&gt;</span>Juega&nbsp;con&nbsp;colores.<span
       style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>🧻Más&nbsp;texto.<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Pie&nbsp;de&nbsp;pagina&nbsp;--&gt;</span>
-   </div>
    <div>&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div>
-   <div>&nbsp;&nbsp;©&nbsp;2021&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos</div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;©&nbsp;2021</div>
+   <div>&nbsp;&nbsp;&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.</div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div>
    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
-    </muestra-codigo>
+     </muestra-codigo>
   </div>`;
  }
 }

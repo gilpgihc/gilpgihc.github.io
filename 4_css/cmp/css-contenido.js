@@ -28,7 +28,7 @@ export class CSSContenido extends Diapositiva {
      </li>
      <li>
       <p>
-       <a href="/4_css/e_sel_tipo.html">Selector de estilo</a>
+       <a href="/4_css/e_sel_tipo.html">Selector de tipo</a>
       </p>
      </li>
      <li>

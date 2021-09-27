@@ -11,57 +11,130 @@ export class F4Propiedades extends Diapositiva {
    <div class="lectura">
     <ul>
      <li>
-      <p>Es un elemento de fraseo.</p>
-     </li>
-     <li>
-      <p>Se le conoce como ancla.</p>
-     </li>
-     <li>
+      <p>Se declaran con una expresión del tipo</p>
       <p>
-       Cuando tiene el atributo
-       <code class="language-html">href</code>,
-       representa un hipervínculo. El texto que muestra es su contenido,
-       que debe ser de fraseo.
-      </p>
-     </li>
-     <li>
-      <p>
-       Su especificación está en
-       <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"
-         target="_blank">https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element</a>
-      </p>
+       <code
+         class="language-css"><var>nombre</var>: <em>valor</em></code>
+       </p>
      </li>
     </ul>
-    <h2>Atributos</h2>
-    <dl>
-     <dt><dfn><code class="language-html">href</code></dfn></dt>
-     <dd>
-      <p>
-       URL válida del recurso que muestra. Puede estar rodeada por espacios.
-      </p>
-     </dd>
-     <dt><dfn><code class="language-html">target</code></dfn></dt>
-     <dd>
-      <p>
-       El valor
-       <code class="language-html">_blank</code>
-       Hace que el enlace se abra en otra pestaña.
-      </p>
-     </dd>
-    </dl>
     <h2>Ejemplo</h2>
    </div>
     <muestra-codigo>
     <div>
-    <div><span style="color: #800000;">&lt;a</span>&nbsp;<span
-       style="color: #ff0000;">href</span>=<span
-       style="color: #0000ff;">"&nbsp;https://google.com&nbsp;"</span></div>
-    <div>&nbsp;&nbsp;<span style="color: #ff0000;">target</span>=<span
-       style="color: #0000ff;">"_blank"</span><span
-       style="color: #800000;">&gt;</span>Google<span
-       style="color: #800000;">&lt;/a&gt;</span></div>
+    <div><span style="color: #800000;">&lt;head&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+    <div class=resaltado>&nbsp;&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #008000;">/*&nbsp;Esta&nbsp;es&nbsp;la&nbsp;propiedad</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;color.</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;En&nbsp;este&nbsp;caso&nbsp;se&nbsp;aplica</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;a&nbsp;los&nbsp;elementos&nbsp;tipo</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;h1.</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Su&nbsp;valor&nbsp;es&nbsp;yellow.&nbsp;*/</span>
+    </div>
+    <div class=resaltado>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+       style="color: #0451a5;">yellow</span>;</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #008000;">/*&nbsp;Esta&nbsp;es&nbsp;la&nbsp;propiedad</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;background-color.</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;En&nbsp;este&nbsp;caso&nbsp;se&nbsp;aplica</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;a&nbsp;los&nbsp;elementos&nbsp;tipo</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;h1.</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Su&nbsp;valor&nbsp;es&nbsp;blue.&nbsp;*/</span>
+    </div>
+    <div class=resaltado>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">background-color</span>:&nbsp;<span
+       style="color: #0451a5;">blue</span>;</div>
+    <div>&nbsp;&nbsp;}</div><br>
+    <div class=resaltado2>&nbsp;&nbsp;<span style="color: #800000;">p</span>&nbsp;{</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #008000;">/*&nbsp;Esta&nbsp;es&nbsp;la&nbsp;propiedad</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;color.</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;En&nbsp;este&nbsp;caso&nbsp;se&nbsp;aplica</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;a&nbsp;los&nbsp;elementos&nbsp;tipo</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;p.</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Su&nbsp;valor&nbsp;es&nbsp;white.&nbsp;*/</span>
+    </div>
+    <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+       style="color: #0451a5;">white</span>;</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #008000;">/*&nbsp;Esta&nbsp;es&nbsp;la&nbsp;propiedad</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;background-color.</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;En&nbsp;este&nbsp;caso&nbsp;se&nbsp;aplica</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;a&nbsp;los&nbsp;elementos&nbsp;tipo</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;p.</span>
+    </div>
+    <div><span
+       style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Su&nbsp;valor&nbsp;es&nbsp;black.&nbsp;*/</span>
+    </div>
+    <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">background-color</span>:&nbsp;<span
+       style="color: #0451a5;">black</span>;</div>
+    <div>&nbsp;&nbsp;}</div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+    <div><span style="color: #800000;">&lt;body&gt;</span></div>
+    <div class=resaltado>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>CSS<span
+       style="color: #800000;">&lt;/h1&gt;</span></div>
+    <div class=resaltado2>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Este&nbsp;es&nbsp;un&nbsp;ejemplo.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div class=resaltado2>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Aprende&nbsp;CSS.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;h2&gt;</span>Subsección<span
+       style="color: #800000;">&lt;/h2&gt;</span></div>
+    <div class=resaltado2>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Juega&nbsp;con&nbsp;colores.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div>
+    <div class=resaltado2>&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+    <div class=resaltado2>&nbsp;&nbsp;&nbsp;©&nbsp;2021</div>
+    <div class=resaltado2>&nbsp;&nbsp;&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.</div>
+    <div class=resaltado2>&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
    </div>
-    </muestra-codigo>`;
+     </muestra-codigo>`;
  }
 }
 

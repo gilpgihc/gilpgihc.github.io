@@ -13,90 +13,61 @@ export class B4style extends Diapositiva {
     <ul>
      <li>
       <p>
-       Representa el texto de un documento y los elementos que lo modifican.
-      </p>
-     </li>
-     <li>
-      <p>No implica ninguna jerarquía ni estructura.</p>
-     </li>
-     <li>
-      <p>
-       Se puede colocar dentro de otros elementos que si implican estructura;
-       por ejemplo, párrafos, títulos, tablas, etcétera.
+       El elemento
+       <dfn><code class="language-html">style</code></dfn>
+       debe colocarse en el elemento de tipo
+       <dfn><code class="language-html">head</code></dfn>
+       y contiene el código CSS3 que define la apariencia de la página.
       </p>
      </li>
     </ul>
-    <h3>Elementos que son contenido de fraseo</h3>
-    <ul class="columnas-4">
-      <li><code class="language-html">a</code></li>
-      <li><code class="language-html">abbr</code></li>
-      <li>
-        <code class="language-html">area</code>
-        (si es descendiente de map)
-      </li>
-      <li><code class="language-html">audio</code></li>
-      <li><code class="language-html">b</code></li>
-      <li><code class="language-html">bdi</code></li>
-      <li><code class="language-html">bdo</code></li>
-      <li><code class="language-html">br</code></li>
-      <li><code class="language-html">button</code></li>
-      <li><code class="language-html">canvas</code></li>
-      <li><code class="language-html">cite</code></li>
-      <li><code class="language-html">code</code></li>
-      <li><code class="language-html">data</code></li>
-      <li><code class="language-html">datalist</code></li>
-      <li><code class="language-html">del</code></li>
-      <li><code class="language-html">dfn</code></li>
-      <li><code class="language-html">em</code></li>
-      <li><code class="language-html">embed</code></li>
-      <li><code class="language-html">i</code></li>
-      <li><code class="language-html">iframe</code></li>
-      <li><code class="language-html">img</code></li>
-      <li><code class="language-html">input</code></li>
-      <li><code class="language-html">ins</code></li>
-      <li><code class="language-html">kbd</code></li>
-      <li><code class="language-html">label</code></li>
-      <li>
-        <code class="language-html">link</code>
-        (si se permite dentro de body)
-      </li>
-      <li><code class="language-html">map</code></li>
-      <li><code class="language-html">mark</code></li>
-      <li><code class="language-html">math</code> de MathML</li>
-      <li>
-        <code class="language-html">meta</code>
-        (si el atributo itemprop está presente)
-      </li>
-      <li><code class="language-html">meter</code></li>
-      <li><code class="language-html">noscript</code></li>
-      <li><code class="language-html">object</code></li>
-      <li><code class="language-html">output</code></li>
-      <li><code class="language-html">picture</code></li>
-      <li><code class="language-html">progress</code></li>
-      <li><code class="language-html">q</code></li>
-      <li><code class="language-html">ruby</code></li>
-      <li><code class="language-html">s</code></li>
-      <li><code class="language-html">samp</code></li>
-      <li><code class="language-html">script</code></li>
-      <li><code class="language-html">select</code></li>
-      <li><code class="language-html">slot</code></li>
-      <li><code class="language-html">small</code></li>
-      <li><code class="language-html">span</code></li>
-      <li><code class="language-html">strong</code></li>
-      <li><code class="language-html">sub</code></li>
-      <li><code class="language-html">sup</code></li>
-      <li><code class="language-html">svg</code> de SVG</li>
-      <li><code class="language-html">template</code></li>
-      <li><code class="language-html">textarea</code></li>
-      <li><code class="language-html">time</code></li>
-      <li><code class="language-html">u</code></li>
-      <li><code class="language-html">var</code></li>
-      <li><code class="language-html">video</code></li>
-      <li><code class="language-html">wbr</code></li>
-      <li>elemento personalizado autónomo</li>
-      <li>texto</li>
-    </ul>
-   </div>`;
+    <h2>Ejemplo</h2>
+   </div>
+   <muestra-codigo>
+   <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>CSS<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div class=resaltado>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class=resaltado>&nbsp;&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div>
+   <div class=resaltado>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div class=resaltado>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">blue</span>;</div>
+   <div class=resaltado>&nbsp;&nbsp;}</div><br>
+   <div class=resaltado>&nbsp;&nbsp;<span style="color: #800000;">p</span>&nbsp;{</div>
+   <div class=resaltado>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">white</span>;</div>
+   <div class=resaltado>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">black</span>;</div>
+   <div class=resaltado>&nbsp;&nbsp;}</div>
+   <div class=resaltado>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;...</div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+       </muestra-codigo>`;
  }
 }
 
