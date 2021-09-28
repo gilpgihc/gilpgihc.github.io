@@ -5,6 +5,7 @@ import "../1_sgml/cmp/sgml-contenido.js";
 import "../2_introduccion/cmp/introduccion-contenido.js";
 import "../3_elementos/cmp/elementos-contenido.js";
 import "../4_css/cmp/css-contenido.js";
+import "../5_basicas/cmp/basicas-contenido.js";
 
 class MiNav extends HTMLElement {
  connectedCallback() {
@@ -50,6 +51,16 @@ class MiNav extends HTMLElement {
           </h4>
          </summary>
          <css-contenido></css-contenido>
+        </details>
+       </li>
+       <li>
+        <details>
+         <summary>
+          <h4>
+           <a href="/5_basicas/index.html">Propiedades básicas de CSS</a>
+          </h4>
+         </summary>
+         <basicas-contenido></basicas-contenido>
         </details>
        </li>
       </ol>
