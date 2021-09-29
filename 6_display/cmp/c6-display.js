@@ -8,184 +8,28 @@ export class C6display extends Diapositiva {
   this.innerHTML = /* html */
    `<h1>C. La propiedad <strong>display</strong></h1>
    <div class="lectura">
-   <h2>Colores primarios</h2>
-   <p>
-    Los colores se expresan como una combinación de los
-    <dfn>colores primarios</dfn>:
-   </p>
-   <ul>
-    <li>
-     <p>Rojo (red en inglés)</p>
-    </li>
-    <li>
-     <p>Verde (green en inglés)</p>
-    </li>
-    <li>
-     <p>Azul (blue en inglés)</p>
-    </li>
-   </ul>
-   <h2>Especificación de los colores primarios y transparencia</h2>
-   <p>
-    Estas son algunas formas de expresar los colores primarios en las
-    definiciones que aparecen después:
-   </p>
-   <dl>
-    <dt>
-     <dfn>num_rojo</dfn>
-    </dt>
-    <dd>
-     <p>
-      Valor decimal entre 0 y 255. Indica la cantidad de rojo que
-      lleva un color.
-     </p>
-    </dd>
-    <dt>
-     <dfn>num_verde</dfn>
-    </dt>
-    <dd>
-     <p>
-      Valor decimal entre 0 y 255. Indica indica la cantidad de verde
-      que lleva un color.
-     </p>
-    </dd>
-    <dt>
-     <dfn>num_azul</dfn>
-    </dt>
-    <dd>
-     <p>
-      Valor decimal entre 0 y 255. Indica la cantidad de azul que
-      lleva un color.
-     </p>
-    </dd>
-    <dt>
-     <dfn>num_transp</dfn>
-    </dt>
-    <dd>
-     <p>
-      Valor decimal fraccionario entre 0 y 1. Indica lo transparente
-      que es un color: 0 - totalmente transparente,
-      1 - totalmente opaco.
-     </p>
-    </dd>
-    <dt>
-     <dfn>rr</dfn>
-    </dt>
-    <dd>
-     <p>
-      Valor de 2 cifras hexadecimales entre 00 y ff. Indica la
-      cantidad de rojo que lleva un color.
-     </p>
-    </dd>
-    <dt>
-     <dfn>gg</dfn>
-    </dt>
-    <dd>
-     <p>
-      Valor de 2 cifras hexadecimales entre 00 y ff. Indica la
-      cantidad de verde que lleva un color.
-     </p>
-    </dd>
-    <dt>
-     <dfn>bb</dfn>
-    </dt>
-    <dd>
-     <p>
-      Valor de 2 cifras hexadecimales entre 00 y ff. Indica la
-      cantidad de azul que lleva un color.
-     </p>
-    </dd>
-    <dt>
-     <dfn>aa</dfn>
-    </dt>
-    <dd>
-     <p>
-      Valor de 2 cifras hexadecimales entre 00 y ff. Indica lo
-      transparente que es un color. 00 - totalmente transparente,
-      ff - totalmente opaco.
-     </p>
-    </dd>
-   </dl>
-   <h2>Algunas Formas de Expresar Colores en CSS3</h2>
-   <dl>
-    <dt><dfn><code class="language-css">transparent</code></dfn></dt>
-    <dd>
-     <p>Color transparente.</p>
-    </dd>
-    <dt><dfn>Nombre del color</dfn></dt>
-    <dd>
-     <p>
-      Los nombres de colores que se pueden usar están definidos en
-      <a href="https://www.w3.org/TR/css-color-3/#html4"
-        target="_blank">https://www.w3.org/TR/css-color-3/#html4</a>.
-      y en
-      <a href="https://www.w3.org/TR/css-color-3/#svg-color"
-        target="_blank">https://www.w3.org/TR/css-color-3/#svg-color</a>.
-     </p>
-     <p>Ejemplo:</p>
-     <p><code class="language-css">blue</code></p>
-    </dd>
-    <dt><dfn><code
-        class="language-css">rgb(num_rojo, num_verde, num_azul)</code></dfn>
-    </dt>
-    <dd>
-     <p>
-      Representa la mezcla de colores rojo, verde y azul en notación
-      decimal.
-     </p>
-     <p>Ejemplo:</p>
-     <p><code class="language-css">rgb(155, 255, 43)</code></p>
-    </dd>
-    <dt>
-     <dfn><code
-        class="language-css">rgba(num_rojo, num_verde, num_azul, num_transp)</code></dfn>
-    </dt>
-    <dd>
-     <p>
-      Representa la mezcla de rojo, verde, azul y transparencia en
-      notación decimal.
-     </p>
-     <p>
-      Ejemplo:<br>
-      <code class="language-css">rgba(155,255,43,0.7)</code>
-     </p>
-    </dd>
-    <dt><dfn><code class="language-css">#rrggbb</code></dfn></dt>
-    <dd>
-     <p>
-      Representa la mezcla de colores rojo, verde y azul en notación
-      hexadecimal.
-     </p>
-     <p>Ejemplo:</p>
-     <p><code class="language-css">#a2fe09</code></p>
-    </dd>
-    <dt>
-     <dfn>#rrggbbaa</dfn>
-    </dt>
-    <dd>
-     <p>
-      Representa la mezcla de rojo, verde, azul y transparencia en
-      notación hexadecimal.
-     </p>
-     <p>
-      Ejemplo:<br>
-      <code class="language-css">#0b467380</code>
-     </p>
-    </dd>
-   </dl>
-   <h2>Temas por Investigar</h2>
-   <ul>
-    <li>
-     <p>
-      Una herramienta muy interesante para el uso de colores en sitios
-      web es
-      <a href=https://paletton.com/
-        target="_blank">https://paletton.com/</a>
-     </p>
+    <ul>
+     <li>
+      <p>Indica la forma en que un elemento se depliega.</p>
+     </li>
+     <li>
+      <p>
+       La definición oficial de esta propiedad está en proceso de cambio.
+      </p>
+     </li>
+     <li>
+      <p>El contenido de texto no tiene la propiedad display.</p>
+     </li>
+     <li>
+      <p>
+       Esta propiedad no afecta la semántica de los elementos, pero si
+       puede cambiar como se despliegan.
+     </p> 
     </li>
     <li>
      <p>
-      <a href=https://www.w3.org/TR/css-color-3/
-        target="_blank">El Módulo de colores de CSS3.</a>
+      En las diapositivas siguientes se explican algunos de los valores
+      posibles.
      </p>
     </li>
    </ul>

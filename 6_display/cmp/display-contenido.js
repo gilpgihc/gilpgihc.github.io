@@ -26,19 +26,25 @@ export class DisplayContenido extends Diapositiva {
      </li>
      <li>
       <p>
-       <a href="/6_display/d_inlline.html">El valor
+       <a href="/6_display/d_none.html">El valor
+        <strong>none</strong></a>
+      </p>
+     </li>
+     <li>
+      <p>
+       <a href="/6_display/e_inline.html">El valor
         <strong>inline</strong></a>
       </p>
      </li>
      <li>
       <p>
-       <a href="/6_display/e_block.html">El valor
+       <a href="/6_display/f_block.html">El valor
         <strong>block</strong></a>
       </p>
      </li>
      <li>
       <p>
-       <a href="/6_display/f_inline-block.html">El valor
+       <a href="/6_display/g_inline-block.html">El valor
         <strong>inline-block</strong></a>
       </p>
      </li>

@@ -2,12 +2,12 @@ import "../../js/config.js";
 import { Diapositiva } from "../../lib/Diapositiva.js";
 import "../../lib/muestra-codigo.js";
 
-export class F6inlineBlock extends Diapositiva {
+export class G6inlineBlock extends Diapositiva {
  /** @override */
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
-   `<h1>E. El valor <strong>inline-block</strong></h1>
+   `<h1>G. El valor <strong>inline-block</strong></h1>
    <div class="lectura">
     <ul>
      <li>
@@ -96,4 +96,4 @@ export class F6inlineBlock extends Diapositiva {
  }
 }
 
-customElements.define("f6-inline-block", F6inlineBlock);
+customElements.define("g6-inline-block", G6inlineBlock);

@@ -11,81 +11,114 @@ export class A6div extends Diapositiva {
    <div class="lectura">
    <ul>
     <li>
-     <p>
-      Cada símbolo que se puede representar en una familia de fuentes
-      se conoce como <dfn>glifo</dfn> o <dfn>pictograma</dfn>.
-     </p>
+     <p>Es un elemento sin significado que agrupa otros elementos.</p>
     </li>
-   </ul>
-   <h2>Algunas Familias Básicas</h2>
-   <dl>
-    <dt><dfn><code class="language-css">serif</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>Es el tipo de letra que lleva adornos.</p>
-      </li>
-      <li>
-       <p>
-        Cada glifo puede tener un ancho diferente al de los otros de la
-        misma familia.
-       </p>
-      </li>
-      <li>
-       <p>Permite leer cómodamente textos largos.</p>
-      </li>
-      <li>
-       <p>
-        Viene predefinida, pero la familia exacta depende de cada
-        navegador web.
-       </p>
-      </li>
-     </ul>
-     <p>
-      <span style="font-family: serif; font-size: 4rem;">
-       Ejemplo de Serif.
-      </span>
-     </p>
-    </dd>
-    <dt><dfn><code class="language-css">sans-serif</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>Es el tipo de letra que no lleva adornos.</p>
-      </li>
-      <li>
-       <p>Luce más en títulos, textos cortos e interfaces de usuario.</p>
-      </li>
-      <li>
-       <p>
-        Cada glifo puede tener un ancho diferente al de los otros de la
-        misma familia.
-       </p>
-      </li>
-      <li>
-       <p>
-        Viene predefinida, pero la familia exacta depende de cada
-        navegador web.
-       </p>
-      </li>
-     </ul>
-     <p>
-      <span style="font-family: sans-serif; font-size: 4rem;">
-       Ejemplo de Sans Serif.
-      </span>
-     </p>
-    </dd>
-   </dl>
-   <h2>Temas por Investigar</h2>
-   <ul>
     <li>
      <p>
-      <a href="https://www.w3.org/TR/css-fonts-3/"
-        target="_blank">El módulo de fonts de CSS3.</a>
+      Puede usarse con los atributos
+      <code class="language-html">class</code>,
+      <code class="language-html">lang</code>
+      y
+      <code class="language-html">title</code>
+      para definir la semántica común a un grupo de elementos
+      consecutivos.
      </p>
     </li>
-   </ul>
-  </div>`;
+    <li>
+     <p>
+      Puede usarse en un elemento
+      <code class="language-html">dl</code>
+      para envolver grupos de elementos
+      <code class="language-html">dt</code>
+      y
+      <code class="language-html">dd</code>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Se recomienda que el elemento
+      <code class="language-html">div</code>
+      se utilice como último recurso cuando no se pueda usar ningún otro
+      elemento.
+     </p>
+    </li>
+    <li>
+     <p>
+      El uso de elementos más apropiados propicia una mejor accesibilidad
+      para lectores y un mantenimiento más fácil para los autores.
+    </p>
+   </li>
+   <li>
+    <p>
+     Su especificación está en
+     <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element"
+       target="_blank">https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element</a>
+    </p>
+   </li>
+  </ul>
+  </div>
+  <div class="horizontal">
+  <div>
+  <h3>Salida</h3>
+  <iframe src="/6_display/src/6a_div.html" height="200"></iframe>
+  <p class="noPrint">
+   <a target="_blank" href="/6_display/src/6a_div.html">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3Ediv%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20div%20%7B%0A%20%20%20color%3A%20chocolate%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Cdiv%3EUn%20div%20simple.%3C%2Fdiv%3E%0A%20%3Cdiv%3EOtro%20div%20simple.%3C%2Fdiv%3E%0A%20%3Cp%3EUn%20p%C3%A1rrafo%20simple.%3C%2Fp%3E%0A%20%3Cp%3EOtro%20p%C3%A1rrafo%20simple.%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </div>
+ <muestra-codigo>
+ <div>
+ <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+    style="color: #ff0000;">html</span><span
+    style="color: #800000;">&gt;</span></div>
+ <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+    style="color: #ff0000;">lang</span>=<span
+    style="color: #0000ff;">"es"</span><span
+    style="color: #800000;">&gt;</span></div>
+ <div><span style="color: #800000;">&lt;head&gt;</span></div>
+ <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+    style="color: #ff0000;">charset</span>=<span
+    style="color: #0000ff;">"UTF-8"</span><span
+    style="color: #800000;">&gt;</span></div>
+ <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+    style="color: #ff0000;">name</span>=<span
+    style="color: #0000ff;">"viewport"</span></div>
+ <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+    style="color: #0000ff;">"width=device-width"</span><span
+    style="color: #800000;">&gt;</span></div>
+ <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>div<span
+    style="color: #800000;">&lt;/title&gt;</span></div>
+ <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+ <div>&nbsp;&nbsp;<span style="color: #800000;">div</span>&nbsp;{</div>
+ <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+    style="color: #0451a5;">chocolate</span>;</div>
+ <div>&nbsp;&nbsp;}</div>
+ <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+ <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+ <div><span style="color: #800000;">&lt;body&gt;</span></div>
+ <div>&nbsp;<span
+    style="color: #800000;">&lt;div&gt;</span>Un&nbsp;div&nbsp;simple.<span
+    style="color: #800000;">&lt;/div&gt;</span></div>
+ <div>&nbsp;<span
+    style="color: #800000;">&lt;div&gt;</span>Otro&nbsp;div&nbsp;simple.<span
+    style="color: #800000;">&lt;/div&gt;</span></div>
+ <div>&nbsp;<span
+    style="color: #800000;">&lt;p&gt;</span>Un&nbsp;párrafo&nbsp;simple.<span
+    style="color: #800000;">&lt;/p&gt;</span></div>
+ <div>&nbsp;<span
+    style="color: #800000;">&lt;p&gt;</span>Otro&nbsp;párrafo&nbsp;simple.<span
+    style="color: #800000;">&lt;/p&gt;</span></div>
+ <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+ <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+</div>
+ </muestra-codigo>
+</div>`;
  }
 }
 

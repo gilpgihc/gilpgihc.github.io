@@ -2,12 +2,12 @@ import "../../js/config.js";
 import { Diapositiva } from "../../lib/Diapositiva.js";
 import "../../lib/muestra-codigo.js";
 
-export class D6inline extends Diapositiva {
+export class E6inline extends Diapositiva {
  /** @override */
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
-   `<h1>D. El valor <strong>inline</strong></h1>
+   `<h1>E. El valor <strong>inline</strong></h1>
    <div class="lectura">
    <ul>
     <li>
@@ -90,4 +90,4 @@ export class D6inline extends Diapositiva {
  }
 }
 
-customElements.define("d6-inline", D6inline);
+customElements.define("e6-inline", E6inline);
