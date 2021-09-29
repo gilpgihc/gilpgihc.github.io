@@ -3,12 +3,12 @@ import { Diapositiva } from "../../lib/Diapositiva.js";
 import "../../lib/muestra-codigo.js";
 
 
-export class B5FontFamily extends Diapositiva {
+export class B6span extends Diapositiva {
  /** @override */
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
-   `<h1>B. La propiedad <strong>font-family</strong></h1>
+   `<h1>B. El elemento <strong>span</strong></h1>
    <div class="lectura">
     <ul>
      <li>
@@ -88,4 +88,4 @@ export class B5FontFamily extends Diapositiva {
  }
 }
 
-customElements.define("b5-font-family", B5FontFamily);
+customElements.define("b6-span", B6span);

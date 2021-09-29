@@ -2,12 +2,12 @@ import "../../js/config.js";
 import { Diapositiva } from "../../lib/Diapositiva.js";
 import "../../lib/muestra-codigo.js";
 
-export class E5BackgroundColor extends Diapositiva {
+export class F6inlineBlock extends Diapositiva {
  /** @override */
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
-   `<h1>E. La propiedad <strong>background-color</strong></h1>
+   `<h1>E. El valor <strong>inline-block</strong></h1>
    <div class="lectura">
     <ul>
      <li>
@@ -96,4 +96,4 @@ export class E5BackgroundColor extends Diapositiva {
  }
 }
 
-customElements.define("e5-background-color", E5BackgroundColor);
+customElements.define("f6-inline-block", F6inlineBlock);

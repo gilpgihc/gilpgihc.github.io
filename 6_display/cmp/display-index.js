@@ -1,18 +1,18 @@
 
 import "../../js/config.js";
 import { Diapositiva } from "../../lib/Diapositiva.js";
-import "./basicas-contenido.js";
+import "./display-contenido.js";
 
-export class BasicasIndex extends Diapositiva {
+export class DisplayIndex extends Diapositiva {
  /** @override */
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
    `<div class="lectura">
      <h2>Contenido</h2>
-     <basicas-contenido></basicas-contenido>
+     <display-contenido></display-contenido>
     </div>`;
  }
 }
 
-customElements.define("basicas-index", BasicasIndex);
+customElements.define("display-index", DisplayIndex);

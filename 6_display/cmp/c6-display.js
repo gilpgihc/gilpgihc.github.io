@@ -1,12 +1,12 @@
 import "../../js/config.js";
 import { Diapositiva } from "../../lib/Diapositiva.js";
 
-export class C5Colores extends Diapositiva {
+export class C6display extends Diapositiva {
  /** @override */
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
-   `<h1>C. Colores en CSS</h1>
+   `<h1>C. La propiedad <strong>display</strong></h1>
    <div class="lectura">
    <h2>Colores primarios</h2>
    <p>
@@ -193,4 +193,4 @@ export class C5Colores extends Diapositiva {
  }
 }
 
-customElements.define("c5-colores", C5Colores);
+customElements.define("c6-display", C6display);

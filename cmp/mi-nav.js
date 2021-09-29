@@ -6,6 +6,7 @@ import "../2_introduccion/cmp/introduccion-contenido.js";
 import "../3_elementos/cmp/elementos-contenido.js";
 import "../4_css/cmp/css-contenido.js";
 import "../5_basicas/cmp/basicas-contenido.js";
+import "../6_display/cmp/display-contenido.js";
 
 class MiNav extends HTMLElement {
  connectedCallback() {
@@ -61,6 +62,17 @@ class MiNav extends HTMLElement {
           </h4>
          </summary>
          <basicas-contenido></basicas-contenido>
+        </details>
+       </li>
+       <li>
+        <details>
+         <summary>
+          <h4>
+           <a href="/6_display/index.html">La propiedad
+            <strong>display</strong></a>
+          </h4>
+         </summary>
+         <display-contenido></display-contenido>
         </details>
        </li>
       </ol>

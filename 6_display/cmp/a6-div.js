@@ -2,12 +2,12 @@ import "../../js/config.js";
 import { Diapositiva } from "../../lib/Diapositiva.js";
 import "../../lib/muestra-codigo.js";
 
-export class A5Fonts extends Diapositiva {
+export class A6div extends Diapositiva {
  /** @override */
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
-   `<h1>A. Fonts</h1>
+   `<h1>A. El elemento <strong>div</strong></h1>
    <div class="lectura">
    <ul>
     <li>
@@ -89,4 +89,4 @@ export class A5Fonts extends Diapositiva {
  }
 }
 
-customElements.define("a5-fonts", A5Fonts);
+customElements.define("a6-div", A6div);
