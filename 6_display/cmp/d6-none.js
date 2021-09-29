@@ -33,6 +33,7 @@ export class D6none extends Diapositiva {
      Revísalo en gilpgedit.
     </a>
    </p>
+   <h2>Ejemplo</h2>
   </div>
   <muestra-codigo>
   <div>

@@ -11,19 +11,31 @@ export class G6inlineBlock extends Diapositiva {
    <div class="lectura">
     <ul>
      <li>
+      <p>El nombre de este tipo de despliegue está por cambiar.</p>
+     </li>
+     <li>
       <p>
-       La propiedad
-       <dfn><code class="language-css">background-color</code></dfn>
-       permite especificar el color del fondo del elemento.
+       De forma predeterminada, los elementos de formulario como
+       <code class="language-html">button</code>,
+       o
+       <code class="language-html">input</code>
+       tienen este tipo de despliegue, pero se puede cambiar.
       </p>
      </li>
      <li>
       <p>
-       La definición de la propiedad
-       <code class="language-css">background-color</code>
-       está en
-       <a href="https://www.w3.org/TR/css-backgrounds-3/#the-background-color"
-        target="_blank">https://www.w3.org/TR/css-backgrounds-3/#the-background-color</a>
+       Su contenido sigue las reglas de un display
+       <code class="language-css">block</code>.
+      </p>
+     </li>
+     <li>
+      <p>
+       Sus padres lo ven como un elemento
+       <code class="language-css">inline</code>,
+       pero el elemento ocupa un solo renglón del elemento padre más
+       próximo que sea
+       <code class="language-css">block</code> o
+       <code class="language-css">inline-block</code>.
       </p>
      </li>
     </ul>
@@ -33,14 +45,14 @@ export class G6inlineBlock extends Diapositiva {
   <div class="horizontal">
   <div>
    <h3>Salida</h3>
-   <iframe src="/5_basicas/src/5d_background-color.html" height="200"></iframe>
+   <iframe src="/6_display/src/6g_inline-block.html" height="200"></iframe>
    <p class="noPrint">
-    <a target="_blank" href="/5_basicas/src/5d_background-color.html">Ábrelo en otra
+    <a target="_blank" href="/6_display/src/6g_inline-block.html">Ábrelo en otra
      pestaña.</a>
    </p>
    <p class="noPrint">
     <a target="_blank"
-      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3Ebackground-color%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20h1%20%7B%0A%20%20%20background-color%3A%20yellow%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20background-color%3A%20%23aaffaa%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3Ebackground-color%20yellow%3C%2Fh1%3E%0A%20%3Cp%3Ebackground-color%20%23aaffaa.%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3Einline-block%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20span%20%7B%0A%20%20%20display%3A%20inline-block%3B%0A%20%20%20background-color%3A%20yellow%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Cp%3E%0A%20%20Texto%2C%20texto%2C%20texto%0A%20%20%3Cspan%3E%0A%0A%20%20%20%20%20%20%20Este%20es%20un%20span%20forzado%20a%20ser%0A%20%20%20inline-block%2C%20inline-block%2C%0A%20%20%20inline-block%2C%20inline-block.%0A%20%20%3C%2Fspan%3E%0A%20%20%3Cbutton%3E%0A%20%20%20Este%20es%20un%20bot%C3%B3n%20inline-block%2C%0A%20%20%20inline-block%2C%20inline-block.%0A%20%20%3C%2Fbutton%3E%0A%20%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
      Revísalo en gilpgedit.
     </a>
    </p>
@@ -66,28 +78,35 @@ export class G6inlineBlock extends Diapositiva {
       style="color: #0000ff;">"width=device-width"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span>background-color<span
+      style="color: #800000;">&lt;title&gt;</span>inline-block<span
       style="color: #800000;">&lt;/title&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">span</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">display</span>:&nbsp;<span
+      style="color: #0451a5;">inline-block</span>;</div>
    <div>&nbsp;&nbsp;&nbsp;<span
       style="color: #ff0000;">background-color</span>:&nbsp;<span
-      style="color: #0451a5;">yellow</span></div>
-   <div>&nbsp;&nbsp;}</div><br>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">p</span>&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">background-color</span>:&nbsp;<span
-      style="color: #0451a5;">#aaffaa</span></div>
+      style="color: #0451a5;">yellow</span>;</div>
    <div>&nbsp;&nbsp;}</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
    <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>background-color&nbsp;yellow<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>background-color&nbsp;#aaffaa.<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;Texto,&nbsp;texto,&nbsp;texto</div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;span&gt;</span></div>
+   <div>
+    &nbsp;&nbsp;&nbsp;Este&nbsp;es&nbsp;un&nbsp;span&nbsp;forzado&nbsp;a&nbsp;ser
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;inline-block,&nbsp;inline-block,</div>
+   <div>&nbsp;&nbsp;&nbsp;inline-block,&nbsp;inline-block.</div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;button&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;Este&nbsp;es&nbsp;un&nbsp;botón&nbsp;inline-block,
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;inline-block,&nbsp;inline-block.</div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
