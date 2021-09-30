@@ -9,72 +9,207 @@ export class E7Border extends Diapositiva {
   this.innerHTML = /* html */
    `<h1>E. Borde (border)</h1>
    <div class="lectura">
-    <ul>
-     <li>
-     <p>Contiene elementos de cualquir tipo de despliegue.</p>
-     </li>
-     <li>
+   <h2>Partes de un Borde</h2>
+    <dl>
+     <dt><dfn>Ancho</dfn></dt>
+     <dd>
+      <p>
+       Puede expresarse como un tamaño o con alguno de estos valores:
+      </p>
+      <dl>
+       <dt><dfn><code class="language-css">thin</code></dfn></dt>
+       <dd>Borde delgado.</dd>
+       <dt><dfn><code class="language-css">medium</code></dfn></dt>
+       <dd>Borde de ancho mediano.</dd>
+       <dt><dfn><code class="language-css">thick</code></dfn></dt>
+       <dd>Borde grueso.</dd>
+      </dl>
+      <p>
+       Si no se pone, su valor por omisión es:
+       <code class="language-css">medium</code>.
+      </p>
+     </dd>
+     <dt><dfn>Estilo</dfn></dt>
+     <dd>
+      <p>Puede expresarse con alguno de estos valores:</p>
+      <dl>
+       <dt><dfn><code class="language-css">none</code></dfn></dt>
+       <dd>
+        <p>Sin borde.</p>
+       </dd>
+       <dt><dfn><code class="language-css">dotted</code></dfn></dt>
+       <dd>
+        <p>El borde es una serie de puntos redondos.</p>
+       </dd>
+       <dt><dfn><code class="language-css">dashed</code></dfn></dt>
+       <dd>
+        <p>El borde es una serie de guiones de esquinas cuadradas.</p>
+       </dd>
+       <dt><dfn><code class="language-css">solid</code></dfn></dt>
+       <dd>
+        <p>El borde es una sola línea sólida.</p>
+       </dd>
+       <dt><dfn><code class="language-css">double</code></dfn></dt>
+       <dd>
+        <p>
+         El borde consiste en 2 líneas sólidas paralelas con espacio
+         entre ellas.
+        </p>
+        <p>
+         La suma del ancho de las líneas y espacio debe ser igual al
+         ancho del borde.
+        </p>
+       </dd>
+       <dt><dfn><code class="language-css">groove</code></dfn></dt>
+       <dd>
+        <p>
+         El borde parece como si estuviera tallado dentro de la
+         superficie.
+        </p>
+       </dd>
+       <dt><dfn><code class="language-css">ridge</code></dfn></dt>
+       <dd>
+        <p>El borde parece como si saliera de la superficie.</p>
+       </dd>
+       <dt><dfn><code class="language-css">inset</code></dfn></dt>
+       <dd>
+        <p>
+         Parece como si el contenido dentro del borde estuviera
+         hundido en la superficie.
+        </p>
+       </dd>
+       <dt><dfn><code class="language-css">outset</code></dfn></dt>
+       <dd>
+        <p>
+         Parece como si el contenido dentro del borde saliera de la
+         superficie.
+        </p>
+       </dd>
+      </dl>
+      <p>
+       Si no se pone, su valor por omisión es:
+       <code class="language-css">none</code>.
+      </p>
+     </dd>
+     <dt><dfn>Color</dfn></dt>
+     <dd>
+      <p>Se especifica como un color cualquiera.</p>
+      <p>
+       Si no se pone, su valor por omisión es el color del texto del
+       elemento.
+      </p>
+     </dd>
+    </dl>
+    <h2>Propiedades para Bordes</h2>
+     <h3>Estilo Detallado</h3>
+     <dl>
+      <dt><dfn><code class="language-css">border-top-width</code></dfn></dt>
+      <dd>
+       <p>Ancho del borde en la parte superior de la caja.</p>
+      </dd>
+      <dt><dfn><code class="language-css">border-top-style</code></dfn></dt>
+      <dd>
+       <p>Estilo del borde en la parte superior de la caja.</p>
+      </dd>
+      <dt><dfn><code class="language-css">border-top-color</code></dfn></dt>
+      <dd>
+       <p>Color del borde en la parte superior de la caja.</p>
+      </dd>
+      <dt><dfn><code class="language-css">border-bottom-width</code></dfn>
+      </dt>
+      <dd>
+       <p>Ancho del borde en la parte inferior de la caja.</p>
+      </dd>
+      <dt><dfn><code class="language-css">border-bottom-style</code></dfn>
+      </dt>
+      <dd>
+       <p>Estilo del borde en la parte inferior de la caja.</p>
+      </dd>
+      <dt><dfn><code class="language-css">border-bottom-color</code></dfn>
+      </dt>
+      <dd>
+       <p>Color del borde en la parte inferior de la caja.</p>
+      </dd>
+      <dt><dfn><code class="language-css">border-left-width</code></dfn></dt>
+      <dd>
+       <p>Ancho del borde en el lado izquierdo de la caja.</p>
+      </dd>
+      <dt><dfn><code class="language-css">border-left-style</code></dfn></dt>
+      <dd>
+       <p>Estilo del borde en el lado izquierdo de la caja.</p>
+      </dd>
+      <dt><dfn><code class="language-css">border-left-color</code></dfn></dt>
+      <dd>
+       <p>Color del borde en el lado izquierdo de la caja.</p>
+      </dd>
+      <dt><dfn><code class="language-css">border-right-width</code></dfn></dt>
+      <dd>
+       <p>Ancho del borde en el lado derecho de la caja.</p>
+      </dd>
+      <dt><dfn><code class="language-css">border-right-style</code></dfn></dt>
+      <dd>
+       <p>Estilo del borde en el lado derecho de la caja.</p>
+      </dd>
+      <dt><dfn><code class="language-css">border-right-color</code></dfn></dt>
+      <dd>
+       <p>Color del borde en el lado derecho de la caja.</p>
+      </dd>
+     </dl>
+     <h3>Combinando las Partes del Borde</h3>
      <p>
-      De forma predeterminada, los elementos de agrupamiento como
-      <code class="language-html">p</code>,
-      <code class="language-html">header</code>
-      <code class="language-html">footer</code>
-      o
-      <code class="language-html">div</code>
-      tienen este tipo de despliegue, pero se puede cambiar.
+      Combina las tres partes de un borde. Las partes pueden ir en
+      cualquier orden y 1 o 2 de los valores pueden faltar, en cuyo caso
+      se toman los valores por omisión
+      (<code class="language-css">medium</code>,
+      <code class="language-css">none</code>
+      y color actual).
      </p>
-     </li>
-     <li>
-     <p>
-      Si contiene solo elementos de despliegue
-      <code class="language-css">inline</code>,
-      <code class="language-css">inline-block</code>
-      y texto, estos se despliegan de forma horizontal uno tras otro,
-      iniciando en la parte superior del elemento. Si llega al final
-      de un renglón, continuá al inicio del siguiente.
-     </p>
-     </li>
-     <li>
-     <p>
-      Si contiene solo elementos de despliegue
-      <code class="language-css">block</code>,
-      estos se despliegan de forma vertical uno tras otro,
-      utilizando todo el ancho permitido por el elemento que los
-      contiene.
-     </p>
-     </li>
-     <li>
-     <p>
-      Si contiene mezclados elementos
-      <code class="language-css">inline</code>,
-      <code class="language-css">inline-block</code>,
-      texto y
-      <code class="language-css">block</code>,
-      los
-      <code class="language-css">inline</code>,
-      <code class="language-css">inline-block</code>
-      y textos consecutivos se agrupan en una caja de tipo
-      <code class="language-css">block</code>
-      imaginaria y se aplica el despliegue cuando todos los elementos
-      son de tipo
-      <code class="language-css">block</code>.
-     </p>
-     </li>
-    </ul>
-   </div>
+     <dl>
+      <dt><dfn><code class="language-css">border-top</code></dfn></dt>
+      <dd>
+       <p>
+        Ancho, estilo y color del borde en la parte superior de la caja.
+       </p>
+      </dd>
+      <dt><dfn><code class="language-css">border-bottom</code></dfn></dt>
+      <dd>
+       <p>
+        Ancho, estilo y color del borde en la parte inferior de la caja.
+       </p>
+      </dd>
+      <dt><dfn><code class="language-css">border-left</code></dfn></dt>
+      <dd>
+       <p>
+        Ancho, estilo y color del borde en el lado izquierdo de la caja.
+       </p>
+      </dd>
+      <dt><dfn><code class="language-css">border-right</code></dfn></dt>
+      <dd>
+       <p>
+        Ancho, estilo y color del borde en el lado derecho de la caja.
+       </p>
+      </dd>
+      <dt><dfn><code class="language-css">border</code></dfn></dt>
+      <dd>
+       <p>
+        Ancho, estilo y color del borde único en las partes izquierda,
+        derecha, superior e inferior de la caja.
+       </p>
+      </dd>
+     </dl>
    <h2>Ejemplo</h2>
   </div>
   <div class="horizontal">
   <div>
    <h3>Salida</h3>
-   <iframe src="/6_display/src/6f_block.html" height="410"></iframe>
+   <iframe src="/7_cajas/src/7e_borde.html" height="280"></iframe>
    <p class="noPrint">
-    <a target="_blank" href="/6_display/src/6f_block.html">Ábrelo en otra
+    <a target="_blank" href="/7_cajas/src/7e_borde.html">Ábrelo en otra
      pestaña.</a>
    </p>
    <p class="noPrint">
     <a target="_blank"
-      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3Eblock%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20div%20%7B%0A%20%20%20background-color%3A%20yellow%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3Eblock%3C%2Fh1%3E%0A%20%3Cp%3E%0A%20%20En%20este%20ejemplo%2C%20body%20solo%0A%20%20tiene%20elementos%20de%20bloque.%0A%20%3C%2Fp%3E%0A%20%3Cp%3E%0A%20%20Este%20p%C3%A1rrafo%20solo%20tiene%20contenido%0A%20%20inline%20e%20inline-block.%0A%20%20%3Cem%3EUn%20%C3%A9nfasis%20inline.%3C%2Fem%3E%0A%20%20%3Cbutton%3E%0A%20%20%20Un%20bot%C3%B3n%20inline-block%2C%0A%20%20%20inline-block%2C%20inline-block%0A%20%20%3C%2Fbutton%3E%0A%20%20%3Cspan%3E%0A%20%20%20Un%20span%20inline%2C%20inline%2C%20inline%2C%0A%20%20%20inline.%0A%20%20%3C%2Fspan%3E%0A%20%3C%2Fp%3E%0A%20%3Cdiv%3E%0A%20%20Este%20div%20tiene%20contenido%0A%20%20mezclado.%0A%20%20%3Cem%3E%0A%20%20%20Este%20es%20un%20%C3%A9nfasis%20inline.%0A%20%20%3C%2Fem%3E%0A%20%20%3Cstrong%3E%0A%20%20%20Este%20es%20un%20strong%20inline.%0A%20%20%3C%2Fstrong%3E%0A%20%20%3Cbutton%3E%0A%20%20%20Este%20es%20un%20bot%C3%B3n%20inline-block%0A%20%20%3C%2Fbutton%3E%0A%20%20%3Cp%3E%0A%20%20%20Este%20p%C3%A1rrafo%20solo%20contiene%0A%20%20%20inline%20e%20inline-block.%0A%20%20%20%3Cem%3EUn%20%C3%A9nfasis%20inline.%3C%2Fem%3E%0A%20%20%20%3Cbutton%3E%0A%20%20%20%20Un%20bot%C3%B3n%20inline-block%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%20%3Cspan%3EUn%20span%20inline.%3C%2Fspan%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EBordes%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20h1%20%7B%0A%20%20%20border-top-width%3A%20thin%3B%0A%20%20%20border-top-style%3A%20solid%3B%0A%20%20%20border-top-color%3A%20cyan%3B%0A%20%20%20border-left%3A%0A%20%20%20%20medium%20dashed%20red%3B%0A%20%20%20border-right%3A%0A%20%20%20%20thick%20dotted%20green%3B%0A%20%20%20border-bottom%3A%0A%20%20%20%20thick%20double%20blue%0A%20%20%7D%0A%0A%20%20nav%20%7B%0A%20%20%20border%3A%20thick%20groove%20cyan%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20border%3A%20thick%20ridge%20pink%0A%20%20%7D%0A%0A%20%20div%20%7B%0A%20%20%20border%3A%20thick%20inset%20yellowgreen%0A%20%20%7D%0A%0A%20%20footer%20%7B%0A%20%20%20border%3A%20thick%20outset%20orange%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3EBordes%3C%2Fh1%3E%0A%20%3Cnav%3EGroove%3C%2Fnav%3E%0A%20%3Cp%3ERidge%3C%2Fp%3E%0A%20%3Cdiv%3EInset%3C%2Fdiv%3E%0A%20%3Cfooter%3EOutset%3C%2Ffooter%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
      Revísalo en gilpgedit.
     </a>
    </p>
@@ -99,68 +234,79 @@ export class E7Border extends Diapositiva {
    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
       style="color: #0000ff;">"width=device-width"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>block<span
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Bordes<span
       style="color: #800000;">&lt;/title&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">border-top-width</span>:&nbsp;<span
+      style="color: #0451a5;">thin</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">border-top-style</span>:&nbsp;<span
+      style="color: #0451a5;">solid</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">border-top-color</span>:&nbsp;<span
+      style="color: #0451a5;">cyan</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">border-left</span>:
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0451a5;">medium</span>&nbsp;<span
+      style="color: #0451a5;">dashed</span>&nbsp;<span
+      style="color: #0451a5;">red</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">border-right</span>:
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0451a5;">thick</span>&nbsp;<span
+      style="color: #0451a5;">dotted</span>&nbsp;<span
+      style="color: #0451a5;">green</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">border-bottom</span>:
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0451a5;">thick</span>&nbsp;<span
+      style="color: #0451a5;">double</span>&nbsp;<span
+      style="color: #0451a5;">blue</span></div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">nav</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">border</span>:&nbsp;<span
+      style="color: #0451a5;">thick</span>&nbsp;<span
+      style="color: #0451a5;">groove</span>&nbsp;<span
+      style="color: #0451a5;">cyan</span></div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">p</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">border</span>:&nbsp;<span
+      style="color: #0451a5;">thick</span>&nbsp;<span
+      style="color: #0451a5;">ridge</span>&nbsp;<span
+      style="color: #0451a5;">pink</span></div>
+   <div>&nbsp;&nbsp;}</div><br>
    <div>&nbsp;&nbsp;<span style="color: #800000;">div</span>&nbsp;{</div>
    <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">background-color</span>:&nbsp;<span
-      style="color: #0451a5;">yellow</span>;</div>
+      style="color: #ff0000;">border</span>:&nbsp;<span
+      style="color: #0451a5;">thick</span>&nbsp;<span
+      style="color: #0451a5;">inset</span>&nbsp;<span
+      style="color: #0451a5;">yellowgreen</span></div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">footer</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">border</span>:&nbsp;<span
+      style="color: #0451a5;">thick</span>&nbsp;<span
+      style="color: #0451a5;">outset</span>&nbsp;<span
+      style="color: #0451a5;">orange</span></div>
    <div>&nbsp;&nbsp;}</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
    <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>block<span
+   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Bordes<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;En&nbsp;este&nbsp;ejemplo,&nbsp;body&nbsp;solo</div>
-   <div>&nbsp;&nbsp;tiene&nbsp;elementos&nbsp;de&nbsp;bloque.</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;Este&nbsp;párrafo&nbsp;solo&nbsp;tiene&nbsp;contenido</div>
-   <div>&nbsp;&nbsp;inline&nbsp;e&nbsp;inline-block.</div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;em&gt;</span>Un&nbsp;énfasis&nbsp;inline.<span
-      style="color: #800000;">&lt;/em&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;button&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Un&nbsp;botón&nbsp;inline-block,</div>
-   <div>&nbsp;&nbsp;&nbsp;inline-block,&nbsp;inline-block</div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;span&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Un&nbsp;span&nbsp;inline,&nbsp;inline,&nbsp;inline,
-   </div>
-   <div>&nbsp;&nbsp;&nbsp;inline.</div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;div&gt;</span></div>
-   <div>&nbsp;&nbsp;Este&nbsp;div&nbsp;tiene&nbsp;contenido</div>
-   <div>&nbsp;&nbsp;mezclado.</div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;em&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Este&nbsp;es&nbsp;un&nbsp;énfasis&nbsp;inline.</div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/em&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;strong&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Este&nbsp;es&nbsp;un&nbsp;strong&nbsp;inline.</div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/strong&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;button&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Este&nbsp;es&nbsp;un&nbsp;botón&nbsp;inline-block
-   </div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;Este&nbsp;párrafo&nbsp;solo&nbsp;contiene</div>
-   <div>&nbsp;&nbsp;&nbsp;inline&nbsp;e&nbsp;inline-block.</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;em&gt;</span>Un&nbsp;énfasis&nbsp;inline.<span
-      style="color: #800000;">&lt;/em&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;button&gt;</span>
-   </div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;Un&nbsp;botón&nbsp;inline-block</div>
-   <div>&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/button&gt;</span>
-   </div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;span&gt;</span>Un&nbsp;span&nbsp;inline.<span
-      style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/div&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;nav&gt;</span>Groove<span
+      style="color: #800000;">&lt;/nav&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Ridge<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;div&gt;</span>Inset<span
+      style="color: #800000;">&lt;/div&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;footer&gt;</span>Outset<span
+      style="color: #800000;">&lt;/footer&gt;</span></div>
    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
   </div>

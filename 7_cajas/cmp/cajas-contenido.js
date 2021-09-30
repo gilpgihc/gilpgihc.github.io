@@ -33,13 +33,12 @@ export class CajasContenido extends Diapositiva {
      </li>
      <li>
       <p>
-       <a href="/7_cajas/f_radio.html">Esquinas redondas (border-radio)</a>
+       <a href="/7_cajas/f_radio.html">Esquinas redondas (border-radius)</a>
       </p>
      </li>
      <li>
       <p>
-       <a href="/7_cajas/g_box-sizing.html">La propiedad
-        <strong>box-sizing</strong></a>
+       <a href="/7_cajas/g_box-sizing.html">Propiedades para tamaños</a>
       </p>
      </li>
     </ol>`;

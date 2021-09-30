@@ -1,34 +1,54 @@
-import "../10_textos/cmp/textos-print.js";
-import "../11_logicos/cmp/logicos-print.js";
-import "../12_do_while/cmp/do-while-print.js";
-import "../13_numeros/cmp/numeros-print.js";
-import "../14_mas_numeros/cmp/mas-numeros-print.js";
-import "../15_while/cmp/while-print.js";
-import "../16_for/cmp/for-print.js";
-import "../17_switch/cmp/switch-print.js";
-import "../1_fundamentos/cmp/fundamentos-print.js";
-import "../2_conceptos/cmp/conceptos-print.js";
-import "../3_variables/cmp/variables-print.js";
-import "../4_comentarios/cmp/comentarios-print.js";
-import "../5_bloques/cmp/bloques-print.js";
-import "../6_if/cmp/if-print.js";
-import "../7_if_else/cmp/if-else-print.js";
-import "../8_multiple/cmp/multiple-print.js";
-import "../9_melse/cmp/multiple-else-print.js";
+import "../1_sgml/cmp/sgml-print.js";
+import "../2_introduccion/cmp/introduccion-print.js";
+import "../3_elementos/cmp/elementos-print.js";
+import "../4_css/cmp/css-print.js";
+import "../5_basicas/cmp/basicas-print.js";
+import "../6_display/cmp/display-print.js";
+import "../7_cajas/cmp/cajas-print.js";
 import "../js/config.js";
 import { Diapositiva } from "../lib/Diapositiva.js";
-import "./gilpgijs-index.js";
+import "./gilpgihc-index.js";
 
 export class GilPGIHCPrint extends Diapositiva {
  /** @override */
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
-   `<gilpgijs-index></gilpgijs-index>
+   `<gilpgihc-index></gilpgihc-index>
     <mi-footer></mi-footer>
     <section>
-     <h1 class="presentación">1. Fundamentos</h1>
-     <fundamentos-print></fundamentos-print>
+     <h1 class="presentación">1. SGML</h1>
+     <sgml-print></sgml-print>
+     <mi-footer></mi-footer>
+    </section>
+    <section>
+     <h1 class="presentación">2. Introducción a HTML</h1>
+     <introduccion-print></introduccion-print>
+     <mi-footer></mi-footer>
+    </section>
+    <section>
+     <h1 class="presentación">3. Elementos básicos de HTML</h1>
+     <elementos-print></elementos-print>
+     <mi-footer></mi-footer>
+    </section>
+    <section>
+     <h1 class="presentación">4. CSS</h1>
+     <css-print></css-print>
+     <mi-footer></mi-footer>
+    </section>
+    <section>
+     <h1 class="presentación">5. Propiedades básicas de CSS</h1>
+     <basicas-print></basicas-print>
+     <mi-footer></mi-footer>
+    </section>
+    <section>
+     <h1 class="presentación">6. La propiedad <strong>display</strong></h1>
+     <display-print></display-print>
+     <mi-footer></mi-footer>
+    </section>
+    <section>
+     <h1 class="presentación">7. El modelo de cajas</h1>
+     <cajas-print></cajas-print>
      <mi-footer></mi-footer>
     </section>`;
  }

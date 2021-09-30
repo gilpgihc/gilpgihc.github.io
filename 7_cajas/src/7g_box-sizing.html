@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width,
+       initial-scale=1.0">
+ <title>box-sizing</title>
+ <style>
+  main {
+   width: 50%;
+   height: 15rem;
+   background-color: orange;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+  }
+
+  h1 {
+   width: 100%;
+   background-color: lightgreen;
+   margin: 0;
+   font-size: 1rem;
+   padding: 1em;
+   border: thick solid green;
+  }
+
+  nav {
+   box-sizing: content-box;
+   width: 100%;
+   background-color: pink;
+   padding: 1em;
+   border: thick solid red;
+  }
+
+  p {
+   box-sizing: content-box;
+   width: 100%;
+   background-color: violet;
+   margin: 0;
+  }
+
+  div {
+   box-sizing: border-box;
+   width: 100%;
+   background-color: lightblue;
+   padding: 1em;
+   border: thick solid blue;
+  }
+ </style>
+</head>
+<body>
+ <main>
+  <h1>por omisión</h1>
+  <nav>content-box</nav>
+  <p>content-box 2</div>
+  <div>border-box</div>
+ </main>
+</body>
+</html>
