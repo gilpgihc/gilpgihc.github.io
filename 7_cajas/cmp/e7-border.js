@@ -7,7 +7,7 @@ export class E7Border extends Diapositiva {
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
-   `<h1>F. El valor <strong>block</strong></h1>
+   `<h1>E. Borde (border)</h1>
    <div class="lectura">
     <ul>
      <li>

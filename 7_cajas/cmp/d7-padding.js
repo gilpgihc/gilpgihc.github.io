@@ -7,7 +7,7 @@ export class D7Padding extends Diapositiva {
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
-   `<h1>E. El valor <strong>inline</strong></h1>
+   `<h1>D. Relleno (padding)</h1>
    <div class="lectura">
     <ul>
      <li>

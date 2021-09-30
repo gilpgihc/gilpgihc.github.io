@@ -6,7 +6,7 @@ export class G7BoxSizing extends Diapositiva {
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
-   `<h1>C. La propiedad <strong>display</strong></h1>
+   `<h1>G. La propiedad <strong>box-sizing</strong></h1>
    <div class="lectura">
     <ul>
      <li>

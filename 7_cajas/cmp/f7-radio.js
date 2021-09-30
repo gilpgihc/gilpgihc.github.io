@@ -7,7 +7,7 @@ export class F7Radio extends Diapositiva {
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
-   `<h1>G. El valor <strong>inline-block</strong></h1>
+   `<h1>F. Esquinas redondas (border-radio)</h1>
    <div class="lectura">
     <ul>
      <li>

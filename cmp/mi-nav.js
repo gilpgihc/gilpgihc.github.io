@@ -80,7 +80,7 @@ class MiNav extends HTMLElement {
         <details>
          <summary>
           <h4>
-           <a href="/6_display/index.html">7. El modelo de cajas</a>
+           <a href="/7_cajas/index.html">7. El modelo de cajas</a>
           </h4>
          </summary>
          <cajas-contenido></cajas-contenido>
