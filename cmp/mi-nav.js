@@ -97,7 +97,17 @@ class MiNav extends HTMLElement {
          <posicionamiento-contenido></posicionamiento-contenido>
         </details>
        </li>
-      </ol>
+<!--       <li>
+        <details>
+         <summary>
+          <h4>
+           <a href="/8_posicionamiento/index.html">Posicionamiento</a>
+          </h4>
+         </summary>
+         <posicionamiento-contenido></posicionamiento-contenido>
+        </details>
+       </li>
+-->      </ol>
      </li>
     </ul>
    </nav>`;
