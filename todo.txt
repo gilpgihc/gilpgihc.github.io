@@ -1,3 +1,5 @@
+1. Poner title a todos los iframe igoal al title del contenido
+
 Comando para generar el listado:
 Get-ChildItem -path . -Recurse | Select Directory,Name | Out-File archivos.txt
 

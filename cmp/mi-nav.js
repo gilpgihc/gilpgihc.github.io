@@ -9,6 +9,7 @@ import "../5_basicas/cmp/basicas-contenido.js";
 import "../6_display/cmp/display-contenido.js";
 import "../7_cajas/cmp/cajas-contenido.js";
 import "../8_posicionamiento/cmp/posicionamiento-contenido.js";
+import "../9_selectores/cmp/selectores-contenido.js";
 
 class MiNav extends HTMLElement {
  connectedCallback() {
@@ -97,17 +98,17 @@ class MiNav extends HTMLElement {
          <posicionamiento-contenido></posicionamiento-contenido>
         </details>
        </li>
-<!--       <li>
+       <li>
         <details>
          <summary>
           <h4>
-           <a href="/8_posicionamiento/index.html">Posicionamiento</a>
+           <a href="/9_selectores/index.html">Selectores</a>
           </h4>
          </summary>
-         <posicionamiento-contenido></posicionamiento-contenido>
+         <selectores-contenido></selectores-contenido>
         </details>
        </li>
--->      </ol>
+      </ol>
      </li>
     </ul>
    </nav>`;

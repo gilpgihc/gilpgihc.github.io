@@ -1,6 +1,6 @@
 {
-    "short_name": "poojs",
-    "name": "Programación Orientada a Objetos en JavaScript",
+    "short_name": "ihc",
+    "name": "Introducción a HTML y CSS",
     "start_url": "/index.html",
     "display": "standalone",
     "theme_color": "#ffffff",

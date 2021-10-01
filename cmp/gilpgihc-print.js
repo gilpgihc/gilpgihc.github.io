@@ -6,6 +6,7 @@ import "../5_basicas/cmp/basicas-print.js";
 import "../6_display/cmp/display-print.js";
 import "../7_cajas/cmp/cajas-print.js";
 import "../8_posicionamiento/cmp/posicionamiento-print.js";
+import "../9_selectores/cmp/selectores-print.js";
 import "../js/config.js";
 import { Diapositiva } from "../lib/Diapositiva.js";
 import "./gilpgihc-index.js";
@@ -55,6 +56,11 @@ export class GilPGIHCPrint extends Diapositiva {
     <section>
      <h1 class="presentación">8. Posicionamiento</h1>
      <posicionamiento-print></posicionamiento-print>
+     <mi-footer></mi-footer>
+    </section>
+    <section>
+     <h1 class="presentación">9. Selectores</h1>
+     <selectores-print></selectores-print>
      <mi-footer></mi-footer>
     </section>`;
  }

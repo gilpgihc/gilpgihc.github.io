@@ -7,6 +7,7 @@ import "./d2-codificacion.js";
 import "./e2-viewport.js";
 import "./f2-title.js";
 import "./g2-body.js";
+import "./h2-referencias.js";
 import "./introduccion-index.js";
 
 export class IntroduccionPrint extends Diapositiva {
@@ -37,6 +38,9 @@ export class IntroduccionPrint extends Diapositiva {
     </section>
     <section>
      <g2-body></g2-body>
+    </section>
+    <section>
+     <h2-referencias></h2-referencias>
     </section>`;
  }
 }

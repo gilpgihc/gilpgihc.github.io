@@ -47,6 +47,11 @@ export class IntroduccionContenido extends Diapositiva {
         <strong>body</strong></a>
       </p>
      </li>
+     <li>
+      <p>
+       <a href="/2_introduccion/h_referencias.html">Referencias a caracter</a>
+      </p>
+     </li>
     </ol>`;
  }
 }
