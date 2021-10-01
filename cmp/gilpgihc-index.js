@@ -7,7 +7,7 @@ export class GilPGIHCIndex extends Diapositiva {
   super.connectedCallback();
   this.innerHTML = /* html */
    `<div class="lectura">
-    <h2>por Gilberto Paheco Gallegos</h2>
+    <h2>por Gilberto Pacheco Gallegos</h2>
     <mi-nav open></mi-nav>
    </div>`;
  }

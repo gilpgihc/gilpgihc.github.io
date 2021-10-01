@@ -8,6 +8,7 @@ import "../4_css/cmp/css-contenido.js";
 import "../5_basicas/cmp/basicas-contenido.js";
 import "../6_display/cmp/display-contenido.js";
 import "../7_cajas/cmp/cajas-contenido.js";
+import "../8_posicionamiento/cmp/posicionamiento-contenido.js";
 
 class MiNav extends HTMLElement {
  connectedCallback() {
@@ -80,10 +81,20 @@ class MiNav extends HTMLElement {
         <details>
          <summary>
           <h4>
-           <a href="/7_cajas/index.html">7. El modelo de cajas</a>
+           <a href="/7_cajas/index.html">El modelo de cajas</a>
           </h4>
          </summary>
          <cajas-contenido></cajas-contenido>
+        </details>
+       </li>
+       <li>
+        <details>
+         <summary>
+          <h4>
+           <a href="/8_posicionamiento/index.html">Posicionamiento</a>
+          </h4>
+         </summary>
+         <posicionamiento-contenido></posicionamiento-contenido>
         </details>
        </li>
       </ol>

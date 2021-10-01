@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>
+  Posicionamiento absolute
+ </title>
+ <style>
+  h1 {
+   position: absolute;
+   bottom: 0;
+   height: 6rem;
+   left: 2rem;
+   right: 2rem;
+   background-color: yellow;
+  }
+
+  p {
+   position: relative;
+   background-color: chartreuse
+  }
+
+  footer {
+   position: fixed;
+   top: 0;
+   right: 0;
+   width: 10rem;
+   background-color: yellow;
+  }
+
+  span {
+   position: absolute;
+   top: 0;
+   left: 0;
+   background-color: cyan;
+  }
+ </style>
+</head>
+<body>
+ <h1>
+  Posicionamiento
+  <span>absolute (h1)</span>
+ </h1>
+ Bla, bla, bla
+ <p>
+  Párrafo relative con
+  <span>absolute (p)</span>
+ </p>
+ <div>
+  Este div contiene
+  <span>absolute (div)</span>
+ </div>
+ <footer>
+  Este footer lleva otro
+  <span>absolute (footer)</span>
+ </footer>
+</body>
+</html>
