@@ -27,7 +27,7 @@ export class SelectoresPrint extends Diapositiva {
      <b9-id></b9-id>
     </section>
     <section>
-    <c9-clases></c9-clases>
+    <c9-class></c9-class>
     </section>
     <section>
      <d9-hijo></d9-hijo>
