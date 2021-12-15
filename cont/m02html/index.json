@@ -1,0 +1,58 @@
+{
+ "type": "A",
+ "title": "Introducción a HTML",
+ "description": "Contenido de la lección «2. Introducción a HTML",
+ "printDescription": "Página para imprimir de la lección «2. Introducción a HTML.",
+ "listado": [
+  {
+   "name": "mAejemplo.html",
+   "title": "Ejemplo básico",
+   "description": "Ejemplo básico de HTML."
+  },
+  {
+   "name": "mBhtml.html",
+   "title": "El elemento html",
+   "h1": "El elemento <code class='language-html'>html</code>",
+   "description": "Definición del elemento html de HTML."
+  },
+  {
+   "name": "mChead.html",
+   "title": "El elemento head",
+   "h1": "El elemento <code class='language-html'>head</code>",
+   "description": "Definición del elemento head de HTML."
+  },
+  {
+   "name": "mDcodificacion.html",
+   "title": "Codificación de caracteres",
+   "description": "Como indicar la codificación de caracteresde HTML."
+  },
+  {
+   "name": "mEviewport.html",
+   "title": "El metadato viewport",
+   "h1": "El metadato <code class='language-html'>viewport</code>",
+   "description": "Definición del metadato viewport de HTML."
+  },
+  {
+   "name": "mFtitle.html",
+   "title": "El elemento title",
+   "h1": "El elemento <code class='language-html'>title</code>",
+   "description": "Definición del elemento title de HTML."
+  },
+  {
+   "name": "mGbody.html",
+   "title": "El elemento body",
+   "h1": "El elemento <code class='language-html'>body</code>",
+   "description": "Definición del elemento body de HTML."
+  },
+  {
+   "name": "mHreferencias.html",
+   "title": "Referencia a caracter",
+   "description": "Definición de referencia a caracter."
+  },
+  {
+   "name": "mIresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «2. Introducción a HTML."
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "type": "A",
+ "title": "El modelo de cajas",
+ "description": "Contenido de la lección «7. El modelo de cajas».",
+ "printDescription": "Página para imprimir de la lección «7. El modelo de cajas».",
+ "listado": [
+  {
+   "name": "mAlongitud.html",
+   "title": "Longitudes en CSS",
+   "description": "Longitudes en CSS."
+  },
+  {
+   "name": "mBmodelo.html",
+   "title": "El modelo de cajas",
+   "description": "El modelo de cajas."
+  },
+  {
+   "name": "mCmargin.html",
+   "title": "Margen (margin)",
+   "description": "Presenta como especificar el margen de un elemento con CSS."
+  },
+  {
+   "name": "mDpadding.html",
+   "title": "Relleno (padding)",
+   "description": "Presenta como especificar el relleno de un elemento con CSS."
+  },
+  {
+   "name": "mEborder.html",
+   "title": "Borde (border)",
+   "description": "Presenta como especificar el borde de un elemento con CSS."
+  },
+  {
+   "name": "mFradio.html",
+   "title": "Esquinas redondas (border-radius)",
+   "description": "Presenta como especificar las esquinas redondas de un elemento con CSS."
+  },
+  {
+   "name": "mGbox-sizing.html",
+   "title": "Propiedades para tamaños",
+   "description": "Propiedades para tamaños."
+  },
+  {
+   "name": "mHresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «7. El modelo de cajas»."
+  }
+ ]
+}

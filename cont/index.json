@@ -1,0 +1,38 @@
+{
+ "type": "1",
+ "title": "Introducción a HTML y CSS",
+ "description": "Página de inicio de GilPG IHC, que introduce conceptos básicos de HTML y CSS.",
+ "printDescription": "Página para imprimir todo el contenido de GilPG IHC, que introduce conceptos básicos de HTML y CSS.",
+ "listado": [
+  {
+   "name": "m01sgml"
+  },
+  {
+   "name": "m02html"
+  },
+  {
+   "name": "m03elementos"
+  },
+  {
+   "name": "m04css"
+  },
+  {
+   "name": "m05propiedades"
+  },
+  {
+   "name": "m06display"
+  },
+  {
+   "name": "m07cajas"
+  },
+  {
+   "name": "m08posicionamiento"
+  },
+  {
+   "name": "m09selectores"
+  },
+  {
+   "name": "m10multimedia"
+  }
+ ]
+}

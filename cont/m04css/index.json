@@ -1,0 +1,49 @@
+{
+ "type": "A",
+ "title": "CSS",
+ "description": "Contenido de la lección «4. CSS»",
+ "printDescription": "Página para imprimir de la lección «4. CSS».",
+ "listado": [
+  {
+   "name": "mAejemplo.html",
+   "title": "CSS",
+   "description": "Presentación de CSS."
+  },
+  {
+   "name": "mBstyle.html",
+   "title": "El elemento style",
+   "h1": "El elemento <code class='language-html'>style</code>",
+   "description": "Definición del elemento style."
+  },
+  {
+   "name": "mCcomentarios.html",
+   "title": "Comentarios",
+   "description": "Estructura de los comentarios de CSS."
+  },
+  {
+   "name": "mDreglas.html",
+   "title": "Reglas de estilo",
+   "description": "Estructura de las reglas de estilo."
+  },
+  {
+   "name": "mEselTipo.html",
+   "title": "Selector de tipo",
+   "description": "Selector de tipo en CSS."
+  },
+  {
+   "name": "mFpropiedades.html",
+   "title": "Propiedades",
+   "description": "Estructura de las propiedades en CSS."
+  },
+  {
+   "name": "mGcustom.html",
+   "title": "Propiedades personalizadas",
+   "description": "Propiedades personalizadas en CSS."
+  },
+  {
+   "name": "mHresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «4. CSS»."
+  }
+ ]
+}

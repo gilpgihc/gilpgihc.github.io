@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>CSS - GilPG IHC</title>
+ <meta name="description" content="Página para imprimir de la lección «4. CSS».">
+ <style>
+ :root {
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+  .pruebaDeEscritorio {page-break-before: always;}
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla3,
+ .pruebaDeEscritorio table.tabla3 th,
+ .pruebaDeEscritorio table.tabla3 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+<body class="print">
+   <h1 class="leccion">4. CSS</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se introduce el lenguaje CSS.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m04css/mAejemplo.html">CSS</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04css/mBstyle.html">El elemento <code class='language-html'>style</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04css/mCcomentarios.html">Comentarios</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04css/mDreglas.html">Reglas de estilo</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04css/mEselTipo.html">Selector de tipo</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04css/mFpropiedades.html">Propiedades</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04css/mGcustom.html">Propiedades personalizadas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04css/mHresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. CSS</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Las
+    <dfn>hojas de estilo</dfn>,
+    también conocidas como
+    <dfn>Cascade Style Sheets (CSS)</dfn>
+    permiten definir la apariencia de una página escrita en un lenguaje de
+    marcas.
+   </p>
+  </li>
+  <li>
+   <p>
+    La página oficial de CSS3 está en
+    <a href="https://www.w3.org/Style/CSS/"
+      target="_blank">https://www.w3.org/Style/CSS/</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    La sintaxis de CSS3 está en
+    <a href="https://www.w3.org/TR/css-syntax-3/"
+      target="_blank">https://www.w3.org/TR/css-syntax-3/</a>
+   </p>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <section>
+   <h1>Salida</h1>
+   <iframe src="/src/m04css/Aejemplo.html" height="300"></iframe>
+   <p class="noPrint">
+    <a target="_blank" href="/src/m04css/Aejemplo.html">Ábrelo en otra
+     pestaña.</a>
+   </p>
+   <p class="noPrint">
+    <a target="_blank"
+      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ECSS%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20h1%20%7B%0A%20%20%20color%3A%20yellow%3B%0A%20%20%20background-color%3A%20blue%3B%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20color%3A%20white%3B%0A%20%20%20background-color%3A%20black%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3ECSS%3C%2Fh1%3E%0A%20%3Cp%3EEste%20es%20un%20ejemplo.%3C%2Fp%3E%0A%20%3Cp%3EAprende%20CSS.%3C%2Fp%3E%0A%20%3Ch2%3ESubsecci%C3%B3n%3C%2Fh2%3E%0A%20%3Cp%3EJuega%20con%20colores.%3C%2Fp%3E%0A%20%3Cfooter%3E%0A%20%20%3Cp%3E%0A%20%20%20%C2%A9%202021%0A%20%20%20Gilberto%20Pacheco%20Gallegos.%0A%20%20%3C%2Fp%3E%0A%20%3C%2Ffooter%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+     Revísalo en gilpgedit.
+    </a>
+   </p>
+  </section>
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+       style="color: #ff0000;">html</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+       style="color: #ff0000;">lang</span>=<span
+       style="color: #0000ff;">"es"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;head&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">charset</span>=<span
+       style="color: #0000ff;">"UTF-8"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">name</span>=<span
+       style="color: #0000ff;">"viewport"</span></div>
+    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+       style="color: #0000ff;">"width=device-width"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>CSS<span
+       style="color: #800000;">&lt;/title&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">color</span>:&nbsp;<span
+       style="color: #0451a5;">yellow</span>;</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">background-color</span>:&nbsp;<span
+       style="color: #0451a5;">blue</span>;</div>
+    <div>&nbsp;&nbsp;}</div><br>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">p</span>&nbsp;{</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">color</span>:&nbsp;<span
+       style="color: #0451a5;">white</span>;</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">background-color</span>:&nbsp;<span
+       style="color: #0451a5;">black</span>;</div>
+    <div>&nbsp;&nbsp;}</div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+    <div><span style="color: #800000;">&lt;body&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>CSS<span
+       style="color: #800000;">&lt;/h1&gt;</span></div>
+    <div>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Este&nbsp;es&nbsp;un&nbsp;ejemplo.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Aprende&nbsp;CSS.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;h2&gt;</span>Subsección<span
+       style="color: #800000;">&lt;/h2&gt;</span></div>
+    <div>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Juega&nbsp;con&nbsp;colores.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+    <div>&nbsp;&nbsp;&nbsp;©&nbsp;2021</div>
+    <div>&nbsp;&nbsp;&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.</div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+   </div>
+  </muestra-codigo>
+ </div>
+</section>
+      </section>
+     <section >
+         <h1 >B. El elemento <code class='language-html'>style</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    El elemento
+    <dfn><code class="language-html">style</code></dfn>
+    debe colocarse en el elemento de tipo
+    <dfn><code class="language-html">head</code></dfn>
+    y contiene el código CSS3 que define la apariencia de la página.
+   </p>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>CSS<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div class=resaltado>&nbsp;<span style="color: #800000;">&lt;style&gt;</span>
+   </div>
+   <div class=resaltado>&nbsp;&nbsp;<span
+      style="color: #800000;">h1</span>&nbsp;{</div>
+   <div class=resaltado>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div class=resaltado>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">blue</span>;</div>
+   <div class=resaltado>&nbsp;&nbsp;}</div><br>
+   <div class=resaltado>&nbsp;&nbsp;<span
+      style="color: #800000;">p</span>&nbsp;{</div>
+   <div class=resaltado>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">white</span>;</div>
+   <div class=resaltado>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">black</span>;</div>
+   <div class=resaltado>&nbsp;&nbsp;}</div>
+   <div class=resaltado>&nbsp;<span
+      style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;...</div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</section>
+      </section>
+     <section >
+         <h1 >C. Comentarios</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Los comentarios inician con
+    <code class="language-css" style="color: #098658;">/*</code>
+    y terminan con
+    <code class="language-css" style="color: #098658;">*/</code>.
+    Pueden ocupar más de un renglón.
+   </p>
+  </li>
+  <li>
+   <p>
+    Se colocan dentro de un elemento
+    <code class="language-css">style</code>.
+   </p>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #008000;">/*&nbsp;Comentario&nbsp;sobre&nbsp;h1.&nbsp;&nbsp;*/</span>
+   </div>
+   <div>&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;&nbsp;<span
+      style="color: #008000;">/*Sobre&nbsp;color.*/</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">blue</span>;</div>
+   <div>&nbsp;}</div>
+   <div><span style="color: #800000;">&lt;/style&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</section>
+      </section>
+     <section >
+         <h1 >D. Reglas de estilo</h1><div class="lectura">
+ <dl>
+  <dt><dfn>selector</dfn></dt>
+  <dd>
+   <p>
+    Una expresión que permite identificar a uno o varios elementos de
+    HTML.
+   </p>
+  </dd>
+  <dt><dfn>lista de selectores</dfn></dt>
+  <dd>
+   <p>
+    Una secuencia de selectores separadas por coma
+    (<code class="language-css">,</code>).
+   </p>
+  </dd>
+  <dt><dfn>declaración de propiedad</dfn></dt>
+  <dd>
+   <p>
+    Una expresión del tipo
+    <code
+      class="language-css"><var>nombre</var>: <em>valor</em></code>
+   </p>
+  </dd>
+  <dt><dfn>lista de declaraciones de propiedades</dfn></dt>
+  <dd>
+   <p>
+    Una secuencia de declaraciones de propiedades separadas por punto
+    y coma
+    (<code class="language-css">;</code>)
+    y encerradas entre llaves
+    (<code class="language-css">{</code>
+    <code class="language-css">}</code>).
+   </p>
+  </dd>
+  <dt><dfn>regla de estilo</dfn></dt>
+  <dd>
+   <p>
+    Une lista de selectores con una lista de declaraciones de
+    propiedades.
+   </p>
+  </dd>
+ </dl>
+ <ul>
+  <li>
+   <p>
+    La definición de una regla de estilo está en
+    <a href="https://www.w3.org/TR/css-syntax-3/#style-rule"
+      target="_blank">https://www.w3.org/TR/css-syntax-3/#style-rule</a>
+   </p>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #008000;">/*&nbsp;Esta&nbsp;es&nbsp;una&nbsp;regla.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;*&nbsp;El&nbsp;selector&nbsp;es&nbsp;h1.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;*&nbsp;Sus&nbsp;propiedades&nbsp;están&nbsp;dentro&nbsp;de</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;*&nbsp;las&nbsp;llaves.&nbsp;*/</span>
+   </div>
+   <div>&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">blue</span>;</div>
+   <div>&nbsp;}&nbsp;<span
+      style="color: #008000;">/*&nbsp;Fin&nbsp;de&nbsp;la&nbsp;primera&nbsp;regla.&nbsp;*/</span>
+   </div><br>
+   <div>&nbsp;<span
+      style="color: #008000;">/*&nbsp;Esta&nbsp;es&nbsp;otra&nbsp;regla.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;*&nbsp;El&nbsp;selector&nbsp;es&nbsp;p.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;*&nbsp;Sus&nbsp;propiedades&nbsp;están&nbsp;dentro&nbsp;de</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;*&nbsp;las&nbsp;llaves.&nbsp;*/</span>
+   </div>
+   <div>&nbsp;<span style="color: #800000;">p</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">white</span>;</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">black</span>;</div>
+   <div>&nbsp;}&nbsp;<span
+      style="color: #008000;">/*&nbsp;Fin&nbsp;de&nbsp;la&nbsp;segunda&nbsp;regla.&nbsp;*/</span>
+   </div>
+   <div><span style="color: #800000;">&lt;/style&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</section>
+      </section>
+     <section >
+         <h1 >E. Selector de tipo</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Una forma simple de selector es el <dfn>selector de tipo</dfn>, que
+    consiste en usar el tipo de un elemento. Hace que una regla se aplique
+    a todos los elementos de ese tipo.
+   </p>
+  </li>
+  <li>
+   <p>
+    La definición de una selector de tipo está en
+    <a href="https://www.w3.org/TR/selectors-3/#type-selectors"
+      target="_blank">https://www.w3.org/TR/selectors-3/#type-selectors</a>
+   </p>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;El&nbsp;selector</span></div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;h1</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;hace&nbsp;que&nbsp;las&nbsp;propiedades&nbsp;de</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;esta&nbsp;regla&nbsp;se&nbsp;apliquen&nbsp;a&nbsp;todos</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;los&nbsp;elementos&nbsp;de&nbsp;tipo</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;h1.&nbsp;*/</span>
+   </div>
+   <div class=resaltado>&nbsp;&nbsp;<span
+      style="color: #800000;">h1</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">blue</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;El&nbsp;selector</span></div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;p</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;hace&nbsp;que&nbsp;las&nbsp;propiedades&nbsp;de</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;esta&nbsp;regla&nbsp;se&nbsp;apliquen&nbsp;a&nbsp;todos</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;los&nbsp;elementos&nbsp;de&nbsp;tipo</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;p.&nbsp;*/</span>
+   </div>
+   <div class=resaltado2>&nbsp;&nbsp;<span
+      style="color: #800000;">p</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">white</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">black</span>;</div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;h1</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
+   </div>
+   <div>&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class=resaltado>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>CSS<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;p</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
+   </div>
+   <div class=resaltado2>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>Este&nbsp;es&nbsp;un&nbsp;ejemplo.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;p</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
+   </div>
+   <div class=resaltado2>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>Aprende&nbsp;CSS.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h2&gt;</span>Subsección<span
+      style="color: #800000;">&lt;/h2&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;p</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
+   </div>
+   <div class=resaltado2>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>Juega&nbsp;con&nbsp;colores.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
+   </div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;&nbsp;©&nbsp;2021</div>
+   <div class=resaltado2>
+    &nbsp;&nbsp;&nbsp;&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.</div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</section>
+      </section>
+     <section >
+         <h1 >F. Propiedades</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Se declaran con una expresión del tipo</p>
+   <p>
+    <code
+      class="language-css"><var>nombre</var>: <em>valor</em></code>
+   </p>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div class=resaltado>&nbsp;&nbsp;<span
+      style="color: #800000;">h1</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;Esta&nbsp;es&nbsp;la&nbsp;propiedad</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;color.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;En&nbsp;este&nbsp;caso&nbsp;se&nbsp;aplica</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;a&nbsp;los&nbsp;elementos&nbsp;tipo</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;h1.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Su&nbsp;valor&nbsp;es&nbsp;yellow.&nbsp;*/</span>
+   </div>
+   <div class=resaltado>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;Esta&nbsp;es&nbsp;la&nbsp;propiedad</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;background-color.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;En&nbsp;este&nbsp;caso&nbsp;se&nbsp;aplica</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;a&nbsp;los&nbsp;elementos&nbsp;tipo</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;h1.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Su&nbsp;valor&nbsp;es&nbsp;blue.&nbsp;*/</span>
+   </div>
+   <div class=resaltado>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">blue</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div class=resaltado2>&nbsp;&nbsp;<span
+      style="color: #800000;">p</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;Esta&nbsp;es&nbsp;la&nbsp;propiedad</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;color.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;En&nbsp;este&nbsp;caso&nbsp;se&nbsp;aplica</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;a&nbsp;los&nbsp;elementos&nbsp;tipo</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;p.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Su&nbsp;valor&nbsp;es&nbsp;white.&nbsp;*/</span>
+   </div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">white</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;Esta&nbsp;es&nbsp;la&nbsp;propiedad</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;background-color.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;En&nbsp;este&nbsp;caso&nbsp;se&nbsp;aplica</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;a&nbsp;los&nbsp;elementos&nbsp;tipo</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;p.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Su&nbsp;valor&nbsp;es&nbsp;black.&nbsp;*/</span>
+   </div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">black</span>;</div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div class=resaltado>&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>CSS<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div class=resaltado2>&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>Este&nbsp;es&nbsp;un&nbsp;ejemplo.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div class=resaltado2>&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>Aprende&nbsp;CSS.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;h2&gt;</span>Subsección<span
+      style="color: #800000;">&lt;/h2&gt;</span></div>
+   <div class=resaltado2>&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span>Juega&nbsp;con&nbsp;colores.<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div>
+   <div class=resaltado2>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;©&nbsp;2021</div>
+   <div class=resaltado2>&nbsp;&nbsp;&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.
+   </div>
+   <div class=resaltado2>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</section>
+      </section>
+     <section >
+         <h1 >G. Propiedades personalizadas</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En CSS3 se pueden definir constantes y usar su valor a lo largo del
+    código CSS.
+   </p>
+  </li>
+  <li>
+   <p>
+    El nombre de la propiedad personalizada debe iniciar con 2 guiones
+    (<code class="language-css">--</code>).
+   </p>
+  </li>
+  <li>
+   <p>
+    Deben definirse en la regla para el elemento raíz, que en este caso es
+    (<code class="language-html">html</code>).
+   </p>
+  </li>
+  <li>
+   <p>
+    Para usar el valor, debe colocarse dentro de la expresión
+    <code class="language-css">var(--propiedad)</code>.
+   </p>
+  </li>
+  </li>
+ </ul>
+</div>
+<section>
+ <h2>Ejemplo</h2>
+ <div class="horizontal">
+  <section>
+   <h3>Salida</h3>
+   <iframe src="/src/m04css/Gcustom.html" height="300"></iframe>
+   <p class="noPrint">
+    <a target="_blank" href="/src/m04css/Gcustom.html">Ábrelo en otra
+     pestaña.</a>
+   </p>
+   <p class="noPrint">
+    <a target="_blank"
+      href="https://gilpgedit.github.io/#%3Chead%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--colTexto%3A%20yellow%3B%0A%20%20%20--colFondo%3A%20blue%3B%0A%20%20%7D%0A%0A%20%20h1%20%7B%0A%20%20%20color%3A%20var(--colTexto)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--colFondo)%3B%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20color%3A%20var(--colTexto)%3B%0A%20%20%20background-color%3A%20black%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3ECSS%3C%2Fh1%3E%0A%20%3Cp%3EEste%20es%20un%20ejemplo.%3C%2Fp%3E%0A%20%3Cp%3EAprende%20CSS.%3C%2Fp%3E%0A%20%3Ch2%3ESubsecci%C3%B3n%3C%2Fh2%3E%0A%20%3Cp%3EJuega%20con%20colores.%3C%2Fp%3E%0A%20%3Cfooter%3E%0A%20%20%3Cp%3E%0A%20%20%20%C2%A9%202021%0A%20%20%20Gilberto%20Pacheco%20Gallegos.%0A%20%20%3C%2Fp%3E%0A%20%3C%2Ffooter%3E%0A%3C%2Fbody%3E">
+     Revísalo en gilpgedit.
+    </a>
+   </p>
+  </section>
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #800000;">&lt;head&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">html</span>&nbsp;{</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">--colTexto</span>:&nbsp;<span
+       style="color: #0451a5;">yellow</span>;</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">--colFondo</span>:&nbsp;<span
+       style="color: #0451a5;">blue</span>;</div>
+    <div>&nbsp;&nbsp;}</div><br>
+    <div class=resaltado>&nbsp;&nbsp;<span
+       style="color: #800000;">h1</span>&nbsp;{</div>
+    <div class=resaltado>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">color</span>:&nbsp;<span
+       style="color: #795e26;">var</span>(<span
+       style="color: #001080;">--colTexto</span>);</div>
+    <div class=resaltado>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">background-color</span>:
+    </div>
+    <div class=resaltado>&nbsp;&nbsp;&nbsp;&nbsp;<span
+       style="color: #795e26;">var</span>(<span
+       style="color: #001080;">--colFondo</span>);</div>
+    <div class=resaltado>&nbsp;&nbsp;}</div><br>
+    <div class=resaltado2>&nbsp;&nbsp;<span
+       style="color: #800000;">p</span>&nbsp;{</div>
+    <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">color</span>:&nbsp;<span
+       style="color: #795e26;">var</span>(<span
+       style="color: #001080;">--colTexto</span>);</div>
+    <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">background-color</span>:&nbsp;<span
+       style="color: #0451a5;">black</span>;</div>
+    <div class=resaltado2>&nbsp;&nbsp;}</div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+    <div><span style="color: #800000;">&lt;body&gt;</span></div>
+    <div class=resaltado>&nbsp;<span
+       style="color: #800000;">&lt;h1&gt;</span>CSS<span
+       style="color: #800000;">&lt;/h1&gt;</span></div>
+    <div class=resaltado2>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Este&nbsp;es&nbsp;un&nbsp;ejemplo.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div class=resaltado2>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Aprende&nbsp;CSS.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;h2&gt;</span>Subsección<span
+       style="color: #800000;">&lt;/h2&gt;</span></div>
+    <div class=resaltado2>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Juega&nbsp;con&nbsp;colores.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div>
+    <div class=resaltado2>&nbsp;&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span></div>
+    <div class=resaltado2>&nbsp;&nbsp;&nbsp;©&nbsp;2021</div>
+    <div class=resaltado2>&nbsp;&nbsp;&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.
+    </div>
+    <div class=resaltado2>&nbsp;&nbsp;<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+   </div>
+  </muestra-codigo>
+ </div>
+</section>
+      </section>
+     <section >
+         <h1 >H. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>En esta lección se definieron los siguientes conceptos:</p>
+   <ul>
+    <li>
+     <p>El elemento <code class='language-html'>style</code>.</p>
+    </li>
+    <li>
+     <p>Comentarios de CSS.</p>
+    </li>
+    <li>
+     <p>Reglas de estilo de CSS.</p>
+    </li>
+    <li>
+     <p>Selector de tipo de CSS.</p>
+    </li>
+    <li>
+     <p>Propiedades de CSS.</p>
+    </li>
+    <li>
+     <p>Propiedades personalizadas de CSS.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+</body>
+</html>

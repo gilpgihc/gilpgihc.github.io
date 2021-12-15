@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>Posicionamiento - GilPG IHC</title>
+ <meta name="description" content="Página para imprimir de la lección «8. Posicionamiento».">
+ <style>
+ :root {
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+  .pruebaDeEscritorio {page-break-before: always;}
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla3,
+ .pruebaDeEscritorio table.tabla3 th,
+ .pruebaDeEscritorio table.tabla3 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+<body class="print">
+   <h1 class="leccion">8. Posicionamiento</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presenta el concepto de posicionamiento.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m08posicionamiento/mApropiedades.html">Propiedades de posicionamiento</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m08posicionamiento/mBfixed.html">El posicionamiento <code class='language-css'>fixed</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m08posicionamiento/mCrelative.html">El posicionamiento <code class='language-css'>relative</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m08posicionamiento/mDabsolute.html">El posicionamiento <code class='language-css'>absolute</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m08posicionamiento/mEsticky.html">El posicionamiento <code class='language-css'>sticky</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m08posicionamiento/mFresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Propiedades de posicionamiento</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Es posible cambiar el modelo de cajas, usando un método que permita
+    controlar por coordenadas la posición de algunos elementos dentro de la
+    ventana. Para ello se utilizan las siguientes propiedades:
+   </p>
+   <dl>
+   <dt><dfn><code class="language-css">position</code></dfn></dt>
+   <dd>
+    <p>Controla la forma de colocar un elemento en la ventana. </p>
+    <p>
+     Los valores que puede tomar se explican a lo largo de esta lección y
+     son:</p>
+    <dl>
+     <dt><dfn><code class="language-css">static</code></dfn></dt>
+     <dd>
+      <p>
+       Es el posicionamiento normal y no usa las propiedades de
+       posicionamiento.
+      </p>
+     </dd>
+     <dt><dfn><code class="language-css">fixed</code></dfn></dt>
+     <dd>
+      <p>Es relativo a la ventana del navegador.</p>
+     </dd>
+     <dt><dfn><code class="language-css">relative</code></dfn></dt>
+     <dd>
+      <p>Es relativo a la posición normal del elemento.</p>
+     </dd>
+     <dt><dfn><code class="language-css">absolute</code></dfn></dt>
+     <dd>
+      <p>
+       Es relativo a la posición de su ancestro más inmediato que no
+       tenga posicionamiento
+       <code class="language-css">static</code>.
+      </p>
+     </dd>
+     <dt><code class="language-css">sticky</code></dt>
+     <dd>
+      <p>
+       Usa posicionamiento
+       <code class="language-css">relative</code>
+       mientras el elemento está en el área visible de la ventana y se
+       vuelve
+       <code class="language-css">fixed</code>
+       cuando sale del área visible de la ventana.
+      </p>
+     </dd>
+    </dl>
+       </dd>
+   <dt><dfn><code class="language-css">top</code></dfn></dt>
+   <dd>
+    <p>
+     Posición de la parte superior del elemento con respecto a la
+     posición original (posicionamiento
+     <code class="language-css">relative</code>) o al elemento
+     contenedor.
+    </p>
+   </dd>
+   <dt><dfn><code class="language-css">bottom</code></dfn></dt>
+   <dd>
+    <p>
+     Posición de la parte inferior del elemento con respecto a la
+     posición original (posicionamiento
+     <code class="language-css">relative</code>) o al elemento
+     contenedor.
+    </p>
+   </dd>
+   <dt><dfn><code class="language-css">left</code></dfn></dt>
+   <dd>
+    <p>
+     Posición de la parte izquierda del elemento con respecto a la
+     posición original (posicionamiento
+     <code class="language-css">relative</code>)
+     o al elemento contenedor.
+    </p>
+   </dd>
+   <dt><dfn><code class="language-css">right</code></dfn></dt>
+   <dd>
+    <p>
+     Posición de la parte izquierda del elemento con respecto a la
+     posición original (posicionamiento
+     <code class="language-css">relative</code>)
+     o al elemento contenedor.
+    </p>
+   </dd>
+   <dt><code class="language-css">width</code></dt>
+   <dd>
+    <p>
+     Ancho de un elemento. Se indica usando un número decimal,
+     opcionalmente fraccionario, seguido de la unidad.
+    </p>
+   </dd>
+   <dt><code class="language-css">height</code></dt>
+   <dd>
+    <p>
+     Altura de un elemento. Se indica usando un número decimal,
+     opcionalmente fraccionario, seguido de la unidad.
+    </p>
+   </dd>
+   <dt><dfn><code class="language-css">z-index</code></dfn></dt>
+   <dd>
+    <p>
+     Los elementos se pueden colocar en capas y ocultarse unos a otros.
+     Un elemento se coloca sobre los elementos hermanos con
+     posicionamiento no
+     <code class="language-css">static</code>
+     que aparecen antes en el texto. La propiedad
+     <code class="language-css">z-index</code>
+     se usa para cambiar ese orden. El número
+     <code class="language-css">z-index</code>
+     más grande está arriba y tapa a todos los que tienen un valor
+     menor. Empieza desde 1.
+    </p>
+   </dd>
+  </dl>
+ </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >B. El posicionamiento <code class='language-css'>fixed</code></h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m08posicionamiento/Afixed.html"></iframe>
+  <p class="noPrint">
+   <a target="_blank" href="/src/m08posicionamiento/Afixed.html">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%0A%20%20Posicionamiento%20fixed%0A%20%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20span%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20right%3A%200%3B%0A%20%20%20background-color%3A%20yellow%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3E%0A%20%20Posicionamiento%0A%20%20%3Cspan%3Efixed%3C%2Fspan%3E%0A%20%3C%2Fh1%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span></div>
+   <div>&nbsp;&nbsp;Posicionamiento&nbsp;fixed</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">span</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">position</span>:&nbsp;<span
+      style="color: #0451a5;">fixed</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">top</span>:&nbsp;<span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">right</span>:&nbsp;<span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span></div>
+   <div>&nbsp;&nbsp;Posicionamiento</div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;span&gt;</span>fixed<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >C. El posicionamiento <code class='language-css'>relative</code></h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m08posicionamiento/Brelative.html" height="230"></iframe>
+  <p class="noPrint">
+   <a target="_blank" href="/src/m08posicionamiento/Brelative.html">Ábrelo en
+    otra pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%0A%20%20Posicionamiento%20relative%0A%20%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20span%20%7B%0A%20%20%20position%3A%20relative%3B%0A%20%20%20top%3A%201rem%3B%0A%20%20%20left%3A%201rem%3B%0A%20%20%20background-color%3A%20yellow%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3E%0A%20%20Posicionamiento%0A%20%20%3Cspan%3Erelative%3C%2Fspan%3E%0A%20%3C%2Fh1%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span></div>
+   <div>&nbsp;&nbsp;Posicionamiento&nbsp;relative</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">span</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">position</span>:&nbsp;<span
+      style="color: #0451a5;">relative</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">top</span>:&nbsp;<span
+      style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">left</span>:&nbsp;<span
+      style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span></div>
+   <div>&nbsp;&nbsp;Posicionamiento</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span&gt;</span>relative<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >D. El posicionamiento <code class='language-css'>absolute</code></h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m08posicionamiento/Cabsolute.html" height="280"></iframe>
+  <p class="noPrint">
+   <a target="_blank" href="/src/m08posicionamiento/Cabsolute.html">Ábrelo en
+    otra pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%0A%20%20Posicionamiento%20absolute%0A%20%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20h1%20%7B%0A%20%20%20position%3A%20absolute%3B%0A%20%20%20bottom%3A%200%3B%0A%20%20%20height%3A%206rem%3B%0A%20%20%20left%3A%202rem%3B%0A%20%20%20right%3A%202rem%3B%0A%20%20%20background-color%3A%20yellow%3B%0A%20%20%7D%0A%0A%20%20p%20%7B%0A%20%20%20position%3A%20relative%3B%0A%20%20%20background-color%3A%20chartreuse%0A%20%20%7D%0A%0A%20%20footer%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20right%3A%200%3B%0A%20%20%20width%3A%2010rem%3B%0A%20%20%20background-color%3A%20yellow%3B%0A%20%20%7D%0A%0A%20%20span%20%7B%0A%20%20%20position%3A%20absolute%3B%0A%20%20%20top%3A%200%3B%0A%20%20%20left%3A%200%3B%0A%20%20%20background-color%3A%20cyan%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3E%0A%20%20Posicionamiento%0A%20%20%3Cspan%3Eabsolute%20(h1)%3C%2Fspan%3E%0A%20%3C%2Fh1%3E%0A%20Bla%2C%20bla%2C%20bla%0A%20%3Cp%3E%0A%20%20P%C3%A1rrafo%20relative%20con%0A%20%20%3Cspan%3Eabsolute%20(p)%3C%2Fspan%3E%0A%20%3C%2Fp%3E%0A%20%3Cdiv%3E%0A%20%20Este%20div%20contiene%0A%20%20%3Cspan%3Eabsolute%20(div)%3C%2Fspan%3E%0A%20%3C%2Fdiv%3E%0A%20%3Cfooter%3E%0A%20%20Este%20footer%20lleva%20otro%0A%20%20%3Cspan%3Eabsolute%20(footer)%3C%2Fspan%3E%0A%20%3C%2Ffooter%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span></div>
+   <div>&nbsp;&nbsp;Posicionamiento&nbsp;absolute</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">position</span>:&nbsp;<span
+      style="color: #0451a5;">absolute</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">bottom</span>:&nbsp;<span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">height</span>:&nbsp;<span
+      style="color: #098658;">6rem</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">left</span>:&nbsp;<span
+      style="color: #098658;">2rem</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">right</span>:&nbsp;<span
+      style="color: #098658;">2rem</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">p</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">position</span>:&nbsp;<span
+      style="color: #0451a5;">relative</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">chartreuse</span></div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">footer</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">position</span>:&nbsp;<span
+      style="color: #0451a5;">fixed</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">top</span>:&nbsp;<span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">right</span>:&nbsp;<span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">width</span>:&nbsp;<span
+      style="color: #098658;">10rem</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">span</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">position</span>:&nbsp;<span
+      style="color: #0451a5;">absolute</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">top</span>:&nbsp;<span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">left</span>:&nbsp;<span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">cyan</span>;</div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span></div>
+   <div>&nbsp;&nbsp;Posicionamiento</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span&gt;</span>absolute&nbsp;(h1)<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;Bla,&nbsp;bla,&nbsp;bla</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;Párrafo&nbsp;relative&nbsp;con</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span&gt;</span>absolute&nbsp;(p)<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;div&gt;</span></div>
+   <div>&nbsp;&nbsp;Este&nbsp;div&nbsp;contiene</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span&gt;</span>absolute&nbsp;(div)<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/div&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div>
+   <div>&nbsp;&nbsp;Este&nbsp;footer&nbsp;lleva&nbsp;otro</div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;span&gt;</span>absolute&nbsp;(footer)<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >E. El posicionamiento <code class='language-css'>sticky</code></h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m08posicionamiento/Dsticky.html" height="280"></iframe>
+  <p class="noPrint">
+   <a target="_blank" href="/src/m08posicionamiento/Dsticky.html">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%0A%20%20Posicionamiento%20sticky%0A%20%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20h1%20%7B%0A%20%20%20%2F*%20Algunas%20versiones%20de%20Safari%0A%20%20%20%20*%20no%20soportan%20%22sticky%22%2C%20pero%20s%C3%AD%0A%20%20%20%20*%20%22-webkit-sticky%22.%20%20*%2F%0A%20%20%20position%3A%20-webkit-sticky%3B%0A%20%20%20position%3A%20sticky%3B%0A%20%20%20top%3A%201rem%3B%0A%20%20%20background-color%3A%20yellow%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3EPosicionamiento%20sticky%3C%2Fh1%3E%0A%20%3Col%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%20%3Cli%3EX%3C%2Fli%3E%0A%20%3C%2Fol%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span></div>
+   <div>&nbsp;&nbsp;Posicionamiento&nbsp;sticky</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;Algunas&nbsp;versiones&nbsp;de&nbsp;Safari</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;no&nbsp;soportan&nbsp;"sticky",&nbsp;pero&nbsp;sí</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;"-webkit-sticky".&nbsp;&nbsp;*/</span>
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">position</span>:&nbsp;-webkit-sticky;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">position</span>:&nbsp;<span
+      style="color: #0451a5;">sticky</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">top</span>:&nbsp;<span
+      style="color: #098658;">1rem</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>Posicionamiento&nbsp;sticky<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;ol&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;li&gt;</span>X<span
+      style="color: #800000;">&lt;/li&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/ol&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >F. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>En esta lección se revisaron los siguientes conceptos:</p>
+   <ul>
+    <li>
+     <p>Propiedades de posicionamiento</p>
+    </li>
+    <li>
+     <p>El posicionamiento <code class='language-css'>fixed</code></p>
+    </li>
+    <li>
+     <p>El posicionamiento <code class='language-css'>relative</code></p>
+    </li>
+    <li>
+     <p>El posicionamiento <code class='language-css'>absolute</code></p>
+    </li>
+    <li>
+     <p>El posicionamiento <code class='language-css'>sticky</code></p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+</body>
+</html>

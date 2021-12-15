@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>La propiedad display - GilPG IHC</title>
+ <meta name="description" content="Página para imprimir de la lección «6. La propiedad display.">
+ <style>
+ :root {
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+  .pruebaDeEscritorio {page-break-before: always;}
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla3,
+ .pruebaDeEscritorio table.tabla3 th,
+ .pruebaDeEscritorio table.tabla3 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+<body class="print">
+   <h1 class="leccion">6. La propiedad <code class='language-css'>display</code></h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presenta el concepto de polimorfismo.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m06display/mAdiv.html">El elemento <code class='language-html'>div</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06display/mBspan.html">El elemento <code class='language-html'>span</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06display/mCdisplay.html">La propiedad <code class='language-css'>display</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06display/mDnone.html">El valor <code class='language-css'>none</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06display/mEinline.html">El valor <code class='language-css'>inline</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06display/mFblock.html">El valor <code class='language-css'>block</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06display/mGinlineBlock.html">El valor <code class='language-css'>inline-block</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06display/mHresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. El elemento <code class='language-html'>div</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Es un elemento sin significado que agrupa otros elementos.</p>
+  </li>
+  <li>
+   <p>
+    Puede usarse con los atributos
+    <code class="language-html">class</code>,
+    <code class="language-html">lang</code>
+    y
+    <code class="language-html">title</code>
+    para definir la semántica común a un grupo de elementos
+    consecutivos.
+   </p>
+  </li>
+  <li>
+   <p>
+    Puede usarse en un elemento
+    <code class="language-html">dl</code>
+    para envolver grupos de elementos
+    <code class="language-html">dt</code>
+    y
+    <code class="language-html">dd</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Se recomienda que el elemento
+    <code class="language-html">div</code>
+    se utilice como último recurso cuando no se pueda usar ningún otro
+    elemento.
+   </p>
+  </li>
+  <li>
+   <p>
+    El uso de elementos más apropiados propicia una mejor accesibilidad
+    para lectores y un mantenimiento más fácil para los autores.
+   </p>
+  </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element"
+      target="_blank">https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element</a>
+   </p>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <section>
+   <h1>Salida</h1>
+   <iframe src="/src/m06display/Adiv.html" height="200"></iframe>
+   <p class="noPrint">
+    <a target="_blank" href="/src/m06display/Adiv.html">Ábrelo en otra
+     pestaña.</a>
+   </p>
+   <p class="noPrint">
+    <a target="_blank"
+      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3Ediv%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20div%20%7B%0A%20%20%20color%3A%20chocolate%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Cdiv%3EUn%20div%20simple.%3C%2Fdiv%3E%0A%20%3Cdiv%3EOtro%20div%20simple.%3C%2Fdiv%3E%0A%20%3Cp%3EUn%20p%C3%A1rrafo%20simple.%3C%2Fp%3E%0A%20%3Cp%3EOtro%20p%C3%A1rrafo%20simple.%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+     Revísalo en gilpgedit.
+    </a>
+   </p>
+  </section>
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+       style="color: #ff0000;">html</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+       style="color: #ff0000;">lang</span>=<span
+       style="color: #0000ff;">"es"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;head&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">charset</span>=<span
+       style="color: #0000ff;">"UTF-8"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">name</span>=<span
+       style="color: #0000ff;">"viewport"</span></div>
+    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+       style="color: #0000ff;">"width=device-width"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>div<span
+       style="color: #800000;">&lt;/title&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">div</span>&nbsp;{</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">color</span>:&nbsp;<span
+       style="color: #0451a5;">chocolate</span>;</div>
+    <div>&nbsp;&nbsp;}</div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+    <div><span style="color: #800000;">&lt;body&gt;</span></div>
+    <div>&nbsp;<span
+       style="color: #800000;">&lt;div&gt;</span>Un&nbsp;div&nbsp;simple.<span
+       style="color: #800000;">&lt;/div&gt;</span></div>
+    <div>&nbsp;<span
+       style="color: #800000;">&lt;div&gt;</span>Otro&nbsp;div&nbsp;simple.<span
+       style="color: #800000;">&lt;/div&gt;</span></div>
+    <div>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Un&nbsp;párrafo&nbsp;simple.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Otro&nbsp;párrafo&nbsp;simple.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+   </div>
+  </muestra-codigo>
+ </div>
+</section>
+      </section>
+     <section >
+         <h1 >B. El elemento <code class='language-html'>span</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Es un elemento de <strong>fraseo</strong> sin significado.</p>
+  </li>
+  <li>
+   <p>
+    Puede usarse con los atributos globales, por ejemplo
+    <code class="language-html">class</code>,
+    <code class="language-html">lang</code>
+    o
+    <code class="language-html">dir</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Se recomienda que el elemento
+    <code class="language-html">span</code>
+    se utilice como último recurso cuando no se pueda usar ningún otro
+    elemento.
+   </p>
+  </li>
+  <li>
+   <p>
+    El uso de elementos más apropiados propicia una mejor accesibilidad
+    para lectores y un mantenimiento más fácil para los autores.
+   </p>
+  </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element"
+      target="_blank">https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element</a>
+   </p>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <section>
+   <h1>Salida</h1>
+   <iframe src="/src/m06display/Bspan.html" height="200"></iframe>
+   <p class="noPrint">
+    <a target="_blank" href="/src/m06display/Bspan.html">Ábrelo en otra
+     pestaña.</a>
+   </p>
+   <p class="noPrint">
+    <a target="_blank"
+      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3Espan%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20span%20%7B%0A%20%20%20color%3A%20magenta%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Cp%3E%0A%20%20Hola%2C%0A%20%20%3Cspan%3Eeste%20es%20un%20span.%3C%2Fspan%3E%0A%20%20M%C3%A1s%20texto%0A%20%20%3Cspan%3Eotro%20span.%3C%2Fspan%3E%0A%20%3C%2Fp%3E%0A%20%3Cp%3EOtro%20p%C3%A1rrafo%20simple.%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+     Revísalo en gilpgedit.
+    </a>
+   </p>
+  </section>
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+       style="color: #ff0000;">html</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+       style="color: #ff0000;">lang</span>=<span
+       style="color: #0000ff;">"es"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;head&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">charset</span>=<span
+       style="color: #0000ff;">"UTF-8"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">name</span>=<span
+       style="color: #0000ff;">"viewport"</span></div>
+    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+       style="color: #0000ff;">"width=device-width"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>span<span
+       style="color: #800000;">&lt;/title&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">span</span>&nbsp;{</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">color</span>:&nbsp;<span
+       style="color: #0451a5;">magenta</span>;</div>
+    <div>&nbsp;&nbsp;}</div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+    <div><span style="color: #800000;">&lt;body&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+    <div>&nbsp;&nbsp;Hola,</div>
+    <div>&nbsp;&nbsp;<span
+       style="color: #800000;">&lt;span&gt;</span>este&nbsp;es&nbsp;un&nbsp;span.<span
+       style="color: #800000;">&lt;/span&gt;</span></div>
+    <div>&nbsp;&nbsp;Más&nbsp;texto</div>
+    <div>&nbsp;&nbsp;<span
+       style="color: #800000;">&lt;span&gt;</span>otro&nbsp;span.<span
+       style="color: #800000;">&lt;/span&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Otro&nbsp;párrafo&nbsp;simple.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+   </div>
+  </muestra-codigo>
+ </div>
+</section>
+      </section>
+     <section >
+         <h1 >C. La propiedad <code class='language-css'>display</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Indica la forma en que un elemento se depliega.</p>
+  </li>
+  <li>
+   <p>
+    La definición oficial de esta propiedad está en proceso de cambio.
+   </p>
+  </li>
+  <li>
+   <p>El contenido de texto no tiene la propiedad display.</p>
+  </li>
+  <li>
+   <p>
+    Esta propiedad no afecta la semántica de los elementos, pero si
+    puede cambiar como se despliegan.
+   </p>
+  </li>
+  <li>
+   <p>
+    En las diapositivas siguientes se explican algunos de los valores
+    posibles.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >D. El valor <code class='language-css'>none</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    El elemento completo, incluyendo todo su contenido, el contenido de su
+    contenido y así sucesivamente no se muestra, incluyendo texto y cajas.
+   </p>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <section>
+   <h1>Salida</h1>
+   <iframe src="/src/m06display/Cnone.html" height="200"></iframe>
+   <p class="noPrint">
+    <a target="_blank" href="/src/m06display/Cnone.html">Ábrelo en otra
+     pestaña.</a>
+   </p>
+   <p class="noPrint">
+    <a target="_blank"
+      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3Einline%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20div%20%7B%0A%20%20%20display%3A%20none%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Cp%3EAhora%20me%20ves.%3C%2Fp%3E%0A%20%3Cdiv%3EAhora%20no%20me%20ves.%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+     Revísalo en gilpgedit.
+    </a>
+   </p>
+  </section>
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+       style="color: #ff0000;">html</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+       style="color: #ff0000;">lang</span>=<span
+       style="color: #0000ff;">"es"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;head&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">charset</span>=<span
+       style="color: #0000ff;">"UTF-8"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">name</span>=<span
+       style="color: #0000ff;">"viewport"</span></div>
+    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+       style="color: #0000ff;">"width=device-width"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>inline<span
+       style="color: #800000;">&lt;/title&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+    <div class=resaltado>&nbsp;&nbsp;<span
+       style="color: #800000;">div</span>&nbsp;{</div>
+    <div class=resaltado>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">display</span>:&nbsp;<span
+       style="color: #0451a5;">none</span></div>
+    <div class=resaltado>&nbsp;&nbsp;}</div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+    <div><span style="color: #800000;">&lt;body&gt;</span></div>
+    <div>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Ahora&nbsp;me&nbsp;ves.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div class=resaltado>&nbsp;<span
+       style="color: #800000;">&lt;div&gt;</span>Ahora&nbsp;no&nbsp;me&nbsp;ves.<span
+       style="color: #800000;">&lt;/div&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+   </div>
+  </muestra-codigo>
+ </div>
+</section>
+      </section>
+     <section >
+         <h1 >E. El valor <code class='language-css'>inline</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Solo contiene elementos de tipo
+    <code class="language-css">inline</code>,
+    <code class="language-css">inline-block</code>
+    y texto.
+   </p>
+  </li>
+  <li>
+   <p>
+    De forma predeterminada, los elementos de fraseo como
+    <code class="language-html">span</code>,
+    <code class="language-html">em</code>,
+    <code class="language-html">del</code>,
+    o
+    <code class="language-html">strong</code>
+    tienen este tipo de despliegue, pero se puede cambiar.
+   </p>
+  </li>
+  <li>
+   <p>
+    El contenido se despliega de forma horizontal, uno tras otro. Si
+    llega al final del elemento padre más próximo que sea
+    <code class="language-css">block</code> o
+    <code class="language-css">inline-block</code>,
+    continuá al inicio del siguiente renglón.
+   </p>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <section>
+   <h1>Salida</h1>
+   <iframe src="/src/m06display/Dinline.html" height="200"></iframe>
+   <p class="noPrint">
+    <a target="_blank" href="/src/m06display/Dinline.html">Ábrelo en otra
+     pestaña.</a>
+   </p>
+   <p class="noPrint">
+    <a target="_blank"
+      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3Einline%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20p%20%7B%0A%20%20%20display%3A%20inline%3B%0A%20%20%20color%3A%20olive%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Cdiv%3E%0A%20%20El%20texto%20es%20inline.%0A%20%20El%20texto%20es%20inline.%0A%20%20El%20texto%20es%20inline.%0A%20%20El%20texto%20es%20inline.%0A%20%20El%20texto%20es%20inline.%0A%20%20%3Cspan%3EEl%20span%20es%20inline.%3C%2Fspan%3E%0A%20%20%3Cp%3E%0A%20%20%20Este%20p%C3%A1rrafo%20es%20forzado%20a%20ser%0A%20%20%20inline.%0A%20%20%3C%2Fp%3E%0A%20%20%3Cem%3E%0A%20%20%20Esto%20es%20texto%20con%20%C3%A9nfasis.%0A%20%20%3C%2Fem%3E%0A%20%20%3Cstrong%3E%0A%20%20%20Esto%20es%20texto%20con%20%C3%A9nfasis%0A%20%20%20fuerte.%0A%20%20%3C%2Fstrong%3E%0A%20%20M%C3%A1s%20texto.%0A%20%20M%C3%A1s%20texto.%0A%20%20M%C3%A1s%20texto.%0A%20%20M%C3%A1s%20texto.%0A%20%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+     Revísalo en gilpgedit.
+    </a>
+   </p>
+  </section>
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+       style="color: #ff0000;">html</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+       style="color: #ff0000;">lang</span>=<span
+       style="color: #0000ff;">"es"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;head&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">charset</span>=<span
+       style="color: #0000ff;">"UTF-8"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">name</span>=<span
+       style="color: #0000ff;">"viewport"</span></div>
+    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+       style="color: #0000ff;">"width=device-width"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>inline<span
+       style="color: #800000;">&lt;/title&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">p</span>&nbsp;{</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">display</span>:&nbsp;<span
+       style="color: #0451a5;">inline</span>;</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">color</span>:&nbsp;<span
+       style="color: #0451a5;">olive</span></div>
+    <div>&nbsp;&nbsp;}</div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+    <div><span style="color: #800000;">&lt;body&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;div&gt;</span></div>
+    <div>&nbsp;&nbsp;El&nbsp;texto&nbsp;es&nbsp;inline.</div>
+    <div>&nbsp;&nbsp;El&nbsp;texto&nbsp;es&nbsp;inline.</div>
+    <div>&nbsp;&nbsp;El&nbsp;texto&nbsp;es&nbsp;inline.</div>
+    <div>&nbsp;&nbsp;El&nbsp;texto&nbsp;es&nbsp;inline.</div>
+    <div>&nbsp;&nbsp;El&nbsp;texto&nbsp;es&nbsp;inline.</div>
+    <div>&nbsp;&nbsp;<span
+       style="color: #800000;">&lt;span&gt;</span>El&nbsp;span&nbsp;es&nbsp;inline.<span
+       style="color: #800000;">&lt;/span&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+    <div>
+     &nbsp;&nbsp;&nbsp;Este&nbsp;párrafo&nbsp;es&nbsp;forzado&nbsp;a&nbsp;ser
+    </div>
+    <div>&nbsp;&nbsp;&nbsp;inline.</div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;em&gt;</span></div>
+    <div>&nbsp;&nbsp;&nbsp;Esto&nbsp;es&nbsp;texto&nbsp;con&nbsp;énfasis.</div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/em&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;strong&gt;</span></div>
+    <div>&nbsp;&nbsp;&nbsp;Esto&nbsp;es&nbsp;texto&nbsp;con&nbsp;énfasis</div>
+    <div>&nbsp;&nbsp;&nbsp;fuerte.</div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/strong&gt;</span></div>
+    <div>&nbsp;&nbsp;Más&nbsp;texto.</div>
+    <div>&nbsp;&nbsp;Más&nbsp;texto.</div>
+    <div>&nbsp;&nbsp;Más&nbsp;texto.</div>
+    <div>&nbsp;&nbsp;Más&nbsp;texto.</div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/div&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+   </div>
+  </muestra-codigo>
+ </div>
+</section>
+      </section>
+     <section >
+         <h1 >F. El valor <code class='language-css'>block</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Contiene elementos de cualquir tipo de despliegue.</p>
+  </li>
+  <li>
+   <p>
+    De forma predeterminada, los elementos de agrupamiento como
+    <code class="language-html">p</code>,
+    <code class="language-html">header</code>
+    <code class="language-html">footer</code>
+    o
+    <code class="language-html">div</code>
+    tienen este tipo de despliegue, pero se puede cambiar.
+   </p>
+  </li>
+  <li>
+   <p>
+    Si contiene solo elementos de despliegue
+    <code class="language-css">inline</code>,
+    <code class="language-css">inline-block</code>
+    y texto, estos se despliegan de forma horizontal uno tras otro,
+    iniciando en la parte superior del elemento. Si llega al final
+    de un renglón, continuá al inicio del siguiente.
+   </p>
+  </li>
+  <li>
+   <p>
+    Si contiene solo elementos de despliegue
+    <code class="language-css">block</code>,
+    estos se despliegan de forma vertical uno tras otro,
+    utilizando todo el ancho permitido por el elemento que los
+    contiene.
+   </p>
+  </li>
+  <li>
+   <p>
+    Si contiene mezclados elementos
+    <code class="language-css">inline</code>,
+    <code class="language-css">inline-block</code>,
+    texto y
+    <code class="language-css">block</code>,
+    los
+    <code class="language-css">inline</code>,
+    <code class="language-css">inline-block</code>
+    y textos consecutivos se agrupan en una caja de tipo
+    <code class="language-css">block</code>
+    imaginaria y se aplica el despliegue cuando todos los elementos
+    son de tipo
+    <code class="language-css">block</code>.
+   </p>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <section>
+   <h1>Salida</h1>
+   <iframe src="/src/m06display/Eblock.html" height="410"></iframe>
+   <p class="noPrint">
+    <a target="_blank" href="/src/m06display/Eblock.html">Ábrelo en otra
+     pestaña.</a>
+   </p>
+   <p class="noPrint">
+    <a target="_blank"
+      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3Eblock%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20div%20%7B%0A%20%20%20background-color%3A%20yellow%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3Eblock%3C%2Fh1%3E%0A%20%3Cp%3E%0A%20%20En%20este%20ejemplo%2C%20body%20solo%0A%20%20tiene%20elementos%20de%20bloque.%0A%20%3C%2Fp%3E%0A%20%3Cp%3E%0A%20%20Este%20p%C3%A1rrafo%20solo%20tiene%20contenido%0A%20%20inline%20e%20inline-block.%0A%20%20%3Cem%3EUn%20%C3%A9nfasis%20inline.%3C%2Fem%3E%0A%20%20%3Cbutton%3E%0A%20%20%20Un%20bot%C3%B3n%20inline-block%2C%0A%20%20%20inline-block%2C%20inline-block%0A%20%20%3C%2Fbutton%3E%0A%20%20%3Cspan%3E%0A%20%20%20Un%20span%20inline%2C%20inline%2C%20inline%2C%0A%20%20%20inline.%0A%20%20%3C%2Fspan%3E%0A%20%3C%2Fp%3E%0A%20%3Cdiv%3E%0A%20%20Este%20div%20tiene%20contenido%0A%20%20mezclado.%0A%20%20%3Cem%3E%0A%20%20%20Este%20es%20un%20%C3%A9nfasis%20inline.%0A%20%20%3C%2Fem%3E%0A%20%20%3Cstrong%3E%0A%20%20%20Este%20es%20un%20strong%20inline.%0A%20%20%3C%2Fstrong%3E%0A%20%20%3Cbutton%3E%0A%20%20%20Este%20es%20un%20bot%C3%B3n%20inline-block%0A%20%20%3C%2Fbutton%3E%0A%20%20%3Cp%3E%0A%20%20%20Este%20p%C3%A1rrafo%20solo%20contiene%0A%20%20%20inline%20e%20inline-block.%0A%20%20%20%3Cem%3EUn%20%C3%A9nfasis%20inline.%3C%2Fem%3E%0A%20%20%20%3Cbutton%3E%0A%20%20%20%20Un%20bot%C3%B3n%20inline-block%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%20%3Cspan%3EUn%20span%20inline.%3C%2Fspan%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+     Revísalo en gilpgedit.
+    </a>
+   </p>
+  </section>
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+       style="color: #ff0000;">html</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+       style="color: #ff0000;">lang</span>=<span
+       style="color: #0000ff;">"es"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;head&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">charset</span>=<span
+       style="color: #0000ff;">"UTF-8"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">name</span>=<span
+       style="color: #0000ff;">"viewport"</span></div>
+    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+       style="color: #0000ff;">"width=device-width"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>block<span
+       style="color: #800000;">&lt;/title&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">div</span>&nbsp;{</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">background-color</span>:&nbsp;<span
+       style="color: #0451a5;">yellow</span>;</div>
+    <div>&nbsp;&nbsp;}</div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+    <div><span style="color: #800000;">&lt;body&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>block<span
+       style="color: #800000;">&lt;/h1&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+    <div>&nbsp;&nbsp;En&nbsp;este&nbsp;ejemplo,&nbsp;body&nbsp;solo</div>
+    <div>&nbsp;&nbsp;tiene&nbsp;elementos&nbsp;de&nbsp;bloque.</div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+    <div>&nbsp;&nbsp;Este&nbsp;párrafo&nbsp;solo&nbsp;tiene&nbsp;contenido</div>
+    <div>&nbsp;&nbsp;inline&nbsp;e&nbsp;inline-block.</div>
+    <div>&nbsp;&nbsp;<span
+       style="color: #800000;">&lt;em&gt;</span>Un&nbsp;énfasis&nbsp;inline.<span
+       style="color: #800000;">&lt;/em&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;button&gt;</span></div>
+    <div>&nbsp;&nbsp;&nbsp;Un&nbsp;botón&nbsp;inline-block,</div>
+    <div>&nbsp;&nbsp;&nbsp;inline-block,&nbsp;inline-block</div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/button&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;span&gt;</span></div>
+    <div>&nbsp;&nbsp;&nbsp;Un&nbsp;span&nbsp;inline,&nbsp;inline,&nbsp;inline,
+    </div>
+    <div>&nbsp;&nbsp;&nbsp;inline.</div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;div&gt;</span></div>
+    <div>&nbsp;&nbsp;Este&nbsp;div&nbsp;tiene&nbsp;contenido</div>
+    <div>&nbsp;&nbsp;mezclado.</div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;em&gt;</span></div>
+    <div>&nbsp;&nbsp;&nbsp;Este&nbsp;es&nbsp;un&nbsp;énfasis&nbsp;inline.</div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/em&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;strong&gt;</span></div>
+    <div>&nbsp;&nbsp;&nbsp;Este&nbsp;es&nbsp;un&nbsp;strong&nbsp;inline.</div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/strong&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;button&gt;</span></div>
+    <div>&nbsp;&nbsp;&nbsp;Este&nbsp;es&nbsp;un&nbsp;botón&nbsp;inline-block
+    </div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/button&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+    <div>&nbsp;&nbsp;&nbsp;Este&nbsp;párrafo&nbsp;solo&nbsp;contiene</div>
+    <div>&nbsp;&nbsp;&nbsp;inline&nbsp;e&nbsp;inline-block.</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #800000;">&lt;em&gt;</span>Un&nbsp;énfasis&nbsp;inline.<span
+       style="color: #800000;">&lt;/em&gt;</span></div>
+    <div>&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;button&gt;</span>
+    </div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;Un&nbsp;botón&nbsp;inline-block</div>
+    <div>&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;/button&gt;</span>
+    </div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #800000;">&lt;span&gt;</span>Un&nbsp;span&nbsp;inline.<span
+       style="color: #800000;">&lt;/span&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/div&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+   </div>
+  </muestra-codigo>
+ </div>
+</section>
+      </section>
+     <section >
+         <h1 >G. El valor <code class='language-css'>inline-block</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>El nombre de este tipo de despliegue está por cambiar.</p>
+  </li>
+  <li>
+   <p>
+    De forma predeterminada, los elementos de formulario como
+    <code class="language-html">button</code>,
+    o
+    <code class="language-html">input</code>
+    tienen este tipo de despliegue, pero se puede cambiar.
+   </p>
+  </li>
+  <li>
+   <p>
+    Su contenido sigue las reglas de un display
+    <code class="language-css">block</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Sus padres lo ven como un elemento
+    <code class="language-css">inline</code>,
+    pero el elemento ocupa un solo renglón del elemento padre más
+    próximo que sea
+    <code class="language-css">block</code> o
+    <code class="language-css">inline-block</code>.
+   </p>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <section>
+   <h1>Salida</h1>
+   <iframe src="/src/m06display/Finline-block.html" height="200"></iframe>
+   <p class="noPrint">
+    <a target="_blank" href="/src/m06display/Finline-block.html">Ábrelo en otra
+     pestaña.</a>
+   </p>
+   <p class="noPrint">
+    <a target="_blank"
+      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3Einline-block%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20span%20%7B%0A%20%20%20display%3A%20inline-block%3B%0A%20%20%20background-color%3A%20yellow%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Cp%3E%0A%20%20Texto%2C%20texto%2C%20texto%0A%20%20%3Cspan%3E%0A%20%20%20Este%20es%20un%20span%20forzado%20a%20ser%0A%20%20%20inline-block%2C%20inline-block%2C%0A%20%20%20inline-block%2C%20inline-block.%0A%20%20%3C%2Fspan%3E%0A%20%20%3Cbutton%3E%0A%20%20%20Este%20es%20un%20bot%C3%B3n%20inline-block%2C%0A%20%20%20inline-block%2C%20inline-block.%0A%20%20%3C%2Fbutton%3E%0A%20%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+     Revísalo en gilpgedit.
+    </a>
+   </p>
+  </section>
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+       style="color: #ff0000;">html</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+       style="color: #ff0000;">lang</span>=<span
+       style="color: #0000ff;">"es"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;head&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">charset</span>=<span
+       style="color: #0000ff;">"UTF-8"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
+       style="color: #ff0000;">name</span>=<span
+       style="color: #0000ff;">"viewport"</span></div>
+    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
+       style="color: #0000ff;">"width=device-width"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span
+       style="color: #800000;">&lt;title&gt;</span>inline-block<span
+       style="color: #800000;">&lt;/title&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">span</span>&nbsp;{</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">display</span>:&nbsp;<span
+       style="color: #0451a5;">inline-block</span>;</div>
+    <div>&nbsp;&nbsp;&nbsp;<span
+       style="color: #ff0000;">background-color</span>:&nbsp;<span
+       style="color: #0451a5;">yellow</span>;</div>
+    <div>&nbsp;&nbsp;}</div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+    <div><span style="color: #800000;">&lt;body&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+    <div>&nbsp;&nbsp;Texto,&nbsp;texto,&nbsp;texto</div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;span&gt;</span></div>
+    <div>
+     &nbsp;&nbsp;&nbsp;Este&nbsp;es&nbsp;un&nbsp;span&nbsp;forzado&nbsp;a&nbsp;ser
+    </div>
+    <div>&nbsp;&nbsp;&nbsp;inline-block,&nbsp;inline-block,</div>
+    <div>&nbsp;&nbsp;&nbsp;inline-block,&nbsp;inline-block.</div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;button&gt;</span></div>
+    <div>&nbsp;&nbsp;&nbsp;Este&nbsp;es&nbsp;un&nbsp;botón&nbsp;inline-block,
+    </div>
+    <div>&nbsp;&nbsp;&nbsp;inline-block,&nbsp;inline-block.</div>
+    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/button&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+   </div>
+  </muestra-codigo>
+ </div>
+</section>
+      </section>
+     <section >
+         <h1 >H. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>En esta lección se introdujeron los siguientes conceptos:</p>
+   <ul>
+    <li>
+     <p>El elemento <code class='language-html'>div</code>.</p>
+    </li>
+    <li>
+     <p>El elemento <code class='language-html'>span</code>.</p>
+    </li>
+    <li>
+     <p>La propiedad <code class='language-css'>display</code>.</p>
+    </li>
+    <li>
+     <p>El valor <code class='language-css'>none</code>.</p>
+    </li>
+    <li>
+     <p>El valor <code class='language-css'>inline</code>.</p>
+    </li>
+    <li>
+     <p>El valor <code class='language-css'>block</code>.</p>
+    </li>
+    <li>
+     <p>El valor <code class='language-css'>inline-block</code>.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+</body>
+</html>

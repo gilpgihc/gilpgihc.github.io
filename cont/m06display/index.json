@@ -1,0 +1,56 @@
+{
+ "type": "A",
+ "title": "La propiedad display",
+ "h1": "La propiedad <code class='language-css'>display</code>",
+ "description": "Contenido de la lección «6. La propiedad display.",
+ "printDescription": "Página para imprimir de la lección «6. La propiedad display.",
+ "listado": [
+  {
+   "name": "mAdiv.html",
+   "title": "El elemento div",
+   "h1": "El elemento <code class='language-html'>div</code>",
+   "description": "Presentación del elemento div de HTML."
+  },
+  {
+   "name": "mBspan.html",
+   "title": "El elemento span",
+   "h1": "El elemento <code class='language-html'>span</code>",
+   "description": "Presentación del elemento span de HTML."
+  },
+  {
+   "name": "mCdisplay.html",
+   "title": "La propiedad display",
+   "h1": "La propiedad <code class='language-css'>display</code>",
+   "description": "Presentación de la propiedad display de css."
+  },
+  {
+   "name": "mDnone.html",
+   "title": "El valor none",
+   "h1": "El valor <code class='language-css'>none</code>",
+   "description": "Explicación del valor none de la propiedad display css."
+  },
+  {
+   "name": "mEinline.html",
+   "title": "El valor inline",
+   "h1": "El valor <code class='language-css'>inline</code>",
+   "description": "Explicación del valor inline de la propiedad display css."
+  },
+  {
+   "name": "mFblock.html",
+   "title": "El valor block",
+   "h1": "El valor <code class='language-css'>block</code>",
+   "description": "Explicación del valor block de la propiedad display css."
+  },
+  {
+   "name": "mGinlineBlock.html",
+   "title": "El valor inline-block",
+   "h1": "El valor <code class='language-css'>inline-block</code>",
+   "description": "Explicación del valor inline-block de la propiedad display css."
+  },
+  {
+   "name": "mHresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «6. La propiedad display."
+  }
+ ]
+}

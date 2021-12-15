@@ -1,0 +1,42 @@
+{
+ "type": "A",
+ "title": "Posicionamiento",
+ "description": "Contenido de la lección «8. Posicionamiento».",
+ "printDescription": "Página para imprimir de la lección «8. Posicionamiento».",
+ "listado": [
+  {
+   "name": "mApropiedades.html",
+   "title": "Propiedades de posicionamiento",
+   "description": "Propiedades de posicionamiento."
+  },
+  {
+   "name": "mBfixed.html",
+   "title": "El posicionamiento fixed",
+   "h1": "El posicionamiento <code class='language-css'>fixed</code>",
+   "description": "El posicionamiento fixed."
+  },
+  {
+   "name": "mCrelative.html",
+   "title": "El posicionamiento relative",
+   "h1": "El posicionamiento <code class='language-css'>relative</code>",
+   "description": "El posicionamiento relative."
+  },
+  {
+   "name": "mDabsolute.html",
+   "title": "El posicionamiento absolute",
+   "h1": "El posicionamiento <code class='language-css'>absolute</code>",
+   "description": "El posicionamiento absolute."
+  },
+  {
+   "name": "mEsticky.html",
+   "title": "El posicionamiento sticky",
+   "h1": "El posicionamiento <code class='language-css'>sticky</code>",
+   "description": "El posicionamiento sticky."
+  },
+  {
+   "name": "mFresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «8. Posicionamiento»."
+  }
+ ]
+}

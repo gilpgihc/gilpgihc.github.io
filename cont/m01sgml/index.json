@@ -1,0 +1,71 @@
+{
+ "type": "A",
+ "title": "SGML",
+ "description": "Contenido de la lección «1. SGML.",
+ "printDescription": "Página para imprimir de la lección «1. SGML.",
+ "listado": [
+  {
+   "name": "mAsgml.html",
+   "title": "SGML",
+   "h1": "<dfn>SGML</dfn>",
+   "description": "Definición de SGML."
+  },
+  {
+   "name": "mBdoctype.html",
+   "title": "DOCTYPE",
+   "h1": "<dfn>DOCTYPE</dfn>",
+   "description": "Definición de DOCTYPE."
+  },
+  {
+   "name": "mCcomentarios.html",
+   "title": "Comentario",
+   "h1": "<dfn>Comentario</dfn>",
+   "description": "Definición de comentario en SGML."
+  },
+  {
+   "name": "mDtexto.html",
+   "title": "Texto",
+   "description": "uso de texto en SGML."
+  },
+  {
+   "name": "mEelementos.html",
+   "title": "Elemento",
+   "h1": "<dfn>Elemento</dfn>",
+   "description": "Definición de elemento en SGML."
+  },
+  {
+   "name": "mFatributos.html",
+   "title": "Atributos",
+   "description": "Definición de atributo en SGML."
+  },
+  {
+   "name": "mGelementosConContenido.html",
+   "title": "Elemento con contenido",
+   "h1": "<dfn>Elemento con contenido</dfn>",
+   "description": "Definición de elemento con contenido en SGML."
+  },
+  {
+   "name": "mHElementosSinContenido.html",
+   "title": "Elemento sin contenido",
+   "h1": "<dfn>Elemento sin contenido</dfn>",
+   "description": "Ejemplo de elemento sin contenido."
+  },
+  {
+   "name": "mIpadres.html",
+   "title": "Elemento padre",
+   "h1": "<dfn>Elemento padre</dfn>",
+   "description": "Definición de elemento padre en SGML."
+  },
+  {
+   "name": "mJhijos.html",
+   "title": "Elemento hijo",
+   "h1": "<dfn>Elemento hijo</dfn>",
+   "description": "Definición de elemento hijo en SGML."
+  },
+  {
+   "name": "mKresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «1. SGML."
+  }
+ ]
+}

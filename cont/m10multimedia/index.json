@@ -1,0 +1,35 @@
+{
+ "type": "A",
+ "title": "Elementos Multimedia",
+ "description": "Contenido de la lección «10. Elementos Multimedia».",
+ "printDescription": "Página para imprimir de la lección «10. Elementos Multimedia».",
+ "listado": [
+  {
+   "name": "mAimagenes.html",
+   "title": "Imágenes",
+   "description": "Elementos de HTML para mostrar video."
+  },
+  {
+   "name": "mBaudioVideo.html",
+   "title": "Audio y Video",
+   "description": "Visión general de como mostrar audio y video en HTML."
+  },
+  {
+   "name": "mCaudio.html",
+   "title": "El elemento audio",
+   "h1": "El elemento <code class='language-html'>audio</code>",
+   "description": "Presentación del elemento audio de HTML."
+  },
+  {
+   "name": "mDvideo.html",
+   "title": "El elemento video",
+   "h1": "El elemento <code class='language-html'>video</code>",
+   "description": "Presentación del elemento video de HTML."
+  },
+  {
+   "name": "mEresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «10. Elementos Multimedia»."
+  }
+ ]
+}

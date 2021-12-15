@@ -1,0 +1,41 @@
+{
+ "type": "A",
+ "title": "Propiedades básicas de CSS",
+ "description": "Contenido de la lección «5. Propiedades básicas de CSS».",
+ "printDescription": "Página para imprimir de la lección «5. Propiedades básicas de CSS».",
+ "listado": [
+  {
+   "name": "mAfonts.html",
+   "title": "Fonts",
+   "description": "Presenta el concepto de font."
+  },
+  {
+   "name": "mBfontFamily.html",
+   "title": "La propiedad font-family",
+   "h1": "La propiedad <dfn><code class='language-html'>font-family</code></dfn>",
+   "description": "Define la propiedad font-family de CSS."
+  },
+  {
+   "name": "mCcolores.html",
+   "title": "Colores en CSS",
+   "description": "Presenta los colores en CSS."
+  },
+  {
+   "name": "mDcolor.html",
+   "title": "La propiedad color",
+   "h1": "La propiedad <dfn><code class='language-html'>color</code></dfn>",
+   "description": "Define la propiedad color de CSS."
+  },
+  {
+   "name": "mEbackgroundColor.html",
+   "title": "La propiedad background-color",
+   "h1": "La propiedad <dfn><code class='language-html'>background-color</code></dfn>",
+   "description": "Define la propiedad background-color de CSS."
+  },
+  {
+   "name": "mFresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «5. Propiedades básicas de CSS."
+  }
+ ]
+}

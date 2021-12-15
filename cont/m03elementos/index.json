@@ -1,0 +1,57 @@
+{
+ "type": "A",
+ "title": "Elementos básicos de HTML",
+ "description": "Contenido de la lección «3. Elementos básicos de HTML»",
+ "printDescription": "Página para imprimir de la lección «3. Elementos básicos de HTML».",
+ "listado": [
+  {
+   "name": "mAejemplo.html",
+   "title": "Ejemplo típico",
+   "description": "Ejemplo típico de HTML."
+  },
+  {
+   "name": "mBfraseo.html",
+   "title": "Elementos de fraseo",
+   "description": "Lista los elementos de fraseo de HTML."
+  },
+  {
+   "name": "mCencabezados.html",
+   "title": "Títulos",
+   "description": "Presenta los elementos de HTML que sirven para títulos."
+  },
+  {
+   "name": "mDp.html",
+   "title": "El elemento p",
+   "h1": "El elemento <code class='language-html'>p</code>",
+   "description": "Presenta el elemento p."
+  },
+  {
+   "name": "mEcierranP.html",
+   "title": "Elementos que cierran p",
+   "description": "Presenta los elementos que cierran p."
+  },
+  {
+   "name": "mFa.html",
+   "title": "El elemento a",
+   "h1": "El elemento <code class='language-html'>a</code>",
+   "description": "Presenta el elemento a."
+  },
+  {
+   "name": "mGnav.html",
+   "title": "El elemento nav",
+   "h1": "El elemento <code class='language-html'>nav</code>",
+   "description": "Presenta el elemento nav."
+  },
+  {
+   "name": "mHfooter.html",
+   "title": "El elemento footer",
+   "h1": "El elemento <code class='language-html'>footer</code>",
+   "description": "Presenta el elemento footer."
+  },
+  {
+   "name": "mIresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «3. Elementos básicos de HTML»."
+  }
+ ]
+}
