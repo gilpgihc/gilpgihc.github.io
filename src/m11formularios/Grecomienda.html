@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Recomienda</title>
+ <style>
+  html {
+   font-family: sans-serif;
+   text-align: center;
+  }
+
+  img {
+   max-height: 40vh;
+   max-width: 100%;
+  }
+ </style>
+</head>
+
+<body>
+ <form
+   action="javascript:procesa()">
+  <h1>Recomienda</h1>
+  <p>
+   <label>
+    Género
+    <select id="inGenero"
+      required>
+     <option value="">
+      -- Selecciona --
+     </option>
+     <option value="pop">
+      Pop
+     </option>
+     <option value="reg">
+      Reguetón
+     </option>
+     <option value="tango">
+      Tango
+     </option>
+    </select>
+   </label>
+  </p>
+  <p>
+   <button>Recomienda</button>
+  </p>
+  <figure>
+   <img id="imgSal">
+   <figcaption>
+    <output id="outSal"></output>
+   </figcaption>
+  </figure>
+ </form>
+ <script>
+  function procesa() {
+   const genero = inGenero.value
+   if (genero === "pop") {
+    outSal.value = "Ariana Grande"
+    imgSal.src =
+     "https://media.giphy.com/media/Ek42177e6xAeCnh8HX/giphy.gif"
+   } else if (genero === "reg") {
+    outSal.value = "Bad Bunny"
+    imgSal.src =
+     "https://media.giphy.com/media/kfcsiSjQUyMvEZ1khq/giphy.gif"
+   } else {
+    outSal.value =
+     "De eso no conozco."
+    imgSal.src =
+     "https://media.giphy.com/media/VbVfYbxE0gOK5Qsjkc/giphy.gif"
+   }
+   imgSal.alt = outSal.value
+  }
+ </script>
+</body>
+
+</html>

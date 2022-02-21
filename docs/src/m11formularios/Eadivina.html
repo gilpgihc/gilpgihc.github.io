@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Adivina</title>
+ <style>
+  html {
+   font-family: sans-serif;
+   text-align: center;
+  }
+  img {
+   max-height: 40vh;
+   max-width: 100%;
+  }
+ </style>
+</head>
+
+<body>
+ <form action="javascript:rana()">
+  <h1>Adivina</h1>
+  <figure>
+   <img src="https://media.giphy.com/media/JKNn9A98JBVlu/giphy.gif"
+     alt="Imagen de un animal">
+   <figcaption>
+    ¿Qúe animal es este?
+   </figcaption>
+  </figure>
+  <p>
+   <button>Una Rana</button>
+   <button
+     formaction="javascript:oso()">
+    Un Oso
+   </button>
+  </p>
+  <p>
+   <output id="outSalida"></output>
+  </p>
+ </form>
+ <script>
+  function rana() {
+   outSalida.value =
+    "Claro que no es una rana."
+  }
+  function oso() {
+   outSalida.value =
+    "Claro que si es un oso."
+  }
+ </script>
+</body>
+
+</html>

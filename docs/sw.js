@@ -226,6 +226,9 @@ const ARCHIVOS = [
    "/src/m11formularios/Bdivision.html",
    "/src/m11formularios/C2botones.html",
    "/src/m11formularios/Drecomendaciones.html",
+   "/src/m11formularios/Eadivina.html",
+   "/src/m11formularios/Fencuesta.html",
+   "/src/m11formularios/Grecomienda.html",
    "/src/m12custom/Asimple.html",
    "/src/m12custom/Baccion.html" ]
 

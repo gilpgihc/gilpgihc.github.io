@@ -7984,7 +7984,7 @@
     <p>
      Su especificación está en
      <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"
-       target="_blank">https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element</a>
+       target="_blank" rel="noopener">https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element</a>
     </p>
    </li>
   </ul>
@@ -8110,134 +8110,159 @@
       </section>
      <section >
          <h1 >B. Audio y Video</h1><div class="lectura">
- <p>
-  <strong>
-   Respeta las licencias de uso del contenido que coloques en tu
-   sitio.
-  </strong>
- </p>
- <p>
-  Los 2 elementos se pueden usar para reproducir tanto audio como video. La
-  principal diferencia es que el elemento
-  <code class="language-html">audio</code>
-  no tiene espacio para desplegar contenido visual (como video o subtítulos),
-  mientras que el elemento
-  <code class="language-html">video</code>
-  si lo tiene.
- </p>
+ <ul>
+  <li>
+   <p>
+    <strong>
+     Respeta las licencias de uso del contenido que coloques en tu
+     sitio.
+    </strong>
+   </p>
+  </li>
+  <li>
+   <p>
+    Los 2 elementos se pueden usar para reproducir tanto audio como video. La
+    principal diferencia es que el elemento
+    <code class="language-html">audio</code>
+    no tiene espacio para desplegar contenido visual (como video o subtítulos),
+    mientras que el elemento
+    <code class="language-html">video</code>
+    si lo tiene.
+   </p>
+  </li>
+ </ul>
  <section>
   <h1>Atributos Comunes</h1>
-  <p>
-   Los elementos multimedia
-   <code class="language-html">audio</code>
-   y
-   <code class="language-html">video</code>
-   tienen los siguientes atributos en común:
-  </p>
-  <dl>
-   <dt><dfn><code class="language-html">src</code></dfn></dt>
-   <dd>
+  <ul>
+   <li>
     <p>
-     La URL del recurso de audio o video a desplegar. Si está
-     presente, debe contener una URL no vacía. Puede rodearse con
-     espacios.
+     Los elementos multimedia
+     <code class="language-html">audio</code>
+     y
+     <code class="language-html">video</code>
+     tienen los siguientes atributos en común:
     </p>
-   </dd>
-   <dt><dfn><code class="language-html">crossorigin</code></dfn></dt>
-   <dd>
-    <p>
-     Especifica el valor CORS (Cross-origin resource sharing), que
-     puede ser:
-    </p>
-    <ul>
-     <li><code class="language-html">anonymous</code></li>
-     <li><code class="language-html">use-credentials</code></li>
-    </ul>
-   </dd>
-   <dt><dfn><code class="language-html">preload</code></dfn></dt>
-   <dd>
-    <p>Puede tener los siguientes valores:</p>
     <dl>
-     <dt><dfn><code class="language-html">none</code></dfn></dt>
+     <dt><dfn><code class="language-html">src</code></dfn></dt>
      <dd>
       <p>
-       El recurso no se descarga antes de reproducirse, pues no se
-       espera que el usuario necesite el recurso, o el servidor
-       espera minimizar tráfico innecesario. No se proporciona
-       ningún indicio sobre la agresividad para descargar el
-       recurso una vez que se empieza a reproducir.
+       La URL del recurso de audio o video a desplegar. Si está
+       presente, debe contener una URL no vacía. Puede rodearse con
+       espacios.
       </p>
      </dd>
-     <dt><dfn><code class="language-html">metadata</code></dfn></dt>
+     <dt><dfn><code class="language-html">crossorigin</code></dfn></dt>
      <dd>
       <p>
-       Descargar solamente los metadatos del recurso (dimensiones,
-       lista de títulos, duración, etc.) y aún unos pocos cuadros
-       del inicio. Una vez iniciada la reproducción, los datos se
-       descargan a la velocidad más baja que garantice una
-       reproducción consistente.
+       Especifica el valor CORS (Cross-origin resource sharing), que
+       puede ser:
+      </p>
+      <ul>
+       <li><code class="language-html">anonymous</code></li>
+       <li><code class="language-html">use-credentials</code></li>
+      </ul>
+     </dd>
+     <dt><dfn><code class="language-html">preload</code></dfn></dt>
+     <dd>
+      <p>Puede tener los siguientes valores:</p>
+      <dl>
+       <dt><dfn><code class="language-html">none</code></dfn></dt>
+       <dd>
+        <p>
+         El recurso no se descarga antes de reproducirse, pues no se
+         espera que el usuario necesite el recurso, o el servidor
+         espera minimizar tráfico innecesario. No se proporciona
+         ningún indicio sobre la agresividad para descargar el
+         recurso una vez que se empieza a reproducir.
+        </p>
+       </dd>
+       <dt><dfn><code class="language-html">metadata</code></dfn></dt>
+       <dd>
+        <p>
+         Descargar solamente los metadatos del recurso (dimensiones,
+         lista de títulos, duración, etc.) y aún unos pocos cuadros
+         del inicio. Una vez iniciada la reproducción, los datos se
+         descargan a la velocidad más baja que garantice una
+         reproducción consistente.
+        </p>
+       </dd>
+       <dt><dfn><code class="language-html">auto</code></dfn></dt>
+       <dd>
+        <p>
+         El usuario puede descargar el recurso agresivamente sin
+         riesgo para el servidor, incluyendo la descarga total antes
+         de reproducirse.
+        </p>
+       </dd>
+      </dl>
+     </dd>
+     <dt><dfn><code class="language-html">autoplay</code></dfn></dt>
+     <dd>
+      <p>
+       Es un atributo booleano. Cuando está presente, se inicia la
+       reproducción del recurso tan pronto como se pueda, sin
+       detenerse. Se recomienda no usar esta característica y permitir
+       al usuario iniciar la reproducción explícitamente.
       </p>
      </dd>
-     <dt><dfn><code class="language-html">auto</code></dfn></dt>
+     <dt><dfn><code class="language-html">loop</code></dfn></dt>
      <dd>
       <p>
-       El usuario puede descargar el recurso agresivamente sin
-       riesgo para el servidor, incluyendo la descarga total antes
-       de reproducirse.
+       Es un atributo booleano. Si está presente, indica que cuando la
+       reproducción del recurso termine, debe reiniciar.
+      </p>
+     </dd>
+     <dt><dfn><code class="language-html">muted</code></dfn></dt>
+     <dd>
+      <p>
+       Es un atributo booleano. Su presencia silencia la salida de
+       audio, potencialmente contraviniendo las preferencias del
+       usuario.
+      </p>
+     </dd>
+     <dt><dfn><code class="language-html">controls</code></dfn></dt>
+     <dd>
+      <p>
+       Es un atributo booleano. Cuando se especifica, indica que se
+       deben mostrar los controles del elemento.
       </p>
      </dd>
     </dl>
-   </dd>
-   <dt><dfn><code class="language-html">autoplay</code></dfn></dt>
-   <dd>
-    <p>
-     Es un atributo booleano. Cuando está presente, se inicia la
-     reproducción del recurso tan pronto como se pueda, sin
-     detenerse. Se recomienda no usar esta característica y permitir
-     al usuario iniciar la reproducción explícitamente.
-    </p>
-   </dd>
-   <dt><dfn><code class="language-html">loop</code></dfn></dt>
-   <dd>
-    <p>
-     Es un atributo booleano. Si está presente, indica que cuando la
-     reproducción del recurso termine, debe reiniciar.
-    </p>
-   </dd>
-   <dt><dfn><code class="language-html">muted</code></dfn></dt>
-   <dd>
-    <p>
-     Es un atributo booleano. Su presencia silencia la salida de
-     audio, potencialmente contraviniendo las preferencias del
-     usuario.
-    </p>
-   </dd>
-   <dt><dfn><code class="language-html">controls</code></dfn></dt>
-   <dd>
-    <p>
-     Es un atributo booleano. Cuando se especifica, indica que se
-     deben mostrar los controles del elemento.
-    </p>
-   </dd>
-  </dl>
+   </li>
+  </ul>
  </section>
 </div>
       </section>
      <section >
          <h1 >C. El elemento <code class='language-html'>audio</code></h1><div class="lectura">
- <p>Permite manejar una transmisión de audio o video.</p>
- <p>
-  Aunque este elemento puede llevar contenido, por ejemplo texto, este no se
-  muestra al usuario; es para desplegarse en navegadores que no soportan el
-  elemento
-  <code class="language-html">audio</code>,
-  para poder probar con plugins o para indicar como acceder al contenido.
- </p>
- <p>
-  Si el contenido incluye subtítulos o lenguaje de señas, es mejor usar el
-  elemento
-  <code class="language-html">video</code>.
- </p>
+ <ul>
+  <li>
+   <p>Permite manejar una transmisión de audio o video.</p>
+  </li>
+  <li>
+   <p>
+    Aunque este elemento puede llevar contenido, por ejemplo texto, este no se
+    muestra al usuario; es para desplegarse en navegadores que no soportan el
+    elemento
+    <code class="language-html">audio</code>,
+    para poder probar con plugins o para indicar como acceder al contenido.
+   </p>
+  </li>
+  <li>
+   <p>
+    Si el contenido incluye subtítulos o lenguaje de señas, es mejor usar el
+    elemento
+    <code class="language-html">video</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/media.html#the-audio-element</a>
+   </p>
+  </li>
 </div>
 <section>
  <h1>Ejemplo</h1>
@@ -8343,6 +8368,14 @@
     Una opción es usar Giphy que en formato de video es más rápido y eficiente
     que en el formato GIF. Al seleccionar una imagen, haz clic en
     <strong>Media</strong> y copia la URL del formato MP4.
+   </p>
+  </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/media.html#the-video-element</a>
    </p>
   </li>
  </ul>
@@ -8834,6 +8867,14 @@
     </li>
    </ul>
   </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/forms.html#the-form-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/forms.html#the-form-element</a>
+   </p>
+  </li>
  </ul>
 </div>
       </section>
@@ -8964,6 +9005,14 @@
     que queden asociados.
    </p>
   </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/forms.html#the-label-element</a>
+   </p>
+  </li>
  </ul>
 </div>
       </section>
@@ -9022,6 +9071,14 @@
      </ul>
     </dd>
    </dl>
+  </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element</a>
+   </p>
   </li>
  </ul>
 </div>
@@ -9126,6 +9183,14 @@
      </ul>
     </dd>
    </dl>
+  </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/input.html#the-input-element</a>
+   </p>
   </li>
  </ul>
  <section>
@@ -9232,6 +9297,13 @@
     <dfn><code class="language-javascript">value</code></dfn>.
    </p>
   </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element</a>
+   </p>
   </li>
  </ul>
 </div>
@@ -9275,7 +9347,27 @@
 </div>
       </section>
      <section >
-         <h1 >J. Recomendaciones</h1><div class="horizontal">
+         <h1 >J. Recomendaciones</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    El siguiente orograma usa el tipo de elemento
+    <dfn><code class="language-html">select</code></dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    La especificación del elemento
+    <code class="language-html">select</code></dfn>.
+    está en
+    <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element</a>
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
  <section>
   <h1>Salida</h1>
   <iframe src="/src/m11formularios/Drecomendaciones.html" height="250"></iframe>
@@ -9290,7 +9382,127 @@
    </a>
   </p>
  </section>
- <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Recomendaciones<span style="color: #800000;">&lt;/title&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;form</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">"javascript:procesa()"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Recomendaciones<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div><div>&nbsp; &nbsp; Género</div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;select</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"inGenero"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">required</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">""</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; -- Selecciona --</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">"pop"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Pop</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">"reg"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Reguetón</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">"tango"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Tango</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/select&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button&gt;</span>Recomendar<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">outSalida</span><span style="color: #800000;">&gt;&lt;/output&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">procesa</span>() {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">genero</span> = <span style="color: #001080;">inGenero</span>.<span style="color: #001080;">value</span></div><div>&nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span style="color: #001080;">value</span> =</div><div>&nbsp; &nbsp; <span style="color: #795e26;">recomienda</span>(<span style="color: #0070c1;">genero</span>)</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #008000;">/** @param {string} genero */</span></div><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">recomienda</span>(<span style="color: #001080;">genero</span>) {</div><div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span style="color: #001080;">genero</span> === <span style="color: #a31515;">"pop"</span>) {</div><div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span style="color: #a31515;">"Ariana Grande."</span></div><div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> <span style="color: #af00db;">if</span> (<span style="color: #001080;">genero</span> === <span style="color: #a31515;">"reg"</span>) {</div><div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span style="color: #a31515;">"Bad Bunny."</span></div><div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div><div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span style="color: #a31515;">"De eso no conozco."</span></div><div>&nbsp; &nbsp;}</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>Recomendaciones<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;form</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">action</span>=<span
+      style="color: #0000ff;">"javascript:procesa()"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; <span
+      style="color: #800000;">&lt;h1&gt;</span>Recomendaciones<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div>
+   <div>&nbsp; &nbsp; Género</div>
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;select</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"inGenero"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">required</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
+    <span style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">""</span><span style="color: #800000;">&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; -- Selecciona --</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
+    <span style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"pop"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; Pop</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
+    <span style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"reg"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; Reguetón</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
+    <span style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"tango"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; Tango</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/select&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;button&gt;</span>Recomendar<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">outSalida</span><span
+      style="color: #800000;">&gt;&lt;/output&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">procesa</span>() {</div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">genero</span> = <span
+      style="color: #001080;">inGenero</span>.<span
+      style="color: #001080;">value</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span
+      style="color: #001080;">value</span> =</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">recomienda</span>(<span
+      style="color: #0070c1;">genero</span>)</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #008000;">/** @param {string} genero
+     */</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">recomienda</span>(<span
+      style="color: #001080;">genero</span>) {</div>
+   <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">genero</span> === <span
+      style="color: #a31515;">"pop"</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #a31515;">"Ariana Grande."</span></div>
+   <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> <span
+      style="color: #af00db;">if</span> (<span
+      style="color: #001080;">genero</span> === <span
+      style="color: #a31515;">"reg"</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #a31515;">"Bad Bunny."</span></div>
+   <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #a31515;">"De eso no conozco."</span></div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
 </div>
       </section>
      <section >
