@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>División</title>
+</head>
+
+<body>
+ <form
+   action="javascript:procesa()">
+  <h1>División</h1>
+  <p>
+   <label>
+    a
+    <input id="inA"
+      type="number"
+      step="0.1"
+      required>
+   </label>
+  </p>
+  <p>
+   <label>
+    b
+    <input id="inB"
+      type="number"
+      step="0.1"
+      required
+      oninput="validaB()">
+   </label>
+  </p>
+  <p>
+   <button>Dividir</button>
+  </p>
+  <p>
+   <output id=outSalida></output>
+  </p>
+ </form>
+ <script>
+  const NO_0 = "No puede ser 0"
+
+  function validaB() {
+   const b = inB.valueAsNumber
+   /* Debe cumplirse que b
+    * sea un número diferente
+    * de 0. */
+   if (isNaN(b) || b !== 0) {
+    inB.setCustomValidity("")
+   } else {
+    inB.setCustomValidity(NO_0)
+   }
+  }
+
+  function procesa() {
+   const a = inA.valueAsNumber
+   const b = inB.valueAsNumber
+   outSalida.value = divide(a, b)
+  }
+
+  /**
+   * @param {number} a
+   * @param {number} b
+   */
+  function divide(a, b) {
+   return a / b
+  }
+ </script>
+</body>
+
+</html>

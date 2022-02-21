@@ -34,6 +34,11 @@
   --colStack1: black;
   --colStack2: #224ba5;
   --colStack3: #92731f;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
   --gap: 0.5rem;
   --fontMono: monospace;
   --fontSans: sans-serif;
@@ -41,6 +46,26 @@
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
  }
 
  .anterior,
@@ -124,7 +149,10 @@
   .noPrint {
    display: none;
   }
-  .pruebaDeEscritorio {page-break-before: always;}
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
  }
 
  iframe {
@@ -647,7 +675,7 @@
      pestaña.</a>
    </p>
    <p class="noPrint">
-    <a target="_blank"
+    <a target="_blank" rel="noopener"
       href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EAudio%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3EAudio%3C%2Fh1%3E%0A%20%3Cp%3E%0A%20%20%3Caudio%20controls%0A%20%20%20%20src%3D%22https%3A%2F%2Fwww.royaltyfreemusicclips.com%2Fpir%2Flibs%2Fmedia%2F1234_Rock_it.wav%22%3E%0A%20%20%20Tu%20navegador%20no%20soporta%20audio.%0A%20%20%3C%2Faudio%3E%0A%20%3C%2Fp%3E%0A%20%3Cfooter%3E%0A%20%20%3Cp%3E%0A%20%20%20M%C3%BAsica%20gratuita%20libre%20de%0A%20%20%20regal%C3%ADas%20por%0A%20%20%20%3Ca%20target%3D%22_blank%22%0A%20%20%20%20%20href%3D%22https%3A%2F%2Fwww.royaltyfreemusicclips.com%22%3E%0A%20%20%20%20Royalty%20Free%20Music%20Clips%3C%2Fa%3E.%0A%20%20%3C%2Fp%3E%0A%20%3C%2Ffooter%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
      Revísalo en gilpgedit.
     </a>
@@ -767,7 +795,7 @@
      pestaña.</a>
    </p>
    <p class="noPrint">
-    <a target="_blank"
+    <a target="_blank" rel="noopener"
       href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EVideo%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20video%20%7B%0A%20%20%20max-width%3A%20100%25%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%3EVideo%3C%2Fh1%3E%0A%20%3Cfigure%3E%0A%20%20%3Cvideo%20autoplay%20loop%0A%20%20%20%20src%3D%22https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F1W62t8wP8m1iM%2Fgiphy.mp4%22%3E%0A%20%20%20Tu%20navegador%20no%20soporta%20video.%0A%20%20%3C%2Fvideo%3E%0A%20%3C%2Ffigure%3E%0A%20%3Cfooter%3E%0A%20%20%3Cp%3E%0A%20%20%20Video%20de%0A%20%20%20%3Ca%20href%3D%22https%3A%2F%2Fgiphy.com%22%0A%20%20%20%20%20target%3D%22_blank%22%3E%0A%20%20%20%20Giphy%3C%2Fa%3E.%0A%20%20%3C%2Fp%3E%0A%20%3C%2Ffooter%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
      Revísalo en gilpgedit.
     </a>

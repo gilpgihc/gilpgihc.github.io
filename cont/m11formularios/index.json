@@ -1,0 +1,68 @@
+{
+ "type": "A",
+ "title": "Formularios",
+ "description": "Contenido de la lección «11. Formularios».",
+ "printDescription": "Página para imprimir de la lección «11. Formularios».",
+ "listado": [
+  {
+   "name": "mAsimple.html",
+   "title": "Formulario simple",
+   "description": "Formulario simple."
+  },
+  {
+   "name": "mBForm.html",
+   "title": "El elemento <code class='language-html'>form<code>",
+   "h1": "El elemento form",
+   "description": "El elemento form de HTML."
+  },
+  {
+   "name": "mCatributos.html",
+   "title": "Atributos comunes",
+   "description": "Atributos comunes de elementos asociados a form."
+  },
+  {
+   "name": "mDlabel.html",
+   "title": "El elemento label",
+   "h1": "El elemento <code class='language-html'>label</code>",
+   "description": "El elemento label de HTML."
+  },
+  {
+   "name": "mEbutton.html",
+   "title": "El elemento button",
+   "h1": "El elemento <code class='language-html'>button</code>",
+   "description": "El elemento button de HTML."
+  },
+  {
+   "name": "mFinput.html",
+   "title": "El elemento input",
+   "h1": "El elemento <code class='language-html'>input</code>",
+   "description": "El elemento input de HTML."
+  },
+  {
+   "name": "mGoutput.html",
+   "title": "El elemento output",
+   "h1": "El elemento <code class='language-html'>output</code>",
+   "description": "El elemento output de HTML."
+  },
+  {
+   "name": "mHdivision.html",
+   "title": "División",
+   "description": "División."
+  },
+  {
+   "name": "mI2botones.html",
+   "title": "Formulario numérico de 2 botones",
+   "description": "Formulario numérico de 2 botones."
+  },
+  {
+   "name": "mJrecomendaciones.html",
+   "title": "Recomendaciones",
+   "description": "Recomendaciones."
+  },
+  {
+   "name": "mKresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «11. Formularios»."
+  }
+ ]
+}

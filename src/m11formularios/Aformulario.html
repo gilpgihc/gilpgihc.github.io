@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Saludo</title>
+</head>
+
+<body>
+ <!--
+  form
+   Captura los datos para un
+   cálculo.
+  action="javascript:calcula()"
+   Al activar la forma, se ejecuta
+   la función
+    calcula()
+   de la etiqueta
+    <script>
+   que aparece más abajo. -->
+ <form
+   action="javascript:calcula()">
+  <h1>Saludo</h1>
+  <!--
+   Los elementos de captura se
+   pueden colocan cada uno en un
+    <p> -->
+  <p>
+   <!--
+    label
+     Pone el rótulo
+      Nombre
+     que aparece más abajo, al
+     elemento
+      input
+     que también aparece más abajo.
+   -->
+   <label>
+    Nombre
+    <!--
+     input
+      Campo de captura. Activa la
+      forma al teclear
+       «intro»
+      cuando tiene el cursor.
+     type="text"
+      Captura texto
+     id="inNombre"
+      Identificador del campo de
+      captura. Se puede usar desde
+      el elemento
+       <script>
+      más abajo.
+     required
+      Este campo no se puede quedar
+      en blanco. -->
+    <input type="text"
+      id="inNombre" required>
+   </label>
+  </p>
+  <p>
+   <!--
+    button
+     Activa la forma al hacerle
+     click o presionado la tecla
+     espacio cuando tiene el
+     tabulador. -->
+   <button>Calcular</button>
+  </p>
+  <p>
+   <!--
+    output
+     Muestra el resultado de un
+     cálculo.
+   -->
+   <output id=outSaludo></output>
+  </p>
+ </form>
+ <script>
+  /**
+   * Función que realiza el cálculo
+   * cuando se activa la forma.
+   */
+  function calcula() {
+   /* Recupera el texto capturado
+    * en "inNombre" y lo asigna
+    * a la constante "nombre". */
+   const nombre = inNombre.value
+   const saludo = saluda(nombre)
+   /* Despliega el saludo en el
+    * elemento "outSaludo". */
+   outSaludo.value = saludo;
+  }
+
+  /**
+   * Función que realiza la lógica
+   * del cálculo.
+   * @param {string} nombre
+   */
+  function saluda(nombre) {
+   return `Hola ${nombre}.`
+  }
+ </script>
+</body>
+
+</html>

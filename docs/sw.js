@@ -1,16 +1,7 @@
+/// <reference lib="webworker" />
+
 /* Espera 11 minutos después de hacer los cambios en tu sitio, para depués
  * actualizar este archivo. */
-
-/**
- * @typedef {Object} ExtendableEvent
- * @property {(promise: Promise) => any} waitUntil
- */
-
-/**
- * @typedef {Object} FetchEvent
- * @property {Request} request
- * @property {(promise: Promise) => any} respondWith
- */
 
 const CACHE = "cache"
 
@@ -32,8 +23,10 @@ const ARCHIVOS = [
    "/img/icono/maskable_icon_x512.png",
    "/img/icono/maskable_icon_x72.png",
    "/img/icono/maskable_icon_x96.png",
+   "/",
    "/index.html",
    "/js/muestra-codigo.js",
+   "/m01sgml/",
    "/m01sgml/index.html",
    "/m01sgml/mAsgml.html",
    "/m01sgml/mBdoctype.html",
@@ -47,6 +40,7 @@ const ARCHIVOS = [
    "/m01sgml/mJhijos.html",
    "/m01sgml/mKresumen.html",
    "/m01sgml/print.html",
+   "/m02html/",
    "/m02html/index.html",
    "/m02html/mAejemplo.html",
    "/m02html/mBhtml.html",
@@ -58,6 +52,7 @@ const ARCHIVOS = [
    "/m02html/mHreferencias.html",
    "/m02html/mIresumen.html",
    "/m02html/print.html",
+   "/m03elementos/",
    "/m03elementos/index.html",
    "/m03elementos/mAejemplo.html",
    "/m03elementos/mBfraseo.html",
@@ -69,6 +64,7 @@ const ARCHIVOS = [
    "/m03elementos/mHfooter.html",
    "/m03elementos/mIresumen.html",
    "/m03elementos/print.html",
+   "/m04css/",
    "/m04css/index.html",
    "/m04css/mAejemplo.html",
    "/m04css/mBstyle.html",
@@ -79,6 +75,7 @@ const ARCHIVOS = [
    "/m04css/mGcustom.html",
    "/m04css/mHresumen.html",
    "/m04css/print.html",
+   "/m05propiedades/",
    "/m05propiedades/index.html",
    "/m05propiedades/mAfonts.html",
    "/m05propiedades/mBfontFamily.html",
@@ -87,6 +84,7 @@ const ARCHIVOS = [
    "/m05propiedades/mEbackgroundColor.html",
    "/m05propiedades/mFresumen.html",
    "/m05propiedades/print.html",
+   "/m06display/",
    "/m06display/index.html",
    "/m06display/mAdiv.html",
    "/m06display/mBspan.html",
@@ -97,6 +95,7 @@ const ARCHIVOS = [
    "/m06display/mGinlineBlock.html",
    "/m06display/mHresumen.html",
    "/m06display/print.html",
+   "/m07cajas/",
    "/m07cajas/index.html",
    "/m07cajas/mAlongitud.html",
    "/m07cajas/mBmodelo.html",
@@ -107,6 +106,7 @@ const ARCHIVOS = [
    "/m07cajas/mGbox-sizing.html",
    "/m07cajas/mHresumen.html",
    "/m07cajas/print.html",
+   "/m08posicionamiento/",
    "/m08posicionamiento/index.html",
    "/m08posicionamiento/mApropiedades.html",
    "/m08posicionamiento/mBfixed.html",
@@ -115,6 +115,7 @@ const ARCHIVOS = [
    "/m08posicionamiento/mEsticky.html",
    "/m08posicionamiento/mFresumen.html",
    "/m08posicionamiento/print.html",
+   "/m09selectores/",
    "/m09selectores/index.html",
    "/m09selectores/mAtodos.html",
    "/m09selectores/mBid.html",
@@ -128,6 +129,7 @@ const ARCHIVOS = [
    "/m09selectores/mJfocus.html",
    "/m09selectores/mKresumen.html",
    "/m09selectores/print.html",
+   "/m10multimedia/",
    "/m10multimedia/index.html",
    "/m10multimedia/mAimagenes.html",
    "/m10multimedia/mBaudioVideo.html",
@@ -135,6 +137,26 @@ const ARCHIVOS = [
    "/m10multimedia/mDvideo.html",
    "/m10multimedia/mEresumen.html",
    "/m10multimedia/print.html",
+   "/m11formularios/",
+   "/m11formularios/index.html",
+   "/m11formularios/mAsimple.html",
+   "/m11formularios/mBForm.html",
+   "/m11formularios/mCatributos.html",
+   "/m11formularios/mDlabel.html",
+   "/m11formularios/mEbutton.html",
+   "/m11formularios/mFinput.html",
+   "/m11formularios/mGoutput.html",
+   "/m11formularios/mHdivision.html",
+   "/m11formularios/mI2botones.html",
+   "/m11formularios/mJrecomendaciones.html",
+   "/m11formularios/mKresumen.html",
+   "/m11formularios/print.html",
+   "/m12custom/",
+   "/m12custom/index.html",
+   "/m12custom/mAcustom.html",
+   "/m12custom/mBaccion.html",
+   "/m12custom/mCresumen.html",
+   "/m12custom/print.html",
    "/print.html",
    "/site.webmanifest",
    "/src/m01sgml/Asgml.html",
@@ -200,13 +222,18 @@ const ARCHIVOS = [
    "/src/m10multimedia/Aimagenes.html",
    "/src/m10multimedia/Baudio.html",
    "/src/m10multimedia/Cvideo.html",
-    "/"]
+   "/src/m11formularios/Aformulario.html",
+   "/src/m11formularios/Bdivision.html",
+   "/src/m11formularios/C2botones.html",
+   "/src/m11formularios/Drecomendaciones.html",
+   "/src/m12custom/Asimple.html",
+   "/src/m12custom/Baccion.html" ]
 
-// @ts-ignore
-addEventListener("install", installListener)
-// @ts-ignore
-addEventListener("fetch", fetchListener)
-addEventListener("activate", () => console.log("Service Worker activo."))
+if (self instanceof ServiceWorkerGlobalScope) {
+ self.addEventListener("install", installListener)
+ self.addEventListener("fetch", fetchListener)
+ self.addEventListener("activate", () => console.log("Service Worker activo."))
+}
 
 /**
  * @param {ExtendableEvent} evt

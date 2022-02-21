@@ -1,0 +1,24 @@
+{
+ "type": "A",
+ "title": "Custom elements",
+ "description": "Contenido de la lección «12. Custom» elements.",
+ "printDescription": "Página para imprimir de la lección «12. Custom» elements.",
+ "listado": [
+  {
+   "name": "mAcustom.html",
+   "title": "Custom element",
+   "h1": "<dfn>Custom element</dfn>",
+   "description": "Definición de custom element."
+  },
+  {
+   "name": "mBaccion.html",
+   "title": "Los custom element en acción",
+   "description": "Los custom element en acción."
+  },
+  {
+   "name": "mCresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «12. Custom» elements."
+  }
+ ]
+}

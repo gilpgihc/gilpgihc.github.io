@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Acción</title>
+ <script>
+  class Elemento3
+   extends HTMLElement {
+   connectedCallback() {
+    this.innerHTML = /* html */
+     `Estoy volando🚁
+      <strong>
+       alto
+      </strong>.`
+    this.addEventListener("click",
+     () => this.clic())
+   }
+   clic() {
+    alert("ouch")
+   }
+  }
+  customElements.define(
+   "elemento-3", Elemento3)
+ </script>
+ <style>
+  elemento-3 {
+   cursor: pointer;
+  }
+ </style>
+</head>
+
+<body>
+ <h1>Acción</h1>
+ <elemento-3></elemento-3>
+ <p>Saludos desde la tierra.</p>
+ <elemento-3></elemento-3>
+</body>
+
+</html>

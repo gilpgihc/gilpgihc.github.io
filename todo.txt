@@ -1,6 +1,3 @@
 * Ok hasta m07cajas
 * añadir title a todos los iframe
-* Revisar que se añada rel="nooper" an los a con target="_blank"
-* Volver a poner los estilos para las barras de scroll
-* Agregar metadatos para que los enlaces puedan obtener el ícono de la página.
-* Cambiar los metadatos de los archivos al index.json
+* Añadir enlace a las definiciones de los capótulos 11 y 12

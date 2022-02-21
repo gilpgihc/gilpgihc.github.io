@@ -9,14 +9,7 @@
 <script src="/js/muestra-codigo.js"></script>
  <title>Introducción a HTML y CSS - GilPG IHC</title>
  <meta name="description" content="Página de inicio de GilPG IHC, que introduce conceptos básicos de HTML y CSS.">
- <script type="application/ld+json">
-  {
-    "@context": "http://schema.org/",
-    "@type": "Curso",
-    "name": "Introducción a HTML y CSS",
-    "description": "Página de inicio de GilPG IHC, que introduce conceptos básicos de HTML y CSS."
-  }
-  </script>
+ <meta name="og:image" content="https://gilpgihc.github.io/img/icono/icono2048.png">
  <style>
  :root {
   --introDuracion: 2s;
@@ -42,6 +35,11 @@
   --colStack1: black;
   --colStack2: #224ba5;
   --colStack3: #92731f;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
   --gap: 0.5rem;
   --fontMono: monospace;
   --fontSans: sans-serif;
@@ -49,6 +47,26 @@
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
  }
 
  .anterior,
@@ -132,7 +150,10 @@
   .noPrint {
    display: none;
   }
-  .pruebaDeEscritorio {page-break-before: always;}
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
  }
 
  iframe {
@@ -257,6 +278,26 @@
   background-color: var(--colFondoNav);
   padding: var(--padCont);
   transition: transform 0.7s ease-in-out;
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ #nav::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ #nav::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ #nav::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ #nav::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
  }
 
  #nav p {
@@ -463,52 +504,62 @@
    <ol type="1">
     <li>
      <p>
-      <a href="/m01sgml">SGML</a>
+      <a href="/m01sgml/">SGML</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m02html">Introducción a HTML</a>
+      <a href="/m02html/">Introducción a HTML</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03elementos">Elementos básicos de HTML</a>
+      <a href="/m03elementos/">Elementos básicos de HTML</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04css">CSS</a>
+      <a href="/m04css/">CSS</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05propiedades">Propiedades básicas de CSS</a>
+      <a href="/m05propiedades/">Propiedades básicas de CSS</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m06display">La propiedad <code class='language-css'>display</code></a>
+      <a href="/m06display/">La propiedad <code class='language-css'>display</code></a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m07cajas">El modelo de cajas</a>
+      <a href="/m07cajas/">El modelo de cajas</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08posicionamiento">Posicionamiento</a>
+      <a href="/m08posicionamiento/">Posicionamiento</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09selectores">Selectores de CSS</a>
+      <a href="/m09selectores/">Selectores de CSS</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m10multimedia">Elementos Multimedia</a>
+      <a href="/m10multimedia/">Elementos Multimedia</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m11formularios/">Formularios</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m12custom/">Custom elements</a>
      </p>
     </li>
    </ol>
@@ -548,52 +599,62 @@
    <ol type="1">
     <li>
      <p>
-      <a href="/m01sgml">SGML</a>
+      <a href="/m01sgml/">SGML</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m02html">Introducción a HTML</a>
+      <a href="/m02html/">Introducción a HTML</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m03elementos">Elementos básicos de HTML</a>
+      <a href="/m03elementos/">Elementos básicos de HTML</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04css">CSS</a>
+      <a href="/m04css/">CSS</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05propiedades">Propiedades básicas de CSS</a>
+      <a href="/m05propiedades/">Propiedades básicas de CSS</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m06display">La propiedad <code class='language-css'>display</code></a>
+      <a href="/m06display/">La propiedad <code class='language-css'>display</code></a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m07cajas">El modelo de cajas</a>
+      <a href="/m07cajas/">El modelo de cajas</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m08posicionamiento">Posicionamiento</a>
+      <a href="/m08posicionamiento/">Posicionamiento</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m09selectores">Selectores de CSS</a>
+      <a href="/m09selectores/">Selectores de CSS</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m10multimedia">Elementos Multimedia</a>
+      <a href="/m10multimedia/">Elementos Multimedia</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m11formularios/">Formularios</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m12custom/">Custom elements</a>
      </p>
     </li>
    </ol>

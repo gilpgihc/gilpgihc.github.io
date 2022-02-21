@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Recomendaciones</title>
+</head>
+
+<body>
+ <form
+   action="javascript:procesa()">
+  <h1>Recomendaciones</h1>
+  <p>
+   <label>
+    Género
+    <select id="inGenero"
+      required>
+     <option value="">
+      -- Selecciona --
+     </option>
+     <option value="pop">
+      Pop
+     </option>
+     <option value="reg">
+      Reguetón
+     </option>
+     <option value="tango">
+      Tango
+     </option>
+    </select>
+   </label>
+  </p>
+  <p>
+   <button>Recomendar</button>
+  </p>
+  <p>
+   <output id=outSalida></output>
+  </p>
+ </form>
+ <script>
+  function procesa() {
+   const genero = inGenero.value
+   outSalida.value =
+    recomienda(genero)
+  }
+
+  /** @param {string} genero */
+  function recomienda(genero) {
+   if (genero === "pop") {
+    return "Ariana Grande."
+   } else if (genero === "reg") {
+    return "Bad Bunny."
+   } else {
+    return "De eso no conozco."
+   }
+  }
+ </script>
+</body>
+
+</html>
