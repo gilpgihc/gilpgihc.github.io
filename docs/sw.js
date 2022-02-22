@@ -5,7 +5,7 @@
 
 const CACHE = "cache"
 
-const VERSION = "4.2"
+const VERSION = "4.3"
 
 const ARCHIVOS = [
   "/favicon.ico",
@@ -241,7 +241,17 @@ const ARCHIVOS = [
    "/src/m13juegos/Dgira.html",
    "/src/m13juegos/Ebotones.html",
    "/src/m13juegos/Fcolisiones.html",
-   "/src/m13juegos/Gsonrie.html" ]
+   "/src/m13juegos/Gsonrie.html",
+   "/src/m13juegos/Haleatorio.html",
+   "/src/m13juegos/Icustom.html",
+   "/src/m13juegos/Jasociaciones.html",
+   "/src/m13juegos/Kpolimorfismo.html",
+   "/src/m13juegos/Ljueguito1.html",
+   "/src/m13juegos/Mjueguito2.html",
+   "/src/m13juegos/Njueguito3.html",
+   "/src/m14adornos/Ahorizontal.html",
+   "/src/m14adornos/Bciclos.html",
+   "/src/m14adornos/Cespiral.html" ]
 
 if (self instanceof ServiceWorkerGlobalScope) {
  self.addEventListener("install", installListener)
