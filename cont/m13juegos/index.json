@@ -1,83 +1,88 @@
 {
  "type": "A",
- "title": "Formularios",
- "description": "Contenido de la lección «11. Formularios».",
- "printDescription": "Página para imprimir de la lección «11. Formularios».",
+ "title": "Juegos",
+ "description": "Contenido de la lección «13. Juegos».",
+ "printDescription": "Página para imprimir de la lección «13. Juegos».",
  "listado": [
   {
-   "name": "mAsimple.html",
-   "title": "Formulario simple",
-   "description": "Formulario simple."
+   "name": "mAsprites.html",
+   "title": "Sprites",
+   "description": "Sprites."
   },
   {
-   "name": "mBForm.html",
-   "title": "El elemento <code class='language-html'>form<code>",
-   "h1": "El elemento form",
-   "description": "El elemento form de HTML."
+   "name": "mBhorizontal.html",
+   "title": "Desplazamiento horizontal",
+   "description": "Desplazamiento horizontal."
   },
   {
-   "name": "mCatributos.html",
-   "title": "Atributos comunes",
-   "description": "Atributos comunes de elementos asociados a form."
+   "name": "mCrecta.html",
+   "title": "Recta",
+   "description": "Recta."
   },
   {
-   "name": "mDlabel.html",
-   "title": "El elemento label",
-   "h1": "El elemento <code class='language-html'>label</code>",
-   "description": "El elemento label de HTML."
+   "name": "mDondula.html",
+   "title": "Ondula",
+   "description": "Ondula."
   },
   {
-   "name": "mEbutton.html",
-   "title": "El elemento button",
-   "h1": "El elemento <code class='language-html'>button</code>",
-   "description": "El elemento button de HTML."
+   "name": "mEgira.html",
+   "title": "Girando",
+   "description": "Girando."
   },
   {
-   "name": "mFinput.html",
-   "title": "El elemento input",
-   "h1": "El elemento <code class='language-html'>input</code>",
-   "description": "El elemento input de HTML."
+   "name": "mFbotones.html",
+   "title": "Desplazamiento con botones",
+   "description": "Desplazamiento con botones."
   },
   {
-   "name": "mGoutput.html",
-   "title": "El elemento output",
-   "h1": "El elemento <code class='language-html'>output</code>",
-   "description": "El elemento output de HTML."
+   "name": "mGcolisiones.html",
+   "title": "Detecta colisiones",
+   "description": "Detecta colisiones."
   },
   {
-   "name": "mHdivision.html",
-   "title": "División",
-   "description": "División."
+   "name": "mHsonrie.html",
+   "title": "Haz algo si chocamos",
+   "description": "Haz algo si chocamos."
   },
   {
-   "name": "mI2botones.html",
-   "title": "Formulario numérico de 2 botones",
-   "description": "Formulario numérico de 2 botones."
+   "name": "mIaleatorio.html",
+   "title": "Muévete al azar",
+   "description": "Muévete al azar."
   },
   {
-   "name": "mJrecomendaciones.html",
-   "title": "Recomendaciones",
-   "description": "Recomendaciones."
+   "name": "mJcustom.html",
+   "title": "Usa custom element",
+   "description": "Usa custom element."
   },
   {
-   "name": "mKadivina.html",
-   "title": "Adivina",
-   "description": "Adivina."
+   "name": "mKasociaciones.html",
+   "title": "Asociaciones",
+   "description": "Asociaciones."
   },
   {
-   "name": "mLencuesta.html",
-   "title": "Encuesta",
-   "description": "Encuesta."
+   "name": "mLpolimorfismo.html",
+   "title": "Polimorfismo",
+   "description": "Polimorfismo."
   },
   {
-   "name": "mMrecomienda.html",
-   "title": "Recomienda",
-   "description": "Recomienda."
+   "name": "mMjueguito1.html",
+   "title": "Jueguito 1",
+   "description": "Jueguito 1."
   },
   {
-   "name": "mNresumen.html",
+   "name": "mNjueguito2.html",
+   "title": "Jueguito 2",
+   "description": "Jueguito 2."
+  },
+  {
+   "name": "mOjueguito3.html",
+   "title": "Jueguito 3",
+   "description": "Jueguito 3."
+  },
+  {
+   "name": "mPresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «11. Formularios»."
+   "description": "Resumen de la lección «13. Juegos»."
   }
  ]
 }

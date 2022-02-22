@@ -480,6 +480,11 @@
       <a href="/m12custom/">Custom elements</a>
      </p>
     </li>
+    <li>
+     <p>
+      <a href="/m13juegos/">Juegos</a>
+     </p>
+    </li>
    </ol>
  </nav>
 </div>
@@ -8519,7 +8524,7 @@
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mBForm.html">El elemento form</a>
+      <a href="/m11formularios/mBForm.html">El elemento <code class='language-html'>form<code></a>
      </p>
     </li>
     <li>
@@ -8817,7 +8822,7 @@
 </div>
       </section>
      <section >
-         <h1 >B. El elemento form</h1><div class="lectura">
+         <h1 >B. El elemento <code class='language-html'>form<code></h1><div class="lectura">
  <ul>
   <li>
    <p>Representa un hiperenlace.</p>
@@ -9726,6 +9731,878 @@
  <ul>
   <li>
    <p>En esta lección se revisó el uso básico de los custom element.</p>
+  </li>
+ </ul>
+</div>
+      </section>
+      </section>
+     <section>
+         <h1 class="leccion">13. Juegos</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presentan técnicas para elaborar juegos.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m13juegos/mAsprites.html">Sprites</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mBhorizontal.html">Desplazamiento horizontal</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mCrecta.html">Recta</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mDondula.html">Ondula</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mEgira.html">Girando</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mFbotones.html">Desplazamiento con botones</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mGcolisiones.html">Detecta colisiones</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mHsonrie.html">Haz algo si chocamos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mIaleatorio.html">Muévete al azar</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mJcustom.html">Usa custom element</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mKasociaciones.html">Asociaciones</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mLpolimorfismo.html">Polimorfismo</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mMjueguito1.html">Jueguito 1</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mNjueguito2.html">Jueguito 2</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mOjueguito3.html">Jueguito 3</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mPresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Sprites</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m13juegos/Asprites.html" height="250"></iframe>
+  <p class="noPrint">
+   <a href="/src/m13juegos/Asprites.html" target="_blank">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ESprite%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20.sprite%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20font-size%3A%203rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3ESprite%3C%2Fh1%3E%0A%20%3Cp%3E%0A%20%20Este%20ejemplo%20te%20muestra%20como%0A%20%20colocar%20una%20figura%20en%0A%20%20cualquier%20lugar%20de%20la%0A%20%20ventana.%0A%20%3C%2Fp%3E%0A%20%3Coutput%20class%3D%22sprite%22%0A%20%20%20style%3D%22left%3A%20100px%3B%0A%20%20%20%20bottom%3A%20150px%22%3E%0A%20%20%F0%9F%98%84%0A%20%3C%2Foutput%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Sprite<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">.sprite</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span style="color: #098658;">3rem</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Sprite<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; Este ejemplo te muestra como</div><div>&nbsp; colocar una figura en</div><div>&nbsp; cualquier lugar de la</div><div>&nbsp; ventana.</div><div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"sprite"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">style</span>=<span style="color: #0000ff;">"</span><span style="color: #0000ff;">left: 100px;</span></div><div><span style="color: #0000ff;">&nbsp; &nbsp; bottom: 150px</span><span style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; 😄</div><div>&nbsp;<span style="color: #800000;">&lt;/output&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >B. Desplazamiento horizontal</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m13juegos/Bhorizontal.html" height="250"></iframe>
+  <p class="noPrint">
+   <a href="/src/m13juegos/Bhorizontal.html" target="_blank">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%0A%20%20Animaci%C3%B3n%20horizontal%0A%20%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20.sprite%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20font-size%3A%203rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3EAnimaci%C3%B3n%20horizontal%3C%2Fh1%3E%0A%20%3Coutput%20id%3D%22carita%22%0A%20%20%20class%3D%22sprite%22%3E%0A%20%20%F0%9F%98%84%0A%20%3C%2Foutput%3E%0A%20%3Cscript%3E%0A%20%20const%20REFRESCO%20%3D%205%0A%20%20const%20VELOCIDAD%20%3D%200.5%0A%20%20let%20x%20%3D%200%0A%20%20setInterval(avanza%2C%20REFRESCO)%0A%0A%20%20function%20avanza()%20%7B%0A%20%20%20const%20y%20%3D%20innerHeight%20%2F%202%0A%20%20%20const%20xM%C3%A1xima%20%3D%20innerWidth%0A%20%20%20carita.style%20%3D%0A%20%20%20%20%60left%3A%20%24%7Bx%7Dpx%3B%20bottom%3A%20%24%7By%7Dpx%60%0A%20%20%20x%20%3D%20(x%20%2B%20VELOCIDAD)%20%25%20xM%C3%A1xima%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span></div><div>&nbsp; Animación horizontal</div><div>&nbsp;<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">.sprite</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span style="color: #098658;">3rem</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Animación horizontal<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"carita"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"sprite"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; 😄</div><div>&nbsp;<span style="color: #800000;">&lt;/output&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">REFRESCO</span> = <span style="color: #098658;">5</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">VELOCIDAD</span> = <span style="color: #098658;">0.5</span></div><div>&nbsp; <span style="color: #0000ff;">let</span> <span style="color: #001080;">x</span> = <span style="color: #098658;">0</span></div><div>&nbsp; <span style="color: #795e26;">setInterval</span>(<span style="color: #795e26;">avanza</span>, <span style="color: #0070c1;">REFRESCO</span>)</div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">avanza</span>() {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">y</span> = <span style="color: #001080;">innerHeight</span> / <span style="color: #098658;">2</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">xMáxima</span> = <span style="color: #001080;">innerWidth</span></div><div>&nbsp; &nbsp;<span style="color: #001080;">carita</span>.<span style="color: #001080;">style</span> =</div><div>&nbsp; &nbsp; <span style="color: #a31515;">`left: </span><span style="color: #0000ff;">${</span><span style="color: #001080;">x</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px; bottom: </span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">y</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp;<span style="color: #001080;">x</span> = (<span style="color: #001080;">x</span> + <span style="color: #0070c1;">VELOCIDAD</span>) % <span style="color: #0070c1;">xMáxima</span></div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >C. Recta</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Representa un rótulo o etiqueta asociado a un control de una forma.</p>
+  </li>
+  <li>
+   <p>El contenido del elemento es el rótulo.</p>
+  </li>
+  <li>
+   <p>
+    Se puede asignar a su atributo
+    <dfn><code class="language-html">for</code></dfn>
+    el identificador del elemento con que se desea asociar la etiqueta.
+   </p>
+  </li>
+  <li>
+   <p>
+    También se puede hacer que el elemento label tenga como hijo al control para
+    que queden asociados.
+   </p>
+  </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/forms.html#the-label-element</a>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >D. Ondula</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Representa un botón cuya superficie muestra el contenido del elemento.</p>
+  </li>
+  <li>
+   <p>El contenido del elemento es el rótulo.</p>
+  </li>
+  <li>
+   <p>
+    El atributo
+    <dfn><code class="language-html">type</code></dfn>
+    controla el comportamiento del botón al ser activado. Sus valores posibles
+    son:
+   </p>
+   <dl>
+    <dt><dfn><code class="language-html">submit</code></dfn></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Cuando el botón se activa, el contenido de la forma se envía.
+       </p>
+      </li>
+      <li>
+       <p>Es el valor por omisión.</p>
+      </li>
+     </ul>
+    </dd>
+    <dt><dfn><code class="language-html">reset</code></dfn></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Cuando el botón se activa, el contenido de la forma regresa a su
+        estado inicial.
+       </p>
+      </li>
+     </ul>
+    </dd>
+    <dt><dfn><code class="language-html">button</code></dfn></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Cuando el botón se activa, no tiene un comportamiento definido, pero
+        puede
+        configurar por medio de un script o con el atributo
+        <code class="language-html">onclick</code>.
+       </p>
+      </li>
+     </ul>
+    </dd>
+   </dl>
+  </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element</a>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >E. Girando</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Los siguientes atributos son comunes en los elementos asociados con una
+    forma.
+   </p>
+   <dl>
+    <dt><dfn><code class="language-javascript">value</code></dfn></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Propiedad de JavaScript para asignar o recuperar el valor de captura.
+       </p>
+      </li>
+      <li>
+       <p>
+        Para
+        <code class="language-html">textarea</code>,
+        <code class="language-html">select</code>
+        y controles de texto del elemento
+        <code class="language-html">input</code>.
+       </p>
+      </li>
+      <li>
+       <p>
+        Se puede usar en HTML para controles de texto del elemento
+        <code class="language-html">input</code>.
+       </p>
+      </li>
+     </ul>
+    </dd>
+    <dt><dfn><code class="language-html">name</code></dfn></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Nombre único del elemento (y sus valores asociados) dentro de la forma.
+       </p>
+      </li>
+     </ul>
+    </dd>
+    <dt><dfn><code class="language-html">disabled</code></dfn></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Atributo booleano. Cuando está presente indica que el elemento está
+        deshabilitado y no responde a la interacción del usuario.
+       </p>
+      </li>
+     </ul>
+    </dd>
+    <dt><dfn><code class="language-html">maxlength</code></dfn></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Para
+        <code class="language-html">textarea</code>
+        y controles de texto del elemento
+        <code class="language-html">input</code>.
+       </p>
+      </li>
+      <li>
+       <p>Es el número máximo de caracteres que el usuario puede introducir.</p>
+      </li>
+     </ul>
+    </dd>
+    <dt><dfn><code class="language-html">minlength</code></dfn></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Para
+        <code class="language-html">textarea</code>
+        y controles de texto del elemento
+        <code class="language-html">input</code>.
+       </p>
+      </li>
+      <li>
+       <p>
+        Es el número mínimo de caracteres que el usuario puede
+        introducir para que la captura sea válida.
+       </p>
+      </li>
+     </ul>
+    </dd>
+    <dt><dfn><code class="language-html">required</code></dfn></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Atributo booleano. Cuando está presente indica que el valor de
+        captura del elemento no puede estar vacío.
+       </p>
+      </li>
+     </ul>
+    </dd>
+   </dl>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >F. Desplazamiento con botones</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Puede desplegar una gran cantidad de controles según el valor de atributo
+    <dfn><code class="language-html">type</code></dfn>.
+   </p>
+  </li>
+  <li>
+   <p>Los campos con formato se validan antes de realizar submit.</p>
+  </li>
+  <li>
+   <p>
+    Los valores más usados para
+    <dfn><code class="language-html">type</code></dfn>
+    son:
+   </p>
+   <dl>
+    <dt><code class="language-html">hidden</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Campo invisible cuyo no puede se examinado o manipulado por el usuario.
+       </p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">text</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>Manipula texto plano.</p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">search</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Usa texto para búsquedas. Se despliega con la apariencia preferida por
+        la
+        plataforma donde se ejecuta.
+       </p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">tel</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>Texto que representa un número telefónico válido.</p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">url</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>Texto que representa una URL válida.</p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">email</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>Texto que representa un email válido.</p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">password</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Texto que representa una contraseña y por lo mismo no se muestra.
+       </p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">number</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>Maneja números.</p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">range</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>Maneja un rango de números.</p>
+      </li>
+     </ul>
+    </dd>
+   </dl>
+  </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/input.html#the-input-element</a>
+   </p>
+  </li>
+ </ul>
+ <section>
+  <h1>Otros atributos</h1>
+  <dl>
+   <dt><dfn><code class="language-javascript">valueAsNumber</code></dfn></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>
+       Propiedad de JavaScript para asignar o recuperar el valor numérico de
+       captura.
+      </p>
+     </li>
+     <li>
+      <p>
+       Para controles numéricos del elemento
+       <code class="language-html">input</code>.
+      </p>
+     </li>
+     <li>
+      <p>Devuelve un número.</p>
+     </li>
+     <li>
+      <p>
+       Si el texto es una cadena vacía o no representa un número, el valor
+       devuelto
+       es NaN (o sea que no es un número).
+      </p>
+     </li>
+    </ul>
+   </dd>
+   <dt><code class="language-html">pattern</code></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Para los tipos que manejan texto.</p>
+     </li>
+     <li>
+      <p>
+       Expresión regular para validar el contenido. Abarca desde el inicio hasta
+       el final del texto.
+      </p>
+     </li>
+    </ul>
+   </dd>
+   <dt><code class="language-html">min</code></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Para controles numéricos y de fecha.</p>
+     </li>
+     <li>
+      <p>Valor mínimo que se puede capturar.</p>
+     </li>
+    </ul>
+   </dd>
+   <dt><code class="language-html">max</code></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Para controles numéricos y de fecha.</p>
+     </li>
+     <li>
+      <p>Valor máximo que se puede capturar.</p>
+     </li>
+    </ul>
+   </dd>
+   <dt><code class="language-html">step</code></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Para controles numéricos y de fecha.</p>
+     </li>
+     <li>
+      <p>
+       Granularidad o separación entre los valores que se pueden capturar. Por
+       ejemplo, step=0.1 indica que los valores pueden ser 0, 0.1, 0.2, 0.3,
+       etcétera. Aplica también para fechas.
+      </p>
+     </li>
+     <li>
+      <p>El valor por omisión para controles numéricos es 1.</p>
+     </li>
+    </ul>
+   </dd>
+  </dl>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >G. Detecta colisiones</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Muestra el resultado de un cálculo.</p>
+  </li>
+  <li>
+   <p>El contenido del elemento es el valor que muestra.</p>
+  </li>
+  <li>
+   <p>
+    El valor mostrado puede consultar o cambiar desde JavaScript con la
+    propiedad
+    <dfn><code class="language-javascript">value</code></dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element</a>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >H. Haz algo si chocamos</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m11formularios/Bdivision.html" height="250"></iframe>
+  <p class="noPrint">
+   <a href="/src/m11formularios/Bdivision.html" target="_blank">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EDivisi%C3%B3n%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%0A%20%20%20action%3D%22javascript%3Aprocesa()%22%3E%0A%20%20%3Ch1%3EDivisi%C3%B3n%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20a%0A%20%20%20%20%3Cinput%20id%3D%22inA%22%0A%20%20%20%20%20%20type%3D%22number%22%0A%20%20%20%20%20%20step%3D%220.1%22%0A%20%20%20%20%20%20required%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20b%0A%20%20%20%20%3Cinput%20id%3D%22inB%22%0A%20%20%20%20%20%20type%3D%22number%22%0A%20%20%20%20%20%20step%3D%220.1%22%0A%20%20%20%20%20%20required%0A%20%20%20%20%20%20oninput%3D%22validaB()%22%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3EDividir%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Coutput%20id%3DoutSalida%3E%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20const%20NO_0%20%3D%20%22No%20puede%20ser%200%22%0A%0A%20%20function%20validaB()%20%7B%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20%2F*%20Debe%20cumplirse%20que%20b%0A%20%20%20%20*%20sea%20un%20n%C3%BAmero%20diferente%0A%20%20%20%20*%20de%200.%20*%2F%0A%20%20%20if%20(isNaN(b)%20%7C%7C%20b%20!%3D%3D%200)%20%7B%0A%20%20%20%20inB.setCustomValidity(%22%22)%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20inB.setCustomValidity(NO_0)%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20function%20procesa()%20%7B%0A%20%20%20const%20a%20%3D%20inA.valueAsNumber%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20outSalida.value%20%3D%20divide(a%2C%20b)%0A%20%20%7D%0A%0A%20%20%2F**%0A%20%20%20*%20%40param%20%7Bnumber%7D%20a%0A%20%20%20*%20%40param%20%7Bnumber%7D%20b%0A%20%20%20*%2F%0A%20%20function%20divide(a%2C%20b)%20%7B%0A%20%20%20return%20a%20%2F%20b%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>División<span style="color: #800000;">&lt;/title&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;form</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">"javascript:procesa()"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>División<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div><div>&nbsp; &nbsp; a</div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;input</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"inA"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">type</span>=<span style="color: #0000ff;">"number"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">step</span>=<span style="color: #0000ff;">"0.1"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">required</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div><div>&nbsp; &nbsp; b</div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;input</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"inB"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">type</span>=<span style="color: #0000ff;">"number"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">step</span>=<span style="color: #0000ff;">"0.1"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">required</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">oninput</span>=<span style="color: #0000ff;">"</span><span style="color: #795e26;">validaB</span><span style="color: #0000ff;">()</span><span style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button&gt;</span>Dividir<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">outSalida</span><span style="color: #800000;">&gt;&lt;/output&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">NO_0</span> = <span style="color: #a31515;">"No puede ser 0"</span></div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">validaB</span>() {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">b</span> = <span style="color: #001080;">inB</span>.<span style="color: #001080;">valueAsNumber</span></div><div>&nbsp; &nbsp;<span style="color: #008000;">/* Debe cumplirse que b</span></div><div><span style="color: #008000;">&nbsp; &nbsp; * sea un número diferente</span></div><div><span style="color: #008000;">&nbsp; &nbsp; * de 0. */</span></div><div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span style="color: #795e26;">isNaN</span>(<span style="color: #0070c1;">b</span>) || <span style="color: #0070c1;">b</span> !== <span style="color: #098658;">0</span>) {</div><div>&nbsp; &nbsp; <span style="color: #001080;">inB</span>.<span style="color: #795e26;">setCustomValidity</span>(<span style="color: #a31515;">""</span>)</div><div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div><div>&nbsp; &nbsp; <span style="color: #001080;">inB</span>.<span style="color: #795e26;">setCustomValidity</span>(<span style="color: #0070c1;">NO_0</span>)</div><div>&nbsp; &nbsp;}</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">procesa</span>() {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">a</span> = <span style="color: #001080;">inA</span>.<span style="color: #001080;">valueAsNumber</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">b</span> = <span style="color: #001080;">inB</span>.<span style="color: #001080;">valueAsNumber</span></div><div>&nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span style="color: #001080;">value</span> = <span style="color: #795e26;">divide</span>(<span style="color: #0070c1;">a</span>, <span style="color: #0070c1;">b</span>)</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #008000;">/**</span></div><div><span style="color: #008000;">&nbsp; &nbsp;* @param {number} a</span></div><div><span style="color: #008000;">&nbsp; &nbsp;* @param {number} b</span></div><div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">divide</span>(<span style="color: #001080;">a</span>, <span style="color: #001080;">b</span>) {</div><div>&nbsp; &nbsp;<span style="color: #af00db;">return</span> <span style="color: #001080;">a</span> / <span style="color: #001080;">b</span></div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >I. Muévete al azar</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m11formularios/C2botones.html" height="250"></iframe>
+  <p class="noPrint">
+   <a href="/src/m11formularios/C2botones.html" target="_blank">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%0A%20%20Formulario%20con%202%20botones%0A%20%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%0A%20%20%20action%3Djavascript%3AprocSuma()%3E%0A%20%20%3Ch1%3E%0A%20%20%20Formulario%20con%202%20botones%0A%20%20%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20a%0A%20%20%20%20%3Cinput%20id%3DinA%20type%3Dnumber%0A%20%20%20%20%20%20required%20min%3D%220.1%22%20max%3D%22100%22%0A%20%20%20%20%20%20step%3D%220.1%22%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20b%0A%20%20%20%20%3Cinput%20id%3DinB%20type%3Dnumber%0A%20%20%20%20%20%20required%20min%3D%220.1%22%20max%3D%22100%22%0A%20%20%20%20%20%20step%3D%220.1%22%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3ESumar%3C%2Fbutton%3E%0A%20%20%20%3Cbutton%20formaction%3D%22javascript%3A%0A%20%20%20%20%20procResta()%22%3E%0A%20%20%20%20Restar%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Coutput%20id%3DoutSalida%3E%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20function%20procSuma()%20%7B%0A%20%20%20const%20a%20%3D%20inA.valueAsNumber%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20const%20resultado%20%3D%20suma(a%2C%20b)%0A%20%20%20outSalida.value%20%3D%0A%20%20%20%20%60La%20suma%20es%3A%20%24%7Bresultado%7D.%60%0A%20%20%7D%0A%0A%20%20function%20procResta()%20%7B%0A%20%20%20const%20a%20%3D%20inA.valueAsNumber%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20const%20resultado%20%3D%20resta(a%2C%20b)%0A%20%20%20outSalida.value%20%3D%0A%20%20%20%20%60La%20resta%20es%3A%20%24%7Bresultado%7D.%60%0A%20%20%7D%0A%0A%20%20function%20suma(a%2C%20b)%20%7B%0A%20%20%20return%20a%20%2B%20b%0A%20%20%7D%0A%0A%20%20function%20resta(a%2C%20b)%20%7B%0A%20%20%20return%20a%20-%20b%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span></div><div>&nbsp; Formulario con 2 botones</div><div>&nbsp;<span style="color: #800000;">&lt;/title&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;form</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">javascript:procSuma()</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span></div><div>&nbsp; &nbsp;Formulario con 2 botones</div><div>&nbsp; <span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div><div>&nbsp; &nbsp; a</div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;input</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">inA</span> <span style="color: #ff0000;">type</span>=<span style="color: #0000ff;">number</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">required</span> <span style="color: #ff0000;">min</span>=<span style="color: #0000ff;">"0.1"</span> <span style="color: #ff0000;">max</span>=<span style="color: #0000ff;">"100"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">step</span>=<span style="color: #0000ff;">"0.1"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div><div>&nbsp; &nbsp; b</div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;input</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">inB</span> <span style="color: #ff0000;">type</span>=<span style="color: #0000ff;">number</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">required</span> <span style="color: #ff0000;">min</span>=<span style="color: #0000ff;">"0.1"</span> <span style="color: #ff0000;">max</span>=<span style="color: #0000ff;">"100"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">step</span>=<span style="color: #0000ff;">"0.1"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button&gt;</span>Sumar<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button</span> <span style="color: #ff0000;">formaction</span>=<span style="color: #0000ff;">"javascript:</span></div><div><span style="color: #0000ff;">&nbsp; &nbsp; &nbsp;procResta()"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; Restar</div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">outSalida</span><span style="color: #800000;">&gt;&lt;/output&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">procSuma</span>() {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">a</span> = <span style="color: #001080;">inA</span>.<span style="color: #001080;">valueAsNumber</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">b</span> = <span style="color: #001080;">inB</span>.<span style="color: #001080;">valueAsNumber</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">resultado</span> = <span style="color: #795e26;">suma</span>(<span style="color: #0070c1;">a</span>, <span style="color: #0070c1;">b</span>)</div><div>&nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span style="color: #001080;">value</span> =</div><div>&nbsp; &nbsp; <span style="color: #a31515;">`La suma es: </span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">resultado</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">.`</span></div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">procResta</span>() {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">a</span> = <span style="color: #001080;">inA</span>.<span style="color: #001080;">valueAsNumber</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">b</span> = <span style="color: #001080;">inB</span>.<span style="color: #001080;">valueAsNumber</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">resultado</span> = <span style="color: #795e26;">resta</span>(<span style="color: #0070c1;">a</span>, <span style="color: #0070c1;">b</span>)</div><div>&nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span style="color: #001080;">value</span> =</div><div>&nbsp; &nbsp; <span style="color: #a31515;">`La resta es: </span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">resultado</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">.`</span></div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">suma</span>(<span style="color: #001080;">a</span>, <span style="color: #001080;">b</span>) {</div><div>&nbsp; &nbsp;<span style="color: #af00db;">return</span> <span style="color: #001080;">a</span> + <span style="color: #001080;">b</span></div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">resta</span>(<span style="color: #001080;">a</span>, <span style="color: #001080;">b</span>) {</div><div>&nbsp; &nbsp;<span style="color: #af00db;">return</span> <span style="color: #001080;">a</span> - <span style="color: #001080;">b</span></div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >J. Usa custom element</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    El siguiente orograma usa el tipo de elemento
+    <dfn><code class="language-html">select</code></dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    La especificación del elemento
+    <code class="language-html">select</code></dfn>.
+    está en
+    <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element</a>
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m11formularios/Drecomendaciones.html" height="250"></iframe>
+  <p class="noPrint">
+   <a href="/src/m11formularios/Drecomendaciones.html" target="_blank">Ábrelo en
+    otra pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ERecomendaciones%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%0A%20%20%20action%3D%22javascript%3Aprocesa()%22%3E%0A%20%20%3Ch1%3ERecomendaciones%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20G%C3%A9nero%0A%20%20%20%20%3Cselect%20id%3D%22inGenero%22%0A%20%20%20%20%20%20required%3E%0A%20%20%20%20%20%3Coption%20value%3D%22%22%3E%0A%20%20%20%20%20%20--%20Selecciona%20--%0A%20%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%20%3Coption%20value%3D%22pop%22%3E%0A%20%20%20%20%20%20Pop%0A%20%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%20%3Coption%20value%3D%22reg%22%3E%0A%20%20%20%20%20%20Reguet%C3%B3n%0A%20%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%20%3Coption%20value%3D%22tango%22%3E%0A%20%20%20%20%20%20Tango%0A%20%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3C%2Fselect%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3ERecomendar%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Coutput%20id%3DoutSalida%3E%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20function%20procesa()%20%7B%0A%20%20%20const%20genero%20%3D%20inGenero.value%0A%20%20%20outSalida.value%20%3D%0A%20%20%20%20recomienda(genero)%0A%20%20%7D%0A%0A%20%20%2F**%20%40param%20%7Bstring%7D%20genero%20*%2F%0A%20%20function%20recomienda(genero)%20%7B%0A%20%20%20if%20(genero%20%3D%3D%3D%20%22pop%22)%20%7B%0A%20%20%20%20return%20%22Ariana%20Grande.%22%0A%20%20%20%7D%20else%20if%20(genero%20%3D%3D%3D%20%22reg%22)%20%7B%0A%20%20%20%20return%20%22Bad%20Bunny.%22%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20return%20%22De%20eso%20no%20conozco.%22%0A%20%20%20%7D%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>Recomendaciones<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;form</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">action</span>=<span
+      style="color: #0000ff;">"javascript:procesa()"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; <span
+      style="color: #800000;">&lt;h1&gt;</span>Recomendaciones<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div>
+   <div>&nbsp; &nbsp; Género</div>
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;select</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"inGenero"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">required</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
+    <span style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">""</span><span style="color: #800000;">&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; -- Selecciona --</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
+    <span style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"pop"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; Pop</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
+    <span style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"reg"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; Reguetón</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
+    <span style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"tango"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; Tango</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/select&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;button&gt;</span>Recomendar<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">outSalida</span><span
+      style="color: #800000;">&gt;&lt;/output&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">procesa</span>() {</div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">genero</span> = <span
+      style="color: #001080;">inGenero</span>.<span
+      style="color: #001080;">value</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span
+      style="color: #001080;">value</span> =</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">recomienda</span>(<span
+      style="color: #0070c1;">genero</span>)</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #008000;">/** @param {string} genero
+     */</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">recomienda</span>(<span
+      style="color: #001080;">genero</span>) {</div>
+   <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">genero</span> === <span
+      style="color: #a31515;">"pop"</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #a31515;">"Ariana Grande."</span></div>
+   <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> <span
+      style="color: #af00db;">if</span> (<span
+      style="color: #001080;">genero</span> === <span
+      style="color: #a31515;">"reg"</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #a31515;">"Bad Bunny."</span></div>
+   <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #a31515;">"De eso no conozco."</span></div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >K. Asociaciones</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m11formularios/Eadivina.html" height="350"></iframe>
+  <p class="noPrint">
+   <a href="/src/m11formularios/Eadivina.html" target="_blank">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EAdivina%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20font-family%3A%20sans-serif%3B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%7D%0A%20%20img%20%7B%0A%20%20%20max-height%3A%2040vh%3B%0A%20%20%20max-width%3A%20100%25%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%20action%3D%22javascript%3Arana()%22%3E%0A%20%20%3Ch1%3EAdivina%3C%2Fh1%3E%0A%20%20%3Cfigure%3E%0A%20%20%20%3Cimg%20src%3D%22https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FJKNn9A98JBVlu%2Fgiphy.gif%22%0A%20%20%20%20%20alt%3D%22Imagen%20de%20un%20animal%22%3E%0A%20%20%20%3Cfigcaption%3E%0A%20%20%20%20%C2%BFQ%C3%BAe%20animal%20es%20este%3F%0A%20%20%20%3C%2Ffigcaption%3E%0A%20%20%3C%2Ffigure%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3EUna%20Rana%3C%2Fbutton%3E%0A%20%20%20%3Cbutton%0A%20%20%20%20%20formaction%3D%22javascript%3Aoso()%22%3E%0A%20%20%20%20Un%20Oso%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Coutput%20id%3D%22outSalida%22%3E%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20function%20rana()%20%7B%0A%20%20%20outSalida.value%20%3D%0A%20%20%20%20%22Claro%20que%20no%20es%20una%20rana.%22%0A%20%20%7D%0A%20%20function%20oso()%20%7B%0A%20%20%20outSalida.value%20%3D%0A%20%20%20%20%22Claro%20que%20si%20es%20un%20oso.%22%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Adivina<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">html</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span style="color: #0451a5;">sans-serif</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">text-align</span>: <span style="color: #0451a5;">center</span>;</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">img</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">max-height</span>: <span style="color: #098658;">40vh</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">max-width</span>: <span style="color: #098658;">100%</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;form</span> <span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">"javascript:rana()"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Adivina<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;figure&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;img</span> <span style="color: #ff0000;">src</span>=<span style="color: #0000ff;">"https://media.giphy.com/media/JKNn9A98JBVlu/giphy.gif"</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">alt</span>=<span style="color: #0000ff;">"Imagen de un animal"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;figcaption&gt;</span></div><div>&nbsp; &nbsp; ¿Qúe animal es este?</div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/figcaption&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/figure&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button&gt;</span>Una Rana<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">formaction</span>=<span style="color: #0000ff;">"javascript:oso()"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; Un Oso</div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"outSalida"</span><span style="color: #800000;">&gt;&lt;/output&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">rana</span>() {</div><div>&nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span style="color: #001080;">value</span> =</div><div>&nbsp; &nbsp; <span style="color: #a31515;">"Claro que no es una rana."</span></div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">oso</span>() {</div><div>&nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span style="color: #001080;">value</span> =</div><div>&nbsp; &nbsp; <span style="color: #a31515;">"Claro que si es un oso."</span></div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >L. Polimorfismo</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m11formularios/Fencuesta.html" height="900"></iframe>
+  <p class="noPrint">
+   <a href="/src/m11formularios/Fencuesta.html" target="_blank">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%C2%BFCu%C3%A1l%20te%20gusta%20m%C3%A1s%3F%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20font-family%3A%20sans-serif%3B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%7D%0A%0A%20%20span%20%7B%0A%20%20%20display%3A%20inline-block%3B%0A%20%20%20vertical-align%3A%20top%3B%0A%20%20%7D%0A%0A%20%20img%20%7B%0A%20%20%20max-width%3A%20100%25%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%20action%3Djavascript%3Acat()%3E%0A%20%20%3Ch1%3E%C2%BFCu%C3%A1l%20te%20gusta%20m%C3%A1s%3F%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cspan%3E%0A%20%20%20%20%3Coutput%20id%3DoutGatito%3E%0A%20%20%20%20%200%0A%20%20%20%20%3C%2Foutput%3E%0A%20%20%20%20votos.%0A%20%20%20%20%3Cbutton%3EVota%3C%2Fbutton%3E%0A%20%20%20%20%3Cbr%3E%0A%20%20%20%20%3Cimg%20src%3D%22https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FuWYjSbkIE2XIMIc7gh%2Fgiphy.gif%22%0A%20%20%20%20%20%20alt%3D%22Gatito%22%3E%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20%3Cspan%3E%0A%20%20%20%20%3Coutput%20id%3DoutPerrito%3E%0A%20%20%20%20%200%0A%20%20%20%20%3C%2Foutput%3E%0A%20%20%20%20votos.%0A%20%20%20%20%3Cbutton%0A%20%20%20%20%20%20formaction%3Djavascript%3Adog()%3E%0A%20%20%20%20%20Vota%0A%20%20%20%20%3C%2Fbutton%3E%0A%20%20%20%20%3Cbr%3E%0A%20%20%20%20%3Cimg%20src%3D%22https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FrXzOY4RpSA0Ug%2Fgiphy.gif%22%0A%20%20%20%20%20%20alt%3D%22Perrito%22%3E%0A%20%20%20%3C%2Fspan%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20let%20votosGatito%20%3D%200%0A%20%20let%20votosPerrito%20%3D%200%0A%0A%20%20function%20cat()%20%7B%0A%20%20%20votosGatito%2B%2B%0A%20%20%20outGatito.value%20%3D%20votosGatito%0A%20%20%7D%0A%0A%20%20function%20dog()%20%7B%0A%20%20%20votosPerrito%2B%2B%0A%20%20%20outPerrito.value%20%3D%20votosPerrito%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>¿Cuál te gusta más?<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">html</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span style="color: #0451a5;">sans-serif</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">text-align</span>: <span style="color: #0451a5;">center</span>;</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">span</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span style="color: #0451a5;">inline-block</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">vertical-align</span>: <span style="color: #0451a5;">top</span>;</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">img</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">max-width</span>: <span style="color: #098658;">100%</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;form</span> <span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">javascript:cat()</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>¿Cuál te gusta más?<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">outGatito</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp;0</div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/output&gt;</span></div><div>&nbsp; &nbsp; votos.</div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;button&gt;</span>Vota<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;br&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;img</span> <span style="color: #ff0000;">src</span>=<span style="color: #0000ff;">"https://media.giphy.com/media/uWYjSbkIE2XIMIc7gh/giphy.gif"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">alt</span>=<span style="color: #0000ff;">"Gatito"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">outPerrito</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp;0</div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/output&gt;</span></div><div>&nbsp; &nbsp; votos.</div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;button</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">formaction</span>=<span style="color: #0000ff;">javascript:dog()</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp;Vota</div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;br&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;img</span> <span style="color: #ff0000;">src</span>=<span style="color: #0000ff;">"https://media.giphy.com/media/rXzOY4RpSA0Ug/giphy.gif"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">alt</span>=<span style="color: #0000ff;">"Perrito"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">let</span> <span style="color: #001080;">votosGatito</span> = <span style="color: #098658;">0</span></div><div>&nbsp; <span style="color: #0000ff;">let</span> <span style="color: #001080;">votosPerrito</span> = <span style="color: #098658;">0</span></div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">cat</span>() {</div><div>&nbsp; &nbsp;<span style="color: #001080;">votosGatito</span>++</div><div>&nbsp; &nbsp;<span style="color: #001080;">outGatito</span>.<span style="color: #001080;">value</span> = <span style="color: #001080;">votosGatito</span></div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">dog</span>() {</div><div>&nbsp; &nbsp;<span style="color: #001080;">votosPerrito</span>++</div><div>&nbsp; &nbsp;<span style="color: #001080;">outPerrito</span>.<span style="color: #001080;">value</span> = <span style="color: #001080;">votosPerrito</span></div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >M. Jueguito 1</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m11formularios/Grecomienda.html" height="350"></iframe>
+  <p class="noPrint">
+   <a href="/src/m11formularios/Grecomienda.html" target="_blank">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%0A%20%20Formulario%20con%202%20botones%0A%20%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%0A%20%20%20action%3Djavascript%3AprocSuma()%3E%0A%20%20%3Ch1%3E%0A%20%20%20Formulario%20con%202%20botones%0A%20%20%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20a%0A%20%20%20%20%3Cinput%20id%3DinA%20type%3Dnumber%0A%20%20%20%20%20%20required%20min%3D%220.1%22%20max%3D%22100%22%0A%20%20%20%20%20%20step%3D%220.1%22%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20b%0A%20%20%20%20%3Cinput%20id%3DinB%20type%3Dnumber%0A%20%20%20%20%20%20required%20min%3D%220.1%22%20max%3D%22100%22%0A%20%20%20%20%20%20step%3D%220.1%22%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3ESumar%3C%2Fbutton%3E%0A%20%20%20%3Cbutton%20formaction%3D%22javascript%3A%0A%20%20%20%20%20procResta()%22%3E%0A%20%20%20%20Restar%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Coutput%20id%3DoutSalida%3E%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20function%20procSuma()%20%7B%0A%20%20%20const%20a%20%3D%20inA.valueAsNumber%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20const%20resultado%20%3D%20suma(a%2C%20b)%0A%20%20%20outSalida.value%20%3D%0A%20%20%20%20%60La%20suma%20es%3A%20%24%7Bresultado%7D.%60%0A%20%20%7D%0A%0A%20%20function%20procResta()%20%7B%0A%20%20%20const%20a%20%3D%20inA.valueAsNumber%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20const%20resultado%20%3D%20resta(a%2C%20b)%0A%20%20%20outSalida.value%20%3D%0A%20%20%20%20%60La%20resta%20es%3A%20%24%7Bresultado%7D.%60%0A%20%20%7D%0A%0A%20%20function%20suma(a%2C%20b)%20%7B%0A%20%20%20return%20a%20%2B%20b%0A%20%20%7D%0A%0A%20%20function%20resta(a%2C%20b)%20%7B%0A%20%20%20return%20a%20-%20b%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"utf-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Recomienda<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">html</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span style="color: #0451a5;">sans-serif</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">text-align</span>: <span style="color: #0451a5;">center</span>;</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">img</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">max-height</span>: <span style="color: #098658;">40vh</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">max-width</span>: <span style="color: #098658;">100%</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;form</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">"javascript:procesa()"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Recomienda<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div><div>&nbsp; &nbsp; Género</div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;select</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"inGenero"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">required</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">""</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; -- Selecciona --</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">"pop"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Pop</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">"reg"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Reguetón</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">"tango"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Tango</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/select&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button&gt;</span>Recomienda<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;figure&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;img</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"imgSal"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;figcaption&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"outSal"</span><span style="color: #800000;">&gt;&lt;/output&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/figcaption&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/figure&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">procesa</span>() {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">genero</span> = <span style="color: #001080;">inGenero</span>.<span style="color: #001080;">value</span></div><div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span style="color: #0070c1;">genero</span> === <span style="color: #a31515;">"pop"</span>) {</div><div>&nbsp; &nbsp; <span style="color: #001080;">outSal</span>.<span style="color: #001080;">value</span> = <span style="color: #a31515;">"Ariana Grande"</span></div><div>&nbsp; &nbsp; <span style="color: #001080;">imgSal</span>.<span style="color: #001080;">src</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"https://media.giphy.com/media/Ek42177e6xAeCnh8HX/giphy.gif"</span></div><div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> <span style="color: #af00db;">if</span> (<span style="color: #0070c1;">genero</span> === <span style="color: #a31515;">"reg"</span>) {</div><div>&nbsp; &nbsp; <span style="color: #001080;">outSal</span>.<span style="color: #001080;">value</span> = <span style="color: #a31515;">"Bad Bunny"</span></div><div>&nbsp; &nbsp; <span style="color: #001080;">imgSal</span>.<span style="color: #001080;">src</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"https://media.giphy.com/media/kfcsiSjQUyMvEZ1khq/giphy.gif"</span></div><div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div><div>&nbsp; &nbsp; <span style="color: #001080;">outSal</span>.<span style="color: #001080;">value</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"De eso no conozco."</span></div><div>&nbsp; &nbsp; <span style="color: #001080;">imgSal</span>.<span style="color: #001080;">src</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"https://media.giphy.com/media/VbVfYbxE0gOK5Qsjkc/giphy.gif"</span></div><div>&nbsp; &nbsp;}</div><div>&nbsp; &nbsp;<span style="color: #001080;">imgSal</span>.<span style="color: #001080;">alt</span> = <span style="color: #001080;">outSal</span>.<span style="color: #001080;">value</span></div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >N. Jueguito 2</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m11formularios/Grecomienda.html" height="350"></iframe>
+  <p class="noPrint">
+   <a href="/src/m11formularios/Grecomienda.html" target="_blank">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%0A%20%20Formulario%20con%202%20botones%0A%20%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%0A%20%20%20action%3Djavascript%3AprocSuma()%3E%0A%20%20%3Ch1%3E%0A%20%20%20Formulario%20con%202%20botones%0A%20%20%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20a%0A%20%20%20%20%3Cinput%20id%3DinA%20type%3Dnumber%0A%20%20%20%20%20%20required%20min%3D%220.1%22%20max%3D%22100%22%0A%20%20%20%20%20%20step%3D%220.1%22%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20b%0A%20%20%20%20%3Cinput%20id%3DinB%20type%3Dnumber%0A%20%20%20%20%20%20required%20min%3D%220.1%22%20max%3D%22100%22%0A%20%20%20%20%20%20step%3D%220.1%22%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3ESumar%3C%2Fbutton%3E%0A%20%20%20%3Cbutton%20formaction%3D%22javascript%3A%0A%20%20%20%20%20procResta()%22%3E%0A%20%20%20%20Restar%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Coutput%20id%3DoutSalida%3E%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20function%20procSuma()%20%7B%0A%20%20%20const%20a%20%3D%20inA.valueAsNumber%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20const%20resultado%20%3D%20suma(a%2C%20b)%0A%20%20%20outSalida.value%20%3D%0A%20%20%20%20%60La%20suma%20es%3A%20%24%7Bresultado%7D.%60%0A%20%20%7D%0A%0A%20%20function%20procResta()%20%7B%0A%20%20%20const%20a%20%3D%20inA.valueAsNumber%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20const%20resultado%20%3D%20resta(a%2C%20b)%0A%20%20%20outSalida.value%20%3D%0A%20%20%20%20%60La%20resta%20es%3A%20%24%7Bresultado%7D.%60%0A%20%20%7D%0A%0A%20%20function%20suma(a%2C%20b)%20%7B%0A%20%20%20return%20a%20%2B%20b%0A%20%20%7D%0A%0A%20%20function%20resta(a%2C%20b)%20%7B%0A%20%20%20return%20a%20-%20b%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"utf-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Recomienda<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">html</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span style="color: #0451a5;">sans-serif</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">text-align</span>: <span style="color: #0451a5;">center</span>;</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">img</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">max-height</span>: <span style="color: #098658;">40vh</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">max-width</span>: <span style="color: #098658;">100%</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;form</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">"javascript:procesa()"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Recomienda<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div><div>&nbsp; &nbsp; Género</div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;select</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"inGenero"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">required</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">""</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; -- Selecciona --</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">"pop"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Pop</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">"reg"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Reguetón</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">"tango"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Tango</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/select&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button&gt;</span>Recomienda<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;figure&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;img</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"imgSal"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;figcaption&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"outSal"</span><span style="color: #800000;">&gt;&lt;/output&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/figcaption&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/figure&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">procesa</span>() {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">genero</span> = <span style="color: #001080;">inGenero</span>.<span style="color: #001080;">value</span></div><div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span style="color: #0070c1;">genero</span> === <span style="color: #a31515;">"pop"</span>) {</div><div>&nbsp; &nbsp; <span style="color: #001080;">outSal</span>.<span style="color: #001080;">value</span> = <span style="color: #a31515;">"Ariana Grande"</span></div><div>&nbsp; &nbsp; <span style="color: #001080;">imgSal</span>.<span style="color: #001080;">src</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"https://media.giphy.com/media/Ek42177e6xAeCnh8HX/giphy.gif"</span></div><div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> <span style="color: #af00db;">if</span> (<span style="color: #0070c1;">genero</span> === <span style="color: #a31515;">"reg"</span>) {</div><div>&nbsp; &nbsp; <span style="color: #001080;">outSal</span>.<span style="color: #001080;">value</span> = <span style="color: #a31515;">"Bad Bunny"</span></div><div>&nbsp; &nbsp; <span style="color: #001080;">imgSal</span>.<span style="color: #001080;">src</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"https://media.giphy.com/media/kfcsiSjQUyMvEZ1khq/giphy.gif"</span></div><div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div><div>&nbsp; &nbsp; <span style="color: #001080;">outSal</span>.<span style="color: #001080;">value</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"De eso no conozco."</span></div><div>&nbsp; &nbsp; <span style="color: #001080;">imgSal</span>.<span style="color: #001080;">src</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"https://media.giphy.com/media/VbVfYbxE0gOK5Qsjkc/giphy.gif"</span></div><div>&nbsp; &nbsp;}</div><div>&nbsp; &nbsp;<span style="color: #001080;">imgSal</span>.<span style="color: #001080;">alt</span> = <span style="color: #001080;">outSal</span>.<span style="color: #001080;">value</span></div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >O. Jueguito 3</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m11formularios/Grecomienda.html" height="350"></iframe>
+  <p class="noPrint">
+   <a href="/src/m11formularios/Grecomienda.html" target="_blank">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%0A%20%20Formulario%20con%202%20botones%0A%20%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%0A%20%20%20action%3Djavascript%3AprocSuma()%3E%0A%20%20%3Ch1%3E%0A%20%20%20Formulario%20con%202%20botones%0A%20%20%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20a%0A%20%20%20%20%3Cinput%20id%3DinA%20type%3Dnumber%0A%20%20%20%20%20%20required%20min%3D%220.1%22%20max%3D%22100%22%0A%20%20%20%20%20%20step%3D%220.1%22%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20b%0A%20%20%20%20%3Cinput%20id%3DinB%20type%3Dnumber%0A%20%20%20%20%20%20required%20min%3D%220.1%22%20max%3D%22100%22%0A%20%20%20%20%20%20step%3D%220.1%22%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3ESumar%3C%2Fbutton%3E%0A%20%20%20%3Cbutton%20formaction%3D%22javascript%3A%0A%20%20%20%20%20procResta()%22%3E%0A%20%20%20%20Restar%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Coutput%20id%3DoutSalida%3E%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20function%20procSuma()%20%7B%0A%20%20%20const%20a%20%3D%20inA.valueAsNumber%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20const%20resultado%20%3D%20suma(a%2C%20b)%0A%20%20%20outSalida.value%20%3D%0A%20%20%20%20%60La%20suma%20es%3A%20%24%7Bresultado%7D.%60%0A%20%20%7D%0A%0A%20%20function%20procResta()%20%7B%0A%20%20%20const%20a%20%3D%20inA.valueAsNumber%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20const%20resultado%20%3D%20resta(a%2C%20b)%0A%20%20%20outSalida.value%20%3D%0A%20%20%20%20%60La%20resta%20es%3A%20%24%7Bresultado%7D.%60%0A%20%20%7D%0A%0A%20%20function%20suma(a%2C%20b)%20%7B%0A%20%20%20return%20a%20%2B%20b%0A%20%20%7D%0A%0A%20%20function%20resta(a%2C%20b)%20%7B%0A%20%20%20return%20a%20-%20b%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"utf-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Recomienda<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">html</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span style="color: #0451a5;">sans-serif</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">text-align</span>: <span style="color: #0451a5;">center</span>;</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">img</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">max-height</span>: <span style="color: #098658;">40vh</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">max-width</span>: <span style="color: #098658;">100%</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;form</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">action</span>=<span style="color: #0000ff;">"javascript:procesa()"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Recomienda<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div><div>&nbsp; &nbsp; Género</div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;select</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"inGenero"</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">required</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">""</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; -- Selecciona --</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">"pop"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Pop</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">"reg"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Reguetón</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span> <span style="color: #ff0000;">value</span>=<span style="color: #0000ff;">"tango"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; Tango</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/select&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;button&gt;</span>Recomienda<span style="color: #800000;">&lt;/button&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;figure&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;img</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"imgSal"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;figcaption&gt;</span></div><div>&nbsp; &nbsp; <span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"outSal"</span><span style="color: #800000;">&gt;&lt;/output&gt;</span></div><div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/figcaption&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/figure&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">procesa</span>() {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">genero</span> = <span style="color: #001080;">inGenero</span>.<span style="color: #001080;">value</span></div><div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span style="color: #0070c1;">genero</span> === <span style="color: #a31515;">"pop"</span>) {</div><div>&nbsp; &nbsp; <span style="color: #001080;">outSal</span>.<span style="color: #001080;">value</span> = <span style="color: #a31515;">"Ariana Grande"</span></div><div>&nbsp; &nbsp; <span style="color: #001080;">imgSal</span>.<span style="color: #001080;">src</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"https://media.giphy.com/media/Ek42177e6xAeCnh8HX/giphy.gif"</span></div><div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> <span style="color: #af00db;">if</span> (<span style="color: #0070c1;">genero</span> === <span style="color: #a31515;">"reg"</span>) {</div><div>&nbsp; &nbsp; <span style="color: #001080;">outSal</span>.<span style="color: #001080;">value</span> = <span style="color: #a31515;">"Bad Bunny"</span></div><div>&nbsp; &nbsp; <span style="color: #001080;">imgSal</span>.<span style="color: #001080;">src</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"https://media.giphy.com/media/kfcsiSjQUyMvEZ1khq/giphy.gif"</span></div><div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div><div>&nbsp; &nbsp; <span style="color: #001080;">outSal</span>.<span style="color: #001080;">value</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"De eso no conozco."</span></div><div>&nbsp; &nbsp; <span style="color: #001080;">imgSal</span>.<span style="color: #001080;">src</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"https://media.giphy.com/media/VbVfYbxE0gOK5Qsjkc/giphy.gif"</span></div><div>&nbsp; &nbsp;}</div><div>&nbsp; &nbsp;<span style="color: #001080;">imgSal</span>.<span style="color: #001080;">alt</span> = <span style="color: #001080;">outSal</span>.<span style="color: #001080;">value</span></div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+</div>
+      </section>
+     <section >
+         <h1 >P. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se revisaron los elementos principales para elaborar
+    formularios y se presentaron algunos ejemplos.
+   </p>
   </li>
  </ul>
 </div>

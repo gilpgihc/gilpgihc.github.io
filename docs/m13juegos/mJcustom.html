@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>A. Formulario simple - GilPG IHC</title>
- <meta name="description" content="Formulario simple.">
+ <title>J. Usa custom element - GilPG IHC</title>
+ <meta name="description" content="Usa custom element.">
  <meta name="og:image" content="https://gilpgihc.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -397,20 +397,40 @@
   <button id="abre" type="button" title="Menú" class="cambiaMenu">
    &#x2630;
   </button>
-  <a class="anterior" href="/m11formularios/index.html" title="11. Formularios">◀</a>
-  <a class="siguiente" href="/m11formularios/mBForm.html" title="B. El elemento form">▶</a>
+  <a class="anterior" href="/m13juegos/mIaleatorio.html" title="I. Muévete al azar">◀</a>
+  <a class="siguiente" href="/m13juegos/mKasociaciones.html" title="K. Asociaciones">▶</a>
  </div>
-   <h1 >A. Formulario simple</h1><div class="horizontal">
+   <h1 >J. Usa custom element</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    El siguiente orograma usa el tipo de elemento
+    <dfn><code class="language-html">select</code></dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    La especificación del elemento
+    <code class="language-html">select</code></dfn>.
+    está en
+    <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element</a>
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="/src/m11formularios/Aformulario.html" height="250"></iframe>
+  <iframe src="/src/m11formularios/Drecomendaciones.html" height="250"></iframe>
   <p class="noPrint">
-   <a href="/src/m11formularios/Aformulario.html" target="_blank">Ábrelo en otra
-    pestaña.</a>
+   <a href="/src/m11formularios/Drecomendaciones.html" target="_blank">Ábrelo en
+    otra pestaña.</a>
   </p>
   <p class="noPrint">
    <a target="_blank" rel="noopener"
-     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ESaludo%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3C!--%0A%20%20form%0A%20%20%20Captura%20los%20datos%20para%20un%0A%20%20%20c%C3%A1lculo.%0A%20%20action%3D%22javascript%3Acalcula()%22%0A%20%20%20Al%20activar%20la%20forma%2C%20se%20ejecuta%0A%20%20%20la%20funci%C3%B3n%0A%20%20%20%20calcula()%0A%20%20%20de%20la%20etiqueta%0A%20%20%20%20%3Cscript%3E%0A%20%20%20que%20aparece%20m%C3%A1s%20abajo.%20--%3E%0A%20%3Cform%0A%20%20%20action%3D%22javascript%3Acalcula()%22%3E%0A%20%20%3Ch1%3ESaludo%3C%2Fh1%3E%0A%20%20%3C!--%0A%20%20%20Los%20elementos%20de%20captura%20se%0A%20%20%20pueden%20colocan%20cada%20uno%20en%20un%0A%20%20%20%20%3Cp%3E%20--%3E%0A%20%20%3Cp%3E%0A%20%20%20%3C!--%0A%20%20%20%20label%0A%20%20%20%20%20Pone%20el%20r%C3%B3tulo%0A%20%20%20%20%20%20Nombre%0A%20%20%20%20%20que%20aparece%20m%C3%A1s%20abajo%2C%20al%0A%20%20%20%20%20elemento%0A%20%20%20%20%20%20input%0A%20%20%20%20%20que%20tambi%C3%A9n%20aparece%20m%C3%A1s%20abajo.%0A%20%20%20--%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20Nombre%0A%20%20%20%20%3C!--%0A%20%20%20%20%20input%0A%20%20%20%20%20%20Campo%20de%20captura.%20Activa%20la%0A%20%20%20%20%20%20forma%20al%20teclear%0A%20%20%20%20%20%20%20%C2%ABintro%C2%BB%0A%20%20%20%20%20%20cuando%20tiene%20el%20cursor.%0A%20%20%20%20%20type%3D%22text%22%0A%20%20%20%20%20%20Captura%20texto%0A%20%20%20%20%20id%3D%22inNombre%22%0A%20%20%20%20%20%20Identificador%20del%20campo%20de%0A%20%20%20%20%20%20captura.%20Se%20puede%20usar%20desde%0A%20%20%20%20%20%20el%20elemento%0A%20%20%20%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20m%C3%A1s%20abajo.%0A%20%20%20%20%20required%0A%20%20%20%20%20%20Este%20campo%20no%20se%20puede%20quedar%0A%20%20%20%20%20%20en%20blanco.%20--%3E%0A%20%20%20%20%3Cinput%20type%3D%22text%22%0A%20%20%20%20%20%20id%3D%22inNombre%22%20required%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3C!--%0A%20%20%20%20button%0A%20%20%20%20%20Activa%20la%20forma%20al%20hacerle%0A%20%20%20%20%20click%20o%20presionado%20la%20tecla%0A%20%20%20%20%20espacio%20cuando%20tiene%20el%0A%20%20%20%20%20tabulador.%20--%3E%0A%20%20%20%3Cbutton%3ECalcular%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3C!--%0A%20%20%20%20output%0A%20%20%20%20%20Muestra%20el%20resultado%20de%20un%0A%20%20%20%20%20c%C3%A1lculo.%0A%20%20%20--%3E%0A%20%20%20%3Coutput%20id%3DoutSaludo%3E%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20%2F**%0A%20%20%20*%20Funci%C3%B3n%20que%20realiza%20el%20c%C3%A1lculo%0A%20%20%20*%20cuando%20se%20activa%20la%20forma.%0A%20%20%20*%2F%0A%20%20function%20calcula()%20%7B%0A%20%20%20%2F*%20Recupera%20el%20texto%20capturado%0A%20%20%20%20*%20en%20%22inNombre%22%20y%20lo%20asigna%0A%20%20%20%20*%20a%20la%20constante%20%22nombre%22.%20*%2F%0A%20%20%20const%20nombre%20%3D%20inNombre.value%0A%20%20%20const%20saludo%20%3D%20saluda(nombre)%0A%20%20%20%2F*%20Despliega%20el%20saludo%20en%20el%0A%20%20%20%20*%20elemento%20%22outSaludo%22.%20*%2F%0A%20%20%20outSaludo.value%20%3D%20saludo%3B%0A%20%20%7D%0A%0A%20%20%2F**%0A%20%20%20*%20Funci%C3%B3n%20que%20realiza%20la%20l%C3%B3gica%0A%20%20%20*%20del%20c%C3%A1lculo.%0A%20%20%20*%20%40param%20%7Bstring%7D%20nombre%0A%20%20%20*%2F%0A%20%20function%20saluda(nombre)%20%7B%0A%20%20%20return%20%60Hola%20%24%7Bnombre%7D.%60%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ERecomendaciones%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%0A%20%20%20action%3D%22javascript%3Aprocesa()%22%3E%0A%20%20%3Ch1%3ERecomendaciones%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20G%C3%A9nero%0A%20%20%20%20%3Cselect%20id%3D%22inGenero%22%0A%20%20%20%20%20%20required%3E%0A%20%20%20%20%20%3Coption%20value%3D%22%22%3E%0A%20%20%20%20%20%20--%20Selecciona%20--%0A%20%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%20%3Coption%20value%3D%22pop%22%3E%0A%20%20%20%20%20%20Pop%0A%20%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%20%3Coption%20value%3D%22reg%22%3E%0A%20%20%20%20%20%20Reguet%C3%B3n%0A%20%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%20%3Coption%20value%3D%22tango%22%3E%0A%20%20%20%20%20%20Tango%0A%20%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3C%2Fselect%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3ERecomendar%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Coutput%20id%3DoutSalida%3E%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20function%20procesa()%20%7B%0A%20%20%20const%20genero%20%3D%20inGenero.value%0A%20%20%20outSalida.value%20%3D%0A%20%20%20%20recomienda(genero)%0A%20%20%7D%0A%0A%20%20%2F**%20%40param%20%7Bstring%7D%20genero%20*%2F%0A%20%20function%20recomienda(genero)%20%7B%0A%20%20%20if%20(genero%20%3D%3D%3D%20%22pop%22)%20%7B%0A%20%20%20%20return%20%22Ariana%20Grande.%22%0A%20%20%20%7D%20else%20if%20(genero%20%3D%3D%3D%20%22reg%22)%20%7B%0A%20%20%20%20return%20%22Bad%20Bunny.%22%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20return%20%22De%20eso%20no%20conozco.%22%0A%20%20%20%7D%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.
    </a>
   </p>
@@ -435,193 +455,101 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
       style="color: #0000ff;">"width=device-width"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Saludo<span
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>Recomendaciones<span
       style="color: #800000;">&lt;/title&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
    <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
-   <div><span style="color: #008000;">&nbsp; form</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp;Captura los datos para un</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp;cálculo.</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; action="javascript:calcula()"</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;Al&nbsp;activar&nbsp;la&nbsp;forma,&nbsp;se&nbsp;ejecuta</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp;la función</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; calcula()</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp;de la etiqueta</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &lt;script&gt;</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp;que aparece más abajo. --&gt;</span>
-   </div>
    <div>&nbsp;<span style="color: #800000;">&lt;form</span></div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">action</span>=<span
-      style="color: #0000ff;">"javascript:calcula()"</span><span
+      style="color: #0000ff;">"javascript:procesa()"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Saludo<span
+   <div>&nbsp; <span
+      style="color: #800000;">&lt;h1&gt;</span>Recomendaciones<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp; <span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp;Los elementos de captura se</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp;pueden colocan cada uno en un</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &lt;p&gt; --&gt;</span>
-   </div>
    <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #008000;">&lt;!--</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; label</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; &nbsp;Pone el rótulo</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp; Nombre</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;que&nbsp;aparece&nbsp;más&nbsp;abajo,&nbsp;al</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;elemento</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp; input</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;que&nbsp;también&nbsp;aparece&nbsp;más&nbsp;abajo.</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp;--&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div>
-   <div>&nbsp; &nbsp; Nombre</div>
-   <div>&nbsp; &nbsp; <span style="color: #008000;">&lt;!--</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;input</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campo&nbsp;de&nbsp;captura.&nbsp;Activa&nbsp;la</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forma&nbsp;al&nbsp;teclear</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; &nbsp; &nbsp;«intro»</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuando&nbsp;tiene&nbsp;el&nbsp;cursor.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; &nbsp;type="text"</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; &nbsp; Captura texto</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; &nbsp;id="inNombre"</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Identificador&nbsp;del&nbsp;campo&nbsp;de</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;captura.&nbsp;Se&nbsp;puede&nbsp;usar&nbsp;desde</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; &nbsp; el elemento</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; &nbsp; &nbsp;&lt;script&gt;</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; &nbsp; más abajo.</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;required</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Este&nbsp;campo&nbsp;no&nbsp;se&nbsp;puede&nbsp;quedar</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; &nbsp; en blanco. --&gt;</span>
-   </div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;input</span> <span
-      style="color: #ff0000;">type</span>=<span
-      style="color: #0000ff;">"text"</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">"inNombre"</span> <span
-      style="color: #ff0000;">required</span><span
+   <div>&nbsp; &nbsp; Género</div>
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;select</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"inGenero"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">required</span><span
       style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
+    <span style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">""</span><span style="color: #800000;">&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; -- Selecciona --</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
+    <span style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"pop"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; Pop</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
+    <span style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"reg"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; Reguetón</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
+    <span style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"tango"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; Tango</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/select&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #008000;">&lt;!--</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; button</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Activa&nbsp;la&nbsp;forma&nbsp;al&nbsp;hacerle</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click&nbsp;o&nbsp;presionado&nbsp;la&nbsp;tecla</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; &nbsp;espacio cuando tiene el</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; &nbsp;tabulador. --&gt;</span></div>
    <div>&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;button&gt;</span>Calcular<span
+      style="color: #800000;">&lt;button&gt;</span>Recomendar<span
       style="color: #800000;">&lt;/button&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #008000;">&lt;!--</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; output</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Muestra&nbsp;el&nbsp;resultado&nbsp;de&nbsp;un</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;cálculo.</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp;--&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span
       style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">outSaludo</span><span
+      style="color: #0000ff;">outSalida</span><span
       style="color: #800000;">&gt;&lt;/output&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp; <span style="color: #008000;">/**</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;Función&nbsp;que&nbsp;realiza&nbsp;el&nbsp;cálculo</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp;* cuando se activa la forma.</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div>
    <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">calcula</span>() {</div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #008000;">/* Recupera el texto capturado</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; * en "inNombre" y lo asigna</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; * a la constante "nombre". */</span>
-   </div>
+      style="color: #795e26;">procesa</span>() {</div>
    <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">nombre</span> = <span
-      style="color: #001080;">inNombre</span>.<span
+      style="color: #0070c1;">genero</span> = <span
+      style="color: #001080;">inGenero</span>.<span
       style="color: #001080;">value</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">saludo</span> = <span
-      style="color: #795e26;">saluda</span>(<span
-      style="color: #0070c1;">nombre</span>)</div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #008000;">/* Despliega el saludo en el</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp; * elemento "outSaludo". */</span>
-   </div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">outSaludo</span>.<span
-      style="color: #001080;">value</span> = <span
-      style="color: #0070c1;">saludo</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span
+      style="color: #001080;">value</span> =</div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">recomienda</span>(<span
+      style="color: #0070c1;">genero</span>)</div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #008000;">/**</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;Función&nbsp;que&nbsp;realiza&nbsp;la&nbsp;lógica</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp;* del cálculo.</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp;* @param {string} nombre</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; <span style="color: #008000;">/** @param {string} genero
+     */</span></div>
    <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">saluda</span>(<span
-      style="color: #001080;">nombre</span>) {</div>
-   <div>&nbsp; &nbsp;<span style="color: #af00db;">return</span> <span
-      style="color: #a31515;">`Hola </span><span
-      style="color: #0000ff;">${</span><span
-      style="color: #001080;">nombre</span><span
-      style="color: #0000ff;">}</span><span
-      style="color: #a31515;">.`</span></div>
+      style="color: #795e26;">recomienda</span>(<span
+      style="color: #001080;">genero</span>) {</div>
+   <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">genero</span> === <span
+      style="color: #a31515;">"pop"</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #a31515;">"Ariana Grande."</span></div>
+   <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> <span
+      style="color: #af00db;">if</span> (<span
+      style="color: #001080;">genero</span> === <span
+      style="color: #a31515;">"reg"</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #a31515;">"Bad Bunny."</span></div>
+   <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #a31515;">"De eso no conozco."</span></div>
+   <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
    <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
@@ -659,85 +587,92 @@
     <a href="/index.html"
       data-logo="true">GilPG IHC</a>
    </p><p>
-    <a class="paginaAnterior" href="/m10multimedia/mEresumen.html"
-      title="E. Resumen">▲</a>
+    <a class="paginaAnterior" href="/m12custom/mCresumen.html"
+      title="C. Resumen">▲</a>
    </p>
-     <h1><a href="/m11formularios/index.html">11. Formularios</a></h1>
+     <h1><a href="/m13juegos/index.html">13. Juegos</a></h1>
    <ol type="A">
     <li>
      <p>
-      <a href="/m11formularios/mAsimple.html" class="actual">Formulario simple</a>
+      <a href="/m13juegos/mAsprites.html">Sprites</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mBForm.html">El elemento <code class='language-html'>form<code></a>
+      <a href="/m13juegos/mBhorizontal.html">Desplazamiento horizontal</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mCatributos.html">Atributos comunes</a>
+      <a href="/m13juegos/mCrecta.html">Recta</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mDlabel.html">El elemento <code class='language-html'>label</code></a>
+      <a href="/m13juegos/mDondula.html">Ondula</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mEbutton.html">El elemento <code class='language-html'>button</code></a>
+      <a href="/m13juegos/mEgira.html">Girando</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mFinput.html">El elemento <code class='language-html'>input</code></a>
+      <a href="/m13juegos/mFbotones.html">Desplazamiento con botones</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mGoutput.html">El elemento <code class='language-html'>output</code></a>
+      <a href="/m13juegos/mGcolisiones.html">Detecta colisiones</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mHdivision.html">División</a>
+      <a href="/m13juegos/mHsonrie.html">Haz algo si chocamos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mI2botones.html">Formulario numérico de 2 botones</a>
+      <a href="/m13juegos/mIaleatorio.html">Muévete al azar</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mJrecomendaciones.html">Recomendaciones</a>
+      <a href="/m13juegos/mJcustom.html" class="actual">Usa custom element</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mKadivina.html">Adivina</a>
+      <a href="/m13juegos/mKasociaciones.html">Asociaciones</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mLencuesta.html">Encuesta</a>
+      <a href="/m13juegos/mLpolimorfismo.html">Polimorfismo</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mMrecomienda.html">Recomienda</a>
+      <a href="/m13juegos/mMjueguito1.html">Jueguito 1</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m11formularios/mNresumen.html">Resumen</a>
+      <a href="/m13juegos/mNjueguito2.html">Jueguito 2</a>
      </p>
     </li>
-   </ol><p>
-    <a class="paginaSiguiente" href="/m12custom/index.html"
-      title="12. Custom elements">▼</a>
-   </p>
+    <li>
+     <p>
+      <a href="/m13juegos/mOjueguito3.html">Jueguito 3</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m13juegos/mPresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
 </nav>
  <script>
  registraServiceWorker("/sw.js")
@@ -748,9 +683,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m11formularios/index.html"
+ let urlAnterior = "/m13juegos/mIaleatorio.html"
  /**@type {string} */
- let urlSiguiente = "/m11formularios/mBForm.html"
+ let urlSiguiente = "/m13juegos/mKasociaciones.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
