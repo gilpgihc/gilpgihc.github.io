@@ -149,7 +149,10 @@ const ARCHIVOS = [
    "/m11formularios/mHdivision.html",
    "/m11formularios/mI2botones.html",
    "/m11formularios/mJrecomendaciones.html",
-   "/m11formularios/mKresumen.html",
+   "/m11formularios/mKadivina.html",
+   "/m11formularios/mLencuesta.html",
+   "/m11formularios/mMrecomienda.html",
+   "/m11formularios/mNresumen.html",
    "/m11formularios/print.html",
    "/m12custom/",
    "/m12custom/index.html",
@@ -230,7 +233,15 @@ const ARCHIVOS = [
    "/src/m11formularios/Fencuesta.html",
    "/src/m11formularios/Grecomienda.html",
    "/src/m12custom/Asimple.html",
-   "/src/m12custom/Baccion.html" ]
+   "/src/m12custom/Baccion.html",
+   "/src/m13juegos/Asprites.html",
+   "/src/m13juegos/Bhorizontal.html",
+   "/src/m13juegos/Brecta.html",
+   "/src/m13juegos/Condula.html",
+   "/src/m13juegos/Dgira.html",
+   "/src/m13juegos/Ebotones.html",
+   "/src/m13juegos/Fcolisiones.html",
+   "/src/m13juegos/Gsonrie.html" ]
 
 if (self instanceof ServiceWorkerGlobalScope) {
  self.addEventListener("install", installListener)

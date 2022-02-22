@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Jueguito 1</title>
+ <style>
+  body {
+   /* Rompe el flujo normal para
+    * poder hacer swipe hacia
+    * abajo. */
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   /* ocupa todo el espacio. */
+   width: 100%;
+   height: 100%;
+   /* Elimina márgenes. */
+   margin: 0;
+   /* Evita el scroll */
+   overflow: hidden;
+  }
+
+  .sprite {
+   position: fixed;
+  }
+ </style>
+ <script>
+  //@ts-check
+  class JugadorPaloma
+   extends HTMLElement {
+   connectedCallback() {
+    this.classList.add("sprite")
+    this.innerHTML += "🕊"
+    this.style.fontSize = "60px"
+    /* Coloca el elemento a la
+     * mitad de la pantalla. */
+    const raiz =
+     document.documentElement
+    /* Obtiene las coordenadas del
+     * element. */
+    const r =
+     this.getBoundingClientRect()
+    const left =
+     (raiz.clientWidth - r.width) /
+     2
+    const top =
+     (raiz.clientHeight -
+      r.height) /
+     2
+    this.style.left = `${left}px`
+    this.style.top = `${top}px`
+   }
+
+   sube() {
+    const top =
+     this.getBoundingClientRect().
+      top -
+     20
+    this.style.top = `${top}px`
+   }
+
+   baja() {
+    const top =
+     this.getBoundingClientRect().
+      top +
+     20
+    this.style.top = `${top}px`
+   }
+
+   izquierda() {
+    const left =
+     this.getBoundingClientRect().
+      left -
+     20
+    this.style.left = `${left}px`
+   }
+
+   derecha() {
+    const left =
+     this.getBoundingClientRect().
+      left +
+     20
+    this.style.left = `${left}px`
+   }
+  }
+  customElements.define(
+   "jugador-paloma", JugadorPaloma)
+
+  class FiguraAguila
+   extends HTMLElement {
+   connectedCallback() {
+    this.classList.add("sprite")
+    this.innerHTML = "🦅"
+    this.style.fontSize = "40px"
+    const r =
+     this.getBoundingClientRect()
+    this.style.left = `${r.left}px`
+    this.style.top = `${r.top}px`
+    this.style.bottom = "auto"
+    this.style.right = "auto"
+   }
+
+   /**
+    * Mueve la figura para que se
+    * acerque al jugador, usando la
+    * ecuación de la recta.
+    * @param {HTMLElement} jugador
+    *   el jugador que es
+    *   perseguido.
+    */
+   muevete(jugador) {
+    const r =
+     this.getBoundingClientRect()
+    const rJ = jugador.
+     getBoundingClientRect()
+    const y2 = rJ.top
+    const y1 = r.top
+    const x2 = rJ.left
+    const x1 = r.left
+    const pendiente = x2 === x1 ?
+     0 :
+     (y2 - y1) / (x2 - x1)
+    const dirección =
+     x2 > x1 ? 1 : -1
+    const x = x1 + dirección * 5
+    const y =
+     pendiente * (x - x1) + y1
+    this.style.left = `${x}px`
+    this.style.top = `${y}px`
+   }
+  }
+  customElements.define(
+   "figura-aguila", FiguraAguila)
+ </script>
+</head>
+
+<body>
+ <div>
+  <jugador-paloma></jugador-paloma>
+  <figura-aguila
+    style="right: 0; top: 0;">
+  </figura-aguila>
+  <figura-aguila
+    style="right: 0; bottom: 0;">
+  </figura-aguila>
+ </div>
+ <script>
+  //@ts-check
+  class Juego {
+   constructor() {
+    /** @type {JugadorPaloma} */
+    this.jugador = document.
+     querySelector(
+      "jugador-paloma")
+    /** @type {FiguraAguila[]} */
+    this.figuras = Array.from(
+     document.querySelectorAll(
+      "figura-aguila"))
+    this.iniciaX = null
+    this.iniciaY = null
+    this.interval = null
+    this.activo = true
+   }
+
+   inicia() {
+    document.addEventListener(
+     "keydown",
+     evt => this.teclas(evt))
+    this.interval = setInterval(
+     () => this.mueveFiguras(), 60)
+   }
+
+   mueveFiguras() {
+    for (const f of this.figuras) {
+     f.muevete(this.jugador)
+    }
+   }
+
+   /** @param {KeyboardEvent} ev*/
+   teclas(ev) {
+    if (this.activo) {
+     switch (ev.key) {
+      case "ArrowLeft":
+       this.jugador.izquierda()
+       break
+      case "ArrowRight":
+       this.jugador.derecha()
+       break
+      case "ArrowUp":
+       this.jugador.sube()
+       break
+      case "ArrowDown":
+       this.jugador.baja()
+       break
+     }
+    }
+   }
+  }
+
+  const juego = new Juego()
+  juego.inicia()
+ </script>
+</body>
+
+</html>

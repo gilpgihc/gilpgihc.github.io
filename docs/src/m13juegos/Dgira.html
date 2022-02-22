@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Gira</title>
+ <style>
+  .sprite {
+   position: fixed;
+   font-size: 3rem;
+  }
+ </style>
+</head>
+
+<body>
+ <h1>Gira</h1>
+ <output id="mariposa"
+   class="sprite">
+  🦋
+ </output>
+ <script>
+  const REFRESCO = 120
+  const VELOCIDAD = 0.3
+  let angulo = 0
+  setInterval(gira, REFRESCO)
+
+  function gira() {
+   const xBase = innerWidth / 2
+   const amplitudX = innerWidth / 3
+   const yBase = innerHeight / 2
+   const amplitudY =
+    innerHeight / 3
+   const x = xBase +
+    amplitudX * Math.cos(angulo)
+   const y = yBase +
+    amplitudY * Math.sin(angulo)
+   mariposa.style =
+    `left: ${x}px; bottom: ${y}px`
+   angulo += VELOCIDAD
+  }
+ </script>
+</body>
+
+</html>

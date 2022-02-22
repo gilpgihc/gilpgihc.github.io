@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Jueguito 3</title>
+ <style>
+  body {
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   overflow: hidden;
+  }
+
+  .sprite {
+   position: fixed;
+  }
+ </style>
+ <script>
+  //@ts-check
+  /** @abstract */
+  class Jugador
+   extends HTMLElement {
+   /** @param {number} velocidad */
+   izquierda(velocidad) {
+    throw new Error("abstract")
+   }
+   /** @param {number} velocidad */
+   derecha(velocidad) {
+    throw new Error("abstract")
+   }
+   /** @param {number} velocidad */
+   sube(velocidad) {
+    throw new Error("abstract")
+   }
+   /** @param {number} velocidad */
+   baja(velocidad) {
+    throw new Error("abstract")
+   }
+  }
+
+  /** @abstract */
+  class Figura
+   extends HTMLElement {
+   /**
+    * @param {HTMLElement} jugador
+    *   el jugador que es
+    *   perseguido.
+    */
+   muevete(jugador) {
+    throw new Error("abstract")
+   }
+  }
+
+  /** @interface */
+  class Fabrica {
+   /**
+    * Devuelve el único jugador,
+    * por lo que se considera
+    * Singleton.
+    *  @returns {Jugador}
+    */
+   jugador() {
+    throw new Error("interface")
+   }
+   /**
+    * Devuelve un arreglo con las
+    * figuras del juego.
+    * @returns {Figura[]}
+    */
+   figuras() {
+    throw new Error("interface")
+   }
+  }
+
+  class Juego3 {
+   /** @param {Fabrica} fabrica */
+   constructor(fabrica) {
+    this.jugador =
+     fabrica.jugador()
+    this.figuras =
+     fabrica.figuras()
+    this.iniciaX = null
+    this.iniciaY = null
+    this.interval = null
+    this.activo = true
+   }
+
+   inicia() {
+    document.addEventListener(
+     "keydown",
+     evt => this.teclas(evt))
+    document.addEventListener(
+     "touchstart",
+     evt => this.iniciaTouch(evt))
+    document.addEventListener(
+     "touchmove",
+     evt =>
+      this.desplazaTouch(evt))
+    this.interval = setInterval(
+     () => this.mueveFiguras(), 60)
+   }
+
+   mueveFiguras() {
+    for (const f of this.figuras) {
+     f.muevete(this.jugador)
+    }
+    this.detectaColisiones()
+   }
+
+   detectaColisiones() {
+    for (const f of this.figuras) {
+     if (colisiona(
+      this.jugador, f)) {
+      this.termina()
+      break
+     }
+    }
+   }
+
+   termina() {
+    this.activo = false
+    clearInterval(this.interval)
+    this.jugador.innerHTML = "💥"
+   }
+
+   /** @param {KeyboardEvent} evt*/
+   teclas(evt) {
+    if (this.activo) {
+     switch (evt.key) {
+      case "ArrowLeft":
+       this.jugador.izquierda(20)
+       break
+      case "ArrowRight":
+       this.jugador.derecha(20)
+       break
+      case "ArrowUp":
+       this.jugador.sube(20)
+       break
+      case "ArrowDown":
+       this.jugador.baja(20)
+       break
+     }
+     this.detectaColisiones()
+    }
+   }
+
+   /** @param {TouchEvent} evt */
+   iniciaTouch(evt) {
+    if (this.activo) {
+     const toqueInicial =
+      evt.touches[0]
+     this.iniciaX =
+      toqueInicial.clientX
+     this.iniciaY =
+      toqueInicial.clientY
+    }
+   }
+
+   /** @param {TouchEvent} evt */
+   desplazaTouch(evt) {
+    if (this.activo
+     && this.iniciaX
+     && this.iniciaY) {
+     const desplazamiento =
+      evt.touches[0]
+     var desplazamientoX =
+      desplazamiento.clientX
+     var desplazamientoY =
+      desplazamiento.clientY
+     var difX = desplazamientoX -
+      this.iniciaX
+     var difY = desplazamientoY -
+      this.iniciaY
+     if (Math.abs(difX)
+      + Math.abs(difY)
+      > 150) {
+      if (Math.abs(difX)
+       > Math.abs(difY)) {
+       if (difX > 70) {
+        this.jugador.derecha(40)
+       } else {
+        this.jugador.izquierda(40)
+       }
+      } else if (difY > 70) {
+       this.jugador.baja(40)
+      } else {
+       this.jugador.sube(40)
+      }
+      this.detectaColisiones()
+      this.iniciaX = null
+      this.iniciaY = null
+     }
+    }
+   }
+  }
+
+  /**
+   * @param {HTMLElement} e1
+   * @param {HTMLElement} e2
+   * @returns {boolean} true si los
+   *    element colisionan.
+   */
+  function colisiona(e1, e2) {
+   const rE1 =
+    e1.getBoundingClientRect()
+   const rE2 =
+    e2.getBoundingClientRect()
+   return (rE1.right >= rE2.left
+    && rE1.left <= rE2.right
+    && rE1.top <= rE2.bottom
+    && rE1.bottom >= rE2.top)
+  }
+
+  customElements.define(
+   "jugador-paloma",
+   class extends Jugador {
+    connectedCallback() {
+     this.classList.add("sprite")
+     this.innerHTML += "🕊"
+     this.style.fontSize = "60px"
+     const raiz =
+      document.documentElement
+     const r =
+      this.getBoundingClientRect()
+     const left =
+      (raiz.clientWidth
+       - r.width) /
+      2
+     const top =
+      (raiz.clientHeight -
+       r.height) /
+      2
+     this.style.left = `${left}px`
+     this.style.top = `${top}px`
+    }
+
+    /**
+     * @param {number} velocidad
+     * @override
+     */
+    sube(velocidad) {
+     const top =
+      this.getBoundingClientRect().
+       top -
+      velocidad
+     this.style.top = `${top}px`
+    }
+
+    /**
+     * @param {number} velocidad
+     * @override
+     */
+    baja(velocidad) {
+     const top =
+      this.getBoundingClientRect().
+       top +
+      velocidad
+     this.style.top = `${top}px`
+    }
+
+    /**
+     * @param {number} velocidad
+     * @override
+     */
+    izquierda(velocidad) {
+     const left =
+      this.getBoundingClientRect().
+       left -
+      velocidad
+     this.style.left = `${left}px`
+    }
+
+    /**
+     * @param {number} velocidad
+     * @override
+     */
+    derecha(velocidad) {
+     const left =
+      this.getBoundingClientRect().
+       left +
+      velocidad
+     this.style.left = `${left}px`
+    }
+   })
+
+  customElements.define(
+   "figura-aguila",
+   class extends Figura {
+    connectedCallback() {
+     this.classList.add("sprite")
+     this.innerHTML = "🦅"
+     this.style.fontSize = "40px"
+     const r =
+      this.getBoundingClientRect()
+     this.style.left =
+      `${r.left}px`
+     this.style.top = `${r.top}px`
+     this.style.bottom = "auto"
+     this.style.right = "auto"
+    }
+
+    /**
+     * @param {HTMLElement} jugador
+     *   el jugador que persigue.
+     * @override
+     */
+    muevete(jugador) {
+     const r =
+      this.getBoundingClientRect()
+     const rJ = jugador.
+      getBoundingClientRect()
+     const y2 = rJ.top
+     const y1 = r.top
+     const x2 = rJ.left
+     const x1 = r.left
+     const pendiente = x2 === x1 ?
+      0 :
+      (y2 - y1) / (x2 - x1)
+     const dirección =
+      x2 > x1 ? 1 : -1
+     const x = x1 + dirección * 5
+     const y =
+      pendiente * (x - x1) + y1
+     this.style.left =
+      `${desvía(x)}px`
+     this.style.top =
+      `${desvía(y)}px`
+    }
+   })
+
+  function desvía(i) {
+   return i + 10 -
+    20 * Math.random()
+  }
+ </script>
+</head>
+
+<body>
+ <jugador-paloma></jugador-paloma>
+ <figura-aguila
+   style="right: 0; top: 0;">
+ </figura-aguila>
+ <figura-aguila
+   style="right: 0; bottom: 0;">
+ </figura-aguila>
+ <script>
+  //@ts-check
+  /** @implements {Fabrica} */
+  class MiFabrica {
+   constructor() {
+    /** @type {Jugador} */
+    this.jugadorSingleton =
+     document.querySelector(
+      "jugador-paloma");
+   }
+   /**
+    * Devuelve el único jugador,
+    * por lo que se considera
+    * Singleton.
+    * @returns {Jugador}
+    */
+   jugador() {
+    return this.jugadorSingleton
+   }
+   /**
+    * Devuelve un arreglo con las
+    * figuras del juego.
+    * @returns {Figura[]}
+    */
+   figuras() {
+    return Array.from(
+     document.querySelectorAll(
+      "figura-aguila"))
+   }
+  }
+  const juego = new Juego3(new MiFabrica());
+  juego.inicia();
+ </script>
+</body>
+
+</html>

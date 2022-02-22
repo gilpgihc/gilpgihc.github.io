@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Animación recta</title>
+ <style>
+  .sprite {
+   position: fixed;
+   font-size: 3rem;
+  }
+ </style>
+</head>
+
+<body>
+ <h1>Animación recta</h1>
+ <output id="carita"
+   class="sprite">
+  😄
+ </output>
+ <script>
+  const X_INICIAL = 0
+  const REFRESCO = 5
+  const VELOCIDAD = 0.5
+  let x = X_INICIAL
+  setInterval(avanza, REFRESCO)
+
+  function avanza() {
+   const xFinal = innerWidth
+   const yInicial = innerHeight / 2
+   const yFinal = innerHeight
+   const y = ((yFinal - yInicial) /
+    (xFinal - X_INICIAL)) *
+    (x - X_INICIAL) +
+    yInicial
+   carita.style =
+    `left: ${x}px; bottom: ${y}px`
+   x = (x + VELOCIDAD) % xFinal
+  }
+ </script>
+</body>
+
+</html>

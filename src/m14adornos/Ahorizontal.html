@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Adorno Horizontal</title>
+ <style>
+  .sprite {
+   position: fixed;
+  }
+ </style>
+</head>
+
+<body>
+ <h1>Adorno Horizontal</h1>
+ <script>
+  const Y = 0
+  const DISTANCIA = 20
+  const X_MÁXIMA = innerWidth
+  let x = 0
+  /**
+   * En esta variable se agrega el
+   * HTML de las figuras que forman
+   * el adorno.
+   */
+  let inner = ""
+  while (x < X_MÁXIMA) {
+   /* Agrega el HTML de un emoji a
+    * inner. */
+   inner += /* html */
+    `<div class="sprite"
+       style="top: ${Y}px;
+              left: ${x}px;">
+      💕
+     </div>`
+   x += DISTANCIA
+  }
+  /* Agrega las figuras al HTML de
+   * body. */
+  document.body.innerHTML += inner
+ </script>
+</body>
+
+</html>

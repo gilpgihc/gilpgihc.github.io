@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Sonrie</title>
+ <style>
+  .sprite {
+   position: fixed;
+   font-size: 3rem;
+  }
+ </style>
+</head>
+
+<body>
+ <h1>Sonrie</h1>
+ <output id="abrazo"
+   class="sprite"
+   style="background-color:
+            greenyellow;">
+  🤗
+ </output>
+ <output id="triste"
+   class="sprite"
+   style="background-color:
+            grey;">
+  😪
+ </output>
+ <script>
+  let x = 0
+  const REFRESCO = 5
+  let intervalo =
+   setInterval(avanza, REFRESCO)
+
+  function avanza() {
+   const velocidad =
+    innerWidth / 2000
+   const x2 = innerWidth
+   const y = innerHeight / 2
+   triste.style.left =
+    `${innerWidth / 2}px`
+   triste.style.bottom = `${y}px`
+   abrazo.style.left = `${x}px`
+   abrazo.style.bottom = `${y}px`
+   if (seTocan(abrazo, triste)) {
+    triste.value = "😊";
+    triste.style.
+     backgroundColor = "pink";
+    clearInterval(intervalo);
+   } else {
+    x = (x + velocidad) % x2
+   }
+  }
+
+  /**
+   * Devuelve true si 2
+   * elementos se tocan.
+   * @param {HTMLElement} e1
+   * @param {HTMLElement} e2
+   * @returns {boolean} true
+   *  si los elementos se
+   *  tocan.
+   */
+  function seTocan(e1, e2) {
+   const rE1 =
+    e1.getBoundingClientRect()
+   const rE2 =
+    e2.getBoundingClientRect()
+   return (rE1.right >= rE2.left
+    && rE1.left <= rE2.right
+    && rE1.top <= rE2.bottom
+    && rE1.bottom >= rE2.top)
+  }
+ </script>
+</body>
+
+</html>

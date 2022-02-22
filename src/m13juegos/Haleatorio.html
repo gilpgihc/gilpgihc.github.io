@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Mueve Aleatorio</title>
+ <style>
+  .sprite {
+   position: fixed;
+   font-size: 3rem;
+  }
+ </style>
+</head>
+
+<body>
+ <h1>Mueve Aleatorio</h1>
+ <output id="carita"
+   class="sprite">
+  😄
+ </output>
+ <script>
+  const REFRESCO = 5
+  const RUIDO = 4
+  let velocidad = 0.5
+  let x = 0
+  setInterval(avanza, REFRESCO)
+
+  function avanza() {
+   const y = innerHeight / 2
+   const xMáxima = innerWidth
+   carita.style.left = `${x}px`
+   carita.style.bottom = `${y}px`
+   x += velocidad +
+    aleatorio(-RUIDO, RUIDO)
+   if (x < 0) {
+    x = 0
+    velocidad = -velocidad
+   } else if (x > xMáxima) {
+    x = xMáxima
+    velocidad = -velocidad
+   }
+  }
+
+  /**
+   * Devuelve un número
+   * aleatorio entre el valor
+   * menor y el valor mayor.
+   * @param {number} menor el
+   *  menor valor que se puede
+   *  generar
+   * @param {number} mayor el
+   *  mayor valor que se puede
+   *  generar
+   * @returns {number} un
+   *  número aleatorio entre
+   *  menor y mayor.
+   */
+  function
+   aleatorio(menor, mayor) {
+   /* Math.floor(x): elimina
+    *  los decimales.
+    * Math.random(): genera
+    *  un número aleatorio
+    *  >= 0 y < 1. */
+   return menor +
+    Math.floor(
+     Math.random() *
+     (mayor - menor + 1))
+  }
+ </script>
+</body>
+
+</html>

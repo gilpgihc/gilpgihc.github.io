@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Polimorfismo</title>
+ <script>
+  function
+   aleatorio(menor, mayor) {
+   return menor +
+    Math.floor(
+     Math.random() *
+     (mayor - menor + 1))
+  }
+
+  /** @interface */
+  class SeMueve {
+   muevete() {
+    throw new Error("intf")
+   }
+  }
+
+  /** @implements {SeMueve} */
+  class PerroWeb
+   extends HTMLElement {
+   connectedCallback() {
+    this.x = 0
+    this.y = 0
+    this.innerHTML = "🐕"
+    this.style.position = "fixed"
+    this.style.fontSize = "2rem"
+    this.style.right =
+     `${this.x}px`
+    this.style.bottom =
+     `${this.y}px`
+   }
+
+   muevete() {
+    this.x = (this.x + 30) %
+     window.innerWidth
+    this.style.right =
+     `${this.x}px`
+   }
+  }
+  customElements.define(
+   "perro-web", PerroWeb)
+
+  /** @implements {SeMueve} */
+  class AguilaWeb
+   extends HTMLElement {
+   connectedCallback() {
+    this.x = aleatorio(0,
+     Math.floor(innerWidth))
+    this.y = aleatorio(0,
+     Math.floor(innerHeight))
+    this.innerHTML = "🦅"
+    this.style.position = "fixed"
+    this.style.fontSize = "2.5rem"
+    this.style.left = `${this.x}px`
+    this.style.top = `${this.y}px`
+   }
+
+   muevete() {
+    this.y = (this.y + 10) %
+     window.innerHeight
+    this.style.top = `${this.y}px`
+   }
+  }
+  customElements.define(
+   "aguila-web", AguilaWeb)
+ </script>
+</head>
+
+<body>
+ <h1>Polimorfismo</h1>
+ <p>
+  <button onclick="mueve()">
+   Mueve
+  </button>
+ </p>
+ <script>
+  const figuras = [
+   new AguilaWeb(),
+   new PerroWeb(),
+   new AguilaWeb()]
+  for (let f of figuras) {
+   document.body.append(f)
+  }
+  function mueve() {
+   for (var f of figuras) {
+    f.muevete()
+   }
+  }
+ </script>
+</body>
+
+</html>

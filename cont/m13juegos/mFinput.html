@@ -1,0 +1,196 @@
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Puede desplegar una gran cantidad de controles según el valor de atributo
+    <dfn><code class="language-html">type</code></dfn>.
+   </p>
+  </li>
+  <li>
+   <p>Los campos con formato se validan antes de realizar submit.</p>
+  </li>
+  <li>
+   <p>
+    Los valores más usados para
+    <dfn><code class="language-html">type</code></dfn>
+    son:
+   </p>
+   <dl>
+    <dt><code class="language-html">hidden</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Campo invisible cuyo no puede se examinado o manipulado por el usuario.
+       </p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">text</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>Manipula texto plano.</p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">search</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Usa texto para búsquedas. Se despliega con la apariencia preferida por
+        la
+        plataforma donde se ejecuta.
+       </p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">tel</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>Texto que representa un número telefónico válido.</p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">url</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>Texto que representa una URL válida.</p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">email</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>Texto que representa un email válido.</p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">password</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>
+        Texto que representa una contraseña y por lo mismo no se muestra.
+       </p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">number</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>Maneja números.</p>
+      </li>
+     </ul>
+    </dd>
+    <dt><code class="language-html">range</code></dt>
+    <dd>
+     <ul>
+      <li>
+       <p>Maneja un rango de números.</p>
+      </li>
+     </ul>
+    </dd>
+   </dl>
+  </li>
+  <li>
+   <p>
+    Su especificación está en
+    <a href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"
+      target="_blank"
+      rel="noopener">https://html.spec.whatwg.org/multipage/input.html#the-input-element</a>
+   </p>
+  </li>
+ </ul>
+ <section>
+  <h1>Otros atributos</h1>
+  <dl>
+   <dt><dfn><code class="language-javascript">valueAsNumber</code></dfn></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>
+       Propiedad de JavaScript para asignar o recuperar el valor numérico de
+       captura.
+      </p>
+     </li>
+     <li>
+      <p>
+       Para controles numéricos del elemento
+       <code class="language-html">input</code>.
+      </p>
+     </li>
+     <li>
+      <p>Devuelve un número.</p>
+     </li>
+     <li>
+      <p>
+       Si el texto es una cadena vacía o no representa un número, el valor
+       devuelto
+       es NaN (o sea que no es un número).
+      </p>
+     </li>
+    </ul>
+   </dd>
+   <dt><code class="language-html">pattern</code></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Para los tipos que manejan texto.</p>
+     </li>
+     <li>
+      <p>
+       Expresión regular para validar el contenido. Abarca desde el inicio hasta
+       el final del texto.
+      </p>
+     </li>
+    </ul>
+   </dd>
+   <dt><code class="language-html">min</code></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Para controles numéricos y de fecha.</p>
+     </li>
+     <li>
+      <p>Valor mínimo que se puede capturar.</p>
+     </li>
+    </ul>
+   </dd>
+   <dt><code class="language-html">max</code></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Para controles numéricos y de fecha.</p>
+     </li>
+     <li>
+      <p>Valor máximo que se puede capturar.</p>
+     </li>
+    </ul>
+   </dd>
+   <dt><code class="language-html">step</code></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Para controles numéricos y de fecha.</p>
+     </li>
+     <li>
+      <p>
+       Granularidad o separación entre los valores que se pueden capturar. Por
+       ejemplo, step=0.1 indica que los valores pueden ser 0, 0.1, 0.2, 0.3,
+       etcétera. Aplica también para fechas.
+      </p>
+     </li>
+     <li>
+      <p>El valor por omisión para controles numéricos es 1.</p>
+     </li>
+    </ul>
+   </dd>
+  </dl>
+ </section>
+</div>

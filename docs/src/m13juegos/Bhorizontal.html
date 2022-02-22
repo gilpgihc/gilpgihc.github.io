@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>
+  Animación horizontal
+ </title>
+ <style>
+  .sprite {
+   position: fixed;
+   font-size: 3rem;
+  }
+ </style>
+</head>
+
+<body>
+ <h1>Animación horizontal</h1>
+ <output id="carita"
+   class="sprite">
+  😄
+ </output>
+ <script>
+  const REFRESCO = 5
+  const VELOCIDAD = 0.5
+  let x = 0
+  setInterval(avanza, REFRESCO)
+
+  function avanza() {
+   const y = innerHeight / 2
+   const xMáxima = innerWidth
+   carita.style =
+    `left: ${x}px; bottom: ${y}px`
+   x = (x + VELOCIDAD) % xMáxima
+  }
+ </script>
+</body>
+
+</html>

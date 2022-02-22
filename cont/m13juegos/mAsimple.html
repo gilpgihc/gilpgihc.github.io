@@ -1,0 +1,229 @@
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m11formularios/Aformulario.html" height="250"></iframe>
+  <p class="noPrint">
+   <a href="/src/m11formularios/Aformulario.html" target="_blank">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ESaludo%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3C!--%0A%20%20form%0A%20%20%20Captura%20los%20datos%20para%20un%0A%20%20%20c%C3%A1lculo.%0A%20%20action%3D%22javascript%3Acalcula()%22%0A%20%20%20Al%20activar%20la%20forma%2C%20se%20ejecuta%0A%20%20%20la%20funci%C3%B3n%0A%20%20%20%20calcula()%0A%20%20%20de%20la%20etiqueta%0A%20%20%20%20%3Cscript%3E%0A%20%20%20que%20aparece%20m%C3%A1s%20abajo.%20--%3E%0A%20%3Cform%0A%20%20%20action%3D%22javascript%3Acalcula()%22%3E%0A%20%20%3Ch1%3ESaludo%3C%2Fh1%3E%0A%20%20%3C!--%0A%20%20%20Los%20elementos%20de%20captura%20se%0A%20%20%20pueden%20colocan%20cada%20uno%20en%20un%0A%20%20%20%20%3Cp%3E%20--%3E%0A%20%20%3Cp%3E%0A%20%20%20%3C!--%0A%20%20%20%20label%0A%20%20%20%20%20Pone%20el%20r%C3%B3tulo%0A%20%20%20%20%20%20Nombre%0A%20%20%20%20%20que%20aparece%20m%C3%A1s%20abajo%2C%20al%0A%20%20%20%20%20elemento%0A%20%20%20%20%20%20input%0A%20%20%20%20%20que%20tambi%C3%A9n%20aparece%20m%C3%A1s%20abajo.%0A%20%20%20--%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20Nombre%0A%20%20%20%20%3C!--%0A%20%20%20%20%20input%0A%20%20%20%20%20%20Campo%20de%20captura.%20Activa%20la%0A%20%20%20%20%20%20forma%20al%20teclear%0A%20%20%20%20%20%20%20%C2%ABintro%C2%BB%0A%20%20%20%20%20%20cuando%20tiene%20el%20cursor.%0A%20%20%20%20%20type%3D%22text%22%0A%20%20%20%20%20%20Captura%20texto%0A%20%20%20%20%20id%3D%22inNombre%22%0A%20%20%20%20%20%20Identificador%20del%20campo%20de%0A%20%20%20%20%20%20captura.%20Se%20puede%20usar%20desde%0A%20%20%20%20%20%20el%20elemento%0A%20%20%20%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20m%C3%A1s%20abajo.%0A%20%20%20%20%20required%0A%20%20%20%20%20%20Este%20campo%20no%20se%20puede%20quedar%0A%20%20%20%20%20%20en%20blanco.%20--%3E%0A%20%20%20%20%3Cinput%20type%3D%22text%22%0A%20%20%20%20%20%20id%3D%22inNombre%22%20required%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3C!--%0A%20%20%20%20button%0A%20%20%20%20%20Activa%20la%20forma%20al%20hacerle%0A%20%20%20%20%20click%20o%20presionado%20la%20tecla%0A%20%20%20%20%20espacio%20cuando%20tiene%20el%0A%20%20%20%20%20tabulador.%20--%3E%0A%20%20%20%3Cbutton%3ECalcular%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3C!--%0A%20%20%20%20output%0A%20%20%20%20%20Muestra%20el%20resultado%20de%20un%0A%20%20%20%20%20c%C3%A1lculo.%0A%20%20%20--%3E%0A%20%20%20%3Coutput%20id%3DoutSaludo%3E%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20%2F**%0A%20%20%20*%20Funci%C3%B3n%20que%20realiza%20el%20c%C3%A1lculo%0A%20%20%20*%20cuando%20se%20activa%20la%20forma.%0A%20%20%20*%2F%0A%20%20function%20calcula()%20%7B%0A%20%20%20%2F*%20Recupera%20el%20texto%20capturado%0A%20%20%20%20*%20en%20%22inNombre%22%20y%20lo%20asigna%0A%20%20%20%20*%20a%20la%20constante%20%22nombre%22.%20*%2F%0A%20%20%20const%20nombre%20%3D%20inNombre.value%0A%20%20%20const%20saludo%20%3D%20saluda(nombre)%0A%20%20%20%2F*%20Despliega%20el%20saludo%20en%20el%0A%20%20%20%20*%20elemento%20%22outSaludo%22.%20*%2F%0A%20%20%20outSaludo.value%20%3D%20saludo%3B%0A%20%20%7D%0A%0A%20%20%2F**%0A%20%20%20*%20Funci%C3%B3n%20que%20realiza%20la%20l%C3%B3gica%0A%20%20%20*%20del%20c%C3%A1lculo.%0A%20%20%20*%20%40param%20%7Bstring%7D%20nombre%0A%20%20%20*%2F%0A%20%20function%20saluda(nombre)%20%7B%0A%20%20%20return%20%60Hola%20%24%7Bnombre%7D.%60%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Saludo<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
+   <div><span style="color: #008000;">&nbsp; form</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;Captura los datos para un</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;cálculo.</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; action="javascript:calcula()"</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;Al&nbsp;activar&nbsp;la&nbsp;forma,&nbsp;se&nbsp;ejecuta</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;la función</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; calcula()</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;de la etiqueta</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &lt;script&gt;</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;que aparece más abajo. --&gt;</span>
+   </div>
+   <div>&nbsp;<span style="color: #800000;">&lt;form</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">action</span>=<span
+      style="color: #0000ff;">"javascript:calcula()"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Saludo<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp; <span style="color: #008000;">&lt;!--</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;Los elementos de captura se</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;pueden colocan cada uno en un</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &lt;p&gt; --&gt;</span>
+   </div>
+   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">&lt;!--</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; label</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; &nbsp;Pone el rótulo</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp; Nombre</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;que&nbsp;aparece&nbsp;más&nbsp;abajo,&nbsp;al</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;elemento</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp; input</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;que&nbsp;también&nbsp;aparece&nbsp;más&nbsp;abajo.</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;--&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div>
+   <div>&nbsp; &nbsp; Nombre</div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">&lt;!--</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;input</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campo&nbsp;de&nbsp;captura.&nbsp;Activa&nbsp;la</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forma&nbsp;al&nbsp;teclear</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; &nbsp; &nbsp;«intro»</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cuando&nbsp;tiene&nbsp;el&nbsp;cursor.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; &nbsp;type="text"</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; &nbsp; Captura texto</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; &nbsp;id="inNombre"</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Identificador&nbsp;del&nbsp;campo&nbsp;de</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;captura.&nbsp;Se&nbsp;puede&nbsp;usar&nbsp;desde</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; &nbsp; el elemento</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; &nbsp; &nbsp;&lt;script&gt;</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; &nbsp; más abajo.</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;required</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Este&nbsp;campo&nbsp;no&nbsp;se&nbsp;puede&nbsp;quedar</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; &nbsp; en blanco. --&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;input</span> <span
+      style="color: #ff0000;">type</span>=<span
+      style="color: #0000ff;">"text"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"inNombre"</span> <span
+      style="color: #ff0000;">required</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">&lt;!--</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; button</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Activa&nbsp;la&nbsp;forma&nbsp;al&nbsp;hacerle</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click&nbsp;o&nbsp;presionado&nbsp;la&nbsp;tecla</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; &nbsp;espacio cuando tiene el</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; &nbsp;tabulador. --&gt;</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #800000;">&lt;button&gt;</span>Calcular<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">&lt;!--</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; output</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Muestra&nbsp;el&nbsp;resultado&nbsp;de&nbsp;un</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;cálculo.</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;--&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">outSaludo</span><span
+      style="color: #800000;">&gt;&lt;/output&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;Función&nbsp;que&nbsp;realiza&nbsp;el&nbsp;cálculo</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;* cuando se activa la forma.</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">calcula</span>() {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #008000;">/* Recupera el texto capturado</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; * en "inNombre" y lo asigna</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; * a la constante "nombre". */</span>
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">nombre</span> = <span
+      style="color: #001080;">inNombre</span>.<span
+      style="color: #001080;">value</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">saludo</span> = <span
+      style="color: #795e26;">saluda</span>(<span
+      style="color: #0070c1;">nombre</span>)</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #008000;">/* Despliega el saludo en el</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; * elemento "outSaludo". */</span>
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">outSaludo</span>.<span
+      style="color: #001080;">value</span> = <span
+      style="color: #0070c1;">saludo</span>;</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;Función&nbsp;que&nbsp;realiza&nbsp;la&nbsp;lógica</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;* del cálculo.</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;* @param {string} nombre</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">saluda</span>(<span
+      style="color: #001080;">nombre</span>) {</div>
+   <div>&nbsp; &nbsp;<span style="color: #af00db;">return</span> <span
+      style="color: #a31515;">`Hola </span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #001080;">nombre</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">.`</span></div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
