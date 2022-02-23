@@ -1,3 +1,2 @@
-* añadir title a todos los iframe
-* Añadir enlace a las definiciones HTML de los capítulos 11 y 12
+* Ok hasta m13juegos mEgira
 * Falta display flex y grid

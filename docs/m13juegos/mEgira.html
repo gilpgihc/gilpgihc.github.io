@@ -400,108 +400,22 @@
   <a class="anterior" href="/m13juegos/mDondula.html" title="D. Ondula">◀</a>
   <a class="siguiente" href="/m13juegos/mFbotones.html" title="F. Desplazamiento con botones">▶</a>
  </div>
-   <h1 >E. Girando</h1><div class="lectura">
- <ul>
-  <li>
-   <p>
-    Los siguientes atributos son comunes en los elementos asociados con una
-    forma.
-   </p>
-   <dl>
-    <dt><dfn><code class="language-javascript">value</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Propiedad de JavaScript para asignar o recuperar el valor de captura.
-       </p>
-      </li>
-      <li>
-       <p>
-        Para
-        <code class="language-html">textarea</code>,
-        <code class="language-html">select</code>
-        y controles de texto del elemento
-        <code class="language-html">input</code>.
-       </p>
-      </li>
-      <li>
-       <p>
-        Se puede usar en HTML para controles de texto del elemento
-        <code class="language-html">input</code>.
-       </p>
-      </li>
-     </ul>
-    </dd>
-    <dt><dfn><code class="language-html">name</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Nombre único del elemento (y sus valores asociados) dentro de la forma.
-       </p>
-      </li>
-     </ul>
-    </dd>
-    <dt><dfn><code class="language-html">disabled</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Atributo booleano. Cuando está presente indica que el elemento está
-        deshabilitado y no responde a la interacción del usuario.
-       </p>
-      </li>
-     </ul>
-    </dd>
-    <dt><dfn><code class="language-html">maxlength</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Para
-        <code class="language-html">textarea</code>
-        y controles de texto del elemento
-        <code class="language-html">input</code>.
-       </p>
-      </li>
-      <li>
-       <p>Es el número máximo de caracteres que el usuario puede introducir.</p>
-      </li>
-     </ul>
-    </dd>
-    <dt><dfn><code class="language-html">minlength</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Para
-        <code class="language-html">textarea</code>
-        y controles de texto del elemento
-        <code class="language-html">input</code>.
-       </p>
-      </li>
-      <li>
-       <p>
-        Es el número mínimo de caracteres que el usuario puede
-        introducir para que la captura sea válida.
-       </p>
-      </li>
-     </ul>
-    </dd>
-    <dt><dfn><code class="language-html">required</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Atributo booleano. Cuando está presente indica que el valor de
-        captura del elemento no puede estar vacío.
-       </p>
-      </li>
-     </ul>
-    </dd>
-   </dl>
- </ul>
+   <h1 >E. Girando</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m13juegos/Egira.html" height="250" title="Ejemplo de movimiento ondulante"></iframe>
+  <p class="noPrint">
+   <a href="/src/m13juegos/Egira.html" target="_blank">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EGira%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20.sprite%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20font-size%3A%203rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3EGira%3C%2Fh1%3E%0A%20%3Coutput%20id%3D%22mariposa%22%0A%20%20%20class%3D%22sprite%22%3E%0A%20%20%F0%9F%A6%8B%0A%20%3C%2Foutput%3E%0A%20%3Cscript%3E%0A%20%20const%20REFRESCO%20%3D%20120%0A%20%20const%20VELOCIDAD%20%3D%200.3%0A%20%20let%20angulo%20%3D%200%0A%20%20setInterval(gira%2C%20REFRESCO)%0A%0A%20%20function%20gira()%20%7B%0A%20%20%20const%20xBase%20%3D%20innerWidth%20%2F%202%0A%20%20%20const%20amplitudX%20%3D%20innerWidth%20%2F%203%0A%20%20%20const%20yBase%20%3D%20innerHeight%20%2F%202%0A%20%20%20const%20amplitudY%20%3D%0A%20%20%20%20innerHeight%20%2F%203%0A%20%20%20const%20x%20%3D%20xBase%20%2B%0A%20%20%20%20amplitudX%20*%20Math.cos(angulo)%0A%20%20%20const%20y%20%3D%20yBase%20%2B%0A%20%20%20%20amplitudY%20*%20Math.sin(angulo)%0A%20%20%20mariposa.style%20%3D%0A%20%20%20%20%60left%3A%20%24%7Bx%7Dpx%3B%20bottom%3A%20%24%7By%7Dpx%60%0A%20%20%20angulo%20%2B%3D%20VELOCIDAD%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Gira<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">.sprite</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span style="color: #098658;">3rem</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Gira<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"mariposa"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"sprite"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; 🦋</div><div>&nbsp;<span style="color: #800000;">&lt;/output&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">REFRESCO</span> = <span style="color: #098658;">120</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">VELOCIDAD</span> = <span style="color: #098658;">0.3</span></div><div>&nbsp; <span style="color: #0000ff;">let</span> <span style="color: #001080;">angulo</span> = <span style="color: #098658;">0</span></div><div>&nbsp; <span style="color: #795e26;">setInterval</span>(<span style="color: #795e26;">gira</span>, <span style="color: #0070c1;">REFRESCO</span>)</div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">gira</span>() {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">xBase</span> = <span style="color: #001080;">innerWidth</span> / <span style="color: #098658;">2</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">amplitudX</span> = <span style="color: #001080;">innerWidth</span> / <span style="color: #098658;">3</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">yBase</span> = <span style="color: #001080;">innerHeight</span> / <span style="color: #098658;">2</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">amplitudY</span> =</div><div>&nbsp; &nbsp; <span style="color: #001080;">innerHeight</span> / <span style="color: #098658;">3</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">x</span> = <span style="color: #0070c1;">xBase</span> +</div><div>&nbsp; &nbsp; <span style="color: #0070c1;">amplitudX</span> * <span style="color: #267f99;">Math</span>.<span style="color: #795e26;">cos</span>(<span style="color: #001080;">angulo</span>)</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">y</span> = <span style="color: #0070c1;">yBase</span> +</div><div>&nbsp; &nbsp; <span style="color: #0070c1;">amplitudY</span> * <span style="color: #267f99;">Math</span>.<span style="color: #795e26;">sin</span>(<span style="color: #001080;">angulo</span>)</div><div>&nbsp; &nbsp;<span style="color: #001080;">mariposa</span>.<span style="color: #001080;">style</span> =</div><div>&nbsp; &nbsp; <span style="color: #a31515;">`left: </span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">x</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px; bottom: </span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">y</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp;<span style="color: #001080;">angulo</span> += <span style="color: #0070c1;">VELOCIDAD</span></div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
 </div>
  <footer>
  <p>
