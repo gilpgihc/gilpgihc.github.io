@@ -16,7 +16,12 @@
    "description": "Los custom element en acción."
   },
   {
-   "name": "mCresumen.html",
+   "name": "mCatributos.html",
+   "title": "Uso de atributos",
+   "description": "Uso de atributos."
+  },
+  {
+   "name": "mDresumen.html",
    "title": "Resumen",
    "description": "Resumen de la lección «12. Custom» elements."
   }

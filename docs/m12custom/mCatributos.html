@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>E. Girando - GilPG IHC</title>
- <meta name="description" content="Girando.">
+ <title>C. Uso de atributos - GilPG IHC</title>
+ <meta name="description" content="Uso de atributos.">
  <meta name="og:image" content="https://gilpgihc.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -397,112 +397,45 @@
   <button id="abre" type="button" title="Menú" class="cambiaMenu">
    &#x2630;
   </button>
-  <a class="anterior" href="/m13juegos/mDondula.html" title="D. Ondula">◀</a>
-  <a class="siguiente" href="/m13juegos/mFbotones.html" title="F. Desplazamiento con botones">▶</a>
+  <a class="anterior" href="/m12custom/mBaccion.html" title="B. Los custom element en acción">◀</a>
+  <a class="siguiente" href="/m12custom/mDresumen.html" title="D. Resumen">▶</a>
  </div>
-   <h1 >E. Girando</h1><div class="lectura">
+   <h1 >C. Uso de atributos</h1><div class="lectura">
  <ul>
   <li>
    <p>
-    Los siguientes atributos son comunes en los elementos asociados con una
-    forma.
+    Los atributos de la etiqueta HTML se recuperan con
+    <code class="language-javascript">this.getAttribute(<var>nombreDelAtributo</var>)</code>.
    </p>
-   <dl>
-    <dt><dfn><code class="language-javascript">value</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Propiedad de JavaScript para asignar o recuperar el valor de captura.
-       </p>
-      </li>
-      <li>
-       <p>
-        Para
-        <code class="language-html">textarea</code>,
-        <code class="language-html">select</code>
-        y controles de texto del elemento
-        <code class="language-html">input</code>.
-       </p>
-      </li>
-      <li>
-       <p>
-        Se puede usar en HTML para controles de texto del elemento
-        <code class="language-html">input</code>.
-       </p>
-      </li>
-     </ul>
-    </dd>
-    <dt><dfn><code class="language-html">name</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Nombre único del elemento (y sus valores asociados) dentro de la forma.
-       </p>
-      </li>
-     </ul>
-    </dd>
-    <dt><dfn><code class="language-html">disabled</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Atributo booleano. Cuando está presente indica que el elemento está
-        deshabilitado y no responde a la interacción del usuario.
-       </p>
-      </li>
-     </ul>
-    </dd>
-    <dt><dfn><code class="language-html">maxlength</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Para
-        <code class="language-html">textarea</code>
-        y controles de texto del elemento
-        <code class="language-html">input</code>.
-       </p>
-      </li>
-      <li>
-       <p>Es el número máximo de caracteres que el usuario puede introducir.</p>
-      </li>
-     </ul>
-    </dd>
-    <dt><dfn><code class="language-html">minlength</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Para
-        <code class="language-html">textarea</code>
-        y controles de texto del elemento
-        <code class="language-html">input</code>.
-       </p>
-      </li>
-      <li>
-       <p>
-        Es el número mínimo de caracteres que el usuario puede
-        introducir para que la captura sea válida.
-       </p>
-      </li>
-     </ul>
-    </dd>
-    <dt><dfn><code class="language-html">required</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Atributo booleano. Cuando está presente indica que el valor de
-        captura del elemento no puede estar vacío.
-       </p>
-      </li>
-     </ul>
-    </dd>
-   </dl>
+  </li>
+  <li>
+   <p>
+    Se puede verificar si un atributo está presente en la etiqueta HTML usando
+    <code class="language-javascript">this.hasAttribute(<var>nombreDelAtributo</var>)</code>.
+   </p>
+  </li>
  </ul>
 </div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <section>
+   <h1>Salida</h1>
+   <iframe src="/src/m12custom/Catributos.html" height="250"></iframe>
+   <p class="noPrint">
+    <a href="/src/m12custom/Catributos.html" target="_blank">Ábrelo en
+     otra pestaña.</a>
+   </p>
+   <p class="noPrint">
+    <a target="_blank" rel="noopener"
+      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EAcci%C3%B3n%3C%2Ftitle%3E%0A%20%3Cscript%3E%0A%20%20class%20Elemento3%0A%20%20%20extends%20HTMLElement%20%7B%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20this.innerHTML%20%3D%20%2F*%20html%20*%2F%0A%20%20%20%20%20%60Estoy%20volando%F0%9F%9A%81%0A%20%20%20%20%20%20%3Cstrong%3E%0A%20%20%20%20%20%20%20alto%0A%20%20%20%20%20%20%3C%2Fstrong%3E.%60%0A%20%20%20%20this.addEventListener(%22click%22%2C%0A%20%20%20%20%20()%20%3D%3E%20this.clic())%0A%20%20%20%7D%0A%20%20%20clic()%20%7B%0A%20%20%20%20alert(%22ouch%22)%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.define(%0A%20%20%20%22elemento-3%22%2C%20Elemento3)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20elemento-3%20%7B%0A%20%20%20cursor%3A%20pointer%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3EAcci%C3%B3n%3C%2Fh1%3E%0A%20%3Celemento-3%3E%3C%2Felemento-3%3E%0A%20%3Cp%3ESaludos%20desde%20la%20tierra.%3C%2Fp%3E%0A%20%3Celemento-3%3E%3C%2Felemento-3%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+     Revísalo en gilpgedit.
+    </a>
+   </p>
+  </section>
+  <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Atributos<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">class</span> <span style="color: #267f99;">MiSaludo</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span style="color: #267f99;">HTMLElement</span> {</div><div>&nbsp; &nbsp;<span style="color: #795e26;">connectedCallback</span>() {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">nombre</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #795e26;">getAttribute</span>(<span style="color: #a31515;">"nombre"</span>)</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">alegre</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #795e26;">hasAttribute</span>(<span style="color: #a31515;">"alegre"</span>)</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">icono</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">alegre</span> ? <span style="color: #a31515;">"😄"</span> : <span style="color: #a31515;">"🖐"</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">innerHTML</span> = <span style="color: #008000;">/* html */</span></div><div>&nbsp; &nbsp; &nbsp;`<span style="color: #800000;">${</span><span style="color: #0070c1;">icono</span><span style="color: #800000;">}</span></div><div>&nbsp; &nbsp; &nbsp; hola</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;strong&gt;${</span><span style="color: #0070c1;">nombre</span><span style="color: #800000;">}&lt;/strong&gt;</span>.`</div><div>&nbsp; &nbsp;}</div><div>&nbsp; }</div><div>&nbsp; <span style="color: #001080;">customElements</span>.<span style="color: #795e26;">define</span>(</div><div>&nbsp; &nbsp;<span style="color: #a31515;">"mi-saludo"</span>, <span style="color: #267f99;">MiSaludo</span>)</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Atributos<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;mi-saludo</span> <span style="color: #ff0000;">nombre</span>=<span style="color: #0000ff;">"pp"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/mi-saludo&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;mi-saludo</span> <span style="color: #ff0000;">nombre</span>=<span style="color: #0000ff;">"tt"</span> <span style="color: #ff0000;">alegre</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/mi-saludo&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+ </div>
+</section>
  <footer>
  <p>
   <a rel="license"
@@ -533,92 +466,35 @@
     <a href="/index.html"
       data-logo="true">GilPG IHC</a>
    </p><p>
-    <a class="paginaAnterior" href="/m12custom/mDresumen.html"
-      title="D. Resumen">▲</a>
+    <a class="paginaAnterior" href="/m11formularios/mNresumen.html"
+      title="N. Resumen">▲</a>
    </p>
-     <h1><a href="/m13juegos/index.html">13. Juegos</a></h1>
+     <h1><a href="/m12custom/index.html">12. Custom elements</a></h1>
    <ol type="A">
     <li>
      <p>
-      <a href="/m13juegos/mAsprites.html">Sprites</a>
+      <a href="/m12custom/mAcustom.html"><dfn>Custom element</dfn></a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m13juegos/mBhorizontal.html">Desplazamiento horizontal</a>
+      <a href="/m12custom/mBaccion.html">Los custom element en acción</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m13juegos/mCrecta.html">Recta</a>
+      <a href="/m12custom/mCatributos.html" class="actual">Uso de atributos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m13juegos/mDondula.html">Ondula</a>
+      <a href="/m12custom/mDresumen.html">Resumen</a>
      </p>
     </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mEgira.html" class="actual">Girando</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mFbotones.html">Desplazamiento con botones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mGcolisiones.html">Detecta colisiones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mHsonrie.html">Haz algo si chocamos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mIaleatorio.html">Muévete al azar</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mJcustom.html">Usa custom element</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mKasociaciones.html">Asociaciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mLpolimorfismo.html">Polimorfismo</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mMjueguito1.html">Jueguito 1</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mNjueguito2.html">Jueguito 2</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mOjueguito3.html">Jueguito 3</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mPresumen.html">Resumen</a>
-     </p>
-    </li>
-   </ol>
+   </ol><p>
+    <a class="paginaSiguiente" href="/m13juegos/index.html"
+      title="13. Juegos">▼</a>
+   </p>
 </nav>
  <script>
  registraServiceWorker("/sw.js")
@@ -629,9 +505,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m13juegos/mDondula.html"
+ let urlAnterior = "/m12custom/mBaccion.html"
  /**@type {string} */
- let urlSiguiente = "/m13juegos/mFbotones.html"
+ let urlSiguiente = "/m12custom/mDresumen.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

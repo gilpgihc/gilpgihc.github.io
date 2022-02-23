@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Atributos</title>
+ <script>
+  class MiSaludo
+   extends HTMLElement {
+   connectedCallback() {
+    const nombre =
+     this.getAttribute("nombre")
+    const alegre =
+     this.hasAttribute("alegre")
+    const icono =
+     alegre ? "😄" : "🖐"
+    this.innerHTML = /* html */
+     `${icono}
+      hola
+      <strong>${nombre}</strong>.`
+   }
+  }
+  customElements.define(
+   "mi-saludo", MiSaludo)
+ </script>
+</head>
+
+<body>
+ <h1>Atributos</h1>
+ <p>
+  <mi-saludo nombre="pp">
+  </mi-saludo>
+ </p>
+ <p>
+  <mi-saludo nombre="tt" alegre>
+  </mi-saludo>
+ </p>
+</body>
+
+</html>

@@ -492,70 +492,22 @@
 </div>
       </section>
      <section >
-         <h1 >D. Ondula</h1><div class="lectura">
- <ul>
-  <li>
-   <p>Representa un botón cuya superficie muestra el contenido del elemento.</p>
-  </li>
-  <li>
-   <p>El contenido del elemento es el rótulo.</p>
-  </li>
-  <li>
-   <p>
-    El atributo
-    <dfn><code class="language-html">type</code></dfn>
-    controla el comportamiento del botón al ser activado. Sus valores posibles
-    son:
-   </p>
-   <dl>
-    <dt><dfn><code class="language-html">submit</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Cuando el botón se activa, el contenido de la forma se envía.
-       </p>
-      </li>
-      <li>
-       <p>Es el valor por omisión.</p>
-      </li>
-     </ul>
-    </dd>
-    <dt><dfn><code class="language-html">reset</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Cuando el botón se activa, el contenido de la forma regresa a su
-        estado inicial.
-       </p>
-      </li>
-     </ul>
-    </dd>
-    <dt><dfn><code class="language-html">button</code></dfn></dt>
-    <dd>
-     <ul>
-      <li>
-       <p>
-        Cuando el botón se activa, no tiene un comportamiento definido, pero
-        puede
-        configurar por medio de un script o con el atributo
-        <code class="language-html">onclick</code>.
-       </p>
-      </li>
-     </ul>
-    </dd>
-   </dl>
-  </li>
-  <li>
-   <p>
-    Su especificación está en
-    <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element"
-      target="_blank"
-      rel="noopener">https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element</a>
-   </p>
-  </li>
- </ul>
+         <h1 >D. Ondula</h1><div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m13juegos/Dondula.html" height="250"></iframe>
+  <p class="noPrint">
+   <a href="/src/m13juegos/Dondula.html" target="_blank">Ábrelo en otra
+    pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EOndula%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20.sprite%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20font-size%3A%203rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3EOndula%3C%2Fh1%3E%0A%20%3Coutput%20id%3D%22carita%22%0A%20%20%20class%3D%22sprite%22%3E%0A%20%20%F0%9F%98%84%0A%20%3C%2Foutput%3E%0A%20%3Cscript%3E%0A%20%20const%20REFRESCO%20%3D%205%0A%20%20const%20VELOCIDAD%20%3D%200.5%0A%20%20const%20FRECUENCIA%20%3D%200.03%0A%20%20let%20x%20%3D%200%0A%20%20setInterval(avanza%2C%20REFRESCO)%0A%0A%20%20function%20avanza()%20%7B%0A%20%20%20const%20xM%C3%A1xima%20%3D%20innerWidth%0A%20%20%20const%20amplitud%20%3D%20innerHeight%20%2F%203%0A%20%20%20const%20yBase%20%3D%20innerHeight%20%2F%202%0A%20%20%20y%20%3D%20yBase%20%2B%0A%20%20%20%20amplitud%20*%0A%20%20%20%20Math.sin(FRECUENCIA%20*%20x)%0A%20%20%20carita.style%20%3D%0A%20%20%20%20%60left%3A%20%24%7Bx%7Dpx%3B%20bottom%3A%20%24%7By%7Dpx%60%0A%20%20%20x%20%3D%20(x%20%2B%20VELOCIDAD)%20%25%20xM%C3%A1xima%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Ondula<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">.sprite</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span style="color: #098658;">3rem</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Ondula<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"carita"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"sprite"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; 😄</div><div>&nbsp;<span style="color: #800000;">&lt;/output&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">REFRESCO</span> = <span style="color: #098658;">5</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">VELOCIDAD</span> = <span style="color: #098658;">0.5</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">FRECUENCIA</span> = <span style="color: #098658;">0.03</span></div><div>&nbsp; <span style="color: #0000ff;">let</span> <span style="color: #001080;">x</span> = <span style="color: #098658;">0</span></div><div>&nbsp; <span style="color: #795e26;">setInterval</span>(<span style="color: #795e26;">avanza</span>, <span style="color: #0070c1;">REFRESCO</span>)</div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">avanza</span>() {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">xMáxima</span> = <span style="color: #001080;">innerWidth</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">amplitud</span> = <span style="color: #001080;">innerHeight</span> / <span style="color: #098658;">3</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">yBase</span> = <span style="color: #001080;">innerHeight</span> / <span style="color: #098658;">2</span></div><div>&nbsp; &nbsp;<span style="color: #001080;">y</span> = <span style="color: #0070c1;">yBase</span> +</div><div>&nbsp; &nbsp; <span style="color: #0070c1;">amplitud</span> *</div><div>&nbsp; &nbsp; <span style="color: #267f99;">Math</span>.<span style="color: #795e26;">sin</span>(<span style="color: #0070c1;">FRECUENCIA</span> * <span style="color: #001080;">x</span>)</div><div>&nbsp; &nbsp;<span style="color: #001080;">carita</span>.<span style="color: #001080;">style</span> =</div><div>&nbsp; &nbsp; <span style="color: #a31515;">`left: </span><span style="color: #0000ff;">${</span><span style="color: #001080;">x</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px; bottom: </span><span style="color: #0000ff;">${</span><span style="color: #001080;">y</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp;<span style="color: #001080;">x</span> = (<span style="color: #001080;">x</span> + <span style="color: #0070c1;">VELOCIDAD</span>) % <span style="color: #0070c1;">xMáxima</span></div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
 </div>
       </section>
      <section >
