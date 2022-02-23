@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>B. Desplazamiento horizontal - GilPG IHC</title>
- <meta name="description" content="Desplazamiento horizontal.">
+ <title>C. Espiral - GilPG IHC</title>
+ <meta name="description" content="Espiral.">
  <meta name="og:image" content="https://gilpgihc.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -397,25 +397,25 @@
   <button id="abre" type="button" title="Menú" class="cambiaMenu">
    &#x2630;
   </button>
-  <a class="anterior" href="/m13juegos/mAsprites.html" title="A. Sprites">◀</a>
-  <a class="siguiente" href="/m13juegos/mCrecta.html" title="C. Recta">▶</a>
+  <a class="anterior" href="/m14adornos/mBciclos.html" title="B. Recta usando ciclos">◀</a>
+  <a class="siguiente" href="/m14adornos/mDresumen.html" title="D. Resumen">▶</a>
  </div>
-   <h1 >B. Desplazamiento horizontal</h1><div class="horizontal">
+   <h1 >C. Espiral</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="/src/m13juegos/Bhorizontal.html" height="250" title="Ejemplo de movimiento horizontal"></iframe>
+  <iframe src="/src/m14adornos/Cespiral.html" height="250" title="Adorno en espiral"></iframe>
   <p class="noPrint">
-   <a href="/src/m13juegos/Bhorizontal.html" target="_blank">Ábrelo en otra
+   <a href="/src/m14adornos/Cespiral.html" target="_blank">Ábrelo en otra
     pestaña.</a>
   </p>
   <p class="noPrint">
    <a target="_blank" rel="noopener"
-     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%0A%20%20Animaci%C3%B3n%20horizontal%0A%20%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20.sprite%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20font-size%3A%203rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3EAnimaci%C3%B3n%20horizontal%3C%2Fh1%3E%0A%20%3Coutput%20id%3D%22carita%22%0A%20%20%20class%3D%22sprite%22%3E%0A%20%20%F0%9F%98%84%0A%20%3C%2Foutput%3E%0A%20%3Cscript%3E%0A%20%20const%20REFRESCO%20%3D%205%0A%20%20const%20VELOCIDAD%20%3D%200.5%0A%20%20let%20x%20%3D%200%0A%20%20setInterval(avanza%2C%20REFRESCO)%0A%0A%20%20function%20avanza()%20%7B%0A%20%20%20const%20y%20%3D%20innerHeight%20%2F%202%0A%20%20%20const%20xM%C3%A1xima%20%3D%20innerWidth%0A%20%20%20carita.style%20%3D%0A%20%20%20%20%60left%3A%20%24%7Bx%7Dpx%3B%20bottom%3A%20%24%7By%7Dpx%60%0A%20%20%20x%20%3D%20(x%20%2B%20VELOCIDAD)%20%25%20xM%C3%A1xima%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EAdorno%20con%20Giro%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20.sprite%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3EAdorno%20con%20Giro%3C%2Fh1%3E%0A%20%3Cscript%3E%0A%20%20const%20INCREMENTO%20%3D%0A%20%20%202%20*%20Math.PI%20%2F%2021%0A%20%20const%20X_BASE%20%3D%20innerWidth%20%2F%202%0A%20%20const%20Y_BASE%20%3D%20innerHeight%20%2F%202%0A%20%20const%20ANGULO_FINAL%20%3D%206%20*%20Math.PI%0A%20%20const%20amplitud%20%3D%20Math.min(%0A%20%20%20window.innerHeight%2C%0A%20%20%20window.innerWidth)%20%2F%0A%20%20%20(3%20*%20ANGULO_FINAL)%0A%20%20let%20inner%20%3D%20%22%22%0A%20%20for%20(let%20angulo%20%3D%200%0A%20%20%20%3B%20angulo%20%3C%20ANGULO_FINAL%0A%20%20%20%3B%20angulo%20%2B%3D%20INCREMENTO)%20%7B%0A%20%20%20const%20r%20%3D%20amplitud%20*%20angulo%0A%20%20%20const%20x%20%3D%0A%20%20%20%20X_BASE%20%2B%20r%20*%20Math.cos(angulo)%0A%20%20%20const%20y%20%3D%0A%20%20%20%20Y_BASE%20%2B%20r%20*%20Math.sin(angulo)%0A%20%20%20inner%20%2B%3D%20%2F*%20html%20*%2F%0A%20%20%20%20%60%3Cdiv%20class%3D%22sprite%22%0A%20%20%20%20%20%20%20style%3D%22bottom%3A%20%24%7By%7Dpx%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20left%3A%20%24%7Bx%7Dpx%3B%22%3E%0A%20%20%20%20%20%20%E2%8C%9B%0A%20%20%20%20%20%3C%2Fdiv%3E%60%0A%20%20%7D%0A%20%20document.body.innerHTML%20%2B%3D%20inner%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.
    </a>
   </p>
  </section>
- <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span></div><div>&nbsp; Animación horizontal</div><div>&nbsp;<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">.sprite</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span style="color: #098658;">3rem</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Animación horizontal<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"carita"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"sprite"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; 😄</div><div>&nbsp;<span style="color: #800000;">&lt;/output&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">REFRESCO</span> = <span style="color: #098658;">5</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">VELOCIDAD</span> = <span style="color: #098658;">0.5</span></div><div>&nbsp; <span style="color: #0000ff;">let</span> <span style="color: #001080;">x</span> = <span style="color: #098658;">0</span></div><div>&nbsp; <span style="color: #795e26;">setInterval</span>(<span style="color: #795e26;">avanza</span>, <span style="color: #0070c1;">REFRESCO</span>)</div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">avanza</span>() {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">y</span> = <span style="color: #001080;">innerHeight</span> / <span style="color: #098658;">2</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">xMáxima</span> = <span style="color: #001080;">innerWidth</span></div><div>&nbsp; &nbsp;<span style="color: #001080;">carita</span>.<span style="color: #001080;">style</span> =</div><div>&nbsp; &nbsp; <span style="color: #a31515;">`left: </span><span style="color: #0000ff;">${</span><span style="color: #001080;">x</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px; bottom: </span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">y</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp;<span style="color: #001080;">x</span> = (<span style="color: #001080;">x</span> + <span style="color: #0070c1;">VELOCIDAD</span>) % <span style="color: #0070c1;">xMáxima</span></div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+ <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Adorno con Giro<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">.sprite</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Adorno con Giro<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">INCREMENTO</span> =</div><div>&nbsp; &nbsp;<span style="color: #098658;">2</span> * <span style="color: #267f99;">Math</span>.<span style="color: #0070c1;">PI</span> / <span style="color: #098658;">21</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">X_BASE</span> = <span style="color: #001080;">innerWidth</span> / <span style="color: #098658;">2</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">Y_BASE</span> = <span style="color: #001080;">innerHeight</span> / <span style="color: #098658;">2</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">ANGULO_FINAL</span> = <span style="color: #098658;">6</span> * <span style="color: #267f99;">Math</span>.<span style="color: #0070c1;">PI</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">amplitud</span> = <span style="color: #267f99;">Math</span>.<span style="color: #795e26;">min</span>(</div><div>&nbsp; &nbsp;<span style="color: #001080;">window</span>.<span style="color: #001080;">innerHeight</span>,</div><div>&nbsp; &nbsp;<span style="color: #001080;">window</span>.<span style="color: #001080;">innerWidth</span>) /</div><div>&nbsp; &nbsp;(<span style="color: #098658;">3</span> * <span style="color: #0070c1;">ANGULO_FINAL</span>)</div><div>&nbsp; <span style="color: #0000ff;">let</span> <span style="color: #001080;">inner</span> = <span style="color: #a31515;">""</span></div><div>&nbsp; <span style="color: #af00db;">for</span> (<span style="color: #0000ff;">let</span> <span style="color: #001080;">angulo</span> = <span style="color: #098658;">0</span></div><div>&nbsp; &nbsp;; <span style="color: #001080;">angulo</span> &lt; <span style="color: #0070c1;">ANGULO_FINAL</span></div><div>&nbsp; &nbsp;; <span style="color: #001080;">angulo</span> += <span style="color: #0070c1;">INCREMENTO</span>) {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">r</span> = <span style="color: #0070c1;">amplitud</span> * <span style="color: #001080;">angulo</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">x</span> =</div><div>&nbsp; &nbsp; <span style="color: #0070c1;">X_BASE</span> + <span style="color: #0070c1;">r</span> * <span style="color: #267f99;">Math</span>.<span style="color: #795e26;">cos</span>(<span style="color: #001080;">angulo</span>)</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">y</span> =</div><div>&nbsp; &nbsp; <span style="color: #0070c1;">Y_BASE</span> + <span style="color: #0070c1;">r</span> * <span style="color: #267f99;">Math</span>.<span style="color: #795e26;">sin</span>(<span style="color: #001080;">angulo</span>)</div><div>&nbsp; &nbsp;<span style="color: #001080;">inner</span> += <span style="color: #008000;">/* html */</span></div><div>&nbsp; &nbsp; `<span style="color: #800000;">&lt;div</span> <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"sprite"</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">style</span>=<span style="color: #0000ff;">"</span><span style="color: #0000ff;">bottom: ${</span><span style="color: #0070c1;">y</span><span style="color: #0000ff;">}px;</span></div><div><span style="color: #0000ff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; left: ${</span><span style="color: #0070c1;">x</span><span style="color: #0000ff;">}px;</span><span style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; ⌛</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/div&gt;</span>`</div><div>&nbsp; }</div><div>&nbsp; <span style="color: #001080;">document</span>.<span style="color: #001080;">body</span>.<span style="color: #001080;">innerHTML</span> += <span style="color: #001080;">inner</span></div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
 </div>
  <footer>
  <p>
@@ -447,95 +447,32 @@
     <a href="/index.html"
       data-logo="true">GilPG IHC</a>
    </p><p>
-    <a class="paginaAnterior" href="/m12custom/mDresumen.html"
-      title="D. Resumen">▲</a>
+    <a class="paginaAnterior" href="/m13juegos/mPresumen.html"
+      title="P. Resumen">▲</a>
    </p>
-     <h1><a href="/m13juegos/index.html">13. Juegos</a></h1>
+     <h1><a href="/m14adornos/index.html">14. Adornos</a></h1>
    <ol type="A">
     <li>
      <p>
-      <a href="/m13juegos/mAsprites.html">Sprites</a>
+      <a href="/m14adornos/mAhorizontal.html">Adorno horizontal</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m13juegos/mBhorizontal.html" class="actual">Desplazamiento horizontal</a>
+      <a href="/m14adornos/mBciclos.html">Recta usando ciclos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m13juegos/mCrecta.html">Recta</a>
+      <a href="/m14adornos/mCespiral.html" class="actual">Espiral</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m13juegos/mDondula.html">Ondula</a>
+      <a href="/m14adornos/mDresumen.html">Resumen</a>
      </p>
     </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mEgira.html">Girando</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mFbotones.html">Desplazamiento con botones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mGcolisiones.html">Detecta colisiones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mHsonrie.html">Haz algo si chocamos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mIaleatorio.html">Muévete al azar</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mJcustom.html">Usa custom element</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mKasociaciones.html">Asociaciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mLpolimorfismo.html">Polimorfismo</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mMjueguito1.html">Jueguito 1</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mNjueguito2.html">Jueguito 2</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mOjueguito3.html">Jueguito 3</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mPresumen.html">Resumen</a>
-     </p>
-    </li>
-   </ol><p>
-    <a class="paginaSiguiente" href="/m14adornos/index.html"
-      title="14. Adornos">▼</a>
-   </p>
+   </ol>
 </nav>
  <script>
  registraServiceWorker("/sw.js")
@@ -546,9 +483,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m13juegos/mAsprites.html"
+ let urlAnterior = "/m14adornos/mBciclos.html"
  /**@type {string} */
- let urlSiguiente = "/m13juegos/mCrecta.html"
+ let urlSiguiente = "/m14adornos/mDresumen.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

@@ -1,2 +1,1 @@
-* Ok hasta m13juegos mEgira
 * Falta display flex y grid
