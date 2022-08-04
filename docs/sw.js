@@ -223,6 +223,7 @@ const ARCHIVOS = [
    "/src/m05propiedades/Afont-family.html",
    "/src/m05propiedades/Bcolor.html",
    "/src/m05propiedades/Cbackground-color.html",
+   "/src/m05propiedades/Dfondo.html",
    "/src/m06display/Adiv.html",
    "/src/m06display/Bspan.html",
    "/src/m06display/Cnone.html",
