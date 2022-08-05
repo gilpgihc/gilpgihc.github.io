@@ -434,7 +434,8 @@
    <h1 >M. Jueguito 1</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="/src/m13juegos/Mjueguito1.html" height="350" title="Versión 1 de juego"></iframe>
+  <iframe src="/src/m13juegos/Mjueguito1.html" height="350"
+    title="Versión 1 de juego"></iframe>
   <p class="noPrint">
    <a href="/src/m13juegos/Mjueguito1.html" target="_blank">Ábrelo en otra
     pestaña.</a>
@@ -446,7 +447,508 @@
    </a>
   </p>
  </section>
- <muestra-codigo><div style="background-color: rgb(255, 255, 255); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 16.8px; line-height: 22px; white-space: pre;"><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"utf-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Jueguito 1<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">body</span> {</div><div>&nbsp; &nbsp;<span style="color: #008000;">/* Rompe el flujo normal para</span></div><div><span style="color: #008000;">&nbsp; &nbsp; * poder hacer swipe hacia</span></div><div><span style="color: #008000;">&nbsp; &nbsp; * abajo. */</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">top</span>: <span style="color: #098658;">0px</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">left</span>: <span style="color: #098658;">0px</span>;</div><div>&nbsp; &nbsp;<span style="color: #008000;">/* ocupa todo el espacio. */</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">width</span>: <span style="color: #098658;">100%</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">height</span>: <span style="color: #098658;">100%</span>;</div><div>&nbsp; &nbsp;<span style="color: #008000;">/* Elimina márgenes. */</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span style="color: #098658;">0</span>;</div><div>&nbsp; &nbsp;<span style="color: #008000;">/* Evita el scroll */</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">overflow</span>: <span style="color: #0451a5;">hidden</span>;</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #800000;">.sprite</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #008000;">//@ts-check</span></div><div>&nbsp; <span style="color: #0000ff;">class</span> <span style="color: #267f99;">JugadorPaloma</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span style="color: #267f99;">HTMLElement</span> {</div><div>&nbsp; &nbsp;<span style="color: #795e26;">connectedCallback</span>() {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">classList</span>.<span style="color: #795e26;">add</span>(<span style="color: #a31515;">"sprite"</span>)</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">innerHTML</span> += <span style="color: #a31515;">"🕊"</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">fontSize</span> = <span style="color: #a31515;">"60px"</span></div><div>&nbsp; &nbsp; <span style="color: #008000;">/* Coloca el elemento a la</span></div><div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* mitad de la pantalla. */</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">raiz</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">document</span>.<span style="color: #0070c1;">documentElement</span></div><div>&nbsp; &nbsp; <span style="color: #008000;">/* Obtiene las coordenadas del</span></div><div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* element. */</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">r</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #795e26;">getBoundingClientRect</span>()</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">left</span> =</div><div>&nbsp; &nbsp; &nbsp;(<span style="color: #0070c1;">raiz</span>.<span style="color: #0070c1;">clientWidth</span> - <span style="color: #0070c1;">r</span>.<span style="color: #001080;">width</span>) /</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">2</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">top</span> =</div><div>&nbsp; &nbsp; &nbsp;(<span style="color: #0070c1;">raiz</span>.<span style="color: #0070c1;">clientHeight</span> -</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">r</span>.<span style="color: #001080;">height</span>) /</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">2</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">left</span> = <span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">left</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">top</span> = <span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">top</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp;}</div><br><div>&nbsp; &nbsp;<span style="color: #795e26;">sube</span>() {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">top</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #795e26;">getBoundingClientRect</span>().</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">top</span> -</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">20</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">top</span> = <span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">top</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp;}</div><br><div>&nbsp; &nbsp;<span style="color: #795e26;">baja</span>() {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">top</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #795e26;">getBoundingClientRect</span>().</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">top</span> +</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">20</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">top</span> = <span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">top</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp;}</div><br><div>&nbsp; &nbsp;<span style="color: #795e26;">izquierda</span>() {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">left</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #795e26;">getBoundingClientRect</span>().</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">left</span> -</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">20</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">left</span> = <span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">left</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp;}</div><br><div>&nbsp; &nbsp;<span style="color: #795e26;">derecha</span>() {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">left</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #795e26;">getBoundingClientRect</span>().</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">left</span> +</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">20</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">left</span> = <span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">left</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp;}</div><div>&nbsp; }</div><div>&nbsp; <span style="color: #001080;">customElements</span>.<span style="color: #795e26;">define</span>(</div><div>&nbsp; &nbsp;<span style="color: #a31515;">"jugador-paloma"</span>, <span style="color: #267f99;">JugadorPaloma</span>)</div><br><div>&nbsp; <span style="color: #0000ff;">class</span> <span style="color: #267f99;">FiguraAguila</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span style="color: #267f99;">HTMLElement</span> {</div><div>&nbsp; &nbsp;<span style="color: #795e26;">connectedCallback</span>() {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">classList</span>.<span style="color: #795e26;">add</span>(<span style="color: #a31515;">"sprite"</span>)</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">innerHTML</span> = <span style="color: #a31515;">"🦅"</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">fontSize</span> = <span style="color: #a31515;">"40px"</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">r</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #795e26;">getBoundingClientRect</span>()</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">left</span> = <span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">r</span>.<span style="color: #0070c1;">left</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">top</span> = <span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">r</span>.<span style="color: #0070c1;">top</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">bottom</span> = <span style="color: #a31515;">"auto"</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">right</span> = <span style="color: #a31515;">"auto"</span></div><div>&nbsp; &nbsp;}</div><br><div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div><div><span style="color: #008000;">&nbsp; &nbsp; * Mueve la figura para que se</span></div><div><span style="color: #008000;">&nbsp; &nbsp; * acerque al jugador, usando la</span></div><div><span style="color: #008000;">&nbsp; &nbsp; * ecuación de la recta.</span></div><div><span style="color: #008000;">&nbsp; &nbsp; * </span><span style="color: #0000ff;">@param</span><span style="color: #008000;"> </span><span style="color: #267f99;">{HTMLElement}</span><span style="color: #008000;"> </span><span style="color: #001080;">jugador</span></div><div><span style="color: #008000;">&nbsp; &nbsp; * &nbsp; el jugador que es</span></div><div><span style="color: #008000;">&nbsp; &nbsp; * &nbsp; perseguido.</span></div><div><span style="color: #008000;">&nbsp; &nbsp; */</span></div><div>&nbsp; &nbsp;<span style="color: #795e26;">muevete</span>(<span style="color: #001080;">jugador</span>) {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">r</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #795e26;">getBoundingClientRect</span>()</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">rJ</span> = <span style="color: #001080;">jugador</span>.</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">getBoundingClientRect</span>()</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">y2</span> = <span style="color: #0070c1;">rJ</span>.<span style="color: #0070c1;">top</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">y1</span> = <span style="color: #0070c1;">r</span>.<span style="color: #0070c1;">top</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">x2</span> = <span style="color: #0070c1;">rJ</span>.<span style="color: #0070c1;">left</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">x1</span> = <span style="color: #0070c1;">r</span>.<span style="color: #0070c1;">left</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">pendiente</span> = <span style="color: #0070c1;">x2</span> === <span style="color: #0070c1;">x1</span> ?</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">0</span> :</div><div>&nbsp; &nbsp; &nbsp;(<span style="color: #0070c1;">y2</span> - <span style="color: #0070c1;">y1</span>) / (<span style="color: #0070c1;">x2</span> - <span style="color: #0070c1;">x1</span>)</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">dirección</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">x2</span> &gt; <span style="color: #0070c1;">x1</span> ? <span style="color: #098658;">1</span> : -<span style="color: #098658;">1</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">x</span> = <span style="color: #0070c1;">x1</span> + <span style="color: #0070c1;">dirección</span> * <span style="color: #098658;">5</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">y</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">pendiente</span> * (<span style="color: #0070c1;">x</span> - <span style="color: #0070c1;">x1</span>) + <span style="color: #0070c1;">y1</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">left</span> = <span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">x</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">top</span> = <span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">y</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp;}</div><div>&nbsp; }</div><div>&nbsp; <span style="color: #001080;">customElements</span>.<span style="color: #795e26;">define</span>(</div><div>&nbsp; &nbsp;<span style="color: #a31515;">"figura-aguila"</span>, <span style="color: #267f99;">FiguraAguila</span>)</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;div&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;jugador-paloma&gt;&lt;/jugador-paloma&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;figura-aguila</span></div><div>&nbsp; &nbsp; <span style="color: #ff0000;">style</span>=<span style="color: #0000ff;">"</span><span style="color: #0000ff;">right: 0; top: 0;</span><span style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/figura-aguila&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;figura-aguila</span></div><div>&nbsp; &nbsp; <span style="color: #ff0000;">style</span>=<span style="color: #0000ff;">"</span><span style="color: #0000ff;">right: 0; bottom: 0;</span><span style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; <span style="color: #800000;">&lt;/figura-aguila&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;/div&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #008000;">//@ts-check</span></div><div>&nbsp; <span style="color: #0000ff;">class</span> <span style="color: #267f99;">Juego</span> {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">constructor</span>() {</div><div>&nbsp; &nbsp; <span style="color: #008000;">/** </span><span style="color: #0000ff;">@type</span><span style="color: #008000;"> </span><span style="color: #267f99;">{JugadorPaloma}</span><span style="color: #008000;"> */</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">jugador</span> = <span style="color: #001080;">document</span>.</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">querySelector</span>(</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #a31515;">"jugador-paloma"</span>)</div><div>&nbsp; &nbsp; <span style="color: #008000;">/** </span><span style="color: #0000ff;">@type</span><span style="color: #008000;"> </span><span style="color: #267f99;">{FiguraAguila[]}</span><span style="color: #008000;"> */</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">figuras</span> = <span style="color: #267f99;">Array</span>.<span style="color: #795e26;">from</span>(</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">document</span>.<span style="color: #795e26;">querySelectorAll</span>(</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #a31515;">"figura-aguila"</span>))</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">iniciaX</span> = <span style="color: #0000ff;">null</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">iniciaY</span> = <span style="color: #0000ff;">null</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">interval</span> = <span style="color: #0000ff;">null</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">activo</span> = <span style="color: #0000ff;">true</span></div><div>&nbsp; &nbsp;}</div><br><div>&nbsp; &nbsp;<span style="color: #795e26;">inicia</span>() {</div><div>&nbsp; &nbsp; <span style="color: #001080;">document</span>.<span style="color: #795e26;">addEventListener</span>(</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"keydown"</span>,</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">evt</span> <span style="color: #0000ff;">=&gt;</span> <span style="color: #0000ff;">this</span>.<span style="color: #795e26;">teclas</span>(<span style="color: #001080;">evt</span>))</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">interval</span> = <span style="color: #795e26;">setInterval</span>(</div><div>&nbsp; &nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span style="color: #0000ff;">this</span>.<span style="color: #795e26;">mueveFiguras</span>(), <span style="color: #098658;">60</span>)</div><div>&nbsp; &nbsp;}</div><br><div>&nbsp; &nbsp;<span style="color: #795e26;">mueveFiguras</span>() {</div><div>&nbsp; &nbsp; <span style="color: #af00db;">for</span> (<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">f</span> <span style="color: #0000ff;">of</span> <span style="color: #0000ff;">this</span>.<span style="color: #001080;">figuras</span>) {</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">f</span>.<span style="color: #795e26;">muevete</span>(<span style="color: #0000ff;">this</span>.<span style="color: #001080;">jugador</span>)</div><div>&nbsp; &nbsp; }</div><div>&nbsp; &nbsp;}</div><br><div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span style="color: #0000ff;">@param</span><span style="color: #008000;"> </span><span style="color: #267f99;">{KeyboardEvent}</span><span style="color: #008000;"> </span><span style="color: #001080;">ev</span><span style="color: #008000;">*/</span></div><div>&nbsp; &nbsp;<span style="color: #795e26;">teclas</span>(<span style="color: #001080;">ev</span>) {</div><div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span style="color: #0000ff;">this</span>.<span style="color: #001080;">activo</span>) {</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">switch</span> (<span style="color: #001080;">ev</span>.<span style="color: #0070c1;">key</span>) {</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">case</span> <span style="color: #a31515;">"ArrowLeft"</span>:</div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #001080;">jugador</span>.<span style="color: #795e26;">izquierda</span>()</div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #af00db;">break</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">case</span> <span style="color: #a31515;">"ArrowRight"</span>:</div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #001080;">jugador</span>.<span style="color: #795e26;">derecha</span>()</div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #af00db;">break</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">case</span> <span style="color: #a31515;">"ArrowUp"</span>:</div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #001080;">jugador</span>.<span style="color: #795e26;">sube</span>()</div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #af00db;">break</span></div><div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">case</span> <span style="color: #a31515;">"ArrowDown"</span>:</div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #001080;">jugador</span>.<span style="color: #795e26;">baja</span>()</div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #af00db;">break</span></div><div>&nbsp; &nbsp; &nbsp;}</div><div>&nbsp; &nbsp; }</div><div>&nbsp; &nbsp;}</div><div>&nbsp; }</div><br><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">juego</span> = <span style="color: #0000ff;">new</span> <span style="color: #267f99;">Juego</span>()</div><div>&nbsp; <span style="color: #0070c1;">juego</span>.<span style="color: #795e26;">inicia</span>()</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"utf-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>Jueguito 1<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">body</span> {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #008000;">/* Rompe el flujo normal para</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; * poder hacer swipe hacia</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * abajo. */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">fixed</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">top</span>: <span
+      style="color: #098658;">0px</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">left</span>: <span
+      style="color: #098658;">0px</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #008000;">/* ocupa todo el espacio. */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">width</span>: <span
+      style="color: #098658;">100%</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">height</span>: <span
+      style="color: #098658;">100%</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #008000;">/* Elimina márgenes. */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">margin</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #008000;">/* Evita el scroll */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">overflow</span>: <span
+      style="color: #0451a5;">hidden</span>;</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #800000;">.sprite</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">fixed</span>;</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #008000;">//@ts-check</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">JugadorPaloma</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">HTMLElement</span> {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #795e26;">connectedCallback</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">classList</span>.<span
+      style="color: #795e26;">add</span>(<span
+      style="color: #a31515;">"sprite"</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">innerHTML</span> += <span
+      style="color: #a31515;">"🕊"</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">fontSize</span> = <span
+      style="color: #a31515;">"60px"</span></div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #008000;">/* Coloca el elemento a la</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;mitad&nbsp;de&nbsp;la&nbsp;pantalla.&nbsp;*/</span>
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">raiz</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">document</span>.<span
+      style="color: #0070c1;">documentElement</span></div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #008000;">/* Obtiene las coordenadas del</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; &nbsp;* element. */</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">r</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">getBoundingClientRect</span>()</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">left</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;(<span style="color: #0070c1;">raiz</span>.<span
+      style="color: #0070c1;">clientWidth</span> - <span
+      style="color: #0070c1;">r</span>.<span
+      style="color: #001080;">width</span>) /</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">2</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">top</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;(<span style="color: #0070c1;">raiz</span>.<span
+      style="color: #0070c1;">clientHeight</span> -</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">r</span>.<span
+      style="color: #001080;">height</span>) /</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">2</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">left</span> = <span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">left</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px`</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">top</span> = <span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">top</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px`</span></div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">sube</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">top</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">getBoundingClientRect</span>().</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">top</span> -</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">20</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">top</span> = <span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">top</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px`</span></div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">baja</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">top</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">getBoundingClientRect</span>().</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">top</span> +</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">20</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">top</span> = <span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">top</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px`</span></div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">izquierda</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">left</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">getBoundingClientRect</span>().</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">left</span> -</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">20</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">left</span> = <span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">left</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px`</span></div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">derecha</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">left</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">getBoundingClientRect</span>().</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">left</span> +</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">20</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">left</span> = <span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">left</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px`</span></div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp; <span style="color: #001080;">customElements</span>.<span
+      style="color: #795e26;">define</span>(</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #a31515;">"jugador-paloma"</span>, <span
+      style="color: #267f99;">JugadorPaloma</span>)</div><br>
+   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">FiguraAguila</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">HTMLElement</span> {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #795e26;">connectedCallback</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">classList</span>.<span
+      style="color: #795e26;">add</span>(<span
+      style="color: #a31515;">"sprite"</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">innerHTML</span> = <span
+      style="color: #a31515;">"🦅"</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">fontSize</span> = <span
+      style="color: #a31515;">"40px"</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">r</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">getBoundingClientRect</span>()</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">left</span> = <span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">r</span>.<span
+      style="color: #0070c1;">left</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px`</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">top</span> = <span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">r</span>.<span
+      style="color: #0070c1;">top</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px`</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">bottom</span> = <span
+      style="color: #a31515;">"auto"</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">right</span> = <span
+      style="color: #a31515;">"auto"</span></div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; * Mueve la figura para que se</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;acerque&nbsp;al&nbsp;jugador,&nbsp;usando&nbsp;la</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; * ecuación de la recta.</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{HTMLElement}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">jugador</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; * &nbsp; el jugador que es</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp; * &nbsp; perseguido.</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">muevete</span>(<span
+      style="color: #001080;">jugador</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">r</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">getBoundingClientRect</span>()</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">rJ</span> = <span
+      style="color: #001080;">jugador</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">getBoundingClientRect</span>()</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">y2</span> = <span
+      style="color: #0070c1;">rJ</span>.<span
+      style="color: #0070c1;">top</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">y1</span> = <span
+      style="color: #0070c1;">r</span>.<span
+      style="color: #0070c1;">top</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">x2</span> = <span
+      style="color: #0070c1;">rJ</span>.<span
+      style="color: #0070c1;">left</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">x1</span> = <span
+      style="color: #0070c1;">r</span>.<span
+      style="color: #0070c1;">left</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">pendiente</span> = <span
+      style="color: #0070c1;">x2</span> === <span
+      style="color: #0070c1;">x1</span> ?</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #098658;">0</span> :</div>
+   <div>&nbsp; &nbsp; &nbsp;(<span style="color: #0070c1;">y2</span> - <span
+      style="color: #0070c1;">y1</span>) / (<span
+      style="color: #0070c1;">x2</span> - <span
+      style="color: #0070c1;">x1</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">dirección</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">x2</span> &gt; <span
+      style="color: #0070c1;">x1</span> ? <span
+      style="color: #098658;">1</span> : -<span
+      style="color: #098658;">1</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">x</span> = <span
+      style="color: #0070c1;">x1</span> + <span
+      style="color: #0070c1;">dirección</span> * <span
+      style="color: #098658;">5</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">y</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #0070c1;">pendiente</span> * (<span
+      style="color: #0070c1;">x</span> - <span
+      style="color: #0070c1;">x1</span>) + <span
+      style="color: #0070c1;">y1</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">left</span> = <span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">x</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px`</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">top</span> = <span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">y</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px`</span></div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp; <span style="color: #001080;">customElements</span>.<span
+      style="color: #795e26;">define</span>(</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #a31515;">"figura-aguila"</span>, <span
+      style="color: #267f99;">FiguraAguila</span>)</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;div&gt;</span></div>
+   <div>&nbsp; <span
+      style="color: #800000;">&lt;jugador-paloma&gt;&lt;/jugador-paloma&gt;</span>
+   </div>
+   <div>&nbsp; <span style="color: #800000;">&lt;figura-aguila</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #ff0000;">style</span>=<span
+      style="color: #0000ff;">"</span><span
+      style="color: #0000ff;">right: 0; top: 0;</span><span
+      style="color: #0000ff;">"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; <span
+      style="color: #800000;">&lt;/figura-aguila&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;figura-aguila</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #ff0000;">style</span>=<span
+      style="color: #0000ff;">"</span><span
+      style="color: #0000ff;">right: 0; bottom: 0;</span><span
+      style="color: #0000ff;">"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; <span
+      style="color: #800000;">&lt;/figura-aguila&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/div&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #008000;">//@ts-check</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">Juego</span> {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #0000ff;">constructor</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@type</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{JugadorPaloma}</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">jugador</span> = <span
+      style="color: #001080;">document</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">querySelector</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #a31515;">"jugador-paloma"</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@type</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{FiguraAguila[]}</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">figuras</span> = <span
+      style="color: #267f99;">Array</span>.<span
+      style="color: #795e26;">from</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #001080;">document</span>.<span
+      style="color: #795e26;">querySelectorAll</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #a31515;">"figura-aguila"</span>))</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">iniciaX</span> = <span
+      style="color: #0000ff;">null</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">iniciaY</span> = <span
+      style="color: #0000ff;">null</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">interval</span> = <span
+      style="color: #0000ff;">null</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">activo</span> = <span
+      style="color: #0000ff;">true</span></div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">inicia</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #001080;">document</span>.<span
+      style="color: #795e26;">addEventListener</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #a31515;">"keydown"</span>,</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">evt</span> <span
+      style="color: #0000ff;">=&gt;</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">teclas</span>(<span
+      style="color: #001080;">evt</span>))</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">interval</span> = <span
+      style="color: #795e26;">setInterval</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;() <span
+      style="color: #0000ff;">=&gt;</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">mueveFiguras</span>(), <span
+      style="color: #098658;">60</span>)</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span
+      style="color: #795e26;">mueveFiguras</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">f</span> <span
+      style="color: #0000ff;">of</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">figuras</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">f</span>.<span
+      style="color: #795e26;">muevete</span>(<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">jugador</span>)</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{KeyboardEvent}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">ev</span><span
+      style="color: #008000;">*/</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">teclas</span>(<span
+      style="color: #001080;">ev</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">activo</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #af00db;">switch</span> (<span
+      style="color: #001080;">ev</span>.<span
+      style="color: #0070c1;">key</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">case</span> <span
+      style="color: #a31515;">"ArrowLeft"</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">jugador</span>.<span
+      style="color: #795e26;">izquierda</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #af00db;">break</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">case</span> <span
+      style="color: #a31515;">"ArrowRight"</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">jugador</span>.<span
+      style="color: #795e26;">derecha</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #af00db;">break</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">case</span> <span
+      style="color: #a31515;">"ArrowUp"</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">jugador</span>.<span
+      style="color: #795e26;">sube</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #af00db;">break</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">case</span> <span
+      style="color: #a31515;">"ArrowDown"</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">jugador</span>.<span
+      style="color: #795e26;">baja</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #af00db;">break</span></div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">juego</span> = <span
+      style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Juego</span>()</div>
+   <div>&nbsp; <span style="color: #0070c1;">juego</span>.<span
+      style="color: #795e26;">inicia</span>()</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
 </div>
  <footer>
  <p>

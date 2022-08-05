@@ -1,7 +1,8 @@
 <div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="/src/m13juegos/Jcustom.html" height="250" title="Ejemplo con custom element"></iframe>
+  <iframe src="/src/m13juegos/Jcustom.html" height="250"
+    title="Ejemplo con custom element"></iframe>
   <p class="noPrint">
    <a href="/src/m13juegos/Jcustom.html" target="_blank">Ábrelo en otra
     pestaña.</a>
@@ -13,5 +14,141 @@
    </a>
   </p>
  </section>
- <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Custom Elements<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">figura-web</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span style="color: #098658;">60px</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">class</span> <span style="color: #267f99;">FiguraWeb</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span style="color: #267f99;">HTMLElement</span> {</div><div>&nbsp; &nbsp;<span style="color: #795e26;">connectedCallback</span>() {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">x</span> = <span style="color: #098658;">0</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">attrY</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #795e26;">getAttribute</span>(<span style="color: #a31515;">"y"</span>)</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">attrVel</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span style="color: #795e26;">getAttribute</span>(<span style="color: #a31515;">"velocidad"</span>)</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">y</span> = <span style="color: #795e26;">parseInt</span>(<span style="color: #0070c1;">attrY</span>, <span style="color: #098658;">10</span>)</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">velocidad</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">parseInt</span>(<span style="color: #0070c1;">attrVel</span>, <span style="color: #098658;">10</span>)</div><div>&nbsp; &nbsp;}</div><div>&nbsp; &nbsp;<span style="color: #795e26;">muevete</span>() {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">right</span> =</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0000ff;">this</span>.<span style="color: #001080;">x</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #0070c1;">style</span>.<span style="color: #001080;">top</span> = <span style="color: #a31515;">`</span><span style="color: #0000ff;">${</span><span style="color: #0000ff;">this</span>.<span style="color: #001080;">y</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">x</span> =</div><div>&nbsp; &nbsp; &nbsp;(<span style="color: #0000ff;">this</span>.<span style="color: #001080;">x</span> + <span style="color: #0000ff;">this</span>.<span style="color: #001080;">velocidad</span>) %</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">innerWidth</span></div><div>&nbsp; &nbsp;}</div><div>&nbsp; }</div><div>&nbsp; <span style="color: #001080;">customElements</span>.<span style="color: #795e26;">define</span>(</div><div>&nbsp; &nbsp;<span style="color: #a31515;">"figura-web"</span>, <span style="color: #267f99;">FiguraWeb</span>)</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Custom Elements<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;figura-web</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"fantasma"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">y</span>=<span style="color: #0000ff;">"0"</span> <span style="color: #ff0000;">velocidad</span>=<span style="color: #0000ff;">"20"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; 👻</div><div>&nbsp;<span style="color: #800000;">&lt;/figura-web&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;figura-web</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"sonrisa"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">y</span>=<span style="color: #0000ff;">"100"</span> <span style="color: #ff0000;">velocidad</span>=<span style="color: #0000ff;">"10"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; 😁</div><div>&nbsp;<span style="color: #800000;">&lt;/figura-web&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #795e26;">setInterval</span>(<span style="color: #795e26;">anima</span>, <span style="color: #098658;">120</span>)</div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">anima</span>() {</div><div>&nbsp; &nbsp;<span style="color: #001080;">fantasma</span>.<span style="color: #795e26;">muevete</span>()</div><div>&nbsp; &nbsp;<span style="color: #001080;">sonrisa</span>.<span style="color: #795e26;">muevete</span>()</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>Custom Elements<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">figura-web</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">fixed</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span
+      style="color: #098658;">60px</span>;</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">FiguraWeb</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">HTMLElement</span> {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #795e26;">connectedCallback</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">x</span> = <span
+      style="color: #098658;">0</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">attrY</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">getAttribute</span>(<span
+      style="color: #a31515;">"y"</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">attrVel</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">getAttribute</span>(<span
+      style="color: #a31515;">"velocidad"</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">y</span> = <span
+      style="color: #795e26;">parseInt</span>(<span
+      style="color: #0070c1;">attrY</span>, <span
+      style="color: #098658;">10</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">velocidad</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">parseInt</span>(<span
+      style="color: #0070c1;">attrVel</span>, <span
+      style="color: #098658;">10</span>)</div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">muevete</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">right</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">x</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px`</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #0070c1;">style</span>.<span
+      style="color: #001080;">top</span> = <span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">y</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px`</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">x</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;(<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">x</span> + <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">velocidad</span>) %</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #001080;">innerWidth</span></div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp; <span style="color: #001080;">customElements</span>.<span
+      style="color: #795e26;">define</span>(</div>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">"figura-web"</span>, <span
+      style="color: #267f99;">FiguraWeb</span>)</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>Custom Elements<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;figura-web</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"fantasma"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">y</span>=<span
+      style="color: #0000ff;">"0"</span> <span
+      style="color: #ff0000;">velocidad</span>=<span
+      style="color: #0000ff;">"20"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; 👻</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/figura-web&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;figura-web</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"sonrisa"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">y</span>=<span
+      style="color: #0000ff;">"100"</span> <span
+      style="color: #ff0000;">velocidad</span>=<span
+      style="color: #0000ff;">"10"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; 😁</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/figura-web&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #795e26;">setInterval</span>(<span
+      style="color: #795e26;">anima</span>, <span
+      style="color: #098658;">120</span>)</div><br>
+   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">anima</span>() {</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">fantasma</span>.<span
+      style="color: #795e26;">muevete</span>()</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">sonrisa</span>.<span
+      style="color: #795e26;">muevete</span>()</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
 </div>

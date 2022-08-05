@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>E. Imagen de fondo - GilPG IHC</title>
+ <meta name="description" content="Poner una imagen de fondo.">
+ <meta name="og:image" content="https://gilpgihc.github.io/img/icono/icono2048.png">
+ <style>
+ :root {
+  --padTop: 2rem;
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ body {
+  scroll-padding-top: var(--padTop);
+ }
+
+ body:not(.sinTransicion) #principal {
+  animation-timing-function: var(--introFuncion);
+  animation-duration: var(--introDuracion);
+  animation-fill-mode: forwards;
+  animation-name: aparece;
+ }
+
+ @keyframes aparece {
+  from {
+   opacity: 0;
+  }
+
+  to {
+   opacity: 1;
+  }
+ }
+
+ #principal {
+  padding-top: var(--padTop);
+  box-sizing: border-box;
+  transition: margin-left 0.7s ease-in-out;
+ }
+
+ #principal>#abre {
+  position: fixed;
+  top: var(--gap);
+  left: var(--gap);
+ }
+
+ #principal>.anterior {
+  position: fixed;
+  top: var(--gap);
+  background-color: var(--colFondo);
+  transition: left 0.7s ease-in-out;
+ }
+
+ #principal>.siguiente {
+  position: fixed;
+  top: var(--gap);
+  right: var(--gap);
+  background-color: var(--colFondo);
+ }
+
+ #principal h1:not(.default) {
+  text-shadow: var(--colTituloShadow);
+ }
+
+ #nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  overflow: auto;
+  color: var(--colLetra);
+  background-color: var(--colFondoNav);
+  padding: var(--padCont);
+  transition: transform 0.7s ease-in-out;
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ #nav::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ #nav::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ #nav::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ #nav::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ #nav p {
+  margin: 0;
+ }
+
+ #nav a:not([data-logo]) {
+  display: block;
+  padding: var(--padNav);
+ }
+
+ #nav a.actual code,
+ #nav a.actual strong {
+  color: var(--colTituloStrongSel);
+ }
+
+ #nav h1 a {
+  color: var(--colTituloLetra);
+ }
+
+ #nav a.actual {
+  color: var(--colFondo);
+  background-color: var(--colNavResaltada);
+ }
+
+ #nav a.paginaAnterior,
+ #nav a.paginaSiguiente {
+  text-align: center;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ @media screen and (max-width: 999px) {
+  #principal {
+   max-width: 100vw;
+  }
+
+  #cierra {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: var(--colSombra);
+   transform: translateX(-120%);
+   transition: transform 0.7s ease-out;
+  }
+
+  #nav {
+   width: min(var(--anchoNav), 70%);
+   box-shadow: var(--navSombra);
+  }
+
+  .xmenu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .menu>#cierra,
+  .menu>#nav {
+   transform: translateX(0);
+  }
+
+  #principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
+ }
+
+ @media screen and (min-width: 1000px) {
+  #cierra {
+   display: none;
+  }
+
+  #nav {
+   width: var(--anchoNav);
+  }
+
+  .menu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .xmenu>#principal {
+   margin-left: var(--anchoNav)
+  }
+
+  .menu>#principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
+
+  .xmenu>#principal>.anterior {
+   top: var(--gap);
+   left: calc(var(--anchoNav) + var(--gap));
+  }
+ }
+
+ @media print {
+
+  #nav,
+  #principal>#abre,
+  #principal>.anterior,
+  #principal>.siguiente {
+   display: none;
+  }
+ }
+</style>
+ 
+</head>
+<body class="xmenu">
+ <div id="principal">
+ <button id="abre" type="button" title="Menú" class="cambiaMenu">
+  &#x2630;
+ </button>
+ <a class="anterior" href="/m10multimedia/mDvideo.html" title="D. El elemento video">◀</a>
+ <a class="siguiente" href="/m10multimedia/mFresumen.html" title="F. Resumen">▶</a>
+   <h1 >E. Imagen de fondo</h1><div class="horizontal">
+ <section>
+  <h1>Salida.</h1>
+  <iframe src="/src/m10multimedia/Dfondo.html" height="230"></iframe>
+  <p class="noPrint"><a href="/src/m10multimedia/Dfondo.html"
+     target="_blank">Ábrelo en otra pestaña.</a></p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%20%20%3Chead%3E%0A%20%20%20%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%20%20%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20%20%20%20content%3D%22width%3Ddevice-width%2C%0A%20%20%20%20%20%20%20initial-scale%3D1.0%22%3E%0A%20%20%20%20%3Ctitle%3EFondo%3C%2Ftitle%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20html%20%7B%0A%20%20%20%20%20%20%20%20%2F*%20Como%20el%20fondo%20es%0A%20%20%20%20%20%20%20%20%20*%20oscuro%2C%20se%20escoje%20un%0A%20%20%20%20%20%20%20%20%20*%20color%20de%20letra%20que%20no%0A%20%20%20%20%20%20%20%20%20*%20se%20pierda.%20*%2F%0A%20%20%20%20%20%20%20%20color%3A%20white%3B%0A%20%20%20%20%20%20%20%20%2F*%20URL%20de%20la%20imagen%20de%0A%20%20%20%20%20%20%20%20%20*%20fondo.%20Es%20este%20caso%0A%20%20%20%20%20%20%20%20%20*%20est%C3%A1%20hospedada%20en%0A%20%20%20%20%20%20%20%20%20*%20%22giphy.com%22.%20*%2F%0A%20%20%20%20%20%20%20%20background-image%3A%0A%20%20%20%20%20%20%20%20%20%20url(https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F3oKIPhf02cXU9W4Le0%2Fgiphy.gif)%3B%0A%20%20%20%20%20%20%20%20%2F*%20La%20imagen%20de%20fondo%20no%0A%20%20%20%20%20%20%20%20%20*%20se%20repite%20en%20caso%20de%0A%20%20%20%20%20%20%20%20%20*%20que%20sea%20m%C3%A1s%20peque%C3%B1a%20que%0A%20%20%20%20%20%20%20%20%20*%20el%20elemento%20en%20que%20se%0A%20%20%20%20%20%20%20%20%20*%20coloca.%20En%20este%20caso%0A%20%20%20%20%20%20%20%20%20*%20html%20es%20la%20ventana.%20*%2F%0A%20%20%20%20%20%20%20%20background-repeat%3A%20no-repeat%3B%0A%20%20%20%20%20%20%20%20%2F*%20La%20imagen%20de%20fondo%20se%0A%20%20%20%20%20%20%20%20%20*%20muestra%20centrada%0A%20%20%20%20%20%20%20%20%20*%20horizontalmente.%20*%2F%0A%20%20%20%20%20%20%20%20background-position-x%3A%0A%20%20%20%20%20%20%20%20%20%20center%3B%0A%20%20%20%20%20%20%20%20%2F*%20La%20imagen%20de%20fondo%20se%0A%20%20%20%20%20%20%20%20%20*%20muestra%20centrada%0A%20%20%20%20%20%20%20%20%20*%20verticalmente.%20*%2F%0A%20%20%20%20%20%20%20%20background-position-y%3A%0A%20%20%20%20%20%20%20%20%20%20center%3B%0A%20%20%20%20%20%20%20%20%2F*%20La%20imagen%20de%20fondo%20se%0A%20%20%20%20%20%20%20%20%20*%20muestra%20fija%20y%20no%20se%0A%20%20%20%20%20%20%20%20%20*%20desplaza.%20*%2F%0A%20%20%20%20%20%20%20%20background-attachment%3A%0A%20%20%20%20%20%20%20%20%20%20fixed%3B%0A%20%20%20%20%20%20%20%20%2F*%20Distintas%20propiedades%0A%20%20%20%20%20%20%20%20%20*%20para%20distintos%0A%20%20%20%20%20%20%20%20%20*%20navegadores%20indicando%0A%20%20%20%20%20%20%20%20%20*%20que%20la%20imagen%20de%20fondo%0A%20%20%20%20%20%20%20%20%20*%20tiene%20un%20tama%C3%B1o%20que%0A%20%20%20%20%20%20%20%20%20*%20cubre%20toda%20la%20ventana.%0A%20%20%20%20%20%20%20%20%20*%2F%0A%20%20%20%20%20%20%20%20-webkit-background-size%3A%20cover%3B%0A%20%20%20%20%20%20%20%20-moz-background-size%3A%20cover%3B%0A%20%20%20%20%20%20%20%20-o-background-size%3A%20cover%3B%0A%20%20%20%20%20%20%20%20background-size%3A%20cover%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%2F*%20Estilo%20para%20las%20anclas%20o%0A%20%20%20%20%20%20%20*%20hiperv%C3%ADnculos.%20*%2F%0A%20%20%20%20%20%20a%20%7B%0A%20%20%20%20%20%20%20%20%2F*%20Como%20el%20fondo%20es%0A%20%20%20%20%20%20%20%20%20*%20oscuro%2C%20se%20escoje%20un%0A%20%20%20%20%20%20%20%20%20*%20color%20de%20letra%20que%20no%0A%20%20%20%20%20%20%20%20%20*%20se%20pierda%20y%20se%20distinga%0A%20%20%20%20%20%20%20%20%20*%20del%20resto%20del%20texto.%20*%2F%0A%20%20%20%20%20%20%20%20color%3A%20yellow%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%3C%2Fstyle%3E%0A%20%20%3C%2Fhead%3E%0A%20%20%3Cbody%3E%0A%20%20%20%20%3Ch1%3EFondo%3C%2Fh1%3E%0A%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%20Este%20ejemplo%20te%20muestra%20como%0A%20%20%20%20%20%20poner%20fondo%20a%20una%20p%C3%A1gina.%0A%20%20%20%20%3C%2Fp%3E%0A%20%20%20%20%3Cfooter%3E%0A%20%20%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%20%20%20%26copy%3B%202022%0A%20%20%20%20%20%20%20%20Gilberto%20Pacheco%20Gallegos.%0A%20%20%20%20%20%20%3C%2Fp%3E%0A%20%20%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%20%20%20Imagen%20de%0A%20%20%20%20%20%20%20%20%3C!--%0A%20%20%20%20%20%20%20%20%20%20Ancla%20o%20hiperv%C3%ADnculo%20a%0A%20%20%20%20%20%20%20%20%20%20un%20sitio.%20El%20contenido%0A%20%20%20%20%20%20%20%20%20%20es%20el%20texto%20que%20se%0A%20%20%20%20%20%20%20%20%20%20muestra%20subrayado%20y%20al%0A%20%20%20%20%20%20%20%20%20%20hacer%20clic%20en%20el%0A%20%20%20%20%20%20%20%20%20%20hiperv%C3%ADnculo%20se%20abre%20la%0A%20%20%20%20%20%20%20%20%20%20URL%20indicada%20en%20el%0A%20%20%20%20%20%20%20%20%20%20atributo%20href.%0A%0A%20%20%20%20%20%20%20%20%20%20href%3D%22https%3A%2F%2Fgiphy.com%22%0A%20%20%20%20%20%20%20%20%20%20%20%20La%20URL%20que%20abre%20este%0A%20%20%20%20%20%20%20%20%20%20%20%20hiperv%C3%ADnculo%20es%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20https%3A%2F%2Fgiphy.com%0A%20%20%20%20%20%20%20%20--%3E%0A%20%20%20%20%20%20%20%20%3Ca%20href%3D%22https%3A%2F%2Fgiphy.com%22%3E%0A%20%20%20%20%20%20%20%20%20%20https%3A%2F%2Fgiphy.com%3C%2Fa%3E.%0A%20%20%20%20%20%20%3C%2Fp%3E%0A%20%20%20%20%3C%2Ffooter%3E%0A%20%20%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;meta</span>&nbsp;<span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width,</span></div>
+   <div><span
+      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initial-scale=1.0"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>Fondo<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">html</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;Como&nbsp;el&nbsp;fondo&nbsp;es</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;oscuro,&nbsp;se&nbsp;escoje&nbsp;un</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;color&nbsp;de&nbsp;letra&nbsp;que&nbsp;no</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;se&nbsp;pierda.&nbsp;*/</span>
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">white</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;URL&nbsp;de&nbsp;la&nbsp;imagen&nbsp;de</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;fondo.&nbsp;Es&nbsp;este&nbsp;caso</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;está&nbsp;hospedada&nbsp;en</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;"giphy.com".&nbsp;*/</span>
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-image</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">url</span>(<span
+      style="color: #001080;">https://media.giphy.com/media/3oKIPhf02cXU9W4Le0/giphy.gif</span>);
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;La&nbsp;imagen&nbsp;de&nbsp;fondo&nbsp;no</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;se&nbsp;repite&nbsp;en&nbsp;caso&nbsp;de</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;que&nbsp;sea&nbsp;más&nbsp;pequeña&nbsp;que</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;el&nbsp;elemento&nbsp;en&nbsp;que&nbsp;se</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;coloca.&nbsp;En&nbsp;este&nbsp;caso</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;html&nbsp;es&nbsp;la&nbsp;ventana.&nbsp;*/</span>
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-repeat</span>:&nbsp;<span
+      style="color: #0451a5;">no-repeat</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;La&nbsp;imagen&nbsp;de&nbsp;fondo&nbsp;se</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;muestra&nbsp;centrada</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;horizontalmente.&nbsp;*/</span>
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-position-x</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0451a5;">center</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;La&nbsp;imagen&nbsp;de&nbsp;fondo&nbsp;se</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;muestra&nbsp;centrada</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;verticalmente.&nbsp;*/</span>
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-position-y</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0451a5;">center</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;La&nbsp;imagen&nbsp;de&nbsp;fondo&nbsp;se</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;muestra&nbsp;fija&nbsp;y&nbsp;no&nbsp;se</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;desplaza.&nbsp;*/</span>
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-attachment</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0451a5;">fixed</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;Distintas&nbsp;propiedades</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;para&nbsp;distintos</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;navegadores&nbsp;indicando</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;que&nbsp;la&nbsp;imagen&nbsp;de&nbsp;fondo</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;tiene&nbsp;un&nbsp;tamaño&nbsp;que</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;cubre&nbsp;toda&nbsp;la&nbsp;ventana.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span>
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">-webkit-background-size</span>:&nbsp;<span
+      style="color: #0451a5;">cover</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">-moz-background-size</span>:&nbsp;<span
+      style="color: #0451a5;">cover</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">-o-background-size</span>:&nbsp;<span
+      style="color: #0451a5;">cover</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">background-size</span>:&nbsp;<span
+      style="color: #0451a5;">cover</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;Estilo&nbsp;para&nbsp;las&nbsp;anclas&nbsp;o</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;hipervínculos.&nbsp;*/</span>
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">a</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;Como&nbsp;el&nbsp;fondo&nbsp;es</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;oscuro,&nbsp;se&nbsp;escoje&nbsp;un</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;color&nbsp;de&nbsp;letra&nbsp;que&nbsp;no</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;se&nbsp;pierda&nbsp;y&nbsp;se&nbsp;distinga</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;del&nbsp;resto&nbsp;del&nbsp;texto.&nbsp;*/</span>
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">color</span>:&nbsp;<span
+      style="color: #0451a5;">yellow</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/style&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/head&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>Fondo<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Este&nbsp;ejemplo&nbsp;te&nbsp;muestra&nbsp;como</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;poner&nbsp;fondo&nbsp;a&nbsp;una&nbsp;página.</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;footer&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #0000ff;">&amp;copy;</span>&nbsp;2022</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Imagen&nbsp;de
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">&lt;!--</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ancla&nbsp;o&nbsp;hipervínculo&nbsp;a</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;un&nbsp;sitio.&nbsp;El&nbsp;contenido</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es&nbsp;el&nbsp;texto&nbsp;que&nbsp;se</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;muestra&nbsp;subrayado&nbsp;y&nbsp;al</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hacer&nbsp;clic&nbsp;en&nbsp;el</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hipervínculo&nbsp;se&nbsp;abre&nbsp;la</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;URL&nbsp;indicada&nbsp;en&nbsp;el</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;atributo&nbsp;href.</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href="https://giphy.com"</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La&nbsp;URL&nbsp;que&nbsp;abre&nbsp;este</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hipervínculo&nbsp;es</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://giphy.com</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--&gt;</span>
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;a</span>&nbsp;<span
+      style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://giphy.com"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://giphy.com<span
+      style="color: #800000;">&lt;/a&gt;</span>.</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/footer&gt;</span></div>
+   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/body&gt;</span>
+   </div>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+ <footer>
+ <p>
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/"><img
+     alt="Licencia Creative Commons" style="border-width:0"
+     src="/img/icono/160x30.webp" width="80" height="15" /></a>
+  <br />Esta
+  <span xmlns:dct="http://purl.org/dc/terms/"
+    href="http://purl.org/dc/dcmitype/InteractiveResource"
+    rel="dct:type">obra</span>
+  de
+  <a xmlns:cc="http://creativecommons.org/ns#"
+    href="https://gilpgijs.github.io" property="cc:attributionName"
+    rel="cc:attributionURL">Gilberto Pacheco Gallegos</a>
+  está bajo una
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/">Licencia
+   Creative Commons Atribución 4.0 Internacional</a>.
+ </p>
+</footer>
+</div>
+<div id="cierra" class="cambiaMenu"></div>
+<nav id="nav">
+ <button type="button" title="Cierra" class="cambiaMenu">
+  &#x2715;
+ </button>
+ <p>
+    <a href="/index.html"
+      data-logo="true">GilPG IHC</a>
+   </p><p>
+    <a class="paginaAnterior" href="/m09selectores/mKresumen.html"
+      title="K. Resumen">▲</a>
+   </p>
+     <h1><a href="/m10multimedia/index.html">10. Elementos Multimedia</a></h1>
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m10multimedia/mAimagenes.html">Imágenes</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10multimedia/mBaudioVideo.html">Audio y Video</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10multimedia/mCaudio.html">El elemento <code class='language-html'>audio</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10multimedia/mDvideo.html">El elemento <code class='language-html'>video</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10multimedia/mEfondo.html" class="actual">Imagen de fondo</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10multimedia/mFresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol><p>
+    <a class="paginaSiguiente" href="/m11formularios/index.html"
+      title="11. Formularios">▼</a>
+   </p>
+</nav>
+ <script>
+ registraServiceWorker("/sw.js")
+ const LOCAL_STORAGE_MENU = "menu"
+ const MENU = "menu"
+ const XMENU = "xmenu"
+ const nav = document.querySelector("#nav")
+ const abre = document.querySelector("#abre")
+
+ /**@type {string} */
+ let urlAnterior = "/m10multimedia/mDvideo.html"
+ /**@type {string} */
+ let urlSiguiente = "/m10multimedia/mFresumen.html"
+ /**@type {number|null} */
+ let iniciaX = null
+ /**@type {number|null} */
+ let iniciaY = null
+
+ document.addEventListener("keydown", teclas)
+ document.addEventListener("touchstart", iniciaTouch)
+ document.addEventListener("touchmove", desplazaTouch)
+ if (abre) {
+  abre.addEventListener("click", cambiaMenu)
+ }
+ const cambian = Array.from(document.querySelectorAll(".cambiaMenu"))
+ for (const c of cambian) {
+  c.addEventListener("click", cambiaMenu)
+ }
+ const menu = localStorage.getItem(LOCAL_STORAGE_MENU)
+ if (menu) {
+  if (menu === MENU) {
+   document.body.classList.remove(XMENU)
+   document.body.classList.add(MENU)
+  } else {
+   document.body.classList.remove(MENU)
+   document.body.classList.add(XMENU)
+  }
+ }
+
+ function registraServiceWorker(url) {
+  if (navigator.serviceWorker) {
+   navigator.serviceWorker.register(url).
+    then(registro => {
+     console.log("Service Worker registrado.")
+     console.log(registro)
+    }).
+    catch(muestraError)
+  }
+ }
+ function muestraError(e) {
+  console.error(e)
+  alert(e.message)
+ }
+ function cambiaMenu() {
+  document.body.classList.toggle(XMENU)
+  document.body.classList.toggle(MENU)
+  if (document.body.classList.contains(MENU)) {
+   localStorage.setItem(LOCAL_STORAGE_MENU, MENU)
+  } else {
+   localStorage.setItem(LOCAL_STORAGE_MENU, XMENU)
+  }
+ }
+ /** @param {KeyboardEvent} ev*/
+ function teclas(ev) {
+  switch (ev.key) {
+   case "ArrowLeft":
+    retrocede()
+    break
+   case "ArrowRight":
+    avanza()
+    break
+  }
+ }
+ function retrocede() {
+  if (urlAnterior) {
+   location.href = urlAnterior
+  }
+ }
+ function avanza() {
+  if (urlSiguiente) {
+   location.href = urlSiguiente
+  }
+ }
+ /** @param {TouchEvent} ev*/
+ function iniciaTouch(ev) {
+  const toqueInicial = ev.touches[0]
+  iniciaX = toqueInicial.clientX
+  iniciaY = toqueInicial.clientY
+ }
+ /** @param {TouchEvent} ev*/
+ function desplazaTouch(ev) {
+  if (iniciaX && iniciaY) {
+   const desplazamiento = ev.touches[0]
+   var desplazamientoX = desplazamiento.clientX
+   var desplazamientoY = desplazamiento.clientY
+   var difX = desplazamientoX - iniciaX
+   var difY = desplazamientoY - iniciaY
+   // Checa que el movimiento no sea muy corto.
+   if (Math.abs(difX) + Math.abs(difY) > 90) {
+    if (Math.abs(difX) > Math.abs(difY)) {
+     if (difX > 70) {
+      retrocede()
+     } else {
+      avanza()
+     }
+     // Reinicia valores.
+     iniciaX = null
+     iniciaY = null
+    }
+   }
+  }
+ }
+</script>
+</body>
+</html>

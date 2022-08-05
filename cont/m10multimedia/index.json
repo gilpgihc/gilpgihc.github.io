@@ -27,7 +27,12 @@
    "description": "Presentación del elemento video de HTML."
   },
   {
-   "name": "mEresumen.html",
+   "name": "mEfondo.html",
+   "title": "Imagen de fondo",
+   "description": "Poner una imagen de fondo."
+  },
+  {
+   "name": "mFresumen.html",
    "title": "Resumen",
    "description": "Resumen de la lección «10. Elementos Multimedia»."
   }

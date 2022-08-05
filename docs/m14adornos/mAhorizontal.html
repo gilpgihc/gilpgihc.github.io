@@ -434,7 +434,8 @@
    <h1 >A. Adorno horizontal</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="/src/m14adornos/Ahorizontal.html" height="250" title="Adorno horizontal"></iframe>
+  <iframe src="/src/m14adornos/Ahorizontal.html" height="250"
+    title="Adorno horizontal"></iframe>
   <p class="noPrint">
    <a href="/src/m14adornos/Ahorizontal.html" target="_blank">Ábrelo en otra
     pestaña.</a>
@@ -446,7 +447,106 @@
    </a>
   </p>
  </section>
- <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Adorno Horizontal<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">.sprite</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Adorno Horizontal<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">Y</span> = <span style="color: #098658;">0</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">DISTANCIA</span> = <span style="color: #098658;">20</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">X_MÁXIMA</span> = <span style="color: #001080;">innerWidth</span></div><div>&nbsp; <span style="color: #0000ff;">let</span> <span style="color: #001080;">x</span> = <span style="color: #098658;">0</span></div><div>&nbsp; <span style="color: #008000;">/**</span></div><div><span style="color: #008000;">&nbsp; &nbsp;* En esta variable se agrega el</span></div><div><span style="color: #008000;">&nbsp; &nbsp;* HTML de las figuras que forman</span></div><div><span style="color: #008000;">&nbsp; &nbsp;* el adorno.</span></div><div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div><div>&nbsp; <span style="color: #0000ff;">let</span> <span style="color: #001080;">inner</span> = <span style="color: #a31515;">""</span></div><div>&nbsp; <span style="color: #af00db;">while</span> (<span style="color: #001080;">x</span> &lt; <span style="color: #0070c1;">X_MÁXIMA</span>) {</div><div>&nbsp; &nbsp;<span style="color: #008000;">/* Agrega el HTML de un emoji a</span></div><div><span style="color: #008000;">&nbsp; &nbsp; * inner. */</span></div><div>&nbsp; &nbsp;<span style="color: #001080;">inner</span> += <span style="color: #008000;">/* html */</span></div><div>&nbsp; &nbsp; `<span style="color: #800000;">&lt;div</span> <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"sprite"</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">style</span>=<span style="color: #0000ff;">"</span><span style="color: #0000ff;">top: ${</span><span style="color: #0070c1;">Y</span><span style="color: #0000ff;">}px;</span></div><div><span style="color: #0000ff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; left: ${</span><span style="color: #001080;">x</span><span style="color: #0000ff;">}px;</span><span style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; 💕</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/div&gt;</span>`</div><div>&nbsp; &nbsp;<span style="color: #001080;">x</span> += <span style="color: #0070c1;">DISTANCIA</span></div><div>&nbsp; }</div><div>&nbsp; <span style="color: #008000;">/* Agrega las figuras al HTML de</span></div><div><span style="color: #008000;">&nbsp; &nbsp;* body. */</span></div><div>&nbsp; <span style="color: #001080;">document</span>.<span style="color: #001080;">body</span>.<span style="color: #001080;">innerHTML</span> += <span style="color: #001080;">inner</span></div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>Adorno Horizontal<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">.sprite</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">fixed</span>;</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>Adorno Horizontal<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">Y</span> = <span
+      style="color: #098658;">0</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">DISTANCIA</span> = <span
+      style="color: #098658;">20</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">X_MÁXIMA</span> = <span
+      style="color: #001080;">innerWidth</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">x</span> = <span
+      style="color: #098658;">0</span></div>
+   <div>&nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;* En esta variable se agregael</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;HTML&nbsp;de&nbsp;las&nbsp;figuras&nbsp;que&nbsp;forman</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;* el adorno.</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">inner</span> = <span
+      style="color: #a31515;">""</span></div>
+   <div>&nbsp; <span style="color: #af00db;">while</span> (<span
+      style="color: #001080;">x</span> &lt; <span
+      style="color: #0070c1;">X_MÁXIMA</span>) {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #008000;">/* Agrega el HTML de un emoji a</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * inner. */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">inner</span> += <span
+      style="color: #008000;">/* html */</span></div>
+   <div>&nbsp; &nbsp; `<span style="color: #800000;">&lt;div</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"sprite"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">style</span>=<span
+      style="color: #0000ff;">"</span><span
+      style="color: #0000ff;">top: ${</span><span
+      style="color: #0070c1;">Y</span><span
+      style="color: #0000ff;">}px;</span></div>
+   <div><span
+      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;${</span><span
+      style="color: #001080;">x</span><span
+      style="color: #0000ff;">}px;</span><span
+      style="color: #0000ff;">"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; 💕</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/div&gt;</span>`</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">x</span> += <span
+      style="color: #0070c1;">DISTANCIA</span></div>
+   <div>&nbsp; }</div>
+   <div>&nbsp; <span
+      style="color: #008000;">/* Agrega las figuras al HTML de</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;* body. */</span></div>
+   <div>&nbsp; <span style="color: #001080;">document</span>.<span
+      style="color: #001080;">body</span>.<span
+      style="color: #001080;">innerHTML</span> += <span
+      style="color: #001080;">inner</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
 </div>
  <footer>
  <p>

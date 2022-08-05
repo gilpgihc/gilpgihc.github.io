@@ -33,7 +33,8 @@
  <div class="horizontal">
   <section>
    <h1>Salida</h1>
-   <iframe src="/src/m12custom/Baccion.html" height="250" title="Ejemplo típico de custom element simple"></iframe>
+   <iframe src="/src/m12custom/Baccion.html" height="250"
+     title="Ejemplo típico de custom element simple"></iframe>
    <p class="noPrint">
     <a href="/src/m12custom/Baccion.html" target="_blank">Ábrelo en
      otra pestaña.</a>
@@ -45,6 +46,83 @@
     </a>
    </p>
   </section>
-  <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Acción<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">class</span> <span style="color: #267f99;">Elemento3</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span style="color: #267f99;">HTMLElement</span> {</div><div>&nbsp; &nbsp;<span style="color: #795e26;">connectedCallback</span>() {</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #001080;">innerHTML</span> = <span style="color: #008000;">/* html */</span></div><div>&nbsp; &nbsp; &nbsp;`Estoy volando🚁</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;strong&gt;</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp;alto</div><div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;/strong&gt;</span>.`</div><div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span style="color: #795e26;">addEventListener</span>(<span style="color: #a31515;">"click"</span>,</div><div>&nbsp; &nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span style="color: #0000ff;">this</span>.<span style="color: #795e26;">clic</span>())</div><div>&nbsp; &nbsp;}</div><div>&nbsp; &nbsp;<span style="color: #795e26;">clic</span>() {</div><div>&nbsp; &nbsp; <span style="color: #795e26;">alert</span>(<span style="color: #a31515;">"ouch"</span>)</div><div>&nbsp; &nbsp;}</div><div>&nbsp; }</div><div>&nbsp; <span style="color: #001080;">customElements</span>.<span style="color: #795e26;">define</span>(</div><div>&nbsp; &nbsp;<span style="color: #a31515;">"elemento-3"</span>, <span style="color: #267f99;">Elemento3</span>)</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">elemento-3</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">cursor</span>: <span style="color: #0451a5;">pointer</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Acción<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;elemento-3&gt;&lt;/elemento-3&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Saludos desde la tierra.<span style="color: #800000;">&lt;/p&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;elemento-3&gt;&lt;/elemento-3&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+       style="color: #ff0000;">html</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div><span style="color: #800000;">&lt;html</span> <span
+       style="color: #ff0000;">lang</span>=<span
+       style="color: #0000ff;">"es"</span><span
+       style="color: #800000;">&gt;</span></div><br>
+    <div><span style="color: #800000;">&lt;head&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+       style="color: #ff0000;">charset</span>=<span
+       style="color: #0000ff;">"UTF-8"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+       style="color: #ff0000;">name</span>=<span
+       style="color: #0000ff;">"viewport"</span></div>
+    <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+       style="color: #0000ff;">"width=device-width"</span><span
+       style="color: #800000;">&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Acción<span
+       style="color: #800000;">&lt;/title&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+    <div>&nbsp; <span style="color: #0000ff;">class</span> <span
+       style="color: #267f99;">Elemento3</span></div>
+    <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
+       style="color: #267f99;">HTMLElement</span> {</div>
+    <div>&nbsp; &nbsp;<span
+       style="color: #795e26;">connectedCallback</span>() {</div>
+    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+       style="color: #001080;">innerHTML</span> = <span
+       style="color: #008000;">/* html */</span></div>
+    <div>&nbsp; &nbsp; &nbsp;`Estoy volando🚁</div>
+    <div>&nbsp; &nbsp; &nbsp; <span
+       style="color: #800000;">&lt;strong&gt;</span></div>
+    <div>&nbsp; &nbsp; &nbsp; &nbsp;alto</div>
+    <div>&nbsp; &nbsp; &nbsp; <span
+       style="color: #800000;">&lt;/strong&gt;</span>.`</div>
+    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+       style="color: #795e26;">addEventListener</span>(<span
+       style="color: #a31515;">"click"</span>,</div>
+    <div>&nbsp; &nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
+       style="color: #0000ff;">this</span>.<span
+       style="color: #795e26;">clic</span>())</div>
+    <div>&nbsp; &nbsp;}</div>
+    <div>&nbsp; &nbsp;<span style="color: #795e26;">clic</span>() {</div>
+    <div>&nbsp; &nbsp; <span style="color: #795e26;">alert</span>(<span
+       style="color: #a31515;">"ouch"</span>)</div>
+    <div>&nbsp; &nbsp;}</div>
+    <div>&nbsp; }</div>
+    <div>&nbsp; <span style="color: #001080;">customElements</span>.<span
+       style="color: #795e26;">define</span>(</div>
+    <div>&nbsp; &nbsp;<span style="color: #a31515;">"elemento-3"</span>, <span
+       style="color: #267f99;">Elemento3</span>)</div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+    <div>&nbsp; <span style="color: #800000;">elemento-3</span> {</div>
+    <div>&nbsp; &nbsp;<span style="color: #ff0000;">cursor</span>: <span
+       style="color: #0451a5;">pointer</span>;</div>
+    <div>&nbsp; }</div>
+    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+    <div><span style="color: #800000;">&lt;body&gt;</span></div>
+    <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Acción<span
+       style="color: #800000;">&lt;/h1&gt;</span></div>
+    <div>&nbsp;<span
+       style="color: #800000;">&lt;elemento-3&gt;&lt;/elemento-3&gt;</span>
+    </div>
+    <div>&nbsp;<span
+       style="color: #800000;">&lt;p&gt;</span>Saludos desde la tierra.<span
+       style="color: #800000;">&lt;/p&gt;</span></div>
+    <div>&nbsp;<span
+       style="color: #800000;">&lt;elemento-3&gt;&lt;/elemento-3&gt;</span>
+    </div>
+    <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+   </div>
+  </muestra-codigo>
  </div>
 </section>

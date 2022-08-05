@@ -1,7 +1,8 @@
 <div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="/src/m13juegos/Crecta.html" height="250" title="Ejemplo de movimiento recto"></iframe>
+  <iframe src="/src/m13juegos/Crecta.html" height="250"
+    title="Ejemplo de movimiento recto"></iframe>
   <p class="noPrint">
    <a href="/src/m13juegos/Crecta.html" target="_blank">Ábrelo en otra
     pestaña.</a>
@@ -13,5 +14,106 @@
    </a>
   </p>
  </section>
- <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Animación recta<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">.sprite</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span style="color: #098658;">3rem</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Animación recta<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;output</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"carita"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"sprite"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; 😄</div><div>&nbsp;<span style="color: #800000;">&lt;/output&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">X_INICIAL</span> = <span style="color: #098658;">0</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">REFRESCO</span> = <span style="color: #098658;">5</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">VELOCIDAD</span> = <span style="color: #098658;">0.5</span></div><div>&nbsp; <span style="color: #0000ff;">let</span> <span style="color: #001080;">x</span> = <span style="color: #0070c1;">X_INICIAL</span></div><div>&nbsp; <span style="color: #795e26;">setInterval</span>(<span style="color: #795e26;">avanza</span>, <span style="color: #0070c1;">REFRESCO</span>)</div><br><div>&nbsp; <span style="color: #0000ff;">function</span> <span style="color: #795e26;">avanza</span>() {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">xFinal</span> = <span style="color: #001080;">innerWidth</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">yInicial</span> = <span style="color: #001080;">innerHeight</span> / <span style="color: #098658;">2</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">yFinal</span> = <span style="color: #001080;">innerHeight</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">y</span> = ((<span style="color: #0070c1;">yFinal</span> - <span style="color: #0070c1;">yInicial</span>) /</div><div>&nbsp; &nbsp; (<span style="color: #0070c1;">xFinal</span> - <span style="color: #0070c1;">X_INICIAL</span>)) *</div><div>&nbsp; &nbsp; (<span style="color: #001080;">x</span> - <span style="color: #0070c1;">X_INICIAL</span>) +</div><div>&nbsp; &nbsp; <span style="color: #0070c1;">yInicial</span></div><div>&nbsp; &nbsp;<span style="color: #001080;">carita</span>.<span style="color: #001080;">style</span> =</div><div>&nbsp; &nbsp; <span style="color: #a31515;">`left: </span><span style="color: #0000ff;">${</span><span style="color: #001080;">x</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px; bottom: </span><span style="color: #0000ff;">${</span><span style="color: #0070c1;">y</span><span style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span></div><div>&nbsp; &nbsp;<span style="color: #001080;">x</span> = (<span style="color: #001080;">x</span> + <span style="color: #0070c1;">VELOCIDAD</span>) % <span style="color: #0070c1;">xFinal</span></div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>Animación recta<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">.sprite</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">fixed</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span
+      style="color: #098658;">3rem</span>;</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>Animación recta<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;output</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"carita"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"sprite"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; 😄</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/output&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">X_INICIAL</span> = <span
+      style="color: #098658;">0</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">REFRESCO</span> = <span
+      style="color: #098658;">5</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">VELOCIDAD</span> = <span
+      style="color: #098658;">0.5</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">x</span> = <span
+      style="color: #0070c1;">X_INICIAL</span></div>
+   <div>&nbsp; <span style="color: #795e26;">setInterval</span>(<span
+      style="color: #795e26;">avanza</span>, <span
+      style="color: #0070c1;">REFRESCO</span>)</div><br>
+   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">avanza</span>() {</div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">xFinal</span> = <span
+      style="color: #001080;">innerWidth</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">yInicial</span> = <span
+      style="color: #001080;">innerHeight</span> / <span
+      style="color: #098658;">2</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">yFinal</span> = <span
+      style="color: #001080;">innerHeight</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">y</span> = ((<span
+      style="color: #0070c1;">yFinal</span> - <span
+      style="color: #0070c1;">yInicial</span>) /</div>
+   <div>&nbsp; &nbsp; (<span style="color: #0070c1;">xFinal</span> - <span
+      style="color: #0070c1;">X_INICIAL</span>)) *</div>
+   <div>&nbsp; &nbsp; (<span style="color: #001080;">x</span> - <span
+      style="color: #0070c1;">X_INICIAL</span>) +</div>
+   <div>&nbsp; &nbsp; <span style="color: #0070c1;">yInicial</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">carita</span>.<span
+      style="color: #001080;">style</span> =</div>
+   <div>&nbsp; &nbsp; <span style="color: #a31515;">`left: </span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #001080;">x</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px; bottom: </span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">y</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">px`</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">x</span> = (<span
+      style="color: #001080;">x</span> + <span
+      style="color: #0070c1;">VELOCIDAD</span>) % <span
+      style="color: #0070c1;">xFinal</span></div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
 </div>

@@ -379,7 +379,8 @@
          <h1 >A. Adorno horizontal</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="/src/m14adornos/Ahorizontal.html" height="250" title="Adorno horizontal"></iframe>
+  <iframe src="/src/m14adornos/Ahorizontal.html" height="250"
+    title="Adorno horizontal"></iframe>
   <p class="noPrint">
    <a href="/src/m14adornos/Ahorizontal.html" target="_blank">Ábrelo en otra
     pestaña.</a>
@@ -391,14 +392,114 @@
    </a>
   </p>
  </section>
- <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Adorno Horizontal<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">.sprite</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Adorno Horizontal<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">Y</span> = <span style="color: #098658;">0</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">DISTANCIA</span> = <span style="color: #098658;">20</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">X_MÁXIMA</span> = <span style="color: #001080;">innerWidth</span></div><div>&nbsp; <span style="color: #0000ff;">let</span> <span style="color: #001080;">x</span> = <span style="color: #098658;">0</span></div><div>&nbsp; <span style="color: #008000;">/**</span></div><div><span style="color: #008000;">&nbsp; &nbsp;* En esta variable se agrega el</span></div><div><span style="color: #008000;">&nbsp; &nbsp;* HTML de las figuras que forman</span></div><div><span style="color: #008000;">&nbsp; &nbsp;* el adorno.</span></div><div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div><div>&nbsp; <span style="color: #0000ff;">let</span> <span style="color: #001080;">inner</span> = <span style="color: #a31515;">""</span></div><div>&nbsp; <span style="color: #af00db;">while</span> (<span style="color: #001080;">x</span> &lt; <span style="color: #0070c1;">X_MÁXIMA</span>) {</div><div>&nbsp; &nbsp;<span style="color: #008000;">/* Agrega el HTML de un emoji a</span></div><div><span style="color: #008000;">&nbsp; &nbsp; * inner. */</span></div><div>&nbsp; &nbsp;<span style="color: #001080;">inner</span> += <span style="color: #008000;">/* html */</span></div><div>&nbsp; &nbsp; `<span style="color: #800000;">&lt;div</span> <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"sprite"</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">style</span>=<span style="color: #0000ff;">"</span><span style="color: #0000ff;">top: ${</span><span style="color: #0070c1;">Y</span><span style="color: #0000ff;">}px;</span></div><div><span style="color: #0000ff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; left: ${</span><span style="color: #001080;">x</span><span style="color: #0000ff;">}px;</span><span style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; 💕</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/div&gt;</span>`</div><div>&nbsp; &nbsp;<span style="color: #001080;">x</span> += <span style="color: #0070c1;">DISTANCIA</span></div><div>&nbsp; }</div><div>&nbsp; <span style="color: #008000;">/* Agrega las figuras al HTML de</span></div><div><span style="color: #008000;">&nbsp; &nbsp;* body. */</span></div><div>&nbsp; <span style="color: #001080;">document</span>.<span style="color: #001080;">body</span>.<span style="color: #001080;">innerHTML</span> += <span style="color: #001080;">inner</span></div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>Adorno Horizontal<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">.sprite</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">fixed</span>;</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>Adorno Horizontal<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">Y</span> = <span
+      style="color: #098658;">0</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">DISTANCIA</span> = <span
+      style="color: #098658;">20</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">X_MÁXIMA</span> = <span
+      style="color: #001080;">innerWidth</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">x</span> = <span
+      style="color: #098658;">0</span></div>
+   <div>&nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;* En esta variable se agregael</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;HTML&nbsp;de&nbsp;las&nbsp;figuras&nbsp;que&nbsp;forman</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;* el adorno.</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">inner</span> = <span
+      style="color: #a31515;">""</span></div>
+   <div>&nbsp; <span style="color: #af00db;">while</span> (<span
+      style="color: #001080;">x</span> &lt; <span
+      style="color: #0070c1;">X_MÁXIMA</span>) {</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #008000;">/* Agrega el HTML de un emoji a</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * inner. */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">inner</span> += <span
+      style="color: #008000;">/* html */</span></div>
+   <div>&nbsp; &nbsp; `<span style="color: #800000;">&lt;div</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"sprite"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">style</span>=<span
+      style="color: #0000ff;">"</span><span
+      style="color: #0000ff;">top: ${</span><span
+      style="color: #0070c1;">Y</span><span
+      style="color: #0000ff;">}px;</span></div>
+   <div><span
+      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;${</span><span
+      style="color: #001080;">x</span><span
+      style="color: #0000ff;">}px;</span><span
+      style="color: #0000ff;">"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; 💕</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/div&gt;</span>`</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">x</span> += <span
+      style="color: #0070c1;">DISTANCIA</span></div>
+   <div>&nbsp; }</div>
+   <div>&nbsp; <span
+      style="color: #008000;">/* Agrega las figuras al HTML de</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;* body. */</span></div>
+   <div>&nbsp; <span style="color: #001080;">document</span>.<span
+      style="color: #001080;">body</span>.<span
+      style="color: #001080;">innerHTML</span> += <span
+      style="color: #001080;">inner</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
 </div>
       </section>
      <section >
          <h1 >B. Recta usando ciclos</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="/src/m14adornos/Bciclos.html" height="250" title="Adorno con ciclos"></iframe>
+  <iframe src="/src/m14adornos/Bciclos.html" height="250"
+    title="Adorno con ciclos"></iframe>
   <p class="noPrint">
    <a href="/src/m14adornos/Bciclos.html" target="_blank">Ábrelo en otra
     pestaña.</a>
@@ -410,14 +511,80 @@
    </a>
   </p>
  </section>
- <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"utf-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Línea<span style="color: #800000;">&lt;/title&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #af00db;">for</span> (<span style="color: #0000ff;">let</span> <span style="color: #001080;">x</span> = <span style="color: #098658;">0</span>; <span style="color: #001080;">x</span> &lt; <span style="color: #098658;">200</span></div><div>&nbsp; &nbsp;; <span style="color: #001080;">x</span> += <span style="color: #098658;">20</span>) {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">let</span> <span style="color: #001080;">y</span> = <span style="color: #098658;">0.45</span> * <span style="color: #001080;">x</span> + <span style="color: #098658;">30</span>;</div><div>&nbsp; &nbsp;<span style="color: #001080;">document</span>.<span style="color: #001080;">body</span>.<span style="color: #001080;">innerHTML</span> +=</div><div>&nbsp; &nbsp; <span style="color: #008000;">/* html */</span></div><div>&nbsp; &nbsp; `<span style="color: #800000;">&lt;div</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">style</span>=<span style="color: #0000ff;">"</span><span style="color: #0000ff;">position: absolute;</span></div><div><span style="color: #0000ff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bottom: ${</span><span style="color: #001080;">y</span><span style="color: #0000ff;">}px;</span></div><div><span style="color: #0000ff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;left: ${</span><span style="color: #001080;">x</span><span style="color: #0000ff;">}px;</span><span style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; 💕</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/div&gt;</span>`</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"utf-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Línea<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">let</span> <span
+      style="color: #001080;">x</span> = <span
+      style="color: #098658;">0</span>; <span
+      style="color: #001080;">x</span> &lt; <span
+      style="color: #098658;">200</span></div>
+   <div>&nbsp; &nbsp;; <span style="color: #001080;">x</span> += <span
+      style="color: #098658;">20</span>) {</div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">y</span> = <span
+      style="color: #098658;">0.45</span> * <span
+      style="color: #001080;">x</span> + <span
+      style="color: #098658;">30</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">document</span>.<span
+      style="color: #001080;">body</span>.<span
+      style="color: #001080;">innerHTML</span> +=</div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/* html */</span></div>
+   <div>&nbsp; &nbsp; `<span style="color: #800000;">&lt;div</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">style</span>=<span
+      style="color: #0000ff;">"</span><span
+      style="color: #0000ff;">position: absolute;</span></div>
+   <div><span
+      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bottom:&nbsp;${</span><span
+      style="color: #001080;">y</span><span
+      style="color: #0000ff;">}px;</span></div>
+   <div><span
+      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;${</span><span
+      style="color: #001080;">x</span><span
+      style="color: #0000ff;">}px;</span><span
+      style="color: #0000ff;">"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; 💕</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/div&gt;</span>`</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
 </div>
       </section>
      <section >
          <h1 >C. Espiral</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="/src/m14adornos/Cespiral.html" height="250" title="Adorno en espiral"></iframe>
+  <iframe src="/src/m14adornos/Cespiral.html" height="250"
+    title="Adorno en espiral"></iframe>
   <p class="noPrint">
    <a href="/src/m14adornos/Cespiral.html" target="_blank">Ábrelo en otra
     pestaña.</a>
@@ -429,7 +596,129 @@
    </a>
   </p>
  </section>
- <muestra-codigo><div><div><span style="color: #800000;">&lt;!DOCTYPE</span> <span style="color: #ff0000;">html</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #800000;">&lt;html</span> <span style="color: #ff0000;">lang</span>=<span style="color: #0000ff;">"es"</span><span style="color: #800000;">&gt;</span></div><br><div><span style="color: #800000;">&lt;head&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">charset</span>=<span style="color: #0000ff;">"UTF-8"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"viewport"</span></div><div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span style="color: #0000ff;">"width=device-width"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Adorno con Giro<span style="color: #800000;">&lt;/title&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div><div>&nbsp; <span style="color: #800000;">.sprite</span> {</div><div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span style="color: #0451a5;">fixed</span>;</div><div>&nbsp; }</div><div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div><div><span style="color: #800000;">&lt;/head&gt;</span></div><br><div><span style="color: #800000;">&lt;body&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Adorno con Giro<span style="color: #800000;">&lt;/h1&gt;</span></div><div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">INCREMENTO</span> =</div><div>&nbsp; &nbsp;<span style="color: #098658;">2</span> * <span style="color: #267f99;">Math</span>.<span style="color: #0070c1;">PI</span> / <span style="color: #098658;">21</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">X_BASE</span> = <span style="color: #001080;">innerWidth</span> / <span style="color: #098658;">2</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">Y_BASE</span> = <span style="color: #001080;">innerHeight</span> / <span style="color: #098658;">2</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">ANGULO_FINAL</span> = <span style="color: #098658;">6</span> * <span style="color: #267f99;">Math</span>.<span style="color: #0070c1;">PI</span></div><div>&nbsp; <span style="color: #0000ff;">const</span> <span style="color: #0070c1;">amplitud</span> = <span style="color: #267f99;">Math</span>.<span style="color: #795e26;">min</span>(</div><div>&nbsp; &nbsp;<span style="color: #001080;">window</span>.<span style="color: #001080;">innerHeight</span>,</div><div>&nbsp; &nbsp;<span style="color: #001080;">window</span>.<span style="color: #001080;">innerWidth</span>) /</div><div>&nbsp; &nbsp;(<span style="color: #098658;">3</span> * <span style="color: #0070c1;">ANGULO_FINAL</span>)</div><div>&nbsp; <span style="color: #0000ff;">let</span> <span style="color: #001080;">inner</span> = <span style="color: #a31515;">""</span></div><div>&nbsp; <span style="color: #af00db;">for</span> (<span style="color: #0000ff;">let</span> <span style="color: #001080;">angulo</span> = <span style="color: #098658;">0</span></div><div>&nbsp; &nbsp;; <span style="color: #001080;">angulo</span> &lt; <span style="color: #0070c1;">ANGULO_FINAL</span></div><div>&nbsp; &nbsp;; <span style="color: #001080;">angulo</span> += <span style="color: #0070c1;">INCREMENTO</span>) {</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">r</span> = <span style="color: #0070c1;">amplitud</span> * <span style="color: #001080;">angulo</span></div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">x</span> =</div><div>&nbsp; &nbsp; <span style="color: #0070c1;">X_BASE</span> + <span style="color: #0070c1;">r</span> * <span style="color: #267f99;">Math</span>.<span style="color: #795e26;">cos</span>(<span style="color: #001080;">angulo</span>)</div><div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span style="color: #0070c1;">y</span> =</div><div>&nbsp; &nbsp; <span style="color: #0070c1;">Y_BASE</span> + <span style="color: #0070c1;">r</span> * <span style="color: #267f99;">Math</span>.<span style="color: #795e26;">sin</span>(<span style="color: #001080;">angulo</span>)</div><div>&nbsp; &nbsp;<span style="color: #001080;">inner</span> += <span style="color: #008000;">/* html */</span></div><div>&nbsp; &nbsp; `<span style="color: #800000;">&lt;div</span> <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"sprite"</span></div><div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">style</span>=<span style="color: #0000ff;">"</span><span style="color: #0000ff;">bottom: ${</span><span style="color: #0070c1;">y</span><span style="color: #0000ff;">}px;</span></div><div><span style="color: #0000ff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; left: ${</span><span style="color: #0070c1;">x</span><span style="color: #0000ff;">}px;</span><span style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span></div><div>&nbsp; &nbsp; &nbsp; ⌛</div><div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/div&gt;</span>`</div><div>&nbsp; }</div><div>&nbsp; <span style="color: #001080;">document</span>.<span style="color: #001080;">body</span>.<span style="color: #001080;">innerHTML</span> += <span style="color: #001080;">inner</span></div><div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div><div><span style="color: #800000;">&lt;/body&gt;</span></div><br><div><span style="color: #800000;">&lt;/html&gt;</span></div></div></muestra-codigo>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>Adorno con Giro<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">.sprite</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">fixed</span>;</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>Adorno con Giro<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">INCREMENTO</span> =</div>
+   <div>&nbsp; &nbsp;<span style="color: #098658;">2</span> * <span
+      style="color: #267f99;">Math</span>.<span
+      style="color: #0070c1;">PI</span> / <span
+      style="color: #098658;">21</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">X_BASE</span> = <span
+      style="color: #001080;">innerWidth</span> / <span
+      style="color: #098658;">2</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">Y_BASE</span> = <span
+      style="color: #001080;">innerHeight</span> / <span
+      style="color: #098658;">2</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">ANGULO_FINAL</span> = <span
+      style="color: #098658;">6</span> * <span
+      style="color: #267f99;">Math</span>.<span
+      style="color: #0070c1;">PI</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">amplitud</span> = <span
+      style="color: #267f99;">Math</span>.<span
+      style="color: #795e26;">min</span>(</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">window</span>.<span
+      style="color: #001080;">innerHeight</span>,</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">window</span>.<span
+      style="color: #001080;">innerWidth</span>) /</div>
+   <div>&nbsp; &nbsp;(<span style="color: #098658;">3</span> * <span
+      style="color: #0070c1;">ANGULO_FINAL</span>)</div>
+   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">inner</span> = <span
+      style="color: #a31515;">""</span></div>
+   <div>&nbsp; <span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">let</span> <span
+      style="color: #001080;">angulo</span> = <span
+      style="color: #098658;">0</span></div>
+   <div>&nbsp; &nbsp;; <span style="color: #001080;">angulo</span> &lt; <span
+      style="color: #0070c1;">ANGULO_FINAL</span></div>
+   <div>&nbsp; &nbsp;; <span style="color: #001080;">angulo</span> += <span
+      style="color: #0070c1;">INCREMENTO</span>) {</div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">r</span> = <span
+      style="color: #0070c1;">amplitud</span> * <span
+      style="color: #001080;">angulo</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">x</span> =</div>
+   <div>&nbsp; &nbsp; <span style="color: #0070c1;">X_BASE</span> + <span
+      style="color: #0070c1;">r</span> * <span
+      style="color: #267f99;">Math</span>.<span
+      style="color: #795e26;">cos</span>(<span
+      style="color: #001080;">angulo</span>)</div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">y</span> =</div>
+   <div>&nbsp; &nbsp; <span style="color: #0070c1;">Y_BASE</span> + <span
+      style="color: #0070c1;">r</span> * <span
+      style="color: #267f99;">Math</span>.<span
+      style="color: #795e26;">sin</span>(<span
+      style="color: #001080;">angulo</span>)</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">inner</span> += <span
+      style="color: #008000;">/* html */</span></div>
+   <div>&nbsp; &nbsp; `<span style="color: #800000;">&lt;div</span> <span
+      style="color: #ff0000;">class</span>=<span
+      style="color: #0000ff;">"sprite"</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">style</span>=<span
+      style="color: #0000ff;">"</span><span
+      style="color: #0000ff;">bottom: ${</span><span
+      style="color: #0070c1;">y</span><span
+      style="color: #0000ff;">}px;</span></div>
+   <div><span
+      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;${</span><span
+      style="color: #0070c1;">x</span><span
+      style="color: #0000ff;">}px;</span><span
+      style="color: #0000ff;">"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; ⌛</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/div&gt;</span>`</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp; <span style="color: #001080;">document</span>.<span
+      style="color: #001080;">body</span>.<span
+      style="color: #001080;">innerHTML</span> += <span
+      style="color: #001080;">inner</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
 </div>
       </section>
      <section >

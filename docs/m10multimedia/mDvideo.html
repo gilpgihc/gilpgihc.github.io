@@ -430,7 +430,7 @@
   &#x2630;
  </button>
  <a class="anterior" href="/m10multimedia/mCaudio.html" title="C. El elemento audio">◀</a>
- <a class="siguiente" href="/m10multimedia/mEresumen.html" title="E. Resumen">▶</a>
+ <a class="siguiente" href="/m10multimedia/mEfondo.html" title="E. Imagen de fondo">▶</a>
    <h1 >D. El elemento <code class='language-html'>video</code></h1><div class="lectura">
  <ul>
   <li>
@@ -460,14 +460,6 @@
     <strong>Media</strong> y copia la URL del formato MP4.
    </p>
   </li>
-  <li>
-   <p>
-    Su especificación está en
-    <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element"
-      target="_blank"
-      rel="noopener">https://html.spec.whatwg.org/multipage/media.html#the-video-element</a>
-   </p>
-  </li>
  </ul>
  <section>
   <h1>Atributos adicionales</h1>
@@ -487,7 +479,8 @@
  <div class="horizontal">
   <section>
    <h1>Salida</h1>
-   <iframe src="/src/m10multimedia/Cvideo.html" height="270" title="Ejemplo de video"></iframe>
+   <iframe src="/src/m10multimedia/Cvideo.html" height="270" allow="all"
+     title="Ejemplo de video"></iframe>
    <p class="noPrint">
     <a href="/src/m10multimedia/Cvideo.html" target="_blank">Ábrelo en otra
      pestaña.</a>
@@ -564,6 +557,23 @@
   </muestra-codigo>
  </div>
 </section>
+<div class="lectura">
+ <section>
+  <h1>Solo para los más rudos</h1>
+  <ul>
+   <li>
+    <p>
+     La especificación técnica del elemento
+     <code class="language-html">video</code>
+     está en
+     <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element"
+       target="_blank"
+       rel="noopener">https://html.spec.whatwg.org/multipage/media.html#the-video-element</a>
+    </p>
+   </li>
+  </ul>
+ </section>
+</div>
  <footer>
  <p>
   <a rel="license"
@@ -621,7 +631,12 @@
     </li>
     <li>
      <p>
-      <a href="/m10multimedia/mEresumen.html">Resumen</a>
+      <a href="/m10multimedia/mEfondo.html">Imagen de fondo</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m10multimedia/mFresumen.html">Resumen</a>
      </p>
     </li>
    </ol><p>
@@ -640,7 +655,7 @@
  /**@type {string} */
  let urlAnterior = "/m10multimedia/mCaudio.html"
  /**@type {string} */
- let urlSiguiente = "/m10multimedia/mEresumen.html"
+ let urlSiguiente = "/m10multimedia/mEfondo.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
