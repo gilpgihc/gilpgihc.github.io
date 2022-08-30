@@ -15,8 +15,7 @@
   <p>
    <label>
     Género
-    <select id="inGenero"
-      required>
+    <select id="inGenero" required>
      <option value="">
       -- Selecciona --
      </option>
@@ -25,9 +24,6 @@
      </option>
      <option value="reg">
       Reguetón
-     </option>
-     <option value="tango">
-      Tango
      </option>
     </select>
    </label>
@@ -42,18 +38,19 @@
  <script>
   function procesa() {
    const genero = inGenero.value
-   outSalida.value =
+   const resultado =
     recomienda(genero)
+   outSalida.value = resultado
   }
 
   /** @param {string} genero */
   function recomienda(genero) {
    if (genero === "pop") {
-    return "Ariana Grande."
+    return `Para el pop te
+     recomiendo a Ariana Grande.`
    } else if (genero === "reg") {
-    return "Bad Bunny."
-   } else {
-    return "De eso no conozco."
+    return `Para el reguetón te
+     recomiendo a Bad Bunny.`
    }
   }
  </script>

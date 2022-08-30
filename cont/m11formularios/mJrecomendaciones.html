@@ -61,41 +61,35 @@
    <div>&nbsp; &nbsp; Género</div>
    <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;select</span> <span
       style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">"inGenero"</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">required</span><span
+      style="color: #0000ff;">"inGenero"</span> <span
+      style="color: #ff0000;">required</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
-    <span style="color: #ff0000;">value</span>=<span
-      style="color: #0000ff;">""</span><span style="color: #800000;">&gt;</span>
-   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;option</span> <span
+      style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">""</span><span
+      style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp; -- Selecciona --</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
    </div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
-    <span style="color: #ff0000;">value</span>=<span
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;option</span> <span
+      style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">"pop"</span><span
-      style="color: #800000;">&gt;</span>
-   </div>
+      style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp; Pop</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
-   </div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
-    <span style="color: #ff0000;">value</span>=<span
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/option&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;option</span> <span
+      style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">"reg"</span><span
-      style="color: #800000;">&gt;</span>
-   </div>
+      style="color: #800000;">&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp; Reguetón</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
-   </div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;option</span>
-    <span style="color: #ff0000;">value</span>=<span
-      style="color: #0000ff;">"tango"</span><span
-      style="color: #800000;">&gt;</span>
-   </div>
-   <div>&nbsp; &nbsp; &nbsp; Tango</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/option&gt;</span>
-   </div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/select&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;/option&gt;</span></div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;/select&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
@@ -117,13 +111,16 @@
       style="color: #0070c1;">genero</span> = <span
       style="color: #001080;">inGenero</span>.<span
       style="color: #001080;">value</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span
-      style="color: #001080;">value</span> =</div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">resultado</span> =</div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">recomienda</span>(<span
       style="color: #0070c1;">genero</span>)</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span
+      style="color: #001080;">value</span> = <span
+      style="color: #0070c1;">resultado</span></div>
    <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #008000;">/** @param {string} genero
-     */</span></div>
+   <div>&nbsp; <span
+      style="color: #008000;">/** @param {string} genero */</span></div>
    <div>&nbsp; <span style="color: #0000ff;">function</span> <span
       style="color: #795e26;">recomienda</span>(<span
       style="color: #001080;">genero</span>) {</div>
@@ -131,16 +128,19 @@
       style="color: #001080;">genero</span> === <span
       style="color: #a31515;">"pop"</span>) {</div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
-      style="color: #a31515;">"Ariana Grande."</span></div>
+      style="color: #a31515;">`Para el pop te</span></div>
+   <div><span
+      style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recomiendo&nbsp;a&nbsp;Ariana&nbsp;Grande.`</span>
+   </div>
    <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> <span
       style="color: #af00db;">if</span> (<span
       style="color: #001080;">genero</span> === <span
       style="color: #a31515;">"reg"</span>) {</div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
-      style="color: #a31515;">"Bad Bunny."</span></div>
-   <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
-      style="color: #a31515;">"De eso no conozco."</span></div>
+      style="color: #a31515;">`Para el reguetón te</span></div>
+   <div><span
+      style="color: #a31515;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recomiendo&nbsp;a&nbsp;Bad&nbsp;Bunny.`</span>
+   </div>
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
