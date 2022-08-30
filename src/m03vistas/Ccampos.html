@@ -26,12 +26,8 @@
    --BodySmallWeight: 400;
    --Background: #FFFBFE;
    --OnBackground: #1C1B1F;
-   --Surface: #FFFBFE;
    --OnSurface: #1C1B1F;
    --OnSurfaceHover: #1C1B1F14;
-   --OnSurfaceFocus: #1C1B1F19;
-   --OnSurfacePressed: #1C1B1F1E;
-   --OnSurfaceShadow: #1C1B1F99;
    --SurfaceVariant: #E7E0EC;
    --SurfaceVariantHover:
     #CAC4D0;
@@ -43,8 +39,6 @@
    --Elevation: #F5EEFA;
    --ShapeCornerMedium: 12px;
    --ShapeCornerExtraSmall: 4px;
-   --ElevationLevel2:
-    0 3px 6px 0px var(--OnSurfaceShadow);
    font-size: 16px;
    font-family: var(--Font);
    color: var(--OnBackground);
@@ -63,18 +57,14 @@
   const INVALID_CLASS = "invalid"
   const POPULATED_CLASS =
    "populated"
-  const OPEN_CLASS = "open"
   const SELECTED_CLASS = "selected"
   const TARGET_NAME =
    'name="target"'
   const SUPPORTING_NAME =
    'name="supporting"'
-  const MENU_NAME = 'name="menu"'
   const VALUE_PROPERTY = "value"
   const GET_VALUE_PROPERTY =
    "getValue"
-  const SET_VALUE_PROPERTY =
-   "setValue"
   const CHECK_VALIDITY_PROPERTY =
    "checkValidity"
 
@@ -88,41 +78,44 @@
      * @type {ShadowRoot}
      */
     this._shadow =
-     this.attachShadow(
-      {
-       mode: "open",
-       delegatesFocus: true
-      })
+     this.attachShadow({
+      mode: "open",
+      delegatesFocus: true
+     })
     this._shadow.innerHTML =
      /* html */
      `<style>
       :host {
        display: block;
-       position: relative;
        margin: 1rem;
-       border-top-left-radius:
-        var(--ShapeCornerExtraSmall);
-       border-top-right-radius:
-        var(--ShapeCornerExtraSmall);
-       background-color:
-        var(--SurfaceVariant);
-      }
-
-      :host(::after) {
       }
 
       label {
+       display: block;
+      }
+
+      span::after {
+       content: "";
+       background-color:
+        var(--SurfaceVariant);
+       position: absolute;
+       z-index: -1;
+       top: 0;
+       right: 0;
+       left: 0;
+       bottom: 0;
+      }
+
+      span {
        border-top-left-radius:
         var(--ShapeCornerExtraSmall);
        border-top-right-radius:
         var(--ShapeCornerExtraSmall);
-       background-color:
-        var(--SurfaceVariant);
-       background-color:
-        var(--SurfaceVariant);
+        position: relative;
        display: block;
        cursor: pointer;
        padding: 24px 0 0 0;
+       overflow: hidden;
       }
 
       ::slotted(span) {
@@ -143,7 +136,8 @@
       :host(:focus-within) ::slotted(span),
       :host(.${POPULATED_CLASS}) ::slotted(span),
       :host(.float) ::slotted(span) {
-       transform: translateY(-16px);
+       transform:
+        translateY(-16px);
        font-size:
         var(--BodySmallSize);
       }
@@ -191,8 +185,6 @@
        font-weight:
         var(--BodySmallWeight);
        padding: 4px 16px 0 16px;
-       background-color:
-        var(--Surface);
        display: block;
        transition: 0.3s ease-in;
       }
@@ -209,7 +201,7 @@
        outline: none;
       }
 
-      :host(:hover) label {
+      :host(:hover) span {
        background-color:
         var(--SurfaceVariantHover);
       }
@@ -226,7 +218,7 @@
        border-bottom-color:
         var(--Error);
       }
-      
+
       :host(.${INVALID_CLASS}) ::slotted(span) {
        color: var(--Error);
       }
@@ -251,35 +243,22 @@
       :host(.${INVALID_CLASS}:hover:focus-within) ::slotted(span) {
        color: var(--Error);
       }
+
       :host(.${INVALID_CLASS}:hover) [${TARGET_NAME}]::slotted(*:focus) {
        border-bottom-width: 2px;
        padding-bottom: 7px;
       }
-
-      [${MENU_NAME}]::slotted(*) {
-       position: absolute;
-       right: 0;
-       left: 0;
-       top: 57px;
-      }
      </style>
      <label>
-      <slot ${TARGET_NAME}></slot>
-      <slot></slot>
-     </label>
-     <slot
-      ${SUPPORTING_NAME}></slot>
-     <slot ${MENU_NAME}></slot>`
-    this._alterna =
-     this._alterna.bind(this)
-    this._abre =
-     this._abre.bind(this)
-    this._cierra =
-     this._cierra.bind(this)
-    this._onChange =
-     this._onChange.bind(this)
-    this._onInput =
-     this._onInput.bind(this)
+      <span>
+       <slot ${TARGET_NAME}></slot>
+       <slot></slot>
+      </span>
+      <slot
+       ${SUPPORTING_NAME}></slot>
+     </label>`
+    this.analiza =
+     this.analiza.bind(this)
     /**
      * @private
      * @type {HTMLSlotElement|
@@ -290,251 +269,40 @@
       `[${TARGET_NAME}]`)
     /**
      * @private
-     * @type {HTMLSlotElement|
-     *        null}
-     */
-    this._menu = this._shadow.
-     querySelector(
-      `[${MENU_NAME}]`)
-    /**
-     * @private
      * @type {Element| null}
      */
     this._targetElement = null
-    /**
-     * @private
-     * @type {Element|null}
-     */
-    this._menuElement = null
     if (this._target !== null) {
      this._target.addEventListener(
       "slotchange",
       () => this._configTarget())
     }
-    if (this._menu !== null) {
-     this._menu.
-      addEventListener(
-       "slotchange", () =>
-       this._configMenu())
-    }
    }
 
    /** @private */
    _configTarget() {
+    if (this._targetElement
+     !== null) {
+     this._targetElement.
+      removeEventListener("input",
+       this.analiza)
+     this._targetElement = null
+    }
     if (this._target !== null) {
      for (const t of this._target
       .assignedElements()) {
-      if (this._targetElement
-       !== null) {
-       this._targetElement.
-        removeEventListener(
-         "input", this._onInput)
-       this._targetElement.
-        removeEventListener(
-         "click", this._alterna)
-      }
       this._targetElement = t
       t.addEventListener("input",
-       this._onInput)
-      t.addEventListener("click",
-       this._alterna)
-      this._inicia()
+       this.analiza)
+      this.analiza()
      }
     }
-   }
-
-   /** @private */
-   _configMenu() {
-    if (this._menu !== null) {
-     for (const e of this._menu
-      .assignedElements()) {
-      if (this._menuElement
-       !== null) {
-       const inputs =
-        this._menuElement.
-         querySelectorAll("input")
-       for (const i
-        of Array.from(inputs)) {
-        i.removeEventListener(
-         "change", this._onChange,
-         { capture: true })
-       }
-      }
-      this._menuElement = e
-      const inputs =
-       e.querySelectorAll("input")
-      const arr =
-       Array.from(inputs)
-      for (const i of arr) {
-       i.addEventListener(
-        "change", this._onChange,
-        { capture: true })
-      }
-      this._inicia()
-     }
-    }
-   }
-
-   /** @private */
-   _alterna() {
-    if (this._menuElement
-     &&
-     this._menuElement.classList.
-      contains(OPEN_CLASS)) {
-     this._cierra()
-    } else {
-     this._abre()
-    }
-   }
-
-   /** @private */
-   _abre() {
-    if (this._menuElement
-     !== null) {
-     this._menuElement.classList.
-      add(OPEN_CLASS)
-     const input =
-      this.querySelector("input")
-     if (input) {
-      input.focus()
-     }
-     this.addEventListener(
-      "focusout", this._cierra, { capture: false })
-    }
-   }
-
-   /** @private */
-   _cierra() {
-    if (this._menuElement
-     !== null) {
-     this.removeEventListener(
-      "focusout", this._cierra, { capture: false })
-     this._menuElement.classList.
-      remove(OPEN_CLASS)
-    }
-   }
-
-   /** @private */
-   _inicia() {
-    const m = this._menuElement
-    if (m !== null) {
-     const t = this._targetElement
-     if (t !== null) {
-      t.removeEventListener(
-       "input", this._onInput)
-      t.addEventListener(
-       "keydown",
-       /**
-        * @param {KeyboardEvent
-        *        } evt
-        */
-       evt => {
-        const key = evt.key
-        if (key !== "Tab") {
-         evt.preventDefault()
-         this._alterna()
-        }
-       })
-      const inputs =
-       m.querySelectorAll("input")
-      for (const i
-       of Array.from(inputs)) {
-       const parent =
-        i.parentElement
-       if (parent) {
-        if (i.dataset.checked
-         === "true") {
-         i.checked = true
-         parent.classList.
-          add(SELECTED_CLASS)
-         const text =
-          parent.textContent.trim()
-         this.setText(text)
-        } else {
-         parent.classList.
-          remove(SELECTED_CLASS)
-        }
-       }
-      }
-     }
-    }
-    this.analiza()
-   }
-
-   /** @private */
-   _onChange() {
-    const m = this._menuElement
-    if (m !== null) {
-     const inputs =
-      m.querySelectorAll("input")
-     for (const i
-      of Array.from(inputs)) {
-      const parent =
-       i.parentElement
-      if (parent) {
-       if (i.checked) {
-        parent.classList.
-         add(SELECTED_CLASS)
-        const text =
-         parent.textContent.trim()
-        this.setText(text)
-       } else {
-        parent.classList.
-         remove(SELECTED_CLASS)
-       }
-      }
-     }
-     this._cierra()
-    }
-    this.analiza()
-   }
-
-   _onInput() {
-    const m = this._menuElement
-    if (m !== null) {
-     const text =
-      this.getText().trim()
-     const inputs = this.
-      _menuElement.
-      querySelectorAll("input")
-     for (const i
-      of Array.from(inputs)) {
-      const parent =
-       i.parentElement
-      if (parent) {
-       if (text === parent
-        .textContent.trim()) {
-        i.checked = true
-        parent.classList.
-         add(SELECTED_CLASS)
-       } else {
-        i.checked = false
-        parent.classList.
-         remove(SELECTED_CLASS)
-       }
-      }
-     }
-    }
-    this.analiza()
    }
 
    analiza() {
     const t = this._targetElement
     if (t !== null) {
-     let value = ""
-     if (
-      VALUE_PROPERTY in t) {
-      value = t[VALUE_PROPERTY]
-     } else if (
-      typeof t[GET_VALUE_PROPERTY]
-      === "function") {
-      value =
-       t[GET_VALUE_PROPERTY]()
-     }
-     if (value === null
-      || value === undefined) {
-      value = ""
-     }
+     let value = this.getValue()
      if (value === "") {
       this.classList.
        remove(POPULATED_CLASS)
@@ -542,53 +310,47 @@
       this.classList.
        add(POPULATED_CLASS)
      }
-     if (typeof t[
-      CHECK_VALIDITY_PROPERTY]
-      === "function") {
-      if (t[
-       CHECK_VALIDITY_PROPERTY
-      ]()) {
-       this.classList.
-        remove(INVALID_CLASS)
-      } else {
-       this.classList.
-        add(INVALID_CLASS)
-      }
+     if (this.checkValidity()) {
+      this.classList.
+       remove(INVALID_CLASS)
+     } else {
+      this.classList.
+       add(INVALID_CLASS)
      }
-     this._selectedValue = null
     }
    }
 
    /** @returns {string} */
-   getText() {
+   getValue() {
+    let value = ""
     const t = this._targetElement
     if (t !== null) {
-     if (
-      VALUE_PROPERTY in t) {
-      return t[VALUE_PROPERTY]
+     if (VALUE_PROPERTY in t) {
+      value = t[VALUE_PROPERTY]
      } else if (
       typeof t[GET_VALUE_PROPERTY]
       === "function") {
-      return t[
+      value = t[
        GET_VALUE_PROPERTY]()
      }
     }
-    return ""
+    return value === null ||
+     value === undefined ? ""
+     : value
    }
 
-   /** @param {string} text */
-   setText(text) {
+   /** @returns {boolean} */
+   checkValidity() {
     const t = this._targetElement
     if (t !== null) {
-     if (
-      VALUE_PROPERTY in t) {
-      t[VALUE_PROPERTY] = text
-     } else if (typeof
-      t[SET_VALUE_PROPERTY]
+     if (typeof t[
+      CHECK_VALIDITY_PROPERTY]
       === "function") {
-      t[SET_VALUE_PROPERTY](text)
+      return t[
+       CHECK_VALIDITY_PROPERTY]()
      }
     }
+    return true
    }
   }
 
@@ -596,117 +358,6 @@
    define("text-field", TextField)
  </script>
  <style>
-  [slot="menu"] {
-   display: block;
-   pointer-events: none;
-   transform: translateY(-50%) scaleY(0);
-   transition: transform 0.5s;
-   box-sizing: border-box;
-   padding: 4px 0;
-   border-radius:
-    var(--ShapeCornerMedium);
-   background-color:
-    var(--Elevation);
-   cursor: default;
-   box-shadow:
-    var(--ElevationLevel2);
-  }
-
-  [slot="menu"].open {
-   pointer-events: all;
-   transform: translateY(0) scaleY(1);
-  }
-
-  [slot="menu"]>* {
-   display: block;
-   border: none;
-   background-color:
-    transparent;
-   color: var(--OnSurface);
-   font-family:
-    var(--LabelLargeFont);
-   font-size:
-    var(--LabelLargeSize);
-   font-weight:
-    var(--LabelLargeWeight);
-   box-sizing: border-box;
-   padding: 4px 0;
-   width: 100%;
-   height: 48px;
-   line-height: 48px;
-   padding: 0 12px;
-   white-space: nowrap;
-   text-overflow: ellipsis;
-   overflow: hidden;
-   text-align: start;
-  }
-
-  [slot="menu"]>*:hover {
-   background-color:
-    var(--OnSurfaceHover);
-  }
-
-  [slot="menu"]>*:focus {
-   background-color:
-    var(--OnSurfaceFocus);
-  }
-
-  [slot="menu"]>*:active {
-   background-color:
-    var(--Primary);
-   background-position: center;
-   background-image: radial-gradient(circle, transparent 1%, var(--SurfaceVariant) 1%);
-   background-size: 100%;
-   animation-fill-mode: forwards;
-   animation-name: ripple;
-   animation-duration: 0.5s;
-  }
-
-  @keyframes ripple {
-   from {
-    color: var(--OnSurfaceVariant);
-    background-size: 100%;
-   }
-
-   to {
-    color: var(--OnPrimary);
-    background-size: 15000%;
-   }
-  }
-
-  [slot="menu"] span {
-   vertical-align: middle;
-   margin-right: 12px;
-  }
-
-  text-field [slot="menu"] {
-   z-index: 1;
-   border-top-left-radius: 0;
-   border-top-right-radius: 0;
-  }
-
-  text-field [slot="menu"]>.selected {
-   color: var(--OnPrimary);
-   background-color: var(--Primary);
-  }
-
-  text-field [slot="menu"] input {
-   display: none;
-  }
-
-  text-field [slot="menu"]+input {
-   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='5' width='32'%3E%3Cpath d='M21 4 16 0 26 0 Z' fill='%2349454E' /%3E%3C/svg%3E");
-   background-repeat: no-repeat;
-   background-position-x: right;
-   background-position-y: 20%;
-   padding-right: 32px;
-   cursor: pointer;
-  }
-
-  text-field [slot="menu"].open+input {
-   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='5' width='32'%3E%3Cpath d='M21 0 16 4 26 4 Z' fill='%2349454E' /%3E%3C/svg%3E");
-  }
-
   select {
    -webkit-appearance: none;
    -moz-appearance: none;
@@ -762,55 +413,30 @@
  <section style="max-width: 600px;
    margin: 0 auto">
   <text-field>
+   <span>Saludo</span>
    <output slot="target">
     Hola
    </output>
-   <span>Saludo</span>
   </text-field>
   <text-field>
-   <input slot="target" required>
    <span>Nombre*</span>
+   <input slot="target" required>
    <small slot="supporting">
     *Requerido
    </small>
   </text-field>
   <text-field>
+   <span>Email</span>
    <input slot="target"
      type="email">
-   <span>Email</span>
   </text-field>
   <text-field class="float">
+   <span>Fecha</span>
    <input slot="target"
      type="date">
-   <span>Fecha</span>
   </text-field>
   <text-field>
-   <div slot="menu">
-    <label>
-     <input type="radio"
-       name="grupo" value="">
-    </label>
-    <label>
-     <input type="radio"
-       name="grupo" value="IC21">
-     IC-21
-    </label>
-    <label>
-     <input type="radio"
-       data-checked="true"
-       name="grupo" value="IC22">
-     IC-22
-    </label>
-    <label>
-     <input type="radio"
-       name="grupo" value="IC23">
-     IC-23
-    </label>
-   </div>
-   <input slot="target" required>
    <span>Grupo</span>
-  </text-field>
-  <text-field>
    <select slot="target">
     <option value=""></option>
     <option value="IC21">
@@ -823,12 +449,11 @@
      IC-23
     </option>
    </select>
-   <span>Grupo</span>
   </text-field>
   <text-field>
+   <span>Dirección</span>
    <textarea rows="3"
      slot="target"></textarea>
-   <span>Dirección</span>
   </text-field>
  </section>
 </body>
