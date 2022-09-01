@@ -14,17 +14,24 @@
  <link rel="stylesheet"
    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
  <link rel="stylesheet"
-   href="https://fonts.googleapis.com/css2?family=Material+Icons">
+   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
  <style>
   html {
    --Font: -apple-system,
     BlinkMacSystemFont, Roboto,
     sans-serif;
+   --TitleMediumFont: var(--Font);
+   --TitleMediumSize: 16px;
+   --TitleMediumWeight: 500;
+   --BodySmallFont: var(--Font);
+   --BodySmallSize: 12px;
+   --BodySmallWeight: 400;
    --Background: #FFFBFE;
    --OnBackground: #1C1B1F;
    --Surface: #FFFBFE;
    --OnSurface: #1C1B1F;
    --OnSurfaceHover: #1C1B1F14;
+   --OnSurfaceFocus: #1C1B1F19;
    --OnSurfacePressed: #1C1B1F1E;
    font-size: 16px;
    font-family: var(--Font);
@@ -38,147 +45,242 @@
   }
  </style>
  <style>
-  .lista {
-   margin: 0.5rem 0;
+  .list {
+   margin: 8px 0;
+   padding: 0;
+   list-style-type: none;
    color: var(--OnSurface);
   }
 
-  .lista>* {
+  .list>* {
    display: block;
-   text-decoration: none;
    background-color:
     var(--Surface);
   }
 
-  .lista>*:hover {
+  .list>*:hover {
    background-color:
     var(--OnSurfaceHover);
   }
 
-  .lista a:active {
-   color: var(--OnSurface);
+  .list a:focus {
+   background-color:
+    var(--OnSurfaceFocus);
+   outline: none;
+  }
+
+  .list a:active {
    background-color:
     var(--OnSurfacePressed);
   }
 
-  .lista>.simple {
-   padding: 1rem;
-  }
-
-  .lista>.avatar {
-   padding: 0.5rem 1rem;
-  }
-
-  .lista>.imagen {
-   padding: 0.5rem 1rem 0.5rem 0;
-  }
-
-  .lista .textos {
-   display: block;
-   overflow: hidden;
-  }
-
-  .lista .tresElem {
-   display: flex;
-   align-items: center;
-  }
-
-  .lista .primario {
-   display: inline-block;
-   vertical-align: middle;
-   font-size: 1rem;
-   font-weight: bold;
-   overflow: hidden;
+  .list .one-line {
+   padding: 16px;
+   font-family:
+    var(--TitleMediumFont);
+   font-size:
+    var(--TitleMediumSize);
+   font-weight:
+    var(--TitleMediumWeight);
+   line-height: 16px;
    white-space: nowrap;
    text-overflow: ellipsis;
-  }
-
-  .lista a .primario {
-   text-decoration: underline;
-  }
-
-  .lista .material-icons {
-   vertical-align: middle;
-   margin-right: 2rem;
-  }
-
-  .lista img {
-   vertical-align: middle;
-  }
-
-  .lista>.simple img {
-   width: 2.5rem;
-   height: 2.5rem;
-   margin-right: 1rem;
-  }
-
-  .lista>.avatar img {
-   width: 2.5rem;
-   height: 2.5rem;
-   border-radius: 1.25rem;
-   margin-right: 1rem;
-  }
-
-  .lista>.imagen img {
-   width: 6.25rem;
-   margin-right: 1rem;
-  }
-
-  .lista .unRenglon {
-   display: block;
-   height: 1rem;
-   font-size: 0.75rem;
    overflow: hidden;
+  }
+
+  .list .one-line.avatar,
+  .list .one-line.square {
+   padding: 8px 16px;
+  }
+
+  .list .one-line.rectangle {
+   padding: 8px 16px 8px 0;
+  }
+
+  .list img,
+  .list span {
+   vertical-align: middle;
+  }
+
+  .list .icon .material-symbols-outlined:first-child {
+   margin-right: 32px;
+  }
+
+  .list .icon img {
+   width: 24px;
+   height: 24px;
+   margin-right: 32px;
+  }
+
+  .list .avatar .material-symbols-outlined:first-child {
+   font-size: 40px;
+   border-radius: 50%;
+   margin-right: 16px;
+  }
+
+  .list .avatar img {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   margin-right: 16px;
+  }
+
+  .list .square .material-symbols-outlined:first-child {
+   font-size: 56px;
+   margin-right: 16px;
+  }
+
+  .list .square img {
+   width: 56px;
+   height: 56px;
+   margin-right: 16px;
+  }
+
+  .list .rectangle img {
+   width: 100px;
+   height: 56px;
+   margin-right: 16px;
+  }
+
+  .list .two-line {
+   display: block;
+   padding: 16px;
+   font-family:
+    var(--TitleMediumFont);
+   font-size:
+    var(--TitleMediumSize);
+   font-weight:
+    var(--TitleMediumWeight);
+  }
+
+  .list .two-line .title {
+   grid-area: title;
+   font-family:
+    var(--TitleMediumFont);
+   font-size:
+    var(--TitleMediumSize);
+   font-weight:
+    var(--TitleMediumWeight);
+   line-height: 16px;
    white-space: nowrap;
    text-overflow: ellipsis;
+   overflow: hidden;
+  }
+
+  .list .two-line .secondary {
+   grid-area: secondary;
+   display: block;
+   font-family:
+    var(--BodySmallFont);
+   font-size:
+    var(--BodySmallSize);
+   font-weight:
+    var(--BodySmallWeight);
+   line-height: 20px;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+  }
+
+  .list .two-line img .list .two-line .material-symbols-outlined:first-child {
+   grid-area: img;
+  }
+
+  .list .two-line.icon,
+  .list .two-line.avatar,
+  .list .two-line.square,
+  .list .two-line.rectangle {
+   box-sizing: border-box;
+   display: grid;
+   grid-template-columns: 56px 1fr;
+   grid-template-rows: 16px 1fr;
+   grid-template-areas:
+    "img title"
+    "img secondary";
+  }
+
+  .list .two-line.rectangle {
+   padding: 8px 16px;
+   grid-template-columns: 116px 1fr;
+   grid-template-rows: 24px 1fr;
+  }
+
+  .list .two-line.rectangle .title {
+   padding-top: 8px;
+  }
+
+  .list .two-line.rectangle .secondary {
+   padding-bottom: 12px;
+  }
+
+  .list .two-line.square .material-symbols-outlined:first-child {
+   font-size: 40px;
+  }
+
+  .list .two-line.square img {
+   width: 40px;
+   height: 40px;
   }
  </style>
 </head>
 
 <body>
- <div class="lista">
-  <div class="simple">
-   <div class="primario">
-    Ciudad de México
-   </div>
-  </div>
-  <div class="simple">
-   <span class="material-icons">
+ <ul class="list">
+  <li class="one-line">
+   Ciudad de México
+  </li>
+  <li class="one-line">
+   Lorem ipsum dolor sit amet
+   consectetur adipisicing elit.
+   Laboriosam eaque unde
+   voluptates tempore ad suscipit
+   libero, saepe neque illo amet,
+   eos ea similique quia, maiores
+   tenetur modi nobis expedita
+   alias!
+  </li>
+  <li class="one-line icon">
+   <span class="material-symbols-outlined">
     account_balance
    </span>
-   <div class="primario">
-    Atenas
-   </div>
-  </div>
-  <div class="simple">
-   <img
-     alt="Coyote de Neza"
-     src="https://th.bing.com/th/id/OIP.bZA2kAXC_CgPvhJS5RGwGwHaFj?w=200&h=180&c=7&r=0&o=5&pid=1.7">
-   <div class="primario">
-    Neza
-   </div>
-  </div>
-  <div class="avatar">
-   <img
-     alt="Avatar de Ana"
+   Atenas
+  </li>
+  <li class="one-line avatar">
+   <img alt="Avatar de Ana"
      src="https://images.pexels.com/photos/6501925/pexels-photo-6501925.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-   <div class="primario">
-    Ana
-   </div>
-  </div>
-  <div class="imagen">
+   Ana
+  </li>
+  <li class="one-line square">
+   <img alt="Coyote de Neza"
+     src="https://th.bing.com/th/id/OIP.bZA2kAXC_CgPvhJS5RGwGwHaFj?w=200&h=180&c=7&r=0&o=5&pid=1.7">
+   Neza
+  </li>
+  <li
+    class="one-line rectangle">
    <img
      alt="Ciudad de San Francisco"
      src="https://images.pexels.com/photos/3701822/pexels-photo-3701822.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-   <div class="primario">
-    San Francisco
-   </div>
-  </div>
-  <div class="simple">
-   <div class="primario">
+   San Francisco
+  </li>
+  <li
+    class="one-line rectangle">
+   <img
+     alt="Ciudad de San Francisco"
+     src="https://images.pexels.com/photos/3701822/pexels-photo-3701822.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+   Lorem ipsum dolor sit amet
+   consectetur adipisicing elit.
+   Laboriosam eaque unde
+   voluptates tempore ad suscipit
+   libero, saepe neque illo amet,
+   eos ea similique quia, maiores
+   tenetur modi nobis expedita
+   alias!
+  </li>
+  <li class="two-line">
+   <span class="title">
     Ciudad de México 2
-   </div>
-   <div class="unRenglon">
+   </span>
+   <span class="secondary">
     Lorem ipsum dolor sit amet
     consectetur adipisicing elit.
     Laboriosam eaque unde
@@ -187,98 +289,90 @@
     eos ea similique quia, maiores
     tenetur modi nobis expedita
     alias!
-   </div>
-  </div>
-  <div class="simple tresElem">
-   <span class="material-icons">
+   </span>
+  </li>
+  <li class="two-line icon">
+   <span class="material-symbols-outlined">
     account_balance
    </span>
-   <div class="textos">
-    <div class="primario">
-     Atenas2
-    </div>
-    <div class="unRenglon">
-     Lorem ipsum dolor sit amet
-     consectetur adipisicing elit.
-     Laboriosam eaque unde
-     voluptates tempore ad suscipit
-     libero, saepe neque illo amet,
-     eos ea similique quia, maiores
-     tenetur modi nobis expedita
-     alias!
-    </div>
-   </div>
-  </div>
-  <div class="simple tresElem">
-   <img
-     alt="Coyote de Neza"
-     src="https://th.bing.com/th/id/OIP.bZA2kAXC_CgPvhJS5RGwGwHaFj?w=200&h=180&c=7&r=0&o=5&pid=1.7">
-   <div class="textos">
-    <div class="primario">
-     Neza2
-    </div>
-    <div class="unRenglon">
-     Lorem ipsum dolor sit amet
-     consectetur adipisicing elit.
-     Laboriosam eaque unde
-     voluptates tempore ad suscipit
-     libero, saepe neque illo amet,
-     eos ea similique quia, maiores
-     tenetur modi nobis expedita
-     alias!
-    </div>
-   </div>
-  </div>
-  <div class="avatar tresElem">
+   <span class="title">
+    Atenas2
+   </span>
+   <span class="secondary">
+    Lorem ipsum dolor sit amet
+    consectetur adipisicing elit.
+    Laboriosam eaque unde
+    voluptates tempore ad suscipit
+    libero, saepe neque illo amet,
+    eos ea similique quia, maiores
+    tenetur modi nobis expedita
+    alias!
+   </span>
+  </li>
+  <li class="two-line avatar">
    <img
      alt="Avatar de Ana"
      src="https://images.pexels.com/photos/6501925/pexels-photo-6501925.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-   <div class="textos">
-    <div class="primario">
-     Ana 2
-    </div>
-    <div class="unRenglon">
-     Lorem ipsum dolor sit amet
-     consectetur adipisicing elit.
-     Laboriosam eaque unde
-     voluptates tempore ad suscipit
-     libero, saepe neque illo amet,
-     eos ea similique quia, maiores
-     tenetur modi nobis expedita
-     alias!
-    </div>
-   </div>
-  </div>
-  <div class="imagen tresElem">
-   <img
-     alt="Ciudad de San Francisco"
-     src="https://images.pexels.com/photos/3701822/pexels-photo-3701822.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-   <div class="textos">
-    <div class="primario">
-     San Francisco 2
-    </div>
-    <div class="unRenglon">
-     Lorem ipsum dolor sit amet
-     consectetur adipisicing elit.
-     Laboriosam eaque unde
-     voluptates tempore ad suscipit
-     libero, saepe neque illo amet,
-     eos ea similique quia, maiores
-     tenetur modi nobis expedita
-     alias!
-    </div>
-   </div>
-  </div>
-  <a class="simple tresElem"
-    href="https://fenixkike.blogspot.com/2010/06/el-gran-coyote-del-escultor-av.html">
+   <span class="title">
+    Ana 2
+   </span>
+   <span class="secondary">
+    Lorem ipsum dolor sit amet
+    consectetur adipisicing elit.
+    Laboriosam eaque unde
+    voluptates tempore ad suscipit
+    libero, saepe neque illo amet,
+    eos ea similique quia, maiores
+    tenetur modi nobis expedita
+    alias!
+   </span>
+  </li>
+  <li class="two-line square">
    <img
      alt="Coyote de Neza"
      src="https://th.bing.com/th/id/OIP.bZA2kAXC_CgPvhJS5RGwGwHaFj?w=200&h=180&c=7&r=0&o=5&pid=1.7">
-   <span class="textos">
-    <span class="primario">
+   <span class="title">
+    Neza2
+   </span>
+   <span class="secondary">
+    Lorem ipsum dolor sit amet
+    consectetur adipisicing elit.
+    Laboriosam eaque unde
+    voluptates tempore ad suscipit
+    libero, saepe neque illo amet,
+    eos ea similique quia, maiores
+    tenetur modi nobis expedita
+    alias!
+   </span>
+  </li>
+  <li class="two-line rectangle">
+   <img
+     alt="Ciudad de San Francisco"
+     src="https://images.pexels.com/photos/3701822/pexels-photo-3701822.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+   <span class="title">
+    San Francisco 2
+   </span>
+   <span class="secondary">
+    Lorem ipsum dolor sit amet
+    consectetur adipisicing elit.
+    Laboriosam eaque unde
+    voluptates tempore ad suscipit
+    libero, saepe neque illo amet,
+    eos ea similique quia, maiores
+    tenetur modi nobis expedita
+    alias!
+   </span>
+  </li>
+  <li>
+   <a class="two-line square"
+     href="https://fenixkike.blogspot.com/2010/06/el-gran-coyote-del-escultor-av.html">
+    <img
+      alt="Coyote de Neza"
+      src="https://th.bing.com/th/id/OIP.bZA2kAXC_CgPvhJS5RGwGwHaFj?w=200&h=180&c=7&r=0&o=5&pid=1.7">
+    <span class="title">
      Neza 3
     </span>
-    <span class="unRenglon">
+    <span class="secondary">
      Lorem ipsum dolor sit amet
      consectetur adipisicing elit.
      Laboriosam eaque unde
@@ -288,9 +382,9 @@
      tenetur modi nobis expedita
      alias!
     </span>
-   </span>
-  </a>
- </div>
+   </a>
+  </li>
+ </ul>
  <footer>
   <p>
    <small>

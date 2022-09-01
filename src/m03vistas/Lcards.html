@@ -35,7 +35,6 @@
    --OnSurfacePressed: #1C1B1F1E;
    --OnSurfaceVariant: #49454F;
    --Shadow: #000000;
-   --altura: 18rem;
    --ElevationLevel0Shadow:
     0 1px 2px 0px var(--Shadow);
    --ElevationLevel1Shadow:
@@ -56,7 +55,6 @@
    margin: 8px;
    gap: 8px;
    display: grid;
-   grid-auto-rows: var(--altura);
    grid-template-columns:
     repeat(auto-fill,
      minmax(15rem, 1fr));
@@ -126,9 +124,7 @@
    margin-left: auto;
    margin-right: auto;
    border-radius: 12px;
-   max-width: 100%;
-   max-height:
-    calc(var(--altura) - 5rem);
+   width: 100%;
   }
 
   .cards .headline {
