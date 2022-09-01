@@ -108,7 +108,8 @@
   class OptionField
    extends HTMLElement {
 
-   static get observedAttributes() {
+   static
+    get observedAttributes() {
     return [VALUE_PROPERTY]
    }
 
@@ -164,7 +165,8 @@
   class SelectField
    extends HTMLElement {
 
-   static get observedAttributes() {
+   static
+    get observedAttributes() {
     return [VALUE_PROPERTY]
    }
 
@@ -205,9 +207,11 @@
 
       span {
        border-top-left-radius:
-        var(--ShapeCornerExtraSmall);
+        var(
+         --ShapeCornerExtraSmall);
        border-top-right-radius:
-        var(--ShapeCornerExtraSmall);
+        var(
+         --ShapeCornerExtraSmall);
         position: relative;
        display: block;
        cursor: pointer;
@@ -244,8 +248,6 @@
        border-bottom-style: solid;
        border-bottom-color:
        var(--OnSurfaceVariant);
-       caret-color:
-        var(--Primary);
        color: var(--OnSurface);
        font-family:
         var(--BodyLargeFont);
@@ -362,7 +364,8 @@
        left: 0;
        top: 57px;
        pointer-events: none;
-       transform: translateY(-50%) scaleY(0);
+       transform:
+        translateY(-50%) scaleY(0);
        transition: transform 0.5s;
        box-sizing: border-box;
        padding: 4px 0;
@@ -379,7 +382,8 @@
 
       :host(.open) #${MENU_ID} {
        pointer-events: all;
-       transform: translateY(0) scaleY(1);
+       transform:
+        translateY(0) scaleY(1);
       }
 
       #${MENU_SLOT_ID}::slotted(*) {

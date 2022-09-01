@@ -4477,37 +4477,173 @@
    <div>&nbsp; &nbsp;<span style="color: #a31515;">'name="supporting"'</span>
    </div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">MENU_NAME</span> = <span
-      style="color: #a31515;">'name="menu"'</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">MENU_ID</span> = <span
       style="color: #a31515;">"menu"</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">MENU_SLOT_ID</span> = <span
       style="color: #a31515;">"menuSlot"</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">NAME_PROPERTY</span> = <span
+      style="color: #a31515;">"name"</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">VALUE_PROPERTY</span> = <span
       style="color: #a31515;">"value"</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">REQUIRED_PROPERTY</span> =</div>
-   <div>&nbsp; &nbsp;<span style="color: #a31515;">"required"</span></div><br>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">"required"</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">SELECT_FIELD_TAG</span> =</div>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">"select-field"</span></div>
+   <br>
+   <div>&nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;* @param {HTMLElement} element</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;* @param {string} element</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;* @returns {string}</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">getAttribute</span>(<span
+      style="color: #001080;">element</span>,</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">name</span>) {</div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">value</span> =</div>
+   <div>&nbsp; &nbsp; <span style="color: #001080;">element</span>.<span
+      style="color: #795e26;">getAttribute</span>(<span
+      style="color: #001080;">name</span>)</div>
+   <div>&nbsp; &nbsp;<span style="color: #af00db;">return</span> <span
+      style="color: #0070c1;">value</span> === <span
+      style="color: #0000ff;">null</span> ?</div>
+   <div>&nbsp; &nbsp; <span style="color: #a31515;">""</span></div>
+   <div>&nbsp; &nbsp; : <span style="color: #0070c1;">value</span></div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;* @param {HTMLElement} element</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;* @param {string} name</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp; &nbsp;* @param {boolean} value</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">setBooleanAttribute</span>(</div>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">element</span>, <span
+      style="color: #001080;">name</span>, <span
+      style="color: #001080;">value</span>) {</div>
+   <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">value</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">setAttribute</span>(<span
+      style="color: #001080;">name</span>, <span
+      style="color: #001080;">name</span>)</div>
+   <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">removeAttribute</span>(<span
+      style="color: #001080;">name</span>)</div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #0000ff;">class</span> <span
       style="color: #267f99;">OptionField</span></div>
    <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
       style="color: #267f99;">HTMLElement</span> {</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #001080;">static</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">get</span> <span
+      style="color: #001080;">observedAttributes</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> [<span
+      style="color: #0070c1;">VALUE_PROPERTY</span>]</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">constructor</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">super</span>()</div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@type</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{HTMLInputElement|</span></div>
+   <div><span
+      style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_radio</span> = <span
+      style="color: #0000ff;">null</span></div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{string}</span><span
+      style="color: #008000;"> </span><span style="color: #001080;">name</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{string}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">_oldValue</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{string}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">newValue</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #795e26;">attributeChangedCallback</span>(<span
+      style="color: #001080;">name</span>,</div>
+   <div>&nbsp; &nbsp; <span style="color: #001080;">_oldValue</span>, <span
+      style="color: #001080;">newValue</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">name</span> === <span
+      style="color: #0070c1;">VALUE_PROPERTY</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">radio</span>.<span
+      style="color: #001080;">value</span> = <span
+      style="color: #001080;">newValue</span></div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">get</span> <span
+      style="color: #001080;">radio</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_radio</span> === <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_radio</span> = <span
+      style="color: #0000ff;">this</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">appendChild</span>(<span
+      style="color: #001080;">document</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">createElement</span>(<span
+      style="color: #a31515;">"input"</span>))</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_radio</span>.<span
+      style="color: #001080;">type</span> = <span
+      style="color: #a31515;">"radio"</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">radio</span>.<span
+      style="color: #001080;">style</span>.<span
+      style="color: #001080;">transform</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #a31515;">"scaleY(0)"</span>
+   </div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_radio</span></div>
+   <div>&nbsp; &nbsp;}</div><br>
    <div>&nbsp; &nbsp;<span style="color: #0000ff;">get</span> <span
       style="color: #001080;">value</span>() {</div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">value</span> = <span
-      style="color: #0000ff;">this</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #795e26;">getAttribute</span>(<span
-      style="color: #0070c1;">VALUE_PROPERTY</span>)</div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
-      style="color: #0070c1;">value</span> === <span
-      style="color: #0000ff;">null</span> ?</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">""</span></div>
-   <div>&nbsp; &nbsp; &nbsp;: <span style="color: #0070c1;">value</span></div>
+      style="color: #795e26;">getAttribute</span>(<span
+      style="color: #0000ff;">this</span>,</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">VALUE_PROPERTY</span>)
+   </div>
    <div>&nbsp; &nbsp;}</div><br>
    <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
       style="color: #0000ff;">@param</span><span
@@ -4534,8 +4670,8 @@
       style="color: #267f99;">SelectField</span></div>
    <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
       style="color: #267f99;">HTMLElement</span> {</div><br>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">static</span> <span
-      style="color: #0000ff;">get</span> <span
+   <div>&nbsp; &nbsp;<span style="color: #001080;">static</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">get</span> <span
       style="color: #001080;">observedAttributes</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> [<span
       style="color: #0070c1;">VALUE_PROPERTY</span>]</div>
@@ -4622,13 +4758,15 @@
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">span</span> {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">border-top-left-radius</span>:</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">var</span>(<span
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #795e26;">var</span>(
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #001080;">--ShapeCornerExtraSmall</span>);</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">border-top-right-radius</span>:</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">var</span>(<span
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #795e26;">var</span>(
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #001080;">--ShapeCornerExtraSmall</span>);</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
       style="color: #ff0000;">position</span>: <span
@@ -4734,11 +4872,6 @@
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--OnSurfaceVariant</span>);</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">caret-color</span>:</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--Primary</span>);</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">color</span>: <span
       style="color: #795e26;">var</span>(<span
@@ -5071,7 +5204,8 @@
       style="color: #ff0000;">pointer-events</span>: <span
       style="color: #0451a5;">none</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">transform</span>: <span
+      style="color: #ff0000;">transform</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
       style="color: #795e26;">translateY</span>(<span
       style="color: #098658;">-50%</span>) <span
       style="color: #795e26;">scaleY</span>(<span
@@ -5121,7 +5255,8 @@
       style="color: #ff0000;">pointer-events</span>: <span
       style="color: #0451a5;">all</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">transform</span>: <span
+      style="color: #ff0000;">transform</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
       style="color: #795e26;">translateY</span>(<span
       style="color: #098658;">0</span>) <span
       style="color: #795e26;">scaleY</span>(<span
@@ -5389,33 +5524,11 @@
       style="color: #795e26;">addEventListener</span>(</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"keydown"</span>,
    </div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp; * </span><span
-      style="color: #0000ff;">@param</span><span
-      style="color: #008000;"> </span><span
-      style="color: #267f99;">{KeyboardEvent</span></div>
-   <div><span
-      style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span
-      style="color: #008000;"> </span><span
-      style="color: #001080;">evt</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp; */</span></div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">evt</span> <span
-      style="color: #0000ff;">=&gt;</span> {</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">key</span> = <span
-      style="color: #001080;">evt</span>.<span
-      style="color: #001080;">key</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-      style="color: #0070c1;">key</span> !== <span
-      style="color: #a31515;">"Tab"</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #001080;">evt</span>.<span
-      style="color: #795e26;">preventDefault</span>()</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">=&gt;</span> <span
       style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">_alterna</span>()</div>
-   <div>&nbsp; &nbsp; &nbsp; }</div>
-   <div>&nbsp; &nbsp; &nbsp;})</div>
+      style="color: #795e26;">_onKeyDown</span>(<span
+      style="color: #001080;">evt</span>))</div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
       style="color: #0000ff;">this</span>.<span
       style="color: #001080;">_target</span> !== <span
@@ -5478,19 +5591,19 @@
       style="color: #008000;"> </span><span
       style="color: #267f99;">{string}</span><span
       style="color: #008000;"> </span><span
-      style="color: #001080;">oldValue</span></div>
+      style="color: #001080;">_oldValue</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
       style="color: #0000ff;">@param</span><span
       style="color: #008000;"> </span><span
       style="color: #267f99;">{string}</span><span
       style="color: #008000;"> </span><span
-      style="color: #001080;">newValue</span></div>
+      style="color: #001080;">_newValue</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
    <div>&nbsp; &nbsp;<span
       style="color: #795e26;">attributeChangedCallback</span>(<span
       style="color: #001080;">name</span>,</div>
-   <div>&nbsp; &nbsp; <span style="color: #001080;">oldValue</span>, <span
-      style="color: #001080;">newValue</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #001080;">_oldValue</span>, <span
+      style="color: #001080;">_newValue</span>) {</div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
       style="color: #001080;">name</span></div>
    <div>&nbsp; &nbsp; &nbsp;=== <span
@@ -5501,10 +5614,133 @@
       style="color: #af00db;">if</span> (<span
       style="color: #001080;">name</span></div>
    <div>&nbsp; &nbsp; &nbsp;=== <span
-      style="color: #0070c1;">VALUE_PROPERTY</span>) {</div>
+      style="color: #0070c1;">VALUE_PROPERTY</span></div>
+   <div>&nbsp; &nbsp; &nbsp;|| <span
+      style="color: #001080;">name</span> === <span
+      style="color: #0070c1;">NAME_PROPERTY</span>) {
+   </div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
       style="color: #795e26;">_cambiaValue</span>()</div>
    <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">get</span> <span
+      style="color: #001080;">name</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #795e26;">getAttribute</span>(<span
+      style="color: #0000ff;">this</span>,</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">NAME_PROPERTY</span>)
+   </div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">set</span> <span
+      style="color: #001080;">name</span>(<span
+      style="color: #001080;">name</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">setAttribute</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #0070c1;">VALUE_PROPERTY</span>, <span
+      style="color: #001080;">name</span>)
+   </div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">get</span> <span
+      style="color: #001080;">type</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #0070c1;">SELECT_FIELD_TAG</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">toUpperCase</span>()
+   </div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">get</span> <span
+      style="color: #001080;">required</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">hasAttribute</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #0070c1;">REQUIRED_PROPERTY</span>)</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">set</span> <span
+      style="color: #001080;">required</span>(<span
+      style="color: #001080;">required</span>) {</div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #795e26;">setBooleanAttribute</span>(<span
+      style="color: #0000ff;">this</span>,</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #0070c1;">REQUIRED_PROPERTY</span>, <span
+      style="color: #001080;">required</span>)</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">get</span> <span
+      style="color: #001080;">value</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #795e26;">getAttribute</span>(<span
+      style="color: #0000ff;">this</span>,</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">VALUE_PROPERTY</span>)
+   </div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">set</span> <span
+      style="color: #001080;">value</span>(<span
+      style="color: #001080;">value</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">setAttribute</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #0070c1;">VALUE_PROPERTY</span>, <span
+      style="color: #001080;">value</span>)
+   </div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">analiza</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">t</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_target</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">t</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">value</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">value</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">value</span> === <span
+      style="color: #a31515;">""</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">remove</span>(<span
+      style="color: #0070c1;">POPULATED_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">add</span>(<span
+      style="color: #0070c1;">POPULATED_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">checkValidity</span>()) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">remove</span>(<span
+      style="color: #0070c1;">INVALID_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">add</span>(<span
+      style="color: #0070c1;">INVALID_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@returns</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{boolean}</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">checkValidity</span>() {
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> !<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">required</span> ||</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">value</span> !== <span
+      style="color: #a31515;">""</span></div>
    <div>&nbsp; &nbsp;}</div><br>
    <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
       style="color: #0000ff;">@private</span><span
@@ -5565,59 +5801,129 @@
       style="color: #008000;"> */</span></div>
    <div>&nbsp; &nbsp;<span style="color: #795e26;">_cambiaValue</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">m</span> = <span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_menuSlot</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-      style="color: #0070c1;">m</span> !== <span
-      style="color: #0000ff;">null</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">value</span> = <span
       style="color: #0000ff;">this</span>.<span
       style="color: #001080;">value</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">for</span> (<span
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">name</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">name</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">for</span> (<span
       style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">o</span> <span
-      style="color: #0000ff;">of</span> <span style="color: #0070c1;">m</span>
-   </div>
-   <div>&nbsp; &nbsp; &nbsp; .<span
-      style="color: #795e26;">assignedElements</span>()) {</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-      style="color: #0070c1;">o</span> <span
-      style="color: #0000ff;">instanceof</span> <span
-      style="color: #267f99;">OptionField</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;&amp;&amp; <span
+      style="color: #0070c1;">o</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">of</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_opciones</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">name</span> !== <span
+      style="color: #a31515;">""</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">o</span>.<span
+      style="color: #001080;">radio</span>.<span
+      style="color: #001080;">name</span> = <span
+      style="color: #0070c1;">name</span></div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
       style="color: #0070c1;">o</span>.<span
       style="color: #001080;">value</span> === <span
       style="color: #0070c1;">value</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">text</span> =
-   </div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">o</span>.<span
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">o</span>.<span
+      style="color: #001080;">radio</span>.<span
+      style="color: #001080;">checked</span> = <span
+      style="color: #0000ff;">true</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">text</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">o</span>.<span
       style="color: #001080;">textContent</span>.<span
       style="color: #795e26;">trim</span>()</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">_setText</span>(<span
-      style="color: #0070c1;">text</span>)</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">o</span>.<span
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_text</span> = <span
+      style="color: #0070c1;">text</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">o</span>.<span
       style="color: #001080;">classList</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #795e26;">add</span>(<span
       style="color: #0070c1;">SELECTED_CLASS</span>)</div>
-   <div>&nbsp; &nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">o</span>.<span
+   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">o</span>.<span
+      style="color: #001080;">radio</span>.<span
+      style="color: #001080;">checked</span> = <span
+      style="color: #0000ff;">false</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">o</span>.<span
       style="color: #001080;">classList</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #795e26;">remove</span>(<span
       style="color: #0070c1;">SELECTED_CLASS</span>)</div>
-   <div>&nbsp; &nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp; &nbsp;}</div>
    <div>&nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
       style="color: #795e26;">analiza</span>()</div>
-   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{KeyboardEvent</span></div>
+   <div><span
+      style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">evt</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_onKeyDown</span>(<span
+      style="color: #001080;">evt</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">key</span> = <span
+      style="color: #001080;">evt</span>.<span
+      style="color: #001080;">key</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span></div>
+   <div>&nbsp; &nbsp; &nbsp;.<span style="color: #795e26;">contains</span>(<span
+      style="color: #0070c1;">OPEN_CLASS</span>)) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">key</span> === <span
+      style="color: #a31515;">"Tab"</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">evt</span>.<span
+      style="color: #795e26;">preventDefault</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_alterna</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> <span
+      style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">key</span></div>
+   <div>&nbsp; &nbsp; &nbsp; === <span
+      style="color: #a31515;">"ArrowDown"</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">evt</span>.<span
+      style="color: #795e26;">preventDefault</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_avanzaOpcion</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> <span
+      style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">key</span></div>
+   <div>&nbsp; &nbsp; &nbsp; === <span
+      style="color: #a31515;">"ArrowUp"</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">evt</span>.<span
+      style="color: #795e26;">preventDefault</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_retrocedeOpcion</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> <span
+      style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">key</span></div>
+   <div>&nbsp; &nbsp; &nbsp; === <span
+      style="color: #a31515;">"Escape"</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">evt</span>.<span
+      style="color: #795e26;">preventDefault</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_cierra</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> <span
+      style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">key</span> !== <span
+      style="color: #a31515;">"Tab"</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">evt</span>.<span
+      style="color: #795e26;">preventDefault</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_alterna</span>()</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
       style="color: #0000ff;">@private</span></div>
@@ -5634,71 +5940,30 @@
       style="color: #0070c1;">sel</span> = <span
       style="color: #001080;">evt</span>.<span
       style="color: #001080;">target</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">m</span> = <span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_menuSlot</span></div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">let</span> <span
       style="color: #001080;">value</span> = <span
       style="color: #0000ff;">this</span>.<span
       style="color: #001080;">value</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-      style="color: #0070c1;">m</span> !== <span
-      style="color: #0000ff;">null</span> &amp;&amp; <span
-      style="color: #0070c1;">sel</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #0000ff;">instanceof</span> <span
-      style="color: #267f99;">HTMLElement</span>) {
-   </div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">for</span> (<span
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">for</span> (<span
       style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">o</span> <span
-      style="color: #0000ff;">of</span> <span style="color: #0070c1;">m</span>
-   </div>
-   <div>&nbsp; &nbsp; &nbsp; .<span
-      style="color: #795e26;">assignedElements</span>()) {</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-      style="color: #0070c1;">o</span> <span
-      style="color: #0000ff;">instanceof</span> <span
-      style="color: #267f99;">OptionField</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;&amp;&amp; <span
+      style="color: #0070c1;">o</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">of</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_opciones</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
       style="color: #0070c1;">o</span> === <span
       style="color: #0070c1;">sel</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">o</span>.<span
-      style="color: #001080;">classList</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">add</span>(<span
-      style="color: #0070c1;">SELECTED_CLASS</span>)</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">text</span> =
-   </div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">o</span>.<span
-      style="color: #001080;">textContent</span>.<span
-      style="color: #795e26;">trim</span>()</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">_setText</span>(<span
-      style="color: #0070c1;">text</span>)</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #001080;">value</span> = <span
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">value</span> = <span
       style="color: #0070c1;">o</span>.<span
-      style="color: #001080;">value</span>
-   </div>
-   <div>&nbsp; &nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">o</span>.<span
-      style="color: #001080;">classList</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
-      style="color: #795e26;">remove</span>(<span
-      style="color: #0070c1;">SELECTED_CLASS</span>)</div>
-   <div>&nbsp; &nbsp; &nbsp; }</div>
+      style="color: #001080;">value</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">break</span></div>
    <div>&nbsp; &nbsp; &nbsp;}</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
       style="color: #795e26;">_cierra</span>()</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
       style="color: #001080;">value</span> = <span
       style="color: #001080;">value</span></div>
-   <div>&nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
       style="color: #795e26;">analiza</span>()</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
@@ -5707,99 +5972,45 @@
       style="color: #267f99;">Event</span>(<span
       style="color: #a31515;">"input"</span>))</div>
    <div>&nbsp; &nbsp;}</div><br>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">analiza</span>() {</div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">t</span> = <span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">_target</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-      style="color: #0070c1;">t</span> !== <span
-      style="color: #0000ff;">null</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">let</span> <span
-      style="color: #001080;">value</span> = <span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">value</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-      style="color: #001080;">value</span> === <span
-      style="color: #a31515;">""</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">classList</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #795e26;">remove</span>(<span
-      style="color: #0070c1;">POPULATED_CLASS</span>)</div>
-   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">classList</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #795e26;">add</span>(<span
-      style="color: #0070c1;">POPULATED_CLASS</span>)</div>
-   <div>&nbsp; &nbsp; &nbsp;}</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">checkValidity</span>()) {</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">classList</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #795e26;">remove</span>(<span
-      style="color: #0070c1;">INVALID_CLASS</span>)</div>
-   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">classList</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #795e26;">add</span>(<span
-      style="color: #0070c1;">INVALID_CLASS</span>)</div>
-   <div>&nbsp; &nbsp; &nbsp;}</div>
-   <div>&nbsp; &nbsp; }</div>
-   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@returns</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{OptionField[]}</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
    <div>&nbsp; &nbsp;<span style="color: #0000ff;">get</span> <span
-      style="color: #001080;">required</span>() {</div>
-   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">hasAttribute</span>(</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #0070c1;">REQUIRED_PROPERTY</span>)</div>
-   <div>&nbsp; &nbsp;}</div><br>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">set</span> <span
-      style="color: #001080;">required</span>(<span
-      style="color: #001080;">required</span>) {</div>
-   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
-      style="color: #001080;">required</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">setAttribute</span>(</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #0070c1;">REQUIRED_PROPERTY</span>,</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #0070c1;">REQUIRED_PROPERTY</span>)</div>
-   <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">removeAttribute</span>(</div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #0070c1;">REQUIRED_PROPERTY</span>)</div>
-   <div>&nbsp; &nbsp; }</div>
-   <div>&nbsp; &nbsp;}</div><br>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">get</span> <span
-      style="color: #001080;">value</span>() {</div>
+      style="color: #001080;">_opciones</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">value</span> = <span
-      style="color: #0000ff;">this</span>.</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #795e26;">getAttribute</span>(<span
-      style="color: #0070c1;">VALUE_PROPERTY</span>)</div>
-   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
-      style="color: #0070c1;">value</span> === <span
-      style="color: #0000ff;">null</span> ?</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">""</span></div>
-   <div>&nbsp; &nbsp; &nbsp;: <span style="color: #0070c1;">value</span></div>
-   <div>&nbsp; &nbsp;}</div><br>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">set</span> <span
-      style="color: #001080;">value</span>(<span
-      style="color: #001080;">value</span>) {</div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">setAttribute</span>(</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #0070c1;">VALUE_PROPERTY</span>, <span
-      style="color: #001080;">value</span>)
+      style="color: #0070c1;">arr</span> = []</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">m</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menuSlot</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">elements</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">m</span>.<span
+      style="color: #795e26;">assignedElements</span>()</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">o</span> <span
+      style="color: #0000ff;">of</span> <span
+      style="color: #0070c1;">elements</span>) {
    </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">o</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #0000ff;">instanceof</span> <span
+      style="color: #267f99;">OptionField</span>) {
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">arr</span>.<span
+      style="color: #795e26;">push</span>(<span
+      style="color: #0070c1;">o</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #0070c1;">arr</span></div>
    <div>&nbsp; &nbsp;}</div><br>
    <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
@@ -5809,16 +6020,17 @@
       style="color: #008000;"> </span><span
       style="color: #267f99;">{string}</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">_getText</span>() {</div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">get</span> <span
+      style="color: #001080;">_text</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">t</span> = <span
       style="color: #0000ff;">this</span>.<span
       style="color: #001080;">_target</span></div>
    <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
       style="color: #0070c1;">t</span> === <span
-      style="color: #0000ff;">null</span> ? <span
-      style="color: #a31515;">""</span> : <span
-      style="color: #0070c1;">t</span>.<span
+      style="color: #0000ff;">null</span> ?</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">""</span></div>
+   <div>&nbsp; &nbsp; &nbsp;: <span style="color: #0070c1;">t</span>.<span
       style="color: #001080;">value</span></div>
    <div>&nbsp; &nbsp;}</div><br>
    <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
@@ -5831,7 +6043,8 @@
       style="color: #008000;"> </span><span style="color: #001080;">text</span>
    </div>
    <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">_setText</span>(<span
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">set</span> <span
+      style="color: #001080;">_text</span>(<span
       style="color: #001080;">text</span>) {</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">t</span> = <span
@@ -5846,24 +6059,91 @@
    <div>&nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp;}</div><br>
    <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@private</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_avanzaOpcion</span>() {
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">i</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_valueIndex</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">opciones</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_opciones</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">i</span> &lt; <span
+      style="color: #0070c1;">opciones</span>.<span
+      style="color: #001080;">length</span> - <span
+      style="color: #098658;">1</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">value</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">opciones</span>[<span
+      style="color: #0070c1;">i</span> + <span
+      style="color: #098658;">1</span>].<span
+      style="color: #001080;">value</span></div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@private</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_retrocedeOpcion</span>() {
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">i</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_valueIndex</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">opciones</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_opciones</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">i</span> &gt; <span
+      style="color: #098658;">0</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">value</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">opciones</span>[<span
+      style="color: #0070c1;">i</span> - <span
+      style="color: #098658;">1</span>].<span
+      style="color: #001080;">value</span></div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
       style="color: #0000ff;">@returns</span><span
       style="color: #008000;"> </span><span
-      style="color: #267f99;">{boolean}</span><span
-      style="color: #008000;"> */</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">checkValidity</span>() {
-   </div>
-   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> !<span
+      style="color: #267f99;">{number}</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">get</span> <span
+      style="color: #001080;">_valueIndex</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">value</span> = <span
       style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">required</span> ||</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">value</span> !== <span
-      style="color: #a31515;">""</span></div>
+      style="color: #001080;">value</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_opciones</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">findIndex</span>(
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">o</span> <span
+      style="color: #0000ff;">=&gt;</span> <span
+      style="color: #001080;">o</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">instanceof</span> <span
+      style="color: #267f99;">OptionField</span> &amp;&amp;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #001080;">o</span>.<span
+      style="color: #001080;">value</span> === <span
+      style="color: #0070c1;">value</span>)</div>
    <div>&nbsp; &nbsp;}</div>
    <div>&nbsp; }</div><br>
    <div>&nbsp; <span style="color: #001080;">customElements</span>.<span
       style="color: #795e26;">define</span>(</div>
-   <div>&nbsp; &nbsp;<span style="color: #a31515;">"select-field"</span>, <span
-      style="color: #267f99;">SelectField</span>)</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #0070c1;">SELECT_FIELD_TAG</span>, <span
+      style="color: #267f99;">SelectField</span>)
+   </div><br>
    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #af00db;">@keyframes</span> <span
@@ -5890,54 +6170,69 @@
    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
    <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Select<span
+   <div>&nbsp;<span style="color: #800000;">&lt;form&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>Select<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;section</span> <span
+   <div>&nbsp; <span style="color: #800000;">&lt;section</span> <span
       style="color: #ff0000;">style</span>=<span
       style="color: #0000ff;">"</span><span
       style="color: #0000ff;">max-width: 600px;</span></div>
    <div><span style="color: #0000ff;">&nbsp; &nbsp;margin: 0 auto</span><span
       style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span>
    </div>
-   <div>&nbsp; <span style="color: #800000;">&lt;select-field</span> <span
-      style="color: #ff0000;">required</span> <span
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;select-field</span> <span
+      style="color: #ff0000;">required</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"grupo"</span> <span
       style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">"IC22"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span</span> <span
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;span</span> <span
       style="color: #ff0000;">slot</span>=<span
       style="color: #0000ff;">"label"</span><span
       style="color: #800000;">&gt;</span>Grupo<span
       style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;option-field</span> <span
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;option-field</span> <span
       style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">""</span><span style="color: #800000;">&gt;</span>
    </div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/option-field&gt;</span>
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/option-field&gt;</span>
    </div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;option-field</span> <span
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;option-field</span> <span
       style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">"IC21"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; IC-21</div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/option-field&gt;</span>
+      style="color: #800000;">&gt;</span>
    </div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;option-field</span> <span
+   <div>&nbsp; &nbsp; &nbsp;IC-21</div>
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/option-field&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;option-field</span> <span
       style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">"IC22"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; IC-22</div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/option-field&gt;</span>
+      style="color: #800000;">&gt;</span>
    </div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;option-field</span> <span
+   <div>&nbsp; &nbsp; &nbsp;IC-22</div>
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/option-field&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #800000;">&lt;option-field</span> <span
       style="color: #ff0000;">value</span>=<span
       style="color: #0000ff;">"IC23"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; IC-23</div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/option-field&gt;</span>
+      style="color: #800000;">&gt;</span>
    </div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/select-field&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/section&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;IC-23</div>
+   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/option-field&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/select-field&gt;</span>
+   </div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/section&gt;</span></div>
+   <div>&nbsp; <span
+      style="color: #800000;">&lt;p&gt;&lt;button&gt;</span>Enviar<span
+      style="color: #800000;">&lt;/button&gt;&lt;/p&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div>
    <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
