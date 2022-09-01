@@ -389,6 +389,11 @@
     </li>
     <li>
      <p>
+      <a href="/m02vistas/mDselect.html">Select</a>
+     </p>
+    </li>
+    <li>
+     <p>
       <a href="/m02vistas/mEbotones.html">Botones</a>
      </p>
     </li>
@@ -3069,6 +3074,12 @@
   </li>
   <li>
    <p>
+    Las etiquetas deben llevar al atributo
+    <code class="language-html">slot="label"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
     Los campos de captura deben llevar al atributo
     <code class="language-html">slot="target"</code>.
    </p>
@@ -3093,7 +3104,7 @@
   </p>
   <p class="noPrint">
    <a target="_blank" rel="noopener"
-     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ECampos%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--Font%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20--BodyLargeFont%3A%20var(--Font)%3B%0A%20%20%20--BodyLargeSize%3A%2016px%3B%0A%20%20%20--BodyLargeWeight%3A%20400%3B%0A%20%20%20--BodySmallFont%3A%20var(--Font)%3B%0A%20%20%20--BodySmallSize%3A%2012px%3B%0A%20%20%20--BodySmallWeight%3A%20400%3B%0A%20%20%20--Background%3A%20%23FFFBFE%3B%0A%20%20%20--OnBackground%3A%20%231C1B1F%3B%0A%20%20%20--OnSurface%3A%20%231C1B1F%3B%0A%20%20%20--OnSurfaceHover%3A%20%231C1B1F14%3B%0A%20%20%20--SurfaceVariant%3A%20%23E7E0EC%3B%0A%20%20%20--SurfaceVariantHover%3A%0A%20%20%20%20%23CAC4D0%3B%0A%20%20%20--OnSurfaceVariant%3A%20%2349454F%3B%0A%20%20%20--Primary%3A%20%236750A4%3B%0A%20%20%20--OnPrimary%3A%20%23FFFFFF%3B%0A%20%20%20--Error%3A%20%23B3261E%3B%0A%20%20%20--OnErrorContainer%3A%20%23F2B8B5%3B%0A%20%20%20--Elevation%3A%20%23F5EEFA%3B%0A%20%20%20--ShapeCornerMedium%3A%2012px%3B%0A%20%20%20--ShapeCornerExtraSmall%3A%204px%3B%0A%20%20%20font-size%3A%2016px%3B%0A%20%20%20font-family%3A%20var(--Font)%3B%0A%20%20%20color%3A%20var(--OnBackground)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--Background)%3B%0A%20%20%7D%0A%0A%20%20%2F*%20Quita%20un%20borde%20rojo%20que%20coloca%0A%20%20%20*%20Firefox.%20*%2F%0A%20%20%3A-moz-ui-invalid%20%7B%0A%20%20%20box-shadow%3A%20none%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20%2F%2F%20%40ts-check%0A%20%20const%20INVALID_CLASS%20%3D%20%22invalid%22%0A%20%20const%20POPULATED_CLASS%20%3D%0A%20%20%20%22populated%22%0A%20%20const%20SELECTED_CLASS%20%3D%20%22selected%22%0A%20%20const%20TARGET_NAME%20%3D%0A%20%20%20'name%3D%22target%22'%0A%20%20const%20SUPPORTING_NAME%20%3D%0A%20%20%20'name%3D%22supporting%22'%0A%20%20const%20VALUE_PROPERTY%20%3D%20%22value%22%0A%20%20const%20GET_VALUE_PROPERTY%20%3D%0A%20%20%20%22getValue%22%0A%20%20const%20CHECK_VALIDITY_PROPERTY%20%3D%0A%20%20%20%22checkValidity%22%0A%0A%20%20class%20TextField%0A%20%20%20extends%20HTMLElement%20%7B%0A%0A%20%20%20constructor()%20%7B%0A%20%20%20%20super()%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BShadowRoot%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._shadow%20%3D%0A%20%20%20%20%20this.attachShadow(%7B%0A%20%20%20%20%20%20mode%3A%20%22open%22%2C%0A%20%20%20%20%20%20delegatesFocus%3A%20true%0A%20%20%20%20%20%7D)%0A%20%20%20%20this._shadow.innerHTML%20%3D%0A%20%20%20%20%20%2F*%20html%20*%2F%0A%20%20%20%20%20%60%3Cstyle%3E%0A%20%20%20%20%20%20%3Ahost%20%7B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20margin%3A%201rem%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20label%20%7B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20span%3A%3Aafter%20%7B%0A%20%20%20%20%20%20%20content%3A%20%22%22%3B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20var(--SurfaceVariant)%3B%0A%20%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20%20z-index%3A%20-1%3B%0A%20%20%20%20%20%20%20top%3A%200%3B%0A%20%20%20%20%20%20%20right%3A%200%3B%0A%20%20%20%20%20%20%20left%3A%200%3B%0A%20%20%20%20%20%20%20bottom%3A%200%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20span%20%7B%0A%20%20%20%20%20%20%20border-top-left-radius%3A%0A%20%20%20%20%20%20%20%20var(--ShapeCornerExtraSmall)%3B%0A%20%20%20%20%20%20%20border-top-right-radius%3A%0A%20%20%20%20%20%20%20%20var(--ShapeCornerExtraSmall)%3B%0A%20%20%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20cursor%3A%20pointer%3B%0A%20%20%20%20%20%20%20padding%3A%2024px%200%200%200%3B%0A%20%20%20%20%20%20%20overflow%3A%20hidden%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3A%3Aslotted(span)%20%7B%0A%20%20%20%20%20%20%20color%3A%0A%20%20%20%20%20%20%20%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20%20%20%20font-family%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeFont)%3B%0A%20%20%20%20%20%20%20font-size%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeSize)%3B%0A%20%20%20%20%20%20%20font-weight%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeWeight)%3B%0A%20%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20%20top%3A%2024px%3B%0A%20%20%20%20%20%20%20left%3A%201rem%3B%0A%20%20%20%20%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Afocus-within)%20%3A%3Aslotted(span)%2C%0A%20%20%20%20%20%20%3Ahost(.%24%7BPOPULATED_CLASS%7D)%20%3A%3Aslotted(span)%2C%0A%20%20%20%20%20%20%3Ahost(.float)%20%3A%3Aslotted(span)%20%7B%0A%20%20%20%20%20%20%20transform%3A%0A%20%20%20%20%20%20%20%20translateY(-16px)%3B%0A%20%20%20%20%20%20%20font-size%3A%0A%20%20%20%20%20%20%20%20var(--BodySmallSize)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20border-bottom-width%3A%201px%3B%0A%20%20%20%20%20%20%20border-bottom-style%3A%20solid%3B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20%20%20%20caret-color%3A%0A%20%20%20%20%20%20%20%20var(--Primary)%3B%0A%20%20%20%20%20%20%20color%3A%20var(--OnSurface)%3B%0A%20%20%20%20%20%20%20font-family%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeFont)%3B%0A%20%20%20%20%20%20%20font-size%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeSize)%3B%0A%20%20%20%20%20%20%20font-weight%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeWeight)%3B%0A%20%20%20%20%20%20%20border-top%3A%20none%3B%0A%20%20%20%20%20%20%20border-left%3A%20none%3B%0A%20%20%20%20%20%20%20border-right%3A%20none%3B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20%20%20%20%20padding%3A%200%2016px%208px%2016px%3B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20transparent%3B%0A%20%20%20%20%20%20%20resize%3A%20none%3B%0A%20%20%20%20%20%20%20outline%3A%20none%3B%0A%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(input)%20%7B%0A%20%20%20%20%20%20%20height%3A%2032px%3B%0A%20%20%20%20%20%20%20line-height%3A%2023px%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BSUPPORTING_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%0A%20%20%20%20%20%20%20%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20%20%20%20font-family%3A%0A%20%20%20%20%20%20%20%20var(--BodySmallFont)%3B%0A%20%20%20%20%20%20%20font-size%3A%0A%20%20%20%20%20%20%20%20var(--BodySmallSize)%3B%0A%20%20%20%20%20%20%20font-weight%3A%0A%20%20%20%20%20%20%20%20var(--BodySmallWeight)%3B%0A%20%20%20%20%20%20%20padding%3A%204px%2016px%200%2016px%3B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Afocus-within)%20%3A%3Aslotted(span)%20%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--Primary)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(%3Afocus)%20%7B%0A%20%20%20%20%20%20%20border-bottom-width%3A%202px%3B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20%20var(--Primary)%3B%0A%20%20%20%20%20%20%20padding-bottom%3A%207px%3B%0A%20%20%20%20%20%20%20outline%3A%20none%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Ahover)%20span%20%7B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20var(--SurfaceVariantHover)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Ahover)%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20border-bottom-width%3A%201px%3B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20%20var(--OnSurface)%3B%0A%20%20%20%20%20%20%20%20padding-bottom%3A%208px%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(%3Ainvalid)%2C%0A%20%20%20%20%20%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(%3Afocus%3Ainvalid)%20%7B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D)%20%3A%3Aslotted(span)%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D)%20%5B%24%7BSUPPORTING_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(%3Afocus%3Ainvalid)%20%7B%0A%20%20%20%20%20%20%20caret-color%3A%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Ahover)%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(%3Ainvalid)%20%7B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20%20var(--OnErrorContainer)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D%3Ahover)%20%3A%3Aslotted(span)%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D%3Ahover%3Afocus-within)%20%3A%3Aslotted(span)%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D%3Ahover)%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(*%3Afocus)%20%7B%0A%20%20%20%20%20%20%20border-bottom-width%3A%202px%3B%0A%20%20%20%20%20%20%20padding-bottom%3A%207px%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%3C%2Fstyle%3E%0A%20%20%20%20%20%3Clabel%3E%0A%20%20%20%20%20%20%3Cspan%3E%0A%20%20%20%20%20%20%20%3Cslot%20%24%7BTARGET_NAME%7D%3E%3C%2Fslot%3E%0A%20%20%20%20%20%20%20%3Cslot%3E%3C%2Fslot%3E%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cslot%0A%20%20%20%20%20%20%20%24%7BSUPPORTING_NAME%7D%3E%3C%2Fslot%3E%0A%20%20%20%20%20%3C%2Flabel%3E%60%0A%20%20%20%20this.analiza%20%3D%0A%20%20%20%20%20this.analiza.bind(this)%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BHTMLSlotElement%7C%0A%20%20%20%20%20*%20%20%20%20%20%20%20%20null%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._target%20%3D%20this._shadow.%0A%20%20%20%20%20querySelector(%0A%20%20%20%20%20%20%60%5B%24%7BTARGET_NAME%7D%5D%60)%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BElement%7C%20null%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._targetElement%20%3D%20null%0A%20%20%20%20if%20(this._target%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20this._target.addEventListener(%0A%20%20%20%20%20%20%22slotchange%22%2C%0A%20%20%20%20%20%20()%20%3D%3E%20this._configTarget())%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40private%20*%2F%0A%20%20%20_configTarget()%20%7B%0A%20%20%20%20if%20(this._targetElement%0A%20%20%20%20%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20this._targetElement.%0A%20%20%20%20%20%20removeEventListener(%22input%22%2C%0A%20%20%20%20%20%20%20this.analiza)%0A%20%20%20%20%20this._targetElement%20%3D%20null%0A%20%20%20%20%7D%0A%20%20%20%20if%20(this._target%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20for%20(const%20t%20of%20this._target%0A%20%20%20%20%20%20.assignedElements())%20%7B%0A%20%20%20%20%20%20this._targetElement%20%3D%20t%0A%20%20%20%20%20%20t.addEventListener(%22input%22%2C%0A%20%20%20%20%20%20%20this.analiza)%0A%20%20%20%20%20%20this.analiza()%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20analiza()%20%7B%0A%20%20%20%20const%20t%20%3D%20this._targetElement%0A%20%20%20%20if%20(t%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20let%20value%20%3D%20this.getValue()%0A%20%20%20%20%20if%20(value%20%3D%3D%3D%20%22%22)%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20remove(POPULATED_CLASS)%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20add(POPULATED_CLASS)%0A%20%20%20%20%20%7D%0A%20%20%20%20%20if%20(this.checkValidity())%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20remove(INVALID_CLASS)%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20add(INVALID_CLASS)%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40returns%20%7Bstring%7D%20*%2F%0A%20%20%20getValue()%20%7B%0A%20%20%20%20let%20value%20%3D%20%22%22%0A%20%20%20%20const%20t%20%3D%20this._targetElement%0A%20%20%20%20if%20(t%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20if%20(VALUE_PROPERTY%20in%20t)%20%7B%0A%20%20%20%20%20%20value%20%3D%20t%5BVALUE_PROPERTY%5D%0A%20%20%20%20%20%7D%20else%20if%20(%0A%20%20%20%20%20%20typeof%20t%5BGET_VALUE_PROPERTY%5D%0A%20%20%20%20%20%20%3D%3D%3D%20%22function%22)%20%7B%0A%20%20%20%20%20%20value%20%3D%20t%5B%0A%20%20%20%20%20%20%20GET_VALUE_PROPERTY%5D()%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%20value%20%3D%3D%3D%20null%20%7C%7C%0A%20%20%20%20%20value%20%3D%3D%3D%20undefined%20%3F%20%22%22%0A%20%20%20%20%20%3A%20value%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40returns%20%7Bboolean%7D%20*%2F%0A%20%20%20checkValidity()%20%7B%0A%20%20%20%20const%20t%20%3D%20this._targetElement%0A%20%20%20%20if%20(t%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20if%20(typeof%20t%5B%0A%20%20%20%20%20%20CHECK_VALIDITY_PROPERTY%5D%0A%20%20%20%20%20%20%3D%3D%3D%20%22function%22)%20%7B%0A%20%20%20%20%20%20return%20t%5B%0A%20%20%20%20%20%20%20CHECK_VALIDITY_PROPERTY%5D()%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%20true%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20customElements.%0A%20%20%20define(%22text-field%22%2C%20TextField)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20select%20%7B%0A%20%20%20-webkit-appearance%3A%20none%3B%0A%20%20%20-moz-appearance%3A%20none%3B%0A%20%20%20background-image%3A%20url(%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20height%3D'5'%20width%3D'32'%253E%253Cpath%20d%3D'M21%204%2016%200%2026%200%20Z'%20fill%3D'%252349454E'%20%2F%253E%253C%2Fsvg%253E%22)%3B%0A%20%20%20background-repeat%3A%20no-repeat%3B%0A%20%20%20background-position-x%3A%20right%3B%0A%20%20%20background-position-y%3A%2020%25%3B%0A%20%20%20padding-right%3A%2032px%3B%0A%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%7D%0A%0A%20%20select%3Afocus%20%7B%0A%20%20%20background-image%3A%20url(%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20height%3D'5'%20width%3D'32'%253E%253Cpath%20d%3D'M21%200%2016%204%2026%204%20Z'%20fill%3D'%252349454E'%20%2F%253E%253C%2Fsvg%253E%22)%3B%0A%20%20%7D%0A%0A%20%20option%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--Elevation)%3B%0A%20%20%20color%3A%20var(--OnSurface)%3B%0A%20%20%20font-family%3A%0A%20%20%20%20var(--LabelLargeFont)%3B%0A%20%20%20font-size%3A%0A%20%20%20%20var(--LabelLargeSize)%3B%0A%20%20%20font-weight%3A%0A%20%20%20%20var(--LabelLargeWeight)%3B%0A%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20padding%3A%204px%200%3B%0A%20%20%20width%3A%20100%25%3B%0A%20%20%20height%3A%2048px%3B%0A%20%20%20line-height%3A%2048px%3B%0A%20%20%20padding%3A%200%2012px%3B%0A%20%20%20white-space%3A%20nowrap%3B%0A%20%20%20text-overflow%3A%20ellipsis%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%20text-align%3A%20start%3B%0A%20%20%7D%0A%0A%20%20option%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--OnSurfaceHover)%3B%0A%20%20%7D%0A%0A%20%20option%3Achecked%20%7B%0A%20%20%20color%3A%20var(--OnPrimary)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--Primary)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3ECampos%3C%2Fh1%3E%0A%20%3Csection%20style%3D%22max-width%3A%20600px%3B%0A%20%20%20margin%3A%200%20auto%22%3E%0A%20%20%3Ctext-field%3E%0A%20%20%20%3Cspan%3ESaludo%3C%2Fspan%3E%0A%20%20%20%3Coutput%20slot%3D%22target%22%3E%0A%20%20%20%20Hola%0A%20%20%20%3C%2Foutput%3E%0A%20%20%3C%2Ftext-field%3E%0A%20%20%3Ctext-field%3E%0A%20%20%20%3Cspan%3ENombre*%3C%2Fspan%3E%0A%20%20%20%3Cinput%20slot%3D%22target%22%20required%3E%0A%20%20%20%3Csmall%20slot%3D%22supporting%22%3E%0A%20%20%20%20*Requerido%0A%20%20%20%3C%2Fsmall%3E%0A%20%20%3C%2Ftext-field%3E%0A%20%20%3Ctext-field%3E%0A%20%20%20%3Cspan%3EEmail%3C%2Fspan%3E%0A%20%20%20%3Cinput%20slot%3D%22target%22%0A%20%20%20%20%20type%3D%22email%22%3E%0A%20%20%3C%2Ftext-field%3E%0A%20%20%3Ctext-field%20class%3D%22float%22%3E%0A%20%20%20%3Cspan%3EFecha%3C%2Fspan%3E%0A%20%20%20%3Cinput%20slot%3D%22target%22%0A%20%20%20%20%20type%3D%22date%22%3E%0A%20%20%3C%2Ftext-field%3E%0A%20%20%3Ctext-field%3E%0A%20%20%20%3Cspan%3EGrupo%3C%2Fspan%3E%0A%20%20%20%3Cselect%20slot%3D%22target%22%3E%0A%20%20%20%20%3Coption%20value%3D%22%22%3E%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22IC21%22%3E%0A%20%20%20%20%20IC-21%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22IC22%22%3E%0A%20%20%20%20%20IC-22%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22IC23%22%3E%0A%20%20%20%20%20IC-23%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%3C%2Fselect%3E%0A%20%20%3C%2Ftext-field%3E%0A%20%20%3Ctext-field%3E%0A%20%20%20%3Cspan%3EDirecci%C3%B3n%3C%2Fspan%3E%0A%20%20%20%3Ctextarea%20rows%3D%223%22%0A%20%20%20%20%20slot%3D%22target%22%3E%3C%2Ftextarea%3E%0A%20%20%3C%2Ftext-field%3E%0A%20%3C%2Fsection%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ECampos%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--Font%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20--BodyLargeFont%3A%20var(--Font)%3B%0A%20%20%20--BodyLargeSize%3A%2016px%3B%0A%20%20%20--BodyLargeWeight%3A%20400%3B%0A%20%20%20--BodySmallFont%3A%20var(--Font)%3B%0A%20%20%20--BodySmallSize%3A%2012px%3B%0A%20%20%20--BodySmallWeight%3A%20400%3B%0A%20%20%20--Background%3A%20%23FFFBFE%3B%0A%20%20%20--OnBackground%3A%20%231C1B1F%3B%0A%20%20%20--OnSurface%3A%20%231C1B1F%3B%0A%20%20%20--OnSurfaceHover%3A%20%231C1B1F14%3B%0A%20%20%20--SurfaceVariant%3A%20%23E7E0EC%3B%0A%20%20%20--SurfaceVariantHover%3A%0A%20%20%20%20%23CAC4D0%3B%0A%20%20%20--OnSurfaceVariant%3A%20%2349454F%3B%0A%20%20%20--Primary%3A%20%236750A4%3B%0A%20%20%20--OnPrimary%3A%20%23FFFFFF%3B%0A%20%20%20--Error%3A%20%23B3261E%3B%0A%20%20%20--OnErrorContainer%3A%20%23F2B8B5%3B%0A%20%20%20--Elevation%3A%20%23F5EEFA%3B%0A%20%20%20--ShapeCornerMedium%3A%2012px%3B%0A%20%20%20--ShapeCornerExtraSmall%3A%204px%3B%0A%20%20%20font-size%3A%2016px%3B%0A%20%20%20font-family%3A%20var(--Font)%3B%0A%20%20%20color%3A%20var(--OnBackground)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--Background)%3B%0A%20%20%7D%0A%0A%20%20%2F*%20Quita%20un%20borde%20rojo%20que%20coloca%0A%20%20%20*%20Firefox.%20*%2F%0A%20%20%3A-moz-ui-invalid%20%7B%0A%20%20%20box-shadow%3A%20none%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20%2F%2F%20%40ts-check%0A%20%20const%20INVALID_CLASS%20%3D%20%22invalid%22%0A%20%20const%20POPULATED_CLASS%20%3D%0A%20%20%20%22populated%22%0A%20%20const%20SELECTED_CLASS%20%3D%20%22selected%22%0A%20%20const%20LABEL_NAME%20%3D%20'name%3D%22label%22'%0A%20%20const%20TARGET_NAME%20%3D%0A%20%20%20'name%3D%22target%22'%0A%20%20const%20SUPPORTING_NAME%20%3D%0A%20%20%20'name%3D%22supporting%22'%0A%20%20const%20VALUE_PROPERTY%20%3D%20%22value%22%0A%20%20const%20GET_VALUE_PROPERTY%20%3D%0A%20%20%20%22getValue%22%0A%20%20const%20CHECK_VALIDITY_PROPERTY%20%3D%0A%20%20%20%22checkValidity%22%0A%0A%20%20class%20TextField%0A%20%20%20extends%20HTMLElement%20%7B%0A%0A%20%20%20constructor()%20%7B%0A%20%20%20%20super()%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BShadowRoot%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._shadow%20%3D%0A%20%20%20%20%20this.attachShadow(%7B%0A%20%20%20%20%20%20mode%3A%20%22open%22%2C%0A%20%20%20%20%20%20delegatesFocus%3A%20true%0A%20%20%20%20%20%7D)%0A%20%20%20%20this._shadow.innerHTML%20%3D%0A%20%20%20%20%20%2F*%20html%20*%2F%0A%20%20%20%20%20%60%3Cstyle%3E%0A%20%20%20%20%20%20%3Ahost%20%7B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20margin%3A%201rem%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20label%20%7B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20span%3A%3Aafter%20%7B%0A%20%20%20%20%20%20%20content%3A%20%22%22%3B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20var(--SurfaceVariant)%3B%0A%20%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20%20z-index%3A%20-1%3B%0A%20%20%20%20%20%20%20top%3A%200%3B%0A%20%20%20%20%20%20%20right%3A%200%3B%0A%20%20%20%20%20%20%20left%3A%200%3B%0A%20%20%20%20%20%20%20bottom%3A%200%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20span%20%7B%0A%20%20%20%20%20%20%20border-top-left-radius%3A%0A%20%20%20%20%20%20%20%20var(--ShapeCornerExtraSmall)%3B%0A%20%20%20%20%20%20%20border-top-right-radius%3A%0A%20%20%20%20%20%20%20%20var(--ShapeCornerExtraSmall)%3B%0A%20%20%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20cursor%3A%20pointer%3B%0A%20%20%20%20%20%20%20padding%3A%2024px%200%200%200%3B%0A%20%20%20%20%20%20%20overflow%3A%20hidden%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%0A%20%20%20%20%20%20%20%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20%20%20%20font-family%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeFont)%3B%0A%20%20%20%20%20%20%20font-size%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeSize)%3B%0A%20%20%20%20%20%20%20font-weight%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeWeight)%3B%0A%20%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20%20top%3A%2024px%3B%0A%20%20%20%20%20%20%20left%3A%201rem%3B%0A%20%20%20%20%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Afocus-within)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%2C%0A%20%20%20%20%20%20%3Ahost(.%24%7BPOPULATED_CLASS%7D)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%2C%0A%20%20%20%20%20%20%3Ahost(.float)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20transform%3A%0A%20%20%20%20%20%20%20%20translateY(-16px)%3B%0A%20%20%20%20%20%20%20font-size%3A%0A%20%20%20%20%20%20%20%20var(--BodySmallSize)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20border-bottom-width%3A%201px%3B%0A%20%20%20%20%20%20%20border-bottom-style%3A%20solid%3B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20%20%20%20caret-color%3A%0A%20%20%20%20%20%20%20%20var(--Primary)%3B%0A%20%20%20%20%20%20%20color%3A%20var(--OnSurface)%3B%0A%20%20%20%20%20%20%20font-family%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeFont)%3B%0A%20%20%20%20%20%20%20font-size%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeSize)%3B%0A%20%20%20%20%20%20%20font-weight%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeWeight)%3B%0A%20%20%20%20%20%20%20border-top%3A%20none%3B%0A%20%20%20%20%20%20%20border-left%3A%20none%3B%0A%20%20%20%20%20%20%20border-right%3A%20none%3B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20%20%20%20%20padding%3A%200%2016px%208px%2016px%3B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20transparent%3B%0A%20%20%20%20%20%20%20resize%3A%20none%3B%0A%20%20%20%20%20%20%20outline%3A%20none%3B%0A%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(input)%20%7B%0A%20%20%20%20%20%20%20height%3A%2032px%3B%0A%20%20%20%20%20%20%20line-height%3A%2023px%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BSUPPORTING_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%0A%20%20%20%20%20%20%20%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20%20%20%20font-family%3A%0A%20%20%20%20%20%20%20%20var(--BodySmallFont)%3B%0A%20%20%20%20%20%20%20font-size%3A%0A%20%20%20%20%20%20%20%20var(--BodySmallSize)%3B%0A%20%20%20%20%20%20%20font-weight%3A%0A%20%20%20%20%20%20%20%20var(--BodySmallWeight)%3B%0A%20%20%20%20%20%20%20padding%3A%204px%2016px%200%2016px%3B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Afocus-within)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%20%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--Primary)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(%3Afocus)%20%7B%0A%20%20%20%20%20%20%20border-bottom-width%3A%202px%3B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20%20var(--Primary)%3B%0A%20%20%20%20%20%20%20padding-bottom%3A%207px%3B%0A%20%20%20%20%20%20%20outline%3A%20none%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Ahover)%20span%20%7B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20var(--SurfaceVariantHover)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Ahover)%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20border-bottom-width%3A%201px%3B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20%20var(--OnSurface)%3B%0A%20%20%20%20%20%20%20%20padding-bottom%3A%208px%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(%3Ainvalid)%2C%0A%20%20%20%20%20%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(%3Afocus%3Ainvalid)%20%7B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D)%20%5B%24%7BSUPPORTING_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(%3Afocus%3Ainvalid)%20%7B%0A%20%20%20%20%20%20%20caret-color%3A%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Ahover)%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(%3Ainvalid)%20%7B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20%20var(--OnErrorContainer)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D%3Ahover)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D%3Ahover%3Afocus-within)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D%3Ahover)%20%5B%24%7BTARGET_NAME%7D%5D%3A%3Aslotted(*%3Afocus)%20%7B%0A%20%20%20%20%20%20%20border-bottom-width%3A%202px%3B%0A%20%20%20%20%20%20%20padding-bottom%3A%207px%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%3C%2Fstyle%3E%0A%20%20%20%20%20%3Clabel%3E%0A%20%20%20%20%20%20%3Cspan%3E%0A%20%20%20%20%20%20%20%3Cslot%20%24%7BLABEL_NAME%7D%3E%3C%2Fslot%3E%0A%20%20%20%20%20%20%20%3Cslot%20%24%7BTARGET_NAME%7D%3E%3C%2Fslot%3E%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cslot%0A%20%20%20%20%20%20%20%24%7BSUPPORTING_NAME%7D%3E%3C%2Fslot%3E%0A%20%20%20%20%20%3C%2Flabel%3E%60%0A%20%20%20%20this.analiza%20%3D%0A%20%20%20%20%20this.analiza.bind(this)%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BHTMLSlotElement%7Cnull%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._target%20%3D%20this._shadow.%0A%20%20%20%20%20querySelector(%0A%20%20%20%20%20%20%60%5B%24%7BTARGET_NAME%7D%5D%60)%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BElement%7Cnull%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._targetElement%20%3D%20null%0A%20%20%20%20if%20(this._target%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20this._target.addEventListener(%0A%20%20%20%20%20%20%22slotchange%22%2C%0A%20%20%20%20%20%20()%20%3D%3E%20this._configTarget())%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40private%20*%2F%0A%20%20%20_configTarget()%20%7B%0A%20%20%20%20if%20(this._targetElement%0A%20%20%20%20%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20this._targetElement.%0A%20%20%20%20%20%20removeEventListener(%22input%22%2C%0A%20%20%20%20%20%20%20this.analiza)%0A%20%20%20%20%20this._targetElement%20%3D%20null%0A%20%20%20%20%7D%0A%20%20%20%20if%20(this._target%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20for%20(const%20t%20of%20this._target%0A%20%20%20%20%20%20.assignedElements())%20%7B%0A%20%20%20%20%20%20this._targetElement%20%3D%20t%0A%20%20%20%20%20%20t.addEventListener(%22input%22%2C%0A%20%20%20%20%20%20%20this.analiza)%0A%20%20%20%20%20%20this.analiza()%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20analiza()%20%7B%0A%20%20%20%20const%20t%20%3D%20this._targetElement%0A%20%20%20%20if%20(t%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20let%20value%20%3D%20this._getValue()%0A%20%20%20%20%20if%20(value%20%3D%3D%3D%20%22%22)%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20remove(POPULATED_CLASS)%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20add(POPULATED_CLASS)%0A%20%20%20%20%20%7D%0A%20%20%20%20%20if%20(this._checkValidity())%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20remove(INVALID_CLASS)%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20add(INVALID_CLASS)%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20%2F**%0A%20%20%20%20*%20%40private%0A%20%20%20%20*%20%40returns%20%7Bstring%7D%0A%20%20%20%20*%2F%0A%20%20%20_getValue()%20%7B%0A%20%20%20%20let%20value%20%3D%20%22%22%0A%20%20%20%20const%20t%20%3D%20this._targetElement%0A%20%20%20%20if%20(t%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20if%20(VALUE_PROPERTY%20in%20t)%20%7B%0A%20%20%20%20%20%20value%20%3D%20t%5BVALUE_PROPERTY%5D%0A%20%20%20%20%20%7D%20else%20if%20(%0A%20%20%20%20%20%20typeof%20t%5BGET_VALUE_PROPERTY%5D%0A%20%20%20%20%20%20%3D%3D%3D%20%22function%22)%20%7B%0A%20%20%20%20%20%20value%20%3D%20t%5B%0A%20%20%20%20%20%20%20GET_VALUE_PROPERTY%5D()%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%20value%20%3D%3D%3D%20null%20%7C%7C%0A%20%20%20%20%20value%20%3D%3D%3D%20undefined%20%3F%20%22%22%0A%20%20%20%20%20%3A%20value%0A%20%20%20%7D%0A%0A%20%20%20%2F**%0A%20%20%20%20*%20%40private%0A%20%20%20%20*%20%40returns%20%7Bboolean%7D%0A%20%20%20%20*%2F%0A%20%20%20_checkValidity()%20%7B%0A%20%20%20%20const%20t%20%3D%20this._targetElement%0A%20%20%20%20if%20(t%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20if%20(typeof%20t%5B%0A%20%20%20%20%20%20CHECK_VALIDITY_PROPERTY%5D%0A%20%20%20%20%20%20%3D%3D%3D%20%22function%22)%20%7B%0A%20%20%20%20%20%20return%20t%5B%0A%20%20%20%20%20%20%20CHECK_VALIDITY_PROPERTY%5D()%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%20true%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20customElements.%0A%20%20%20define(%22text-field%22%2C%20TextField)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20select%20%7B%0A%20%20%20-webkit-appearance%3A%20none%3B%0A%20%20%20-moz-appearance%3A%20none%3B%0A%20%20%20background-image%3A%20url(%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20height%3D'5'%20width%3D'32'%253E%253Cpath%20d%3D'M21%204%2016%200%2026%200%20Z'%20fill%3D'%252349454E'%20%2F%253E%253C%2Fsvg%253E%22)%3B%0A%20%20%20background-repeat%3A%20no-repeat%3B%0A%20%20%20background-position-x%3A%20right%3B%0A%20%20%20background-position-y%3A%2020%25%3B%0A%20%20%20padding-right%3A%2032px%3B%0A%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%7D%0A%0A%20%20select%3Afocus%20%7B%0A%20%20%20background-image%3A%20url(%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20height%3D'5'%20width%3D'32'%253E%253Cpath%20d%3D'M21%200%2016%204%2026%204%20Z'%20fill%3D'%252349454E'%20%2F%253E%253C%2Fsvg%253E%22)%3B%0A%20%20%7D%0A%0A%20%20option%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--Elevation)%3B%0A%20%20%20color%3A%20var(--OnSurface)%3B%0A%20%20%20font-family%3A%0A%20%20%20%20var(--LabelLargeFont)%3B%0A%20%20%20font-size%3A%0A%20%20%20%20var(--LabelLargeSize)%3B%0A%20%20%20font-weight%3A%0A%20%20%20%20var(--LabelLargeWeight)%3B%0A%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20padding%3A%204px%200%3B%0A%20%20%20width%3A%20100%25%3B%0A%20%20%20height%3A%2048px%3B%0A%20%20%20line-height%3A%2048px%3B%0A%20%20%20padding%3A%200%2012px%3B%0A%20%20%20white-space%3A%20nowrap%3B%0A%20%20%20text-overflow%3A%20ellipsis%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%20text-align%3A%20start%3B%0A%20%20%7D%0A%0A%20%20option%3Ahover%20%7B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--OnSurfaceHover)%3B%0A%20%20%7D%0A%0A%20%20option%3Achecked%20%7B%0A%20%20%20color%3A%20var(--OnPrimary)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--Primary)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3ECampos%3C%2Fh1%3E%0A%20%3Csection%20style%3D%22max-width%3A%20600px%3B%0A%20%20%20margin%3A%200%20auto%22%3E%0A%20%20%3Ctext-field%3E%0A%20%20%20%3Cspan%20slot%3D%22label%22%3ESaludo%3C%2Fspan%3E%0A%20%20%20%3Coutput%20slot%3D%22target%22%3E%0A%20%20%20%20Hola%0A%20%20%20%3C%2Foutput%3E%0A%20%20%3C%2Ftext-field%3E%0A%20%20%3Ctext-field%3E%0A%20%20%20%3Cspan%20slot%3D%22label%22%3ENombre*%3C%2Fspan%3E%0A%20%20%20%3Cinput%20slot%3D%22target%22%20required%3E%0A%20%20%20%3Csmall%20slot%3D%22supporting%22%3E%0A%20%20%20%20*Requerido%0A%20%20%20%3C%2Fsmall%3E%0A%20%20%3C%2Ftext-field%3E%0A%20%20%3Ctext-field%3E%0A%20%20%20%3Cspan%20slot%3D%22label%22%3EEmail%3C%2Fspan%3E%0A%20%20%20%3Cinput%20slot%3D%22target%22%0A%20%20%20%20%20type%3D%22email%22%3E%0A%20%20%3C%2Ftext-field%3E%0A%20%20%3Ctext-field%20class%3D%22float%22%3E%0A%20%20%20%3Cspan%20slot%3D%22label%22%3EFecha%3C%2Fspan%3E%0A%20%20%20%3Cinput%20slot%3D%22target%22%0A%20%20%20%20%20type%3D%22date%22%3E%0A%20%20%3C%2Ftext-field%3E%0A%20%20%3Ctext-field%3E%0A%20%20%20%3Cspan%20slot%3D%22label%22%3EGrupo%3C%2Fspan%3E%0A%20%20%20%3Cselect%20slot%3D%22target%22%3E%0A%20%20%20%20%3Coption%20value%3D%22%22%3E%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22IC21%22%3E%0A%20%20%20%20%20IC-21%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22IC22%22%3E%0A%20%20%20%20%20IC-22%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%20%3Coption%20value%3D%22IC23%22%3E%0A%20%20%20%20%20IC-23%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%20%3C%2Fselect%3E%0A%20%20%3C%2Ftext-field%3E%0A%20%20%3Ctext-field%3E%0A%20%20%20%3Cspan%20slot%3D%22label%22%3EDirecci%C3%B3n%3C%2Fspan%3E%0A%20%20%20%3Ctextarea%20rows%3D%223%22%0A%20%20%20%20%20slot%3D%22target%22%3E%3C%2Ftextarea%3E%0A%20%20%3C%2Ftext-field%3E%0A%20%3C%2Fsection%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.</a>
   </p>
  </section>
@@ -3140,8 +3151,8 @@
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">html</span> {</div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #ff0000;">--Font</span>: -apple-system,</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--Font</span>: -apple-system,
+   </div>
    <div>&nbsp; &nbsp; BlinkMacSystemFont, Roboto,</div>
    <div>&nbsp; &nbsp; <span style="color: #0451a5;">sans-serif</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--BodyLargeFont</span>: <span
@@ -3159,7 +3170,8 @@
       style="color: #098658;">12px</span>;</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">--BodySmallWeight</span>: <span
-      style="color: #098658;">400</span>;</div>
+      style="color: #098658;">400</span>;
+   </div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--Background</span>: <span
       style="color: #0451a5;">#FFFBFE</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--OnBackground</span>: <span
@@ -3168,16 +3180,19 @@
       style="color: #0451a5;">#1C1B1F</span>;</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">--OnSurfaceHover</span>: <span
-      style="color: #0451a5;">#1C1B1F14</span>;</div>
+      style="color: #0451a5;">#1C1B1F14</span>;
+   </div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">--SurfaceVariant</span>: <span
-      style="color: #0451a5;">#E7E0EC</span>;</div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #ff0000;">--SurfaceVariantHover</span>:</div>
+      style="color: #0451a5;">#E7E0EC</span>;
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--SurfaceVariantHover</span>:
+   </div>
    <div>&nbsp; &nbsp; <span style="color: #0451a5;">#CAC4D0</span>;</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">--OnSurfaceVariant</span>: <span
-      style="color: #0451a5;">#49454F</span>;</div>
+      style="color: #0451a5;">#49454F</span>;
+   </div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--Primary</span>: <span
       style="color: #0451a5;">#6750A4</span>;</div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--OnPrimary</span>: <span
@@ -3186,12 +3201,14 @@
       style="color: #0451a5;">#B3261E</span>;</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">--OnErrorContainer</span>: <span
-      style="color: #0451a5;">#F2B8B5</span>;</div>
+      style="color: #0451a5;">#F2B8B5</span>;
+   </div>
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">--Elevation</span>: <span
       style="color: #0451a5;">#F5EEFA</span>;</div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">--ShapeCornerMedium</span>: <span
-      style="color: #098658;">12px</span>;</div>
+      style="color: #098658;">12px</span>;
+   </div>
    <div>&nbsp; &nbsp;<span
       style="color: #ff0000;">--ShapeCornerExtraSmall</span>: <span
       style="color: #098658;">4px</span>;</div>
@@ -3203,8 +3220,8 @@
    <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--OnBackground</span>);</div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+   </div>
    <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
       style="color: #001080;">--Background</span>);</div>
    <div>&nbsp; }</div><br>
@@ -3228,12 +3245,15 @@
       style="color: #0070c1;">SELECTED_CLASS</span> = <span
       style="color: #a31515;">"selected"</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">LABEL_NAME</span> = <span
+      style="color: #a31515;">'name="label"'</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">TARGET_NAME</span> =</div>
    <div>&nbsp; &nbsp;<span style="color: #a31515;">'name="target"'</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">SUPPORTING_NAME</span> =</div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #a31515;">'name="supporting"'</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">'name="supporting"'</span>
+   </div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">VALUE_PROPERTY</span> = <span
       style="color: #a31515;">"value"</span></div>
@@ -3242,8 +3262,8 @@
    <div>&nbsp; &nbsp;<span style="color: #a31515;">"getValue"</span></div>
    <div>&nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">CHECK_VALIDITY_PROPERTY</span> =</div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #a31515;">"checkValidity"</span></div><br>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">"checkValidity"</span></div>
+   <br>
    <div>&nbsp; <span style="color: #0000ff;">class</span> <span
       style="color: #267f99;">TextField</span></div>
    <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
@@ -3267,34 +3287,38 @@
       style="color: #a31515;">"open"</span>,</div>
    <div>&nbsp; &nbsp; &nbsp; <span
       style="color: #001080;">delegatesFocus</span><span
-      style="color: #001080;">:</span> <span
-      style="color: #0000ff;">true</span></div>
+      style="color: #001080;">:</span> <span style="color: #0000ff;">true</span>
+   </div>
    <div>&nbsp; &nbsp; &nbsp;})</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
       style="color: #001080;">_shadow</span>.<span
       style="color: #001080;">innerHTML</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #008000;">/* html */</span></div>
-   <div>&nbsp; &nbsp; &nbsp;`<span
-      style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #008000;">/* html */</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;`<span style="color: #800000;">&lt;style&gt;</span>
+   </div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span> {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">display</span>: <span
-      style="color: #0451a5;">block</span>;</div>
+      style="color: #0451a5;">block</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">margin</span>: <span
-      style="color: #098658;">1rem</span>;</div>
+      style="color: #098658;">1rem</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">label</span> {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">display</span>: <span
-      style="color: #0451a5;">block</span>;</div>
+      style="color: #0451a5;">block</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">span::after</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">span::after</span> {
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">content</span>: <span
-      style="color: #a31515;">""</span>;</div>
+      style="color: #a31515;">""</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
@@ -3305,19 +3329,24 @@
       style="color: #0451a5;">absolute</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">z-index</span>: <span
-      style="color: #098658;">-1</span>;</div>
+      style="color: #098658;">-1</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">top</span>: <span
-      style="color: #098658;">0</span>;</div>
+      style="color: #098658;">0</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">right</span>: <span
-      style="color: #098658;">0</span>;</div>
+      style="color: #098658;">0</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">left</span>: <span
-      style="color: #098658;">0</span>;</div>
+      style="color: #098658;">0</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">bottom</span>: <span
-      style="color: #098658;">0</span>;</div>
+      style="color: #098658;">0</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">span</span> {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
@@ -3335,24 +3364,28 @@
       style="color: #0451a5;">relative</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">display</span>: <span
-      style="color: #0451a5;">block</span>;</div>
+      style="color: #0451a5;">block</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">cursor</span>: <span
-      style="color: #0451a5;">pointer</span>;</div>
+      style="color: #0451a5;">pointer</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">padding</span>: <span
       style="color: #098658;">24px</span> <span
       style="color: #098658;">0</span> <span
-      style="color: #098658;">0</span> <span
-      style="color: #098658;">0</span>;</div>
+      style="color: #098658;">0</span> <span style="color: #098658;">0</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">overflow</span>: <span
       style="color: #0451a5;">hidden</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
-   <div>&nbsp; &nbsp; &nbsp; ::slotted(<span
-      style="color: #800000;">span</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; [<span style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">color</span>:
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--OnSurfaceVariant</span>);</div>
@@ -3376,26 +3409,37 @@
       style="color: #0451a5;">absolute</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">top</span>: <span
-      style="color: #098658;">24px</span>;</div>
+      style="color: #098658;">24px</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">left</span>: <span
-      style="color: #098658;">1rem</span>;</div>
+      style="color: #098658;">1rem</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">transition</span>: <span
       style="color: #098658;">0.3s</span> <span
       style="color: #0451a5;">ease-in</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
-      style="color: #800000;">:focus-within</span>) ::slotted(<span
-      style="color: #800000;">span</span>),</div>
+      style="color: #800000;">:focus-within</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>),</div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
       style="color: #800000;">${</span><span
       style="color: #0070c1;">POPULATED_CLASS</span><span
-      style="color: #800000;">}</span>) ::slotted(<span
-      style="color: #800000;">span</span>),</div>
+      style="color: #800000;">}</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>),</div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
-      style="color: #800000;">.float</span>) ::slotted(<span
-      style="color: #800000;">span</span>) {</div>
+      style="color: #800000;">.float</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">transform</span>:</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
@@ -3430,7 +3474,8 @@
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">color</span>: <span
       style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--OnSurface</span>);</div>
+      style="color: #001080;">--OnSurface</span>);
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">font-family</span>:</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
@@ -3457,7 +3502,8 @@
       style="color: #0451a5;">none</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">display</span>: <span
-      style="color: #0451a5;">block</span>;</div>
+      style="color: #0451a5;">block</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">box-sizing</span>: <span
       style="color: #0451a5;">border-box</span>;</div>
@@ -3466,20 +3512,24 @@
       style="color: #098658;">0</span> <span
       style="color: #098658;">16px</span> <span
       style="color: #098658;">8px</span> <span
-      style="color: #098658;">16px</span>;</div>
+      style="color: #098658;">16px</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">background-color</span>:</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
       style="color: #0451a5;">transparent</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">resize</span>: <span
-      style="color: #0451a5;">none</span>;</div>
+      style="color: #0451a5;">none</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">outline</span>: <span
-      style="color: #0451a5;">none</span>;</div>
+      style="color: #0451a5;">none</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">width</span>: <span
-      style="color: #098658;">100%</span>;</div>
+      style="color: #098658;">100%</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">transition</span>: <span
       style="color: #098658;">0.3s</span> <span
@@ -3491,7 +3541,8 @@
       style="color: #800000;">input</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">height</span>: <span
-      style="color: #098658;">32px</span>;</div>
+      style="color: #098658;">32px</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">line-height</span>: <span
       style="color: #098658;">23px</span>;</div>
@@ -3500,8 +3551,8 @@
       style="color: #0070c1;">SUPPORTING_NAME</span><span
       style="color: #800000;">}</span>]::slotted(<span
       style="color: #800000;">*</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">color</span>:
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
       style="color: #795e26;">var</span>(<span
       style="color: #001080;">--OnSurfaceVariant</span>);</div>
@@ -3525,22 +3576,28 @@
       style="color: #098658;">4px</span> <span
       style="color: #098658;">16px</span> <span
       style="color: #098658;">0</span> <span
-      style="color: #098658;">16px</span>;</div>
+      style="color: #098658;">16px</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">display</span>: <span
-      style="color: #0451a5;">block</span>;</div>
+      style="color: #0451a5;">block</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">transition</span>: <span
       style="color: #098658;">0.3s</span> <span
       style="color: #0451a5;">ease-in</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
-      style="color: #800000;">:focus-within</span>) ::slotted(<span
-      style="color: #800000;">span</span>) &nbsp;{</div>
+      style="color: #800000;">:focus-within</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) &nbsp;{</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">color</span>: <span
       style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--Primary</span>);</div>
+      style="color: #001080;">--Primary</span>);
+   </div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
    <div>&nbsp; &nbsp; &nbsp; [<span style="color: #800000;">${</span><span
       style="color: #0070c1;">TARGET_NAME</span><span
@@ -3559,7 +3616,8 @@
       style="color: #098658;">7px</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">outline</span>: <span
-      style="color: #0451a5;">none</span>;</div>
+      style="color: #0451a5;">none</span>;
+   </div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
       style="color: #800000;">:hover</span>) <span
@@ -3605,12 +3663,16 @@
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
       style="color: #800000;">${</span><span
       style="color: #0070c1;">INVALID_CLASS</span><span
-      style="color: #800000;">}</span>) ::slotted(<span
-      style="color: #800000;">span</span>) {</div>
+      style="color: #800000;">}</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">color</span>: <span
       style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--Error</span>);</div>
+      style="color: #001080;">--Error</span>);
+   </div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
       style="color: #800000;">${</span><span
@@ -3623,7 +3685,8 @@
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">color</span>: <span
       style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--Error</span>);</div>
+      style="color: #001080;">--Error</span>);
+   </div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
    <div>&nbsp; &nbsp; &nbsp; [<span style="color: #800000;">${</span><span
       style="color: #0070c1;">TARGET_NAME</span><span
@@ -3649,22 +3712,30 @@
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
       style="color: #800000;">${</span><span
       style="color: #0070c1;">INVALID_CLASS</span><span
-      style="color: #800000;">}:hover</span>) ::slotted(<span
-      style="color: #800000;">span</span>) {</div>
+      style="color: #800000;">}:hover</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">color</span>: <span
       style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--OnSurfaceVariant</span>);</div>
+      style="color: #001080;">--OnSurfaceVariant</span>);
+   </div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
       style="color: #800000;">${</span><span
       style="color: #0070c1;">INVALID_CLASS</span><span
-      style="color: #800000;">}:hover:focus-within</span>) ::slotted(<span
-      style="color: #800000;">span</span>) {</div>
+      style="color: #800000;">}:hover:focus-within</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #ff0000;">color</span>: <span
       style="color: #795e26;">var</span>(<span
-      style="color: #001080;">--Error</span>);</div>
+      style="color: #001080;">--Error</span>);
+   </div>
    <div>&nbsp; &nbsp; &nbsp; }</div><br>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
       style="color: #800000;">${</span><span
@@ -3681,20 +3752,24 @@
       style="color: #ff0000;">padding-bottom</span>: <span
       style="color: #098658;">7px</span>;</div>
    <div>&nbsp; &nbsp; &nbsp; }</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;label&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #800000;">&lt;span&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/style&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;span&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;slot</span> <span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}&gt;&lt;/slot&gt;</span>
+   </div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
       style="color: #800000;">&lt;slot</span> <span
       style="color: #800000;">${</span><span
       style="color: #0070c1;">TARGET_NAME</span><span
       style="color: #800000;">}&gt;&lt;/slot&gt;</span>
    </div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;slot&gt;&lt;/slot&gt;</span></div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;/span&gt;</span>
    </div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;slot</span></div>
@@ -3715,10 +3790,7 @@
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
       style="color: #0000ff;">@type</span><span
       style="color: #008000;"> </span><span
-      style="color: #267f99;">{HTMLSlotElement|</span></div>
-   <div><span
-      style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}</span>
-   </div>
+      style="color: #267f99;">{HTMLSlotElement|null}</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
       style="color: #001080;">_target</span> = <span
@@ -3737,7 +3809,7 @@
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
       style="color: #0000ff;">@type</span><span
       style="color: #008000;"> </span><span
-      style="color: #267f99;">{Element| null}</span></div>
+      style="color: #267f99;">{Element|null}</span></div>
    <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
       style="color: #001080;">_targetElement</span> = <span
@@ -3816,7 +3888,7 @@
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">let</span> <span
       style="color: #001080;">value</span> = <span
       style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">getValue</span>()</div>
+      style="color: #795e26;">_getValue</span>()</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
       style="color: #001080;">value</span> === <span
       style="color: #a31515;">""</span>) {</div>
@@ -3834,7 +3906,7 @@
    <div>&nbsp; &nbsp; &nbsp;}</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
       style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">checkValidity</span>()) {</div>
+      style="color: #795e26;">_checkValidity</span>()) {</div>
    <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
       style="color: #001080;">classList</span>.</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
@@ -3849,12 +3921,15 @@
    <div>&nbsp; &nbsp; &nbsp;}</div>
    <div>&nbsp; &nbsp; }</div>
    <div>&nbsp; &nbsp;}</div><br>
-   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
       style="color: #0000ff;">@returns</span><span
       style="color: #008000;"> </span><span
-      style="color: #267f99;">{string}</span><span
-      style="color: #008000;"> */</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">getValue</span>() {</div>
+      style="color: #267f99;">{string}</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_getValue</span>() {</div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">let</span> <span
       style="color: #001080;">value</span> = <span
       style="color: #a31515;">""</span></div>
@@ -3893,12 +3968,15 @@
       style="color: #a31515;">""</span></div>
    <div>&nbsp; &nbsp; &nbsp;: <span style="color: #001080;">value</span></div>
    <div>&nbsp; &nbsp;}</div><br>
-   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
       style="color: #0000ff;">@returns</span><span
       style="color: #008000;"> </span><span
-      style="color: #267f99;">{boolean}</span><span
-      style="color: #008000;"> */</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">checkValidity</span>() {
+      style="color: #267f99;">{boolean}</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_checkValidity</span>() {
    </div>
    <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">t</span> = <span
@@ -4035,8 +4113,10 @@
       style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span>
    </div>
    <div>&nbsp; <span style="color: #800000;">&lt;text-field&gt;</span></div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;span&gt;</span>Saludo<span
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">slot</span>=<span
+      style="color: #0000ff;">"label"</span><span
+      style="color: #800000;">&gt;</span>Saludo<span
       style="color: #800000;">&lt;/span&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span
       style="color: #ff0000;">slot</span>=<span
@@ -4046,8 +4126,10 @@
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/output&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/text-field&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;text-field&gt;</span></div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;span&gt;</span>Nombre*<span
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">slot</span>=<span
+      style="color: #0000ff;">"label"</span><span
+      style="color: #800000;">&gt;</span>Nombre*<span
       style="color: #800000;">&lt;/span&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;input</span> <span
       style="color: #ff0000;">slot</span>=<span
@@ -4062,7 +4144,10 @@
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/small&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/text-field&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;text-field&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span&gt;</span>Email<span
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">slot</span>=<span
+      style="color: #0000ff;">"label"</span><span
+      style="color: #800000;">&gt;</span>Email<span
       style="color: #800000;">&lt;/span&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;input</span> <span
       style="color: #ff0000;">slot</span>=<span
@@ -4075,7 +4160,10 @@
       style="color: #ff0000;">class</span>=<span
       style="color: #0000ff;">"float"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span&gt;</span>Fecha<span
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">slot</span>=<span
+      style="color: #0000ff;">"label"</span><span
+      style="color: #800000;">&gt;</span>Fecha<span
       style="color: #800000;">&lt;/span&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;input</span> <span
       style="color: #ff0000;">slot</span>=<span
@@ -4085,7 +4173,10 @@
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/text-field&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;text-field&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span&gt;</span>Grupo<span
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">slot</span>=<span
+      style="color: #0000ff;">"label"</span><span
+      style="color: #800000;">&gt;</span>Grupo<span
       style="color: #800000;">&lt;/span&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;select</span> <span
       style="color: #ff0000;">slot</span>=<span
@@ -4116,8 +4207,10 @@
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/select&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;/text-field&gt;</span></div>
    <div>&nbsp; <span style="color: #800000;">&lt;text-field&gt;</span></div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #800000;">&lt;span&gt;</span>Dirección<span
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">slot</span>=<span
+      style="color: #0000ff;">"label"</span><span
+      style="color: #800000;">&gt;</span>Dirección<span
       style="color: #800000;">&lt;/span&gt;</span></div>
    <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;textarea</span> <span
       style="color: #ff0000;">rows</span>=<span
@@ -4161,7 +4254,1725 @@
 </div>
       </section>
      <section >
-         <h1 >H. Botones</h1><div class="lectura">
+         <h1 >H. Select</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Este control se adapta mejor a Material Designe que el select de HTML.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para que el contenido se muestra adecuadamente, se define el elemento
+    personalizado <dfn>select-field</dfn> y su comportamiento lo definimos con
+    la clase <dfn>SelectField</dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para las opciones se define el elemento personalizado
+    <dfn>option-field</dfn>
+    y su comportamiento lo definimos con la clase
+    <dfn>OptionField</dfn>.
+    Deben colocarse dentro de un elemento
+    <dfn>select-field</dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las etiquetas deben llevar al atributo
+    <code class="language-html">slot="label"</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los textos de ayuda deben llevar al atributo
+    <code class="language-html">slot="supporting"</code>.
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m03vistas/Cselect.html" height="400"
+    title="Select para móvil"></iframe>
+  <p class="noPrint">
+   <a href="/src/m03vistas/Cselect.html" target="_blank" rel="noopener">Ábrelo
+    en
+    otra pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noopener"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ESelect%3C%2Ftitle%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%22%3E%0A%20%3Clink%20rel%3D%22preconnect%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.gstatic.com%22%0A%20%20%20crossorigin%3E%0A%20%3Clink%20rel%3D%22stylesheet%22%0A%20%20%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DRoboto%26display%3Dswap%22%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20--Font%3A%20-apple-system%2C%0A%20%20%20%20BlinkMacSystemFont%2C%20Roboto%2C%0A%20%20%20%20sans-serif%3B%0A%20%20%20--BodyLargeFont%3A%20var(--Font)%3B%0A%20%20%20--BodyLargeSize%3A%2016px%3B%0A%20%20%20--BodyLargeWeight%3A%20400%3B%0A%20%20%20--BodySmallFont%3A%20var(--Font)%3B%0A%20%20%20--BodySmallSize%3A%2012px%3B%0A%20%20%20--BodySmallWeight%3A%20400%3B%0A%20%20%20--Background%3A%20%23FFFBFE%3B%0A%20%20%20--OnBackground%3A%20%231C1B1F%3B%0A%20%20%20--Surface%3A%20%23FFFBFE%3B%0A%20%20%20--OnSurface%3A%20%231C1B1F%3B%0A%20%20%20--OnSurfaceHover%3A%20%231C1B1F14%3B%0A%20%20%20--OnSurfaceFocus%3A%20%231C1B1F19%3B%0A%20%20%20--OnSurfacePressed%3A%20%231C1B1F1E%3B%0A%20%20%20--OnSurfaceShadow%3A%20%231C1B1F99%3B%0A%20%20%20--SurfaceVariant%3A%20%23E7E0EC%3B%0A%20%20%20--SurfaceVariantHover%3A%0A%20%20%20%20%23CAC4D0%3B%0A%20%20%20--OnSurfaceVariant%3A%20%2349454F%3B%0A%20%20%20--Primary%3A%20%236750A4%3B%0A%20%20%20--OnPrimary%3A%20%23FFFFFF%3B%0A%20%20%20--Error%3A%20%23B3261E%3B%0A%20%20%20--OnErrorContainer%3A%20%23F2B8B5%3B%0A%20%20%20--Elevation%3A%20%23F5EEFA%3B%0A%20%20%20--ShapeCornerMedium%3A%2012px%3B%0A%20%20%20--ShapeCornerExtraSmall%3A%204px%3B%0A%20%20%20--ElevationLevel2%3A%0A%20%20%20%200%203px%206px%200px%20var(--OnSurfaceShadow)%3B%0A%20%20%20font-size%3A%2016px%3B%0A%20%20%20font-family%3A%20var(--Font)%3B%0A%20%20%20color%3A%20var(--OnBackground)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--Background)%3B%0A%20%20%7D%0A%0A%20%20%2F*%20Quita%20un%20borde%20rojo%20que%20coloca%0A%20%20%20*%20Firefox.%20*%2F%0A%20%20%3A-moz-ui-invalid%20%7B%0A%20%20%20box-shadow%3A%20none%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%20%3Cscript%3E%0A%20%20%2F%2F%20%40ts-check%0A%20%20const%20INVALID_CLASS%20%3D%20%22invalid%22%0A%20%20const%20POPULATED_CLASS%20%3D%0A%20%20%20%22populated%22%0A%20%20const%20OPEN_CLASS%20%3D%20%22open%22%0A%20%20const%20SELECTED_CLASS%20%3D%20%22selected%22%0A%20%20const%20LABEL_NAME%20%3D%20'name%3D%22label%22'%0A%20%20const%20SUPPORTING_NAME%20%3D%0A%20%20%20'name%3D%22supporting%22'%0A%20%20const%20MENU_NAME%20%3D%20'name%3D%22menu%22'%0A%20%20const%20MENU_ID%20%3D%20%22menu%22%0A%20%20const%20MENU_SLOT_ID%20%3D%20%22menuSlot%22%0A%20%20const%20VALUE_PROPERTY%20%3D%20%22value%22%0A%20%20const%20REQUIRED_PROPERTY%20%3D%0A%20%20%20%22required%22%0A%0A%20%20class%20OptionField%0A%20%20%20extends%20HTMLElement%20%7B%0A%0A%20%20%20get%20value()%20%7B%0A%20%20%20%20const%20value%20%3D%20this.%0A%20%20%20%20%20getAttribute(VALUE_PROPERTY)%0A%20%20%20%20return%20value%20%3D%3D%3D%20null%20%3F%0A%20%20%20%20%20%22%22%0A%20%20%20%20%20%3A%20value%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40param%20%7Bstring%7D%20value%20*%2F%0A%20%20%20setValue(value)%20%7B%0A%20%20%20%20this.setAttribute(%0A%20%20%20%20%20VALUE_PROPERTY%2C%20value)%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20customElements.define(%0A%20%20%20%22option-field%22%2C%20OptionField)%0A%0A%20%20class%20SelectField%0A%20%20%20extends%20HTMLElement%20%7B%0A%0A%20%20%20static%20get%20observedAttributes()%20%7B%0A%20%20%20%20return%20%5BVALUE_PROPERTY%5D%0A%20%20%20%7D%0A%0A%20%20%20constructor()%20%7B%0A%20%20%20%20super()%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BShadowRoot%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._shadow%20%3D%0A%20%20%20%20%20this.attachShadow(%7B%0A%20%20%20%20%20%20mode%3A%20%22open%22%0A%20%20%20%20%20%7D)%0A%20%20%20%20this._shadow.innerHTML%20%3D%0A%20%20%20%20%20%2F*%20html%20*%2F%0A%20%20%20%20%20%60%3Cstyle%3E%0A%20%20%20%20%20%20%3Ahost%20%7B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20position%3Arelative%3B%0A%20%20%20%20%20%20%20margin%3A%201rem%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20label%20%7B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20span%3A%3Aafter%20%7B%0A%20%20%20%20%20%20%20content%3A%20%22%22%3B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20var(--SurfaceVariant)%3B%0A%20%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20%20z-index%3A%20-1%3B%0A%20%20%20%20%20%20%20top%3A%200%3B%0A%20%20%20%20%20%20%20right%3A%200%3B%0A%20%20%20%20%20%20%20left%3A%200%3B%0A%20%20%20%20%20%20%20bottom%3A%200%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20span%20%7B%0A%20%20%20%20%20%20%20border-top-left-radius%3A%0A%20%20%20%20%20%20%20%20var(--ShapeCornerExtraSmall)%3B%0A%20%20%20%20%20%20%20border-top-right-radius%3A%0A%20%20%20%20%20%20%20%20var(--ShapeCornerExtraSmall)%3B%0A%20%20%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20cursor%3A%20pointer%3B%0A%20%20%20%20%20%20%20padding%3A%2024px%200%200%200%3B%0A%20%20%20%20%20%20%20overflow%3A%20hidden%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%0A%20%20%20%20%20%20%20%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20%20%20%20font-family%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeFont)%3B%0A%20%20%20%20%20%20%20font-size%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeSize)%3B%0A%20%20%20%20%20%20%20font-weight%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeWeight)%3B%0A%20%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20%20top%3A%2024px%3B%0A%20%20%20%20%20%20%20left%3A%201rem%3B%0A%20%20%20%20%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Afocus)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%2C%0A%20%20%20%20%20%20%3Ahost(.%24%7BPOPULATED_CLASS%7D)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%2C%0A%20%20%20%20%20%20%3Ahost(.float)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20transform%3A%0A%20%20%20%20%20%20%20%20translateY(-16px)%3B%0A%20%20%20%20%20%20%20font-size%3A%0A%20%20%20%20%20%20%20%20var(--BodySmallSize)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20output%20%7B%0A%20%20%20%20%20%20%20border-bottom-width%3A%201px%3B%0A%20%20%20%20%20%20%20border-bottom-style%3A%20solid%3B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20%20%20%20caret-color%3A%0A%20%20%20%20%20%20%20%20var(--Primary)%3B%0A%20%20%20%20%20%20%20color%3A%20var(--OnSurface)%3B%0A%20%20%20%20%20%20%20font-family%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeFont)%3B%0A%20%20%20%20%20%20%20font-size%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeSize)%3B%0A%20%20%20%20%20%20%20font-weight%3A%0A%20%20%20%20%20%20%20%20var(--BodyLargeWeight)%3B%0A%20%20%20%20%20%20%20border-top%3A%20none%3B%0A%20%20%20%20%20%20%20border-left%3A%20none%3B%0A%20%20%20%20%20%20%20border-right%3A%20none%3B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20%20%20%20%20padding%3A%200%2016px%208px%2016px%3B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20transparent%3B%0A%20%20%20%20%20%20%20resize%3A%20none%3B%0A%20%20%20%20%20%20%20outline%3A%20none%3B%0A%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%20%20%20%20%20height%3A%2032px%3B%0A%20%20%20%20%20%20%20line-height%3A%2023px%3B%0A%20%20%20%20%20%20%20background-position%3A%20center%3B%0A%20%20%20%20%20%20%20background-image%3A%20url(%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20height%3D'5'%20width%3D'32'%253E%253Cpath%20d%3D'M21%204%2016%200%2026%200%20Z'%20fill%3D'%252349454E'%20%2F%253E%253C%2Fsvg%253E%22)%3B%0A%20%20%20%20%20%20%20background-repeat%3A%20no-repeat%3B%0A%20%20%20%20%20%20%20background-position-x%3A%20right%3B%0A%20%20%20%20%20%20%20background-position-y%3A%2020%25%3B%0A%20%20%20%20%20%20%20padding-right%3A%2032px%3B%0A%20%20%20%20%20%20%20cursor%3A%20pointer%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.open)%20output%20%7B%0A%20%20%20%20%20%20%20background-image%3A%20url(%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20height%3D'5'%20width%3D'32'%253E%253Cpath%20d%3D'M21%200%2016%204%2026%204%20Z'%20fill%3D'%252349454E'%20%2F%253E%253C%2Fsvg%253E%22)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%5B%24%7BSUPPORTING_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%0A%20%20%20%20%20%20%20%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20%20%20%20font-family%3A%0A%20%20%20%20%20%20%20%20var(--BodySmallFont)%3B%0A%20%20%20%20%20%20%20font-size%3A%0A%20%20%20%20%20%20%20%20var(--BodySmallSize)%3B%0A%20%20%20%20%20%20%20font-weight%3A%0A%20%20%20%20%20%20%20%20var(--BodySmallWeight)%3B%0A%20%20%20%20%20%20%20padding%3A%204px%2016px%200%2016px%3B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20transition%3A%200.3s%20ease-in%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Afocus)%20%20%7B%0A%20%20%20%20%20%20%20outline%3A%20none%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Afocus)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%20%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--Primary)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Afocus)%20output%20%7B%0A%20%20%20%20%20%20%20border-bottom-width%3A%202px%3B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20%20var(--Primary)%3B%0A%20%20%20%20%20%20%20padding-bottom%3A%207px%3B%0A%20%20%20%20%20%20%20outline%3A%20none%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Ahover)%20span%20%7B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20var(--SurfaceVariantHover)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(%3Ahover)%20output%20%7B%0A%20%20%20%20%20%20%20border-bottom-width%3A%201px%3B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20%20var(--OnSurface)%3B%0A%20%20%20%20%20%20%20%20padding-bottom%3A%208px%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D)%20output%2C%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D%3Afocus)%20output%20%7B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D)%20%5B%24%7BSUPPORTING_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D%3Ahover)%20output%20%7B%0A%20%20%20%20%20%20%20border-bottom-color%3A%0A%20%20%20%20%20%20%20%20var(--OnErrorContainer)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D%3Ahover)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D%3Ahover%3Afocus)%20%5B%24%7BLABEL_NAME%7D%5D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--Error)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.%24%7BINVALID_CLASS%7D%3Ahover%3Afocus)%20output%20%7B%0A%20%20%20%20%20%20%20border-bottom-width%3A%202px%3B%0A%20%20%20%20%20%20%20padding-bottom%3A%207px%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%23%24%7BMENU_ID%7D%20%7B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20%20z-index%3A%201%3B%0A%20%20%20%20%20%20%20right%3A%200%3B%0A%20%20%20%20%20%20%20left%3A%200%3B%0A%20%20%20%20%20%20%20top%3A%2057px%3B%0A%20%20%20%20%20%20%20pointer-events%3A%20none%3B%0A%20%20%20%20%20%20%20transform%3A%20translateY(-50%25)%20scaleY(0)%3B%0A%20%20%20%20%20%20%20transition%3A%20transform%200.5s%3B%0A%20%20%20%20%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20%20%20%20%20padding%3A%204px%200%3B%0A%20%20%20%20%20%20%20border-bottom-left-radius%3A%0A%20%20%20%20%20%20%20%20var(--ShapeCornerMedium)%3B%0A%20%20%20%20%20%20%20border-bottom-right-radius%3A%0A%20%20%20%20%20%20%20%20var(--ShapeCornerMedium)%3B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20var(--Elevation)%3B%0A%20%20%20%20%20%20%20cursor%3A%20default%3B%0A%20%20%20%20%20%20%20box-shadow%3A%0A%20%20%20%20%20%20%20%20var(--ElevationLevel2)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Ahost(.open)%20%23%24%7BMENU_ID%7D%20%7B%0A%20%20%20%20%20%20%20pointer-events%3A%20all%3B%0A%20%20%20%20%20%20%20transform%3A%20translateY(0)%20scaleY(1)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%23%24%7BMENU_SLOT_ID%7D%3A%3Aslotted(*)%20%7B%0A%20%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20%20border%3A%20none%3B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20transparent%3B%0A%20%20%20%20%20%20%20color%3A%20var(--OnSurface)%3B%0A%20%20%20%20%20%20%20font-family%3A%0A%20%20%20%20%20%20%20%20var(--LabelLargeFont)%3B%0A%20%20%20%20%20%20%20font-size%3A%0A%20%20%20%20%20%20%20%20var(--LabelLargeSize)%3B%0A%20%20%20%20%20%20%20font-weight%3A%0A%20%20%20%20%20%20%20%20var(--LabelLargeWeight)%3B%0A%20%20%20%20%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20%20%20%20%20padding%3A%204px%200%3B%0A%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20height%3A%2048px%3B%0A%20%20%20%20%20%20%20line-height%3A%2048px%3B%0A%20%20%20%20%20%20%20padding%3A%200%2012px%3B%0A%20%20%20%20%20%20%20white-space%3A%20nowrap%3B%0A%20%20%20%20%20%20%20text-overflow%3A%20ellipsis%3B%0A%20%20%20%20%20%20%20overflow%3A%20hidden%3B%0A%20%20%20%20%20%20%20text-align%3A%20start%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%23%24%7BMENU_SLOT_ID%7D%3A%3Aslotted(%3Ahover)%20%7B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20var(--OnSurfaceHover)%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%23%24%7BMENU_SLOT_ID%7D%3A%3Aslotted(%3Aactive)%20%7B%0A%20%20%20%20%20%20%20background-color%3A%0A%20%20%20%20%20%20%20%20var(--Primary)%3B%0A%20%20%20%20%20%20%20background-position%3A%20center%3B%0A%20%20%20%20%20%20%20background-image%3A%20radial-gradient(circle%2C%20transparent%201%25%2C%20var(--SurfaceVariant)%201%25)%3B%0A%20%20%20%20%20%20%20background-size%3A%20100%25%3B%0A%20%20%20%20%20%20%20animation-fill-mode%3A%20forwards%3B%0A%20%20%20%20%20%20%20animation-name%3A%20ripple%3B%0A%20%20%20%20%20%20%20animation-duration%3A%200.5s%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%23%24%7BMENU_SLOT_ID%7D%3A%3Aslotted(.selected)%20%7B%0A%20%20%20%20%20%20%20color%3A%20var(--OnPrimary)%3B%0A%20%20%20%20%20%20%20background-color%3A%20var(--Primary)%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%3C%2Fstyle%3E%0A%20%20%20%20%20%3Clabel%3E%0A%20%20%20%20%20%20%3Cspan%3E%0A%20%20%20%20%20%20%20%3Cslot%20%24%7BLABEL_NAME%7D%3E%3C%2Fslot%3E%0A%20%20%20%20%20%20%20%3Coutput%3E%3C%2Foutput%3E%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cslot%0A%20%20%20%20%20%20%20%24%7BSUPPORTING_NAME%7D%3E%3C%2Fslot%3E%0A%20%20%20%20%20%3C%2Flabel%3E%0A%20%20%20%20%20%3Cdiv%20id%3D%22%24%7BMENU_ID%7D%22%3E%0A%20%20%20%20%20%20%3Cslot%0A%20%20%20%20%20%20%20id%3D%22%24%7BMENU_SLOT_ID%7D%22%3E%3C%2Fslot%3E%0A%20%20%20%20%20%3C%2Fdiv%3E%60%0A%20%20%20%20this._alterna%20%3D%0A%20%20%20%20%20this._alterna.bind(this)%0A%20%20%20%20this._abre%20%3D%0A%20%20%20%20%20this._abre.bind(this)%0A%20%20%20%20this._cierra%20%3D%0A%20%20%20%20%20this._cierra.bind(this)%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BHTMLLabelElement%7C%0A%20%20%20%20%20*%20%20%20%20%20%20%20%20null%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._label%20%3D%20this._shadow.%0A%20%20%20%20%20querySelector(%22label%22)%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BHTMLOutputElement%7C%0A%20%20%20%20%20*%20%20%20%20%20%20%20%20null%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._target%20%3D%20this._shadow.%0A%20%20%20%20%20querySelector(%22output%22)%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BHTMLElement%7Cnull%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._menu%20%3D%20this.%0A%20%20%20%20%20_shadow.querySelector(%0A%20%20%20%20%20%20%60%23%24%7BMENU_ID%7D%60%0A%20%20%20%20%20)%0A%20%20%20%20%2F**%0A%20%20%20%20%20*%20%40private%0A%20%20%20%20%20*%20%40type%20%7BHTMLSlotElement%7Cnull%7D%0A%20%20%20%20%20*%2F%0A%20%20%20%20this._menuSlot%20%3D%20this._shadow.%0A%20%20%20%20%20querySelector(%0A%20%20%20%20%20%20%60%23%24%7BMENU_SLOT_ID%7D%60)%0A%20%20%20%20this.addEventListener(%0A%20%20%20%20%20%22keydown%22%2C%0A%20%20%20%20%20%2F**%0A%20%20%20%20%20%20*%20%40param%20%7BKeyboardEvent%0A%20%20%20%20%20%20*%20%20%20%20%20%20%20%20%7D%20evt%0A%20%20%20%20%20%20*%2F%0A%20%20%20%20%20evt%20%3D%3E%20%7B%0A%20%20%20%20%20%20const%20key%20%3D%20evt.key%0A%20%20%20%20%20%20if%20(key%20!%3D%3D%20%22Tab%22)%20%7B%0A%20%20%20%20%20%20%20evt.preventDefault()%0A%20%20%20%20%20%20%20this._alterna()%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%7D)%0A%20%20%20%20if%20(this._target%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20this._target.addEventListener(%0A%20%20%20%20%20%20%22click%22%2C%20this._alterna)%0A%20%20%20%20%7D%0A%20%20%20%20if%20(this._menu%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20this._menu.addEventListener(%0A%20%20%20%20%20%20%22click%22%2C%0A%20%20%20%20%20%20evt%20%3D%3E%20this._onClick(evt)%2C%0A%20%20%20%20%20%20%7B%20capture%3A%20true%20%7D)%0A%20%20%20%20%7D%0A%20%20%20%20if%20(this._menuSlot%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20this._menuSlot.%0A%20%20%20%20%20%20addEventListener(%0A%20%20%20%20%20%20%20%22slotchange%22%2C%20()%20%3D%3E%0A%20%20%20%20%20%20%20this._cambiaValue())%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20this.tabIndex%20%3D%200%0A%20%20%20%7D%0A%0A%20%20%20%2F**%0A%20%20%20%20*%20%40param%20%7Bstring%7D%20name%0A%20%20%20%20*%20%40param%20%7Bstring%7D%20oldValue%0A%20%20%20%20*%20%40param%20%7Bstring%7D%20newValue%0A%20%20%20%20*%2F%0A%20%20%20attributeChangedCallback(name%2C%0A%20%20%20%20oldValue%2C%20newValue)%20%7B%0A%20%20%20%20if%20(name%0A%20%20%20%20%20%3D%3D%3D%20REQUIRED_PROPERTY)%20%7B%0A%20%20%20%20%20this.analiza()%0A%20%20%20%20%7D%20else%20if%20(name%0A%20%20%20%20%20%3D%3D%3D%20VALUE_PROPERTY)%20%7B%0A%20%20%20%20%20this._cambiaValue()%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40private%20*%2F%0A%20%20%20_alterna()%20%7B%0A%20%20%20%20if%20(this.classList.%0A%20%20%20%20%20contains(OPEN_CLASS))%20%7B%0A%20%20%20%20%20this._cierra()%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20this._abre()%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40private%20*%2F%0A%20%20%20_abre()%20%7B%0A%20%20%20%20this.classList.add(OPEN_CLASS)%0A%20%20%20%20this.addEventListener(%0A%20%20%20%20%20%22focusout%22%2C%20this._cierra%2C%0A%20%20%20%20%20%7B%20capture%3A%20false%20%7D)%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40private%20*%2F%0A%20%20%20_cierra()%20%7B%0A%20%20%20%20this.removeEventListener(%0A%20%20%20%20%20%22focusout%22%2C%20this._cierra%2C%0A%20%20%20%20%20%7B%20capture%3A%20false%20%7D)%0A%20%20%20%20this.classList.%0A%20%20%20%20%20remove(OPEN_CLASS)%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40private%20*%2F%0A%20%20%20_cambiaValue()%20%7B%0A%20%20%20%20const%20m%20%3D%20this._menuSlot%0A%20%20%20%20if%20(m%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20const%20value%20%3D%20this.value%0A%20%20%20%20%20for%20(const%20o%20of%20m%0A%20%20%20%20%20%20.assignedElements())%20%7B%0A%20%20%20%20%20%20if%20(o%20instanceof%20OptionField%0A%20%20%20%20%20%20%20%26%26%20o.value%20%3D%3D%3D%20value)%20%7B%0A%20%20%20%20%20%20%20const%20text%20%3D%0A%20%20%20%20%20%20%20%20o.textContent.trim()%0A%20%20%20%20%20%20%20this._setText(text)%0A%20%20%20%20%20%20%20o.classList.%0A%20%20%20%20%20%20%20%20add(SELECTED_CLASS)%0A%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20o.classList.%0A%20%20%20%20%20%20%20%20remove(SELECTED_CLASS)%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20this.analiza()%0A%20%20%20%7D%0A%0A%20%20%20%2F**%0A%20%20%20%20*%20%40private%0A%20%20%20%20*%20%40param%20%7BEvent%7D%20evt%0A%20%20%20%20*%2F%0A%20%20%20_onClick(evt)%20%7B%0A%20%20%20%20const%20sel%20%3D%20evt.target%0A%20%20%20%20const%20m%20%3D%20this._menuSlot%0A%20%20%20%20let%20value%20%3D%20this.value%0A%20%20%20%20if%20(m%20!%3D%3D%20null%20%26%26%20sel%0A%20%20%20%20%20instanceof%20HTMLElement)%20%7B%0A%20%20%20%20%20for%20(const%20o%20of%20m%0A%20%20%20%20%20%20.assignedElements())%20%7B%0A%20%20%20%20%20%20if%20(o%20instanceof%20OptionField%0A%20%20%20%20%20%20%20%26%26%20o%20%3D%3D%3D%20sel)%20%7B%0A%20%20%20%20%20%20%20o.classList.%0A%20%20%20%20%20%20%20%20add(SELECTED_CLASS)%0A%20%20%20%20%20%20%20const%20text%20%3D%0A%20%20%20%20%20%20%20%20o.textContent.trim()%0A%20%20%20%20%20%20%20this._setText(text)%0A%20%20%20%20%20%20%20value%20%3D%20o.value%0A%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20o.classList.%0A%20%20%20%20%20%20%20%20remove(SELECTED_CLASS)%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%7D%0A%20%20%20%20%20this._cierra()%0A%20%20%20%20%20this.value%20%3D%20value%0A%20%20%20%20%7D%0A%20%20%20%20this.analiza()%0A%20%20%20%20this.dispatchEvent(%0A%20%20%20%20%20new%20Event(%22input%22))%0A%20%20%20%7D%0A%0A%20%20%20analiza()%20%7B%0A%20%20%20%20const%20t%20%3D%20this._target%0A%20%20%20%20if%20(t%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20let%20value%20%3D%20this.value%0A%20%20%20%20%20if%20(value%20%3D%3D%3D%20%22%22)%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20remove(POPULATED_CLASS)%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20add(POPULATED_CLASS)%0A%20%20%20%20%20%7D%0A%20%20%20%20%20if%20(this.checkValidity())%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20remove(INVALID_CLASS)%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20this.classList.%0A%20%20%20%20%20%20%20add(INVALID_CLASS)%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20get%20required()%20%7B%0A%20%20%20%20return%20this.hasAttribute(%0A%20%20%20%20%20REQUIRED_PROPERTY)%0A%20%20%20%7D%0A%0A%20%20%20set%20required(required)%20%7B%0A%20%20%20%20if%20(required)%20%7B%0A%20%20%20%20%20this.setAttribute(%0A%20%20%20%20%20%20REQUIRED_PROPERTY%2C%0A%20%20%20%20%20%20REQUIRED_PROPERTY)%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20this.removeAttribute(%0A%20%20%20%20%20%20REQUIRED_PROPERTY)%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20get%20value()%20%7B%0A%20%20%20%20const%20value%20%3D%20this.%0A%20%20%20%20%20getAttribute(VALUE_PROPERTY)%0A%20%20%20%20return%20value%20%3D%3D%3D%20null%20%3F%0A%20%20%20%20%20%22%22%0A%20%20%20%20%20%3A%20value%0A%20%20%20%7D%0A%0A%20%20%20set%20value(value)%20%7B%0A%20%20%20%20this.setAttribute(%0A%20%20%20%20%20VALUE_PROPERTY%2C%20value)%0A%20%20%20%7D%0A%0A%20%20%20%2F**%0A%20%20%20%20*%20%40private%0A%20%20%20%20*%20%40returns%20%7Bstring%7D%0A%20%20%20%20*%2F%0A%20%20%20_getText()%20%7B%0A%20%20%20%20const%20t%20%3D%20this._target%0A%20%20%20%20return%20t%20%3D%3D%3D%20null%20%3F%20%22%22%20%3A%20t.value%0A%20%20%20%7D%0A%0A%20%20%20%2F**%0A%20%20%20%20*%20%40private%0A%20%20%20%20*%20%40param%20%7Bstring%7D%20text%0A%20%20%20%20*%2F%0A%20%20%20_setText(text)%20%7B%0A%20%20%20%20const%20t%20%3D%20this._target%0A%20%20%20%20if%20(t%20!%3D%3D%20null)%20%7B%0A%20%20%20%20%20t.value%20%3D%20text%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%0A%20%20%20%2F**%20%40returns%20%7Bboolean%7D%20*%2F%0A%20%20%20checkValidity()%20%7B%0A%20%20%20%20return%20!this.required%20%7C%7C%0A%20%20%20%20%20this.value%20!%3D%3D%20%22%22%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20customElements.define(%0A%20%20%20%22select-field%22%2C%20SelectField)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20%40keyframes%20ripple%20%7B%0A%20%20%20from%20%7B%0A%20%20%20%20color%3A%20var(--OnSurfaceVariant)%3B%0A%20%20%20%20background-size%3A%20100%25%3B%0A%20%20%20%7D%0A%0A%20%20%20to%20%7B%0A%20%20%20%20color%3A%20var(--OnPrimary)%3B%0A%20%20%20%20background-size%3A%2015000%25%3B%0A%20%20%20%7D%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3ESelect%3C%2Fh1%3E%0A%20%3Csection%20style%3D%22max-width%3A%20600px%3B%0A%20%20%20margin%3A%200%20auto%22%3E%0A%20%20%3Cselect-field%20required%20value%3D%22IC22%22%3E%0A%20%20%20%3Cspan%20slot%3D%22label%22%3EGrupo%3C%2Fspan%3E%0A%20%20%20%3Coption-field%20value%3D%22%22%3E%0A%20%20%20%3C%2Foption-field%3E%0A%20%20%20%3Coption-field%20value%3D%22IC21%22%3E%0A%20%20%20%20IC-21%0A%20%20%20%3C%2Foption-field%3E%0A%20%20%20%3Coption-field%20value%3D%22IC22%22%3E%0A%20%20%20%20IC-22%0A%20%20%20%3C%2Foption-field%3E%0A%20%20%20%3Coption-field%20value%3D%22IC23%22%3E%0A%20%20%20%20IC-23%0A%20%20%20%3C%2Foption-field%3E%0A%20%20%3C%2Fselect-field%3E%0A%20%3C%2Fsection%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.</a>
+  </p>
+ </section>
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+      style="color: #ff0000;">html</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div><span style="color: #800000;">&lt;html</span> <span
+      style="color: #ff0000;">lang</span>=<span
+      style="color: #0000ff;">"es"</span><span
+      style="color: #800000;">&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">charset</span>=<span
+      style="color: #0000ff;">"UTF-8"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+      style="color: #ff0000;">name</span>=<span
+      style="color: #0000ff;">"viewport"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+      style="color: #0000ff;">"width=device-width"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Select<span
+      style="color: #800000;">&lt;/title&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"preconnect"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.googleapis.com"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"preconnect"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.gstatic.com"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">crossorigin</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+      style="color: #ff0000;">rel</span>=<span
+      style="color: #0000ff;">"stylesheet"</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+      style="color: #0000ff;">"https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span style="color: #800000;">html</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--Font</span>: -apple-system,
+   </div>
+   <div>&nbsp; &nbsp; BlinkMacSystemFont, Roboto,</div>
+   <div>&nbsp; &nbsp; <span style="color: #0451a5;">sans-serif</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--BodyLargeFont</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Font</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--BodyLargeSize</span>: <span
+      style="color: #098658;">16px</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--BodyLargeWeight</span>: <span
+      style="color: #098658;">400</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--BodySmallFont</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Font</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--BodySmallSize</span>: <span
+      style="color: #098658;">12px</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--BodySmallWeight</span>: <span
+      style="color: #098658;">400</span>;
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--Background</span>: <span
+      style="color: #0451a5;">#FFFBFE</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--OnBackground</span>: <span
+      style="color: #0451a5;">#1C1B1F</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--Surface</span>: <span
+      style="color: #0451a5;">#FFFBFE</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--OnSurface</span>: <span
+      style="color: #0451a5;">#1C1B1F</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--OnSurfaceHover</span>: <span
+      style="color: #0451a5;">#1C1B1F14</span>;
+   </div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--OnSurfaceFocus</span>: <span
+      style="color: #0451a5;">#1C1B1F19</span>;
+   </div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--OnSurfacePressed</span>: <span
+      style="color: #0451a5;">#1C1B1F1E</span>;
+   </div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--OnSurfaceShadow</span>: <span
+      style="color: #0451a5;">#1C1B1F99</span>;
+   </div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--SurfaceVariant</span>: <span
+      style="color: #0451a5;">#E7E0EC</span>;
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--SurfaceVariantHover</span>:
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #0451a5;">#CAC4D0</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--OnSurfaceVariant</span>: <span
+      style="color: #0451a5;">#49454F</span>;
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--Primary</span>: <span
+      style="color: #0451a5;">#6750A4</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--OnPrimary</span>: <span
+      style="color: #0451a5;">#FFFFFF</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--Error</span>: <span
+      style="color: #0451a5;">#B3261E</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--OnErrorContainer</span>: <span
+      style="color: #0451a5;">#F2B8B5</span>;
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--Elevation</span>: <span
+      style="color: #0451a5;">#F5EEFA</span>;</div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--ShapeCornerMedium</span>: <span
+      style="color: #098658;">12px</span>;
+   </div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #ff0000;">--ShapeCornerExtraSmall</span>: <span
+      style="color: #098658;">4px</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">--ElevationLevel2</span>:
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #098658;">0</span> <span
+      style="color: #098658;">3px</span> <span
+      style="color: #098658;">6px</span> <span
+      style="color: #098658;">0px</span> <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceShadow</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span
+      style="color: #098658;">16px</span>;</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Font</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnBackground</span>);</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">background-color</span>:
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Background</span>);</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span
+      style="color: #008000;">/* Quita un borde rojo que coloca</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp;* Firefox. */</span></div>
+   <div>&nbsp; <span style="color: #800000;">:-moz-ui-invalid</span> {</div>
+   <div>&nbsp; &nbsp;<span style="color: #ff0000;">box-shadow</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp; <span style="color: #008000;">// @ts-check</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">INVALID_CLASS</span> = <span
+      style="color: #a31515;">"invalid"</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">POPULATED_CLASS</span> =</div>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">"populated"</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">OPEN_CLASS</span> = <span
+      style="color: #a31515;">"open"</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">SELECTED_CLASS</span> = <span
+      style="color: #a31515;">"selected"</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">LABEL_NAME</span> = <span
+      style="color: #a31515;">'name="label"'</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">SUPPORTING_NAME</span> =</div>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">'name="supporting"'</span>
+   </div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">MENU_NAME</span> = <span
+      style="color: #a31515;">'name="menu"'</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">MENU_ID</span> = <span
+      style="color: #a31515;">"menu"</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">MENU_SLOT_ID</span> = <span
+      style="color: #a31515;">"menuSlot"</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">VALUE_PROPERTY</span> = <span
+      style="color: #a31515;">"value"</span></div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">REQUIRED_PROPERTY</span> =</div>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">"required"</span></div><br>
+   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">OptionField</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">HTMLElement</span> {</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">get</span> <span
+      style="color: #001080;">value</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">value</span> = <span
+      style="color: #0000ff;">this</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">getAttribute</span>(<span
+      style="color: #0070c1;">VALUE_PROPERTY</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #0070c1;">value</span> === <span
+      style="color: #0000ff;">null</span> ?</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">""</span></div>
+   <div>&nbsp; &nbsp; &nbsp;: <span style="color: #0070c1;">value</span></div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{string}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">value</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">setValue</span>(<span
+      style="color: #001080;">value</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">setAttribute</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #0070c1;">VALUE_PROPERTY</span>, <span
+      style="color: #001080;">value</span>)
+   </div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #001080;">customElements</span>.<span
+      style="color: #795e26;">define</span>(</div>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">"option-field"</span>, <span
+      style="color: #267f99;">OptionField</span>)</div><br>
+   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">SelectField</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">HTMLElement</span> {</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">static</span> <span
+      style="color: #0000ff;">get</span> <span
+      style="color: #001080;">observedAttributes</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> [<span
+      style="color: #0070c1;">VALUE_PROPERTY</span>]</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">constructor</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">super</span>()</div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@type</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{ShadowRoot}</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_shadow</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">attachShadow</span>({</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">mode</span><span
+      style="color: #001080;">:</span> <span
+      style="color: #a31515;">"open"</span></div>
+   <div>&nbsp; &nbsp; &nbsp;})</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_shadow</span>.<span
+      style="color: #001080;">innerHTML</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #008000;">/* html */</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;`<span style="color: #800000;">&lt;style&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">block</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">position</span>:<span
+      style="color: #0451a5;">relative</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">margin</span>: <span
+      style="color: #098658;">1rem</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">label</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">block</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">span::after</span> {
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">content</span>: <span
+      style="color: #a31515;">""</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--SurfaceVariant</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">absolute</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">z-index</span>: <span
+      style="color: #098658;">-1</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">top</span>: <span
+      style="color: #098658;">0</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">right</span>: <span
+      style="color: #098658;">0</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">left</span>: <span
+      style="color: #098658;">0</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">bottom</span>: <span
+      style="color: #098658;">0</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">span</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-top-left-radius</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--ShapeCornerExtraSmall</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-top-right-radius</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--ShapeCornerExtraSmall</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">relative</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">block</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">cursor</span>: <span
+      style="color: #0451a5;">pointer</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">padding</span>: <span
+      style="color: #098658;">24px</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">0</span> <span style="color: #098658;">0</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">overflow</span>: <span
+      style="color: #0451a5;">hidden</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; [<span style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">color</span>:
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceVariant</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">font-family</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--BodyLargeFont</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">font-size</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--BodyLargeSize</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">font-weight</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--BodyLargeWeight</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">absolute</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">top</span>: <span
+      style="color: #098658;">24px</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">left</span>: <span
+      style="color: #098658;">1rem</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">transition</span>: <span
+      style="color: #098658;">0.3s</span> <span
+      style="color: #0451a5;">ease-in</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
+      style="color: #800000;">:focus</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>),</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">POPULATED_CLASS</span><span
+      style="color: #800000;">}</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>),</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
+      style="color: #800000;">.float</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">transform</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">translateY</span>(<span
+      style="color: #098658;">-16px</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">font-size</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--BodySmallSize</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">output</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-bottom-width</span>: <span
+      style="color: #098658;">1px</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-bottom-style</span>: <span
+      style="color: #0451a5;">solid</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-bottom-color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceVariant</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">caret-color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Primary</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurface</span>);
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">font-family</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--BodyLargeFont</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">font-size</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--BodyLargeSize</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">font-weight</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--BodyLargeWeight</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-top</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-left</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-right</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">block</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">box-sizing</span>: <span
+      style="color: #0451a5;">border-box</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">padding</span>: <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">16px</span> <span
+      style="color: #098658;">8px</span> <span
+      style="color: #098658;">16px</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #0451a5;">transparent</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">resize</span>: <span
+      style="color: #0451a5;">none</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">outline</span>: <span
+      style="color: #0451a5;">none</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">width</span>: <span
+      style="color: #098658;">100%</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">transition</span>: <span
+      style="color: #098658;">0.3s</span> <span
+      style="color: #0451a5;">ease-in</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">height</span>: <span
+      style="color: #098658;">32px</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">line-height</span>: <span
+      style="color: #098658;">23px</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-position</span>: <span
+      style="color: #0451a5;">center</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-image</span>: <span
+      style="color: #795e26;">url</span>(<span
+      style="color: #a31515;">"data:image/svg+xml,%3Csvg&nbsp;xmlns='http://www.w3.org/2000/svg'&nbsp;height='5'&nbsp;width='32'%3E%3Cpath&nbsp;d='M21&nbsp;4&nbsp;16&nbsp;0&nbsp;26&nbsp;0&nbsp;Z'&nbsp;fill='%2349454E'&nbsp;/%3E%3C/svg%3E"</span>);
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-repeat</span>: <span
+      style="color: #0451a5;">no-repeat</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-position-x</span>: <span
+      style="color: #0451a5;">right</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-position-y</span>: <span
+      style="color: #098658;">20%</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">padding-right</span>: <span
+      style="color: #098658;">32px</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">cursor</span>: <span
+      style="color: #0451a5;">pointer</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
+      style="color: #800000;">.open</span>) <span
+      style="color: #800000;">output</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-image</span>: <span
+      style="color: #795e26;">url</span>(<span
+      style="color: #a31515;">"data:image/svg+xml,%3Csvg&nbsp;xmlns='http://www.w3.org/2000/svg'&nbsp;height='5'&nbsp;width='32'%3E%3Cpath&nbsp;d='M21&nbsp;0&nbsp;16&nbsp;4&nbsp;26&nbsp;4&nbsp;Z'&nbsp;fill='%2349454E'&nbsp;/%3E%3C/svg%3E"</span>);
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; [<span style="color: #800000;">${</span><span
+      style="color: #0070c1;">SUPPORTING_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">color</span>:
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceVariant</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">font-family</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--BodySmallFont</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">font-size</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--BodySmallSize</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">font-weight</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--BodySmallWeight</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">padding</span>: <span
+      style="color: #098658;">4px</span> <span
+      style="color: #098658;">16px</span> <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">16px</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">block</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">transition</span>: <span
+      style="color: #098658;">0.3s</span> <span
+      style="color: #0451a5;">ease-in</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
+      style="color: #800000;">:focus</span>) &nbsp;{</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">outline</span>: <span
+      style="color: #0451a5;">none</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
+      style="color: #800000;">:focus</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) &nbsp;{</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Primary</span>);
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
+      style="color: #800000;">:focus</span>) <span
+      style="color: #800000;">output</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-bottom-width</span>: <span
+      style="color: #098658;">2px</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-bottom-color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Primary</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">padding-bottom</span>: <span
+      style="color: #098658;">7px</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">outline</span>: <span
+      style="color: #0451a5;">none</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
+      style="color: #800000;">:hover</span>) <span
+      style="color: #800000;">span</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--SurfaceVariantHover</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
+      style="color: #800000;">:hover</span>) <span
+      style="color: #800000;">output</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-bottom-width</span>: <span
+      style="color: #098658;">1px</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-bottom-color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurface</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #ff0000;">padding-bottom</span>: <span
+      style="color: #098658;">8px</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">INVALID_CLASS</span><span
+      style="color: #800000;">}</span>) <span
+      style="color: #800000;">output</span>,</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">INVALID_CLASS</span><span
+      style="color: #800000;">}:focus</span>) <span
+      style="color: #800000;">output</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-bottom-color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Error</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">INVALID_CLASS</span><span
+      style="color: #800000;">}</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Error</span>);
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">INVALID_CLASS</span><span
+      style="color: #800000;">}</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">SUPPORTING_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Error</span>);
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">INVALID_CLASS</span><span
+      style="color: #800000;">}:hover</span>) <span
+      style="color: #800000;">output</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-bottom-color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnErrorContainer</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">INVALID_CLASS</span><span
+      style="color: #800000;">}:hover</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceVariant</span>);
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">INVALID_CLASS</span><span
+      style="color: #800000;">}:hover:focus</span>) [<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}</span>]::slotted(<span
+      style="color: #800000;">*</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Error</span>);
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(.<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">INVALID_CLASS</span><span
+      style="color: #800000;">}:hover:focus</span>) <span
+      style="color: #800000;">output</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-bottom-width</span>: <span
+      style="color: #098658;">2px</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">padding-bottom</span>: <span
+      style="color: #098658;">7px</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; &nbsp; </div>
+   <div>&nbsp; &nbsp; &nbsp; #<span style="color: #800000;">${</span><span
+      style="color: #0070c1;">MENU_ID</span><span
+      style="color: #800000;">}</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">block</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">position</span>: <span
+      style="color: #0451a5;">absolute</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">z-index</span>: <span
+      style="color: #098658;">1</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">right</span>: <span
+      style="color: #098658;">0</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">left</span>: <span
+      style="color: #098658;">0</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">top</span>: <span
+      style="color: #098658;">57px</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">pointer-events</span>: <span
+      style="color: #0451a5;">none</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">transform</span>: <span
+      style="color: #795e26;">translateY</span>(<span
+      style="color: #098658;">-50%</span>) <span
+      style="color: #795e26;">scaleY</span>(<span
+      style="color: #098658;">0</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">transition</span>: transform <span
+      style="color: #098658;">0.5s</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">box-sizing</span>: <span
+      style="color: #0451a5;">border-box</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">padding</span>: <span
+      style="color: #098658;">4px</span> <span
+      style="color: #098658;">0</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-bottom-left-radius</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--ShapeCornerMedium</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border-bottom-right-radius</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--ShapeCornerMedium</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Elevation</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">cursor</span>: <span
+      style="color: #0451a5;">default</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">box-shadow</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--ElevationLevel2</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">:host</span>(<span
+      style="color: #800000;">.open</span>) #<span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">MENU_ID</span><span
+      style="color: #800000;">}</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">pointer-events</span>: <span
+      style="color: #0451a5;">all</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">transform</span>: <span
+      style="color: #795e26;">translateY</span>(<span
+      style="color: #098658;">0</span>) <span
+      style="color: #795e26;">scaleY</span>(<span
+      style="color: #098658;">1</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; #<span style="color: #800000;">${</span><span
+      style="color: #0070c1;">MENU_SLOT_ID</span><span
+      style="color: #800000;">}</span>::slotted(<span
+      style="color: #800000;">*</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">block</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">border</span>: <span
+      style="color: #0451a5;">none</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #0451a5;">transparent</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurface</span>);
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">font-family</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--LabelLargeFont</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">font-size</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--LabelLargeSize</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">font-weight</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--LabelLargeWeight</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">box-sizing</span>: <span
+      style="color: #0451a5;">border-box</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">padding</span>: <span
+      style="color: #098658;">4px</span> <span
+      style="color: #098658;">0</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">width</span>: <span
+      style="color: #098658;">100%</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">height</span>: <span
+      style="color: #098658;">48px</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">line-height</span>: <span
+      style="color: #098658;">48px</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">padding</span>: <span
+      style="color: #098658;">0</span> <span
+      style="color: #098658;">12px</span>;
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">white-space</span>: <span
+      style="color: #0451a5;">nowrap</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">text-overflow</span>: <span
+      style="color: #0451a5;">ellipsis</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">overflow</span>: <span
+      style="color: #0451a5;">hidden</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">text-align</span>: <span
+      style="color: #0451a5;">start</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; #<span style="color: #800000;">${</span><span
+      style="color: #0070c1;">MENU_SLOT_ID</span><span
+      style="color: #800000;">}</span>::slotted(<span
+      style="color: #800000;">:hover</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceHover</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; #<span style="color: #800000;">${</span><span
+      style="color: #0070c1;">MENU_SLOT_ID</span><span
+      style="color: #800000;">}</span>::slotted(<span
+      style="color: #800000;">:active</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>:</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Primary</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-position</span>: <span
+      style="color: #0451a5;">center</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-image</span>: <span
+      style="color: #795e26;">radial-gradient</span>(<span
+      style="color: #0451a5;">circle</span>, <span
+      style="color: #0451a5;">transparent</span> <span
+      style="color: #098658;">1%</span>, <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--SurfaceVariant</span>) <span
+      style="color: #098658;">1%</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-size</span>: <span
+      style="color: #098658;">100%</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">animation-fill-mode</span>: <span
+      style="color: #0451a5;">forwards</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">animation-name</span>: ripple;</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">animation-duration</span>: <span
+      style="color: #098658;">0.5s</span>;</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div><br>
+   <div>&nbsp; &nbsp; &nbsp; #<span style="color: #800000;">${</span><span
+      style="color: #0070c1;">MENU_SLOT_ID</span><span
+      style="color: #800000;">}</span>::slotted(<span
+      style="color: #800000;">.selected</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnPrimary</span>);
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #ff0000;">background-color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--Primary</span>);</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/style&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;span&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;slot</span> <span
+      style="color: #800000;">${</span><span
+      style="color: #0070c1;">LABEL_NAME</span><span
+      style="color: #800000;">}&gt;&lt;/slot&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #800000;">&lt;output&gt;&lt;/output&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;/span&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;slot</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #800000;">${</span><span
+      style="color: #0070c1;">SUPPORTING_NAME</span><span
+      style="color: #800000;">}&gt;&lt;/slot&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;div</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"${</span><span
+      style="color: #0070c1;">MENU_ID</span><span
+      style="color: #0000ff;">}"</span><span style="color: #800000;">&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #800000;">&lt;slot</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"${</span><span
+      style="color: #0070c1;">MENU_SLOT_ID</span><span
+      style="color: #0000ff;">}"</span><span
+      style="color: #800000;">&gt;&lt;/slot&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #800000;">&lt;/div&gt;</span>`
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_alterna</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_alterna</span>.<span
+      style="color: #795e26;">bind</span>(<span
+      style="color: #0000ff;">this</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_abre</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_abre</span>.<span
+      style="color: #795e26;">bind</span>(<span
+      style="color: #0000ff;">this</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_cierra</span> =</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_cierra</span>.<span
+      style="color: #795e26;">bind</span>(<span
+      style="color: #0000ff;">this</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@type</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{HTMLLabelElement|</span></div>
+   <div><span
+      style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_label</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_shadow</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">querySelector</span>(<span
+      style="color: #a31515;">"label"</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@type</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{HTMLOutputElement|</span></div>
+   <div><span
+      style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null}</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_target</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_shadow</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">querySelector</span>(<span
+      style="color: #a31515;">"output"</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@type</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{HTMLElement|null}</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menu</span> = <span
+      style="color: #0000ff;">this</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">_shadow</span>.<span
+      style="color: #795e26;">querySelector</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #a31515;">`#</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">MENU_ID</span><span
+      style="color: #0000ff;">}</span><span style="color: #a31515;">`</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;)</div>
+   <div>&nbsp; &nbsp; <span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;* </span><span
+      style="color: #0000ff;">@type</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{HTMLSlotElement|null}</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp;*/</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menuSlot</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_shadow</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">querySelector</span>(
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #a31515;">`#</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">MENU_SLOT_ID</span><span
+      style="color: #0000ff;">}</span><span style="color: #a31515;">`</span>)
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">addEventListener</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"keydown"</span>,
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{KeyboardEvent</span></div>
+   <div><span
+      style="color: #267f99;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">evt</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; &nbsp; */</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">evt</span> <span
+      style="color: #0000ff;">=&gt;</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">key</span> = <span
+      style="color: #001080;">evt</span>.<span
+      style="color: #001080;">key</span></div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">key</span> !== <span
+      style="color: #a31515;">"Tab"</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #001080;">evt</span>.<span
+      style="color: #795e26;">preventDefault</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_alterna</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; &nbsp;})</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_target</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_target</span>.<span
+      style="color: #795e26;">addEventListener</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #a31515;">"click"</span>, <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_alterna</span>)</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menu</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menu</span>.<span
+      style="color: #795e26;">addEventListener</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #a31515;">"click"</span>,</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">evt</span> <span
+      style="color: #0000ff;">=&gt;</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_onClick</span>(<span
+      style="color: #001080;">evt</span>),</div>
+   <div>&nbsp; &nbsp; &nbsp; { <span style="color: #001080;">capture</span><span
+      style="color: #001080;">:</span> <span
+      style="color: #0000ff;">true</span> })</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menuSlot</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menuSlot</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">addEventListener</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #a31515;">"slotchange"</span>, () <span
+      style="color: #0000ff;">=&gt;</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_cambiaValue</span>())</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">connectedCallback</span>() {
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">tabIndex</span> = <span
+      style="color: #098658;">0</span></div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{string}</span><span
+      style="color: #008000;"> </span><span style="color: #001080;">name</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{string}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">oldValue</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{string}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">newValue</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
+   <div>&nbsp; &nbsp;<span
+      style="color: #795e26;">attributeChangedCallback</span>(<span
+      style="color: #001080;">name</span>,</div>
+   <div>&nbsp; &nbsp; <span style="color: #001080;">oldValue</span>, <span
+      style="color: #001080;">newValue</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">name</span></div>
+   <div>&nbsp; &nbsp; &nbsp;=== <span
+      style="color: #0070c1;">REQUIRED_PROPERTY</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">analiza</span>()</div>
+   <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> <span
+      style="color: #af00db;">if</span> (<span
+      style="color: #001080;">name</span></div>
+   <div>&nbsp; &nbsp; &nbsp;=== <span
+      style="color: #0070c1;">VALUE_PROPERTY</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_cambiaValue</span>()</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@private</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_alterna</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">contains</span>(<span
+      style="color: #0070c1;">OPEN_CLASS</span>)) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_cierra</span>()</div>
+   <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_abre</span>()</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@private</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_abre</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.<span
+      style="color: #795e26;">add</span>(<span
+      style="color: #0070c1;">OPEN_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">addEventListener</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #a31515;">"focusout"</span>, <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_cierra</span>,
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;{ <span style="color: #001080;">capture</span><span
+      style="color: #001080;">:</span> <span
+      style="color: #0000ff;">false</span> })</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@private</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_cierra</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">removeEventListener</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #a31515;">"focusout"</span>, <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_cierra</span>,
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;{ <span style="color: #001080;">capture</span><span
+      style="color: #001080;">:</span> <span
+      style="color: #0000ff;">false</span> })</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">remove</span>(<span
+      style="color: #0070c1;">OPEN_CLASS</span>)</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@private</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_cambiaValue</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">m</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menuSlot</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">m</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">value</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">value</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">o</span> <span
+      style="color: #0000ff;">of</span> <span style="color: #0070c1;">m</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; .<span
+      style="color: #795e26;">assignedElements</span>()) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">o</span> <span
+      style="color: #0000ff;">instanceof</span> <span
+      style="color: #267f99;">OptionField</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;&amp;&amp; <span
+      style="color: #0070c1;">o</span>.<span
+      style="color: #001080;">value</span> === <span
+      style="color: #0070c1;">value</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">text</span> =
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">o</span>.<span
+      style="color: #001080;">textContent</span>.<span
+      style="color: #795e26;">trim</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_setText</span>(<span
+      style="color: #0070c1;">text</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">o</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">add</span>(<span
+      style="color: #0070c1;">SELECTED_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">o</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">remove</span>(<span
+      style="color: #0070c1;">SELECTED_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">analiza</span>()</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{Event}</span><span
+      style="color: #008000;"> </span><span style="color: #001080;">evt</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_onClick</span>(<span
+      style="color: #001080;">evt</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">sel</span> = <span
+      style="color: #001080;">evt</span>.<span
+      style="color: #001080;">target</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">m</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_menuSlot</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">value</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">value</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">m</span> !== <span
+      style="color: #0000ff;">null</span> &amp;&amp; <span
+      style="color: #0070c1;">sel</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">instanceof</span> <span
+      style="color: #267f99;">HTMLElement</span>) {
+   </div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">o</span> <span
+      style="color: #0000ff;">of</span> <span style="color: #0070c1;">m</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; .<span
+      style="color: #795e26;">assignedElements</span>()) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">o</span> <span
+      style="color: #0000ff;">instanceof</span> <span
+      style="color: #267f99;">OptionField</span></div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;&amp;&amp; <span
+      style="color: #0070c1;">o</span> === <span
+      style="color: #0070c1;">sel</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">o</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">add</span>(<span
+      style="color: #0070c1;">SELECTED_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">text</span> =
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0070c1;">o</span>.<span
+      style="color: #001080;">textContent</span>.<span
+      style="color: #795e26;">trim</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_setText</span>(<span
+      style="color: #0070c1;">text</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #001080;">value</span> = <span
+      style="color: #0070c1;">o</span>.<span
+      style="color: #001080;">value</span>
+   </div>
+   <div>&nbsp; &nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">o</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">remove</span>(<span
+      style="color: #0070c1;">SELECTED_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">_cierra</span>()</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">value</span> = <span
+      style="color: #001080;">value</span></div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">analiza</span>()</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">dispatchEvent</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Event</span>(<span
+      style="color: #a31515;">"input"</span>))</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">analiza</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">t</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_target</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">t</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">value</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">value</span></div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">value</span> === <span
+      style="color: #a31515;">""</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">remove</span>(<span
+      style="color: #0070c1;">POPULATED_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">add</span>(<span
+      style="color: #0070c1;">POPULATED_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">checkValidity</span>()) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">remove</span>(<span
+      style="color: #0070c1;">INVALID_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">classList</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">add</span>(<span
+      style="color: #0070c1;">INVALID_CLASS</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">get</span> <span
+      style="color: #001080;">required</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">hasAttribute</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #0070c1;">REQUIRED_PROPERTY</span>)</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">set</span> <span
+      style="color: #001080;">required</span>(<span
+      style="color: #001080;">required</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">required</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">setAttribute</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #0070c1;">REQUIRED_PROPERTY</span>,</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #0070c1;">REQUIRED_PROPERTY</span>)</div>
+   <div>&nbsp; &nbsp; } <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">removeAttribute</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #0070c1;">REQUIRED_PROPERTY</span>)</div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">get</span> <span
+      style="color: #001080;">value</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">value</span> = <span
+      style="color: #0000ff;">this</span>.</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #795e26;">getAttribute</span>(<span
+      style="color: #0070c1;">VALUE_PROPERTY</span>)</div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #0070c1;">value</span> === <span
+      style="color: #0000ff;">null</span> ?</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">""</span></div>
+   <div>&nbsp; &nbsp; &nbsp;: <span style="color: #0070c1;">value</span></div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #0000ff;">set</span> <span
+      style="color: #001080;">value</span>(<span
+      style="color: #001080;">value</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #795e26;">setAttribute</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp;<span
+      style="color: #0070c1;">VALUE_PROPERTY</span>, <span
+      style="color: #001080;">value</span>)
+   </div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@returns</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{string}</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_getText</span>() {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">t</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_target</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> <span
+      style="color: #0070c1;">t</span> === <span
+      style="color: #0000ff;">null</span> ? <span
+      style="color: #a31515;">""</span> : <span
+      style="color: #0070c1;">t</span>.<span
+      style="color: #001080;">value</span></div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@private</span></div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; * </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{string}</span><span
+      style="color: #008000;"> </span><span style="color: #001080;">text</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp; &nbsp; */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">_setText</span>(<span
+      style="color: #001080;">text</span>) {</div>
+   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">t</span> = <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">_target</span></div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">if</span> (<span
+      style="color: #0070c1;">t</span> !== <span
+      style="color: #0000ff;">null</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">t</span>.<span
+      style="color: #001080;">value</span> = <span
+      style="color: #001080;">text</span></div>
+   <div>&nbsp; &nbsp; }</div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@returns</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{boolean}</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">checkValidity</span>() {
+   </div>
+   <div>&nbsp; &nbsp; <span style="color: #af00db;">return</span> !<span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">required</span> ||</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">value</span> !== <span
+      style="color: #a31515;">""</span></div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div><br>
+   <div>&nbsp; <span style="color: #001080;">customElements</span>.<span
+      style="color: #795e26;">define</span>(</div>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">"select-field"</span>, <span
+      style="color: #267f99;">SelectField</span>)</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp; <span style="color: #af00db;">@keyframes</span> <span
+      style="color: #001080;">ripple</span> {</div>
+   <div>&nbsp; &nbsp;from {</div>
+   <div>&nbsp; &nbsp; <span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnSurfaceVariant</span>);</div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #ff0000;">background-size</span>: <span
+      style="color: #098658;">100%</span>;
+   </div>
+   <div>&nbsp; &nbsp;}</div><br>
+   <div>&nbsp; &nbsp;to {</div>
+   <div>&nbsp; &nbsp; <span style="color: #ff0000;">color</span>: <span
+      style="color: #795e26;">var</span>(<span
+      style="color: #001080;">--OnPrimary</span>);</div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #ff0000;">background-size</span>: <span
+      style="color: #098658;">15000%</span>;
+   </div>
+   <div>&nbsp; &nbsp;}</div>
+   <div>&nbsp; }</div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Select<span
+      style="color: #800000;">&lt;/h1&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;section</span> <span
+      style="color: #ff0000;">style</span>=<span
+      style="color: #0000ff;">"</span><span
+      style="color: #0000ff;">max-width: 600px;</span></div>
+   <div><span style="color: #0000ff;">&nbsp; &nbsp;margin: 0 auto</span><span
+      style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span>
+   </div>
+   <div>&nbsp; <span style="color: #800000;">&lt;select-field</span> <span
+      style="color: #ff0000;">required</span> <span
+      style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"IC22"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span</span> <span
+      style="color: #ff0000;">slot</span>=<span
+      style="color: #0000ff;">"label"</span><span
+      style="color: #800000;">&gt;</span>Grupo<span
+      style="color: #800000;">&lt;/span&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;option-field</span> <span
+      style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">""</span><span style="color: #800000;">&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/option-field&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;option-field</span> <span
+      style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"IC21"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; IC-21</div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/option-field&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;option-field</span> <span
+      style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"IC22"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; IC-22</div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/option-field&gt;</span>
+   </div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;option-field</span> <span
+      style="color: #ff0000;">value</span>=<span
+      style="color: #0000ff;">"IC23"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp; &nbsp; IC-23</div>
+   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/option-field&gt;</span>
+   </div>
+   <div>&nbsp; <span style="color: #800000;">&lt;/select-field&gt;</span></div>
+   <div>&nbsp;<span style="color: #800000;">&lt;/section&gt;</span></div>
+   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+  </div>
+ </muestra-codigo>
+</div>
+<div class="lectura">
+ <h1>Solo para los más rudos</h1>
+ <ul>
+  <li>
+   <p>
+    Los campos de texto en Material Design están definidos en
+    <a href="https://m3.material.io/components/text-fields/overview"
+      rel="noopener"
+      target="_blank">https://m3.material.io/components/text-fields/overview</a>
+    y en
+    <a href="https://m3.material.io/components/text-fields/overview"
+      rel="noopener"
+      target="_blank">https://m3.material.io/components/text-fields/overview</a>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los menús en Material Design están definidos en
+    <a href="https://material.io/components/menus" rel="noopener"
+      target="_blank">https://material.io/components/menus</a>
+    y en
+    <a href="https://m3.material.io/components/menus/overview" rel="noopener"
+      target="_blank">https://m3.material.io/components/menus/overview</a>.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >I. Botones</h1><div class="lectura">
  <ul>
   <li>
    <p>
@@ -4539,7 +6350,7 @@
 </div>
       </section>
      <section >
-         <h1 >I. Botones segmentados</h1><div class="lectura">
+         <h1 >J. Botones segmentados</h1><div class="lectura">
  <ul>
   <li>
    <p>
@@ -5054,7 +6865,7 @@
 </div>
       </section>
      <section >
-         <h1 >J. Listas</h1><div class="lectura">
+         <h1 >K. Listas</h1><div class="lectura">
  <ul>
   <li>
    <p>
@@ -5867,7 +7678,7 @@
 </div>
       </section>
      <section >
-         <h1 >K. Tarjetas</h1><div class="lectura">
+         <h1 >L. Tarjetas</h1><div class="lectura">
  <ul>
   <li>
    <p>
@@ -6390,7 +8201,7 @@
 </div>
       </section>
      <section >
-         <h1 >L. Navegación entre vistas</h1><div class="lectura">
+         <h1 >M. Navegación entre vistas</h1><div class="lectura">
  <ul>
   <li>
    <p>
@@ -6404,7 +8215,7 @@
 </div>
       </section>
      <section >
-         <h1 >M. Navegación con pestañas</h1><div class="lectura">
+         <h1 >N. Navegación con pestañas</h1><div class="lectura">
  <ul>
   <li>
    <p>
@@ -7226,7 +9037,7 @@
 </div>
       </section>
      <section >
-         <h1 >N. Barra de navegación</h1><div class="lectura">
+         <h1 >O. Barra de navegación</h1><div class="lectura">
  <ul>
   <li>
    <p>
@@ -7716,7 +9527,7 @@
 </div>
       </section>
      <section >
-         <h1 >O. Cajón de navegación</h1><div class="lectura">
+         <h1 >P. Cajón de navegación</h1><div class="lectura">
  <ul>
   <li>
    <p>
@@ -8411,10 +10222,10 @@
 </div>
       </section>
      <section >
-         <h1 >P. Acceso a la plataforma</h1>
+         <h1 >Q. Acceso a la plataforma</h1>
       </section>
      <section >
-         <h1 >Q. Geolocalización</h1><div class="horizontal">
+         <h1 >R. Geolocalización</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
   <iframe src="/src/m03vistas/Fgps.html" height="200"
@@ -8508,7 +10319,7 @@
 </div>
       </section>
      <section >
-         <h1 >R. Archivos y cámara</h1><div class="horizontal">
+         <h1 >S. Archivos y cámara</h1><div class="horizontal">
  <section>
   <h1>Salida</h1>
   <iframe src="/src/m03vistas/Garchivos.html" height="300"
@@ -8613,7 +10424,7 @@
 </div>
       </section>
      <section >
-         <h1 >S. Resumen</h1><div class="lectura">
+         <h1 >T. Resumen</h1><div class="lectura">
  <ul>
   <li>
    <p>

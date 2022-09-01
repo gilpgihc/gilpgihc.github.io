@@ -58,6 +58,7 @@
   const POPULATED_CLASS =
    "populated"
   const SELECTED_CLASS = "selected"
+  const LABEL_NAME = 'name="label"'
   const TARGET_NAME =
    'name="target"'
   const SUPPORTING_NAME =
@@ -118,7 +119,7 @@
        overflow: hidden;
       }
 
-      ::slotted(span) {
+      [${LABEL_NAME}]::slotted(*) {
        color:
         var(--OnSurfaceVariant);
        font-family:
@@ -133,9 +134,9 @@
        transition: 0.3s ease-in;
       }
 
-      :host(:focus-within) ::slotted(span),
-      :host(.${POPULATED_CLASS}) ::slotted(span),
-      :host(.float) ::slotted(span) {
+      :host(:focus-within) [${LABEL_NAME}]::slotted(*),
+      :host(.${POPULATED_CLASS}) [${LABEL_NAME}]::slotted(*),
+      :host(.float) [${LABEL_NAME}]::slotted(*) {
        transform:
         translateY(-16px);
        font-size:
@@ -189,7 +190,7 @@
        transition: 0.3s ease-in;
       }
 
-      :host(:focus-within) ::slotted(span)  {
+      :host(:focus-within) [${LABEL_NAME}]::slotted(*)  {
        color: var(--Primary);
       }
 
@@ -219,7 +220,7 @@
         var(--Error);
       }
 
-      :host(.${INVALID_CLASS}) ::slotted(span) {
+      :host(.${INVALID_CLASS}) [${LABEL_NAME}]::slotted(*) {
        color: var(--Error);
       }
 
@@ -236,11 +237,11 @@
         var(--OnErrorContainer);
       }
 
-      :host(.${INVALID_CLASS}:hover) ::slotted(span) {
+      :host(.${INVALID_CLASS}:hover) [${LABEL_NAME}]::slotted(*) {
        color: var(--OnSurfaceVariant);
       }
 
-      :host(.${INVALID_CLASS}:hover:focus-within) ::slotted(span) {
+      :host(.${INVALID_CLASS}:hover:focus-within) [${LABEL_NAME}]::slotted(*) {
        color: var(--Error);
       }
 
@@ -251,8 +252,8 @@
      </style>
      <label>
       <span>
+       <slot ${LABEL_NAME}></slot>
        <slot ${TARGET_NAME}></slot>
-       <slot></slot>
       </span>
       <slot
        ${SUPPORTING_NAME}></slot>
@@ -261,15 +262,14 @@
      this.analiza.bind(this)
     /**
      * @private
-     * @type {HTMLSlotElement|
-     *        null}
+     * @type {HTMLSlotElement|null}
      */
     this._target = this._shadow.
      querySelector(
       `[${TARGET_NAME}]`)
     /**
      * @private
-     * @type {Element| null}
+     * @type {Element|null}
      */
     this._targetElement = null
     if (this._target !== null) {
@@ -302,7 +302,7 @@
    analiza() {
     const t = this._targetElement
     if (t !== null) {
-     let value = this.getValue()
+     let value = this._getValue()
      if (value === "") {
       this.classList.
        remove(POPULATED_CLASS)
@@ -310,7 +310,7 @@
       this.classList.
        add(POPULATED_CLASS)
      }
-     if (this.checkValidity()) {
+     if (this._checkValidity()) {
       this.classList.
        remove(INVALID_CLASS)
      } else {
@@ -320,8 +320,11 @@
     }
    }
 
-   /** @returns {string} */
-   getValue() {
+   /**
+    * @private
+    * @returns {string}
+    */
+   _getValue() {
     let value = ""
     const t = this._targetElement
     if (t !== null) {
@@ -339,8 +342,11 @@
      : value
    }
 
-   /** @returns {boolean} */
-   checkValidity() {
+   /**
+    * @private
+    * @returns {boolean}
+    */
+   _checkValidity() {
     const t = this._targetElement
     if (t !== null) {
      if (typeof t[
@@ -413,30 +419,30 @@
  <section style="max-width: 600px;
    margin: 0 auto">
   <text-field>
-   <span>Saludo</span>
+   <span slot="label">Saludo</span>
    <output slot="target">
     Hola
    </output>
   </text-field>
   <text-field>
-   <span>Nombre*</span>
+   <span slot="label">Nombre*</span>
    <input slot="target" required>
    <small slot="supporting">
     *Requerido
    </small>
   </text-field>
   <text-field>
-   <span>Email</span>
+   <span slot="label">Email</span>
    <input slot="target"
      type="email">
   </text-field>
   <text-field class="float">
-   <span>Fecha</span>
+   <span slot="label">Fecha</span>
    <input slot="target"
      type="date">
   </text-field>
   <text-field>
-   <span>Grupo</span>
+   <span slot="label">Grupo</span>
    <select slot="target">
     <option value=""></option>
     <option value="IC21">
@@ -451,7 +457,7 @@
    </select>
   </text-field>
   <text-field>
-   <span>Dirección</span>
+   <span slot="label">Dirección</span>
    <textarea rows="3"
      slot="target"></textarea>
   </text-field>
