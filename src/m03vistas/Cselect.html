@@ -68,22 +68,87 @@
   const LABEL_NAME = 'name="label"'
   const SUPPORTING_NAME =
    'name="supporting"'
-  const MENU_NAME = 'name="menu"'
   const MENU_ID = "menu"
   const MENU_SLOT_ID = "menuSlot"
+  const NAME_PROPERTY = "name"
   const VALUE_PROPERTY = "value"
   const REQUIRED_PROPERTY =
    "required"
+  const SELECT_FIELD_TAG =
+   "select-field"
+
+  /**
+   * @param {HTMLElement} element
+   * @param {string} element
+   * @returns {string}
+   */
+  function getAttribute(element,
+   name) {
+   const value =
+    element.getAttribute(name)
+   return value === null ?
+    ""
+    : value
+  }
+
+  /**
+   * @param {HTMLElement} element
+   * @param {string} name
+   * @param {boolean} value
+   */
+  function setBooleanAttribute(
+   element, name, value) {
+   if (value) {
+    this.setAttribute(name, name)
+   } else {
+    this.removeAttribute(name)
+   }
+  }
 
   class OptionField
    extends HTMLElement {
 
+   static get observedAttributes() {
+    return [VALUE_PROPERTY]
+   }
+
+   constructor() {
+    super()
+    /**
+     * @private
+     * @type {HTMLInputElement|
+     *        null}
+     */
+    this._radio = null
+   }
+
+   /**
+    * @param {string} name
+    * @param {string} _oldValue
+    * @param {string} newValue
+    */
+   attributeChangedCallback(name,
+    _oldValue, newValue) {
+    if (name === VALUE_PROPERTY) {
+     this.radio.value = newValue
+    }
+   }
+
+   get radio() {
+    if (this._radio === null) {
+     this._radio = this.
+      appendChild(document.
+       createElement("input"))
+     this._radio.type = "radio"
+     this.radio.style.transform =
+      "scaleY(0)"
+    }
+    return this._radio
+   }
+
    get value() {
-    const value = this.
-     getAttribute(VALUE_PROPERTY)
-    return value === null ?
-     ""
-     : value
+    return getAttribute(this,
+     VALUE_PROPERTY)
    }
 
    /** @param {string} value */
@@ -411,17 +476,7 @@
       `#${MENU_SLOT_ID}`)
     this.addEventListener(
      "keydown",
-     /**
-      * @param {KeyboardEvent
-      *        } evt
-      */
-     evt => {
-      const key = evt.key
-      if (key !== "Tab") {
-       evt.preventDefault()
-       this._alterna()
-      }
-     })
+     evt => this._onKeyDown(evt))
     if (this._target !== null) {
      this._target.addEventListener(
       "click", this._alterna)
@@ -446,18 +501,81 @@
 
    /**
     * @param {string} name
-    * @param {string} oldValue
-    * @param {string} newValue
+    * @param {string} _oldValue
+    * @param {string} _newValue
     */
    attributeChangedCallback(name,
-    oldValue, newValue) {
+    _oldValue, _newValue) {
     if (name
      === REQUIRED_PROPERTY) {
      this.analiza()
     } else if (name
-     === VALUE_PROPERTY) {
+     === VALUE_PROPERTY
+     || name === NAME_PROPERTY) {
      this._cambiaValue()
     }
+   }
+
+   get name() {
+    return getAttribute(this,
+     NAME_PROPERTY)
+   }
+
+   set name(name) {
+    this.setAttribute(
+     VALUE_PROPERTY, name)
+   }
+
+   get type() {
+    return SELECT_FIELD_TAG.
+     toUpperCase()
+   }
+
+   get required() {
+    return this.hasAttribute(
+     REQUIRED_PROPERTY)
+   }
+
+   set required(required) {
+    setBooleanAttribute(this,
+     REQUIRED_PROPERTY, required)
+   }
+
+   get value() {
+    return getAttribute(this,
+     VALUE_PROPERTY)
+   }
+
+   set value(value) {
+    this.setAttribute(
+     VALUE_PROPERTY, value)
+   }
+
+   analiza() {
+    const t = this._target
+    if (t !== null) {
+     let value = this.value
+     if (value === "") {
+      this.classList.
+       remove(POPULATED_CLASS)
+     } else {
+      this.classList.
+       add(POPULATED_CLASS)
+     }
+     if (this.checkValidity()) {
+      this.classList.
+       remove(INVALID_CLASS)
+     } else {
+      this.classList.
+       add(INVALID_CLASS)
+     }
+    }
+   }
+
+   /** @returns {boolean} */
+   checkValidity() {
+    return !this.required ||
+     this.value !== ""
    }
 
    /** @private */
@@ -489,139 +607,155 @@
 
    /** @private */
    _cambiaValue() {
-    const m = this._menuSlot
-    if (m !== null) {
-     const value = this.value
-     for (const o of m
-      .assignedElements()) {
-      if (o instanceof OptionField
-       && o.value === value) {
-       const text =
-        o.textContent.trim()
-       this._setText(text)
-       o.classList.
-        add(SELECTED_CLASS)
-      } else {
-       o.classList.
-        remove(SELECTED_CLASS)
-      }
+    const value = this.value
+    const name = this.name
+    for (const o
+     of this._opciones) {
+     if (name !== "") {
+      o.radio.name = name
+     }
+     if (o.value === value) {
+      o.radio.checked = true
+      const text =
+       o.textContent.trim()
+      this._text = text
+      o.classList.
+       add(SELECTED_CLASS)
+     } else {
+      o.radio.checked = false
+      o.classList.
+       remove(SELECTED_CLASS)
      }
     }
     this.analiza()
    }
-
+   /**
+    * @param {KeyboardEvent
+    *        } evt
+    */
+   _onKeyDown(evt) {
+    const key = evt.key
+    if (this.classList
+     .contains(OPEN_CLASS)) {
+     if (key === "Tab") {
+      evt.preventDefault()
+      this._alterna()
+     } else if (key
+      === "ArrowDown") {
+      evt.preventDefault()
+      this._avanzaOpcion()
+     } else if (key
+      === "ArrowUp") {
+      evt.preventDefault()
+      this._retrocedeOpcion()
+     } else if (key
+      === "Escape") {
+      evt.preventDefault()
+      this._cierra()
+     }
+    } else if (key !== "Tab") {
+     evt.preventDefault()
+     this._alterna()
+    }
+   }
    /**
     * @private
     * @param {Event} evt
     */
    _onClick(evt) {
     const sel = evt.target
-    const m = this._menuSlot
     let value = this.value
-    if (m !== null && sel
-     instanceof HTMLElement) {
-     for (const o of m
-      .assignedElements()) {
-      if (o instanceof OptionField
-       && o === sel) {
-       o.classList.
-        add(SELECTED_CLASS)
-       const text =
-        o.textContent.trim()
-       this._setText(text)
-       value = o.value
-      } else {
-       o.classList.
-        remove(SELECTED_CLASS)
-      }
+    for (const o
+     of this._opciones) {
+     if (o === sel) {
+      value = o.value
+      break
      }
-     this._cierra()
-     this.value = value
     }
+    this._cierra()
+    this.value = value
     this.analiza()
     this.dispatchEvent(
      new Event("input"))
    }
 
-   analiza() {
-    const t = this._target
-    if (t !== null) {
-     let value = this.value
-     if (value === "") {
-      this.classList.
-       remove(POPULATED_CLASS)
-     } else {
-      this.classList.
-       add(POPULATED_CLASS)
-     }
-     if (this.checkValidity()) {
-      this.classList.
-       remove(INVALID_CLASS)
-     } else {
-      this.classList.
-       add(INVALID_CLASS)
+   /**
+    * @private
+    * @returns {OptionField[]}
+    */
+   get _opciones() {
+    const arr = []
+    const m = this._menuSlot
+    const elements =
+     m.assignedElements()
+    for (const o of elements) {
+     if (o
+      instanceof OptionField) {
+      arr.push(o)
      }
     }
-   }
-
-   get required() {
-    return this.hasAttribute(
-     REQUIRED_PROPERTY)
-   }
-
-   set required(required) {
-    if (required) {
-     this.setAttribute(
-      REQUIRED_PROPERTY,
-      REQUIRED_PROPERTY)
-    } else {
-     this.removeAttribute(
-      REQUIRED_PROPERTY)
-    }
-   }
-
-   get value() {
-    const value = this.
-     getAttribute(VALUE_PROPERTY)
-    return value === null ?
-     ""
-     : value
-   }
-
-   set value(value) {
-    this.setAttribute(
-     VALUE_PROPERTY, value)
+    return arr
    }
 
    /**
     * @private
     * @returns {string}
     */
-   _getText() {
+   get _text() {
     const t = this._target
-    return t === null ? "" : t.value
+    return t === null ?
+     ""
+     : t.value
    }
 
    /**
     * @private
     * @param {string} text
     */
-   _setText(text) {
+   set _text(text) {
     const t = this._target
     if (t !== null) {
      t.value = text
     }
    }
 
-   /** @returns {boolean} */
-   checkValidity() {
-    return !this.required ||
-     this.value !== ""
+   /** @private */
+   _avanzaOpcion() {
+    const i = this._valueIndex
+    const opciones = this._opciones
+    if (i < opciones.length - 1) {
+     this.value =
+      opciones[i + 1].value
+    }
+   }
+
+   /** @private */
+   _retrocedeOpcion() {
+    const i = this._valueIndex
+    const opciones = this._opciones
+    if (i > 0) {
+     this.value =
+      opciones[i - 1].value
+    }
+   }
+
+   /**
+    * @private
+    * @returns {number}
+    */
+   get _valueIndex() {
+    const value = this.value
+    return this._opciones.
+     findIndex(
+      o => o
+       instanceof OptionField &&
+       o.value === value)
    }
   }
 
   customElements.define(
-   "select-field", SelectField)
+   SELECT_FIELD_TAG, SelectField)
+
  </script>
  <style>
   @keyframes ripple {
@@ -639,24 +773,28 @@
 </head>
 
 <body>
- <h1>Select</h1>
- <section style="max-width: 600px;
+ <form>
+  <h1>Select</h1>
+  <section style="max-width: 600px;
    margin: 0 auto">
-  <select-field required value="IC22">
-   <span slot="label">Grupo</span>
-   <option-field value="">
-   </option-field>
-   <option-field value="IC21">
-    IC-21
-   </option-field>
-   <option-field value="IC22">
-    IC-22
-   </option-field>
-   <option-field value="IC23">
-    IC-23
-   </option-field>
-  </select-field>
- </section>
+   <select-field required
+     name="grupo" value="IC22">
+    <span slot="label">Grupo</span>
+    <option-field value="">
+    </option-field>
+    <option-field value="IC21">
+     IC-21
+    </option-field>
+    <option-field value="IC22">
+     IC-22
+    </option-field>
+    <option-field value="IC23">
+     IC-23
+    </option-field>
+   </select-field>
+  </section>
+  <p><button>Enviar</button></p>
+ </form>
 </body>
 
 </html>
