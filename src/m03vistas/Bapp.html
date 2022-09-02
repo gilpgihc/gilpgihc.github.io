@@ -48,38 +48,10 @@
   // @ts-check
   const ELEVATION_CLASS =
    "elevation"
-  const DRAWER_EVENT = "drawer"
+  const NAVIGATION_NAME =
+   'name="navigation"'
   const AVATAR_NAME = /* html */
-   `name="avatar"`
-
-  function alternaCajon() {
-   dispatchEvent(
-    new Event(DRAWER_EVENT))
-  }
-
-  class MenuButton
-   extends HTMLElement {
-
-   connectedCallback() {
-    this.innerHTML = /* HTML */
-     `<button type="button"
-       class="icono">
-      <span
-        class="material-symbols-outlined">
-       menu
-      </span>
-     </button>`
-    const button =
-     this.querySelector("button")
-    if (button !== null) {
-     button.addEventListener(
-      "click", alternaCajon)
-    }
-   }
-  }
-
-  customElements.define(
-   "menu-button", MenuButton)
+   'name="avatar"'
 
   class CenterAlignedTopAppBar
    extends HTMLElement {
@@ -116,7 +88,7 @@
        text-align: center;
       }
 
-      [name="navigation"]::slotted(*) {
+      [${NAVIGATION_NAME}]::slotted(*) {
        position: absolute;
        top: 8px;
        left: 4px
@@ -130,7 +102,7 @@
      </style>
      <slot></slot>
      <slot
-       name="navigation"></slot>
+       ${NAVIGATION_NAME}></slot>
      <slot ${AVATAR_NAME}></slot>
      <slot
        name="adicional"></slot>`
@@ -155,14 +127,14 @@
     if (this._avatar !== null) {
      this._avatar.addEventListener(
       "slotchange",
-      () => this._configAvatar())
+      () => this._avatarConfig())
     }
     addEventListener("scroll",
      () => this._onScroll())
    }
 
    /** @private */
-   _configAvatar() {
+   _avatarConfig() {
     if (this._avatar !== null) {
      for (const e of this._avatar
       .assignedElements()) {
@@ -228,38 +200,38 @@
     var(--TitleLargeWeight);
   }
 
-  button.icono {
+  button.icon {
    padding: 4px;
    border: none;
    background-color: transparent;
   }
 
-  button.icono:focus {
+  button.icon:focus {
    outline: none;
   }
 
-  button.icono span {
+  button.icon span {
    border-radius: 50%;
    padding: 8px;
    color: var(--OnSurface);
   }
 
-  button.icono:hover span {
+  button.icon:hover span {
    background-color:
     var(--OnSurfaceHover);
   }
 
-  button.icono:focus span {
+  button.icon:focus span {
    background-color:
     var(--OnSurfaceFocus);
   }
 
-  button.icono:active span {
+  button.icon:active span {
    background-color:
     var(--OnSurfacePressed);
   }
 
-  button.icono:disabled span {
+  button.icon:disabled span {
    color: var(--DisabledContent) !important;
    background-color:
     var(--DisabledContainer);
@@ -269,11 +241,16 @@
 
 <body>
  <center-aligned-top-app-bar>
-  <h1>App</h1>
-  <menu-button slot="navigation">
-  </menu-button>
   <button type="button"
-    class="icono" slot="avatar">
+    class="icon" slot="navigation">
+   <span
+     class="material-symbols-outlined">
+    menu
+   </span>
+  </button>
+  <h1>App</h1>
+  <button type="button"
+    class="icon" slot="avatar">
    <span
      class="material-symbols-outlined">
     account_circle

@@ -18,6 +18,9 @@
    --Font: -apple-system,
     BlinkMacSystemFont, Roboto,
     sans-serif;
+   --LabelLargeFont: var(--Font);
+   --LabelLargeSize: 14px;
+   --LabelLargeWeight: 500;
    --BodyLargeFont: var(--Font);
    --BodyLargeSize: 16px;
    --BodyLargeWeight: 400;
@@ -74,8 +77,8 @@
   const VALUE_PROPERTY = "value"
   const REQUIRED_PROPERTY =
    "required"
-  const SELECT_FIELD_TAG =
-   "select-field"
+  const SELECT_MENU_TAG =
+   "select-menu"
 
   /**
    * @param {HTMLElement} element
@@ -105,7 +108,7 @@
    }
   }
 
-  class OptionField
+  class MenuOption
    extends HTMLElement {
 
    static
@@ -160,9 +163,9 @@
   }
 
   customElements.define(
-   "option-field", OptionField)
+   "menu-option", MenuOption)
 
-  class SelectField
+  class SelectMenu
    extends HTMLElement {
 
    static
@@ -531,7 +534,7 @@
    }
 
    get type() {
-    return SELECT_FIELD_TAG.
+    return SELECT_MENU_TAG.
      toUpperCase()
    }
 
@@ -685,7 +688,7 @@
 
    /**
     * @private
-    * @returns {OptionField[]}
+    * @returns {MenuOption[]}
     */
    get _opciones() {
     const arr = []
@@ -694,7 +697,7 @@
      m.assignedElements()
     for (const o of elements) {
      if (o
-      instanceof OptionField) {
+      instanceof MenuOption) {
       arr.push(o)
      }
     }
@@ -752,13 +755,13 @@
     return this._opciones.
      findIndex(
       o => o
-       instanceof OptionField &&
+       instanceof MenuOption &&
        o.value === value)
    }
   }
 
   customElements.define(
-   SELECT_FIELD_TAG, SelectField)
+   SELECT_MENU_TAG, SelectMenu)
 
  </script>
  <style>
@@ -781,21 +784,21 @@
   <h1>Select</h1>
   <section style="max-width: 600px;
    margin: 0 auto">
-   <select-field required
+   <select-menu required
      name="grupo" value="IC22">
     <span slot="label">Grupo</span>
-    <option-field value="">
-    </option-field>
-    <option-field value="IC21">
+    <menu-option value="">
+    </menu-option>
+    <menu-option value="IC21">
      IC-21
-    </option-field>
-    <option-field value="IC22">
+    </menu-option>
+    <menu-option value="IC22">
      IC-22
-    </option-field>
-    <option-field value="IC23">
+    </menu-option>
+    <menu-option value="IC23">
      IC-23
-    </option-field>
-   </select-field>
+    </menu-option>
+   </select-menu>
   </section>
   <p><button>Enviar</button></p>
  </form>

@@ -17,41 +17,70 @@
    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
  <style>
   html {
-   --colOnBg: #1C1B1F;
-   --colBg: #FFFBFE;
-   --colOnSrf: #1C1B1F;
-   --colSrf: #FFFBFE;
-   --colSrfElv: #E7E0EC;
-   --colNvSel: #29292955;
-   --colBgAc: #4646462c;
-   --colSh: #00000055;
-   --anchomi-Nav: 300px;
-   font-family: sans-serif;
-   color: var(--color-letra);
-   --fntFam: -apple-system,
+   /* Custom properties */
+   --anchoNav: 360px;
+   --Scrim: #00000055;
+   --Font: -apple-system,
     BlinkMacSystemFont, Roboto,
     sans-serif;
-   color: var(--colOnBg);
-   font-family: var(--fntFam);
-   background-color: var(--colBg);
+   --TitleSmallFont: var(--Font);
+   --TitleSmallSize: 14px;
+   --TitleSmallWeight: 500;
+   --TitleLargeFont: var(--Font);
+   --TitleLargeSize: 22px;
+   --TitleLargeWeight: 400;
+   --LabelLargeFont: var(--Font);
+   --LabelLargeSize: 14px;
+   --LabelLargeWeight: 500;
+   --Background: #FFFBFE;
+   --OnBackground: #1C1B1F;
+   --Surface: #FFFBFE;
+   --OnSurface: #1C1B1F;
+   --OnSurfaceHover: #1C1B1F14;
+   --OnSurfaceFocus: #1C1B1F19;
+   --OnSurfacePressed: #1C1B1F1E;
+   --OnSurfaceVariant: #49454F;
+   --SecondaryContainer: #E8DEF8;
+   --OnSecondaryContainer:
+    #1D192B;
+   --Elevation: #F5EEFA;
+   --DisabledContent: #1C1B1F60;
+   --DisabledContainer:
+    #1C1B1F1E;
+   font-size: 16px;
+   font-family: var(--Font);
+   color: var(--OnBackground);
+   background-color:
+    var(--Background);
   }
  </style>
  <script>
+  // @ts-check
+  const ELEVATION_CLASS =
+   "elevation"
+  const NAVIGATION_NAME =
+   'name="navigation"'
+  const AVATAR_NAME = /* html */
+   'name="avatar"'
+  const OPEN_CLASS = "open"
+
   class MiNav extends HTMLElement {
    connectedCallback() {
-    this.classList.add("navCaj")
+    this.classList.add("navDrw")
     this.innerHTML = /* html */
      `<button type="button"
-        onclick="cajon.classList.
-         add('muestra')">
+        class="icon"
+        onclick="container
+         .classList
+         .add('${OPEN_CLASS}')">
        <span
          class="material-symbols-outlined">
         menu
        </span>
       </button>
-      <ul id=cajon>
+      <ul id=container>
        <li>
-        <h2>Cajón de Navegación</h2>
+        <h1>Star App</h1>
        </li>
        <li>
         <a href="inicio.html">
@@ -90,7 +119,7 @@
         </a>
        </li>
        <li>
-        <a class="sel"
+        <a class="selected"
           href="ajustes.html">
          <span class="material-symbols-outlined">
           settings
@@ -99,54 +128,140 @@
         </a>
        </li>
       </ul>
-      <div class="bloqueo"
-        type="button"
-        onclick="cajon.classList.
-         remove('muestra')"></div>`
+      <div class="scrim"
+        onclick="container
+         .classList
+         .remove('${OPEN_CLASS}')">
+      </div>`
    }
   }
   customElements.
    define("mi-nav", MiNav);
- </script>
- <script>
-  const CLASE_ELEVACION2 =
-   "elevacion2"
 
-  class CnAppBar
+  class CenterAlignedTopAppBar
    extends HTMLElement {
+
    constructor() {
     super()
-    /** @type {number} */
-    this.posY = 0
-    /** @type {boolean} */
-    this.procesando = false
-   }
-   connectedCallback() {
-    window.addEventListener(
-     "scroll",
-     () => this.onScroll())
-   }
-   onScroll() {
-    this.posY = window.scrollY
-    if (!this.procesando) {
-     window.requestAnimationFrame(
-      () => this.avanza())
+    /**
+     * @private
+     * @type {ShadowRoot}
+     */
+    this._shadow = this.
+     attachShadow({ mode: "open" })
+    this._shadow.innerHTML =
+     /* html */
+     `<style>
+      :host {
+       z-index: 2;
+       position: sticky;
+       top: 0;
+       display: block;
+       color: var(--OnSurface);
+       background-color:
+        var(--Surface)
+      }
+
+      :host(.${ELEVATION_CLASS}) {
+       background-color:
+        var(--Elevation);
+      }
+
+      ::slotted(h1) {
+       margin: 0 70px;
+       line-height: 64px;
+       text-align: center;
+      }
+
+      [${NAVIGATION_NAME}]::slotted(*) {
+       position: absolute;
+       top: 8px;
+       left: 4px
+      }
+
+      [${AVATAR_NAME}]::slotted(*) {
+       position: absolute;
+       top: 8px;
+       right: 7px
+      }
+     </style>
+     <slot></slot>
+     <slot
+       ${NAVIGATION_NAME}></slot>
+     <slot ${AVATAR_NAME}></slot>
+     <slot
+       name="adicional"></slot>`
+    /**
+     * @private
+     * @type {number}
+     */
+    this._posY = 0
+    /**
+     * @private
+     * @type {boolean}
+     */
+    this._scrolling = false
+    /**
+     * @private
+     * @type {HTMLSlotElement|
+     *        null}
+     */
+    this._avatar = this._shadow.
+     querySelector(
+      `[${AVATAR_NAME}]`)
+    if (this._avatar !== null) {
+     this._avatar.addEventListener(
+      "slotchange",
+      () => this._avatarConfig())
     }
-    this.procesando = true
+    addEventListener("scroll",
+     () => this._onScroll())
    }
-   avanza() {
-    if (this.posY === 0) {
+
+   /** @private */
+   _avatarConfig() {
+    if (this._avatar !== null) {
+     for (const e of this._avatar
+      .assignedElements()) {
+      const span =
+       e.querySelector("span")
+      if (span !== null) {
+       span.style.color =
+        "var(--OnSurfaceVariant)"
+       span.style.padding = "5px"
+       span.style.fontSize = "30px"
+      }
+     }
+    }
+   }
+
+   /** @private */
+   _onScroll() {
+    this._posY = scrollY
+    if (!this._scrolling) {
+     requestAnimationFrame(
+      () => this._avanza())
+    }
+    this._scrolling = true
+   }
+
+   /** @private */
+   _avanza() {
+    if (this._posY === 0) {
      this.classList.
-      remove(CLASE_ELEVACION2)
+      remove(ELEVATION_CLASS)
     } else {
      this.classList.
-      add(CLASE_ELEVACION2)
+      add(ELEVATION_CLASS)
     }
-    this.procesando = false
+    this._scrolling = false
    }
   }
-  customElements.
-   define("cn-app-bar", CnAppBar)
+
+  customElements.define(
+   "center-aligned-top-app-bar",
+   CenterAlignedTopAppBar)
+
  </script>
  <style>
   body {
@@ -154,81 +269,144 @@
    scroll-padding-top: 3rem;
   }
 
-  .elevacion2 {
-   box-shadow:
-    0 6px 12px var(--colSh);
-  }
-
-  cn-app-bar {
-   position: sticky;
-   top: 0;
-   display: block;
-   color: var(--colOnSrf);
-   background-color: var(--colSrf)
-  }
-
   h1 {
-   text-align: center;
-   margin: 0;
-   padding: 1.125rem;
-   font-size: 1.375rem;
-   line-height: 1.75rem;
-   font-weight: normal;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   font-family:
+    var(--TitleLargeFont);
+   font-size:
+    var(--TitleLargeSize);
+   font-weight:
+    var(--TitleLargeWeight);
   }
 
   p {
    margin: 1rem;
   }
- </style>
- <style>
-  .navCaj>button {
-   position: absolute;
-   border: none;
-   margin: 0;
-   padding: 0;
-   top: 1.25rem;
-   left: 1rem;
-   color: var(--colOnSrf);
-   background-color: var(--colSrf)
-  }
 
-  .navCaj>button:active,
-  .navCaj li a:active {
-   background-color: var(--colBgAc)
-  }
-
-  .navCaj ul {
+  .navDrw ul {
    position: fixed;
    z-index: 2;
    top: 0;
-   left:
-    calc(-10rem - var(--anchomi-Nav));
    bottom: 0;
-   width: var(--anchomi-Nav);
-   max-width: 70%;
+   left:
+    calc(-10rem - var(--anchoNav));
+   box-sizing: border-box;
+   width: var(--anchoNav);
+   max-width: 80vw;
    margin: 0;
-   padding: 1rem;
+   padding: 12px 16px;
    border-radius: 1rem;
    overflow: auto;
    list-style-type: none;
    text-align: left;
-   color: var(--colOnSrf);
    background-color:
-    var(--colSrfElv);
+    var(--Elevation);
    transition: left 0.7s ease-out;
   }
 
-  .navCaj ul h2 {
-   margin: 0 0 1rem 0;
-   padding: 0;
-   font-size: 1.25rem;
-  }
-
-  .navCaj ul.muestra {
+  .navDrw ul.open {
    left: 0;
   }
 
-  .navCaj ul.muestra+.bloqueo {
+  .navDrw h1 {
+   margin: 0;
+   padding: 0 0 0 12px;
+   height: 56px;
+   line-height: 56px;
+   color: var(--OnSurfaceVariant);
+   font-family:
+    var(--TitleSmallFont);
+   font-size:
+    var(--TitleSmallSize);
+   font-weight:
+    var(--TitleSmallWeight);
+  }
+
+  .navDrw li a {
+   display: block;
+   box-sizing: border-box;
+   height: 56px;
+   line-height: 56px;
+   padding: 0 12px;
+   border-radius: 28px;
+   color: var(--OnSurfaceVariant);
+   font-family:
+    var(--LabelLargeFont);
+   font-size:
+    var(--LabelLargeSize);
+   font-weight:
+    var(--LabelLargeWeight);
+   text-decoration: none;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+  }
+
+  .navDrw li a.selected {
+   color:
+    var(--OnSecondaryContainer);
+   background-color:
+    var(--SecondaryContainer);
+  }
+
+  .navDrw li a span {
+   margin-right: 12px;
+   vertical-align: middle;
+  }
+
+  .navDrw li a:hover {
+   color: var(--OnSurface);
+   background-color:
+    var(--OnSurfaceHover);
+  }
+
+  .navDrw li a:hover span {
+   color: var(--OnSurface);
+  }
+
+  .navDrw li a.selected:hover span {
+   color:
+    var(--OnSecondaryContainer);
+  }
+
+  .navDrw li a:focus {
+   color: var(--OnSurface);
+   background-color:
+    var(--OnSurfaceFocus);
+  }
+
+  .navDrw li a:focus span {
+   color: var(--OnSurface);
+  }
+
+  .navDrw li a.selected:focus span {
+   color: var(--OnSurface);
+  }
+
+  .navDrw li a:active {
+   color: var(--OnSurface);
+   background-color:
+    var(--OnSurfacePressed);
+   background-position: center;
+   background-image: radial-gradient(circle, transparent 1%, var(--OnSurfaceHover) 1%);
+   background-size: 100%;
+   animation-fill-mode:
+    forwards;
+   animation-name: rippleMenu;
+   animation-duration: 0.5s;
+  }
+
+  .navDrw li a:active span {
+   color: var(--OnSurface);
+  }
+
+  .navDrw li a.active:focus span {
+   color: var(--OnSurface);
+  }
+
+  .navDrw .scrim {
    position: fixed;
    z-index: 1;
    top: 0;
@@ -236,47 +414,74 @@
    bottom: 0;
    right: 0;
    margin: 0;
-   padding: 0;
-   background-color: var(--colSh);
+   transform: translateX(-200vw);
+   pointer-events: none;
+   background-color: var(--Scrim);
+   transition: 0.7s ease-out;
   }
 
-  .navCaj li a {
-   display: block;
-   box-sizing: border-box;
-   font-size: 0.875rem;
-   height: 3rem;
-   line-height: 3rem;
-   border-radius: 1.5rem;
-   color: var(--colOnSrf);
-   text-decoration: none;
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
+  .navDrw .open+.scrim {
+   transform: translateX(0);
+   pointer-events: all;
   }
 
-  .navCaj li a.sel {
+  @keyframes rippleMenu {
+   from {
+    color: var(--OnSurfaceVariant);
+    background-size: 100%;
+   }
+
+   to {
+    color: var(--OnPrimary);
+    background-size: 15000%;
+   }
+  }
+
+  button.icon {
+   padding: 4px;
+   border: none;
+   background-color: transparent;
+  }
+
+  button.icon:focus {
+   outline: none;
+  }
+
+  button.icon span {
+   border-radius: 50%;
+   padding: 8px;
+   color: var(--OnSurface);
+  }
+
+  button.icon:hover span {
    background-color:
-    var(--colNvSel);
+    var(--OnSurfaceHover);
   }
 
-  .navCaj li a span.material-symbols-outlined {
-   margin-right: 1rem;
-   margin-left: 1rem;
-   padding-right: 1rem;
-   padding-left: 1rem;
-   border-radius: 1rem;
-   vertical-align: middle;
+  button.icon:focus span {
+   background-color:
+    var(--OnSurfaceFocus);
+  }
+
+  button.icon:active span {
+   background-color:
+    var(--OnSurfacePressed);
+  }
+
+  button.icon:disabled span {
+   color: var(--DisabledContent) !important;
+   background-color:
+    var(--DisabledContainer);
   }
  </style>
 </head>
 
 <body>
- <cn-app-bar>
-  <div>
-   <mi-nav></mi-nav>
-   <h1>Cajón de Navegación</h1>
-  </div>
- </cn-app-bar>
+ <center-aligned-top-app-bar>
+  <mi-nav slot="navigation">
+  </mi-nav>
+  <h1>Cajón de Navegación</h1>
+ </center-aligned-top-app-bar>
 </body>
 
 </html>
