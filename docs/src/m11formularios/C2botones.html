@@ -39,25 +39,22 @@
     Restar
    </button>
   </p>
-  <p>
-   <output id=outSalida></output>
-  </p>
  </form>
  <script>
   function procSuma() {
    const a = inA.valueAsNumber
    const b = inB.valueAsNumber
    const resultado = suma(a, b)
-   outSalida.value =
-    `La suma es: ${resultado}.`
+   alert(
+    `${a} + ${b} = ${resultado}`)
   }
 
   function procResta() {
    const a = inA.valueAsNumber
    const b = inB.valueAsNumber
    const resultado = resta(a, b)
-   outSalida.value =
-    `La resta es: ${resultado}.`
+   alert(
+    `${a} - ${b} = ${resultado}`)
   }
 
   function suma(a, b) {

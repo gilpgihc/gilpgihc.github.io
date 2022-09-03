@@ -1,5 +1,3 @@
-* Actualizar las vistas con Material - falta hamburguesa
-* Revisar los formularios para que los resultados incluyan los datos de entrada.
 * Hacer los próximos cambios de la iu
   ° que los botones se oculten y hagan visibles con el scroll.
   ° Tratar de que los botones queden visibles en el móvil cuando la pantalla sea

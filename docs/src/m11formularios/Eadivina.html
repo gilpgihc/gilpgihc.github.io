@@ -20,35 +20,30 @@
 </head>
 
 <body>
- <form action="javascript:rana()">
-  <h1>Adivina</h1>
-  <figure>
-   <img src="https://media.giphy.com/media/JKNn9A98JBVlu/giphy.gif"
-     alt="Imagen de un animal">
-   <figcaption>
-    ¿Qúe animal es este?
-   </figcaption>
-  </figure>
-  <p>
-   <button>Una Rana</button>
-   <button
-     formaction="javascript:oso()">
-    Un Oso
-   </button>
-  </p>
-  <p>
-   <output id="outSalida"></output>
-  </p>
- </form>
+ <h1>Adivina</h1>
+ <figure>
+  <img src="https://media.giphy.com/media/JKNn9A98JBVlu/giphy.gif"
+    alt="Imagen de un animal">
+  <figcaption>
+   ¿Qúe animal es este?
+  </figcaption>
+ </figure>
+ <p>
+  <button onclick="rana()">
+   Una Rana
+  </button>
+  <button onclick="oso()">
+   Un Oso
+  </button>
+ </p>
  <script>
   function rana() {
-   outSalida.value =
-    "Claro que no es una rana."
+   alert(
+    "Claro que no es una rana.")
   }
 
   function oso() {
-   outSalida.value =
-    "Claro que si es un oso."
+   alert("Claro que si es un oso.")
   }
  </script>
 </body>

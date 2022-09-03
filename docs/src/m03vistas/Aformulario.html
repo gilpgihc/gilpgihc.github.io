@@ -33,13 +33,6 @@
   <p>
    <button>Recomendar</button>
   </p>
-  <p>
-   <label for="outSalida">
-    Recomendación
-   </label>
-   <output id="outSalida">
-   </output>
-  </p>
  </form>
  <script>
   // @ts-check
@@ -52,30 +45,39 @@
      const genero = inGenero.value
      const resultado =
       recomienda(genero)
-     outSalida.value = resultado
-    } else {
-     outSalida.value = ""
+     alert(resultado)
     }
    } catch (e) {
-    console.error(e)
-    outSalida.value = e.message
+    muestraError(e)
    }
   }
 
   /** @param {string} genero */
   function recomienda(genero) {
    if (genero === "pop") {
-    return `Para el pop te
-     recomiendo a Ariana Grande.`
+    return "Para el pop te " +
+     "recomiendo a Dua Lipa."
    } else if (genero === "reg") {
-    return `Para el reguetón te
-     recomiendo a Bad Bunny.`
+    return "Para el reguetón te " +
+     "recomiendo a Bad Bunny."
    }
   }
 
   function copiaMensajes() {
    msg(inGenero, msgGenero,
     REQUERIDO)
+  }
+
+  /**
+   * Muestra un error en la consola
+   * y un cuadro de alerta con el
+   * mensaje.
+   * @param {Error} e descripción
+   *  del error.
+   */
+  function muestraError(e) {
+   console.error(e)
+   alert(e.message)
   }
 
   /**

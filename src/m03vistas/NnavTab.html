@@ -59,8 +59,12 @@
  <script>
   const ELEVATION_CLASS =
    "elevation"
-  const AVATAR_NAME = /* html */
-   `name="avatar"`
+  const HEADLINE_NAME =
+   'name="headline"'
+  const NAVIGATION_NAME =
+   'name="navigation"'
+  const AVATAR_NAME =
+   'name="avatar"'
 
   class MiNav extends HTMLElement {
    connectedCallback() {
@@ -115,13 +119,22 @@
         var(--Elevation);
       }
 
-      ::slotted(h1) {
+      [${HEADLINE_NAME}]::slotted(*) {
        margin: 0 70px;
        line-height: 64px;
        text-align: center;
+       white-space: nowrap;
+       text-overflow: ellipsis;
+       overflow: hidden;
+       font-family:
+        var(--TitleLargeFont);
+       font-size:
+        var(--TitleLargeSize);
+       font-weight:
+        var(--TitleLargeWeight);
       }
 
-      [name="navigation"]::slotted(*) {
+      [${NAVIGATION_NAME}]::slotted(*) {
        position: absolute;
        top: 8px;
        left: 4px
@@ -133,9 +146,10 @@
        right: 7px
       }
      </style>
-     <slot></slot>
      <slot
-       name="navigation"></slot>
+       ${HEADLINE_NAME}></slot>
+     <slot
+       ${NAVIGATION_NAME}></slot>
      <slot ${AVATAR_NAME}></slot>
      <slot
        name="adicional"></slot>`
@@ -160,14 +174,14 @@
     if (this._avatar !== null) {
      this._avatar.addEventListener(
       "slotchange",
-      () => this._configAvatar())
+      () => this._avatarConfig())
     }
     addEventListener("scroll",
      () => this._onScroll())
    }
 
    /** @private */
-   _configAvatar() {
+   _avatarConfig() {
     if (this._avatar !== null) {
      for (const e of this._avatar
       .assignedElements()) {
@@ -219,18 +233,6 @@
 
   p {
    margin: 1rem;
-  }
-
-  h1 {
-   white-space: nowrap;
-   text-overflow: ellipsis;
-   overflow: hidden;
-   font-family:
-    var(--TitleLargeFont);
-   font-size:
-    var(--TitleLargeSize);
-   font-weight:
-    var(--TitleLargeWeight);
   }
 
   .navTab {
@@ -336,7 +338,7 @@
 
 <body>
  <center-aligned-top-app-bar>
-  <h1>Pestañas</h1>
+  <h1 slot="headline">Pestañas</h1>
   <mi-nav
     slot="adicional"></mi-nav>
  </center-aligned-top-app-bar>

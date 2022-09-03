@@ -69,14 +69,6 @@
      tabulador. -->
    <button>Calcular</button>
   </p>
-  <p>
-   <!--
-    output
-     Muestra el resultado de un
-     cálculo.
-   -->
-   <output id=outSaludo></output>
-  </p>
  </form>
  <script>
   /**
@@ -89,9 +81,9 @@
     * a la constante "nombre". */
    const nombre = inNombre.value
    const saludo = saluda(nombre)
-   /* Despliega el saludo en el
-    * elemento "outSaludo". */
-   outSaludo.value = saludo;
+   /* Despliega el saludo en un
+    * cuadro de diálogo. */
+   alert(saludo);
   }
 
   /**

@@ -1,7 +1,7 @@
 <div class="horizontal">
  <section>
   <h1>Salida</h1>
-  <iframe src="/src/m11formularios/Fencuesta.html" height="900"
+  <iframe src="/src/m11formularios/Fencuesta.html" height="400"
     title="Formulario encuesta"></iframe>
   <p class="noPrint">
    <a href="/src/m11formularios/Fencuesta.html" target="_blank">Ábrelo en otra
@@ -9,133 +9,253 @@
   </p>
   <p class="noPrint">
    <a target="_blank" rel="noopener"
-     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%C2%BFCu%C3%A1l%20te%20gusta%20m%C3%A1s%3F%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20font-family%3A%20sans-serif%3B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%7D%0A%0A%20%20span%20%7B%0A%20%20%20display%3A%20inline-block%3B%0A%20%20%20vertical-align%3A%20top%3B%0A%20%20%7D%0A%0A%20%20img%20%7B%0A%20%20%20max-width%3A%20100%25%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%20action%3Djavascript%3Acat()%3E%0A%20%20%3Ch1%3E%C2%BFCu%C3%A1l%20te%20gusta%20m%C3%A1s%3F%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cspan%3E%0A%20%20%20%20%3Coutput%20id%3DoutGatito%3E%0A%20%20%20%20%200%0A%20%20%20%20%3C%2Foutput%3E%0A%20%20%20%20votos.%0A%20%20%20%20%3Cbutton%3EVota%3C%2Fbutton%3E%0A%20%20%20%20%3Cbr%3E%0A%20%20%20%20%3Cimg%20src%3D%22https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FuWYjSbkIE2XIMIc7gh%2Fgiphy.gif%22%0A%20%20%20%20%20%20alt%3D%22Gatito%22%3E%0A%20%20%20%3C%2Fspan%3E%0A%20%20%20%3Cspan%3E%0A%20%20%20%20%3Coutput%20id%3DoutPerrito%3E%0A%20%20%20%20%200%0A%20%20%20%20%3C%2Foutput%3E%0A%20%20%20%20votos.%0A%20%20%20%20%3Cbutton%0A%20%20%20%20%20%20formaction%3Djavascript%3Adog()%3E%0A%20%20%20%20%20Vota%0A%20%20%20%20%3C%2Fbutton%3E%0A%20%20%20%20%3Cbr%3E%0A%20%20%20%20%3Cimg%20src%3D%22https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FrXzOY4RpSA0Ug%2Fgiphy.gif%22%0A%20%20%20%20%20%20alt%3D%22Perrito%22%3E%0A%20%20%20%3C%2Fspan%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20let%20votosGatito%20%3D%200%0A%20%20let%20votosPerrito%20%3D%200%0A%0A%20%20function%20cat()%20%7B%0A%20%20%20votosGatito%2B%2B%0A%20%20%20outGatito.value%20%3D%20votosGatito%0A%20%20%7D%0A%0A%20%20function%20dog()%20%7B%0A%20%20%20votosPerrito%2B%2B%0A%20%20%20outPerrito.value%20%3D%20votosPerrito%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%C2%BFCu%C3%A1l%20te%20gusta%20m%C3%A1s%3F%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20font-family%3A%20sans-serif%3B%0A%20%20%7D%0A%0A%20%20body%20%7B%0A%20%20%20display%3A%20grid%3B%0A%20%20%20gap%3A%200.5rem%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%20padding%3A%200.5rem%3B%0A%20%20%20max-height%3A%20100vh%3B%0A%20%20%20overflow%3A%20hidden%3B%0A%20%20%20grid-template-columns%3A%0A%20%20%20%201fr%201fr%201fr%201fr%3B%0A%20%20%20%20grid-template-areas%3A%0A%20%20%20%20%22h1%20h1%20h1%20h1%22%0A%20%20%20%20%22outGatito%20btnGatito%20outPerrito%20btnPerrito%22%0A%20%20%20%20%22imgGatito%20imgGatito%20imgPerrito%20imgPerrito%22%3B%0A%20%20%7D%0A%0A%20%20h1%20%7B%0A%20%20%20grid-area%3A%20h1%3B%0A%20%20%20text-align%3A%20center%3B%0A%20%20%7D%0A%0A%20%20%23outGatito%20%7B%0A%20%20%20grid-area%3A%20outGatito%3B%0A%20%20%20justify-self%3A%20center%3B%0A%20%20%7D%0A%0A%20%20%23btnGatito%20%7B%0A%20%20%20grid-area%3A%20btnGatito%3B%0A%20%20%7D%0A%0A%20%20%23imgGatito%20%7B%0A%20%20%20grid-area%3A%20imgGatito%3B%0A%20%20%20width%3A%20100%25%3B%0A%20%20%7D%0A%0A%20%20%23outPerrito%20%7B%0A%20%20%20grid-area%3A%20outPerrito%3B%0A%20%20%20justify-self%3A%20center%3B%0A%20%20%7D%0A%0A%20%20%23btnPerrito%20%7B%0A%20%20%20grid-area%3A%20btnPerrito%3B%0A%20%20%7D%0A%0A%20%20%23imgPerrito%20%7B%0A%20%20%20grid-area%3A%20imgPerrito%3B%0A%20%20%20width%3A%20100%25%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3E%C2%BFCu%C3%A1l%20te%20gusta%20m%C3%A1s%3F%3C%2Fh1%3E%0A%20%3Coutput%20id%3D%22outGatito%22%3E%0A%20%200%20votos%0A%20%3C%2Foutput%3E%0A%20%3Cbutton%20id%3D%22btnGatito%22%0A%20%20%20onclick%3D%22gatito()%22%3E%0A%20%20Vota%0A%20%3C%2Fbutton%3E%0A%20%3Cimg%20id%3D%22imgGatito%22%20alt%3D%22Gatito%22%0A%20%20%20src%3D%22https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FuWYjSbkIE2XIMIc7gh%2Fgiphy.gif%22%3E%0A%20%3Coutput%20id%3DoutPerrito%3E%0A%20%200%20votos%0A%20%3C%2Foutput%3E%0A%20%3Cbutton%20id%3D%22btnPerrito%22%0A%20%20%20onclick%3Dperrito()%3E%0A%20%20Vota%0A%20%3C%2Fbutton%3E%0A%20%3Cimg%20id%3D%22imgPerrito%22%0A%20%20%20alt%3D%22Perrito%22%0A%20%20%20src%3D%22https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FrXzOY4RpSA0Ug%2Fgiphy.gif%22%3E%0A%20%3Cscript%3E%0A%20%20let%20votosGatito%20%3D%200%0A%20%20let%20votosPerrito%20%3D%200%0A%0A%20%20function%20gatito()%20%7B%0A%20%20%20votosGatito%2B%2B%0A%20%20%20outGatito.value%20%3D%0A%20%20%20%20%60%24%7BvotosGatito%7D%20votos%60%0A%20%20%7D%0A%0A%20%20function%20perrito()%20%7B%0A%20%20%20votosPerrito%2B%2B%0A%20%20%20outPerrito.value%20%3D%0A%20%20%20%20%60%24%7BvotosPerrito%7D%20votos%60%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.
    </a>
   </p>
  </section>
  <muestra-codigo>
   <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
       style="color: #ff0000;">html</span><span
       style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span> <span
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
       style="color: #ff0000;">lang</span>=<span
       style="color: #0000ff;">"es"</span><span
       style="color: #800000;">&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
       style="color: #ff0000;">charset</span>=<span
       style="color: #0000ff;">"UTF-8"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
       style="color: #ff0000;">name</span>=<span
       style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">content</span>=<span
       style="color: #0000ff;">"width=device-width"</span><span
       style="color: #800000;">&gt;</span></div>
    <div>&nbsp;<span
       style="color: #800000;">&lt;title&gt;</span>¿Cuál te gusta más?<span
       style="color: #800000;">&lt;/title&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">html</span> {</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-family</span>: <span
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;style&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">html</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">font-family</span>: <span
       style="color: #0451a5;">sans-serif</span>;</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">text-align</span>: <span
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">body</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">display</span>: <span
+      style="color: #0451a5;">grid</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">gap</span>: <span
+      style="color: #098658;">0.5rem</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">margin</span>: <span
+      style="color: #098658;">0</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">padding</span>: <span
+      style="color: #098658;">0.5rem</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">max-height</span>: <span
+      style="color: #098658;">100vh</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">overflow</span>: <span
+      style="color: #0451a5;">hidden</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">grid-template-columns</span>:</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #098658;">1fr</span> <span
+      style="color: #098658;">1fr</span> <span
+      style="color: #098658;">1fr</span> <span
+      style="color: #098658;">1fr</span>;</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">grid-template-areas</span>: </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #a31515;">"h1 h1 h1 h1"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #a31515;">"outGatito btnGatito outPerrito btnPerrito"</span>
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #a31515;">"imgGatito imgGatito imgPerrito&nbsp;imgPerrito"</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">h1</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">grid-area</span>: h1;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">text-align</span>: <span
       style="color: #0451a5;">center</span>;</div>
-   <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">span</span> {</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">display</span>: <span
-      style="color: #0451a5;">inline-block</span>;</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">vertical-align</span>: <span
-      style="color: #0451a5;">top</span>;</div>
-   <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #800000;">img</span> {</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">max-width</span>: <span
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">#outGatito</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">grid-area</span>: outGatito;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">justify-self</span>: <span
+      style="color: #0451a5;">center</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">#btnGatito</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">grid-area</span>: btnGatito;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">#imgGatito</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">grid-area</span>: imgGatito;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">width</span>: <span
       style="color: #098658;">100%</span>;</div>
-   <div>&nbsp; }</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;form</span> <span
-      style="color: #ff0000;">action</span>=<span
-      style="color: #0000ff;">javascript:cat()</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; <span
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">#outPerrito</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">grid-area</span>: outPerrito;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">justify-self</span>: <span
+      style="color: #0451a5;">center</span>;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">#btnPerrito</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">grid-area</span>: btnPerrito;</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">#imgPerrito</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">grid-area</span>: imgPerrito;</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">width</span>: <span
+      style="color: #098658;">100%</span>;</div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/style&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span
       style="color: #800000;">&lt;h1&gt;</span>¿Cuál te gusta más?<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;output</span> <span
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;output</span> <span
       style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">outGatito</span><span
+      style="color: #0000ff;">"outGatito"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;0</div>
-   <div>&nbsp; &nbsp; <span
+   <div>&nbsp;&nbsp;0 votos</div>
+   <div>&nbsp;<span
       style="color: #800000;">&lt;/output&gt;</span></div>
-   <div>&nbsp; &nbsp; votos.</div>
-   <div>&nbsp; &nbsp; <span
-      style="color: #800000;">&lt;button&gt;</span>Vota<span
-      style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;br&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;img</span> <span
-      style="color: #ff0000;">src</span>=<span
-      style="color: #0000ff;">"https://media.giphy.com/media/uWYjSbkIE2XIMIc7gh/giphy.gif"</span>
-   </div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">alt</span>=<span
-      style="color: #0000ff;">"Gatito"</span><span
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"btnGatito"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">onclick</span>=<span
+      style="color: #0000ff;">"</span><span
+      style="color: #795e26;">gatito</span><span
+      style="color: #0000ff;">()</span><span
+      style="color: #0000ff;">"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;span&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;output</span> <span
+   <div>&nbsp;&nbsp;Vota</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;img</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"imgGatito"</span> <span
+      style="color: #ff0000;">alt</span>=<span
+      style="color: #0000ff;">"Gatito"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">src</span>=<span
+      style="color: #0000ff;">"https://media.giphy.com/media/uWYjSbkIE2XIMIc7gh/giphy.gif"</span><span
+      style="color: #800000;">&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;output</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">outPerrito</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;0</div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/output&gt;</span></div>
-   <div>&nbsp; &nbsp; votos.</div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;button</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span
-      style="color: #ff0000;">formaction</span>=<span
-      style="color: #0000ff;">javascript:dog()</span><span
+   <div>&nbsp;&nbsp;0 votos</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/output&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;button</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"btnPerrito"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">onclick</span>=<span
+      style="color: #795e26;">perrito</span><span
+      style="color: #0000ff;">()</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp;Vota</div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;br&gt;</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;img</span> <span
+   <div>&nbsp;&nbsp;Vota</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/button&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;img</span> <span
+      style="color: #ff0000;">id</span>=<span
+      style="color: #0000ff;">"imgPerrito"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">alt</span>=<span
+      style="color: #0000ff;">"Perrito"</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
       style="color: #ff0000;">src</span>=<span
-      style="color: #0000ff;">"https://media.giphy.com/media/rXzOY4RpSA0Ug/giphy.gif"</span>
-   </div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">alt</span>=<span
-      style="color: #0000ff;">"Perrito"</span><span
+      style="color: #0000ff;">"https://media.giphy.com/media/rXzOY4RpSA0Ug/giphy.gif"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/span&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #0000ff;">let</span> <span
       style="color: #001080;">votosGatito</span> = <span
       style="color: #098658;">0</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
+   <div>&nbsp;&nbsp;<span
+      style="color: #0000ff;">let</span> <span
       style="color: #001080;">votosPerrito</span> = <span
       style="color: #098658;">0</span></div><br>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">cat</span>() {</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">votosGatito</span>++</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">outGatito</span>.<span
-      style="color: #001080;">value</span> = <span
-      style="color: #001080;">votosGatito</span></div>
-   <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">dog</span>() {</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">votosPerrito</span>++</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">outPerrito</span>.<span
-      style="color: #001080;">value</span> = <span
-      style="color: #001080;">votosPerrito</span></div>
-   <div>&nbsp; }</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">gatito</span>()&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #001080;">votosGatito</span>++</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #001080;">outGatito</span>.<span
+      style="color: #001080;">value</span> =</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #001080;">votosGatito</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;"> votos`</span></div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">perrito</span>()&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #001080;">votosPerrito</span>++</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #001080;">outPerrito</span>.<span
+      style="color: #001080;">value</span> =</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #001080;">votosPerrito</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;"> votos`</span></div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
  </muestra-codigo>
 </div>

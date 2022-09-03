@@ -9,150 +9,214 @@
   </p>
   <p class="noPrint">
    <a target="_blank" rel="noopener"
-     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EDivisi%C3%B3n%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%0A%20%20%20action%3D%22javascript%3Aprocesa()%22%3E%0A%20%20%3Ch1%3EDivisi%C3%B3n%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20a%0A%20%20%20%20%3Cinput%20id%3D%22inA%22%0A%20%20%20%20%20%20type%3D%22number%22%0A%20%20%20%20%20%20step%3D%220.1%22%0A%20%20%20%20%20%20required%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20b%0A%20%20%20%20%3Cinput%20id%3D%22inB%22%0A%20%20%20%20%20%20type%3D%22number%22%0A%20%20%20%20%20%20step%3D%220.1%22%0A%20%20%20%20%20%20required%0A%20%20%20%20%20%20oninput%3D%22validaB()%22%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3EDividir%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Coutput%20id%3DoutSalida%3E%3C%2Foutput%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20const%20NO_0%20%3D%20%22No%20puede%20ser%200%22%0A%0A%20%20function%20validaB()%20%7B%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20%2F*%20Debe%20cumplirse%20que%20b%0A%20%20%20%20*%20sea%20un%20n%C3%BAmero%20diferente%0A%20%20%20%20*%20de%200.%20*%2F%0A%20%20%20if%20(isNaN(b)%20%7C%7C%20b%20!%3D%3D%200)%20%7B%0A%20%20%20%20inB.setCustomValidity(%22%22)%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20inB.setCustomValidity(NO_0)%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20function%20procesa()%20%7B%0A%20%20%20const%20a%20%3D%20inA.valueAsNumber%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20outSalida.value%20%3D%20divide(a%2C%20b)%0A%20%20%7D%0A%0A%20%20%2F**%0A%20%20%20*%20%40param%20%7Bnumber%7D%20a%0A%20%20%20*%20%40param%20%7Bnumber%7D%20b%0A%20%20%20*%2F%0A%20%20function%20divide(a%2C%20b)%20%7B%0A%20%20%20return%20a%20%2F%20b%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EDivisi%C3%B3n%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%0A%20%20%20action%3D%22javascript%3Aprocesa()%22%3E%0A%20%20%3Ch1%3EDivisi%C3%B3n%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20a%0A%20%20%20%20%3Cinput%20id%3D%22inA%22%0A%20%20%20%20%20%20type%3D%22number%22%0A%20%20%20%20%20%20step%3D%220.1%22%0A%20%20%20%20%20%20required%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20b%0A%20%20%20%20%3Cinput%20id%3D%22inB%22%0A%20%20%20%20%20%20type%3D%22number%22%0A%20%20%20%20%20%20step%3D%220.1%22%0A%20%20%20%20%20%20required%0A%20%20%20%20%20%20oninput%3D%22validaB()%22%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3EDividir%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20const%20NO_0%20%3D%20%22No%20puede%20ser%200%22%0A%0A%20%20function%20validaB()%20%7B%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20%2F*%20Debe%20cumplirse%20que%20b%0A%20%20%20%20*%20sea%20un%20n%C3%BAmero%20diferente%0A%20%20%20%20*%20de%200.%20*%2F%0A%20%20%20if%20(isNaN(b)%20%7C%7C%20b%20!%3D%3D%200)%20%7B%0A%20%20%20%20inB.setCustomValidity(%22%22)%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20inB.setCustomValidity(NO_0)%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20function%20procesa()%20%7B%0A%20%20%20const%20a%20%3D%20inA.valueAsNumber%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20const%20resultado%20%3D%20divide(a%2C%20b)%0A%20%20%20alert(%0A%20%20%20%20%60%24%7Ba%7D%20%2F%20%24%7Bb%7D%20%3D%20%24%7Bresultado%7D%60)%0A%20%20%7D%0A%0A%20%20%2F**%0A%20%20%20*%20%40param%20%7Bnumber%7D%20a%0A%20%20%20*%20%40param%20%7Bnumber%7D%20b%0A%20%20%20*%2F%0A%20%20function%20divide(a%2C%20b)%20%7B%0A%20%20%20return%20a%20%2F%20b%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.
    </a>
   </p>
  </section>
  <muestra-codigo>
   <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+   <div><span
+      style="color: #800000;">&lt;!DOCTYPE</span> <span
       style="color: #ff0000;">html</span><span
       style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span> <span
+   <div><span
+      style="color: #800000;">&lt;html</span> <span
       style="color: #ff0000;">lang</span>=<span
       style="color: #0000ff;">"es"</span><span
       style="color: #800000;">&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+   <div><span
+      style="color: #800000;">&lt;head&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
       style="color: #ff0000;">charset</span>=<span
       style="color: #0000ff;">"UTF-8"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;meta</span> <span
       style="color: #ff0000;">name</span>=<span
       style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">content</span>=<span
       style="color: #0000ff;">"width=device-width"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>División<span
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;title&gt;</span>División<span
       style="color: #800000;">&lt;/title&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;form</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">action</span>=<span
+   <div><span
+      style="color: #800000;">&lt;/head&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;body&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;form</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">action</span>=<span
       style="color: #0000ff;">"javascript:procesa()"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;h1&gt;</span>División<span
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;h1&gt;</span>División<span
       style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div>
-   <div>&nbsp; &nbsp; a</div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;input</span> <span
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;a</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;input</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"inA"</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">type</span>=<span
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">type</span>=<span
       style="color: #0000ff;">"number"</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">step</span>=<span
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">step</span>=<span
       style="color: #0000ff;">"0.1"</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
       style="color: #ff0000;">required</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;label&gt;</span></div>
-   <div>&nbsp; &nbsp; b</div>
-   <div>&nbsp; &nbsp; <span style="color: #800000;">&lt;input</span> <span
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;label&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;b</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;input</span> <span
       style="color: #ff0000;">id</span>=<span
       style="color: #0000ff;">"inB"</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">type</span>=<span
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">type</span>=<span
       style="color: #0000ff;">"number"</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">step</span>=<span
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">step</span>=<span
       style="color: #0000ff;">"0.1"</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">required</span></div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">oninput</span>=<span
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">required</span></div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #ff0000;">oninput</span>=<span
       style="color: #0000ff;">"</span><span
       style="color: #795e26;">validaB</span><span
       style="color: #0000ff;">()</span><span
       style="color: #0000ff;">"</span><span
       style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp; &nbsp;<span
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/label&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;p&gt;</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
       style="color: #800000;">&lt;button&gt;</span>Dividir<span
       style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #800000;">&lt;output</span> <span
-      style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">outSalida</span><span
-      style="color: #800000;">&gt;&lt;/output&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/form&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+   <div>&nbsp;&nbsp;<span
+      style="color: #800000;">&lt;/p&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/form&gt;</span></div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;script&gt;</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">NO_0</span> = <span
       style="color: #a31515;">"No puede ser 0"</span></div><br>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">validaB</span>() {</div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+   <div>&nbsp;&nbsp;<span
+      style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">validaB</span>()&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">b</span> = <span
       style="color: #001080;">inB</span>.<span
       style="color: #001080;">valueAsNumber</span></div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #008000;">/* Debe cumplirse que b</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #008000;">/*&nbsp;Debe cumplirse que b</span></div>
    <div><span
-      style="color: #008000;">&nbsp; &nbsp; * sea un número diferente</span>
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;sea&nbsp;un&nbsp;número&nbsp;diferente</span>
    </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; * de 0. */</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;de 0. */</span>
+   </div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #af00db;">if</span> (<span
       style="color: #795e26;">isNaN</span>(<span
       style="color: #0070c1;">b</span>) || <span
       style="color: #0070c1;">b</span> !== <span
-      style="color: #098658;">0</span>) {</div>
-   <div>&nbsp; &nbsp; <span style="color: #001080;">inB</span>.<span
+      style="color: #098658;">0</span>)&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #001080;">inB</span>.<span
       style="color: #795e26;">setCustomValidity</span>(<span
       style="color: #a31515;">""</span>)</div>
-   <div>&nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-   <div>&nbsp; &nbsp; <span style="color: #001080;">inB</span>.<span
+   <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
+      style="color: #af00db;">else</span>&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #001080;">inB</span>.<span
       style="color: #795e26;">setCustomValidity</span>(<span
       style="color: #0070c1;">NO_0</span>)</div>
-   <div>&nbsp; &nbsp;}</div>
-   <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">procesa</span>() {</div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+   <div>&nbsp;&nbsp;&nbsp;}</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">procesa</span>()&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">a</span> = <span
       style="color: #001080;">inA</span>.<span
       style="color: #001080;">valueAsNumber</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #0000ff;">const</span> <span
       style="color: #0070c1;">b</span> = <span
       style="color: #001080;">inB</span>.<span
       style="color: #001080;">valueAsNumber</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">outSalida</span>.<span
-      style="color: #001080;">value</span> = <span
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">resultado</span> = <span
       style="color: #795e26;">divide</span>(<span
       style="color: #0070c1;">a</span>, <span
       style="color: #0070c1;">b</span>)</div>
-   <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #008000;">/**</span></div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #795e26;">alert</span>(</div>
+   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
+      style="color: #a31515;">`</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">a</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;"> / </span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">b</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;"> = </span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #0070c1;">resultado</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">`</span>)</div>
+   <div>&nbsp;&nbsp;}</div><br>
+   <div>&nbsp;&nbsp;<span
+      style="color: #008000;">/**</span></div>
    <div><span
-      style="color: #008000;">&nbsp; &nbsp;* @param {number} a</span></div>
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{number}&nbsp;a</span>
+   </div>
    <div><span
-      style="color: #008000;">&nbsp; &nbsp;* @param {number} b</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{number}&nbsp;b</span>
+   </div>
+   <div><span
+      style="color: #008000;">&nbsp;&nbsp;&nbsp;*/</span></div>
+   <div>&nbsp;&nbsp;<span
+      style="color: #0000ff;">function</span> <span
       style="color: #795e26;">divide</span>(<span
       style="color: #001080;">a</span>, <span
-      style="color: #001080;">b</span>) {</div>
-   <div>&nbsp; &nbsp;<span style="color: #af00db;">return</span> <span
+      style="color: #001080;">b</span>)&nbsp;{</div>
+   <div>&nbsp;&nbsp;&nbsp;<span
+      style="color: #af00db;">return</span> <span
       style="color: #001080;">a</span> / <span
       style="color: #001080;">b</span></div>
-   <div>&nbsp; }</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+   <div>&nbsp;&nbsp;}</div>
+   <div>&nbsp;<span
+      style="color: #800000;">&lt;/script&gt;</span></div>
+   <div><span
+      style="color: #800000;">&lt;/body&gt;</span></div><br>
+   <div><span
+      style="color: #800000;">&lt;/html&gt;</span></div>
   </div>
  </muestra-codigo>
 </div>

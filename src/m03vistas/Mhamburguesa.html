@@ -58,9 +58,11 @@
   // @ts-check
   const ELEVATION_CLASS =
    "elevation"
+  const HEADLINE_NAME =
+   'name="headline"'
   const NAVIGATION_NAME =
    'name="navigation"'
-  const AVATAR_NAME = /* html */
+  const AVATAR_NAME =
    'name="avatar"'
   const OPEN_CLASS = "open"
 
@@ -167,10 +169,19 @@
         var(--Elevation);
       }
 
-      ::slotted(h1) {
+      [${HEADLINE_NAME}]::slotted(*) {
        margin: 0 70px;
        line-height: 64px;
        text-align: center;
+       white-space: nowrap;
+       text-overflow: ellipsis;
+       overflow: hidden;
+       font-family:
+        var(--TitleLargeFont);
+       font-size:
+        var(--TitleLargeSize);
+       font-weight:
+        var(--TitleLargeWeight);
       }
 
       [${NAVIGATION_NAME}]::slotted(*) {
@@ -185,7 +196,8 @@
        right: 7px
       }
      </style>
-     <slot></slot>
+     <slot
+       ${HEADLINE_NAME}></slot>
      <slot
        ${NAVIGATION_NAME}></slot>
      <slot ${AVATAR_NAME}></slot>
@@ -269,18 +281,6 @@
    scroll-padding-top: 3rem;
   }
 
-  h1 {
-   white-space: nowrap;
-   text-overflow: ellipsis;
-   overflow: hidden;
-   font-family:
-    var(--TitleLargeFont);
-   font-size:
-    var(--TitleLargeSize);
-   font-weight:
-    var(--TitleLargeWeight);
-  }
-
   p {
    margin: 1rem;
   }
@@ -315,6 +315,9 @@
    padding: 0 0 0 12px;
    height: 56px;
    line-height: 56px;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
    color: var(--OnSurfaceVariant);
    font-family:
     var(--TitleSmallFont);
@@ -478,9 +481,9 @@
 
 <body>
  <center-aligned-top-app-bar>
+  <h1 slot="headline">Cajón</h1>
   <mi-nav slot="navigation">
   </mi-nav>
-  <h1>Cajón de Navegación</h1>
  </center-aligned-top-app-bar>
 </body>
 

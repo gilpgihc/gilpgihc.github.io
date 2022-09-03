@@ -34,9 +34,6 @@
   <p>
    <button>Dividir</button>
   </p>
-  <p>
-   <output id=outSalida></output>
-  </p>
  </form>
  <script>
   const NO_0 = "No puede ser 0"
@@ -56,7 +53,9 @@
   function procesa() {
    const a = inA.valueAsNumber
    const b = inB.valueAsNumber
-   outSalida.value = divide(a, b)
+   const resultado = divide(a, b)
+   alert(
+    `${a} / ${b} = ${resultado}`)
   }
 
   /**

@@ -48,9 +48,11 @@
   // @ts-check
   const ELEVATION_CLASS =
    "elevation"
+  const HEADLINE_NAME =
+   'name="headline"'
   const NAVIGATION_NAME =
    'name="navigation"'
-  const AVATAR_NAME = /* html */
+  const AVATAR_NAME =
    'name="avatar"'
 
   class CenterAlignedTopAppBar
@@ -82,10 +84,19 @@
         var(--Elevation);
       }
 
-      ::slotted(h1) {
+      [${HEADLINE_NAME}]::slotted(*) {
        margin: 0 70px;
        line-height: 64px;
        text-align: center;
+       white-space: nowrap;
+       text-overflow: ellipsis;
+       overflow: hidden;
+       font-family:
+        var(--TitleLargeFont);
+       font-size:
+        var(--TitleLargeSize);
+       font-weight:
+        var(--TitleLargeWeight);
       }
 
       [${NAVIGATION_NAME}]::slotted(*) {
@@ -100,7 +111,8 @@
        right: 7px
       }
      </style>
-     <slot></slot>
+     <slot
+       ${HEADLINE_NAME}></slot>
      <slot
        ${NAVIGATION_NAME}></slot>
      <slot ${AVATAR_NAME}></slot>
@@ -188,18 +200,6 @@
    margin: 1rem;
   }
 
-  h1 {
-   white-space: nowrap;
-   text-overflow: ellipsis;
-   overflow: hidden;
-   font-family:
-    var(--TitleLargeFont);
-   font-size:
-    var(--TitleLargeSize);
-   font-weight:
-    var(--TitleLargeWeight);
-  }
-
   button.icon {
    padding: 4px;
    border: none;
@@ -241,6 +241,7 @@
 
 <body>
  <center-aligned-top-app-bar>
+  <h1 slot="headline">App</h1>
   <button type="button"
     class="icon" slot="navigation">
    <span
@@ -248,7 +249,6 @@
     menu
    </span>
   </button>
-  <h1>App</h1>
   <button type="button"
     class="icon" slot="avatar">
    <span

@@ -9,61 +9,93 @@
  <style>
   html {
    font-family: sans-serif;
+  }
+
+  body {
+   display: grid;
+   gap: 0.5rem;
+   margin: 0;
+   padding: 0.5rem;
+   max-height: 100vh;
+   overflow: hidden;
+   grid-template-columns:
+    1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "h1 h1 h1 h1"
+    "outGatito btnGatito outPerrito btnPerrito"
+    "imgGatito imgGatito imgPerrito imgPerrito";
+  }
+
+  h1 {
+   grid-area: h1;
    text-align: center;
   }
 
-  span {
-   display: inline-block;
-   vertical-align: top;
+  #outGatito {
+   grid-area: outGatito;
+   justify-self: center;
   }
 
-  img {
-   max-width: 100%;
+  #btnGatito {
+   grid-area: btnGatito;
+  }
+
+  #imgGatito {
+   grid-area: imgGatito;
+   width: 100%;
+  }
+
+  #outPerrito {
+   grid-area: outPerrito;
+   justify-self: center;
+  }
+
+  #btnPerrito {
+   grid-area: btnPerrito;
+  }
+
+  #imgPerrito {
+   grid-area: imgPerrito;
+   width: 100%;
   }
  </style>
 </head>
 
 <body>
- <form action=javascript:cat()>
-  <h1>¿Cuál te gusta más?</h1>
-  <p>
-   <span>
-    <output id=outGatito>
-     0
-    </output>
-    votos.
-    <button>Vota</button>
-    <br>
-    <img src="https://media.giphy.com/media/uWYjSbkIE2XIMIc7gh/giphy.gif"
-      alt="Gatito">
-   </span>
-   <span>
-    <output id=outPerrito>
-     0
-    </output>
-    votos.
-    <button
-      formaction=javascript:dog()>
-     Vota
-    </button>
-    <br>
-    <img src="https://media.giphy.com/media/rXzOY4RpSA0Ug/giphy.gif"
-      alt="Perrito">
-   </span>
-  </p>
- </form>
+ <h1>¿Cuál te gusta más?</h1>
+ <output id="outGatito">
+  0 votos
+ </output>
+ <button id="btnGatito"
+   onclick="gatito()">
+  Vota
+ </button>
+ <img id="imgGatito" alt="Gatito"
+   src="https://media.giphy.com/media/uWYjSbkIE2XIMIc7gh/giphy.gif">
+ <output id=outPerrito>
+  0 votos
+ </output>
+ <button id="btnPerrito"
+   onclick=perrito()>
+  Vota
+ </button>
+ <img id="imgPerrito"
+   alt="Perrito"
+   src="https://media.giphy.com/media/rXzOY4RpSA0Ug/giphy.gif">
  <script>
   let votosGatito = 0
   let votosPerrito = 0
 
-  function cat() {
+  function gatito() {
    votosGatito++
-   outGatito.value = votosGatito
+   outGatito.value =
+    `${votosGatito} votos`
   }
 
-  function dog() {
+  function perrito() {
    votosPerrito++
-   outPerrito.value = votosPerrito
+   outPerrito.value =
+    `${votosPerrito} votos`
   }
  </script>
 </body>

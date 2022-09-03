@@ -31,26 +31,23 @@
   <p>
    <button>Recomendar</button>
   </p>
-  <p>
-   <output id=outSalida></output>
-  </p>
  </form>
  <script>
   function procesa() {
    const genero = inGenero.value
    const resultado =
     recomienda(genero)
-   outSalida.value = resultado
+   alert(resultado)
   }
 
   /** @param {string} genero */
   function recomienda(genero) {
    if (genero === "pop") {
-    return `Para el pop te
-     recomiendo a Ariana Grande.`
+    return "Para el pop te " +
+     "recomiendo a Dua Lipa."
    } else if (genero === "reg") {
-    return `Para el reguetón te
-     recomiendo a Bad Bunny.`
+    return "Para el reguetón te " +
+     "recomiendo a Bad Bunny."
    }
   }
  </script>

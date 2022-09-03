@@ -59,10 +59,15 @@
   const ELEVATION_CLASS =
    "elevation"
   const OPEN_CLASS = "open"
+  const MEDIUM_CLASS = "medium"
   const CLASS_CENTRADO = "centrado"
   const CLASS_JUSTIFICADO =
    "justificado"
   const MENU_ID = "menu"
+  const HEADLINE_NAME =
+   'name="headline"'
+  const HEADLINE_SMALL_NAME =
+   'name="headline-small"'
   const NAVIGATION_NAME =
    'name="navigation"'
   const ACTION_NAME =
@@ -325,12 +330,66 @@
       #base {
        display: flex;
        align-items: center;
-       height: 64px;
        padding-left: 4px;
        padding-right: 4px;
       }
 
-      :host(.${CLASS_CENTRADO}) ::slotted(h1) {
+      #navigation {
+       min-height: 24px;
+       min-width: 12px;
+      }
+
+      [${HEADLINE_NAME}]::slotted(*) {
+       height: 64px;
+       line-height: 64px;
+       white-space: nowrap;
+       text-overflow: ellipsis;
+       overflow: hidden;
+       font-family:
+        var(--TitleLargeFont);
+       font-size:
+        var(--TitleLargeSize);
+       font-weight:
+        var(--TitleLargeWeight);
+      }
+
+      :host(.${MEDIUM_CLASS}) [${HEADLINE_NAME}]::slotted(*) {
+       height: 24px;
+       pointer-events: none;
+       transform:
+        translateY(50%) scaleY(0);
+       transition: 0.5s;
+      }
+
+      :host(.${MEDIUM_CLASS}.${ELEVATION_CLASS}) [${HEADLINE_NAME}]::slotted(*) {
+       height: 64px;
+       pointer-events: all;
+       transform:
+        translateY(0) scaleY(1);
+      }
+
+      [${HEADLINE_SMALL_NAME}]::slotted(*) {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0 16px 16px 16px;
+       font-family:
+        var(--TitleLargeFont);
+       font-size:
+        var(--TitleLargeSize);
+       font-weight:
+        var(--TitleLargeWeight);
+       transform: scaleY(1);
+       transition: 0.5s;
+      }
+
+      :host(.${ELEVATION_CLASS}) [${HEADLINE_SMALL_NAME}]::slotted(*) {
+       height: 0;
+       padding: 0;
+       pointer-events: none;
+       transform: scaleY(0);
+      }
+
+      :host(.${CLASS_CENTRADO}) [${HEADLINE_NAME}]::slotted(*) {
        position: absolute;
        top: 0;
        left: 0;
@@ -340,7 +399,7 @@
        text-align: center;
       }
 
-      :host(.${CLASS_JUSTIFICADO}) ::slotted(h1) {
+      :host(.${CLASS_JUSTIFICADO}) [${HEADLINE_NAME}]::slotted(*) {
        flex: 1 0;
        margin: 0;
        padding-left: 4px;
@@ -348,20 +407,23 @@
        line-height: 64px;
       }
 
-      ::slotted(h1:first-child) {
-       padding-left: 12px;
-      }
-
       [${OVERFLOW_NAME}]::slotted(*) {
        margin-left: auto;
       }
      </style>
      <div id="base">
-      <slot id="slot"></slot>
+      <div id="navigation">
+       <slot
+         ${NAVIGATION_NAME}></slot>
+      </div>
+      <slot
+       ${HEADLINE_NAME}></slot>
       <slot ${ACTION_NAME}></slot>
       <slot
        ${OVERFLOW_NAME}></slot>
      </div>
+     <slot ${HEADLINE_SMALL_NAME}>
+     </slot>
      <slot
        name="adicional"></slot>`
     /**
@@ -464,18 +526,6 @@
    margin: 1rem;
   }
 
-  h1 {
-   white-space: nowrap;
-   text-overflow: ellipsis;
-   overflow: hidden;
-   font-family:
-    var(--TitleLargeFont);
-   font-size:
-    var(--TitleLargeSize);
-   font-weight:
-    var(--TitleLargeWeight);
-  }
-
   @keyframes rippleMenu {
    from {
     color: var(--OnSurfaceVariant);
@@ -528,15 +578,18 @@
 </head>
 
 <body>
- <top-app-bar>
+ <top-app-bar class="medium">
+  <h1 slot="headline">Otra</h1>
+  <h1 slot="headline-small">
+   Otra página con título largo
+  </h1>
   <button type="button"
-    class="icon">
+    class="icon" slot="navigation">
    <span
      class="material-symbols-outlined">
     menu
    </span>
   </button>
-  <h1>Otra</h1>
   <button type="button"
     class="icon" slot="action"
     title="Agregar">
