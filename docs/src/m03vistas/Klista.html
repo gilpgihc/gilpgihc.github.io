@@ -49,13 +49,6 @@
    margin: 8px 0;
    padding: 0;
    list-style-type: none;
-   color: var(--OnSurface);
-  }
-
-  .list>* {
-   display: block;
-   background-color:
-    var(--Surface);
   }
 
   .list>*:hover {
@@ -75,6 +68,10 @@
   }
 
   .list .one-line {
+   display: block;
+   background-color:
+    var(--Surface);
+   color: var(--OnSurface);
    padding: 16px;
    font-family:
     var(--TitleMediumFont);
@@ -144,6 +141,9 @@
 
   .list .two-line {
    display: block;
+   background-color:
+    var(--Surface);
+   color: var(--OnSurface);
    padding: 16px;
    font-family:
     var(--TitleMediumFont);
@@ -151,6 +151,10 @@
     var(--TitleMediumSize);
    font-weight:
     var(--TitleMediumWeight);
+  }
+
+  .list a.two-line {
+   text-decoration: none;
   }
 
   .list .two-line .title {
@@ -165,6 +169,10 @@
    white-space: nowrap;
    text-overflow: ellipsis;
    overflow: hidden;
+  }
+
+  .list a.two-line .title {
+   text-decoration: underline;
   }
 
   .list .two-line .secondary {
