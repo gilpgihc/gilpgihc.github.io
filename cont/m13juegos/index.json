@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Juegos",
- "description": "Contenido de la lección «13. Juegos».",
- "printDescription": "Página para imprimir de la lección «13. Juegos».",
+ "description": "Contenido de la lección «Juegos».",
+ "printDescription": "Página para imprimir de la lección «Juegos».",
  "listado": [
   {
    "name": "mAsprites.html",
@@ -82,7 +82,7 @@
   {
    "name": "mPresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «13. Juegos»."
+   "description": "Resumen de la lección «Juegos»."
   }
  ]
 }

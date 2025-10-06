@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Adornos",
- "description": "Contenido de la lección «14. Adornos».",
- "printDescription": "Página para imprimir de la lección «14. Adornos».",
+ "description": "Contenido de la lección «Adornos».",
+ "printDescription": "Página para imprimir de la lección «Adornos».",
  "listado": [
   {
    "name": "mAhorizontal.html",
@@ -22,7 +22,7 @@
   {
    "name": "mDresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «14. Adornos»."
+   "description": "Resumen de la lección «Adornos»."
   }
  ]
 }

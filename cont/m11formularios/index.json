@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Formularios",
- "description": "Contenido de la lección «11. Formularios».",
- "printDescription": "Página para imprimir de la lección «11. Formularios».",
+ "description": "Contenido de la lección «Formularios».",
+ "printDescription": "Página para imprimir de la lección «Formularios».",
  "listado": [
   {
    "name": "mAsimple.html",
@@ -77,7 +77,7 @@
   {
    "name": "mNresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «11. Formularios»."
+   "description": "Resumen de la lección «Formularios»."
   }
  ]
 }

@@ -27,14 +27,20 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;p&gt;</span>🌎Hola&nbsp;Mundo.<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div><span style="color: #800000;">&lt;p&gt;</span>🧻Más&nbsp;texto.<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">p</span>&gt;🌎Hola Mundo.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">p</span>&gt;🧻Más texto.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
 <div class="lectura">
  <section>

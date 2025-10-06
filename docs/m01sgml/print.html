@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" sizes="32x32" href="/favicon.ico">
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
-<script src="/js/muestra-codigo.js"></script>
+<script src="/lib/js/muestra-codigo.js"></script>
  <title>SGML - GilPG IHC</title>
- <meta name="description" content="Página para imprimir de la lección «1. SGML.">
+ <meta name="description" content="Página para imprimir de la lección «SGML.">
  <style>
+ /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
  :root {
-  --padTop: 2rem;
+  --marginTop: 0.25rem;
+  --padTop: 0;
+  --h1PadTop: 2.5rem;
   --introDuracion: 2s;
   --introFuncion: ease-out;
   --padCont: 0.5rem;
@@ -20,35 +24,191 @@
   --anchoLectura: 900px;
   --colLetra: black;
   --colFondo: white;
-  --colTituloLetra: #00811c;
-  --colTituloShadow: 3px 1px 2px #bdbdbd;
-  --colTituloStrong: #684601;
-  --colTituloStrongSel: #ffdc97;
-  --colTarget: #cef4ff;
+  --colPush: var(--colFondo);
+  --colPushHover: var(--colFondo);
+  --colPushFocus: var(--colFondo);
+  --colPushActive: #bae397;
+  --colFondoPush: #609732;
+  --colFondoPushHover: #8abd5f;
+  --colFondoPushFocus: #3e7213;
+  --colFondoPushActive: #224c00;
+  --paddingPush: 0.2rem 0.3rem;
+  --borderPush: none;
+  --borderRadiusPush: 0.6em;
+  --colA: #6a7b15;
+  --colAVisited: #6f256f;
+  --colAActive: #e498af;
+  --colAPush: var(--colFondo);
+  --colAVisitedPush: var(--colFondo);
+  --colAPushHover: var(--colFondo);
+  --colAVisitedPushHover: var(--colFondo);
+  --colAPushFocus: var(--colFondo);
+  --colAVisitedPushFocus: var(--colFondo);
+  --colAPushActive: var(--colFondo);
+  --colAVisitedPushActive: var(--colFondo);
+  --colFondoAPush: #6a7b15;
+  --colFondoAVisitedPush: #6f256f;
+  --colFondoAPushHover: #91a437;
+  --colFondoAVisitedPushHover: #a66fa6;
+  --colFondoAPushFocus: #445200;
+  --colFondoAVisitedPushFocus: #530e53;
+  --colFondoAPushActive: #e498af;
+  --colFondoAVisitedPushActive: #e498af;
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
-  --padCtrl: 0.2rem 0.3rem;
-  --borderCtrl: solid thin;
-  --colFondoNav: #f2f2f2;
-  --colNavResaltada: #7a2c99;
-  --colSecundario: #ffff82;
-  --colStack1: black;
-  --colStack2: #224ba5;
-  --colStack3: #92731f;
+  --shadowTitulo: 3px 1px 2px black;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
+  --colAStrong: var(--colLetra);
+  /* --colNavH1Sel: #b35f7c; */
+  --colFondoNav: var(--colFondo);
+  --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
   --colThumb: #90a4ae;
   --colThumbActivo: #3f3f3f;
+  --colResaltado: #e9c8d2;
+  --colResaltado2: #bae397;
+  --colResaltado3: #cfcfcf;
+  --colLetraResaltado: black;
+  --colLetraCodeComment: #224c00;
+  --colLetraCodeString: #903357;
+  --colLetraCodeReserved: #445200;
+  --colSecundario: #e498af;
+  --colTarget: #cef4ff;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
   --anchoThumb: 7px;
   --borderRadiusThumb: 3.5px;
   --gap: 0.5rem;
-  --fontMono: monospace;
-  --fontSans: sans-serif;
-  --fontSerif: serif;
+  --fontMono: 'Xanh Mono', monospace;
+  --fontSans: 'Patrick Hand', sans-serif;
+  /* --fontSerif: 'Purple Purse', serif; */
+  --fontSerif: Georgia, 'Times New Roman', Times, serif;
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
   scrollbar-width: thin;
   scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ @media (prefers-color-scheme: light) {
+  :root {
+   --colLetra: black;
+   --colFondo: white;
+  }
+ }
+
+ /* https://paletton.com/#uid=74W0u0kaVz84jP27qHbeJtFiHpX */
+ @media (prefers-color-scheme: dark) {
+
+  :root {
+   --colLetra: white;
+   /* --colFondo: #272727; */
+   --colFondo: black;
+   --colPushActive: #e3f5d4;
+   --colFondoPush: #bbe697;
+   --colFondoPushHover: #d0eeb7;
+   --colFondoPushFocus: #9ed372;
+   --colFondoPushActive: #7db84d;
+   --colA: #e9f7a3;
+   --colAVisited: #c89ac8;
+   --colAActive: #983351;
+   --colFondoAPush: #e9f7a3;
+   --colFondoAVisitedPush: #c89ac8;
+   --colFondoAPushHover: #f6fcda;
+   --colFondoAVisitedPushHover: #dec0de;
+   --colFondoAPushFocus: #b4c853;
+   --colFondoAVisitedPushFocus: #9a539a;
+   --colFondoAPushActive: #983351;
+   --colFondoAVisitedPushActive: #983351;
+   --colSombra: #00000080;
+   --colTitulo: #e3f5d4;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
+   --colFondoNavSel: #7a3059;
+   --colScrollbar: #616161;
+   --colThumb: #ffffff;
+   --colResaltado: #7a3059;
+   --colResaltado2: #5c922f;
+   --colResaltado3: #4e4e4e;
+   --colLetraResaltado: white;
+   --colLetraCodeComment: #d0eeb7;
+   --colLetraCodeString: #eeb7c8;
+   --colLetraCodeReserved: #f0fac0;
+  }
+ }
+
+ /* xanh-mono-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* xanh-mono-italic - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: italic;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-italic.woff2') format('woff2');
+ }
+
+ /* patrick-hand-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Patrick Hand';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/patrick-hand-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* purple-purse-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Purple Purse';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/purple-purse-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ @font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src:
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2) format('woff2'),
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].ttf) format('truetype');
+ }
+
+ .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
  }
 
  body::-webkit-scrollbar {
@@ -69,18 +229,162 @@
   background-color: var(--colThumbActivo);
  }
 
+ body {
+  margin-top: 0;
+ }
+
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
+ a {
+  color: var(--colA);
+ }
+
+ a:visited {
+  color: var(--colAVisited);
+ }
+
+ a:active {
+  color: var(--colAActive);
+ }
+
  .anterior,
- .siguiente {
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente,
+ button {
   display: inline-block;
+  padding: var(--paddingPush);
+  border: var(--borderPush);
+  border-radius: var(--borderRadiusPush);
+  text-align: center;
   text-decoration: none;
-  padding: var(--padCtrl);
-  border: var(--borderCtrl);
-  cursor: pointer;
+ }
+
+ .anterior,
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente {
+  color: var(--colAPush);
+  background-color: var(--colFondoAPush);
+ }
+
+ .anterior:visited,
+ .siguiente:visited,
+ .paginaAnterior:visited,
+ .paginaSiguiente:visited {
+  color: var(--colAVisitedPush);
+  background-color: var(--colFondoAVisitedPush);
  }
 
  .anterior.bye,
- .siguiente.bye {
+ .siguiente.bye,
+ .paginaAnterior.bye,
+ .paginaSiguiente.bye {
   display: none;
+ }
+
+ .anterior:hover,
+ .siguiente:hover,
+ .paginaAnterior:hover,
+ .paginaSiguiente:hover {
+  color: var(--colAPushHover);
+  background-color: var(--colFondoAPushHover);
+ }
+
+ .anterior:visited:hover,
+ .siguiente:visited:hover,
+ .paginaAnterior:visited:hover,
+ .paginaSiguiente:visited:hover {
+  color: var(--colAVisitedPushHover);
+  background-color: var(--colFondoAVisitedPushHover);
+ }
+
+ .anterior:focus,
+ .siguiente:focus,
+ .paginaAnterior:focus,
+ .paginaSiguiente:focus {
+  color: var(--colAPushFocus);
+  background-color: var(--colFondoAPushFocus);
+ }
+
+ .anterior:visited:focus,
+ .siguiente:visited:focus,
+ .paginaAnterior:visited:focus,
+ .paginaSiguiente:visited:focus {
+  color: var(--colAVisitedPushFocus);
+  background-color: var(--colFondoAVisitedPushFocus);
+ }
+
+ .anterior:active,
+ .siguiente:active,
+ .paginaAnterior:active,
+ .paginaSiguiente:active {
+  color: var(--colAPushActive);
+  background-color: var(--colFondoAPushActive);
+ }
+
+ .anterior:visited:active,
+ .siguiente:visited:active,
+ .paginaAnterior:visited:active,
+ .paginaSiguiente:visited:active {
+  color: var(--colAVisitedPushActive);
+  background-color: var(--colFondoAVisitedPushActive);
+ }
+
+ button {
+  color: var(--colPush);
+  background-color: var(--colFondoPush);
+ }
+
+ button:hover {
+  color: var(--colPushHover);
+  background-color: var(--colFondoPushHover);
+ }
+
+ button:focus {
+  color: var(--colPushFocus);
+  background-color: var(--colFondoPushFocus);
+ }
+
+ button:active {
+  color: var(--colPushActive);
+  background-color: var(--colFondoPushActive);
+ }
+
+ .anterior span,
+ .siguiente span,
+ .paginaAnterior span,
+ .paginaSiguiente span,
+ button span {
+  vertical-align: middle;
  }
 
  a[data-logo] {
@@ -98,7 +402,12 @@
  a code,
  h1 strong,
  h1 code {
-  color: var(--colTituloStrong);
+  font-size: 1em;
+ }
+
+ a strong,
+ a code {
+  color: var(--colAStrong);
  }
 
  nav a {
@@ -110,19 +419,40 @@
  }
 
  code {
-  color: var(--colTituloStrong);
   font-family: var(--fontMono);
+  font-size: 1rem;
+ }
+
+ .tree {
+  font-family: var(--fontSans);
+ }
+
+ .tree summary {
+  text-decoration: underline;
+  cursor: pointer;
+ }
+
+ .tree li {
+  margin-top: 1em;
+  margin-bottom: 1em;
  }
 
  h1:not(.default) {
   font-family: var(--fontSans);
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
+ }
+
+ h1,
+ .lectura a,
+ .lectura p,
+ .lectura blockquote {
+  overflow-wrap: anywhere;
  }
 
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  figure {
@@ -130,12 +460,7 @@
  }
 
  figure img {
-  max-width: 100%;
-  max-height: 65vh;
- }
-
- figure img.med {
-  max-height: 55vh;
+  width: 100%;
  }
 
  figcaption {
@@ -157,8 +482,10 @@
  }
 
  iframe {
+  background-color: white;
   box-sizing: border-box;
-  width: 100%;
+  width: 300px;
+  resize: both;
  }
 
  .lectura {
@@ -171,19 +498,21 @@
   text-align: justify;
  }
 
- /* No funciona bien con display:flex en pantallas pequeñas. */
  .horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: start;
+  justify-content: center;
+ }
+
+ .horizontal>*:first-child {
+  flex: 1 1 300px;
   text-align: center;
  }
 
- .horizontal>* {
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
- }
-
- .horizontal>*:not(:first-child) {
-  margin-left: 1rem;
+ .horizontal>*:nth-child(2) {
+  flex: 1 1 auto;
  }
 
  .columnas4 {
@@ -197,11 +526,18 @@
  }
 
  .resaltado {
-  background-color: rgb(255, 255, 89);
+  background-color: var(--colResaltado);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado2 {
-  background-color: rgb(255, 214, 139);
+  background-color: var(--colResaltado2);
+  color: var(--colLetraResaltado);
+ }
+
+ .resaltado3 {
+  background-color: var(--colResaltado3);
+  color: var(--colLetraResaltado);
  }
 
  table.borde {
@@ -220,9 +556,57 @@
   padding: 0.4rem;
  }
 
- muestra-codigo>div>div {
-  white-space: nowrap;
+ table.codeShow {
+  margin-left: auto;
+  margin-right: auto;
  }
+
+ .codeShow td:first-child {
+  text-align: right;
+  padding: 0 0 0 0;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  /* Avoid selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+ }
+
+ .codeShow td:nth-child(2) {
+  padding: 0 0 0 0.25rem;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  line-height: 1.2rem;
+ }
+
+ .codeReserved {
+  color: var(--colLetraCodeReserved);
+  font-weight: bolder;
+ }
+
+ .codeString {
+  color: var(--colLetraCodeString);
+  font-weight: 600;
+ }
+
+ .codeComment {
+  color: var(--colLetraCodeComment);
+  font-style: italic;
+ }
+
+ @media print {
+
+  .codeShow button {
+   display: none;
+  }
+ }
+
 
  footer {
   margin-top: 1rem;
@@ -233,10 +617,22 @@
  }
 </style>
  <style>
+ .pruebaDeEscritorio {
+  font-family: var(--fontSans);
+ }
+
+ .pruebaDeEscritorio .section,
  .pruebaDeEscritorio section {
   display: inline-block;
   vertical-align: top;
+ }
+
+ .pruebaDeEscritorio section {
   margin: 1em;
+ }
+
+ .section section {
+  display: block;
  }
 
  .pruebaDeEscritorio section pre {
@@ -336,8 +732,9 @@
  }
 </style>
 </head>
+
 <body class="print">
-   <h1 class="leccion">1. SGML</h1>
+   <h1 >1. SGML</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -352,61 +749,62 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m01sgml/mAsgml.html"><dfn>SGML</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mBdoctype.html"><dfn>DOCTYPE</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mCcomentarios.html"><dfn>Comentario</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mDtexto.html">Texto</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mEelementos.html"><dfn>Elemento</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mFatributos.html">Atributos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mGelementosConContenido.html"><dfn>Elemento con contenido</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mHElementosSinContenido.html"><dfn>Elemento sin contenido</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mIpadres.html"><dfn>Elemento padre</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mJhijos.html"><dfn>Elemento hijo</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mKresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m01sgml/mAsgml.html"><dfn>SGML</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mBdoctype.html"><dfn>DOCTYPE</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mCcomentarios.html"><dfn>Comentario</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mDtexto.html">Texto</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mEelementos.html"><dfn>Elemento</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mFatributos.html">Atributos</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mGelementosConContenido.html"><dfn>Elemento con contenido</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mHElementosSinContenido.html"><dfn>Elemento sin contenido</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mIpadres.html"><dfn>Elemento padre</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mJhijos.html"><dfn>Elemento hijo</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mKresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -453,39 +851,31 @@
     </a>
    </p>
   </section>
-  <muestra-codigo>
-   <div>
-    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-       style="color: #ff0000;">html</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-       style="color: #ff0000;">lang</span>=<span
-       style="color: #0000ff;">"es"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div><span style="color: #800000;">&lt;head&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-       style="color: #ff0000;">charset</span>=<span
-       style="color: #0000ff;">"UTF-8"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-       style="color: #ff0000;">name</span>=<span
-       style="color: #0000ff;">"viewport"</span></div>
-    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
-       style="color: #0000ff;">"width=device-width"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Ejemplo<span
-       style="color: #800000;">&lt;/title&gt;</span></div>
-    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-    <div><span style="color: #800000;">&lt;body&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Ejemplo<span
-       style="color: #800000;">&lt;/h1&gt;</span></div>
-    <div>&nbsp;<span
-       style="color: #800000;">&lt;p&gt;</span>Hola&nbsp;mundo.👶<span
-       style="color: #800000;">&lt;/p&gt;</span></div>
-    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-   </div>
-  </muestra-codigo>
+  <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>4</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>6</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">title</span>&gt;Ejemplo&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>8</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>9</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>10</td><td> &lt;<span class="codeReserved">h1</span>&gt;Ejemplo&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>11</td><td> &lt;<span class="codeReserved">p</span>&gt;Hola mundo.👶&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>12</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>13</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
  </div>
 </section>
       </section>
@@ -511,13 +901,19 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+ </tbody>
+</table>
 </section>
 <div class="lectura">
  <section>
@@ -574,29 +970,26 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;Comentario&nbsp;acerca&nbsp;de&nbsp;html.&nbsp;</span>
-   </div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span><span
-      style="color: #008000;">&lt;!--meta--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> Comentario acerca de html. </span></td></tr>
+  <tr><td>4</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>5</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>6</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;<span class="codeComment">&lt;!--meta--&gt;</span></td></tr>
+  <tr><td>8</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -629,15 +1022,21 @@
     </a>
    </p>
   </section>
-  <muestra-codigo>
-   <div>
-    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-       style="color: #ff0000;">html</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div>❤Este&nbsp;texto&nbsp;es&nbsp;el&nbsp;contenido&nbsp;📖&nbsp;de</div>
-    <div>la&nbsp;página!!!!</div>
-   </div>
-  </muestra-codigo>
+  <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>❤Este texto es el contenido 📖 de</td></tr>
+  <tr><td>3</td><td>la página!!!!</td></tr>
+ </tbody>
+</table>
  </div>
 </section>
       </section>
@@ -672,33 +1071,27 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span
-      style="color: #008000;">&lt;!--&nbsp;Elemento&nbsp;de&nbsp;tipo&nbsp;html--&gt;</span>
-   </div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span
-      style="color: #008000;">&lt;!--&nbsp;Elemento&nbsp;de&nbsp;tipo&nbsp;head--&gt;</span>
-   </div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Elemento&nbsp;de&nbsp;tipo&nbsp;meta--&gt;</span>
-   </div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!-- Elemento de tipo html--&gt;</span></td></tr>
+  <tr><td>3</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>4</td><td><span class="codeComment">&lt;!-- Elemento de tipo head--&gt;</span></td></tr>
+  <tr><td>5</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>6</td><td> <span class="codeComment">&lt;!-- Elemento de tipo meta--&gt;</span></td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>8</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>9</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -759,47 +1152,38 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span style="color: #008000;">&nbsp;El&nbsp;atributo</span></div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;id</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;No&nbsp;se&nbsp;puede&nbsp;repetir&nbsp;en&nbsp;el</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;documento&nbsp;y&nbsp;vale</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;raíz</span></div>
-   <br>
-   <div><span style="color: #008000;">&nbsp;El&nbsp;atributo</span></div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;lang</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;tiene&nbsp;el&nbsp;valor</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;es</span></div>
-   <br>
-   <div><span
-      style="color: #008000;">&nbsp;El&nbsp;atributo&nbsp;booleano</span></div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;hidden</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;tiene&nbsp;el&nbsp;valor</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;true</span></div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">"raíz"</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span>&nbsp;<span
-      style="color: #ff0000;">hidden</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> El atributo</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment">  id</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment">   No se puede repetir en el</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment">   documento y vale</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment">    raíz</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"></span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> El atributo</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment">  lang</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment">   tiene el valor</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">    es</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment"></span></td></tr>
+  <tr><td>14</td><td><span class="codeComment"> El atributo booleano</span></td></tr>
+  <tr><td>15</td><td><span class="codeComment">  hidden</span></td></tr>
+  <tr><td>16</td><td><span class="codeComment">   tiene el valor</span></td></tr>
+  <tr><td>17</td><td><span class="codeComment">    <span class="codeReserved">true</span></span></td></tr>
+  <tr><td>18</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>19</td><td>&lt;<span class="codeReserved">html</span> id=<span class="codeString">"raíz"</span> lang=<span class="codeString">"es"</span> hidden&gt;</td></tr>
+  <tr><td>20</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -846,58 +1230,38 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;html&nbsp;es&nbsp;un&nbsp;elemento&nbsp;con&nbsp;contenido.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;Puede&nbsp;contener&nbsp;comentarios,&nbsp;otros</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;elementos&nbsp;y&nbsp;texto.</span>
-   </div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span><span
-      style="color: #008000;">&lt;!--Inicia&nbsp;html--&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;head&nbsp;es&nbsp;contenido&nbsp;de&nbsp;html.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;También&nbsp;es&nbsp;elemento&nbsp;con&nbsp;contenido.</span>
-   </div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;head&gt;</span>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Inicia&nbsp;head&nbsp;--&gt;</span>
-   </div>
-   <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;meta&nbsp;es&nbsp;contenido&nbsp;de&nbsp;head.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;No&nbsp;es&nbsp;un&nbsp;elemento&nbsp;con&nbsp;contenido.</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;--&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Termina&nbsp;head&nbsp;--&gt;</span>
-   </div>
-   <div>💪Este&nbsp;texto&nbsp;es&nbsp;contenido&nbsp;de&nbsp;html.</div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span><span
-      style="color: #008000;">&lt;!--&nbsp;Termina&nbsp;html&nbsp;--&gt;</span>
-   </div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> html es un elemento con contenido.</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> Puede contener comentarios, otros</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> elementos y texto.</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>7</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;<span class="codeComment">&lt;!--Inicia html--&gt;</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> head es contenido de html.</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> También es elemento con contenido.</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>12</td><td>&lt;<span class="codeReserved">head</span>&gt; <span class="codeComment">&lt;!-- Inicia head --&gt;</span></td></tr>
+  <tr><td>13</td><td> <span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment">  meta es contenido de head.</span></td></tr>
+  <tr><td>15</td><td><span class="codeComment">  No es un elemento con contenido.</span></td></tr>
+  <tr><td>16</td><td><span class="codeComment"> --&gt;</span></td></tr>
+  <tr><td>17</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>18</td><td>&lt;/<span class="codeReserved">head</span>&gt; <span class="codeComment">&lt;!-- Termina head --&gt;</span></td></tr>
+  <tr><td>19</td><td>💪Este texto es contenido de html.</td></tr>
+  <tr><td>20</td><td>&lt;/<span class="codeReserved">html</span>&gt;<span class="codeComment">&lt;!-- Termina html --&gt;</span></td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -924,36 +1288,31 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--&nbsp;</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;meta&nbsp;es&nbsp;un&nbsp;tipo&nbsp;de&nbsp;elemento&nbsp;sin</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;contenido.</span></div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--&nbsp;</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;br&nbsp;es&nbsp;un&nbsp;tipo&nbsp;de&nbsp;elemento&nbsp;sin</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;contenido.</span></div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;br&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!-- </span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> meta es un tipo de elemento sin</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> contenido.</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>6</td><td>&lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>7</td><td>&lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>8</td><td>  <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>9</td><td><span class="codeComment">&lt;!-- </span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> br es un tipo de elemento sin</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> contenido.</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>13</td><td>&lt;<span class="codeReserved">br</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -971,63 +1330,43 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;El&nbsp;elemento&nbsp;html&nbsp;es&nbsp;padre&nbsp;de&nbsp;los</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;elementos&nbsp;head&nbsp;y&nbsp;body.</span>
-   </div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;El&nbsp;elemento&nbsp;head&nbsp;es&nbsp;padre&nbsp;de&nbsp;los</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;2&nbsp;elementos&nbsp;meta&nbsp;y&nbsp;del&nbsp;title.</span>
-   </div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Ejemplo<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;El&nbsp;elemento&nbsp;body&nbsp;es&nbsp;padre&nbsp;de&nbsp;los</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;elementos&nbsp;h1&nbsp;y&nbsp;p.</span>
-   </div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Ejemplo<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>Hola&nbsp;mundo.👶<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> El elemento html es padre de los</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> elementos head y body.</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>6</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>7</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> El elemento head es padre de los</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> 2 elementos meta y del title.</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>11</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>12</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>13</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>14</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>15</td><td> &lt;<span class="codeReserved">title</span>&gt;Ejemplo&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>16</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>17</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>18</td><td><span class="codeComment"> El elemento body es padre de los</span></td></tr>
+  <tr><td>19</td><td><span class="codeComment"> elementos h1 y p.</span></td></tr>
+  <tr><td>20</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>21</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>22</td><td> &lt;<span class="codeReserved">h1</span>&gt;Ejemplo&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>23</td><td> &lt;<span class="codeReserved">p</span>&gt;Hola mundo.👶&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>24</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>25</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -1044,64 +1383,51 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;El elemento html no es hijo de</span></div>
-   <div><span style="color: #008000;">&nbsp;nadie.</span></div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span> <span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;El elemento head es hijo del</span></div>
-   <div><span style="color: #008000;">&nbsp;elemento html.</span></div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; Los 2 elementos meta y el title</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; son hijos del elemento head.</span></div>
-   <div><span style="color: #008000;">&nbsp;--&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Ejemplo<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;El elemento body es hijo del</span></div>
-   <div><span style="color: #008000;">&nbsp;elemento html.</span></div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; Los elementos h1 y p son hijos</span></div>
-   <div><span style="color: #008000;">&nbsp; del elemento body.</span></div>
-   <div><span style="color: #008000;">&nbsp;--&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Ejemplo<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Hola mundo.👶<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> El elemento html no es hijo de</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> nadie.</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>6</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>7</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> El elemento head es hijo del</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> elemento html.</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>11</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>12</td><td> <span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment">  Los 2 elementos meta y el title</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment">  son hijos del elemento head.</span></td></tr>
+  <tr><td>15</td><td><span class="codeComment"> --&gt;</span></td></tr>
+  <tr><td>16</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>17</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>18</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>19</td><td> &lt;<span class="codeReserved">title</span>&gt;Ejemplo&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>20</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>21</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>22</td><td><span class="codeComment"> El elemento body es hijo del</span></td></tr>
+  <tr><td>23</td><td><span class="codeComment"> elemento html.</span></td></tr>
+  <tr><td>24</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>25</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>26</td><td> <span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>27</td><td><span class="codeComment">  Los elementos h1 y p son hijos</span></td></tr>
+  <tr><td>28</td><td><span class="codeComment">  del elemento body.</span></td></tr>
+  <tr><td>29</td><td><span class="codeComment"> --&gt;</span></td></tr>
+  <tr><td>30</td><td> &lt;<span class="codeReserved">h1</span>&gt;Ejemplo&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>31</td><td> &lt;<span class="codeReserved">p</span>&gt;Hola mundo.👶&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>32</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>33</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -1146,4 +1472,5 @@
 </div>
       </section>
 </body>
+
 </html>

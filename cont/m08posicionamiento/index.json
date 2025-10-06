@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Posicionamiento",
- "description": "Contenido de la lección «8. Posicionamiento».",
- "printDescription": "Página para imprimir de la lección «8. Posicionamiento».",
+ "description": "Contenido de la lección «Posicionamiento».",
+ "printDescription": "Página para imprimir de la lección «Posicionamiento».",
  "listado": [
   {
    "name": "mApropiedades.html",
@@ -36,7 +36,7 @@
   {
    "name": "mFresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «8. Posicionamiento»."
+   "description": "Resumen de la lección «Posicionamiento»."
   }
  ]
 }

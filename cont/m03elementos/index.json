@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Elementos básicos de HTML",
- "description": "Contenido de la lección «3. Elementos básicos de HTML»",
- "printDescription": "Página para imprimir de la lección «3. Elementos básicos de HTML».",
+ "description": "Contenido de la lección «Elementos básicos de HTML»",
+ "printDescription": "Página para imprimir de la lección «Elementos básicos de HTML».",
  "listado": [
   {
    "name": "mAejemplo.html",
@@ -51,7 +51,7 @@
   {
    "name": "mIresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «3. Elementos básicos de HTML»."
+   "description": "Resumen de la lección «Elementos básicos de HTML»."
   }
  ]
 }

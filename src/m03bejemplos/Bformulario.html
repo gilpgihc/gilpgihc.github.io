@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width">
+ <title>Formulario</title>
+</head>
+
+<body>
+ <form id>
+  <h1>Formulario</h1>
+
+  <p>
+   <label>
+    Nombre
+    <output name="nombre">Pp</output>
+   </label>
+  </p>
+
+  <p>
+   <label accesskey="A">
+    Apellidos *
+    <input name="apellidos" type="text" placeholder="ej. Pérez López"
+      required>
+    <small>Los apellidos de tu familia</small>
+   </label>
+  </p>
+
+  <input name="clave" type="hidden" value="">
+
+  <p>
+   <label>
+    Restaurante favorito
+    <input name="apellidos" type="text" value="La cabaña del Tio Jese">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Número telefónico
+    <input name="telefono" type="tel">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Número de tarjeta
+    <input name="tarjeta" type="text" pattern="\d{14,19}" inputmode="numeric">
+    <small>14 a 19 letras o caracteres.</small>
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Sitio personal
+    <input name="sitio" type="url" list="sitios">
+   </label>
+  </p>
+  <datalist id="sitios">
+   <option>https://facebook.com</option>
+   <option>https://google.com</option>
+   <option>https://tiktok.com</option>
+   <option>https://youtube.com</option>
+  </datalist>
+  <p>
+   <label>
+    Email para quejas
+    <input name="quejas" type="email">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Match *
+    <input name="match" type="password" required pattern="\w{4,7}">
+   </label>
+   <small>4 a 7 letras o caracteres.</small>
+  </p>
+
+  <p>
+   <label>
+    Próximo día festivo
+    <input name="proximo" type="date">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Próximo día libre
+    <input name="libre" type="date" value="2025-02-14" min="2025-01-01"
+      max="2025-06-01" step="2">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Mes
+    <input name="mes" type="month" value="2025-04" min="2025-01" max="2025-12"
+      step="3">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Semana de vacaciones
+    <input name="vacaciones" type="week" value="2025-W05" min="2025-W01"
+      max="2025-W54" step="2">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Hora de la reunión
+    <input name="horaReunion" type="time" value="15:30" min="07:00"
+      max="17:30" step="1800">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Fecha y hora local
+    <input name="nacimiento" type="datetime-local" value="2025-03-18T15:00"
+      min="2025-01-01T10:00" max="2025-12-31T22:00" step="3600">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Altura
+    <input name="altura" type="number" min="0.5" max="3.0" step="0.01">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Temperatura
+    -50<input name="temperatura" type="range" min="-50" max="80" step="2"
+      value="20">80
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Temperatura 2
+    -50<input name="temperatura" type="range" min="-50" max="80" step="2"
+      value="20" list="temperaturas">80
+   </label>
+  </p>
+  <datalist id="temperaturas">
+   <option value="-50">Congelado</option>
+   <option value="-30"></option>
+   <option value="0"></option>
+   <option value="30"></option>
+   <option value="50"></option>
+   <option value="80">Quemándose</option>
+  </datalist>
+  <p>
+   <label>
+    Color
+    <input name="color" type="color" colorspace="limited-srgb" value="#00ff00">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Tarea
+    <input name="tarea" type="file" accept="image/*,application/pdf">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    <input name="aprobado" type="checkbox">
+    Aprobado
+   </label>
+  </p>
+
+  <fieldset>
+   <legend>Pasatiempos</legend>
+   <p>
+    <label>
+     <input type="checkbox" name="pasatiempos[]" value="fut">
+     Futbol
+    </label>
+   </p>
+   <p>
+    <label>
+     <input type="checkbox" name="pasatiempos[]" value="chess" checked>
+     Ajedrez
+    </label>
+   </p>
+   <p>
+    <label>
+     <input type="checkbox" name="pasatiempos[]" value="basket" checked>
+     Basketbol
+    </label>
+   </p>
+  </fieldset>
+
+  <fieldset>
+   <legend>Madrugador</legend>
+   <p>
+    <label><input type="radio" name="madrugador" value="si" checked>Si</label>
+   </p>
+   <p><label><input type="radio" name="madrugador" value="no">No</label></p>
+  </fieldset>
+
+  <fieldset>
+   <legend>Tamaño *</legend>
+   <p>
+    <label>
+     <input type="radio" name="tamano" value="grande" required>
+     Grande
+    </label>
+   </p>
+   <p>
+    <label>
+     <input type="radio" name="tamano" value="mediano">
+     Mediano
+    </label>
+   </p>
+   <p>
+    <label>
+     <input type="radio" name="tamano" value="chico">
+     Chico
+    </label>
+   </p>
+  </fieldset>
+
+  <p>
+   <label>
+    Género Musical *
+    <select name="generoMusical" required>
+     <option value="">Sin selección</option>
+     <option value="pop">Pop</option>
+     <option value="reg">Reguetón</option>
+    </select>
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Géneración
+    <select name="generacion" value="Z">
+     <option value="boom">Baby Boom</option>
+     <option value="X">X</option>
+     <option value="">Sin selección</option>
+     <option value="Y">Millenoals</option>
+     <option value="Z">Z</option>
+     <option value="alfa">Alfa</option>
+    </select>
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Género
+    <select name="genero">
+     <option value="masculino">Masculino</option>
+     <option value="femenino" selected>Femenino</option>
+     <option value="">-- Seleccionar --</option>
+     <optgroup label="Otros">
+      <option value="nodecir">Prefiero no decirlo</option>
+      <option value="nobinario">No binario</option>
+     </optgroup>
+    </select>
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Bebidas
+    <select name="bebidas[]" multiple size="3">
+     <option value="cafe" selected>Café</option>
+     <option value="agua" selected>Agua</option>
+     <option value="limonada">Limonada</option>
+    </select>
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Mi camino desde casa *
+    <textarea name="camino" required rows="10" cols="25"></textarea>
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Mi opinión sobre la comida mexicana
+    <textarea name="opinion" rows="10" cols="25">Es muy rica</textarea>
+   </label>
+  </p>
+
+  <p><small>* Requerido</small></p>
+
+  <p>
+   <button type="submit">Procesar</button>
+   <button type="reset">Reiniciar</button>
+  </p>
+
+ </form>
+
+</body>
+
+</html>

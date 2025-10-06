@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "CSS",
- "description": "Contenido de la lección «4. CSS»",
- "printDescription": "Página para imprimir de la lección «4. CSS».",
+ "description": "Contenido de la lección «CSS»",
+ "printDescription": "Página para imprimir de la lección «CSS».",
  "listado": [
   {
    "name": "mAejemplo.html",
@@ -43,7 +43,7 @@
   {
    "name": "mHresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «4. CSS»."
+   "description": "Resumen de la lección «CSS»."
   }
  ]
 }

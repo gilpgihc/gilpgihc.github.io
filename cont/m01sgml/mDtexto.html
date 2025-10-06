@@ -27,14 +27,20 @@
     </a>
    </p>
   </section>
-  <muestra-codigo>
-   <div>
-    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-       style="color: #ff0000;">html</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div>❤Este&nbsp;texto&nbsp;es&nbsp;el&nbsp;contenido&nbsp;📖&nbsp;de</div>
-    <div>la&nbsp;página!!!!</div>
-   </div>
-  </muestra-codigo>
+  <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>❤Este texto es el contenido 📖 de</td></tr>
+  <tr><td>3</td><td>la página!!!!</td></tr>
+ </tbody>
+</table>
  </div>
 </section>

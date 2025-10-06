@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Elementos Multimedia",
- "description": "Contenido de la lección «10. Elementos Multimedia».",
- "printDescription": "Página para imprimir de la lección «10. Elementos Multimedia».",
+ "description": "Contenido de la lección «Elementos Multimedia».",
+ "printDescription": "Página para imprimir de la lección «Elementos Multimedia».",
  "listado": [
   {
    "name": "mAimagenes.html",
@@ -34,7 +34,7 @@
   {
    "name": "mFresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «10. Elementos Multimedia»."
+   "description": "Resumen de la lección «Elementos Multimedia»."
   }
  ]
 }

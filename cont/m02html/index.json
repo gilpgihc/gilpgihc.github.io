@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Introducción a HTML",
- "description": "Contenido de la lección «2. Introducción a HTML",
- "printDescription": "Página para imprimir de la lección «2. Introducción a HTML.",
+ "description": "Contenido de la lección «Introducción a HTML",
+ "printDescription": "Página para imprimir de la lección «Introducción a HTML.",
  "listado": [
   {
    "name": "mAejemplo.html",
@@ -52,7 +52,7 @@
   {
    "name": "mIresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «2. Introducción a HTML."
+   "description": "Resumen de la lección «Introducción a HTML."
   }
  ]
 }

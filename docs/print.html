@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" sizes="32x32" href="/favicon.ico">
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
-<script src="/js/muestra-codigo.js"></script>
+<script src="/lib/js/muestra-codigo.js"></script>
  <title>Introducción a HTML y CSS - GilPG IHC</title>
  <meta name="description" content="Página para imprimir todo el contenido de GilPG IHC, que introduce conceptos básicos de HTML y CSS.">
  <style>
+ /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
  :root {
-  --padTop: 2rem;
+  --marginTop: 0.25rem;
+  --padTop: 0;
+  --h1PadTop: 2.5rem;
   --introDuracion: 2s;
   --introFuncion: ease-out;
   --padCont: 0.5rem;
@@ -20,35 +24,191 @@
   --anchoLectura: 900px;
   --colLetra: black;
   --colFondo: white;
-  --colTituloLetra: #00811c;
-  --colTituloShadow: 3px 1px 2px #bdbdbd;
-  --colTituloStrong: #684601;
-  --colTituloStrongSel: #ffdc97;
-  --colTarget: #cef4ff;
+  --colPush: var(--colFondo);
+  --colPushHover: var(--colFondo);
+  --colPushFocus: var(--colFondo);
+  --colPushActive: #bae397;
+  --colFondoPush: #609732;
+  --colFondoPushHover: #8abd5f;
+  --colFondoPushFocus: #3e7213;
+  --colFondoPushActive: #224c00;
+  --paddingPush: 0.2rem 0.3rem;
+  --borderPush: none;
+  --borderRadiusPush: 0.6em;
+  --colA: #6a7b15;
+  --colAVisited: #6f256f;
+  --colAActive: #e498af;
+  --colAPush: var(--colFondo);
+  --colAVisitedPush: var(--colFondo);
+  --colAPushHover: var(--colFondo);
+  --colAVisitedPushHover: var(--colFondo);
+  --colAPushFocus: var(--colFondo);
+  --colAVisitedPushFocus: var(--colFondo);
+  --colAPushActive: var(--colFondo);
+  --colAVisitedPushActive: var(--colFondo);
+  --colFondoAPush: #6a7b15;
+  --colFondoAVisitedPush: #6f256f;
+  --colFondoAPushHover: #91a437;
+  --colFondoAVisitedPushHover: #a66fa6;
+  --colFondoAPushFocus: #445200;
+  --colFondoAVisitedPushFocus: #530e53;
+  --colFondoAPushActive: #e498af;
+  --colFondoAVisitedPushActive: #e498af;
   --colSombra: #49494980;
   --navSombra: 0.5rem 0 0.5rem var(--colSombra);
-  --padCtrl: 0.2rem 0.3rem;
-  --borderCtrl: solid thin;
-  --colFondoNav: #f2f2f2;
-  --colNavResaltada: #7a2c99;
-  --colSecundario: #ffff82;
-  --colStack1: black;
-  --colStack2: #224ba5;
-  --colStack3: #92731f;
+  --shadowTitulo: 3px 1px 2px black;
+  /* --colTitulo: #bae397; */
+  --colTitulo: #609732;
+  /* --colTituloFondo: #609732; */
+  --colPrincipalTituloStrong: #6E256E;
+  --colAStrong: var(--colLetra);
+  /* --colNavH1Sel: #b35f7c; */
+  --colFondoNav: var(--colFondo);
+  --colFondoNavSel: #e498af;
   --colScrollbar: #CFD8DC;
   --colThumb: #90a4ae;
   --colThumbActivo: #3f3f3f;
+  --colResaltado: #e9c8d2;
+  --colResaltado2: #bae397;
+  --colResaltado3: #cfcfcf;
+  --colLetraResaltado: black;
+  --colLetraCodeComment: #224c00;
+  --colLetraCodeString: #903357;
+  --colLetraCodeReserved: #445200;
+  --colSecundario: #e498af;
+  --colTarget: #cef4ff;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
   --anchoThumb: 7px;
   --borderRadiusThumb: 3.5px;
   --gap: 0.5rem;
-  --fontMono: monospace;
-  --fontSans: sans-serif;
-  --fontSerif: serif;
+  --fontMono: 'Xanh Mono', monospace;
+  --fontSans: 'Patrick Hand', sans-serif;
+  /* --fontSerif: 'Purple Purse', serif; */
+  --fontSerif: Georgia, 'Times New Roman', Times, serif;
   font-family: var(--fontSerif);
   color: var(--colLetra);
   background-color: var(--colFondo);
   scrollbar-width: thin;
   scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ @media (prefers-color-scheme: light) {
+  :root {
+   --colLetra: black;
+   --colFondo: white;
+  }
+ }
+
+ /* https://paletton.com/#uid=74W0u0kaVz84jP27qHbeJtFiHpX */
+ @media (prefers-color-scheme: dark) {
+
+  :root {
+   --colLetra: white;
+   /* --colFondo: #272727; */
+   --colFondo: black;
+   --colPushActive: #e3f5d4;
+   --colFondoPush: #bbe697;
+   --colFondoPushHover: #d0eeb7;
+   --colFondoPushFocus: #9ed372;
+   --colFondoPushActive: #7db84d;
+   --colA: #e9f7a3;
+   --colAVisited: #c89ac8;
+   --colAActive: #983351;
+   --colFondoAPush: #e9f7a3;
+   --colFondoAVisitedPush: #c89ac8;
+   --colFondoAPushHover: #f6fcda;
+   --colFondoAVisitedPushHover: #dec0de;
+   --colFondoAPushFocus: #b4c853;
+   --colFondoAVisitedPushFocus: #9a539a;
+   --colFondoAPushActive: #983351;
+   --colFondoAVisitedPushActive: #983351;
+   --colSombra: #00000080;
+   --colTitulo: #e3f5d4;
+   --colPrincipalTituloStrong: #C899C8;
+   /* --colTituloFondo: #7db84d; */
+   /* --colNavH1Sel: #d37290; */
+   --colFondoNavSel: #7a3059;
+   --colScrollbar: #616161;
+   --colThumb: #ffffff;
+   --colResaltado: #7a3059;
+   --colResaltado2: #5c922f;
+   --colResaltado3: #4e4e4e;
+   --colLetraResaltado: white;
+   --colLetraCodeComment: #d0eeb7;
+   --colLetraCodeString: #eeb7c8;
+   --colLetraCodeReserved: #f0fac0;
+  }
+ }
+
+ /* xanh-mono-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* xanh-mono-italic - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Xanh Mono';
+  font-style: italic;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/xanh-mono-v18-latin_latin-ext-italic.woff2') format('woff2');
+ }
+
+ /* patrick-hand-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Patrick Hand';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/patrick-hand-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ /* purple-purse-regular - latin_latin-ext */
+ @font-face {
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Purple Purse';
+  font-style: normal;
+  font-weight: 400;
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/purple-purse-v23-latin_latin-ext-regular.woff2') format('woff2');
+ }
+
+ @font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src:
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2) format('woff2'),
+   url(/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].ttf) format('truetype');
+ }
+
+ .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
  }
 
  body::-webkit-scrollbar {
@@ -69,18 +229,162 @@
   background-color: var(--colThumbActivo);
  }
 
+ body {
+  margin-top: 0;
+ }
+
+ h1 {
+  font-size: 3rem;
+ }
+
+ section h1,
+ nav h1 {
+  font-size: 2.5rem;
+  font-style: oblique;
+ }
+
+ section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section h1 {
+  font-size: 2rem;
+  font-style: normal;
+ }
+
+ section section section section h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+ }
+
+ section section section section section h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+ }
+
+ a {
+  color: var(--colA);
+ }
+
+ a:visited {
+  color: var(--colAVisited);
+ }
+
+ a:active {
+  color: var(--colAActive);
+ }
+
  .anterior,
- .siguiente {
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente,
+ button {
   display: inline-block;
+  padding: var(--paddingPush);
+  border: var(--borderPush);
+  border-radius: var(--borderRadiusPush);
+  text-align: center;
   text-decoration: none;
-  padding: var(--padCtrl);
-  border: var(--borderCtrl);
-  cursor: pointer;
+ }
+
+ .anterior,
+ .siguiente,
+ .paginaAnterior,
+ .paginaSiguiente {
+  color: var(--colAPush);
+  background-color: var(--colFondoAPush);
+ }
+
+ .anterior:visited,
+ .siguiente:visited,
+ .paginaAnterior:visited,
+ .paginaSiguiente:visited {
+  color: var(--colAVisitedPush);
+  background-color: var(--colFondoAVisitedPush);
  }
 
  .anterior.bye,
- .siguiente.bye {
+ .siguiente.bye,
+ .paginaAnterior.bye,
+ .paginaSiguiente.bye {
   display: none;
+ }
+
+ .anterior:hover,
+ .siguiente:hover,
+ .paginaAnterior:hover,
+ .paginaSiguiente:hover {
+  color: var(--colAPushHover);
+  background-color: var(--colFondoAPushHover);
+ }
+
+ .anterior:visited:hover,
+ .siguiente:visited:hover,
+ .paginaAnterior:visited:hover,
+ .paginaSiguiente:visited:hover {
+  color: var(--colAVisitedPushHover);
+  background-color: var(--colFondoAVisitedPushHover);
+ }
+
+ .anterior:focus,
+ .siguiente:focus,
+ .paginaAnterior:focus,
+ .paginaSiguiente:focus {
+  color: var(--colAPushFocus);
+  background-color: var(--colFondoAPushFocus);
+ }
+
+ .anterior:visited:focus,
+ .siguiente:visited:focus,
+ .paginaAnterior:visited:focus,
+ .paginaSiguiente:visited:focus {
+  color: var(--colAVisitedPushFocus);
+  background-color: var(--colFondoAVisitedPushFocus);
+ }
+
+ .anterior:active,
+ .siguiente:active,
+ .paginaAnterior:active,
+ .paginaSiguiente:active {
+  color: var(--colAPushActive);
+  background-color: var(--colFondoAPushActive);
+ }
+
+ .anterior:visited:active,
+ .siguiente:visited:active,
+ .paginaAnterior:visited:active,
+ .paginaSiguiente:visited:active {
+  color: var(--colAVisitedPushActive);
+  background-color: var(--colFondoAVisitedPushActive);
+ }
+
+ button {
+  color: var(--colPush);
+  background-color: var(--colFondoPush);
+ }
+
+ button:hover {
+  color: var(--colPushHover);
+  background-color: var(--colFondoPushHover);
+ }
+
+ button:focus {
+  color: var(--colPushFocus);
+  background-color: var(--colFondoPushFocus);
+ }
+
+ button:active {
+  color: var(--colPushActive);
+  background-color: var(--colFondoPushActive);
+ }
+
+ .anterior span,
+ .siguiente span,
+ .paginaAnterior span,
+ .paginaSiguiente span,
+ button span {
+  vertical-align: middle;
  }
 
  a[data-logo] {
@@ -98,7 +402,12 @@
  a code,
  h1 strong,
  h1 code {
-  color: var(--colTituloStrong);
+  font-size: 1em;
+ }
+
+ a strong,
+ a code {
+  color: var(--colAStrong);
  }
 
  nav a {
@@ -110,19 +419,40 @@
  }
 
  code {
-  color: var(--colTituloStrong);
   font-family: var(--fontMono);
+  font-size: 1rem;
+ }
+
+ .tree {
+  font-family: var(--fontSans);
+ }
+
+ .tree summary {
+  text-decoration: underline;
+  cursor: pointer;
+ }
+
+ .tree li {
+  margin-top: 1em;
+  margin-bottom: 1em;
  }
 
  h1:not(.default) {
   font-family: var(--fontSans);
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
+ }
+
+ h1,
+ .lectura a,
+ .lectura p,
+ .lectura blockquote {
+  overflow-wrap: anywhere;
  }
 
  .autor {
   font-family: var(--fontSans);
   font-size: 1.5rem;
-  color: var(--colTituloLetra);
+  color: var(--colTituloFondo);
  }
 
  figure {
@@ -130,12 +460,7 @@
  }
 
  figure img {
-  max-width: 100%;
-  max-height: 65vh;
- }
-
- figure img.med {
-  max-height: 55vh;
+  width: 100%;
  }
 
  figcaption {
@@ -157,8 +482,10 @@
  }
 
  iframe {
+  background-color: white;
   box-sizing: border-box;
-  width: 100%;
+  width: 300px;
+  resize: both;
  }
 
  .lectura {
@@ -171,19 +498,21 @@
   text-align: justify;
  }
 
- /* No funciona bien con display:flex en pantallas pequeñas. */
  .horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: start;
+  justify-content: center;
+ }
+
+ .horizontal>*:first-child {
+  flex: 1 1 300px;
   text-align: center;
  }
 
- .horizontal>* {
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
- }
-
- .horizontal>*:not(:first-child) {
-  margin-left: 1rem;
+ .horizontal>*:nth-child(2) {
+  flex: 1 1 auto;
  }
 
  .columnas4 {
@@ -197,11 +526,18 @@
  }
 
  .resaltado {
-  background-color: rgb(255, 255, 89);
+  background-color: var(--colResaltado);
+  color: var(--colLetraResaltado);
  }
 
  .resaltado2 {
-  background-color: rgb(255, 214, 139);
+  background-color: var(--colResaltado2);
+  color: var(--colLetraResaltado);
+ }
+
+ .resaltado3 {
+  background-color: var(--colResaltado3);
+  color: var(--colLetraResaltado);
  }
 
  table.borde {
@@ -220,9 +556,57 @@
   padding: 0.4rem;
  }
 
- muestra-codigo>div>div {
-  white-space: nowrap;
+ table.codeShow {
+  margin-left: auto;
+  margin-right: auto;
  }
+
+ .codeShow td:first-child {
+  text-align: right;
+  padding: 0 0 0 0;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  /* Avoid selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+ }
+
+ .codeShow td:nth-child(2) {
+  padding: 0 0 0 0.25rem;
+  vertical-align: top;
+  font-family: var(--fontMono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  line-height: 1.2rem;
+ }
+
+ .codeReserved {
+  color: var(--colLetraCodeReserved);
+  font-weight: bolder;
+ }
+
+ .codeString {
+  color: var(--colLetraCodeString);
+  font-weight: 600;
+ }
+
+ .codeComment {
+  color: var(--colLetraCodeComment);
+  font-style: italic;
+ }
+
+ @media print {
+
+  .codeShow button {
+   display: none;
+  }
+ }
+
 
  footer {
   margin-top: 1rem;
@@ -233,10 +617,22 @@
  }
 </style>
  <style>
+ .pruebaDeEscritorio {
+  font-family: var(--fontSans);
+ }
+
+ .pruebaDeEscritorio .section,
  .pruebaDeEscritorio section {
   display: inline-block;
   vertical-align: top;
+ }
+
+ .pruebaDeEscritorio section {
   margin: 1em;
+ }
+
+ .section section {
+  display: block;
  }
 
  .pruebaDeEscritorio section pre {
@@ -336,6 +732,7 @@
  }
 </style>
 </head>
+
 <body class="print">
    <h1 class="sitio">Introducción a HTML y CSS</h1>
    <div class="lectura"> 
@@ -371,7 +768,6 @@
   </li>
  </ul>
  <section class="noPrint">
- <h1>Instrucciones de navegación</h1>
  <ul>
   <li>
    <p>
@@ -380,22 +776,37 @@
    </p>
    <dl>
     <dt>
-     <button type="button" title="Cierra">&#x2715;</button>
+     <button type="button" title="Cierra" style="vertical-align: middle">
+      <span class="material-symbols-outlined">
+       close
+      </span>
+     </button>
     </dt>
     <dd>
      <p>Oculta el menú de navegación.</p>
     </dd>
     <dt>
-     <button type="button" title="Menú">&#x2630;</button>
+     <button type="button" title="Menú" style="vertical-align: middle">
+      <span class="material-symbols-outlined">
+       menu
+      </span>
+     </button>
     </dt>
     <dd>
      <p>Muestra el menú de navegación.</p>
     </dd>
     <dt>
-     <span class="anterior" title="Página anterior">◀</span>
+     <span class="anterior" title="Página anterior"
+       style="vertical-align: middle">
+      <span class="material-symbols-outlined">
+       skip_previous
+      </span></span>
     </dt>
     <dt>
-     <kbd>←</kbd> (Tecla flecha a la izquierda)
+     <span class="material-symbols-outlined"
+       style="display: inline-block; vertical-align: middle">
+      arrow_back
+     </span> (Tecla flecha a la izquierda)
     </dt>
     <dt>
      Swipe hacia la derecha
@@ -404,10 +815,18 @@
      <p>Regresa a la página anterior.</p>
     </dd>
     <dt>
-     <span class="siguiente" title="Página siguiente">▶</span>
+     <span class="siguiente" title="Página siguiente"
+       style="vertical-align: middle">
+      <span class="material-symbols-outlined">
+       skip_next
+      </span>
+     </span>
     </dt>
     <dt>
-     <kbd>→</kbd> (Tecla flecha a la derecha)
+     <span class="material-symbols-outlined"
+       style="display: inline-block; vertical-align: middle">
+      arrow_forward
+     </span> (Tecla flecha a la derecha)
     </dt>
     <dt>
      Swipe hacia la izquierda
@@ -423,81 +842,87 @@
   <h1>Lecciones</h1>
   
    <ol type="1">
-    <li>
-     <p>
-      <a href="/m01sgml/">SGML</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m02html/">Introducción a HTML</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03elementos/">Elementos básicos de HTML</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04css/">CSS</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05propiedades/">Propiedades básicas de CSS</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m06display/">La propiedad <code class='language-css'>display</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m07cajas/">El modelo de cajas</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08posicionamiento/">Posicionamiento</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09selectores/">Selectores de CSS</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m10multimedia/">Elementos Multimedia</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/">Formularios</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m12custom/">Custom elements</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/">Juegos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m14adornos/">Adornos</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m01sgml/">SGML</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m02html/">Introducción a HTML</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03elementos/">Elementos básicos de HTML</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03bejshtml/">Ejemplos típicos de HTML</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04css/">CSS</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m05propiedades/">Propiedades básicas de CSS</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m06display/">La propiedad <code class='language-css'>display</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m07cajas/">El modelo de cajas</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m08posicionamiento/">Posicionamiento</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09selectores/">Selectores de CSS</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m10multimedia/">Elementos Multimedia</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/">Formularios</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m12custom/">Custom elements</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/">Juegos</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m14adornos/">Adornos</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
      <section>
-         <h1 class="leccion">1. SGML</h1>
+         <h1 >1. SGML</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -512,61 +937,62 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m01sgml/mAsgml.html"><dfn>SGML</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mBdoctype.html"><dfn>DOCTYPE</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mCcomentarios.html"><dfn>Comentario</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mDtexto.html">Texto</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mEelementos.html"><dfn>Elemento</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mFatributos.html">Atributos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mGelementosConContenido.html"><dfn>Elemento con contenido</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mHElementosSinContenido.html"><dfn>Elemento sin contenido</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mIpadres.html"><dfn>Elemento padre</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mJhijos.html"><dfn>Elemento hijo</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m01sgml/mKresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m01sgml/mAsgml.html"><dfn>SGML</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mBdoctype.html"><dfn>DOCTYPE</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mCcomentarios.html"><dfn>Comentario</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mDtexto.html">Texto</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mEelementos.html"><dfn>Elemento</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mFatributos.html">Atributos</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mGelementosConContenido.html"><dfn>Elemento con contenido</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mHElementosSinContenido.html"><dfn>Elemento sin contenido</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mIpadres.html"><dfn>Elemento padre</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mJhijos.html"><dfn>Elemento hijo</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m01sgml/mKresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -613,39 +1039,31 @@
     </a>
    </p>
   </section>
-  <muestra-codigo>
-   <div>
-    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-       style="color: #ff0000;">html</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-       style="color: #ff0000;">lang</span>=<span
-       style="color: #0000ff;">"es"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div><span style="color: #800000;">&lt;head&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-       style="color: #ff0000;">charset</span>=<span
-       style="color: #0000ff;">"UTF-8"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-       style="color: #ff0000;">name</span>=<span
-       style="color: #0000ff;">"viewport"</span></div>
-    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
-       style="color: #0000ff;">"width=device-width"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Ejemplo<span
-       style="color: #800000;">&lt;/title&gt;</span></div>
-    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-    <div><span style="color: #800000;">&lt;body&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Ejemplo<span
-       style="color: #800000;">&lt;/h1&gt;</span></div>
-    <div>&nbsp;<span
-       style="color: #800000;">&lt;p&gt;</span>Hola&nbsp;mundo.👶<span
-       style="color: #800000;">&lt;/p&gt;</span></div>
-    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-   </div>
-  </muestra-codigo>
+  <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>4</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>6</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">title</span>&gt;Ejemplo&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>8</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>9</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>10</td><td> &lt;<span class="codeReserved">h1</span>&gt;Ejemplo&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>11</td><td> &lt;<span class="codeReserved">p</span>&gt;Hola mundo.👶&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>12</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>13</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
  </div>
 </section>
       </section>
@@ -671,13 +1089,19 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+ </tbody>
+</table>
 </section>
 <div class="lectura">
  <section>
@@ -734,29 +1158,26 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;Comentario&nbsp;acerca&nbsp;de&nbsp;html.&nbsp;</span>
-   </div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span><span
-      style="color: #008000;">&lt;!--meta--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> Comentario acerca de html. </span></td></tr>
+  <tr><td>4</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>5</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>6</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;<span class="codeComment">&lt;!--meta--&gt;</span></td></tr>
+  <tr><td>8</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -789,15 +1210,21 @@
     </a>
    </p>
   </section>
-  <muestra-codigo>
-   <div>
-    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-       style="color: #ff0000;">html</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div>❤Este&nbsp;texto&nbsp;es&nbsp;el&nbsp;contenido&nbsp;📖&nbsp;de</div>
-    <div>la&nbsp;página!!!!</div>
-   </div>
-  </muestra-codigo>
+  <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>❤Este texto es el contenido 📖 de</td></tr>
+  <tr><td>3</td><td>la página!!!!</td></tr>
+ </tbody>
+</table>
  </div>
 </section>
       </section>
@@ -832,33 +1259,27 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span
-      style="color: #008000;">&lt;!--&nbsp;Elemento&nbsp;de&nbsp;tipo&nbsp;html--&gt;</span>
-   </div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span
-      style="color: #008000;">&lt;!--&nbsp;Elemento&nbsp;de&nbsp;tipo&nbsp;head--&gt;</span>
-   </div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Elemento&nbsp;de&nbsp;tipo&nbsp;meta--&gt;</span>
-   </div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!-- Elemento de tipo html--&gt;</span></td></tr>
+  <tr><td>3</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>4</td><td><span class="codeComment">&lt;!-- Elemento de tipo head--&gt;</span></td></tr>
+  <tr><td>5</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>6</td><td> <span class="codeComment">&lt;!-- Elemento de tipo meta--&gt;</span></td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>8</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>9</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -919,47 +1340,38 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span style="color: #008000;">&nbsp;El&nbsp;atributo</span></div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;id</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;No&nbsp;se&nbsp;puede&nbsp;repetir&nbsp;en&nbsp;el</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;documento&nbsp;y&nbsp;vale</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;raíz</span></div>
-   <br>
-   <div><span style="color: #008000;">&nbsp;El&nbsp;atributo</span></div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;lang</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;tiene&nbsp;el&nbsp;valor</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;es</span></div>
-   <br>
-   <div><span
-      style="color: #008000;">&nbsp;El&nbsp;atributo&nbsp;booleano</span></div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;hidden</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;tiene&nbsp;el&nbsp;valor</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;true</span></div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">"raíz"</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span>&nbsp;<span
-      style="color: #ff0000;">hidden</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> El atributo</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment">  id</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment">   No se puede repetir en el</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment">   documento y vale</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment">    raíz</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"></span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> El atributo</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment">  lang</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment">   tiene el valor</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">    es</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment"></span></td></tr>
+  <tr><td>14</td><td><span class="codeComment"> El atributo booleano</span></td></tr>
+  <tr><td>15</td><td><span class="codeComment">  hidden</span></td></tr>
+  <tr><td>16</td><td><span class="codeComment">   tiene el valor</span></td></tr>
+  <tr><td>17</td><td><span class="codeComment">    <span class="codeReserved">true</span></span></td></tr>
+  <tr><td>18</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>19</td><td>&lt;<span class="codeReserved">html</span> id=<span class="codeString">"raíz"</span> lang=<span class="codeString">"es"</span> hidden&gt;</td></tr>
+  <tr><td>20</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -1006,58 +1418,38 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;html&nbsp;es&nbsp;un&nbsp;elemento&nbsp;con&nbsp;contenido.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;Puede&nbsp;contener&nbsp;comentarios,&nbsp;otros</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;elementos&nbsp;y&nbsp;texto.</span>
-   </div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span><span
-      style="color: #008000;">&lt;!--Inicia&nbsp;html--&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;head&nbsp;es&nbsp;contenido&nbsp;de&nbsp;html.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;También&nbsp;es&nbsp;elemento&nbsp;con&nbsp;contenido.</span>
-   </div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;head&gt;</span>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Inicia&nbsp;head&nbsp;--&gt;</span>
-   </div>
-   <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;meta&nbsp;es&nbsp;contenido&nbsp;de&nbsp;head.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;No&nbsp;es&nbsp;un&nbsp;elemento&nbsp;con&nbsp;contenido.</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;--&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Termina&nbsp;head&nbsp;--&gt;</span>
-   </div>
-   <div>💪Este&nbsp;texto&nbsp;es&nbsp;contenido&nbsp;de&nbsp;html.</div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span><span
-      style="color: #008000;">&lt;!--&nbsp;Termina&nbsp;html&nbsp;--&gt;</span>
-   </div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> html es un elemento con contenido.</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> Puede contener comentarios, otros</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment"> elementos y texto.</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>7</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;<span class="codeComment">&lt;!--Inicia html--&gt;</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> head es contenido de html.</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> También es elemento con contenido.</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>12</td><td>&lt;<span class="codeReserved">head</span>&gt; <span class="codeComment">&lt;!-- Inicia head --&gt;</span></td></tr>
+  <tr><td>13</td><td> <span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment">  meta es contenido de head.</span></td></tr>
+  <tr><td>15</td><td><span class="codeComment">  No es un elemento con contenido.</span></td></tr>
+  <tr><td>16</td><td><span class="codeComment"> --&gt;</span></td></tr>
+  <tr><td>17</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>18</td><td>&lt;/<span class="codeReserved">head</span>&gt; <span class="codeComment">&lt;!-- Termina head --&gt;</span></td></tr>
+  <tr><td>19</td><td>💪Este texto es contenido de html.</td></tr>
+  <tr><td>20</td><td>&lt;/<span class="codeReserved">html</span>&gt;<span class="codeComment">&lt;!-- Termina html --&gt;</span></td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -1084,36 +1476,31 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--&nbsp;</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;meta&nbsp;es&nbsp;un&nbsp;tipo&nbsp;de&nbsp;elemento&nbsp;sin</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;contenido.</span></div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--&nbsp;</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;br&nbsp;es&nbsp;un&nbsp;tipo&nbsp;de&nbsp;elemento&nbsp;sin</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;contenido.</span></div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;br&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!-- </span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> meta es un tipo de elemento sin</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> contenido.</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>6</td><td>&lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>7</td><td>&lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>8</td><td>  <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>9</td><td><span class="codeComment">&lt;!-- </span></td></tr>
+  <tr><td>10</td><td><span class="codeComment"> br es un tipo de elemento sin</span></td></tr>
+  <tr><td>11</td><td><span class="codeComment"> contenido.</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>13</td><td>&lt;<span class="codeReserved">br</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -1131,63 +1518,43 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;El&nbsp;elemento&nbsp;html&nbsp;es&nbsp;padre&nbsp;de&nbsp;los</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;elementos&nbsp;head&nbsp;y&nbsp;body.</span>
-   </div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;El&nbsp;elemento&nbsp;head&nbsp;es&nbsp;padre&nbsp;de&nbsp;los</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;2&nbsp;elementos&nbsp;meta&nbsp;y&nbsp;del&nbsp;title.</span>
-   </div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Ejemplo<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;El&nbsp;elemento&nbsp;body&nbsp;es&nbsp;padre&nbsp;de&nbsp;los</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;elementos&nbsp;h1&nbsp;y&nbsp;p.</span>
-   </div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Ejemplo<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>Hola&nbsp;mundo.👶<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> El elemento html es padre de los</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> elementos head y body.</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>6</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>7</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> El elemento head es padre de los</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> 2 elementos meta y del title.</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>11</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>12</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>13</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>14</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>15</td><td> &lt;<span class="codeReserved">title</span>&gt;Ejemplo&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>16</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>17</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>18</td><td><span class="codeComment"> El elemento body es padre de los</span></td></tr>
+  <tr><td>19</td><td><span class="codeComment"> elementos h1 y p.</span></td></tr>
+  <tr><td>20</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>21</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>22</td><td> &lt;<span class="codeReserved">h1</span>&gt;Ejemplo&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>23</td><td> &lt;<span class="codeReserved">p</span>&gt;Hola mundo.👶&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>24</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>25</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -1204,64 +1571,51 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;El elemento html no es hijo de</span></div>
-   <div><span style="color: #008000;">&nbsp;nadie.</span></div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span> <span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;El elemento head es hijo del</span></div>
-   <div><span style="color: #008000;">&nbsp;elemento html.</span></div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; Los 2 elementos meta y el title</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; son hijos del elemento head.</span></div>
-   <div><span style="color: #008000;">&nbsp;--&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Ejemplo<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div><span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;El elemento body es hijo del</span></div>
-   <div><span style="color: #008000;">&nbsp;elemento html.</span></div>
-   <div><span style="color: #008000;">--&gt;</span></div>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; Los elementos h1 y p son hijos</span></div>
-   <div><span style="color: #008000;">&nbsp; del elemento body.</span></div>
-   <div><span style="color: #008000;">&nbsp;--&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Ejemplo<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Hola mundo.👶<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment"> El elemento html no es hijo de</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment"> nadie.</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>6</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>7</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment"> El elemento head es hijo del</span></td></tr>
+  <tr><td>9</td><td><span class="codeComment"> elemento html.</span></td></tr>
+  <tr><td>10</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>11</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>12</td><td> <span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment">  Los 2 elementos meta y el title</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment">  son hijos del elemento head.</span></td></tr>
+  <tr><td>15</td><td><span class="codeComment"> --&gt;</span></td></tr>
+  <tr><td>16</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>17</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>18</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>19</td><td> &lt;<span class="codeReserved">title</span>&gt;Ejemplo&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>20</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>21</td><td><span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>22</td><td><span class="codeComment"> El elemento body es hijo del</span></td></tr>
+  <tr><td>23</td><td><span class="codeComment"> elemento html.</span></td></tr>
+  <tr><td>24</td><td><span class="codeComment">--&gt;</span></td></tr>
+  <tr><td>25</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>26</td><td> <span class="codeComment">&lt;!--</span></td></tr>
+  <tr><td>27</td><td><span class="codeComment">  Los elementos h1 y p son hijos</span></td></tr>
+  <tr><td>28</td><td><span class="codeComment">  del elemento body.</span></td></tr>
+  <tr><td>29</td><td><span class="codeComment"> --&gt;</span></td></tr>
+  <tr><td>30</td><td> &lt;<span class="codeReserved">h1</span>&gt;Ejemplo&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>31</td><td> &lt;<span class="codeReserved">p</span>&gt;Hola mundo.👶&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>32</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>33</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -1307,7 +1661,7 @@
       </section>
       </section>
      <section>
-         <h1 class="leccion">2. Introducción a HTML</h1>
+         <h1 >2. Introducción a HTML</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -1322,51 +1676,52 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m02html/mAejemplo.html">Ejemplo básico</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m02html/mBhtml.html">El elemento <code class='language-html'>html</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m02html/mChead.html">El elemento <code class='language-html'>head</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m02html/mDcodificacion.html">Codificación de caracteres</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m02html/mEviewport.html">El metadato <code class='language-html'>viewport</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m02html/mFtitle.html">El elemento <code class='language-html'>title</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m02html/mGbody.html">El elemento <code class='language-html'>body</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m02html/mHreferencias.html">Referencia a caracter</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m02html/mIresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m02html/mAejemplo.html">Ejemplo básico</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m02html/mBhtml.html">El elemento <code class='language-html'>html</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m02html/mChead.html">El elemento <code class='language-html'>head</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m02html/mDcodificacion.html">Codificación de caracteres</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m02html/mEviewport.html">El metadato <code class='language-html'>viewport</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m02html/mFtitle.html">El elemento <code class='language-html'>title</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m02html/mGbody.html">El elemento <code class='language-html'>body</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m02html/mHreferencias.html">Referencia a caracter</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m02html/mIresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -1400,36 +1755,30 @@
     </a>
    </p>
   </section>
-  <muestra-codigo>
-   <div>
-    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-       style="color: #ff0000;">html</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-       style="color: #ff0000;">lang</span>=<span
-       style="color: #0000ff;">"es"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div><span style="color: #800000;">&lt;head&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-       style="color: #ff0000;">charset</span>=<span
-       style="color: #0000ff;">"UTF-8"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-       style="color: #ff0000;">name</span>=<span
-       style="color: #0000ff;">"viewport"</span></div>
-    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
-       style="color: #0000ff;">"width=device-width"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div>&nbsp;<span
-       style="color: #800000;">&lt;title&gt;</span>Hola&nbsp;Mundo<span
-       style="color: #800000;">&lt;/title&gt;</span></div>
-    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-    <div><span style="color: #800000;">&lt;body&gt;</span></div>
-    <div>&nbsp;👽&nbsp;¡Hola&nbsp;Mundo!</div>
-    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-   </div>
-  </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>4</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>6</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">title</span>&gt;Hola Mundo&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>8</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>9</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>10</td><td> 👽 ¡Hola Mundo!</td></tr>
+  <tr><td>11</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>12</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
  </div>
 </section>
       </section>
@@ -1466,21 +1815,26 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;...</div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;👽&nbsp;¡Hola&nbsp;Mundo!</div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>3</td><td> ...</td></tr>
+  <tr><td>4</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>6</td><td> 👽 ¡Hola Mundo!</td></tr>
+  <tr><td>7</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>8</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
 <div class="lectura">
  <section>
@@ -1520,25 +1874,24 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span>Hola&nbsp;Mundo<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-  </div>
- </muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>2</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>3</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>4</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">title</span>&gt;Hola Mundo&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>6</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
 <div class="lectura">
  <section>
@@ -1604,14 +1957,19 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-  </div>
- </muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
 <div class="lectura">
  <section>
@@ -1686,16 +2044,20 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>2</td><td>  <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
       </section>
      <section >
@@ -1714,12 +2076,19 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;title&gt;</span>Hola&nbsp;Mundo<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">title</span>&gt;Hola Mundo&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
 <div class="lectura">
  <section>
@@ -1753,13 +2122,21 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;👽&nbsp;¡Hola&nbsp;Mundo!</div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>2</td><td> 👽 ¡Hola Mundo!</td></tr>
+  <tr><td>3</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
 <div class="lectura">
  <section>
@@ -1818,14 +2195,21 @@
     </a>
    </p>
   </section>
-  <muestra-codigo>
-   <div>
-    <div><span style="color: #800000;">&lt;body&gt;</span></div>
-    <div>&nbsp;<span style="color: #0000ff;">&amp;copy;</span>&nbsp;<span
-       style="color: #0000ff;">&amp;lt;</span></div>
-    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-   </div>
-  </muestra-codigo>
+  <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>2</td><td> &copy; &lt;</td></tr>
+  <tr><td>3</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+ </tbody>
+</table>
  </div>
 </section>
 <div class="lectura">
@@ -1889,7 +2273,7 @@
       </section>
       </section>
      <section>
-         <h1 class="leccion">3. Elementos básicos de HTML</h1>
+         <h1 >3. Elementos básicos de HTML</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -1904,51 +2288,52 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m03elementos/mAejemplo.html">Ejemplo típico</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03elementos/mBfraseo.html">Elementos de fraseo</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03elementos/mCencabezados.html">Títulos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03elementos/mDp.html">El elemento <code class='language-html'>p</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03elementos/mEcierranP.html">Elementos que cierran p</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03elementos/mFa.html">El elemento <code class='language-html'>a</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03elementos/mGnav.html">El elemento <code class='language-html'>nav</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03elementos/mHfooter.html">El elemento <code class='language-html'>footer</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m03elementos/mIresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m03elementos/mAejemplo.html">Ejemplo típico</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03elementos/mBfraseo.html">Elementos de fraseo</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03elementos/mCencabezados.html">Títulos</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03elementos/mDp.html">El elemento <code class='language-html'>p</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03elementos/mEcierranP.html">Elementos que cierran p</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03elementos/mFa.html">El elemento <code class='language-html'>a</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03elementos/mGnav.html">El elemento <code class='language-html'>nav</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03elementos/mHfooter.html">El elemento <code class='language-html'>footer</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03elementos/mIresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -1973,80 +2358,52 @@
    </a>
   </p>
  </section>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span>🏡Estructura<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Título&nbsp;en&nbsp;el&nbsp;contenido&nbsp;--&gt;</span>
-   </div>
-   <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>🏡Estructura<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Navegación&nbsp;--&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;nav&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Título&nbsp;de&nbsp;sección&nbsp;--&gt;</span>
-   </div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;h2&gt;</span>Enlaces<span
-      style="color: #800000;">&lt;/h2&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Párrafo&nbsp;--&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;hipervínculo&nbsp;--&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span style="color: #800000;">&lt;a</span>&nbsp;<span
-      style="color: #ff0000;">href</span>=<span
-      style="color: #0000ff;">"&nbsp;https://google.com&nbsp;"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">target</span>=<span
-      style="color: #0000ff;">"_blank"</span><span
-      style="color: #800000;">&gt;</span>Google<span
-      style="color: #800000;">&lt;/a&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/nav&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Párrafos&nbsp;--&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>🌎Hola&nbsp;Mundo.<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>🧻Más&nbsp;texto.<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Pie&nbsp;de&nbsp;pagina&nbsp;--&gt;</span>
-   </div>
-   <div>&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;©&nbsp;2021</div>
-   <div>&nbsp;&nbsp;&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.</div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>4</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>6</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">title</span>&gt;🏡Estructura&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>8</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>9</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>10</td><td> <span class="codeComment">&lt;!-- Título en el contenido --&gt;</span></td></tr>
+  <tr><td>11</td><td> &lt;<span class="codeReserved">h1</span>&gt;🏡Estructura&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>12</td><td> <span class="codeComment">&lt;!-- Navegación --&gt;</span></td></tr>
+  <tr><td>13</td><td> &lt;<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>14</td><td>  <span class="codeComment">&lt;!-- Título de sección --&gt;</span></td></tr>
+  <tr><td>15</td><td>  &lt;<span class="codeReserved">h2</span>&gt;Enlaces&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
+  <tr><td>16</td><td>  <span class="codeComment">&lt;!-- Párrafo --&gt;</span></td></tr>
+  <tr><td>17</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>18</td><td>   <span class="codeComment">&lt;!-- hipervínculo --&gt;</span></td></tr>
+  <tr><td>19</td><td>   &lt;<span class="codeReserved">a</span> href=<span class="codeString">" https://google.com "</span></td></tr>
+  <tr><td>20</td><td>     target=<span class="codeString">"_blank"</span>&gt;Google&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>21</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>22</td><td> &lt;/<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>23</td><td> <span class="codeComment">&lt;!-- Párrafos --&gt;</span></td></tr>
+  <tr><td>24</td><td> &lt;<span class="codeReserved">p</span>&gt;🌎Hola Mundo.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>25</td><td> &lt;<span class="codeReserved">p</span>&gt;🧻Más texto.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>26</td><td> <span class="codeComment">&lt;!-- Pie de pagina --&gt;</span></td></tr>
+  <tr><td>27</td><td> &lt;<span class="codeReserved">footer</span>&gt;</td></tr>
+  <tr><td>28</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>29</td><td>   © 2021</td></tr>
+  <tr><td>30</td><td>   Gilberto Pacheco Gallegos.</td></tr>
+  <tr><td>31</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>32</td><td> &lt;/<span class="codeReserved">footer</span>&gt;</td></tr>
+  <tr><td>33</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>34</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </div>
       </section>
      <section >
@@ -2199,18 +2556,24 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;h1&gt;</span>🏡Estructura<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div><span style="color: #800000;">&lt;nav&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;h2&gt;</span>Enlaces<span
-      style="color: #800000;">&lt;/h2&gt;</span></div>
-   <div>&nbsp;...</div>
-   <div><span style="color: #800000;">&lt;/nav&gt;</span></div>
-   <div>...</div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">h1</span>&gt;🏡Estructura&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>3</td><td> &lt;<span class="codeReserved">h2</span>&gt;Enlaces&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
+  <tr><td>4</td><td> ...</td></tr>
+  <tr><td>5</td><td>&lt;/<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>6</td><td>...</td></tr>
+ </tbody>
+</table>
 </section>
 <div class="lectura">
  <section>
@@ -2268,14 +2631,20 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;p&gt;</span>🌎Hola&nbsp;Mundo.<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div><span style="color: #800000;">&lt;p&gt;</span>🧻Más&nbsp;texto.<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">p</span>&gt;🌎Hola Mundo.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">p</span>&gt;🧻Más texto.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
 <div class="lectura">
  <section>
@@ -2386,17 +2755,20 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;a</span>&nbsp;<span
-      style="color: #ff0000;">href</span>=<span
-      style="color: #0000ff;">"&nbsp;https://google.com&nbsp;"</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #ff0000;">target</span>=<span
-      style="color: #0000ff;">"_blank"</span><span
-      style="color: #800000;">&gt;</span>Google<span
-      style="color: #800000;">&lt;/a&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">a</span> href=<span class="codeString">" https://google.com "</span></td></tr>
+  <tr><td>2</td><td>  target=<span class="codeString">"_blank"</span>&gt;Google&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
 <div class="lectura">
  <section>
@@ -2431,24 +2803,25 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;nav&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;h2&gt;</span>Enlaces<span
-      style="color: #800000;">&lt;/h2&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;a</span>&nbsp;<span
-      style="color: #ff0000;">href</span>=<span
-      style="color: #0000ff;">"&nbsp;https://google.com&nbsp;"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">target</span>=<span
-      style="color: #0000ff;">"_blank"</span><span
-      style="color: #800000;">&gt;</span>Google<span
-      style="color: #800000;">&lt;/a&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/nav&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>2</td><td> &lt;<span class="codeReserved">h2</span>&gt;Enlaces&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
+  <tr><td>3</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>4</td><td>  &lt;<span class="codeReserved">a</span> href=<span class="codeString">" https://google.com "</span></td></tr>
+  <tr><td>5</td><td>    target=<span class="codeString">"_blank"</span>&gt;Google&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>7</td><td>&lt;/<span class="codeReserved">nav</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
 <div class="lectura">
  <section>
@@ -2498,15 +2871,24 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;footer&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;©&nbsp;2021&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/footer&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">footer</span>&gt;</td></tr>
+  <tr><td>2</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>3</td><td>  © 2021</td></tr>
+  <tr><td>4</td><td>  Gilberto Pacheco Gallegos.</td></tr>
+  <tr><td>5</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>6</td><td>&lt;/<span class="codeReserved">footer</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
 <div class="lectura">
  <section>
@@ -2571,7 +2953,564 @@
       </section>
       </section>
      <section>
-         <h1 class="leccion">4. CSS</h1>
+         <h1 >4. Ejemplos típicos de HTML</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se muestran ejemplos típicos de HTML.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    
+   <li>
+    <p>
+     <a href="/m03bejshtml/mAdocumento.html">Documento</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03bejshtml/mBformulario.html">Formulario</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m03bejshtml/mIresumen.html">Resumen</a>
+    </p>
+   </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Documento</h1><div class="lectura">
+ <p>Este es un ejemplo típico de un documento HTML.</p>
+</div>
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m03bejemplos/Adocumentos.html" height="330" title="Ejemplo típico de HTML"></iframe>
+  <p class="noPrint">
+   <a target="_blank" href="/src/m03bejemplos/Adocumentos.html">Ábrelo en otra
+    pestaña.</a>
+  </p>
+</section>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">title</span>&gt;Secciones&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>8</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>9</td><td></td></tr>
+  <tr><td>10</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>11</td><td> &lt;<span class="codeReserved">main</span>&gt;</td></tr>
+  <tr><td>12</td><td>  &lt;<span class="codeReserved">menu</span>&gt;</td></tr>
+  <tr><td>13</td><td>   &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>14</td><td>    &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span> popovertarget=<span class="codeString">"navGeneral"</span>&gt;≡&lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+  <tr><td>15</td><td>   &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>16</td><td>  &lt;/<span class="codeReserved">menu</span>&gt;</td></tr>
+  <tr><td>17</td><td>  &lt;<span class="codeReserved">header</span>&gt;</td></tr>
+  <tr><td>18</td><td>   &lt;<span class="codeReserved">hgroup</span>&gt;</td></tr>
+  <tr><td>19</td><td>    &lt;<span class="codeReserved">h1</span>&gt;Secciones&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>20</td><td>    &lt;<span class="codeReserved">p</span>&gt;O como escribir mejor tus documentos.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>21</td><td>   &lt;/<span class="codeReserved">hgroup</span>&gt;</td></tr>
+  <tr><td>22</td><td>   &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>23</td><td>    En el &lt;header&gt; puedes colocar el título o información resumida sobre</td></tr>
+  <tr><td>24</td><td>    el documento.</td></tr>
+  <tr><td>25</td><td>   &lt;<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>26</td><td>    &lt;<span class="codeReserved">ol</span>&gt;</td></tr>
+  <tr><td>27</td><td>     &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>28</td><td>      &lt;<span class="codeReserved">p</span>&gt;&lt;<span class="codeReserved">a</span> href=<span class="codeString">"#secciones"</span>&gt;Uso de secciones&lt;/<span class="codeReserved">a</span>&gt;&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>29</td><td>      &lt;<span class="codeReserved">p</span>&gt;&lt;<span class="codeReserved">a</span> href=<span class="codeString">"#otra"</span>&gt;Otra sección&lt;/<span class="codeReserved">a</span>&gt;&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>30</td><td>     &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>31</td><td>    &lt;/<span class="codeReserved">ol</span>&gt;</td></tr>
+  <tr><td>32</td><td>   &lt;/<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>33</td><td>   &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>34</td><td>  &lt;/<span class="codeReserved">header</span>&gt;</td></tr>
+  <tr><td>35</td><td>  &lt;<span class="codeReserved">aside</span>&gt;</td></tr>
+  <tr><td>36</td><td>   &lt;<span class="codeReserved">h2</span>&gt;El elemento &lt;aside&gt;&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
+  <tr><td>37</td><td>   &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>38</td><td>    El elemento &lt;<span class="codeReserved">dfn</span>&gt;aside&lt;/<span class="codeReserved">dfn</span>&gt;&gt; representa una sección de una página que</td></tr>
+  <tr><td>39</td><td>    tiene contenido relacionado indirectamente con el contenido que lo rodea y</td></tr>
+  <tr><td>40</td><td>    que podría considerarse independiente de dicho contenido. Estas secciones</td></tr>
+  <tr><td>41</td><td>    suelen representarse como barras laterales en la tipografía impresa.</td></tr>
+  <tr><td>42</td><td>   &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>43</td><td>   &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>44</td><td>    El elemento puede utilizarse para efectos tipográficos como citas destacadas</td></tr>
+  <tr><td>45</td><td>    o barras laterales, para publicidad, para grupos de elementos de navegación</td></tr>
+  <tr><td>46</td><td>    y para otro contenido que se considere independiente del contenido principal</td></tr>
+  <tr><td>47</td><td>    de la página.</td></tr>
+  <tr><td>48</td><td>   &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>49</td><td>  &lt;/<span class="codeReserved">aside</span>&gt;</td></tr>
+  <tr><td>50</td><td>  &lt;<span class="codeReserved">nav</span> popover=<span class="codeString">"auto"</span> id=<span class="codeString">"navGeneral"</span>&gt;</td></tr>
+  <tr><td>51</td><td>   &lt;<span class="codeReserved">h2</span>&gt;Enlaces externos&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
+  <tr><td>52</td><td>   &lt;<span class="codeReserved">ul</span>&gt;</td></tr>
+  <tr><td>53</td><td>    &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>54</td><td>     &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>55</td><td>      &lt;<span class="codeReserved">a</span> href=<span class="codeString">"https://savethecat.com/"</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span>&gt;</td></tr>
+  <tr><td>56</td><td>       Salvar al gato.</td></tr>
+  <tr><td>57</td><td>      &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>58</td><td>     &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>59</td><td>    &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>60</td><td>    &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>61</td><td>     &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>62</td><td>      &lt;<span class="codeReserved">a</span> href=<span class="codeString">"https://www.showrunner.xyz/"</span> target=<span class="codeString">"_blank"</span></td></tr>
+  <tr><td>63</td><td>        rel=<span class="codeString">"noreferrer"</span>&gt;</td></tr>
+  <tr><td>64</td><td>       Showrunner</td></tr>
+  <tr><td>65</td><td>      &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>66</td><td>     &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>67</td><td>    &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>68</td><td>    &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>69</td><td>     &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>70</td><td>      &lt;<span class="codeReserved">a</span> href=<span class="codeString">"https://google.com/"</span> target=<span class="codeString">"_blank"</span></td></tr>
+  <tr><td>71</td><td>        rel=<span class="codeString">"noreferrer"</span>&gt;</td></tr>
+  <tr><td>72</td><td>       Google</td></tr>
+  <tr><td>73</td><td>      &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>74</td><td>     &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>75</td><td>    &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>76</td><td>   &lt;/<span class="codeReserved">ul</span>&gt;</td></tr>
+  <tr><td>77</td><td>  &lt;/<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>78</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>79</td><td>   Este es el contenido</td></tr>
+  <tr><td>80</td><td>   principal de la página.</td></tr>
+  <tr><td>81</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>82</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>83</td><td>   Cada párrafo representa una idea.</td></tr>
+  <tr><td>84</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>85</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>86</td><td>   El contenido de un párrafo puede llevar juntos muchos espacios y saltos de</td></tr>
+  <tr><td>87</td><td>   línea, pero se muestran como un solo espacio.</td></tr>
+  <tr><td>88</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>89</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>90</td><td>   Para que esta página funcione correctamente debes tener actualizado tu</td></tr>
+  <tr><td>91</td><td>   navegador.</td></tr>
+  <tr><td>92</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>93</td><td>  &lt;<span class="codeReserved">section</span> id=<span class="codeString">"secciones"</span>&gt;</td></tr>
+  <tr><td>94</td><td>   &lt;<span class="codeReserved">h2</span>&gt;Uso de secciones&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
+  <tr><td>95</td><td>   &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>96</td><td>    puede llevar secciones.</td></tr>
+  <tr><td>97</td><td>    Cada sección se usa para tocar un aspecto del contenido</td></tr>
+  <tr><td>98</td><td>    general.</td></tr>
+  <tr><td>99</td><td>   &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>100</td><td>   &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>101</td><td>    Las secciones se usan cuando el contenido es largo y/o complicado, siendo</td></tr>
+  <tr><td>102</td><td>    mejor abordarlo por partes.</td></tr>
+  <tr><td>103</td><td>   &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>104</td><td>  &lt;/<span class="codeReserved">section</span>&gt;</td></tr>
+  <tr><td>105</td><td>  &lt;<span class="codeReserved">section</span> id=<span class="codeString">"otra"</span>&gt;</td></tr>
+  <tr><td>106</td><td>   &lt;<span class="codeReserved">header</span>&gt;</td></tr>
+  <tr><td>107</td><td>    &lt;<span class="codeReserved">h2</span>&gt;Otra sección&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
+  <tr><td>108</td><td>    &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>109</td><td>     Las secciones pueden llevar sus propios &lt;header&gt; y &lt;footer&gt;</td></tr>
+  <tr><td>110</td><td>    &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>111</td><td>   &lt;/<span class="codeReserved">header</span>&gt;</td></tr>
+  <tr><td>112</td><td>   Esta sección se usa para introducir una parte del contenido general. También</td></tr>
+  <tr><td>113</td><td>   pueden llevar subsecciones.</td></tr>
+  <tr><td>114</td><td>   &lt;<span class="codeReserved">section</span>&gt;</td></tr>
+  <tr><td>115</td><td>    &lt;<span class="codeReserved">h3</span>&gt;Sub sección&lt;/<span class="codeReserved">h3</span>&gt;</td></tr>
+  <tr><td>116</td><td>    &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>117</td><td>     Podemos poner distintos niveles de subsecciones.</td></tr>
+  <tr><td>118</td><td>    &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>119</td><td>   &lt;/<span class="codeReserved">section</span>&gt;</td></tr>
+  <tr><td>120</td><td>   &lt;<span class="codeReserved">footer</span>&gt;</td></tr>
+  <tr><td>121</td><td>    &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>122</td><td>     Este &lt;footer&gt; es parte de una sección.</td></tr>
+  <tr><td>123</td><td>    &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>124</td><td>   &lt;/<span class="codeReserved">footer</span>&gt;</td></tr>
+  <tr><td>125</td><td>  &lt;/<span class="codeReserved">section</span>&gt;</td></tr>
+  <tr><td>126</td><td>  &lt;<span class="codeReserved">article</span>&gt;</td></tr>
+  <tr><td>127</td><td>   &lt;<span class="codeReserved">h2</span>&gt;Un artículo&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
+  <tr><td>128</td><td>   El elemento &lt;article&gt; representa una composición completa o autónoma en</td></tr>
+  <tr><td>129</td><td>   un documento, página, aplicación o sitio web, y que, en principio, puede</td></tr>
+  <tr><td>130</td><td>   distribuirse o reutilizarse de forma independiente. Puede ser una publicación</td></tr>
+  <tr><td>131</td><td>   en un foro, un artículo de revista o periódico, una entrada de blog, un</td></tr>
+  <tr><td>132</td><td>   comentario enviado por un usuario, un widget o gadget interactivo, o</td></tr>
+  <tr><td>133</td><td>   cualquier otro elemento de contenido independiente.</td></tr>
+  <tr><td>134</td><td>  &lt;/<span class="codeReserved">article</span>&gt;</td></tr>
+  <tr><td>135</td><td>  &lt;<span class="codeReserved">footer</span>&gt;</td></tr>
+  <tr><td>136</td><td>   &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>137</td><td>    © 2025 Gilberto Pacheco Gallegos.</td></tr>
+  <tr><td>138</td><td>   &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>139</td><td>  &lt;/<span class="codeReserved">footer</span>&gt;</td></tr>
+  <tr><td>140</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
+  <tr><td>141</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>142</td><td></td></tr>
+  <tr><td>143</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
+</div>
+      </section>
+     <section >
+         <h1 >B. Formulario</h1><div class="lectura">
+ <p>Este es un ejemplo típico de un formulario HTML.</p>
+</div>
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m03bejemplos/Bformulario.html" height="330" title="Ejemplo típico de HTML"></iframe>
+  <p class="noPrint">
+   <a target="_blank" href="/src/m03bejemplos/Bformulario.html">Ábrelo en otra
+    pestaña.</a>
+  </p>
+</section>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span> <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">title</span>&gt;Formulario&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>8</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>9</td><td></td></tr>
+  <tr><td>10</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>11</td><td> &lt;<span class="codeReserved">form</span> id&gt;</td></tr>
+  <tr><td>12</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Formulario&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>13</td><td></td></tr>
+  <tr><td>14</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>15</td><td>   &lt;<span class="codeReserved">label</span>&gt;</td></tr>
+  <tr><td>16</td><td>    Nombre</td></tr>
+  <tr><td>17</td><td>    &lt;<span class="codeReserved">output</span> name=<span class="codeString">"nombre"</span>&gt;Pp&lt;/<span class="codeReserved">output</span>&gt;</td></tr>
+  <tr><td>18</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+  <tr><td>19</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>20</td><td></td></tr>
+  <tr><td>21</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>22</td><td>   &lt;<span class="codeReserved">label</span> accesskey=<span class="codeString">"A"</span>&gt;</td></tr>
+  <tr><td>23</td><td>    Apellidos *</td></tr>
+  <tr><td>24</td><td>    &lt;<span class="codeReserved">input</span> name=<span class="codeString">"apellidos"</span> type=<span class="codeString">"text"</span> placeholder=<span class="codeString">"ej. Pérez López"</span></td></tr>
+  <tr><td>25</td><td>      required&gt;</td></tr>
+  <tr><td>26</td><td>    &lt;<span class="codeReserved">small</span>&gt;Los apellidos de tu familia&lt;/<span class="codeReserved">small</span>&gt;</td></tr>
+  <tr><td>27</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+  <tr><td>28</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>29</td><td></td></tr>
+  <tr><td>30</td><td>  &lt;<span class="codeReserved">input</span> name=<span class="codeString">"clave"</span> type=<span class="codeString">"hidden"</span> value=<span class="codeString">""</span>&gt;</td></tr>
+  <tr><td>31</td><td></td></tr>
+  <tr><td>32</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>33</td><td>   &lt;<span class="codeReserved">label</span>&gt;</td></tr>
+  <tr><td>34</td><td>    Restaurante favorito</td></tr>
+  <tr><td>35</td><td>    &lt;<span class="codeReserved">input</span> name=<span class="codeString">"apellidos"</span> type=<span class="codeString">"text"</span> value=<span class="codeString">"La cabaña del Tio Jese"</span>&gt;</td></tr>
+  <tr><td>36</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+  <tr><td>37</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>38</td><td></td></tr>
+  <tr><td>39</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>40</td><td>   &lt;<span class="codeReserved">label</span>&gt;</td></tr>
+  <tr><td>41</td><td>    Número telefónico</td></tr>
+  <tr><td>42</td><td>    &lt;<span class="codeReserved">input</span> name=<span class="codeString">"telefono"</span> type=<span class="codeString">"tel"</span>&gt;</td></tr>
+  <tr><td>43</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+  <tr><td>44</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>45</td><td></td></tr>
+  <tr><td>46</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>47</td><td>   &lt;<span class="codeReserved">label</span>&gt;</td></tr>
+  <tr><td>48</td><td>    Número de tarjeta</td></tr>
+  <tr><td>49</td><td>    &lt;<span class="codeReserved">input</span> name=<span class="codeString">"tarjeta"</span> type=<span class="codeString">"text"</span> pattern="\d{14,19}<span class="codeString">" inputmode="</span>numeric<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>50</td><td><span class="codeString">    &lt;<span class="codeReserved">small</span>&gt;14 a 19 letras o caracteres.&lt;/<span class="codeReserved">small</span>&gt;</span></td></tr>
+  <tr><td>51</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>52</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>53</td><td><span class="codeString"></span></td></tr>
+  <tr><td>54</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>55</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>56</td><td><span class="codeString">    Sitio personal</span></td></tr>
+  <tr><td>57</td><td><span class="codeString">    &lt;<span class="codeReserved">input</span> name="</span>sitio<span class="codeString">" type="</span>url<span class="codeString">" list="</span>sitios<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>58</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>59</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>60</td><td><span class="codeString">  &lt;<span class="codeReserved">datalist</span> id="</span>sitios<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>61</td><td><span class="codeString">   &lt;<span class="codeReserved">option</span>&gt;https://facebook.com&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>62</td><td><span class="codeString">   &lt;<span class="codeReserved">option</span>&gt;https://google.com&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>63</td><td><span class="codeString">   &lt;<span class="codeReserved">option</span>&gt;https://tiktok.com&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>64</td><td><span class="codeString">   &lt;<span class="codeReserved">option</span>&gt;https://youtube.com&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>65</td><td><span class="codeString">  &lt;/<span class="codeReserved">datalist</span>&gt;</span></td></tr>
+  <tr><td>66</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>67</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>68</td><td><span class="codeString">    Email para quejas</span></td></tr>
+  <tr><td>69</td><td><span class="codeString">    &lt;<span class="codeReserved">input</span> name="</span>quejas<span class="codeString">" type="</span>email<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>70</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>71</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>72</td><td><span class="codeString"></span></td></tr>
+  <tr><td>73</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>74</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>75</td><td><span class="codeString">    Match *</span></td></tr>
+  <tr><td>76</td><td><span class="codeString">    &lt;<span class="codeReserved">input</span> name="</span>match<span class="codeString">" type="</span>password<span class="codeString">" required pattern="</span>\w{4,7}<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>77</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>78</td><td><span class="codeString">   &lt;<span class="codeReserved">small</span>&gt;4 a 7 letras o caracteres.&lt;/<span class="codeReserved">small</span>&gt;</span></td></tr>
+  <tr><td>79</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>80</td><td><span class="codeString"></span></td></tr>
+  <tr><td>81</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>82</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>83</td><td><span class="codeString">    Próximo día festivo</span></td></tr>
+  <tr><td>84</td><td><span class="codeString">    &lt;<span class="codeReserved">input</span> name="</span>proximo<span class="codeString">" type="</span>date<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>85</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>86</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>87</td><td><span class="codeString"></span></td></tr>
+  <tr><td>88</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>89</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>90</td><td><span class="codeString">    Próximo día libre</span></td></tr>
+  <tr><td>91</td><td><span class="codeString">    &lt;<span class="codeReserved">input</span> name="</span>libre<span class="codeString">" type="</span>date<span class="codeString">" value="</span>2025-02-14<span class="codeString">" min="</span>2025-01-01<span class="codeString">"</span></td></tr>
+  <tr><td>92</td><td><span class="codeString">      max="</span>2025-06-01<span class="codeString">" step="</span>2<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>93</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>94</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>95</td><td><span class="codeString"></span></td></tr>
+  <tr><td>96</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>97</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>98</td><td><span class="codeString">    Mes</span></td></tr>
+  <tr><td>99</td><td><span class="codeString">    &lt;<span class="codeReserved">input</span> name="</span>mes<span class="codeString">" type="</span>month<span class="codeString">" value="</span>2025-04<span class="codeString">" min="</span>2025-01<span class="codeString">" max="</span>2025-12<span class="codeString">"</span></td></tr>
+  <tr><td>100</td><td><span class="codeString">      step="</span>3<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>101</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>102</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>103</td><td><span class="codeString"></span></td></tr>
+  <tr><td>104</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>105</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>106</td><td><span class="codeString">    Semana de vacaciones</span></td></tr>
+  <tr><td>107</td><td><span class="codeString">    &lt;<span class="codeReserved">input</span> name="</span>vacaciones<span class="codeString">" type="</span>week<span class="codeString">" value="</span>2025-W05<span class="codeString">" min="</span>2025-W01<span class="codeString">"</span></td></tr>
+  <tr><td>108</td><td><span class="codeString">      max="</span>2025-W54<span class="codeString">" step="</span>2<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>109</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>110</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>111</td><td><span class="codeString"></span></td></tr>
+  <tr><td>112</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>113</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>114</td><td><span class="codeString">    Hora de la reunión</span></td></tr>
+  <tr><td>115</td><td><span class="codeString">    &lt;<span class="codeReserved">input</span> name="</span>horaReunion<span class="codeString">" type="</span>time<span class="codeString">" value="</span>15:30<span class="codeString">" min="</span>07:00<span class="codeString">"</span></td></tr>
+  <tr><td>116</td><td><span class="codeString">      max="</span>17:30<span class="codeString">" step="</span>1800<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>117</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>118</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>119</td><td><span class="codeString"></span></td></tr>
+  <tr><td>120</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>121</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>122</td><td><span class="codeString">    Fecha y hora local</span></td></tr>
+  <tr><td>123</td><td><span class="codeString">    &lt;<span class="codeReserved">input</span> name="</span>nacimiento<span class="codeString">" type="</span>datetime-local<span class="codeString">" value="</span>2025-03-18T15:00<span class="codeString">"</span></td></tr>
+  <tr><td>124</td><td><span class="codeString">      min="</span>2025-01-01T10:00<span class="codeString">" max="</span>2025-12-31T22:00<span class="codeString">" step="</span>3600<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>125</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>126</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>127</td><td><span class="codeString"></span></td></tr>
+  <tr><td>128</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>129</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>130</td><td><span class="codeString">    Altura</span></td></tr>
+  <tr><td>131</td><td><span class="codeString">    &lt;<span class="codeReserved">input</span> name="</span>altura<span class="codeString">" type="</span>number<span class="codeString">" min="</span>0.5<span class="codeString">" max="</span>3.0<span class="codeString">" step="</span>0.01<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>132</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>133</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>134</td><td><span class="codeString"></span></td></tr>
+  <tr><td>135</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>136</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>137</td><td><span class="codeString">    Temperatura</span></td></tr>
+  <tr><td>138</td><td><span class="codeString">    -50&lt;<span class="codeReserved">input</span> name="</span>temperatura<span class="codeString">" type="</span>range<span class="codeString">" min="</span>-50<span class="codeString">" max="</span>80<span class="codeString">" step="</span>2<span class="codeString">"</span></td></tr>
+  <tr><td>139</td><td><span class="codeString">      value="</span>20<span class="codeString">"&gt;80</span></td></tr>
+  <tr><td>140</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>141</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>142</td><td><span class="codeString"></span></td></tr>
+  <tr><td>143</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>144</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>145</td><td><span class="codeString">    Temperatura 2</span></td></tr>
+  <tr><td>146</td><td><span class="codeString">    -50&lt;<span class="codeReserved">input</span> name="</span>temperatura<span class="codeString">" type="</span>range<span class="codeString">" min="</span>-50<span class="codeString">" max="</span>80<span class="codeString">" step="</span>2<span class="codeString">"</span></td></tr>
+  <tr><td>147</td><td><span class="codeString">      value="</span>20<span class="codeString">" list="</span>temperaturas<span class="codeString">"&gt;80</span></td></tr>
+  <tr><td>148</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>149</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>150</td><td><span class="codeString">  &lt;<span class="codeReserved">datalist</span> id="</span>temperaturas<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>151</td><td><span class="codeString">   &lt;<span class="codeReserved">option</span> value="</span>-50<span class="codeString">"&gt;Congelado&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>152</td><td><span class="codeString">   &lt;<span class="codeReserved">option</span> value="</span>-30<span class="codeString">"&gt;&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>153</td><td><span class="codeString">   &lt;<span class="codeReserved">option</span> value="</span>0<span class="codeString">"&gt;&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>154</td><td><span class="codeString">   &lt;<span class="codeReserved">option</span> value="</span>30<span class="codeString">"&gt;&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>155</td><td><span class="codeString">   &lt;<span class="codeReserved">option</span> value="</span>50<span class="codeString">"&gt;&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>156</td><td><span class="codeString">   &lt;<span class="codeReserved">option</span> value="</span>80<span class="codeString">"&gt;Quemándose&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>157</td><td><span class="codeString">  &lt;/<span class="codeReserved">datalist</span>&gt;</span></td></tr>
+  <tr><td>158</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>159</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>160</td><td><span class="codeString">    Color</span></td></tr>
+  <tr><td>161</td><td><span class="codeString">    &lt;<span class="codeReserved">input</span> name="</span><span class="codeReserved">color</span><span class="codeString">" type="</span><span class="codeReserved">color</span><span class="codeString">" colorspace="</span>limited-srgb<span class="codeString">" value="</span>#00ff00<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>162</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>163</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>164</td><td><span class="codeString"></span></td></tr>
+  <tr><td>165</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>166</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>167</td><td><span class="codeString">    Tarea</span></td></tr>
+  <tr><td>168</td><td><span class="codeString">    &lt;<span class="codeReserved">input</span> name="</span>tarea<span class="codeString">" type="</span>file<span class="codeString">" accept="</span>image/*,application/pdf<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>169</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>170</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>171</td><td><span class="codeString"></span></td></tr>
+  <tr><td>172</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>173</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>174</td><td><span class="codeString">    &lt;<span class="codeReserved">input</span> name="</span>aprobado<span class="codeString">" type="</span>checkbox<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>175</td><td><span class="codeString">    Aprobado</span></td></tr>
+  <tr><td>176</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>177</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>178</td><td><span class="codeString"></span></td></tr>
+  <tr><td>179</td><td><span class="codeString">  &lt;<span class="codeReserved">fieldset</span>&gt;</span></td></tr>
+  <tr><td>180</td><td><span class="codeString">   &lt;<span class="codeReserved">legend</span>&gt;Pasatiempos&lt;/<span class="codeReserved">legend</span>&gt;</span></td></tr>
+  <tr><td>181</td><td><span class="codeString">   &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>182</td><td><span class="codeString">    &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>183</td><td><span class="codeString">     &lt;<span class="codeReserved">input</span> type="</span>checkbox<span class="codeString">" name="</span>pasatiempos[]<span class="codeString">" value="</span>fut<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>184</td><td><span class="codeString">     Futbol</span></td></tr>
+  <tr><td>185</td><td><span class="codeString">    &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>186</td><td><span class="codeString">   &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>187</td><td><span class="codeString">   &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>188</td><td><span class="codeString">    &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>189</td><td><span class="codeString">     &lt;<span class="codeReserved">input</span> type="</span>checkbox<span class="codeString">" name="</span>pasatiempos[]<span class="codeString">" value="</span>chess<span class="codeString">" checked&gt;</span></td></tr>
+  <tr><td>190</td><td><span class="codeString">     Ajedrez</span></td></tr>
+  <tr><td>191</td><td><span class="codeString">    &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>192</td><td><span class="codeString">   &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>193</td><td><span class="codeString">   &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>194</td><td><span class="codeString">    &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>195</td><td><span class="codeString">     &lt;<span class="codeReserved">input</span> type="</span>checkbox<span class="codeString">" name="</span>pasatiempos[]<span class="codeString">" value="</span>basket<span class="codeString">" checked&gt;</span></td></tr>
+  <tr><td>196</td><td><span class="codeString">     Basketbol</span></td></tr>
+  <tr><td>197</td><td><span class="codeString">    &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>198</td><td><span class="codeString">   &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>199</td><td><span class="codeString">  &lt;/<span class="codeReserved">fieldset</span>&gt;</span></td></tr>
+  <tr><td>200</td><td><span class="codeString"></span></td></tr>
+  <tr><td>201</td><td><span class="codeString">  &lt;<span class="codeReserved">fieldset</span>&gt;</span></td></tr>
+  <tr><td>202</td><td><span class="codeString">   &lt;<span class="codeReserved">legend</span>&gt;Madrugador&lt;/<span class="codeReserved">legend</span>&gt;</span></td></tr>
+  <tr><td>203</td><td><span class="codeString">   &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>204</td><td><span class="codeString">    &lt;<span class="codeReserved">label</span>&gt;&lt;<span class="codeReserved">input</span> type="</span>radio<span class="codeString">" name="</span>madrugador<span class="codeString">" value="</span>si<span class="codeString">" checked&gt;Si&lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>205</td><td><span class="codeString">   &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>206</td><td><span class="codeString">   &lt;<span class="codeReserved">p</span>&gt;&lt;<span class="codeReserved">label</span>&gt;&lt;<span class="codeReserved">input</span> type="</span>radio<span class="codeString">" name="</span>madrugador<span class="codeString">" value="</span>no<span class="codeString">"&gt;No&lt;/<span class="codeReserved">label</span>&gt;&lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>207</td><td><span class="codeString">  &lt;/<span class="codeReserved">fieldset</span>&gt;</span></td></tr>
+  <tr><td>208</td><td><span class="codeString"></span></td></tr>
+  <tr><td>209</td><td><span class="codeString">  &lt;<span class="codeReserved">fieldset</span>&gt;</span></td></tr>
+  <tr><td>210</td><td><span class="codeString">   &lt;<span class="codeReserved">legend</span>&gt;Tamaño *&lt;/<span class="codeReserved">legend</span>&gt;</span></td></tr>
+  <tr><td>211</td><td><span class="codeString">   &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>212</td><td><span class="codeString">    &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>213</td><td><span class="codeString">     &lt;<span class="codeReserved">input</span> type="</span>radio<span class="codeString">" name="</span>tamano<span class="codeString">" value="</span>grande<span class="codeString">" required&gt;</span></td></tr>
+  <tr><td>214</td><td><span class="codeString">     Grande</span></td></tr>
+  <tr><td>215</td><td><span class="codeString">    &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>216</td><td><span class="codeString">   &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>217</td><td><span class="codeString">   &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>218</td><td><span class="codeString">    &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>219</td><td><span class="codeString">     &lt;<span class="codeReserved">input</span> type="</span>radio<span class="codeString">" name="</span>tamano<span class="codeString">" value="</span>mediano<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>220</td><td><span class="codeString">     Mediano</span></td></tr>
+  <tr><td>221</td><td><span class="codeString">    &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>222</td><td><span class="codeString">   &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>223</td><td><span class="codeString">   &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>224</td><td><span class="codeString">    &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>225</td><td><span class="codeString">     &lt;<span class="codeReserved">input</span> type="</span>radio<span class="codeString">" name="</span>tamano<span class="codeString">" value="</span>chico<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>226</td><td><span class="codeString">     Chico</span></td></tr>
+  <tr><td>227</td><td><span class="codeString">    &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>228</td><td><span class="codeString">   &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>229</td><td><span class="codeString">  &lt;/<span class="codeReserved">fieldset</span>&gt;</span></td></tr>
+  <tr><td>230</td><td><span class="codeString"></span></td></tr>
+  <tr><td>231</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>232</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>233</td><td><span class="codeString">    Género Musical *</span></td></tr>
+  <tr><td>234</td><td><span class="codeString">    &lt;<span class="codeReserved">select</span> name="</span>generoMusical<span class="codeString">" required&gt;</span></td></tr>
+  <tr><td>235</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span><span class="codeString">"&gt;Sin selección&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>236</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span>pop<span class="codeString">"&gt;Pop&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>237</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span>reg<span class="codeString">"&gt;Reguetón&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>238</td><td><span class="codeString">    &lt;/<span class="codeReserved">select</span>&gt;</span></td></tr>
+  <tr><td>239</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>240</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>241</td><td><span class="codeString"></span></td></tr>
+  <tr><td>242</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>243</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>244</td><td><span class="codeString">    Géneración</span></td></tr>
+  <tr><td>245</td><td><span class="codeString">    &lt;<span class="codeReserved">select</span> name="</span>generacion<span class="codeString">" value="</span>Z<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>246</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span>boom<span class="codeString">"&gt;Baby Boom&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>247</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span>X<span class="codeString">"&gt;X&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>248</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span><span class="codeString">"&gt;Sin selección&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>249</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span>Y<span class="codeString">"&gt;Millenoals&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>250</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span>Z<span class="codeString">"&gt;Z&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>251</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span>alfa<span class="codeString">"&gt;Alfa&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>252</td><td><span class="codeString">    &lt;/<span class="codeReserved">select</span>&gt;</span></td></tr>
+  <tr><td>253</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>254</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>255</td><td><span class="codeString"></span></td></tr>
+  <tr><td>256</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>257</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>258</td><td><span class="codeString">    Género</span></td></tr>
+  <tr><td>259</td><td><span class="codeString">    &lt;<span class="codeReserved">select</span> name="</span>genero<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>260</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span>masculino<span class="codeString">"&gt;Masculino&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>261</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span>femenino<span class="codeString">" selected&gt;Femenino&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>262</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span><span class="codeString">"&gt;-- Seleccionar --&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>263</td><td><span class="codeString">     &lt;<span class="codeReserved">optgroup</span> label="</span>Otros<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>264</td><td><span class="codeString">      &lt;<span class="codeReserved">option</span> value="</span>nodecir<span class="codeString">"&gt;Prefiero no decirlo&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>265</td><td><span class="codeString">      &lt;<span class="codeReserved">option</span> value="</span>nobinario<span class="codeString">"&gt;No binario&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>266</td><td><span class="codeString">     &lt;/<span class="codeReserved">optgroup</span>&gt;</span></td></tr>
+  <tr><td>267</td><td><span class="codeString">    &lt;/<span class="codeReserved">select</span>&gt;</span></td></tr>
+  <tr><td>268</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>269</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>270</td><td><span class="codeString"></span></td></tr>
+  <tr><td>271</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>272</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>273</td><td><span class="codeString">    Bebidas</span></td></tr>
+  <tr><td>274</td><td><span class="codeString">    &lt;<span class="codeReserved">select</span> name="</span>bebidas[]<span class="codeString">" multiple size="</span>3<span class="codeString">"&gt;</span></td></tr>
+  <tr><td>275</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span>cafe<span class="codeString">" selected&gt;Café&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>276</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span>agua<span class="codeString">" selected&gt;Agua&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>277</td><td><span class="codeString">     &lt;<span class="codeReserved">option</span> value="</span>limonada<span class="codeString">"&gt;Limonada&lt;/<span class="codeReserved">option</span>&gt;</span></td></tr>
+  <tr><td>278</td><td><span class="codeString">    &lt;/<span class="codeReserved">select</span>&gt;</span></td></tr>
+  <tr><td>279</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>280</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>281</td><td><span class="codeString"></span></td></tr>
+  <tr><td>282</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>283</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>284</td><td><span class="codeString">    Mi camino desde casa *</span></td></tr>
+  <tr><td>285</td><td><span class="codeString">    &lt;<span class="codeReserved">textarea</span> name="</span>camino<span class="codeString">" required rows="</span>10<span class="codeString">" cols="</span>25<span class="codeString">"&gt;&lt;/<span class="codeReserved">textarea</span>&gt;</span></td></tr>
+  <tr><td>286</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>287</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>288</td><td><span class="codeString"></span></td></tr>
+  <tr><td>289</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>290</td><td><span class="codeString">   &lt;<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>291</td><td><span class="codeString">    Mi opinión sobre la comida mexicana</span></td></tr>
+  <tr><td>292</td><td><span class="codeString">    &lt;<span class="codeReserved">textarea</span> name="</span>opinion<span class="codeString">" rows="</span>10<span class="codeString">" cols="</span>25<span class="codeString">"&gt;Es muy rica&lt;/<span class="codeReserved">textarea</span>&gt;</span></td></tr>
+  <tr><td>293</td><td><span class="codeString">   &lt;/<span class="codeReserved">label</span>&gt;</span></td></tr>
+  <tr><td>294</td><td><span class="codeString">  &lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>295</td><td><span class="codeString"></span></td></tr>
+  <tr><td>296</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;&lt;<span class="codeReserved">small</span>&gt;* Requerido&lt;/<span class="codeReserved">small</span>&gt;&lt;/<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>297</td><td><span class="codeString"></span></td></tr>
+  <tr><td>298</td><td><span class="codeString">  &lt;<span class="codeReserved">p</span>&gt;</span></td></tr>
+  <tr><td>299</td><td><span class="codeString">   &lt;<span class="codeReserved">button</span> type="</span>submit<span class="codeString">"&gt;Procesar&lt;/<span class="codeReserved">button</span>&gt;</span></td></tr>
+  <tr><td>300</td><td><span class="codeString">   &lt;<span class="codeReserved">button</span> type="</span>reset"&gt;Reiniciar&lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+  <tr><td>301</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>302</td><td></td></tr>
+  <tr><td>303</td><td> &lt;/<span class="codeReserved">form</span>&gt;</td></tr>
+  <tr><td>304</td><td></td></tr>
+  <tr><td>305</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>306</td><td></td></tr>
+  <tr><td>307</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
+</div>
+      </section>
+     <section >
+         <h1 >C. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>En esta lección se mostraron 2 ejemplos típicos de HTML:</p>
+   <ul>
+    <li>
+     <p>Un documento.</p>
+    </li>
+    <li>
+     <p>Un formulario.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+      </section>
+     <section>
+         <h1 >5. CSS</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -2586,46 +3525,47 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m04css/mAejemplo.html">CSS</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04css/mBstyle.html">El elemento <code class='language-html'>style</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04css/mCcomentarios.html">Comentarios</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04css/mDreglas.html">Reglas de estilo</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04css/mEselTipo.html">Selector de tipo</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04css/mFpropiedades.html">Propiedades</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04css/mGcustom.html">Propiedades personalizadas</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04css/mHresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m04css/mAejemplo.html">CSS</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04css/mBstyle.html">El elemento <code class='language-html'>style</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04css/mCcomentarios.html">Comentarios</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04css/mDreglas.html">Reglas de estilo</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04css/mEselTipo.html">Selector de tipo</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04css/mFpropiedades.html">Propiedades</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04css/mGcustom.html">Propiedades personalizadas</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m04css/mHresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -3393,7 +4333,7 @@
       </section>
       </section>
      <section>
-         <h1 class="leccion">5. Propiedades básicas de CSS</h1>
+         <h1 >6. Propiedades básicas de CSS</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -3408,36 +4348,37 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m05propiedades/mAfonts.html">Fonts</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05propiedades/mBfontFamily.html">La propiedad <dfn><code class='language-html'>font-family</code></dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05propiedades/mCcolores.html">Colores en CSS</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05propiedades/mDcolor.html">La propiedad <dfn><code class='language-html'>color</code></dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05propiedades/mEbackgroundColor.html">La propiedad <dfn><code class='language-html'>background-color</code></dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05propiedades/mFresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m05propiedades/mAfonts.html">Fonts</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m05propiedades/mBfontFamily.html">La propiedad <dfn><code class='language-html'>font-family</code></dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m05propiedades/mCcolores.html">Colores en CSS</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m05propiedades/mDcolor.html">La propiedad <dfn><code class='language-html'>color</code></dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m05propiedades/mEbackgroundColor.html">La propiedad <dfn><code class='language-html'>background-color</code></dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m05propiedades/mFresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -4023,7 +4964,7 @@
       </section>
       </section>
      <section>
-         <h1 class="leccion">6. La propiedad <code class='language-css'>display</code></h1>
+         <h1 >7. La propiedad <code class='language-css'>display</code></h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -4038,46 +4979,47 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m06display/mAdiv.html">El elemento <code class='language-html'>div</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m06display/mBspan.html">El elemento <code class='language-html'>span</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m06display/mCdisplay.html">La propiedad <code class='language-css'>display</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m06display/mDnone.html">El valor <code class='language-css'>none</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m06display/mEinline.html">El valor <code class='language-css'>inline</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m06display/mFblock.html">El valor <code class='language-css'>block</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m06display/mGinlineBlock.html">El valor <code class='language-css'>inline-block</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m06display/mHresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m06display/mAdiv.html">El elemento <code class='language-html'>div</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m06display/mBspan.html">El elemento <code class='language-html'>span</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m06display/mCdisplay.html">La propiedad <code class='language-css'>display</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m06display/mDnone.html">El valor <code class='language-css'>none</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m06display/mEinline.html">El valor <code class='language-css'>inline</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m06display/mFblock.html">El valor <code class='language-css'>block</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m06display/mGinlineBlock.html">El valor <code class='language-css'>inline-block</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m06display/mHresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -4848,7 +5790,7 @@
       </section>
       </section>
      <section>
-         <h1 class="leccion">7. El modelo de cajas</h1>
+         <h1 >8. El modelo de cajas</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -4863,46 +5805,47 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m07cajas/mAlongitud.html">Longitudes en CSS</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m07cajas/mBmodelo.html">El modelo de cajas</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m07cajas/mCmargin.html">Margen (margin)</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m07cajas/mDpadding.html">Relleno (padding)</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m07cajas/mEborder.html">Borde (border)</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m07cajas/mFradio.html">Esquinas redondas (border-radius)</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m07cajas/mGbox-sizing.html">Propiedades para tamaños</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m07cajas/mHresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m07cajas/mAlongitud.html">Longitudes en CSS</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m07cajas/mBmodelo.html">El modelo de cajas</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m07cajas/mCmargin.html">Margen (margin)</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m07cajas/mDpadding.html">Relleno (padding)</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m07cajas/mEborder.html">Borde (border)</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m07cajas/mFradio.html">Esquinas redondas (border-radius)</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m07cajas/mGbox-sizing.html">Propiedades para tamaños</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m07cajas/mHresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -6230,7 +7173,7 @@
       </section>
       </section>
      <section>
-         <h1 class="leccion">8. Posicionamiento</h1>
+         <h1 >9. Posicionamiento</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -6245,36 +7188,37 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m08posicionamiento/mApropiedades.html">Propiedades de posicionamiento</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08posicionamiento/mBfixed.html">El posicionamiento <code class='language-css'>fixed</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08posicionamiento/mCrelative.html">El posicionamiento <code class='language-css'>relative</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08posicionamiento/mDabsolute.html">El posicionamiento <code class='language-css'>absolute</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08posicionamiento/mEsticky.html">El posicionamiento <code class='language-css'>sticky</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m08posicionamiento/mFresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m08posicionamiento/mApropiedades.html">Propiedades de posicionamiento</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m08posicionamiento/mBfixed.html">El posicionamiento <code class='language-css'>fixed</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m08posicionamiento/mCrelative.html">El posicionamiento <code class='language-css'>relative</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m08posicionamiento/mDabsolute.html">El posicionamiento <code class='language-css'>absolute</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m08posicionamiento/mEsticky.html">El posicionamiento <code class='language-css'>sticky</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m08posicionamiento/mFresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -6839,7 +7783,7 @@
       </section>
       </section>
      <section>
-         <h1 class="leccion">9. Selectores de CSS</h1>
+         <h1 >10. Selectores de CSS</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -6854,61 +7798,62 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m09selectores/mAtodos.html">El selector <code class='language-css'>*</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09selectores/mBid.html">El selector <code class='language-css'>#<em>identificador</em></code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09selectores/mCclass.html">El selector <code class='language-css'>.<em>clase</em></code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09selectores/mDhijo.html">El selector <code class='language-css'><em>sel1</em> &gt; <em>sel2</em></code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09selectores/mEdescendiente.html">El selector <code class='language-css'><em>sel1</em> <em>sel2</em></code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09selectores/mFsiguiente.html">El selector <code class='language-css'><em>sel1</em> + <em>sel2</em></code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09selectores/mGposterior.html">El selector <code class='language-css'><em>sel1</em> ~ <em>sel2</em></code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09selectores/mHlista.html">La lista de selectores <code class='language-css'><em>sel1</em> , <em>sel2</em></code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09selectores/mIactive.html">La pseudoclase <code class='language-css'>:active</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09selectores/mJfocus.html">La pseudoclase <code class='language-css'>:focus</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m09selectores/mKresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m09selectores/mAtodos.html">El selector <code class='language-css'>*</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09selectores/mBid.html">El selector <code class='language-css'>#<em>identificador</em></code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09selectores/mCclass.html">El selector <code class='language-css'>.<em>clase</em></code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09selectores/mDhijo.html">El selector <code class='language-css'><em>sel1</em> &gt; <em>sel2</em></code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09selectores/mEdescendiente.html">El selector <code class='language-css'><em>sel1</em> <em>sel2</em></code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09selectores/mFsiguiente.html">El selector <code class='language-css'><em>sel1</em> + <em>sel2</em></code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09selectores/mGposterior.html">El selector <code class='language-css'><em>sel1</em> ~ <em>sel2</em></code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09selectores/mHlista.html">La lista de selectores <code class='language-css'><em>sel1</em> , <em>sel2</em></code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09selectores/mIactive.html">La pseudoclase <code class='language-css'>:active</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09selectores/mJfocus.html">La pseudoclase <code class='language-css'>:focus</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m09selectores/mKresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -8106,7 +9051,7 @@
       </section>
       </section>
      <section>
-         <h1 class="leccion">10. Elementos Multimedia</h1>
+         <h1 >11. Elementos Multimedia</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -8121,36 +9066,37 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m10multimedia/mAimagenes.html">Imágenes</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m10multimedia/mBaudioVideo.html">Audio y Video</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m10multimedia/mCaudio.html">El elemento <code class='language-html'>audio</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m10multimedia/mDvideo.html">El elemento <code class='language-html'>video</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m10multimedia/mEfondo.html">Imagen de fondo</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m10multimedia/mFresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m10multimedia/mAimagenes.html">Imágenes</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m10multimedia/mBaudioVideo.html">Audio y Video</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m10multimedia/mCaudio.html">El elemento <code class='language-html'>audio</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m10multimedia/mDvideo.html">El elemento <code class='language-html'>video</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m10multimedia/mEfondo.html">Imagen de fondo</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m10multimedia/mFresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -9025,7 +9971,7 @@
       </section>
       </section>
      <section>
-         <h1 class="leccion">11. Formularios</h1>
+         <h1 >12. Formularios</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -9054,76 +10000,77 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m11formularios/mAsimple.html">Formulario simple</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/mBForm.html">El elemento <code class='language-html'>form</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/mCatributos.html">Atributos comunes</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/mDlabel.html">El elemento <code class='language-html'>label</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/mEbutton.html">El elemento <code class='language-html'>button</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/mFinput.html">El elemento <code class='language-html'>input</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/mGoutput.html">El elemento <code class='language-html'>output</code></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/mHdivision.html">División</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/mI2botones.html">Formulario numérico de 2 botones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/mJrecomendaciones.html">Recomendaciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/mKadivina.html">Adivina</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/mLencuesta.html">Encuesta</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/mMrecomienda.html">Recomienda</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m11formularios/mNresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m11formularios/mAsimple.html">Formulario simple</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/mBForm.html">El elemento <code class='language-html'>form</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/mCatributos.html">Atributos comunes</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/mDlabel.html">El elemento <code class='language-html'>label</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/mEbutton.html">El elemento <code class='language-html'>button</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/mFinput.html">El elemento <code class='language-html'>input</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/mGoutput.html">El elemento <code class='language-html'>output</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/mHdivision.html">División</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/mI2botones.html">Formulario numérico de 2 botones</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/mJrecomendaciones.html">Recomendaciones</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/mKadivina.html">Adivina</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/mLencuesta.html">Encuesta</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/mMrecomienda.html">Recomienda</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m11formularios/mNresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -11254,7 +12201,7 @@
       </section>
       </section>
      <section>
-         <h1 class="leccion">12. Custom elements</h1>
+         <h1 >13. Custom elements</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -11269,26 +12216,27 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m12custom/mAcustom.html"><dfn>Custom element</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m12custom/mBaccion.html">Los custom element en acción</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m12custom/mCatributos.html">Uso de atributos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m12custom/mDresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m12custom/mAcustom.html"><dfn>Custom element</dfn></a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m12custom/mBaccion.html">Los custom element en acción</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m12custom/mCatributos.html">Uso de atributos</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m12custom/mDresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -11698,7 +12646,7 @@
       </section>
       </section>
      <section>
-         <h1 class="leccion">13. Juegos</h1>
+         <h1 >14. Juegos</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -11713,86 +12661,87 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m13juegos/mAsprites.html">Sprites</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mBhorizontal.html">Desplazamiento horizontal</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mCrecta.html">Recta</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mDondula.html">Ondula</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mEgira.html">Girando</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mFbotones.html">Desplazamiento con botones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mGcolisiones.html">Detecta colisiones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mHsonrie.html">Haz algo si chocamos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mIaleatorio.html">Muévete al azar</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mJcustom.html">Usa custom element</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mKasociaciones.html">Asociaciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mLpolimorfismo.html">Polimorfismo</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mMjueguito1.html">Jueguito 1</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mNjueguito2.html">Jueguito 2</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mOjueguito3.html">Jueguito 3</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m13juegos/mPresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m13juegos/mAsprites.html">Sprites</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mBhorizontal.html">Desplazamiento horizontal</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mCrecta.html">Recta</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mDondula.html">Ondula</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mEgira.html">Girando</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mFbotones.html">Desplazamiento con botones</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mGcolisiones.html">Detecta colisiones</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mHsonrie.html">Haz algo si chocamos</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mIaleatorio.html">Muévete al azar</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mJcustom.html">Usa custom element</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mKasociaciones.html">Asociaciones</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mLpolimorfismo.html">Polimorfismo</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mMjueguito1.html">Jueguito 1</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mNjueguito2.html">Jueguito 2</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mOjueguito3.html">Jueguito 3</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m13juegos/mPresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -16177,7 +17126,7 @@
       </section>
       </section>
      <section>
-         <h1 class="leccion">14. Adornos</h1>
+         <h1 >15. Adornos</h1>
    <div class="lectura"> 
     <p class="noPrint">
      <a href="print.html" target="_blank" rel="noopener">Versión para
@@ -16192,26 +17141,27 @@
   <h1>Contenido</h1>
   
    <ol type="A">
-    <li>
-     <p>
-      <a href="/m14adornos/mAhorizontal.html">Adorno horizontal</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m14adornos/mBciclos.html">Recta usando ciclos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m14adornos/mCespiral.html">Espiral</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m14adornos/mDresumen.html">Resumen</a>
-     </p>
-    </li>
+    
+   <li>
+    <p>
+     <a href="/m14adornos/mAhorizontal.html">Adorno horizontal</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m14adornos/mBciclos.html">Recta usando ciclos</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m14adornos/mCespiral.html">Espiral</a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="/m14adornos/mDresumen.html">Resumen</a>
+    </p>
+   </li>
    </ol>
  </nav>
 </div>
@@ -16572,4 +17522,5 @@
       </section>
       </section>
 </body>
+
 </html>

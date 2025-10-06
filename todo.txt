@@ -1,5 +1,3 @@
-* Hacer los próximos cambios de la iu
-  ° que los botones se oculten y hagan visibles con el scroll.
-  ° Tratar de que los botones queden visibles en el móvil cuando la pantalla sea
-    móvil.* en el formulario mJrecomendaciones separa la variable que recibe la recomendación
+* Regresar El ejemplo viejito de marcado antes de computadoras
+* HAblar del CERN y Tim Berners Lee
 * Falta display flex y grid

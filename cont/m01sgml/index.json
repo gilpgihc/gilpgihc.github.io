@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "SGML",
- "description": "Contenido de la lección «1. SGML.",
- "printDescription": "Página para imprimir de la lección «1. SGML.",
+ "description": "Contenido de la lección «SGML.",
+ "printDescription": "Página para imprimir de la lección «SGML.",
  "listado": [
   {
    "name": "mAsgml.html",
@@ -65,7 +65,7 @@
   {
    "name": "mKresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «1. SGML."
+   "description": "Resumen de la lección «SGML."
   }
  ]
 }

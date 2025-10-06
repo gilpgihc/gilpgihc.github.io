@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Custom elements",
- "description": "Contenido de la lección «12. Custom» elements.",
- "printDescription": "Página para imprimir de la lección «12. Custom» elements.",
+ "description": "Contenido de la lección «Custom» elements.",
+ "printDescription": "Página para imprimir de la lección «Custom» elements.",
  "listado": [
   {
    "name": "mAcustom.html",
@@ -23,7 +23,7 @@
   {
    "name": "mDresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «12. Custom» elements."
+   "description": "Resumen de la lección «Custom» elements."
   }
  ]
 }

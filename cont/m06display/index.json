@@ -2,8 +2,8 @@
  "type": "A",
  "title": "La propiedad display",
  "h1": "La propiedad <code class='language-css'>display</code>",
- "description": "Contenido de la lección «6. La propiedad display.",
- "printDescription": "Página para imprimir de la lección «6. La propiedad display.",
+ "description": "Contenido de la lección «La propiedad display.",
+ "printDescription": "Página para imprimir de la lección «La propiedad display.",
  "listado": [
   {
    "name": "mAdiv.html",
@@ -50,7 +50,7 @@
   {
    "name": "mHresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «6. La propiedad display."
+   "description": "Resumen de la lección «La propiedad display."
   }
  ]
 }

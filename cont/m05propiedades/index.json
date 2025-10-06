@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Propiedades básicas de CSS",
- "description": "Contenido de la lección «5. Propiedades básicas de CSS».",
- "printDescription": "Página para imprimir de la lección «5. Propiedades básicas de CSS».",
+ "description": "Contenido de la lección «Propiedades básicas de CSS».",
+ "printDescription": "Página para imprimir de la lección «Propiedades básicas de CSS».",
  "listado": [
   {
    "name": "mAfonts.html",
@@ -35,7 +35,7 @@
   {
    "name": "mFresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «5. Propiedades básicas de CSS."
+   "description": "Resumen de la lección «Propiedades básicas de CSS."
   }
  ]
 }

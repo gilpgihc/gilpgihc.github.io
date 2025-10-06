@@ -2,8 +2,8 @@
  "orden": "9",
  "type": "A",
  "title": "Selectores de CSS",
- "description": "Contenido de la lección «9. Selectores de CSS».",
- "printDescription": "Página para imprimir de la lección «9. Selectores de CSS».",
+ "description": "Contenido de la lección «Selectores de CSS».",
+ "printDescription": "Página para imprimir de la lección «Selectores de CSS».",
  "listado": [
   {
    "name": "mAtodos.html",
@@ -68,7 +68,7 @@
   {
    "name": "mKresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «9. Selectores de CSS»."
+   "description": "Resumen de la lección «Selectores de CSS»."
   }
  ]
 }
