@@ -1,5 +1,6 @@
 * Volver a correr documenta (directamente usando la carpeta src del proyecto) y
-  volver a copiar los ejemplos porque hubo algunos cambios.
+  volver a copiar los ejemplos porque hubo algunos cambios enlos programas con
+  enlaces. Buscar target="_blank" en la carpeta src y esos son.
 * Regresar El ejemplo viejito de marcado antes de computadoras
 * HAblar del CERN y Tim Berners Lee
 * Falta display flex y grid
