@@ -898,11 +898,11 @@
    <iframe src="/src/m12custom/Baccion.html" height="250"
      title="Ejemplo típico de custom element simple"></iframe>
    <p class="noPrint">
-    <a href="/src/m12custom/Baccion.html" target="_blank">Ábrelo en
-     otra pestaña.</a>
+    <a target="_blank" rel="noreferrer"
+     href="/src/m12custom/Baccion.html">Ábrelo en otra pestaña.</a>
    </p>
    <p class="noPrint">
-    <a target="_blank" rel="noopener"
+    <a target="_blank" rel="noreferrer"
       href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EAcci%C3%B3n%3C%2Ftitle%3E%0A%20%3Cscript%3E%0A%20%20class%20Elemento3%0A%20%20%20extends%20HTMLElement%20%7B%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20this.innerHTML%20%3D%20%2F*%20html%20*%2F%0A%20%20%20%20%20%60Estoy%20volando%F0%9F%9A%81%0A%20%20%20%20%20%20%3Cstrong%3E%0A%20%20%20%20%20%20%20alto%0A%20%20%20%20%20%20%3C%2Fstrong%3E.%60%0A%20%20%20%20this.addEventListener(%22click%22%2C%0A%20%20%20%20%20()%20%3D%3E%20this.clic())%0A%20%20%20%7D%0A%20%20%20clic()%20%7B%0A%20%20%20%20alert(%22ouch%22)%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.define(%0A%20%20%20%22elemento-3%22%2C%20Elemento3)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20elemento-3%20%7B%0A%20%20%20cursor%3A%20pointer%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3EAcci%C3%B3n%3C%2Fh1%3E%0A%20%3Celemento-3%3E%3C%2Felemento-3%3E%0A%20%3Cp%3ESaludos%20desde%20la%20tierra.%3C%2Fp%3E%0A%20%3Celemento-3%3E%3C%2Felemento-3%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
      Revísalo en gilpgedit.
     </a>

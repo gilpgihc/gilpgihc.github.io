@@ -856,14 +856,13 @@
   <iframe src="/src/m11formularios/Bdivision.html" height="250"
     title="Formulario para dividir"></iframe>
   <p class="noPrint">
-   <a href="/src/m11formularios/Bdivision.html" target="_blank">Ábrelo en otra
-    pestaña.</a>
+   <a target="_blank" rel="noreferrer"
+    href="/src/m11formularios/Bdivision.html">Ábrelo en otra pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="noopener"
+   <a target="_blank" rel="noreferrer"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EDivisi%C3%B3n%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cform%0A%20%20%20action%3D%22javascript%3Aprocesa()%22%3E%0A%20%20%3Ch1%3EDivisi%C3%B3n%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20a%0A%20%20%20%20%3Cinput%20id%3D%22inA%22%0A%20%20%20%20%20%20type%3D%22number%22%0A%20%20%20%20%20%20step%3D%220.1%22%0A%20%20%20%20%20%20required%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Clabel%3E%0A%20%20%20%20b%0A%20%20%20%20%3Cinput%20id%3D%22inB%22%0A%20%20%20%20%20%20type%3D%22number%22%0A%20%20%20%20%20%20step%3D%220.1%22%0A%20%20%20%20%20%20required%0A%20%20%20%20%20%20oninput%3D%22validaB()%22%3E%0A%20%20%20%3C%2Flabel%3E%0A%20%20%3C%2Fp%3E%0A%20%20%3Cp%3E%0A%20%20%20%3Cbutton%3EDividir%3C%2Fbutton%3E%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fform%3E%0A%20%3Cscript%3E%0A%20%20const%20NO_0%20%3D%20%22No%20puede%20ser%200%22%0A%0A%20%20function%20validaB()%20%7B%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20%2F*%20Debe%20cumplirse%20que%20b%0A%20%20%20%20*%20sea%20un%20n%C3%BAmero%20diferente%0A%20%20%20%20*%20de%200.%20*%2F%0A%20%20%20if%20(isNaN(b)%20%7C%7C%20b%20!%3D%3D%200)%20%7B%0A%20%20%20%20inB.setCustomValidity(%22%22)%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20inB.setCustomValidity(NO_0)%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20function%20procesa()%20%7B%0A%20%20%20const%20a%20%3D%20inA.valueAsNumber%0A%20%20%20const%20b%20%3D%20inB.valueAsNumber%0A%20%20%20const%20resultado%20%3D%20divide(a%2C%20b)%0A%20%20%20alert(%0A%20%20%20%20%60%24%7Ba%7D%20%2F%20%24%7Bb%7D%20%3D%20%24%7Bresultado%7D%60)%0A%20%20%7D%0A%0A%20%20%2F**%0A%20%20%20*%20%40param%20%7Bnumber%7D%20a%0A%20%20%20*%20%40param%20%7Bnumber%7D%20b%0A%20%20%20*%2F%0A%20%20function%20divide(a%2C%20b)%20%7B%0A%20%20%20return%20a%20%2F%20b%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
-    Revísalo en gilpgedit.
-   </a>
+    Revísalo en gilpgedit.</a>
   </p>
  </section>
  <muestra-codigo>

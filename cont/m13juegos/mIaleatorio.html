@@ -4,11 +4,12 @@
   <iframe src="/src/m13juegos/Ialeatorio.html" height="250"
     title="Ejemplo de movimiento aleatorio"></iframe>
   <p class="noPrint">
-   <a href="/src/m13juegos/Ialeatorio.html" target="_blank">Ábrelo en otra
+   <a target="_blank" rel="noreferrer"
+    href="/src/m13juegos/Ialeatorio.html">Ábrelo en otra
     pestaña.</a>
   </p>
   <p class="noPrint">
-   <a target="_blank" rel="noopener"
+   <a target="_blank" rel="noreferrer"
      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EMueve%20Aleatorio%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20.sprite%20%7B%0A%20%20%20position%3A%20fixed%3B%0A%20%20%20font-size%3A%203rem%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3EMueve%20Aleatorio%3C%2Fh1%3E%0A%20%3Coutput%20id%3D%22carita%22%0A%20%20%20class%3D%22sprite%22%3E%0A%20%20%F0%9F%98%84%0A%20%3C%2Foutput%3E%0A%20%3Cscript%3E%0A%20%20const%20REFRESCO%20%3D%205%0A%20%20const%20RUIDO%20%3D%204%0A%20%20let%20velocidad%20%3D%200.5%0A%20%20let%20x%20%3D%200%0A%20%20setInterval(avanza%2C%20REFRESCO)%0A%0A%20%20function%20avanza()%20%7B%0A%20%20%20const%20y%20%3D%20innerHeight%20%2F%202%0A%20%20%20const%20xM%C3%A1xima%20%3D%20innerWidth%0A%20%20%20carita.style.left%20%3D%20%60%24%7Bx%7Dpx%60%0A%20%20%20carita.style.bottom%20%3D%20%60%24%7By%7Dpx%60%0A%20%20%20x%20%2B%3D%20velocidad%20%2B%0A%20%20%20%20aleatorio(-RUIDO%2C%20RUIDO)%0A%20%20%20if%20(x%20%3C%200)%20%7B%0A%20%20%20%20x%20%3D%200%0A%20%20%20%20velocidad%20%3D%20-velocidad%0A%20%20%20%7D%20else%20if%20(x%20%3E%20xM%C3%A1xima)%20%7B%0A%20%20%20%20x%20%3D%20xM%C3%A1xima%0A%20%20%20%20velocidad%20%3D%20-velocidad%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20%2F**%0A%20%20%20*%20Devuelve%20un%20n%C3%BAmero%0A%20%20%20*%20aleatorio%20entre%20el%20valor%0A%20%20%20*%20menor%20y%20el%20valor%20mayor.%0A%20%20%20*%20%40param%20%7Bnumber%7D%20menor%20el%0A%20%20%20*%20%20menor%20valor%20que%20se%20puede%0A%20%20%20*%20%20generar%0A%20%20%20*%20%40param%20%7Bnumber%7D%20mayor%20el%0A%20%20%20*%20%20mayor%20valor%20que%20se%20puede%0A%20%20%20*%20%20generar%0A%20%20%20*%20%40returns%20%7Bnumber%7D%20un%0A%20%20%20*%20%20n%C3%BAmero%20aleatorio%20entre%0A%20%20%20*%20%20menor%20y%20mayor.%0A%20%20%20*%2F%0A%20%20function%0A%20%20%20aleatorio(menor%2C%20mayor)%20%7B%0A%20%20%20%2F*%20Math.floor(x)%3A%20elimina%0A%20%20%20%20*%20%20los%20decimales.%0A%20%20%20%20*%20Math.random()%3A%20genera%0A%20%20%20%20*%20%20un%20n%C3%BAmero%20aleatorio%0A%20%20%20%20*%20%20%3E%3D%200%20y%20%3C%201.%20*%2F%0A%20%20%20return%20menor%20%2B%0A%20%20%20%20Math.floor(%0A%20%20%20%20%20Math.random()%20*%0A%20%20%20%20%20(mayor%20-%20menor%20%2B%201))%0A%20%20%7D%0A%20%3C%2Fscript%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.
    </a>

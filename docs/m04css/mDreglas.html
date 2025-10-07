@@ -897,62 +897,46 @@
   <li>
    <p>
     La definición de una regla de estilo está en
-    <a href="https://www.w3.org/TR/css-syntax-3/#style-rule"
-      target="_blank">https://www.w3.org/TR/css-syntax-3/#style-rule</a>
+    <a target="_blank" rel="noreferrer"
+     href="https://www.w3.org/TR/css-syntax-3/#style-rule">
+     https://www.w3.org/TR/css-syntax-3/#style-rule</a>
    </p>
   </li>
  </ul>
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #008000;">/*&nbsp;Esta&nbsp;es&nbsp;una&nbsp;regla.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;*&nbsp;El&nbsp;selector&nbsp;es&nbsp;h1.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;*&nbsp;Sus&nbsp;propiedades&nbsp;están&nbsp;dentro&nbsp;de</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;*&nbsp;las&nbsp;llaves.&nbsp;*/</span>
-   </div>
-   <div>&nbsp;<span style="color: #800000;">h1</span>&nbsp;{</div>
-   <div>&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
-      style="color: #0451a5;">yellow</span>;</div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #ff0000;">background-color</span>:&nbsp;<span
-      style="color: #0451a5;">blue</span>;</div>
-   <div>&nbsp;}&nbsp;<span
-      style="color: #008000;">/*&nbsp;Fin&nbsp;de&nbsp;la&nbsp;primera&nbsp;regla.&nbsp;*/</span>
-   </div><br>
-   <div>&nbsp;<span
-      style="color: #008000;">/*&nbsp;Esta&nbsp;es&nbsp;otra&nbsp;regla.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;*&nbsp;El&nbsp;selector&nbsp;es&nbsp;p.</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;*&nbsp;Sus&nbsp;propiedades&nbsp;están&nbsp;dentro&nbsp;de</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;*&nbsp;las&nbsp;llaves.&nbsp;*/</span>
-   </div>
-   <div>&nbsp;<span style="color: #800000;">p</span>&nbsp;{</div>
-   <div>&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
-      style="color: #0451a5;">white</span>;</div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #ff0000;">background-color</span>:&nbsp;<span
-      style="color: #0451a5;">black</span>;</div>
-   <div>&nbsp;}&nbsp;<span
-      style="color: #008000;">/*&nbsp;Fin&nbsp;de&nbsp;la&nbsp;segunda&nbsp;regla.&nbsp;*/</span>
-   </div>
-   <div><span style="color: #800000;">&lt;/style&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>2</td><td> <span class="codeComment">/* Esta es una regla.</span></td></tr>
+  <tr><td>3</td><td><span class="codeComment">  * El selector es h1.</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment">  * Sus propiedades están dentro de</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment">  * las llaves. */</span></td></tr>
+  <tr><td>6</td><td> h1 {</td></tr>
+  <tr><td>7</td><td>  <span class="codeReserved">color</span>: yellow;</td></tr>
+  <tr><td>8</td><td>  <span class="codeReserved">background-color</span>: blue;</td></tr>
+  <tr><td>9</td><td> } <span class="codeComment">/* Fin de la primera regla. */</span></td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td> <span class="codeComment">/* Esta es otra regla.</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">  * El selector es p.</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment">  * Sus propiedades están dentro de</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment">  * las llaves. */</span></td></tr>
+  <tr><td>15</td><td> p {</td></tr>
+  <tr><td>16</td><td>  <span class="codeReserved">color</span>: white;</td></tr>
+  <tr><td>17</td><td>  <span class="codeReserved">background-color</span>: black;</td></tr>
+  <tr><td>18</td><td> } <span class="codeComment">/* Fin de la segunda regla. */</span></td></tr>
+  <tr><td>19</td><td>&lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>
  <footer>
  <p>

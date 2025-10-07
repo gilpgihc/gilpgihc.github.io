@@ -10,131 +10,79 @@
   <li>
    <p>
     La definición de una selector de tipo está en
-    <a href="https://www.w3.org/TR/selectors-3/#type-selectors"
-      target="_blank">https://www.w3.org/TR/selectors-3/#type-selectors</a>
+    <a target="_blank" rel="noreferrer"
+     href="https://www.w3.org/TR/selectors-3/#type-selectors">
+     https://www.w3.org/TR/selectors-3/#type-selectors</a>
    </p>
   </li>
  </ul>
 </div>
 <section>
  <h1>Ejemplo</h1>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #008000;">/*&nbsp;El&nbsp;selector</span></div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;h1</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;hace&nbsp;que&nbsp;las&nbsp;propiedades&nbsp;de</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;esta&nbsp;regla&nbsp;se&nbsp;apliquen&nbsp;a&nbsp;todos</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;los&nbsp;elementos&nbsp;de&nbsp;tipo</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;h1.&nbsp;*/</span>
-   </div>
-   <div class=resaltado>&nbsp;&nbsp;<span
-      style="color: #800000;">h1</span>&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
-      style="color: #0451a5;">yellow</span>;</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">background-color</span>:&nbsp;<span
-      style="color: #0451a5;">blue</span>;</div>
-   <div>&nbsp;&nbsp;}</div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #008000;">/*&nbsp;El&nbsp;selector</span></div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;p</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;hace&nbsp;que&nbsp;las&nbsp;propiedades&nbsp;de</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;esta&nbsp;regla&nbsp;se&nbsp;apliquen&nbsp;a&nbsp;todos</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;los&nbsp;elementos&nbsp;de&nbsp;tipo</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;p.&nbsp;*/</span>
-   </div>
-   <div class=resaltado2>&nbsp;&nbsp;<span
-      style="color: #800000;">p</span>&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">color</span>:&nbsp;<span
-      style="color: #0451a5;">white</span>;</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">background-color</span>:&nbsp;<span
-      style="color: #0451a5;">black</span>;</div>
-   <div>&nbsp;&nbsp;}</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;h1</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
-   </div>
-   <div>&nbsp;<span style="color: #800000;">&lt;body&gt;</span></div>
-   <div class=resaltado>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>CSS<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;p</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
-   </div>
-   <div class=resaltado2>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>Este&nbsp;es&nbsp;un&nbsp;ejemplo.<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;p</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
-   </div>
-   <div class=resaltado2>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>Aprende&nbsp;CSS.<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;h2&gt;</span>Subsección<span
-      style="color: #800000;">&lt;/h2&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;p</span></div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
-   </div>
-   <div class=resaltado2>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span>Juega&nbsp;con&nbsp;colores.<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;footer&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #008000;">&lt;!--&nbsp;Las&nbsp;reglas&nbsp;con&nbsp;el&nbsp;selector</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;se&nbsp;aplican&nbsp;a&nbsp;este&nbsp;elemento.&nbsp;--&gt;</span>
-   </div>
-   <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div class=resaltado2>&nbsp;&nbsp;&nbsp;&nbsp;©&nbsp;2021</div>
-   <div class=resaltado2>
-    &nbsp;&nbsp;&nbsp;&nbsp;Gilberto&nbsp;Pacheco&nbsp;Gallegos.</div>
-   <div class=resaltado2>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;/footer&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/body&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>2</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>3</td><td>  <span class="codeComment">/* El selector</span></td></tr>
+  <tr><td>4</td><td><span class="codeComment">   *  h1</span></td></tr>
+  <tr><td>5</td><td><span class="codeComment">   * hace que las propiedades de</span></td></tr>
+  <tr><td>6</td><td><span class="codeComment">   * esta regla se apliquen a todos</span></td></tr>
+  <tr><td>7</td><td><span class="codeComment">   * los elementos de tipo</span></td></tr>
+  <tr><td>8</td><td><span class="codeComment">   *  h1. */</span></td></tr>
+  <tr><td>9</td><td>  h1 {</td></tr>
+  <tr><td>10</td><td>   <span class="codeReserved">color</span>: yellow;</td></tr>
+  <tr><td>11</td><td>   <span class="codeReserved">background-color</span>: blue;</td></tr>
+  <tr><td>12</td><td>  }</td></tr>
+  <tr><td>13</td><td></td></tr>
+  <tr><td>14</td><td>  <span class="codeComment">/* El selector</span></td></tr>
+  <tr><td>15</td><td><span class="codeComment">   *  p</span></td></tr>
+  <tr><td>16</td><td><span class="codeComment">   * hace que las propiedades de</span></td></tr>
+  <tr><td>17</td><td><span class="codeComment">   * esta regla se apliquen a todos</span></td></tr>
+  <tr><td>18</td><td><span class="codeComment">   * los elementos de tipo</span></td></tr>
+  <tr><td>19</td><td><span class="codeComment">   *  p. */</span></td></tr>
+  <tr><td>20</td><td>  p {</td></tr>
+  <tr><td>21</td><td>   <span class="codeReserved">color</span>: white;</td></tr>
+  <tr><td>22</td><td>   <span class="codeReserved">background-color</span>: black;</td></tr>
+  <tr><td>23</td><td>  }</td></tr>
+  <tr><td>24</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>25</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>26</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>27</td><td> <span class="codeComment">&lt;!-- Las reglas con el selector</span></td></tr>
+  <tr><td>28</td><td><span class="codeComment">   h1</span></td></tr>
+  <tr><td>29</td><td><span class="codeComment">  se aplican a este elemento. --&gt;</span></td></tr>
+  <tr><td>30</td><td> &lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>31</td><td>  &lt;<span class="codeReserved">h1</span>&gt;CSS&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>32</td><td>  <span class="codeComment">&lt;!-- Las reglas con el selector</span></td></tr>
+  <tr><td>33</td><td><span class="codeComment">    p</span></td></tr>
+  <tr><td>34</td><td><span class="codeComment">   se aplican a este elemento. --&gt;</span></td></tr>
+  <tr><td>35</td><td>  &lt;<span class="codeReserved">p</span>&gt;Este es un ejemplo.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>36</td><td>  <span class="codeComment">&lt;!-- Las reglas con el selector</span></td></tr>
+  <tr><td>37</td><td><span class="codeComment">    p</span></td></tr>
+  <tr><td>38</td><td><span class="codeComment">   se aplican a este elemento. --&gt;</span></td></tr>
+  <tr><td>39</td><td>  &lt;<span class="codeReserved">p</span>&gt;Aprende CSS.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>40</td><td>  &lt;<span class="codeReserved">h2</span>&gt;Subsección&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
+  <tr><td>41</td><td>  <span class="codeComment">&lt;!-- Las reglas con el selector</span></td></tr>
+  <tr><td>42</td><td><span class="codeComment">    p</span></td></tr>
+  <tr><td>43</td><td><span class="codeComment">   se aplican a este elemento. --&gt;</span></td></tr>
+  <tr><td>44</td><td>  &lt;<span class="codeReserved">p</span>&gt;Juega con colores.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>45</td><td>  &lt;<span class="codeReserved">footer</span>&gt;</td></tr>
+  <tr><td>46</td><td>   <span class="codeComment">&lt;!-- Las reglas con el selector</span></td></tr>
+  <tr><td>47</td><td><span class="codeComment">     p</span></td></tr>
+  <tr><td>48</td><td><span class="codeComment">    se aplican a este elemento. --&gt;</span></td></tr>
+  <tr><td>49</td><td>   &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>50</td><td>    © 2021</td></tr>
+  <tr><td>51</td><td>    Gilberto Pacheco Gallegos.</td></tr>
+  <tr><td>52</td><td>   &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>53</td><td>  &lt;/<span class="codeReserved">footer</span>&gt;</td></tr>
+  <tr><td>54</td><td> &lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+ </tbody>
+</table>
 </section>

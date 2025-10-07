@@ -737,8 +737,8 @@
    <h1 >2. Introducción a HTML</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 <div class="lectura">
@@ -818,40 +818,82 @@
    <h1>Salida</h1>
    <iframe src="/src/m02html/Aejemplo.html" title="Ejemplo de HTML"></iframe>
    <p class="noPrint">
-    <a target="_blank" href="/src/m02html/Aejemplo.html">Ábrelo en otra
-     pestaña.</a>
+    <a target="_blank" rel="noreferrer"
+      href="/src/m02html/Aejemplo.html">Ábrelo en otra pestaña.</a>
    </p>
    <p class="noPrint">
-    <a target="_blank" rel="noopener"
+    <a target="_blank" rel="noreferrer"
       href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EHola%20Mundo%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%F0%9F%91%BD%20%C2%A1Hola%20Mundo!%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
      Revísalo en gilpgedit.
     </a>
    </p>
   </section>
- <table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
-  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
-  <tr><td>3</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>4</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
-  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
-  <tr><td>6</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
-  <tr><td>7</td><td> &lt;<span class="codeReserved">title</span>&gt;Hola Mundo&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
-  <tr><td>8</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>9</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>10</td><td> 👽 ¡Hola Mundo!</td></tr>
-  <tr><td>11</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>12</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
- </tbody>
-</table>
+  <table class="codeShow">
+   <caption style="text-align: left">
+    <button type=button title="Copiar al portapapeles"
+      onclick="copyToClipboard(this)">
+     <span class="material-symbols-outlined">
+      content_copy
+     </span>
+    </button>
+   </caption>
+   <tbody>
+    <tr>
+     <td>1</td>
+     <td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td>
+    </tr>
+    <tr>
+     <td>2</td>
+     <td>&lt;<span class="codeReserved">html</span> lang=<span
+        class="codeString">"es"</span>&gt;</td>
+    </tr>
+    <tr>
+     <td>3</td>
+     <td>&lt;<span class="codeReserved">head</span>&gt;</td>
+    </tr>
+    <tr>
+     <td>4</td>
+     <td> &lt;<span class="codeReserved">meta</span> charset=<span
+        class="codeString">"UTF-8"</span>&gt;</td>
+    </tr>
+    <tr>
+     <td>5</td>
+     <td> &lt;<span class="codeReserved">meta</span> name=<span
+        class="codeString">"viewport"</span></td>
+    </tr>
+    <tr>
+     <td>6</td>
+     <td> <span class="codeReserved">content</span>=<span
+        class="codeString">"<span
+         class="codeReserved">width</span>=device-width"</span>&gt;</td>
+    </tr>
+    <tr>
+     <td>7</td>
+     <td> &lt;<span class="codeReserved">title</span>&gt;Hola Mundo&lt;/<span
+        class="codeReserved">title</span>&gt;</td>
+    </tr>
+    <tr>
+     <td>8</td>
+     <td>&lt;/<span class="codeReserved">head</span>&gt;</td>
+    </tr>
+    <tr>
+     <td>9</td>
+     <td>&lt;<span class="codeReserved">body</span>&gt;</td>
+    </tr>
+    <tr>
+     <td>10</td>
+     <td> 👽 ¡Hola Mundo!</td>
+    </tr>
+    <tr>
+     <td>11</td>
+     <td>&lt;/<span class="codeReserved">body</span>&gt;</td>
+    </tr>
+    <tr>
+     <td>12</td>
+     <td>&lt;/<span class="codeReserved">html</span>&gt;</td>
+    </tr>
+   </tbody>
+  </table>
  </div>
 </section>
       </section>
@@ -918,9 +960,9 @@
      La especificación técnica del elemento
      <code class="language-html">html</code>
      está en
-     <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element"
-       rel="noopener"
-       target="_blank">https://html.spec.whatwg.org/multipage/semantics.html#the-html-element</a>
+     <a target="_blank" rel="noreferrer"
+      href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element">
+      https://html.spec.whatwg.org/multipage/semantics.html#the-html-element</a>
     </p>
    </li>
   </ul>
@@ -947,24 +989,47 @@
 </div>
 <section>
  <h1>Ejemplo</h1>
-<table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>2</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
-  <tr><td>3</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
-  <tr><td>4</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
-  <tr><td>5</td><td> &lt;<span class="codeReserved">title</span>&gt;Hola Mundo&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
-  <tr><td>6</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
- </tbody>
-</table>
+ <table class="codeShow">
+  <caption style="text-align: left">
+   <button type=button title="Copiar al portapapeles"
+     onclick="copyToClipboard(this)">
+    <span class="material-symbols-outlined">
+     content_copy
+    </span>
+   </button>
+  </caption>
+  <tbody>
+   <tr>
+    <td>1</td>
+    <td>&lt;<span class="codeReserved">head</span>&gt;</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td> &lt;<span class="codeReserved">meta</span> charset=<span
+       class="codeString">"UTF-8"</span>&gt;</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td> &lt;<span class="codeReserved">meta</span> name=<span
+       class="codeString">"viewport"</span></td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td> <span class="codeReserved">content</span>=<span
+       class="codeString">"<span
+        class="codeReserved">width</span>=device-width"</span>&gt;</td>
+   </tr>
+   <tr>
+    <td>5</td>
+    <td> &lt;<span class="codeReserved">title</span>&gt;Hola Mundo&lt;/<span
+       class="codeReserved">title</span>&gt;</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>&lt;/<span class="codeReserved">head</span>&gt;</td>
+   </tr>
+  </tbody>
+ </table>
 </section>
 <div class="lectura">
  <section>
@@ -975,9 +1040,9 @@
      La especificación técnica del elemento
      <code class="language-html">head</code>
      está en
-     <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element"
-       rel="noopener"
-       target="_blank">https://html.spec.whatwg.org/multipage/semantics.html#the-head-element</a>
+     <a target="_blank" rel="noreferrer"
+       href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">
+      https://html.spec.whatwg.org/multipage/semantics.html#the-head-element</a>
     </p>
    </li>
   </ul>
@@ -1022,8 +1087,8 @@
    <p>
     El estándar UTF-8 es un sistema de codificación para muchos idiomas
     del mundo entero y está definido en
-    <a href="https://home.unicode.org/"
-      target="_blank">https://home.unicode.org/</a>.
+    <a target="_blank" rel="noreferrer"
+     href="https://home.unicode.org/">https://home.unicode.org/</a>.
    </p>
   </li>
  </ul>
@@ -1053,9 +1118,9 @@
      La especificación técnica del elemento
      <code class="language-html">meta</code>
      está en
-     <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element"
-       rel="noopener"
-       target="_blank">https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element</a>.
+     <a target="_blank" rel="noreferrer"
+     href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element">
+     https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element</a>.
     </p>
    </li>
   </ul>
@@ -1172,9 +1237,9 @@
      La especificación técnica del elemento
      <code class="language-html">title</code>
      está en
-     <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element"
-       rel="noopener"
-       target="_blank">https://html.spec.whatwg.org/multipage/semantics.html#the-title-element</a>
+     <a target="_blank" rel="noreferrer"
+     href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">
+     https://html.spec.whatwg.org/multipage/semantics.html#the-title-element</a>
     </p>
    </li>
   </ul>
@@ -1196,20 +1261,29 @@
 <section>
  <h1>Ejemplo</h1>
  <table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>2</td><td> 👽 ¡Hola Mundo!</td></tr>
-  <tr><td>3</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
- </tbody>
-</table>
+  <caption style="text-align: left">
+   <button type=button title="Copiar al portapapeles"
+     onclick="copyToClipboard(this)">
+    <span class="material-symbols-outlined">
+     content_copy
+    </span>
+   </button>
+  </caption>
+  <tbody>
+   <tr>
+    <td>1</td>
+    <td>&lt;<span class="codeReserved">body</span>&gt;</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td> 👽 ¡Hola Mundo!</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>&lt;/<span class="codeReserved">body</span>&gt;</td>
+   </tr>
+  </tbody>
+ </table>
 </section>
 <div class="lectura">
  <section>
@@ -1220,9 +1294,9 @@
      La especificación técnica del elemento
      <code class="language-html">body</code>
      está en
-     <a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element"
-       rel="noopener"
-       target="_blank">https://html.spec.whatwg.org/multipage/sections.html#the-body-element</a>
+     <a target="_blank" rel="noreferrer"
+       href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element">
+      https://html.spec.whatwg.org/multipage/sections.html#the-body-element</a>
     </p>
    </li>
   </ul>
@@ -1257,32 +1331,40 @@
    <iframe src="/src/m02html/Hreferencias.html" height=50
      title="Referencias"></iframe>
    <p class="noPrint">
-    <a target="_blank" rel="noopener"
-      href="/src/m02html/Hreferencias.html">Ábrelo en
-     otra pestaña.</a>
+    <a target="_blank" rel="noreferrer"
+      href="/src/m02html/Hreferencias.html">Ábrelo en otra pestaña.</a>
    </p>
    <p class="noPrint">
-    <a target="_blank" rel="noopener"
+    <a target="_blank" rel="noreferrer"
       href="https://gilpgedit.github.io/#%3Cbody%3E%0A%20%26copy%3B%20%26lt%3B%0A%3C%2Fbody%3E">
      Revísalo en gilpgedit.
     </a>
    </p>
   </section>
   <table class="codeShow">
- <caption style="text-align: left">
-  <button type=button title="Copiar al portapapeles"
-    onclick="copyToClipboard(this)">
-   <span class="material-symbols-outlined">
-    content_copy
-   </span>
-  </button>
- </caption>
- <tbody>
-  <tr><td>1</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>2</td><td> &copy; &lt;</td></tr>
-  <tr><td>3</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
- </tbody>
-</table>
+   <caption style="text-align: left">
+    <button type=button title="Copiar al portapapeles"
+      onclick="copyToClipboard(this)">
+     <span class="material-symbols-outlined">
+      content_copy
+     </span>
+    </button>
+   </caption>
+   <tbody>
+    <tr>
+     <td>1</td>
+     <td>&lt;<span class="codeReserved">body</span>&gt;</td>
+    </tr>
+    <tr>
+     <td>2</td>
+     <td> &copy; &lt;</td>
+    </tr>
+    <tr>
+     <td>3</td>
+     <td>&lt;/<span class="codeReserved">body</span>&gt;</td>
+    </tr>
+   </tbody>
+  </table>
  </div>
 </section>
 <div class="lectura">
@@ -1292,9 +1374,9 @@
    <li>
     <p>
      La especificación técnica de la referencia a caracter está en
-     <a href="https://html.spec.whatwg.org/multipage/syntax.html#character-references"
-       rel="noopener"
-       target="_blank">https://html.spec.whatwg.org/multipage/syntax.html#character-references</a>
+     <a target="_blank" rel="noreferrer"
+      href="https://html.spec.whatwg.org/multipage/syntax.html#character-references">
+      https://html.spec.whatwg.org/multipage/syntax.html#character-references</a>
     </p>
    </li>
   </ul>

@@ -737,8 +737,8 @@
    <h1 >13. Custom elements</h1>
    <div class="lectura"> 
     <p class="noPrint">
-     <a href="print.html" target="_blank" rel="noopener">Versión para
-      imprimir.</a>
+     <a target="_blank" rel="noreferrer"
+      href="print.html">Versión para imprimir.</a>
     </p>
    </div>
 <div class="lectura">
@@ -803,22 +803,22 @@
     <dt>React</dt>
     <dd>
      <p>
-      <a href="https://es.reactjs.org/" target="_blank"
-        rel="noopener">https://es.reactjs.org/</a>
+      <a target="_blank" rel="noreferrer"
+       href="https://es.reactjs.org/">https://es.reactjs.org/</a>
      </p>
     </dd>
     <dt>Vue.js</dt>
     <dd>
      <p>
-      <a href="https://vuejs.org/" target="_blank"
-        rel="noopener">https://vuejs.org/</a>
+      <a target="_blank" rel="noreferrer"
+       href="https://vuejs.org/">https://vuejs.org/</a>
      </p>
     </dd>
     <dt>Angular.js</dt>
     <dd>
      <p>
-      <a href="https://angular.io/" target="_blank"
-        rel="noopener">https://angular.io/</a>
+      <a target="_blank" rel="noreferrer"
+       href="https://angular.io/">https://angular.io/</a>
      </p>
     </dd>
    </dl>
@@ -833,12 +833,11 @@
    <iframe src="/src/m12custom/Asimple.html"
      title="Ejemplo de custom element simple"></iframe>
    <p class="noPrint">
-    <a href="/src/m12custom/Asimple.html" target="_blank">Ábrelo en
-     otra
-     pestaña.</a>
+    <a target="_blank" rel="noreferrer"
+     href="/src/m12custom/Asimple.html">Ábrelo en otra pestaña.</a>
    </p>
    <p class="noPrint">
-    <a target="_blank" rel="noopener"
+    <a target="_blank" rel="noreferrer"
       href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ECustom%20elements%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20elemento-1%20%7B%0A%20%20%20color%3A%20blue%3B%0A%20%20%7D%0A%0A%20%20elemento-2%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20background-color%3A%20aqua%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3ECustom%20elements%3C%2Fh1%3E%0A%20%3Celemento-1%3EHola%3C%2Felemento-1%3E%0A%20%3Celemento-1%3E%0A%20%20%3Cem%3ESaludos%3C%2Fem%3E%0A%20%3C%2Felemento-1%3E%0A%20%3Celemento-2%3E%0A%20%20Estoy%20de%20buenas%20%F0%9F%98%81%0A%20%3C%2Felemento-2%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
      Revísalo en gilpgedit.
     </a>
@@ -951,11 +950,11 @@
    <iframe src="/src/m12custom/Baccion.html" height="250"
      title="Ejemplo típico de custom element simple"></iframe>
    <p class="noPrint">
-    <a href="/src/m12custom/Baccion.html" target="_blank">Ábrelo en
-     otra pestaña.</a>
+    <a target="_blank" rel="noreferrer"
+     href="/src/m12custom/Baccion.html">Ábrelo en otra pestaña.</a>
    </p>
    <p class="noPrint">
-    <a target="_blank" rel="noopener"
+    <a target="_blank" rel="noreferrer"
       href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EAcci%C3%B3n%3C%2Ftitle%3E%0A%20%3Cscript%3E%0A%20%20class%20Elemento3%0A%20%20%20extends%20HTMLElement%20%7B%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20this.innerHTML%20%3D%20%2F*%20html%20*%2F%0A%20%20%20%20%20%60Estoy%20volando%F0%9F%9A%81%0A%20%20%20%20%20%20%3Cstrong%3E%0A%20%20%20%20%20%20%20alto%0A%20%20%20%20%20%20%3C%2Fstrong%3E.%60%0A%20%20%20%20this.addEventListener(%22click%22%2C%0A%20%20%20%20%20()%20%3D%3E%20this.clic())%0A%20%20%20%7D%0A%20%20%20clic()%20%7B%0A%20%20%20%20alert(%22ouch%22)%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.define(%0A%20%20%20%22elemento-3%22%2C%20Elemento3)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20elemento-3%20%7B%0A%20%20%20cursor%3A%20pointer%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3EAcci%C3%B3n%3C%2Fh1%3E%0A%20%3Celemento-3%3E%3C%2Felemento-3%3E%0A%20%3Cp%3ESaludos%20desde%20la%20tierra.%3C%2Fp%3E%0A%20%3Celemento-3%3E%3C%2Felemento-3%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
      Revísalo en gilpgedit.
     </a>
@@ -1070,11 +1069,11 @@
    <iframe src="/src/m12custom/Catributos.html" height="250"
      title="Ejemplo de custom element con atributos"></iframe>
    <p class="noPrint">
-    <a href="/src/m12custom/Catributos.html" target="_blank">Ábrelo en
-     otra pestaña.</a>
+    <a target="_blank" rel="noreferrer"
+     href="/src/m12custom/Catributos.html">Ábrelo en otra pestaña.</a>
    </p>
    <p class="noPrint">
-    <a target="_blank" rel="noopener"
+    <a target="_blank" rel="noreferrer"
       href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EAcci%C3%B3n%3C%2Ftitle%3E%0A%20%3Cscript%3E%0A%20%20class%20Elemento3%0A%20%20%20extends%20HTMLElement%20%7B%0A%20%20%20connectedCallback()%20%7B%0A%20%20%20%20this.innerHTML%20%3D%20%2F*%20html%20*%2F%0A%20%20%20%20%20%60Estoy%20volando%F0%9F%9A%81%0A%20%20%20%20%20%20%3Cstrong%3E%0A%20%20%20%20%20%20%20alto%0A%20%20%20%20%20%20%3C%2Fstrong%3E.%60%0A%20%20%20%20this.addEventListener(%22click%22%2C%0A%20%20%20%20%20()%20%3D%3E%20this.clic())%0A%20%20%20%7D%0A%20%20%20clic()%20%7B%0A%20%20%20%20alert(%22ouch%22)%0A%20%20%20%7D%0A%20%20%7D%0A%20%20customElements.define(%0A%20%20%20%22elemento-3%22%2C%20Elemento3)%0A%20%3C%2Fscript%3E%0A%20%3Cstyle%3E%0A%20%20elemento-3%20%7B%0A%20%20%20cursor%3A%20pointer%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Ch1%3EAcci%C3%B3n%3C%2Fh1%3E%0A%20%3Celemento-3%3E%3C%2Felemento-3%3E%0A%20%3Cp%3ESaludos%20desde%20la%20tierra.%3C%2Fp%3E%0A%20%3Celemento-3%3E%3C%2Felemento-3%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
      Revísalo en gilpgedit.
     </a>
