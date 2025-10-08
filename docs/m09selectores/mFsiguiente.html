@@ -878,87 +878,59 @@
     </a>
    </p>
   </section>
-  <muestra-codigo>
-   <div>
-    <div><span style="color: #800000;">&lt;!DOCTYPE</span>&nbsp;<span
-       style="color: #ff0000;">html</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div><span style="color: #800000;">&lt;html</span>&nbsp;<span
-       style="color: #ff0000;">lang</span>=<span
-       style="color: #0000ff;">"es"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div><span style="color: #800000;">&lt;head&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-       style="color: #ff0000;">charset</span>=<span
-       style="color: #0000ff;">"UTF-8"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;meta</span>&nbsp;<span
-       style="color: #ff0000;">name</span>=<span
-       style="color: #0000ff;">"viewport"</span></div>
-    <div>&nbsp;&nbsp;&nbsp;<span style="color: #ff0000;">content</span>=<span
-       style="color: #0000ff;">"width=device-width"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span></div>
-    <div>&nbsp;&nbsp;Selector&nbsp;sel1&nbsp;+&nbsp;sel2</div>
-    <div>&nbsp;<span style="color: #800000;">&lt;/title&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-    <div>&nbsp;&nbsp;<span
-       style="color: #008000;">/*&nbsp;Selecciona&nbsp;todos&nbsp;los</span>
-    </div>
-    <div><span
-       style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;strong</span>
-    </div>
-    <div><span
-       style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;inmediatamente&nbsp;después&nbsp;de</span>
-    </div>
-    <div><span
-       style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;em&nbsp;*/</span>
-    </div>
-    <div>&nbsp;&nbsp;<span style="color: #800000;">em</span>+<span
-       style="color: #800000;">strong</span>&nbsp;{</div>
-    <div>&nbsp;&nbsp;&nbsp;<span
-       style="color: #ff0000;">background-color</span>:&nbsp;<span
-       style="color: #0451a5;">yellow</span>;</div>
-    <div>&nbsp;&nbsp;}</div>
-    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-    <div><span style="color: #800000;">&lt;/head&gt;</span></div>
-    <div><span style="color: #800000;">&lt;body&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span></div>
-    <div>&nbsp;&nbsp;Selector</div>
-    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;em&gt;</span>sel1<span
-       style="color: #800000;">&lt;/em&gt;</span></div>
-    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;strong&gt;</span>+<span
-       style="color: #800000;">&lt;/strong&gt;</span></div>
-    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;em&gt;</span>sel2<span
-       style="color: #800000;">&lt;/em&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;/h1&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;em&gt;</span>Este<span
-       style="color: #800000;">&lt;/em&gt;</span></div>
-    <div>&nbsp;&nbsp;<span
-       style="color: #800000;">&lt;strong&gt;</span>ejercicio<span
-       style="color: #800000;">&lt;/strong&gt;</span></div>
-    <div>&nbsp;&nbsp;está</div>
-    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;em&gt;</span>muy<span
-       style="color: #800000;">&lt;/em&gt;</span></div>
-    <div>&nbsp;&nbsp;divertido</div>
-    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;strong&gt;</span>ggg<span
-       style="color: #800000;">&lt;/strong&gt;</span></div>
-    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;em&gt;</span>jajaja<span
-       style="color: #800000;">&lt;/em&gt;</span></div>
-    <div>&nbsp;&nbsp;<span
-       style="color: #008000;">&lt;!--&nbsp;subíndice&nbsp;--&gt;</span></div>
-    <div>&nbsp;&nbsp;<span style="color: #800000;">&lt;sub&gt;</span>jejeje<span
-       style="color: #800000;">&lt;/sub&gt;</span></div>
-    <div>&nbsp;&nbsp;<span
-       style="color: #800000;">&lt;strong&gt;</span>jijiji<span
-       style="color: #800000;">&lt;/strong&gt;</span></div>
-    <div>&nbsp;&nbsp;🤣🤣🤣.</div>
-    <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-    <div><span style="color: #800000;">&lt;/body&gt;</span></div>
-    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-   </div>
-  </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>4</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>6</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>8</td><td>  Selector sel1 + sel2</td></tr>
+  <tr><td>9</td><td> &lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>10</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>11</td><td>  <span class="codeComment">/* Selecciona todos los</span></td></tr>
+  <tr><td>12</td><td><span class="codeComment">   *  strong</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment">   * inmediatamente después de</span></td></tr>
+  <tr><td>14</td><td><span class="codeComment">   *  em */</span></td></tr>
+  <tr><td>15</td><td>  em+strong {</td></tr>
+  <tr><td>16</td><td>   <span class="codeReserved">background-color</span>: yellow;</td></tr>
+  <tr><td>17</td><td>  }</td></tr>
+  <tr><td>18</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>19</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>20</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>21</td><td> &lt;<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>22</td><td>  Selector</td></tr>
+  <tr><td>23</td><td>  &lt;<span class="codeReserved">em</span>&gt;sel1&lt;/<span class="codeReserved">em</span>&gt;</td></tr>
+  <tr><td>24</td><td>  &lt;<span class="codeReserved">strong</span>&gt;+&lt;/<span class="codeReserved">strong</span>&gt;</td></tr>
+  <tr><td>25</td><td>  &lt;<span class="codeReserved">em</span>&gt;sel2&lt;/<span class="codeReserved">em</span>&gt;</td></tr>
+  <tr><td>26</td><td> &lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>27</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>28</td><td>  &lt;<span class="codeReserved">em</span>&gt;Este&lt;/<span class="codeReserved">em</span>&gt;</td></tr>
+  <tr><td>29</td><td>  &lt;<span class="codeReserved">strong</span>&gt;ejercicio&lt;/<span class="codeReserved">strong</span>&gt;</td></tr>
+  <tr><td>30</td><td>  está</td></tr>
+  <tr><td>31</td><td>  &lt;<span class="codeReserved">em</span>&gt;muy&lt;/<span class="codeReserved">em</span>&gt;</td></tr>
+  <tr><td>32</td><td>  divertido</td></tr>
+  <tr><td>33</td><td>  &lt;<span class="codeReserved">strong</span>&gt;ggg&lt;/<span class="codeReserved">strong</span>&gt;</td></tr>
+  <tr><td>34</td><td>  &lt;<span class="codeReserved">em</span>&gt;jajaja&lt;/<span class="codeReserved">em</span>&gt;</td></tr>
+  <tr><td>35</td><td>  <span class="codeComment">&lt;!-- subíndice --&gt;</span></td></tr>
+  <tr><td>36</td><td>  &lt;<span class="codeReserved">sub</span>&gt;jejeje&lt;/<span class="codeReserved">sub</span>&gt;</td></tr>
+  <tr><td>37</td><td>  &lt;<span class="codeReserved">strong</span>&gt;jijiji&lt;/<span class="codeReserved">strong</span>&gt;</td></tr>
+  <tr><td>38</td><td>  🤣🤣🤣.</td></tr>
+  <tr><td>39</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>40</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>41</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>>
  </div>
 </section>
  <footer>

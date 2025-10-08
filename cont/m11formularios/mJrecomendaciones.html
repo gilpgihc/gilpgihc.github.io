@@ -24,153 +24,74 @@
    </a>
   </p>
  </section>
- <muestra-codigo>
-  <div>
-   <div><span
-      style="color: #800000;">&lt;!DOCTYPE</span> <span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span
-      style="color: #800000;">&lt;html</span> <span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span>Recomendaciones<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div><span
-      style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;form</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #ff0000;">action</span>=<span
-      style="color: #0000ff;">"javascript:procesa()"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>Recomendaciones<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;label&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;Género</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;select</span> <span
-      style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">"inGenero"</span> <span
-      style="color: #ff0000;">required</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;option</span> <span
-      style="color: #ff0000;">value</span>=<span
-      style="color: #0000ff;">""</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- Selecciona --</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/option&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;option</span> <span
-      style="color: #ff0000;">value</span>=<span
-      style="color: #0000ff;">"pop"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pop</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/option&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;option</span> <span
-      style="color: #ff0000;">value</span>=<span
-      style="color: #0000ff;">"reg"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reguetón</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/option&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/select&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/label&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;button&gt;</span>Recomendar<span
-      style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/form&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">procesa</span>()&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">genero</span> = <span
-      style="color: #001080;">inGenero</span>.<span
-      style="color: #001080;">value</span></div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">resultado</span> =</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #795e26;">recomienda</span>(<span
-      style="color: #0070c1;">genero</span>)</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #795e26;">alert</span>(<span
-      style="color: #0070c1;">resultado</span>)</div>
-   <div>&nbsp;&nbsp;}</div><br>
-   <div>&nbsp;&nbsp;<span
-      style="color: #008000;">/**&nbsp;@param&nbsp;{string}&nbsp;genero&nbsp;*/</span></div>
-   <div>&nbsp;&nbsp;<span
-      style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">recomienda</span>(<span
-      style="color: #001080;">genero</span>)&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;<span
-      style="color: #af00db;">if</span> (<span
-      style="color: #001080;">genero</span> === <span
-      style="color: #a31515;">"pop"</span>)&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #af00db;">return</span> <span
-      style="color: #a31515;">"Para el pop te "</span> +</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #a31515;">"recomiendo a Dua Lipa."</span></div>
-   <div>&nbsp;&nbsp;&nbsp;}&nbsp;<span
-      style="color: #af00db;">else</span> <span
-      style="color: #af00db;">if</span> (<span
-      style="color: #001080;">genero</span> === <span
-      style="color: #a31515;">"reg"</span>)&nbsp;{</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #af00db;">return</span> <span
-      style="color: #a31515;">"Para el reguetón te "</span> +</div>
-   <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-      style="color: #a31515;">"recomiendo a Bad Bunny."</span></div>
-   <div>&nbsp;&nbsp;&nbsp;}</div>
-   <div>&nbsp;&nbsp;}</div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span
-      style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span
-      style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td> &lt;<span class="codeReserved">title</span>&gt;Recomendaciones&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>9</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>12</td><td> &lt;<span class="codeReserved">form</span></td></tr>
+  <tr><td>13</td><td>   action=<span class="codeString">"javascript:procesa()"</span>&gt;</td></tr>
+  <tr><td>14</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Recomendaciones&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>15</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>16</td><td>   &lt;<span class="codeReserved">label</span>&gt;</td></tr>
+  <tr><td>17</td><td>    Género</td></tr>
+  <tr><td>18</td><td>    &lt;<span class="codeReserved">select</span> id=<span class="codeString">"inGenero"</span> required&gt;</td></tr>
+  <tr><td>19</td><td>     &lt;<span class="codeReserved">option</span> value=<span class="codeString">""</span>&gt;</td></tr>
+  <tr><td>20</td><td>      -- Selecciona --</td></tr>
+  <tr><td>21</td><td>     &lt;/<span class="codeReserved">option</span>&gt;</td></tr>
+  <tr><td>22</td><td>     &lt;<span class="codeReserved">option</span> value=<span class="codeString">"pop"</span>&gt;</td></tr>
+  <tr><td>23</td><td>      Pop</td></tr>
+  <tr><td>24</td><td>     &lt;/<span class="codeReserved">option</span>&gt;</td></tr>
+  <tr><td>25</td><td>     &lt;<span class="codeReserved">option</span> value=<span class="codeString">"reg"</span>&gt;</td></tr>
+  <tr><td>26</td><td>      Reguetón</td></tr>
+  <tr><td>27</td><td>     &lt;/<span class="codeReserved">option</span>&gt;</td></tr>
+  <tr><td>28</td><td>    &lt;/<span class="codeReserved">select</span>&gt;</td></tr>
+  <tr><td>29</td><td>   &lt;/<span class="codeReserved">label</span>&gt;</td></tr>
+  <tr><td>30</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>31</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>32</td><td>   &lt;<span class="codeReserved">button</span>&gt;Recomendar&lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+  <tr><td>33</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>34</td><td> &lt;/<span class="codeReserved">form</span>&gt;</td></tr>
+  <tr><td>35</td><td> &lt;<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>36</td><td>  <span class="codeReserved">function</span> procesa() {</td></tr>
+  <tr><td>37</td><td>   <span class="codeReserved">const</span> genero = inGenero.value</td></tr>
+  <tr><td>38</td><td>   <span class="codeReserved">const</span> resultado =</td></tr>
+  <tr><td>39</td><td>    recomienda(genero)</td></tr>
+  <tr><td>40</td><td>   alert(resultado)</td></tr>
+  <tr><td>41</td><td>  }</td></tr>
+  <tr><td>42</td><td></td></tr>
+  <tr><td>43</td><td>  <span class="codeComment">/** <span class="codeReserved">@param</span> {string} genero */</span></td></tr>
+  <tr><td>44</td><td>  <span class="codeReserved">function</span> recomienda(genero) {</td></tr>
+  <tr><td>45</td><td>   <span class="codeReserved">if</span> (genero === <span class="codeString">"pop"</span>) {</td></tr>
+  <tr><td>46</td><td>    <span class="codeReserved">return</span> <span class="codeString">"Para el pop te "</span> +</td></tr>
+  <tr><td>47</td><td>     <span class="codeString">"recomiendo a Dua Lipa."</span></td></tr>
+  <tr><td>48</td><td>   } <span class="codeReserved">else</span> <span class="codeReserved">if</span> (genero === <span class="codeString">"reg"</span>) {</td></tr>
+  <tr><td>49</td><td>    <span class="codeReserved">return</span> <span class="codeString">"Para el reguetón te "</span> +</td></tr>
+  <tr><td>50</td><td>     <span class="codeString">"recomiendo a Bad Bunny."</span></td></tr>
+  <tr><td>51</td><td>   }</td></tr>
+  <tr><td>52</td><td>  }</td></tr>
+  <tr><td>53</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>54</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>55</td><td></td></tr>
+  <tr><td>56</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </div>
 <div class="lectura">
  <section>
