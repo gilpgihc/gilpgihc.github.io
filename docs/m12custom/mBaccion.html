@@ -908,84 +908,60 @@
     </a>
    </p>
   </section>
-  <muestra-codigo>
-   <div>
-    <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
-       style="color: #ff0000;">html</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div><span style="color: #800000;">&lt;html</span> <span
-       style="color: #ff0000;">lang</span>=<span
-       style="color: #0000ff;">"es"</span><span
-       style="color: #800000;">&gt;</span></div><br>
-    <div><span style="color: #800000;">&lt;head&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-       style="color: #ff0000;">charset</span>=<span
-       style="color: #0000ff;">"UTF-8"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-       style="color: #ff0000;">name</span>=<span
-       style="color: #0000ff;">"viewport"</span></div>
-    <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
-       style="color: #0000ff;">"width=device-width"</span><span
-       style="color: #800000;">&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Acción<span
-       style="color: #800000;">&lt;/title&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
-    <div>&nbsp; <span style="color: #0000ff;">class</span> <span
-       style="color: #267f99;">Elemento3</span></div>
-    <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
-       style="color: #267f99;">HTMLElement</span> {</div>
-    <div>&nbsp; &nbsp;<span
-       style="color: #795e26;">connectedCallback</span>() {</div>
-    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-       style="color: #001080;">innerHTML</span> = <span
-       style="color: #008000;">/* html */</span></div>
-    <div>&nbsp; &nbsp; &nbsp;`Estoy volando🚁</div>
-    <div>&nbsp; &nbsp; &nbsp; <span
-       style="color: #800000;">&lt;strong&gt;</span></div>
-    <div>&nbsp; &nbsp; &nbsp; &nbsp;alto</div>
-    <div>&nbsp; &nbsp; &nbsp; <span
-       style="color: #800000;">&lt;/strong&gt;</span>.`</div>
-    <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-       style="color: #795e26;">addEventListener</span>(<span
-       style="color: #a31515;">"click"</span>,</div>
-    <div>&nbsp; &nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
-       style="color: #0000ff;">this</span>.<span
-       style="color: #795e26;">clic</span>())</div>
-    <div>&nbsp; &nbsp;}</div>
-    <div>&nbsp; &nbsp;<span style="color: #795e26;">clic</span>() {</div>
-    <div>&nbsp; &nbsp; <span style="color: #795e26;">alert</span>(<span
-       style="color: #a31515;">"ouch"</span>)</div>
-    <div>&nbsp; &nbsp;}</div>
-    <div>&nbsp; }</div>
-    <div>&nbsp; <span style="color: #001080;">customElements</span>.<span
-       style="color: #795e26;">define</span>(</div>
-    <div>&nbsp; &nbsp;<span style="color: #a31515;">"elemento-3"</span>, <span
-       style="color: #267f99;">Elemento3</span>)</div>
-    <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-    <div>&nbsp; <span style="color: #800000;">elemento-3</span> {</div>
-    <div>&nbsp; &nbsp;<span style="color: #ff0000;">cursor</span>: <span
-       style="color: #0451a5;">pointer</span>;</div>
-    <div>&nbsp; }</div>
-    <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-    <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-    <div><span style="color: #800000;">&lt;body&gt;</span></div>
-    <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>Acción<span
-       style="color: #800000;">&lt;/h1&gt;</span></div>
-    <div>&nbsp;<span
-       style="color: #800000;">&lt;elemento-3&gt;&lt;/elemento-3&gt;</span>
-    </div>
-    <div>&nbsp;<span
-       style="color: #800000;">&lt;p&gt;</span>Saludos desde la tierra.<span
-       style="color: #800000;">&lt;/p&gt;</span></div>
-    <div>&nbsp;<span
-       style="color: #800000;">&lt;elemento-3&gt;&lt;/elemento-3&gt;</span>
-    </div>
-    <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
-    <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-   </div>
-  </muestra-codigo>
+  <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td> &lt;<span class="codeReserved">title</span>&gt;Acción&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>10</td><td>  <span class="codeReserved">class</span> Elemento3</td></tr>
+  <tr><td>11</td><td>   <span class="codeReserved">extends</span> HTMLElement {</td></tr>
+  <tr><td>12</td><td>   connectedCallback() {</td></tr>
+  <tr><td>13</td><td>    <span class="codeReserved">this</span>.innerHTML = <span class="codeComment">/* html */</span></td></tr>
+  <tr><td>14</td><td>     <span class="codeString">`Estoy volando🚁</span></td></tr>
+  <tr><td>15</td><td><span class="codeString">      &lt;<span class="codeReserved">strong</span>&gt;</span></td></tr>
+  <tr><td>16</td><td><span class="codeString">       alto</span></td></tr>
+  <tr><td>17</td><td><span class="codeString">      &lt;/<span class="codeReserved">strong</span>&gt;.`</span></td></tr>
+  <tr><td>18</td><td>    <span class="codeReserved">this</span>.addEventListener(<span class="codeString">"click"</span>,</td></tr>
+  <tr><td>19</td><td>     () =&gt; <span class="codeReserved">this</span>.clic())</td></tr>
+  <tr><td>20</td><td>   }</td></tr>
+  <tr><td>21</td><td>   clic() {</td></tr>
+  <tr><td>22</td><td>    alert(<span class="codeString">"ouch"</span>)</td></tr>
+  <tr><td>23</td><td>   }</td></tr>
+  <tr><td>24</td><td>  }</td></tr>
+  <tr><td>25</td><td>  customElements.define(</td></tr>
+  <tr><td>26</td><td>   <span class="codeString">"elemento-3"</span>, Elemento3)</td></tr>
+  <tr><td>27</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>28</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>29</td><td>  elemento-3 {</td></tr>
+  <tr><td>30</td><td>   <span class="codeReserved">cursor</span>: pointer;</td></tr>
+  <tr><td>31</td><td>  }</td></tr>
+  <tr><td>32</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>33</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>34</td><td></td></tr>
+  <tr><td>35</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>36</td><td> &lt;<span class="codeReserved">h1</span>&gt;Acción&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>37</td><td> &lt;<span class="codeReserved">elemento-3</span>&gt;&lt;/<span class="codeReserved">elemento-3</span>&gt;</td></tr>
+  <tr><td>38</td><td> &lt;<span class="codeReserved">p</span>&gt;Saludos desde la tierra.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>39</td><td> &lt;<span class="codeReserved">elemento-3</span>&gt;&lt;/<span class="codeReserved">elemento-3</span>&gt;</td></tr>
+  <tr><td>40</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>41</td><td></td></tr>
+  <tr><td>42</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
  </div>
 </section>
  <footer>

@@ -866,140 +866,87 @@
    </a>
   </p>
  </section>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span> <span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span>Mueve con Botones<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">.sprite</span> {</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
-      style="color: #0451a5;">fixed</span>;</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span
-      style="color: #098658;">3rem</span>;</div>
-   <div>&nbsp; }</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>Mueve con Botones<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;button</span> <span
-      style="color: #ff0000;">onclick</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #795e26;">retrocede</span><span
-      style="color: #0000ff;">()</span><span
-      style="color: #0000ff;">"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp;◀</div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">&lt;button</span> <span
-      style="color: #ff0000;">onclick</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #795e26;">avanza</span><span
-      style="color: #0000ff;">()</span><span
-      style="color: #0000ff;">"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp;▶</div>
-   <div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;output</span> <span
-      style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">"carita"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"sprite"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; 😄</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/output&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
-      style="color: #001080;">yBase</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
-      style="color: #001080;">xMenor</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
-      style="color: #001080;">xMayor</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">VELOCIDAD</span> = <span
-      style="color: #098658;">30</span></div>
-   <div>&nbsp; <span style="color: #795e26;">actualiza</span>()</div>
-   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
-      style="color: #001080;">x</span> = <span
-      style="color: #001080;">xMenor</span></div>
-   <div>&nbsp; <span style="color: #795e26;">dibuja</span>()</div><br>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">retrocede</span>() {</div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">actualiza</span>()</div>
-   <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-      style="color: #001080;">x</span> &gt; <span
-      style="color: #001080;">xMenor</span>) {</div>
-   <div>&nbsp; &nbsp; <span style="color: #001080;">x</span> -= <span
-      style="color: #0070c1;">VELOCIDAD</span></div>
-   <div>&nbsp; &nbsp;}</div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">dibuja</span>()</div>
-   <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">avanza</span>() {</div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">actualiza</span>()</div>
-   <div>&nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-      style="color: #001080;">x</span> &lt; <span
-      style="color: #001080;">xMayor</span>) {</div>
-   <div>&nbsp; &nbsp; <span style="color: #001080;">x</span> += <span
-      style="color: #0070c1;">VELOCIDAD</span></div>
-   <div>&nbsp; &nbsp;}</div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">dibuja</span>()</div>
-   <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">actualiza</span>() {</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">yBase</span> = <span
-      style="color: #001080;">innerHeight</span> / <span
-      style="color: #098658;">2</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">xMenor</span> = <span
-      style="color: #001080;">innerWidth</span> / <span
-      style="color: #098658;">5</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">xMayor</span> = <span
-      style="color: #098658;">4</span> * <span
-      style="color: #001080;">innerWidth</span> / <span
-      style="color: #098658;">5</span></div>
-   <div>&nbsp; }</div><br>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">dibuja</span>() {</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">carita</span>.<span
-      style="color: #001080;">style</span> = <span
-      style="color: #a31515;">`left: </span><span
-      style="color: #0000ff;">${</span><span
-      style="color: #001080;">x</span><span
-      style="color: #0000ff;">}</span><span style="color: #a31515;">px;</span>
-   </div>
-   <div><span style="color: #a31515;">&nbsp; &nbsp; bottom: </span><span
-      style="color: #0000ff;">${</span><span
-      style="color: #001080;">yBase</span><span
-      style="color: #0000ff;">}</span><span style="color: #a31515;">px`</span>
-   </div>
-   <div>&nbsp; }</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td> &lt;<span class="codeReserved">title</span>&gt;Mueve con Botones&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>10</td><td>  .sprite {</td></tr>
+  <tr><td>11</td><td>   <span class="codeReserved">position</span>: fixed;</td></tr>
+  <tr><td>12</td><td>   <span class="codeReserved">font-size</span>: 3rem;</td></tr>
+  <tr><td>13</td><td>  }</td></tr>
+  <tr><td>14</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>15</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>16</td><td></td></tr>
+  <tr><td>17</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>18</td><td> &lt;<span class="codeReserved">h1</span>&gt;Mueve con Botones&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>19</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>20</td><td>  &lt;<span class="codeReserved">button</span> onclick=<span class="codeString">"retrocede()"</span>&gt;</td></tr>
+  <tr><td>21</td><td>   ◀</td></tr>
+  <tr><td>22</td><td>  &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+  <tr><td>23</td><td>  &lt;<span class="codeReserved">button</span> onclick=<span class="codeString">"avanza()"</span>&gt;</td></tr>
+  <tr><td>24</td><td>   ▶</td></tr>
+  <tr><td>25</td><td>  &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+  <tr><td>26</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>27</td><td> &lt;<span class="codeReserved">output</span> id=<span class="codeString">"carita"</span></td></tr>
+  <tr><td>28</td><td>   <span class="codeReserved">class</span>=<span class="codeString">"sprite"</span>&gt;</td></tr>
+  <tr><td>29</td><td>  😄</td></tr>
+  <tr><td>30</td><td> &lt;/<span class="codeReserved">output</span>&gt;</td></tr>
+  <tr><td>31</td><td> &lt;<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>32</td><td>  <span class="codeReserved">let</span> yBase</td></tr>
+  <tr><td>33</td><td>  <span class="codeReserved">let</span> xMenor</td></tr>
+  <tr><td>34</td><td>  <span class="codeReserved">let</span> xMayor</td></tr>
+  <tr><td>35</td><td>  <span class="codeReserved">const</span> VELOCIDAD = 30</td></tr>
+  <tr><td>36</td><td>  actualiza()</td></tr>
+  <tr><td>37</td><td>  <span class="codeReserved">let</span> x = xMenor</td></tr>
+  <tr><td>38</td><td>  dibuja()</td></tr>
+  <tr><td>39</td><td></td></tr>
+  <tr><td>40</td><td>  <span class="codeReserved">function</span> retrocede() {</td></tr>
+  <tr><td>41</td><td>   actualiza()</td></tr>
+  <tr><td>42</td><td>   <span class="codeReserved">if</span> (x &gt; xMenor) {</td></tr>
+  <tr><td>43</td><td>    x -= VELOCIDAD</td></tr>
+  <tr><td>44</td><td>   }</td></tr>
+  <tr><td>45</td><td>   dibuja()</td></tr>
+  <tr><td>46</td><td>  }</td></tr>
+  <tr><td>47</td><td></td></tr>
+  <tr><td>48</td><td>  <span class="codeReserved">function</span> avanza() {</td></tr>
+  <tr><td>49</td><td>   actualiza()</td></tr>
+  <tr><td>50</td><td>   <span class="codeReserved">if</span> (x &lt; xMayor) {</td></tr>
+  <tr><td>51</td><td>    x += VELOCIDAD</td></tr>
+  <tr><td>52</td><td>   }</td></tr>
+  <tr><td>53</td><td>   dibuja()</td></tr>
+  <tr><td>54</td><td>  }</td></tr>
+  <tr><td>55</td><td></td></tr>
+  <tr><td>56</td><td>  <span class="codeReserved">function</span> actualiza() {</td></tr>
+  <tr><td>57</td><td>   yBase = innerHeight / 2</td></tr>
+  <tr><td>58</td><td>   xMenor = innerWidth / 5</td></tr>
+  <tr><td>59</td><td>   xMayor = 4 * innerWidth / 5</td></tr>
+  <tr><td>60</td><td>  }</td></tr>
+  <tr><td>61</td><td></td></tr>
+  <tr><td>62</td><td>  <span class="codeReserved">function</span> dibuja() {</td></tr>
+  <tr><td>63</td><td>   carita.style = <span class="codeString">`<span class="codeReserved">left</span>: ${x}px;</span></td></tr>
+  <tr><td>64</td><td><span class="codeString">    <span class="codeReserved">bottom</span>: ${yBase}px`</span></td></tr>
+  <tr><td>65</td><td>  }</td></tr>
+  <tr><td>66</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>67</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>68</td><td></td></tr>
+  <tr><td>69</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </div>
  <footer>
  <p>

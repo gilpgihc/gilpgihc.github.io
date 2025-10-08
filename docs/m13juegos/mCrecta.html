@@ -866,108 +866,63 @@
    </a>
   </p>
  </section>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span> <span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span>Animación recta<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">.sprite</span> {</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
-      style="color: #0451a5;">fixed</span>;</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span
-      style="color: #098658;">3rem</span>;</div>
-   <div>&nbsp; }</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>Animación recta<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;output</span> <span
-      style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">"carita"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"sprite"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; 😄</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/output&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">X_INICIAL</span> = <span
-      style="color: #098658;">0</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">REFRESCO</span> = <span
-      style="color: #098658;">5</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">VELOCIDAD</span> = <span
-      style="color: #098658;">0.5</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
-      style="color: #001080;">x</span> = <span
-      style="color: #0070c1;">X_INICIAL</span></div>
-   <div>&nbsp; <span style="color: #795e26;">setInterval</span>(<span
-      style="color: #795e26;">avanza</span>, <span
-      style="color: #0070c1;">REFRESCO</span>)</div><br>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">avanza</span>() {</div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">xFinal</span> = <span
-      style="color: #001080;">innerWidth</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">yInicial</span> = <span
-      style="color: #001080;">innerHeight</span> / <span
-      style="color: #098658;">2</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">yFinal</span> = <span
-      style="color: #001080;">innerHeight</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">y</span> = ((<span
-      style="color: #0070c1;">yFinal</span> - <span
-      style="color: #0070c1;">yInicial</span>) /</div>
-   <div>&nbsp; &nbsp; (<span style="color: #0070c1;">xFinal</span> - <span
-      style="color: #0070c1;">X_INICIAL</span>)) *</div>
-   <div>&nbsp; &nbsp; (<span style="color: #001080;">x</span> - <span
-      style="color: #0070c1;">X_INICIAL</span>) +</div>
-   <div>&nbsp; &nbsp; <span style="color: #0070c1;">yInicial</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">carita</span>.<span
-      style="color: #001080;">style</span> =</div>
-   <div>&nbsp; &nbsp; <span style="color: #a31515;">`left: </span><span
-      style="color: #0000ff;">${</span><span
-      style="color: #001080;">x</span><span
-      style="color: #0000ff;">}</span><span
-      style="color: #a31515;">px; bottom: </span><span
-      style="color: #0000ff;">${</span><span
-      style="color: #0070c1;">y</span><span
-      style="color: #0000ff;">}</span><span
-      style="color: #a31515;">px`</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">x</span> = (<span
-      style="color: #001080;">x</span> + <span
-      style="color: #0070c1;">VELOCIDAD</span>) % <span
-      style="color: #0070c1;">xFinal</span></div>
-   <div>&nbsp; }</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td> &lt;<span class="codeReserved">title</span>&gt;Animación recta&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>10</td><td>  .sprite {</td></tr>
+  <tr><td>11</td><td>   <span class="codeReserved">position</span>: fixed;</td></tr>
+  <tr><td>12</td><td>   <span class="codeReserved">font-size</span>: 3rem;</td></tr>
+  <tr><td>13</td><td>  }</td></tr>
+  <tr><td>14</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>15</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>16</td><td></td></tr>
+  <tr><td>17</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>18</td><td> &lt;<span class="codeReserved">h1</span>&gt;Animación recta&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>19</td><td> &lt;<span class="codeReserved">output</span> id=<span class="codeString">"carita"</span></td></tr>
+  <tr><td>20</td><td>   <span class="codeReserved">class</span>=<span class="codeString">"sprite"</span>&gt;</td></tr>
+  <tr><td>21</td><td>  😄</td></tr>
+  <tr><td>22</td><td> &lt;/<span class="codeReserved">output</span>&gt;</td></tr>
+  <tr><td>23</td><td> &lt;<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>24</td><td>  <span class="codeReserved">const</span> X_INICIAL = 0</td></tr>
+  <tr><td>25</td><td>  <span class="codeReserved">const</span> REFRESCO = 5</td></tr>
+  <tr><td>26</td><td>  <span class="codeReserved">const</span> VELOCIDAD = 0.5</td></tr>
+  <tr><td>27</td><td>  <span class="codeReserved">let</span> x = X_INICIAL</td></tr>
+  <tr><td>28</td><td>  setInterval(avanza, REFRESCO)</td></tr>
+  <tr><td>29</td><td></td></tr>
+  <tr><td>30</td><td>  <span class="codeReserved">function</span> avanza() {</td></tr>
+  <tr><td>31</td><td>   <span class="codeReserved">const</span> xFinal = innerWidth</td></tr>
+  <tr><td>32</td><td>   <span class="codeReserved">const</span> yInicial = innerHeight / 2</td></tr>
+  <tr><td>33</td><td>   <span class="codeReserved">const</span> yFinal = innerHeight</td></tr>
+  <tr><td>34</td><td>   <span class="codeReserved">const</span> y = ((yFinal - yInicial) /</td></tr>
+  <tr><td>35</td><td>    (xFinal - X_INICIAL)) *</td></tr>
+  <tr><td>36</td><td>    (x - X_INICIAL) +</td></tr>
+  <tr><td>37</td><td>    yInicial</td></tr>
+  <tr><td>38</td><td>   carita.style =</td></tr>
+  <tr><td>39</td><td>    <span class="codeString">`<span class="codeReserved">left</span>: ${x}px; <span class="codeReserved">bottom</span>: ${y}px`</span></td></tr>
+  <tr><td>40</td><td>   x = (x + VELOCIDAD) % xFinal</td></tr>
+  <tr><td>41</td><td>  }</td></tr>
+  <tr><td>42</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>43</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>44</td><td></td></tr>
+  <tr><td>45</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </div>
  <footer>
  <p>

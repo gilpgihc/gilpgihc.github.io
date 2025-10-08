@@ -867,143 +867,80 @@
    </a>
   </p>
  </section>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span> <span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span>Custom Elements<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">figura-web</span> {</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
-      style="color: #0451a5;">fixed</span>;</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">font-size</span>: <span
-      style="color: #098658;">60px</span>;</div>
-   <div>&nbsp; }</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">class</span> <span
-      style="color: #267f99;">FiguraWeb</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">extends</span> <span
-      style="color: #267f99;">HTMLElement</span> {</div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #795e26;">connectedCallback</span>() {</div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">x</span> = <span
-      style="color: #098658;">0</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">attrY</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">getAttribute</span>(<span
-      style="color: #a31515;">"y"</span>)</div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">attrVel</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">this</span>.<span
-      style="color: #795e26;">getAttribute</span>(<span
-      style="color: #a31515;">"velocidad"</span>)</div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">y</span> = <span
-      style="color: #795e26;">parseInt</span>(<span
-      style="color: #0070c1;">attrY</span>, <span
-      style="color: #098658;">10</span>)</div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">velocidad</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">parseInt</span>(<span
-      style="color: #0070c1;">attrVel</span>, <span
-      style="color: #098658;">10</span>)</div>
-   <div>&nbsp; &nbsp;}</div>
-   <div>&nbsp; &nbsp;<span style="color: #795e26;">muevete</span>() {</div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #0070c1;">style</span>.<span
-      style="color: #001080;">right</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">`</span><span
-      style="color: #0000ff;">${</span><span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">x</span><span
-      style="color: #0000ff;">}</span><span
-      style="color: #a31515;">px`</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #0070c1;">style</span>.<span
-      style="color: #001080;">top</span> = <span
-      style="color: #a31515;">`</span><span
-      style="color: #0000ff;">${</span><span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">y</span><span
-      style="color: #0000ff;">}</span><span
-      style="color: #a31515;">px`</span></div>
-   <div>&nbsp; &nbsp; <span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">x</span> =</div>
-   <div>&nbsp; &nbsp; &nbsp;(<span style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">x</span> + <span
-      style="color: #0000ff;">this</span>.<span
-      style="color: #001080;">velocidad</span>) %</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #001080;">innerWidth</span></div>
-   <div>&nbsp; &nbsp;}</div>
-   <div>&nbsp; }</div>
-   <div>&nbsp; <span style="color: #001080;">customElements</span>.<span
-      style="color: #795e26;">define</span>(</div>
-   <div>&nbsp; &nbsp;<span style="color: #a31515;">"figura-web"</span>, <span
-      style="color: #267f99;">FiguraWeb</span>)</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>Custom Elements<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;figura-web</span> <span
-      style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">"fantasma"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">y</span>=<span
-      style="color: #0000ff;">"0"</span> <span
-      style="color: #ff0000;">velocidad</span>=<span
-      style="color: #0000ff;">"20"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; 👻</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/figura-web&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;figura-web</span> <span
-      style="color: #ff0000;">id</span>=<span
-      style="color: #0000ff;">"sonrisa"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">y</span>=<span
-      style="color: #0000ff;">"100"</span> <span
-      style="color: #ff0000;">velocidad</span>=<span
-      style="color: #0000ff;">"10"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; 😁</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/figura-web&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp; <span style="color: #795e26;">setInterval</span>(<span
-      style="color: #795e26;">anima</span>, <span
-      style="color: #098658;">120</span>)</div><br>
-   <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-      style="color: #795e26;">anima</span>() {</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">fantasma</span>.<span
-      style="color: #795e26;">muevete</span>()</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">sonrisa</span>.<span
-      style="color: #795e26;">muevete</span>()</div>
-   <div>&nbsp; }</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td> &lt;<span class="codeReserved">title</span>&gt;Custom Elements&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>10</td><td>  figura-web {</td></tr>
+  <tr><td>11</td><td>   <span class="codeReserved">position</span>: fixed;</td></tr>
+  <tr><td>12</td><td>   <span class="codeReserved">font-size</span>: 60px;</td></tr>
+  <tr><td>13</td><td>  }</td></tr>
+  <tr><td>14</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>15</td><td> &lt;<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>16</td><td>  <span class="codeReserved">class</span> FiguraWeb</td></tr>
+  <tr><td>17</td><td>   <span class="codeReserved">extends</span> HTMLElement {</td></tr>
+  <tr><td>18</td><td>   connectedCallback() {</td></tr>
+  <tr><td>19</td><td>    <span class="codeReserved">this</span>.x = 0</td></tr>
+  <tr><td>20</td><td>    <span class="codeReserved">const</span> attrY =</td></tr>
+  <tr><td>21</td><td>     <span class="codeReserved">this</span>.getAttribute(<span class="codeString">"y"</span>)</td></tr>
+  <tr><td>22</td><td>    <span class="codeReserved">const</span> attrVel =</td></tr>
+  <tr><td>23</td><td>     <span class="codeReserved">this</span>.getAttribute(<span class="codeString">"velocidad"</span>)</td></tr>
+  <tr><td>24</td><td>    <span class="codeReserved">this</span>.y = parseInt(attrY, 10)</td></tr>
+  <tr><td>25</td><td>    <span class="codeReserved">this</span>.velocidad =</td></tr>
+  <tr><td>26</td><td>     parseInt(attrVel, 10)</td></tr>
+  <tr><td>27</td><td>   }</td></tr>
+  <tr><td>28</td><td>   muevete() {</td></tr>
+  <tr><td>29</td><td>    <span class="codeReserved">this</span>.style.<span class="codeReserved">right</span> =</td></tr>
+  <tr><td>30</td><td>     <span class="codeString">`${<span class="codeReserved">this</span>.x}px`</span></td></tr>
+  <tr><td>31</td><td>    <span class="codeReserved">this</span>.style.<span class="codeReserved">top</span> = <span class="codeString">`${<span class="codeReserved">this</span>.y}px`</span></td></tr>
+  <tr><td>32</td><td>    <span class="codeReserved">this</span>.x =</td></tr>
+  <tr><td>33</td><td>     (<span class="codeReserved">this</span>.x + <span class="codeReserved">this</span>.velocidad) %</td></tr>
+  <tr><td>34</td><td>     innerWidth</td></tr>
+  <tr><td>35</td><td>   }</td></tr>
+  <tr><td>36</td><td>  }</td></tr>
+  <tr><td>37</td><td>  customElements.define(</td></tr>
+  <tr><td>38</td><td>   <span class="codeString">"figura-web"</span>, FiguraWeb)</td></tr>
+  <tr><td>39</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>40</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>41</td><td></td></tr>
+  <tr><td>42</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>43</td><td> &lt;<span class="codeReserved">h1</span>&gt;Custom Elements&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>44</td><td> &lt;<span class="codeReserved">figura-web</span> id=<span class="codeString">"fantasma"</span></td></tr>
+  <tr><td>45</td><td>   y=<span class="codeString">"0"</span> velocidad=<span class="codeString">"20"</span>&gt;</td></tr>
+  <tr><td>46</td><td>  👻</td></tr>
+  <tr><td>47</td><td> &lt;/<span class="codeReserved">figura-web</span>&gt;</td></tr>
+  <tr><td>48</td><td> &lt;<span class="codeReserved">figura-web</span> id=<span class="codeString">"sonrisa"</span></td></tr>
+  <tr><td>49</td><td>   y=<span class="codeString">"100"</span> velocidad=<span class="codeString">"10"</span>&gt;</td></tr>
+  <tr><td>50</td><td>  😁</td></tr>
+  <tr><td>51</td><td> &lt;/<span class="codeReserved">figura-web</span>&gt;</td></tr>
+  <tr><td>52</td><td> &lt;<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>53</td><td>  setInterval(anima, 120)</td></tr>
+  <tr><td>54</td><td></td></tr>
+  <tr><td>55</td><td>  <span class="codeReserved">function</span> anima() {</td></tr>
+  <tr><td>56</td><td>   fantasma.muevete()</td></tr>
+  <tr><td>57</td><td>   sonrisa.muevete()</td></tr>
+  <tr><td>58</td><td>  }</td></tr>
+  <tr><td>59</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>60</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>61</td><td></td></tr>
+  <tr><td>62</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </div>
  <footer>
  <p>

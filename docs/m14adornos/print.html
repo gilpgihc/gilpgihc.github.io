@@ -790,106 +790,64 @@
    </a>
   </p>
  </section>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span> <span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span>Adorno Horizontal<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">.sprite</span> {</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
-      style="color: #0451a5;">fixed</span>;</div>
-   <div>&nbsp; }</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>Adorno Horizontal<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">Y</span> = <span
-      style="color: #098658;">0</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">DISTANCIA</span> = <span
-      style="color: #098658;">20</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">X_MÁXIMA</span> = <span
-      style="color: #001080;">innerWidth</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
-      style="color: #001080;">x</span> = <span
-      style="color: #098658;">0</span></div>
-   <div>&nbsp; <span style="color: #008000;">/**</span></div>
-   <div><span
-      style="color: #008000;">&nbsp; &nbsp;* En esta variable se agregael</span>
-   </div>
-   <div><span
-      style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;HTML&nbsp;de&nbsp;las&nbsp;figuras&nbsp;que&nbsp;forman</span>
-   </div>
-   <div><span style="color: #008000;">&nbsp; &nbsp;* el adorno.</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp;*/</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
-      style="color: #001080;">inner</span> = <span
-      style="color: #a31515;">""</span></div>
-   <div>&nbsp; <span style="color: #af00db;">while</span> (<span
-      style="color: #001080;">x</span> &lt; <span
-      style="color: #0070c1;">X_MÁXIMA</span>) {</div>
-   <div>&nbsp; &nbsp;<span
-      style="color: #008000;">/* Agrega el HTML de un emoji a</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp; * inner. */</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">inner</span> += <span
-      style="color: #008000;">/* html */</span></div>
-   <div>&nbsp; &nbsp; `<span style="color: #800000;">&lt;div</span> <span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"sprite"</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">style</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #0000ff;">top: ${</span><span
-      style="color: #0070c1;">Y</span><span
-      style="color: #0000ff;">}px;</span></div>
-   <div><span
-      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;${</span><span
-      style="color: #001080;">x</span><span
-      style="color: #0000ff;">}px;</span><span
-      style="color: #0000ff;">"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; 💕</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/div&gt;</span>`</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">x</span> += <span
-      style="color: #0070c1;">DISTANCIA</span></div>
-   <div>&nbsp; }</div>
-   <div>&nbsp; <span
-      style="color: #008000;">/* Agrega las figuras al HTML de</span></div>
-   <div><span style="color: #008000;">&nbsp; &nbsp;* body. */</span></div>
-   <div>&nbsp; <span style="color: #001080;">document</span>.<span
-      style="color: #001080;">body</span>.<span
-      style="color: #001080;">innerHTML</span> += <span
-      style="color: #001080;">inner</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td> &lt;<span class="codeReserved">title</span>&gt;Adorno Horizontal&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>10</td><td>  .sprite {</td></tr>
+  <tr><td>11</td><td>   <span class="codeReserved">position</span>: fixed;</td></tr>
+  <tr><td>12</td><td>  }</td></tr>
+  <tr><td>13</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>14</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>15</td><td></td></tr>
+  <tr><td>16</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>17</td><td> &lt;<span class="codeReserved">h1</span>&gt;Adorno Horizontal&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>18</td><td> &lt;<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>19</td><td>  <span class="codeReserved">const</span> Y = 0</td></tr>
+  <tr><td>20</td><td>  <span class="codeReserved">const</span> DISTANCIA = 20</td></tr>
+  <tr><td>21</td><td>  <span class="codeReserved">const</span> X_MÁXIMA = innerWidth</td></tr>
+  <tr><td>22</td><td>  <span class="codeReserved">let</span> x = 0</td></tr>
+  <tr><td>23</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>24</td><td><span class="codeComment">   * En esta variable se agrega el</span></td></tr>
+  <tr><td>25</td><td><span class="codeComment">   * HTML de las figuras que forman</span></td></tr>
+  <tr><td>26</td><td><span class="codeComment">   * el adorno.</span></td></tr>
+  <tr><td>27</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>28</td><td>  <span class="codeReserved">let</span> inner = <span class="codeString">""</span></td></tr>
+  <tr><td>29</td><td>  <span class="codeReserved">while</span> (x &lt; X_MÁXIMA) {</td></tr>
+  <tr><td>30</td><td>   <span class="codeComment">/* Agrega el HTML de un emoji a</span></td></tr>
+  <tr><td>31</td><td><span class="codeComment">    * inner. */</span></td></tr>
+  <tr><td>32</td><td>   inner += <span class="codeComment">/* html */</span></td></tr>
+  <tr><td>33</td><td>    <span class="codeString">`&lt;<span class="codeReserved">div</span> <span class="codeReserved">class</span>=&quot;sprite&quot;</span></td></tr>
+  <tr><td>34</td><td><span class="codeString">       style=&quot;<span class="codeReserved">top</span>: ${Y}px;</span></td></tr>
+  <tr><td>35</td><td><span class="codeString">              <span class="codeReserved">left</span>: ${x}px;&quot;&gt;</span></td></tr>
+  <tr><td>36</td><td><span class="codeString">      💕</span></td></tr>
+  <tr><td>37</td><td><span class="codeString">     &lt;/<span class="codeReserved">div</span>&gt;`</span></td></tr>
+  <tr><td>38</td><td>   x += DISTANCIA</td></tr>
+  <tr><td>39</td><td>  }</td></tr>
+  <tr><td>40</td><td>  <span class="codeComment">/* Agrega las figuras al HTML de</span></td></tr>
+  <tr><td>41</td><td><span class="codeComment">   * body. */</span></td></tr>
+  <tr><td>42</td><td>  document.body.innerHTML += inner</td></tr>
+  <tr><td>43</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>44</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>45</td><td></td></tr>
+  <tr><td>46</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </div>
       </section>
      <section >
@@ -909,72 +867,46 @@
    </a>
   </p>
  </section>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span> <span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"utf-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>Línea<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp; <span style="color: #af00db;">for</span> (<span
-      style="color: #0000ff;">let</span> <span
-      style="color: #001080;">x</span> = <span
-      style="color: #098658;">0</span>; <span
-      style="color: #001080;">x</span> &lt; <span
-      style="color: #098658;">200</span></div>
-   <div>&nbsp; &nbsp;; <span style="color: #001080;">x</span> += <span
-      style="color: #098658;">20</span>) {</div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">let</span> <span
-      style="color: #001080;">y</span> = <span
-      style="color: #098658;">0.45</span> * <span
-      style="color: #001080;">x</span> + <span
-      style="color: #098658;">30</span>;</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">document</span>.<span
-      style="color: #001080;">body</span>.<span
-      style="color: #001080;">innerHTML</span> +=</div>
-   <div>&nbsp; &nbsp; <span style="color: #008000;">/* html */</span></div>
-   <div>&nbsp; &nbsp; `<span style="color: #800000;">&lt;div</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">style</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #0000ff;">position: absolute;</span></div>
-   <div><span
-      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bottom:&nbsp;${</span><span
-      style="color: #001080;">y</span><span
-      style="color: #0000ff;">}px;</span></div>
-   <div><span
-      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;${</span><span
-      style="color: #001080;">x</span><span
-      style="color: #0000ff;">}px;</span><span
-      style="color: #0000ff;">"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; 💕</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/div&gt;</span>`</div>
-   <div>&nbsp; }</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"utf-8"</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td> &lt;<span class="codeReserved">title</span>&gt;Línea&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>9</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>12</td><td> &lt;<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>13</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">let</span> x = 0; x &lt; 200</td></tr>
+  <tr><td>14</td><td>   ; x += 20) {</td></tr>
+  <tr><td>15</td><td>   <span class="codeReserved">let</span> y = 0.45 * x + 30;</td></tr>
+  <tr><td>16</td><td>   document.body.innerHTML +=</td></tr>
+  <tr><td>17</td><td>    <span class="codeComment">/* html */</span></td></tr>
+  <tr><td>18</td><td>    <span class="codeString">`&lt;<span class="codeReserved">div</span></span></td></tr>
+  <tr><td>19</td><td><span class="codeString">       style=&quot;<span class="codeReserved">position</span>: absolute;</span></td></tr>
+  <tr><td>20</td><td><span class="codeString">             <span class="codeReserved">bottom</span>: ${y}px;</span></td></tr>
+  <tr><td>21</td><td><span class="codeString">             <span class="codeReserved">left</span>: ${x}px;&quot;&gt;</span></td></tr>
+  <tr><td>22</td><td><span class="codeString">      💕</span></td></tr>
+  <tr><td>23</td><td><span class="codeString">     &lt;/<span class="codeReserved">div</span>&gt;`</span></td></tr>
+  <tr><td>24</td><td>  }</td></tr>
+  <tr><td>25</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>26</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>27</td><td></td></tr>
+  <tr><td>28</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </div>
       </section>
      <section >
@@ -994,129 +926,66 @@
    </a>
   </p>
  </section>
- <muestra-codigo>
-  <div>
-   <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
-      style="color: #ff0000;">html</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div><span style="color: #800000;">&lt;html</span> <span
-      style="color: #ff0000;">lang</span>=<span
-      style="color: #0000ff;">"es"</span><span
-      style="color: #800000;">&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;head&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">charset</span>=<span
-      style="color: #0000ff;">"UTF-8"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-      style="color: #ff0000;">name</span>=<span
-      style="color: #0000ff;">"viewport"</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
-      style="color: #0000ff;">"width=device-width"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;title&gt;</span>Adorno con Giro<span
-      style="color: #800000;">&lt;/title&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
-   <div>&nbsp; <span style="color: #800000;">.sprite</span> {</div>
-   <div>&nbsp; &nbsp;<span style="color: #ff0000;">position</span>: <span
-      style="color: #0451a5;">fixed</span>;</div>
-   <div>&nbsp; }</div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;body&gt;</span></div>
-   <div>&nbsp;<span
-      style="color: #800000;">&lt;h1&gt;</span>Adorno con Giro<span
-      style="color: #800000;">&lt;/h1&gt;</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">INCREMENTO</span> =</div>
-   <div>&nbsp; &nbsp;<span style="color: #098658;">2</span> * <span
-      style="color: #267f99;">Math</span>.<span
-      style="color: #0070c1;">PI</span> / <span
-      style="color: #098658;">21</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">X_BASE</span> = <span
-      style="color: #001080;">innerWidth</span> / <span
-      style="color: #098658;">2</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">Y_BASE</span> = <span
-      style="color: #001080;">innerHeight</span> / <span
-      style="color: #098658;">2</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">ANGULO_FINAL</span> = <span
-      style="color: #098658;">6</span> * <span
-      style="color: #267f99;">Math</span>.<span
-      style="color: #0070c1;">PI</span></div>
-   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">amplitud</span> = <span
-      style="color: #267f99;">Math</span>.<span
-      style="color: #795e26;">min</span>(</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">window</span>.<span
-      style="color: #001080;">innerHeight</span>,</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">window</span>.<span
-      style="color: #001080;">innerWidth</span>) /</div>
-   <div>&nbsp; &nbsp;(<span style="color: #098658;">3</span> * <span
-      style="color: #0070c1;">ANGULO_FINAL</span>)</div>
-   <div>&nbsp; <span style="color: #0000ff;">let</span> <span
-      style="color: #001080;">inner</span> = <span
-      style="color: #a31515;">""</span></div>
-   <div>&nbsp; <span style="color: #af00db;">for</span> (<span
-      style="color: #0000ff;">let</span> <span
-      style="color: #001080;">angulo</span> = <span
-      style="color: #098658;">0</span></div>
-   <div>&nbsp; &nbsp;; <span style="color: #001080;">angulo</span> &lt; <span
-      style="color: #0070c1;">ANGULO_FINAL</span></div>
-   <div>&nbsp; &nbsp;; <span style="color: #001080;">angulo</span> += <span
-      style="color: #0070c1;">INCREMENTO</span>) {</div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">r</span> = <span
-      style="color: #0070c1;">amplitud</span> * <span
-      style="color: #001080;">angulo</span></div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">x</span> =</div>
-   <div>&nbsp; &nbsp; <span style="color: #0070c1;">X_BASE</span> + <span
-      style="color: #0070c1;">r</span> * <span
-      style="color: #267f99;">Math</span>.<span
-      style="color: #795e26;">cos</span>(<span
-      style="color: #001080;">angulo</span>)</div>
-   <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-      style="color: #0070c1;">y</span> =</div>
-   <div>&nbsp; &nbsp; <span style="color: #0070c1;">Y_BASE</span> + <span
-      style="color: #0070c1;">r</span> * <span
-      style="color: #267f99;">Math</span>.<span
-      style="color: #795e26;">sin</span>(<span
-      style="color: #001080;">angulo</span>)</div>
-   <div>&nbsp; &nbsp;<span style="color: #001080;">inner</span> += <span
-      style="color: #008000;">/* html */</span></div>
-   <div>&nbsp; &nbsp; `<span style="color: #800000;">&lt;div</span> <span
-      style="color: #ff0000;">class</span>=<span
-      style="color: #0000ff;">"sprite"</span></div>
-   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
-      style="color: #ff0000;">style</span>=<span
-      style="color: #0000ff;">"</span><span
-      style="color: #0000ff;">bottom: ${</span><span
-      style="color: #0070c1;">y</span><span
-      style="color: #0000ff;">}px;</span></div>
-   <div><span
-      style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;${</span><span
-      style="color: #0070c1;">x</span><span
-      style="color: #0000ff;">}px;</span><span
-      style="color: #0000ff;">"</span><span
-      style="color: #800000;">&gt;</span></div>
-   <div>&nbsp; &nbsp; &nbsp; ⌛</div>
-   <div>&nbsp; &nbsp; &nbsp;<span
-      style="color: #800000;">&lt;/div&gt;</span>`</div>
-   <div>&nbsp; }</div>
-   <div>&nbsp; <span style="color: #001080;">document</span>.<span
-      style="color: #001080;">body</span>.<span
-      style="color: #001080;">innerHTML</span> += <span
-      style="color: #001080;">inner</span></div>
-   <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
-   <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
-   <div><span style="color: #800000;">&lt;/html&gt;</span></div>
-  </div>
- </muestra-codigo>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td> &lt;<span class="codeReserved">title</span>&gt;Adorno con Giro&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>10</td><td>  .sprite {</td></tr>
+  <tr><td>11</td><td>   <span class="codeReserved">position</span>: fixed;</td></tr>
+  <tr><td>12</td><td>  }</td></tr>
+  <tr><td>13</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>14</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>15</td><td></td></tr>
+  <tr><td>16</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>17</td><td> &lt;<span class="codeReserved">h1</span>&gt;Adorno con Giro&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>18</td><td> &lt;<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>19</td><td>  <span class="codeReserved">const</span> INCREMENTO =</td></tr>
+  <tr><td>20</td><td>   2 * Math.PI / 21</td></tr>
+  <tr><td>21</td><td>  <span class="codeReserved">const</span> X_BASE = innerWidth / 2</td></tr>
+  <tr><td>22</td><td>  <span class="codeReserved">const</span> Y_BASE = innerHeight / 2</td></tr>
+  <tr><td>23</td><td>  <span class="codeReserved">const</span> ANGULO_FINAL = 6 * Math.PI</td></tr>
+  <tr><td>24</td><td>  <span class="codeReserved">const</span> amplitud = Math.min(</td></tr>
+  <tr><td>25</td><td>   window.innerHeight,</td></tr>
+  <tr><td>26</td><td>   window.innerWidth) /</td></tr>
+  <tr><td>27</td><td>   (3 * ANGULO_FINAL)</td></tr>
+  <tr><td>28</td><td>  <span class="codeReserved">let</span> inner = <span class="codeString">""</span></td></tr>
+  <tr><td>29</td><td>  <span class="codeReserved">for</span> (<span class="codeReserved">let</span> angulo = 0</td></tr>
+  <tr><td>30</td><td>   ; angulo &lt; ANGULO_FINAL</td></tr>
+  <tr><td>31</td><td>   ; angulo += INCREMENTO) {</td></tr>
+  <tr><td>32</td><td>   <span class="codeReserved">const</span> r = amplitud * angulo</td></tr>
+  <tr><td>33</td><td>   <span class="codeReserved">const</span> x =</td></tr>
+  <tr><td>34</td><td>    X_BASE + r * Math.cos(angulo)</td></tr>
+  <tr><td>35</td><td>   <span class="codeReserved">const</span> y =</td></tr>
+  <tr><td>36</td><td>    Y_BASE + r * Math.sin(angulo)</td></tr>
+  <tr><td>37</td><td>   inner += <span class="codeComment">/* html */</span></td></tr>
+  <tr><td>38</td><td>    <span class="codeString">`&lt;<span class="codeReserved">div</span> <span class="codeReserved">class</span>=&quot;sprite&quot;</span></td></tr>
+  <tr><td>39</td><td><span class="codeString">       style=&quot;<span class="codeReserved">bottom</span>: ${y}px;</span></td></tr>
+  <tr><td>40</td><td><span class="codeString">              <span class="codeReserved">left</span>: ${x}px;&quot;&gt;</span></td></tr>
+  <tr><td>41</td><td><span class="codeString">      ⌛</span></td></tr>
+  <tr><td>42</td><td><span class="codeString">     &lt;/<span class="codeReserved">div</span>&gt;`</span></td></tr>
+  <tr><td>43</td><td>  }</td></tr>
+  <tr><td>44</td><td>  document.body.innerHTML += inner</td></tr>
+  <tr><td>45</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>46</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>47</td><td></td></tr>
+  <tr><td>48</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
 </div>
       </section>
      <section >
