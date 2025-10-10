@@ -66,6 +66,12 @@
    "description": "La pseudoclase «:focus»."
   },
   {
+   "name": "mKstyle.html",
+   "title": "El atributo style",
+   "h1": "El atributo <code class='language-css'>style</code>",
+   "description": "El atributo style."
+  },
+  {
    "name": "mKresumen.html",
    "title": "Resumen",
    "description": "Resumen de la lección «Selectores de CSS»."

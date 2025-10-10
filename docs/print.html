@@ -7331,6 +7331,11 @@
    </li>
    <li>
     <p>
+     <a href="/m09selectores/mKstyle.html">El atributo <code class='language-css'>style</code></a>
+    </p>
+   </li>
+   <li>
+    <p>
      <a href="/m09selectores/mKresumen.html">Resumen</a>
     </p>
    </li>
@@ -8185,7 +8190,83 @@
 </section>
       </section>
      <section >
-         <h1 >K. Resumen</h1><div class="lectura">
+         <h1 >K. El atributo <code class='language-css'>style</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Todos los elementos pueden definir su propio estilo usando el atributo
+    <dfn><code class="language-html">style</code></dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las propiedades colocadas en este atributo sustituyen a los valores
+    definidos en otros lados.
+   </p>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <section>
+   <h1>Salida</h1>
+   <iframe src="/src/m09selectores/Kstyle.html" height="280"
+     title="Ejemplo de atributo style"></iframe>
+   <p class="noPrint">
+    <a target="_blank" rel="noreferrer"
+      href="/src/m09selectores/Kstyle.html">Ábrelo en otra pestaña.</a>
+   </p>
+   <p class="noPrint">
+    <a target="_blank" rel="noreferrer"
+      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EAtrinuto%20style%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20p%20%7B%0A%20%20%20color%3A%20olive%3B%0A%20%20%20font-style%3A%20italic%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cp%20style%3D%22color%3A%20yellow%3B%0A%20%20background-color%3A%20blue%22%3E%0A%20%20P%C3%A1rrafo%20de%20letra%20amarilla%20y%20fondo%0A%20%20azul.%0A%20%3C%2Fp%3E%0A%20%3Cp%3EP%C3%A1rrafo%20normal.%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+     Revísalo en gilpgedit.
+    </a>
+   </p>
+  </section>
+  <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td> &lt;<span class="codeReserved">title</span>&gt;Atrinuto style&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>10</td><td>  p {</td></tr>
+  <tr><td>11</td><td>   <span class="codeReserved">color</span>: olive;</td></tr>
+  <tr><td>12</td><td>   <span class="codeReserved">font-style</span>: italic;</td></tr>
+  <tr><td>13</td><td>  }</td></tr>
+  <tr><td>14</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>15</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>16</td><td></td></tr>
+  <tr><td>17</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>18</td><td> &lt;<span class="codeReserved">p</span> style=<span class="codeString">"<span class="codeReserved">color</span>: yellow;</span></td></tr>
+  <tr><td>19</td><td><span class="codeString">  <span class="codeReserved">background-color</span>: blue"</span>&gt;</td></tr>
+  <tr><td>20</td><td>  Párrafo de letra amarilla y fondo</td></tr>
+  <tr><td>21</td><td>  azul.</td></tr>
+  <tr><td>22</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>23</td><td> &lt;<span class="codeReserved">p</span>&gt;Párrafo normal.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>24</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>25</td><td></td></tr>
+  <tr><td>26</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
+ </div>
+</section>
+      </section>
+     <section >
+         <h1 >L. Resumen</h1><div class="lectura">
  <ul>
   <li>
    <p>En esta lección se revisaron los siguientes selectores:</p>

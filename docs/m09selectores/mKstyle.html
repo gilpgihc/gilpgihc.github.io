@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/lib/js/muestra-codigo.js"></script>
- <title>C. El selector .clase - GilPG IHC</title>
- <meta name="description" content="El selector «.clase».">
+ <title>K. El atributo style - GilPG IHC</title>
+ <meta name="description" content="El atributo style.">
  <meta name="og:image" content="https://gilpgihc.github.io/img/icono/icono2048.png">
  <style>
  /* https://paletton.com/#uid=74W0u0kllllaFw0g0qFqFg0w0aF */
@@ -850,14 +850,18 @@
 
 <body  class="xmenu">
  <div id="principal">
-   <h1 >C. El selector <code class='language-css'>.<em>clase</em></code></h1><div class="lectura">
+   <h1 >K. El atributo <code class='language-css'>style</code></h1><div class="lectura">
  <ul>
   <li>
    <p>
-    Seleciona los elementos cuyo atributo
-    <code class="language-html">class</code>
-    contenga el identificador después del punto
-    (<code class="language-html">.</code>).
+    Todos los elementos pueden definir su propio estilo usando el atributo
+    <dfn><code class="language-html">style</code></dfn>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las propiedades colocadas en este atributo sustituyen a los valores
+    definidos en otros lados.
    </p>
   </li>
  </ul>
@@ -867,14 +871,15 @@
  <div class="horizontal">
   <section>
    <h1>Salida</h1>
-   <iframe src="/src/m09selectores/Cclass.html" height="320" title="Ejemplo de selector .clase"></iframe>
+   <iframe src="/src/m09selectores/Kstyle.html" height="280"
+     title="Ejemplo de atributo style"></iframe>
    <p class="noPrint">
     <a target="_blank" rel="noreferrer"
-    href="/src/m09selectores/Cclass.html">Ábrelo en otra pestaña.</a>
+      href="/src/m09selectores/Kstyle.html">Ábrelo en otra pestaña.</a>
    </p>
    <p class="noPrint">
     <a target="_blank" rel="noreferrer"
-      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ESelector%20.clase%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20%2F*%20Seleciona%20los%20elementos%20cuyo%0A%20%20%20*%20atributo%0A%20%20%20*%20%20class%0A%20%20%20*%20contenga%20el%20identificador%0A%20%20%20*%20%20azu%20*%2F%0A%20%20.azu%20%7B%0A%20%20%20color%3A%20blue%3B%0A%20%20%7D%0A%0A%20%20%2F*%20Seleciona%20los%20elementos%20cuyo%0A%20%20%20*%20atributo%0A%20%20%20*%20%20class%0A%20%20%20*%20contenga%20los%20identificadores%0A%20%20%20*%20%20ama%20y%20azu%20*%2F%0A%20%20.ama.azu%20%7B%0A%20%20%20%2F*%20letra%20it%C3%A1lica%20*%2F%0A%20%20%20font-style%3A%20oblique%3B%0A%20%20%7D%0A%0A%20%20%2F*%20Seleciona%20los%20elementos%20tipo%0A%20%20%20*%20%20p%0A%20%20%20*%20cuyo%20atributo%0A%20%20%20*%20%20class%0A%20%20%20*%20contenga%20el%20identificador%0A%20%20%20*%20%20ama%20*%2F%0A%20%20p.ama%20%7B%0A%20%20%20background-color%3A%20yellow%3B%0A%20%20%7D%0A%0A%20%20%2F*%20Seleciona%20los%20elementos%20tipo%0A%20%20%20*%20%20p%0A%20%20%20*%20cuyo%20atributo%0A%20%20%20*%20%20class%0A%20%20%20*%20contenga%20los%20identificadores%0A%20%20%20*%20%20ama%20y%20ver%20*%2F%0A%20%20p.ama.ver%20%7B%0A%20%20%20%2F*%20Al%C3%ADnea%20el%20texto%20al%20final%20de%0A%20%20%20%20*%20la%20l%C3%ADnea.%20*%2F%0A%20%20%20text-align%3A%20end%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%3Ch1%20class%3D%22ama%20azu%22%3E%0A%20%20Selector%20.clase%0A%20%3C%2Fh1%3E%0A%20%3Cp%20class%3D%22ver%20azu%20ama%22%3E%0A%20%20Uno.%0A%20%3C%2Fp%3E%0A%20%3Cp%20class%3D%22azu%22%3EDos.%3C%2Fp%3E%0A%20%3Cp%3ETres.%3C%2Fp%3E%0A%20%3Cp%20class%3D%22ama%22%3ECuatro.%3C%2Fp%3E%0A%20%3Cp%20class%3D%22ama%20ver%22%3ECinco.%3C%2Fp%3E%0A%20%3Cfooter%20class%3D%22azu%22%3E%0A%20%20%3Cp%3E%0A%20%20%20%C2%A9%202021%0A%20%20%20Gilberto%20Pacheco%20Gallegos.%0A%20%20%3C%2Fp%3E%0A%20%3C%2Ffooter%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E">
+      href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3EAtrinuto%20style%3C%2Ftitle%3E%0A%20%3Cstyle%3E%0A%20%20p%20%7B%0A%20%20%20color%3A%20olive%3B%0A%20%20%20font-style%3A%20italic%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%20%3Cp%20style%3D%22color%3A%20yellow%3B%0A%20%20background-color%3A%20blue%22%3E%0A%20%20P%C3%A1rrafo%20de%20letra%20amarilla%20y%20fondo%0A%20%20azul.%0A%20%3C%2Fp%3E%0A%20%3Cp%3EP%C3%A1rrafo%20normal.%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
      Revísalo en gilpgedit.
     </a>
    </p>
@@ -891,73 +896,30 @@
  <tbody>
   <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
   <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
-  <tr><td>3</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>4</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
-  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
-  <tr><td>6</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
-  <tr><td>7</td><td> &lt;<span class="codeReserved">title</span>&gt;Selector .clase&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
-  <tr><td>8</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
-  <tr><td>9</td><td>  <span class="codeComment">/* Seleciona los elementos cuyo</span></td></tr>
-  <tr><td>10</td><td><span class="codeComment">   * atributo</span></td></tr>
-  <tr><td>11</td><td><span class="codeComment">   *  <span class="codeReserved">class</span></span></td></tr>
-  <tr><td>12</td><td><span class="codeComment">   * contenga el identificador</span></td></tr>
-  <tr><td>13</td><td><span class="codeComment">   *  azu */</span></td></tr>
-  <tr><td>14</td><td>  .azu {</td></tr>
-  <tr><td>15</td><td>   <span class="codeReserved">color</span>: blue;</td></tr>
-  <tr><td>16</td><td>  }</td></tr>
-  <tr><td>17</td><td></td></tr>
-  <tr><td>18</td><td>  <span class="codeComment">/* Seleciona los elementos cuyo</span></td></tr>
-  <tr><td>19</td><td><span class="codeComment">   * atributo</span></td></tr>
-  <tr><td>20</td><td><span class="codeComment">   *  <span class="codeReserved">class</span></span></td></tr>
-  <tr><td>21</td><td><span class="codeComment">   * contenga los identificadores</span></td></tr>
-  <tr><td>22</td><td><span class="codeComment">   *  ama y azu */</span></td></tr>
-  <tr><td>23</td><td>  .ama.azu {</td></tr>
-  <tr><td>24</td><td>   <span class="codeComment">/* letra itálica */</span></td></tr>
-  <tr><td>25</td><td>   <span class="codeReserved">font-style</span>: oblique;</td></tr>
-  <tr><td>26</td><td>  }</td></tr>
-  <tr><td>27</td><td></td></tr>
-  <tr><td>28</td><td>  <span class="codeComment">/* Seleciona los elementos tipo</span></td></tr>
-  <tr><td>29</td><td><span class="codeComment">   *  p</span></td></tr>
-  <tr><td>30</td><td><span class="codeComment">   * cuyo atributo</span></td></tr>
-  <tr><td>31</td><td><span class="codeComment">   *  <span class="codeReserved">class</span></span></td></tr>
-  <tr><td>32</td><td><span class="codeComment">   * contenga el identificador</span></td></tr>
-  <tr><td>33</td><td><span class="codeComment">   *  ama */</span></td></tr>
-  <tr><td>34</td><td>  p.ama {</td></tr>
-  <tr><td>35</td><td>   <span class="codeReserved">background-color</span>: yellow;</td></tr>
-  <tr><td>36</td><td>  }</td></tr>
-  <tr><td>37</td><td></td></tr>
-  <tr><td>38</td><td>  <span class="codeComment">/* Seleciona los elementos tipo</span></td></tr>
-  <tr><td>39</td><td><span class="codeComment">   *  p</span></td></tr>
-  <tr><td>40</td><td><span class="codeComment">   * cuyo atributo</span></td></tr>
-  <tr><td>41</td><td><span class="codeComment">   *  <span class="codeReserved">class</span></span></td></tr>
-  <tr><td>42</td><td><span class="codeComment">   * contenga los identificadores</span></td></tr>
-  <tr><td>43</td><td><span class="codeComment">   *  ama y ver */</span></td></tr>
-  <tr><td>44</td><td>  p.ama.ver {</td></tr>
-  <tr><td>45</td><td>   <span class="codeComment">/* Alínea el texto al final de</span></td></tr>
-  <tr><td>46</td><td><span class="codeComment">    * la línea. */</span></td></tr>
-  <tr><td>47</td><td>   <span class="codeReserved">text-align</span>: end;</td></tr>
-  <tr><td>48</td><td>  }</td></tr>
-  <tr><td>49</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
-  <tr><td>50</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>51</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>52</td><td> &lt;<span class="codeReserved">h1</span> <span class="codeReserved">class</span>=<span class="codeString">"ama azu"</span>&gt;</td></tr>
-  <tr><td>53</td><td>  Selector .clase</td></tr>
-  <tr><td>54</td><td> &lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-  <tr><td>55</td><td> &lt;<span class="codeReserved">p</span> <span class="codeReserved">class</span>=<span class="codeString">"ver azu ama"</span>&gt;</td></tr>
-  <tr><td>56</td><td>  Uno.</td></tr>
-  <tr><td>57</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>58</td><td> &lt;<span class="codeReserved">p</span> <span class="codeReserved">class</span>=<span class="codeString">"azu"</span>&gt;Dos.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>59</td><td> &lt;<span class="codeReserved">p</span>&gt;Tres.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>60</td><td> &lt;<span class="codeReserved">p</span> <span class="codeReserved">class</span>=<span class="codeString">"ama"</span>&gt;Cuatro.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>61</td><td> &lt;<span class="codeReserved">p</span> <span class="codeReserved">class</span>=<span class="codeString">"ama ver"</span>&gt;Cinco.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>62</td><td> &lt;<span class="codeReserved">footer</span> <span class="codeReserved">class</span>=<span class="codeString">"azu"</span>&gt;</td></tr>
-  <tr><td>63</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>64</td><td>   © 2021</td></tr>
-  <tr><td>65</td><td>   Gilberto Pacheco Gallegos.</td></tr>
-  <tr><td>66</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>67</td><td> &lt;/<span class="codeReserved">footer</span>&gt;</td></tr>
-  <tr><td>68</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>69</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>7</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>8</td><td> &lt;<span class="codeReserved">title</span>&gt;Atrinuto style&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>10</td><td>  p {</td></tr>
+  <tr><td>11</td><td>   <span class="codeReserved">color</span>: olive;</td></tr>
+  <tr><td>12</td><td>   <span class="codeReserved">font-style</span>: italic;</td></tr>
+  <tr><td>13</td><td>  }</td></tr>
+  <tr><td>14</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>15</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>16</td><td></td></tr>
+  <tr><td>17</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>18</td><td> &lt;<span class="codeReserved">p</span> style=<span class="codeString">"<span class="codeReserved">color</span>: yellow;</span></td></tr>
+  <tr><td>19</td><td><span class="codeString">  <span class="codeReserved">background-color</span>: blue"</span>&gt;</td></tr>
+  <tr><td>20</td><td>  Párrafo de letra amarilla y fondo</td></tr>
+  <tr><td>21</td><td>  azul.</td></tr>
+  <tr><td>22</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>23</td><td> &lt;<span class="codeReserved">p</span>&gt;Párrafo normal.&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>24</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>25</td><td></td></tr>
+  <tr><td>26</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
  </tbody>
 </table>
  </div>
@@ -987,10 +949,10 @@
    menu
   </span>
  </button>
- <a class="anterior" href="/m09selectores/mBid.html" title="B. El selector #identificador"><span class="material-symbols-outlined">
+ <a class="anterior" href="/m09selectores/mJfocus.html" title="J. La pseudoclase :focus"><span class="material-symbols-outlined">
      skip_previous
     </span></a>
- <a class="siguiente" href="/m09selectores/mDhijo.html" title="D. El selector sel1 &gt; sel2"><span class="material-symbols-outlined">
+ <a class="siguiente" href="/m09selectores/mKresumen.html" title="L. Resumen"><span class="material-symbols-outlined">
      skip_next
      </span></a>
 </div>
@@ -1031,7 +993,7 @@
    </li>
    <li>
     <p>
-     <a href="/m09selectores/mCclass.html" class="actual">El selector <code class='language-css'>.<em>clase</em></code></a>
+     <a href="/m09selectores/mCclass.html">El selector <code class='language-css'>.<em>clase</em></code></a>
     </p>
    </li>
    <li>
@@ -1071,7 +1033,7 @@
    </li>
    <li>
     <p>
-     <a href="/m09selectores/mKstyle.html">El atributo <code class='language-css'>style</code></a>
+     <a href="/m09selectores/mKstyle.html" class="actual">El atributo <code class='language-css'>style</code></a>
     </p>
    </li>
    <li>
@@ -1100,9 +1062,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m09selectores/mBid.html"
+ let urlAnterior = "/m09selectores/mJfocus.html"
  /**@type {string} */
- let urlSiguiente = "/m09selectores/mDhijo.html"
+ let urlSiguiente = "/m09selectores/mKresumen.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
