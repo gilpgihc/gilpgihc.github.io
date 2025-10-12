@@ -2,17 +2,35 @@
 <html lang="es">
 
 <head>
+
  <meta charset="UTF-8">
+ <title>Float</title>
  <meta name="viewport"
    content="width=device-width">
- <title>Float</title>
+
+ <style>
+  nav {
+   float: inline-start;
+   border: solid;
+  }
+
+  aside {
+   float: inline-end;
+   border: solid;
+  }
+
+  footer {
+   clear: both;
+  }
+ </style>
+
 </head>
 
 <body>
+
  <h1>Float</h1>
- <nav style="
-  float: inline-start;
-  border: solid">
+
+ <nav>
   <p>
    Este nav flota hacia el inicio
    del renglón.
@@ -24,28 +42,31 @@
     Facebook</a>
   </p>
  </nav>
- <aside style="
-    float: inline-end;
-    border: solid">
+
+ <aside>
   <p>
    Este aside flota hacia el final
    del renglón.
   </p>
  </aside>
+
  <p>Este ejemplo usa float.</p>
  <p>
   El párrafo que sigue te muestra
   como flota el texto.
  </p>
- <footer style="clear: both;">
+
+ <footer>
   <p>
    El flotado se detiene con
    clear: both.
   </p>
   <p>
-   &copy; Gilberto Pacheco Gallegos
+   &copy; 2025
+   Gilberto Pacheco Gallegos
   </p>
  </footer>
+
 </body>
 
 </html>

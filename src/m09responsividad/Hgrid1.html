@@ -2,49 +2,114 @@
 <html lang="es">
 
 <head>
+
  <meta charset="UTF-8">
+ <title>Grid 1</title>
  <meta name="viewport"
    content="width=device-width">
- <title>Float 3</title>
+
  <style>
-  p {
-   clear: both;
+  body {
+   display: grid;
+   margin: 0 0.5rem;
+   height: 100dvh;
+   column-gap: 0.5rem;
+   row-gap: 1rem;
+   /* Declara 3 columnas:
+    * columna 1 20vw de amcho
+    * columna 2: se ajusta ancho
+    * columna 3: 20vw de amcho */
+   grid-template-columns: 20vw 1fr 20vw;
+   /* Declara 3 renglones:
+    * remglón 1 4rem de alto
+    * remglón 2: se ajusta altura
+    * remglón 3: 4rem de alto */
+   grid-template-rows: 4rem 1fr 4rem;
+   grid-template-areas:
+    "head head head"
+    "nav  main aside"
+    "foot foot foot";
   }
 
-  p::first-letter {
-   font-weight: bold;
-   font-size: 3rem;
-   float: inline-start;
+  h1 {
+   margin: 0;
+   grid-area: head;
+   align-self: center;
+   justify-self: center
+  }
+
+  main {
+   grid-area: main;
+   overflow: auto;
+  }
+
+  nav {
+   grid-area: nav;
+   overflow: auto;
+  }
+
+  aside {
+   grid-area: aside;
+   overflow: auto;
+  }
+
+  footer {
+   display: flow-root;
+   grid-area: foot;
+   align-self: center;
+   justify-self: center
   }
  </style>
+
 </head>
 
 <body>
- <h1>Float 3</h1>
- <p>
-  Este es otro ejemplo de float.
- </p>
- <p>
-  Iambién puedes obtener un efecto
-  como libro de cuentos usando
-  float: inline-start
-  dentro de p::first-letter.
- </p>
- <p>
-  Lorem ipsum dolor sit amet
-  consectetur adipisicing elit.
-  Iure, assumenda reiciendis.
-  Reprehenderit non sunt enim sequi
-  vel consequatur nostrum suscipit,
-  numquam, ipsam commodi placeat
-  quibusdam porro excepturi
-  aliquid officia labore!
- </p>
+
+ <h1>Grid 1</h1>
+
+ <main>
+  <p>
+   Este ejemplo usa display: grid
+   para una página principal.
+  </p>
+  <p>
+   Lorem ipsum dolor sit amet
+   consectetur adipisicing elit.
+   Omnis, eius. Quaerat alias
+   facilis recusandae, voluptate
+   cumque quod tenetur
+   necessitatibus exercitationem
+   beatae cupiditate iste
+   voluptatum, optio debitis
+   deserunt laboriosam placeat
+   odit?.
+  </p>
+ </main>
+
+ <nav>
+  <h2>Navegación</h2>
+  <p>
+   <a href="https://facebook.com"
+     target="_blank"
+     rel="noreferrer">
+    Facebook</a>
+  </p>
+ </nav>
+
+ <aside>
+  <h2>Aside</h2>
+  <p>
+   Este es un aside.
+  </p>
+ </aside>
+
  <footer>
   <p>
-   &copy; Gilberto Pacheco Gallegos
+    &copy; 2025
+    Gilberto Pacheco Gallegos
   </p>
  </footer>
+
 </body>
 
 </html>

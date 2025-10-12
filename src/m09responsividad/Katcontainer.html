@@ -2,49 +2,89 @@
 <html lang="es">
 
 <head>
+
  <meta charset="UTF-8">
+ <title>@container</title>
  <meta name="viewport"
    content="width=device-width">
- <title>Float 3</title>
+
  <style>
-  p {
-   clear: both;
+  body {
+   margin-top: 0;
   }
 
-  p::first-letter {
-   font-weight: bold;
-   font-size: 3rem;
-   float: inline-start;
+  h1 {
+   position: sticky;
+   top: 0;
+   margin: 0;
+  }
+
+  html {
+   container-type: scroll-state;
+   container-name: scroller;
+  }
+
+  main {
+   container-type: inline-size;
+   container-name: main;
+  }
+
+  @container main (min-width: 500px) {
+
+   p::first-letter {
+    font-size: 3em;
+    float: inline-start;
+   }
+
+   p {
+    clear: both;
+   }
+
+  }
+
+  @container scroller scroll-state(scrollable: top) {
+   h1 {
+    border: solid;
+   }
   }
  </style>
+
 </head>
 
 <body>
- <h1>Float 3</h1>
- <p>
-  Este es otro ejemplo de float.
- </p>
- <p>
-  Iambién puedes obtener un efecto
-  como libro de cuentos usando
-  float: inline-start
-  dentro de p::first-letter.
- </p>
- <p>
-  Lorem ipsum dolor sit amet
-  consectetur adipisicing elit.
-  Iure, assumenda reiciendis.
-  Reprehenderit non sunt enim sequi
-  vel consequatur nostrum suscipit,
-  numquam, ipsam commodi placeat
-  quibusdam porro excepturi
-  aliquid officia labore!
- </p>
- <footer>
+
+ <h1>@container</h1>
+
+ <main>
+
   <p>
-   &copy; Gilberto Pacheco Gallegos
+   Este ejemplo usa @container.
   </p>
- </footer>
+  <p>
+   Lorem ipsum dolor sit amet
+   consectetur adipisicing elit.
+   Iure, assumenda reiciendis.
+   Reprehenderit non sunt enim
+   sequi vel consequatur nostrum
+   suscipit, numquam, ipsam commodi
+   placeat quibusdam porro
+   excepturi aliquid officia
+   labore!
+  </p>
+  <p>
+   Lorem ipsum dolor sit amet
+   consectetur adipisicing elit.
+   Iure, assumenda reiciendis.
+   Reprehenderit non sunt enim
+   sequi vel consequatur nostrum
+   suscipit, numquam, ipsam commodi
+   placeat quibusdam porro
+   excepturi aliquid officia
+   labore!
+  </p>
+
+ </main>
+
 </body>
 
 </html>
