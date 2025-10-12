@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>Flex 3</title>
+ <meta name="viewport"
+   content="width=device-width">
+
+ <style>
+  body {
+   /* body ocupa toda la altura de
+    * visualización y se ajusta a
+    * los distintos modos del
+    * móvil. */
+   height: 100dvh;
+   margin: 0 0.5rem;
+   display: flex;
+   /* El despliegue se hace
+    * verticalmente.*/
+   flex-direction: column;
+   /* El despliegue se hace
+    * verticalmente.*/
+   align-items: center;
+  }
+
+  main {
+   /* El elemento crece si es
+    * necesario para llenar el
+    * flex. */
+   flex-grow: 1;
+   /* El elemento se estira para
+    *  ajustarse al ancho del
+    * flex.*/
+   align-self: stretch;
+   /* Si el elemento no cabe
+    * completamente en el espacio
+    * asignado, se ponen barras de
+    * desplazamiento.*/
+   overflow: auto;
+  }
+
+  aside {
+   /* Evita que margin y float se
+    * salgan del elemento. */
+   display: flow-root;
+  }
+ </style>
+
+</head>
+
+<body>
+
+ <h1>Flex 3</h1>
+
+ <main>
+  <p>
+   Este ejemplo usa display: flex
+   con orientación vertical.
+  </p>
+  <p>
+   Lorem ipsum dolor sit amet
+   consectetur adipisicing elit.
+   Omnis, eius. Quaerat alias
+   facilis recusandae, voluptate
+   cumque quod tenetur
+   necessitatibus exercitationem
+   beatae cupiditate iste
+   voluptatum, optio debitis
+   deserunt laboriosam placeat
+   odit?.
+  </p>
+ </main>
+
+ <aside>
+  <p>Se feliz 😁.</p>
+ </aside>
+
+</body>
+
+</html>

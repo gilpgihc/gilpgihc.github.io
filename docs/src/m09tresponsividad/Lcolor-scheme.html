@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>color-scheme</title>
+ <meta name="viewport"
+   content="width=device-width">
+
+ <style>
+  html {
+   color-scheme: light dark;
+  }
+
+  @media (prefers-color-scheme: light) {
+   html {
+    --color: yellow;
+    --backgroundColor: blue;
+   }
+  }
+
+  @media (prefers-color-scheme: dark) {
+   html {
+    --color: blue;
+    --backgroundColor: yellow;
+   }
+  }
+
+  h1 {
+   color: var(--color);
+   background-color: var(--backgroundColor);
+  }
+ </style>
+
+</head>
+
+<body>
+
+ <h1>color-scheme</h1>
+
+ <p>
+  Este ejemplo usa color-scheme.
+ </p>
+
+</body>
+
+</html>

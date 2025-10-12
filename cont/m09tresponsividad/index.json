@@ -1,0 +1,95 @@
+{
+ "type": "A",
+ "title": "Responsividad",
+ "description": "Contenido de la lección «Responsividad»",
+ "printDescription": "Página para imprimir de la lección «Responsividad».",
+ "listado": [
+  {
+   "name": "mAfloat1.html",
+   "title": "float 1",
+   "h1": "<code class='language-css'>float</code> 1",
+   "description": "Documento de HTML."
+  },
+  {
+   "name": "mBfloat2.html",
+   "title": "float 2",
+   "h1": "<code class='language-css'>float</code> 2",
+   "description": "float 2."
+  },
+  {
+   "name": "mCfloat3.html",
+   "title": "float 3",
+   "h1": "<code class='language-css'>float</code> 3",
+   "description": "float 3."
+  },
+  {
+   "name": "mDcolumnas.html",
+   "title": "Columnas",
+   "description": "Columnas."
+  },
+  {
+   "name": "mEflex1.html",
+   "title": "flex 1",
+   "h1": "<code class='language-css'>flex</code> 1",
+   "description": "flex 1."
+  },
+  {
+   "name": "mFflex2.html",
+   "title": "flex 2",
+   "h1": "<code class='language-css'>flex</code> 2",
+   "description": "flex 2."
+  },
+  {
+   "name": "mGflex3.html",
+   "title": "flex 3",
+   "h1": "<code class='language-css'>flex</code> 3",
+   "description": "flex 3."
+  },
+  {
+   "name": "mHgrid1.html",
+   "title": "grid 1",
+   "h1": "<code class='language-css'>grid</code> 1",
+   "description": "grid 1."
+  },
+  {
+   "name": "mIgrid2.html",
+   "title": "grid 2",
+   "h1": "<code class='language-css'>grid</code> 2",
+   "description": "grid 2."
+  },
+  {
+   "name": "mJatmedias.html",
+   "title": "@media",
+   "h1": "<code class='language-css'>@media</code>",
+   "description": "@media."
+  },
+  {
+   "name": "mKatcontainer.html",
+   "title": "@container",
+   "h1": "<code class='language-css'>@container</code>",
+   "description": "@container."
+  },
+  {
+   "name": "mLcolor-scheme.html",
+   "title": "color-scheme",
+   "h1": "<code class='language-css'>color-scheme</code>",
+   "description": "color-schemer."
+  },
+  {
+   "name": "mLcolor-scheme.html",
+   "title": "color-scheme",
+   "h1": "<code class='language-css'>color-scheme</code>",
+   "description": "color-schemer."
+  },
+  {
+   "name": "mMwebfonts.html",
+   "title": "Web fonts",
+   "description": "Web fonts."
+  },
+  {
+   "name": "mNresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «Responsividad»."
+  }
+ ]
+}

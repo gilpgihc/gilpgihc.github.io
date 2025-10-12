@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>Flex 1</title>
+ <meta name="viewport"
+   content="width=device-width">
+
+ <style>
+  menu {
+   --gap: 0.5rem;
+   display: flex;
+   /* Quita las viñetas. */
+   list-style-type: none;
+   margin: 0;
+   padding: var(--gap);
+   /* Espacio entre elementos. */
+   gap: var(--gap);
+   border: solid;
+   /* Centra verticalmente el
+    * contenido. */
+   align-items: center;
+  }
+
+  #enLinea {
+   display: inline-flex;
+  }
+
+  .creceMargenFinal {
+   margin-inline-end: auto
+  }
+ </style>
+
+</head>
+
+<body>
+
+ <h1>Flex 1</h1>
+
+ <menu>
+  <li><button>≡</button></li>
+  <li class="creceMargenFinal">
+   Ejemplo de flex
+  </li>
+  <li><button>💾</button></li>
+  <li><button>🗑</button></li>
+ </menu>
+
+ Inicio
+ <menu id="enLinea">
+  <li><button>≡</button></li>
+  <li class="creceMargenFinal">
+   Ejemplo de flex
+  </li>
+  <li><button>💾</button></li>
+  <li><button>🗑</button></li>
+ </menu>
+ Fin
+
+</body>
+
+</html>

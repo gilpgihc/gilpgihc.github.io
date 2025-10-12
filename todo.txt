@@ -1,3 +1,4 @@
+* Solo para los más rudos es un aside y un nav.
 * Regresar El ejemplo viejito de marcado antes de computadoras
 * HAblar del CERN y Tim Berners Lee
 * Falta display flex y grid

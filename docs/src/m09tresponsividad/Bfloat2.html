@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>Float 2</title>
+ <meta name="viewport"
+   content="width=device-width">
+
+ <style>
+  main {
+   display: flow-root;
+  }
+
+  aside {
+   border: solid;
+  }
+
+  .floatLeft {
+   float: left
+  }
+
+  .floatRight {
+   float: left
+  }
+ </style>
+
+</head>
+
+<body>
+
+ <h1>Float 2</h1>
+
+ <main>
+
+  <aside class="floatLeft">
+   <p>
+    Este aside flota hacia la
+    izquierda.
+   </p>
+  </aside>
+
+  <aside class="floatRight">
+   <p>
+    Este aside flota hacia la
+    derecha.
+   </p>
+  </aside>
+
+  <p>
+   Este es otro ejemplo de float.
+  </p>
+  <p>
+   La propiedad display: flow-root
+   evita el flotado fuera del
+   elemento.
+  </p>
+
+  <aside class="floatRight">
+   <p>
+    Puedes poner varios float hacia
+    donde quieras; inclusive hacia
+    el mismo lado.
+   </p>
+  </aside>
+
+ </main>
+
+ <footer>
+  <p>
+    &copy; 2025
+    Gilberto Pacheco Gallegos
+  </p>
+ </footer>
+
+</body>
+
+</html>

@@ -5,6 +5,11 @@
  "printDescription": "Página para imprimir de la lección «Formularios».",
  "listado": [
   {
+   "name": "mAformulario.html",
+   "title": "Todo lo que hay",
+   "description": "Lista los elementos de formularios de HTML."
+  },
+  {
    "name": "mAsimple.html",
    "title": "Formulario simple",
    "description": "Formulario simple."

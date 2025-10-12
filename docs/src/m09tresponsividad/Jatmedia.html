@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>@media</title>
+ <meta name="viewport"
+   content="width=device-width">
+
+ <style>
+  body {
+   --gap: 0.5rem;
+  }
+
+  h1 {
+   text-align: center;
+  }
+
+  @media screen and (max-width: 599px) {
+
+   menu {
+    --gap: 0.5rem;
+    display: block;
+    position: sticky;
+    top: 0;
+    /* Quita las viñetas. */
+    list-style-type: none;
+    padding: 0;
+   }
+
+   header nav {
+    display: none;
+   }
+
+   main {
+    flex-grow: 1;
+    align-self: stretch
+   }
+
+  }
+
+  @media screen and (min-width: 600px) {
+   body {
+    display: grid;
+    column-gap: var(--gap);
+    row-gap: 1rem;
+    grid-template-columns: 1fr 20vw;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+     "head head"
+     "main aside"
+     "foot foot";
+   }
+
+   menu {
+    display: none;
+   }
+
+   header {
+    grid-area: head;
+   }
+
+   header nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: var(--gap);
+    justify-content: center;
+   }
+
+   header nav ul p {
+    margin: 0;
+   }
+
+   main {
+    grid-area: main;
+    min-height: 50vh;
+    overflow: auto;
+   }
+
+   aside {
+    grid-area: aside;
+   }
+
+   footer {
+    grid-area: foot;
+    display: flow-root;
+    text-align: center;
+   }
+
+  }
+ </style>
+
+</head>
+
+<body>
+
+ <menu>
+  <li>
+   <button type="button" popovertarget="navGeneral">≡</button>
+  </li>
+ </menu>
+
+ <nav id="navGeneral" popover="auto">
+  <h2>Enlaces externos</h2>
+  <ul>
+   <li>
+    <p>
+     <a target="_blank" rel="noreferrer" href="https://savethecat.com/">
+      Salvar al gato.
+     </a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a target="_blank" rel="noreferrer" href="https://www.showrunner.xyz/">
+      Showrunner
+     </a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a target="_blank" rel="noreferrer" href="https://google.com/">
+      Google
+     </a>
+    </p>
+   </li>
+  </ul>
+ </nav>
+
+ <header>
+  <nav>
+   <ul>
+    <li>
+     <p>
+      <a target="_blank" rel="noreferrer" href="https://savethecat.com/">
+       Salvar al gato.
+      </a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a target="_blank" rel="noreferrer" href="https://www.showrunner.xyz/">
+       Showrunner
+      </a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a target="_blank" rel="noreferrer" href="https://google.com/">
+       Google
+      </a>
+     </p>
+    </li>
+   </ul>
+  </nav>
+  <h1>@media</h1>
+ </header>
+
+ <main>
+  <p>
+   Este ejemplo usa @media para
+   seleccionar el display
+   de la página principal.
+  </p>
+  <p>
+   Lorem ipsum dolor sit amet
+   consectetur adipisicing elit.
+   Omnis, eius. Quaerat alias
+   facilis recusandae, voluptate
+   cumque quod tenetur
+   necessitatibus exercitationem
+   beatae cupiditate iste
+   voluptatum, optio debitis
+   deserunt laboriosam placeat
+   odit?.
+  </p>
+
+ </main>
+
+ <aside>
+  <h2>Aside</h2>
+  <p>
+   Este aside cambia su despliegue.
+  </p>
+ </aside>
+
+ <footer>
+  <p>
+   &copy; 2025
+   Gilberto Pacheco Gallegos
+  </p>
+ </footer>
+
+</body>
+
+</html>

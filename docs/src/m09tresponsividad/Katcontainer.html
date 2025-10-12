@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>@container</title>
+ <meta name="viewport"
+   content="width=device-width">
+
+ <style>
+  body {
+   margin-top: 0;
+  }
+
+  h1 {
+   position: sticky;
+   top: 0;
+   margin: 0;
+  }
+
+  html {
+   container-type: scroll-state;
+   container-name: scroller;
+  }
+
+  main {
+   container-type: inline-size;
+   container-name: main;
+  }
+
+  @container main (min-width: 500px) {
+
+   p::first-letter {
+    font-size: 3em;
+    float: inline-start;
+   }
+
+   p {
+    clear: both;
+   }
+
+  }
+
+  @container scroller scroll-state(scrollable: top) {
+   h1 {
+    border: solid;
+   }
+  }
+ </style>
+
+</head>
+
+<body>
+
+ <h1>@container</h1>
+
+ <main>
+
+  <p>
+   Este ejemplo usa @container.
+  </p>
+  <p>
+   Lorem ipsum dolor sit amet
+   consectetur adipisicing elit.
+   Iure, assumenda reiciendis.
+   Reprehenderit non sunt enim
+   sequi vel consequatur nostrum
+   suscipit, numquam, ipsam commodi
+   placeat quibusdam porro
+   excepturi aliquid officia
+   labore!
+  </p>
+  <p>
+   Lorem ipsum dolor sit amet
+   consectetur adipisicing elit.
+   Iure, assumenda reiciendis.
+   Reprehenderit non sunt enim
+   sequi vel consequatur nostrum
+   suscipit, numquam, ipsam commodi
+   placeat quibusdam porro
+   excepturi aliquid officia
+   labore!
+  </p>
+
+ </main>
+
+</body>
+
+</html>

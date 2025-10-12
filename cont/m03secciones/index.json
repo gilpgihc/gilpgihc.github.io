@@ -1,0 +1,18 @@
+{
+ "type": "A",
+ "title": "Secciones de HTML",
+ "description": "Contenido de la lección «Secciones de HTML»",
+ "printDescription": "Página para imprimir de la lección «Secciones de HTML».",
+ "listado": [
+  {
+   "name": "mAdocumento.html",
+   "title": "Documento",
+   "description": "Documento de HTML."
+  },
+  {
+   "name": "mIresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «Secciones de HTML»."
+  }
+ ]
+}
