@@ -11,25 +11,33 @@
  <style>
   body {
    --gap: 0.5rem;
+   margin-top: 0;
   }
 
   h1 {
-   text-align: center;
+   margin: 0;
+  }
+
+  menu,
+  header {
+   grid-area: head;
+   position: sticky;
+   top: 0;
+   display: flex;
+   gap: var(--gap);
+   align-items: center;
   }
 
   @media screen and (max-width: 599px) {
 
    menu {
-    --gap: 0.5rem;
-    display: block;
-    position: sticky;
-    top: 0;
     /* Quita las viñetas. */
     list-style-type: none;
     padding: 0;
+    margin: 0;
    }
 
-   header nav {
+   header {
     display: none;
    }
 
@@ -57,12 +65,8 @@
     display: none;
    }
 
-   header {
-    grid-area: head;
-   }
-
    header nav ul {
-    display: flex;
+    display: inline-flex;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -101,6 +105,9 @@
   <li>
    <button type="button" popovertarget="navGeneral">≡</button>
   </li>
+  <li>
+   <h1>@media</h1>
+  </li>
  </menu>
 
  <nav id="navGeneral" popover="auto">
@@ -131,6 +138,7 @@
  </nav>
 
  <header>
+  <h1>@media</h1>
   <nav>
    <ul>
     <li>
@@ -156,7 +164,6 @@
     </li>
    </ul>
   </nav>
-  <h1>@media</h1>
  </header>
 
  <main>
