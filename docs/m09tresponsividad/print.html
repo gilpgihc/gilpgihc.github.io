@@ -2004,173 +2004,193 @@
   <tr><td>37</td><td>    <span class="codeReserved">margin</span>: 0;</td></tr>
   <tr><td>38</td><td>   }</td></tr>
   <tr><td>39</td><td></td></tr>
-  <tr><td>40</td><td>   header {</td></tr>
-  <tr><td>41</td><td>    <span class="codeReserved">display</span>: none;</td></tr>
+  <tr><td>40</td><td>   #hamburguesa {</td></tr>
+  <tr><td>41</td><td>    anchor-name: --hamburguesa;</td></tr>
   <tr><td>42</td><td>   }</td></tr>
   <tr><td>43</td><td></td></tr>
-  <tr><td>44</td><td>   main {</td></tr>
-  <tr><td>45</td><td>    <span class="codeReserved">flex-grow</span>: 1;</td></tr>
-  <tr><td>46</td><td>    <span class="codeReserved">align-self</span>: stretch</td></tr>
-  <tr><td>47</td><td>   }</td></tr>
-  <tr><td>48</td><td></td></tr>
-  <tr><td>49</td><td>  }</td></tr>
-  <tr><td>50</td><td></td></tr>
-  <tr><td>51</td><td>  <span class="codeReserved">@media</span> screen and (<span class="codeReserved">min-width</span>: 600px) {</td></tr>
-  <tr><td>52</td><td>   body {</td></tr>
-  <tr><td>53</td><td>    <span class="codeReserved">display</span>: grid;</td></tr>
-  <tr><td>54</td><td>    column-gap: <span class="codeReserved">var</span>(--<span class="codeReserved">gap</span>);</td></tr>
-  <tr><td>55</td><td>    row-gap: 1rem;</td></tr>
-  <tr><td>56</td><td>    <span class="codeReserved">grid-template-columns</span>: 1fr 20vw;</td></tr>
-  <tr><td>57</td><td>    <span class="codeReserved">grid-template-rows</span>: auto 1fr auto;</td></tr>
-  <tr><td>58</td><td>    <span class="codeReserved">grid-template-areas</span>:</td></tr>
-  <tr><td>59</td><td>     <span class="codeString">"head head"</span></td></tr>
-  <tr><td>60</td><td>     <span class="codeString">"main aside"</span></td></tr>
-  <tr><td>61</td><td>     <span class="codeString">"foot foot"</span>;</td></tr>
+  <tr><td>44</td><td>   #navGeneral {</td></tr>
+  <tr><td>45</td><td>    <span class="codeReserved">position</span>: absolute;</td></tr>
+  <tr><td>46</td><td>    <span class="codeComment">/* Posiciona con respecto a otro elemento.*/</span></td></tr>
+  <tr><td>47</td><td>    position-anchor: --hamburguesa;</td></tr>
+  <tr><td>48</td><td>    <span class="codeComment">/* Extremo superior cuando no se soporta <span class="codeReserved">position</span>-anchor, */</span></td></tr>
+  <tr><td>49</td><td>    <span class="codeReserved">top</span>: 2rem;</td></tr>
+  <tr><td>50</td><td>    <span class="codeComment">/* El extremo superior va debajo de la hamburgjesa, */</span></td></tr>
+  <tr><td>51</td><td>    <span class="codeReserved">top</span>: anchor(<span class="codeReserved">bottom</span>);</td></tr>
+  <tr><td>52</td><td>    <span class="codeComment">/* Extremo izquierdo cuando no se soporta <span class="codeReserved">position</span>-anchor, */</span></td></tr>
+  <tr><td>53</td><td>    <span class="codeReserved">left</span>: 0;</td></tr>
+  <tr><td>54</td><td>    <span class="codeComment">/* El extremo izquierdo se alinea con la izquierda de la hamburgjesa, */</span></td></tr>
+  <tr><td>55</td><td>    <span class="codeReserved">left</span>: anchor(<span class="codeReserved">left</span>);</td></tr>
+  <tr><td>56</td><td>    <span class="codeComment">/* Evita que se centre el contenido, */</span></td></tr>
+  <tr><td>57</td><td>    <span class="codeReserved">margin</span>: unset;</td></tr>
+  <tr><td>58</td><td>   }</td></tr>
+  <tr><td>59</td><td></td></tr>
+  <tr><td>60</td><td>   header {</td></tr>
+  <tr><td>61</td><td>    <span class="codeReserved">display</span>: none;</td></tr>
   <tr><td>62</td><td>   }</td></tr>
   <tr><td>63</td><td></td></tr>
-  <tr><td>64</td><td>   menu {</td></tr>
-  <tr><td>65</td><td>    <span class="codeReserved">display</span>: none;</td></tr>
-  <tr><td>66</td><td>   }</td></tr>
-  <tr><td>67</td><td></td></tr>
-  <tr><td>68</td><td>   header nav ul {</td></tr>
-  <tr><td>69</td><td>    <span class="codeReserved">display</span>: inline-flex;</td></tr>
-  <tr><td>70</td><td>    <span class="codeReserved">list-style-type</span>: none;</td></tr>
-  <tr><td>71</td><td>    <span class="codeReserved">padding</span>: 0;</td></tr>
-  <tr><td>72</td><td>    <span class="codeReserved">margin</span>: 0;</td></tr>
-  <tr><td>73</td><td>    <span class="codeReserved">gap</span>: <span class="codeReserved">var</span>(--<span class="codeReserved">gap</span>);</td></tr>
-  <tr><td>74</td><td>    <span class="codeReserved">justify-content</span>: center;</td></tr>
-  <tr><td>75</td><td>   }</td></tr>
-  <tr><td>76</td><td></td></tr>
-  <tr><td>77</td><td>   header nav ul p {</td></tr>
-  <tr><td>78</td><td>    <span class="codeReserved">margin</span>: 0;</td></tr>
-  <tr><td>79</td><td>   }</td></tr>
-  <tr><td>80</td><td></td></tr>
-  <tr><td>81</td><td>   main {</td></tr>
-  <tr><td>82</td><td>    <span class="codeReserved">grid-area</span>: main;</td></tr>
-  <tr><td>83</td><td>    <span class="codeReserved">min-height</span>: 50vh;</td></tr>
-  <tr><td>84</td><td>    <span class="codeReserved">overflow</span>: auto;</td></tr>
-  <tr><td>85</td><td>   }</td></tr>
-  <tr><td>86</td><td></td></tr>
-  <tr><td>87</td><td>   aside {</td></tr>
-  <tr><td>88</td><td>    <span class="codeReserved">grid-area</span>: aside;</td></tr>
-  <tr><td>89</td><td>   }</td></tr>
-  <tr><td>90</td><td></td></tr>
-  <tr><td>91</td><td>   footer {</td></tr>
-  <tr><td>92</td><td>    <span class="codeReserved">grid-area</span>: foot;</td></tr>
-  <tr><td>93</td><td>    <span class="codeReserved">display</span>: flow-root;</td></tr>
-  <tr><td>94</td><td>    <span class="codeReserved">text-align</span>: center;</td></tr>
+  <tr><td>64</td><td>   main {</td></tr>
+  <tr><td>65</td><td>    <span class="codeReserved">flex-grow</span>: 1;</td></tr>
+  <tr><td>66</td><td>    <span class="codeReserved">align-self</span>: stretch</td></tr>
+  <tr><td>67</td><td>   }</td></tr>
+  <tr><td>68</td><td></td></tr>
+  <tr><td>69</td><td>  }</td></tr>
+  <tr><td>70</td><td></td></tr>
+  <tr><td>71</td><td>  <span class="codeReserved">@media</span> screen and (<span class="codeReserved">min-width</span>: 600px) {</td></tr>
+  <tr><td>72</td><td>   body {</td></tr>
+  <tr><td>73</td><td>    <span class="codeReserved">display</span>: grid;</td></tr>
+  <tr><td>74</td><td>    column-gap: <span class="codeReserved">var</span>(--<span class="codeReserved">gap</span>);</td></tr>
+  <tr><td>75</td><td>    row-gap: 1rem;</td></tr>
+  <tr><td>76</td><td>    <span class="codeReserved">grid-template-columns</span>: 1fr 20vw;</td></tr>
+  <tr><td>77</td><td>    <span class="codeReserved">grid-template-rows</span>: auto 1fr auto;</td></tr>
+  <tr><td>78</td><td>    <span class="codeReserved">grid-template-areas</span>:</td></tr>
+  <tr><td>79</td><td>     <span class="codeString">"head head"</span></td></tr>
+  <tr><td>80</td><td>     <span class="codeString">"main aside"</span></td></tr>
+  <tr><td>81</td><td>     <span class="codeString">"foot foot"</span>;</td></tr>
+  <tr><td>82</td><td>   }</td></tr>
+  <tr><td>83</td><td></td></tr>
+  <tr><td>84</td><td>   menu {</td></tr>
+  <tr><td>85</td><td>    <span class="codeReserved">display</span>: none;</td></tr>
+  <tr><td>86</td><td>   }</td></tr>
+  <tr><td>87</td><td></td></tr>
+  <tr><td>88</td><td>   header nav ul {</td></tr>
+  <tr><td>89</td><td>    <span class="codeReserved">display</span>: inline-flex;</td></tr>
+  <tr><td>90</td><td>    <span class="codeReserved">list-style-type</span>: none;</td></tr>
+  <tr><td>91</td><td>    <span class="codeReserved">padding</span>: 0;</td></tr>
+  <tr><td>92</td><td>    <span class="codeReserved">margin</span>: 0;</td></tr>
+  <tr><td>93</td><td>    <span class="codeReserved">gap</span>: <span class="codeReserved">var</span>(--<span class="codeReserved">gap</span>);</td></tr>
+  <tr><td>94</td><td>    <span class="codeReserved">justify-content</span>: center;</td></tr>
   <tr><td>95</td><td>   }</td></tr>
   <tr><td>96</td><td></td></tr>
-  <tr><td>97</td><td>  }</td></tr>
-  <tr><td>98</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
-  <tr><td>99</td><td></td></tr>
-  <tr><td>100</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>101</td><td></td></tr>
-  <tr><td>102</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>103</td><td></td></tr>
-  <tr><td>104</td><td> &lt;<span class="codeReserved">menu</span>&gt;</td></tr>
-  <tr><td>105</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>106</td><td>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span> popovertarget=<span class="codeString">"navGeneral"</span>&gt;≡&lt;/<span class="codeReserved">button</span>&gt;</td></tr>
-  <tr><td>107</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>108</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>109</td><td>   &lt;<span class="codeReserved">h1</span>&gt;<span class="codeReserved">@media</span>&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-  <tr><td>110</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>111</td><td> &lt;/<span class="codeReserved">menu</span>&gt;</td></tr>
-  <tr><td>112</td><td></td></tr>
-  <tr><td>113</td><td> &lt;<span class="codeReserved">nav</span> id=<span class="codeString">"navGeneral"</span> popover=<span class="codeString">"auto"</span>&gt;</td></tr>
-  <tr><td>114</td><td>  &lt;<span class="codeReserved">h2</span>&gt;Enlaces externos&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
-  <tr><td>115</td><td>  &lt;<span class="codeReserved">ul</span>&gt;</td></tr>
-  <tr><td>116</td><td>   &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>117</td><td>    &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>118</td><td>     &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span> href=<span class="codeString">"https://savethecat.com/"</span>&gt;</td></tr>
-  <tr><td>119</td><td>      Salvar al gato.</td></tr>
-  <tr><td>120</td><td>     &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
-  <tr><td>121</td><td>    &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>122</td><td>   &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>123</td><td>   &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>124</td><td>    &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>125</td><td>     &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span> href=<span class="codeString">"https://www.showrunner.xyz/"</span>&gt;</td></tr>
-  <tr><td>126</td><td>      Showrunner</td></tr>
-  <tr><td>127</td><td>     &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
-  <tr><td>128</td><td>    &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>129</td><td>   &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>130</td><td>   &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>131</td><td>    &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>132</td><td>     &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span> href=<span class="codeString">"https://google.com/"</span>&gt;</td></tr>
-  <tr><td>133</td><td>      Google</td></tr>
-  <tr><td>134</td><td>     &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
-  <tr><td>135</td><td>    &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>136</td><td>   &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>137</td><td>  &lt;/<span class="codeReserved">ul</span>&gt;</td></tr>
-  <tr><td>138</td><td> &lt;/<span class="codeReserved">nav</span>&gt;</td></tr>
-  <tr><td>139</td><td></td></tr>
-  <tr><td>140</td><td> &lt;<span class="codeReserved">header</span>&gt;</td></tr>
-  <tr><td>141</td><td>  &lt;<span class="codeReserved">h1</span>&gt;<span class="codeReserved">@media</span>&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-  <tr><td>142</td><td>  &lt;<span class="codeReserved">nav</span>&gt;</td></tr>
-  <tr><td>143</td><td>   &lt;<span class="codeReserved">ul</span>&gt;</td></tr>
-  <tr><td>144</td><td>    &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>145</td><td>     &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>146</td><td>      &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span> href=<span class="codeString">"https://savethecat.com/"</span>&gt;</td></tr>
-  <tr><td>147</td><td>       Salvar al gato.</td></tr>
-  <tr><td>148</td><td>      &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
-  <tr><td>149</td><td>     &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>150</td><td>    &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>151</td><td>    &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>152</td><td>     &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>153</td><td>      &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span> href=<span class="codeString">"https://www.showrunner.xyz/"</span>&gt;</td></tr>
-  <tr><td>154</td><td>       Showrunner</td></tr>
-  <tr><td>155</td><td>      &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
-  <tr><td>156</td><td>     &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>157</td><td>    &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>158</td><td>    &lt;<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>159</td><td>     &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>160</td><td>      &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span> href=<span class="codeString">"https://google.com/"</span>&gt;</td></tr>
-  <tr><td>161</td><td>       Google</td></tr>
-  <tr><td>162</td><td>      &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
-  <tr><td>163</td><td>     &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>164</td><td>    &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
-  <tr><td>165</td><td>   &lt;/<span class="codeReserved">ul</span>&gt;</td></tr>
-  <tr><td>166</td><td>  &lt;/<span class="codeReserved">nav</span>&gt;</td></tr>
-  <tr><td>167</td><td> &lt;/<span class="codeReserved">header</span>&gt;</td></tr>
-  <tr><td>168</td><td></td></tr>
-  <tr><td>169</td><td> &lt;<span class="codeReserved">main</span>&gt;</td></tr>
-  <tr><td>170</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>171</td><td>   Este ejemplo usa <span class="codeReserved">@media</span> para</td></tr>
-  <tr><td>172</td><td>   seleccionar el <span class="codeReserved">display</span></td></tr>
-  <tr><td>173</td><td>   de la página principal.</td></tr>
-  <tr><td>174</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>175</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>176</td><td>   Lorem ipsum dolor sit amet</td></tr>
-  <tr><td>177</td><td>   consectetur adipisicing elit.</td></tr>
-  <tr><td>178</td><td>   Omnis, eius. Quaerat alias</td></tr>
-  <tr><td>179</td><td>   facilis recusandae, voluptate</td></tr>
-  <tr><td>180</td><td>   cumque quod tenetur</td></tr>
-  <tr><td>181</td><td>   necessitatibus exercitationem</td></tr>
-  <tr><td>182</td><td>   beatae cupiditate iste</td></tr>
-  <tr><td>183</td><td>   voluptatum, optio debitis</td></tr>
-  <tr><td>184</td><td>   deserunt laboriosam placeat</td></tr>
-  <tr><td>185</td><td>   odit?.</td></tr>
-  <tr><td>186</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>187</td><td></td></tr>
-  <tr><td>188</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
-  <tr><td>189</td><td></td></tr>
-  <tr><td>190</td><td> &lt;<span class="codeReserved">aside</span>&gt;</td></tr>
-  <tr><td>191</td><td>  &lt;<span class="codeReserved">h2</span>&gt;Aside&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
-  <tr><td>192</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>193</td><td>   Este aside cambia su despliegue.</td></tr>
+  <tr><td>97</td><td>   header nav ul p {</td></tr>
+  <tr><td>98</td><td>    <span class="codeReserved">margin</span>: 0;</td></tr>
+  <tr><td>99</td><td>   }</td></tr>
+  <tr><td>100</td><td></td></tr>
+  <tr><td>101</td><td>   main {</td></tr>
+  <tr><td>102</td><td>    <span class="codeReserved">grid-area</span>: main;</td></tr>
+  <tr><td>103</td><td>    <span class="codeReserved">min-height</span>: 50vh;</td></tr>
+  <tr><td>104</td><td>    <span class="codeReserved">overflow</span>: auto;</td></tr>
+  <tr><td>105</td><td>   }</td></tr>
+  <tr><td>106</td><td></td></tr>
+  <tr><td>107</td><td>   aside {</td></tr>
+  <tr><td>108</td><td>    <span class="codeReserved">grid-area</span>: aside;</td></tr>
+  <tr><td>109</td><td>   }</td></tr>
+  <tr><td>110</td><td></td></tr>
+  <tr><td>111</td><td>   footer {</td></tr>
+  <tr><td>112</td><td>    <span class="codeReserved">grid-area</span>: foot;</td></tr>
+  <tr><td>113</td><td>    <span class="codeReserved">display</span>: flow-root;</td></tr>
+  <tr><td>114</td><td>    <span class="codeReserved">text-align</span>: center;</td></tr>
+  <tr><td>115</td><td>   }</td></tr>
+  <tr><td>116</td><td></td></tr>
+  <tr><td>117</td><td>  }</td></tr>
+  <tr><td>118</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>119</td><td></td></tr>
+  <tr><td>120</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>121</td><td></td></tr>
+  <tr><td>122</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>123</td><td></td></tr>
+  <tr><td>124</td><td> &lt;<span class="codeReserved">menu</span>&gt;</td></tr>
+  <tr><td>125</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>126</td><td>   &lt;<span class="codeReserved">button</span> id=<span class="codeString">"hamburguesa"</span> type=<span class="codeString">"button"</span> popovertarget=<span class="codeString">"navGeneral"</span>&gt;≡&lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+  <tr><td>127</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>128</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>129</td><td>   &lt;<span class="codeReserved">h1</span>&gt;<span class="codeReserved">@media</span>&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>130</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>131</td><td> &lt;/<span class="codeReserved">menu</span>&gt;</td></tr>
+  <tr><td>132</td><td></td></tr>
+  <tr><td>133</td><td> &lt;<span class="codeReserved">nav</span> id=<span class="codeString">"navGeneral"</span> popover=<span class="codeString">"auto"</span>&gt;</td></tr>
+  <tr><td>134</td><td>  &lt;<span class="codeReserved">h2</span>&gt;Enlaces externos&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
+  <tr><td>135</td><td>  &lt;<span class="codeReserved">ul</span>&gt;</td></tr>
+  <tr><td>136</td><td>   &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>137</td><td>    &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>138</td><td>     &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span> href=<span class="codeString">"https://savethecat.com/"</span>&gt;</td></tr>
+  <tr><td>139</td><td>      Salvar al gato.</td></tr>
+  <tr><td>140</td><td>     &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>141</td><td>    &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>142</td><td>   &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>143</td><td>   &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>144</td><td>    &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>145</td><td>     &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span> href=<span class="codeString">"https://www.showrunner.xyz/"</span>&gt;</td></tr>
+  <tr><td>146</td><td>      Showrunner</td></tr>
+  <tr><td>147</td><td>     &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>148</td><td>    &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>149</td><td>   &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>150</td><td>   &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>151</td><td>    &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>152</td><td>     &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span> href=<span class="codeString">"https://google.com/"</span>&gt;</td></tr>
+  <tr><td>153</td><td>      Google</td></tr>
+  <tr><td>154</td><td>     &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>155</td><td>    &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>156</td><td>   &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>157</td><td>  &lt;/<span class="codeReserved">ul</span>&gt;</td></tr>
+  <tr><td>158</td><td> &lt;/<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>159</td><td></td></tr>
+  <tr><td>160</td><td> &lt;<span class="codeReserved">header</span>&gt;</td></tr>
+  <tr><td>161</td><td>  &lt;<span class="codeReserved">h1</span>&gt;<span class="codeReserved">@media</span>&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>162</td><td>  &lt;<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>163</td><td>   &lt;<span class="codeReserved">ul</span>&gt;</td></tr>
+  <tr><td>164</td><td>    &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>165</td><td>     &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>166</td><td>      &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span> href=<span class="codeString">"https://savethecat.com/"</span>&gt;</td></tr>
+  <tr><td>167</td><td>       Salvar al gato.</td></tr>
+  <tr><td>168</td><td>      &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>169</td><td>     &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>170</td><td>    &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>171</td><td>    &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>172</td><td>     &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>173</td><td>      &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span> href=<span class="codeString">"https://www.showrunner.xyz/"</span>&gt;</td></tr>
+  <tr><td>174</td><td>       Showrunner</td></tr>
+  <tr><td>175</td><td>      &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>176</td><td>     &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>177</td><td>    &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>178</td><td>    &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>179</td><td>     &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>180</td><td>      &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span> rel=<span class="codeString">"noreferrer"</span> href=<span class="codeString">"https://google.com/"</span>&gt;</td></tr>
+  <tr><td>181</td><td>       Google</td></tr>
+  <tr><td>182</td><td>      &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>183</td><td>     &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>184</td><td>    &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>185</td><td>   &lt;/<span class="codeReserved">ul</span>&gt;</td></tr>
+  <tr><td>186</td><td>  &lt;/<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>187</td><td> &lt;/<span class="codeReserved">header</span>&gt;</td></tr>
+  <tr><td>188</td><td></td></tr>
+  <tr><td>189</td><td> &lt;<span class="codeReserved">main</span>&gt;</td></tr>
+  <tr><td>190</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>191</td><td>   Este ejemplo usa <span class="codeReserved">@media</span> para</td></tr>
+  <tr><td>192</td><td>   seleccionar el <span class="codeReserved">display</span></td></tr>
+  <tr><td>193</td><td>   de la página principal.</td></tr>
   <tr><td>194</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>195</td><td> &lt;/<span class="codeReserved">aside</span>&gt;</td></tr>
-  <tr><td>196</td><td></td></tr>
-  <tr><td>197</td><td> &lt;<span class="codeReserved">footer</span>&gt;</td></tr>
-  <tr><td>198</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>199</td><td>   &copy; 2025</td></tr>
-  <tr><td>200</td><td>   Gilberto Pacheco Gallegos</td></tr>
-  <tr><td>201</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>202</td><td> &lt;/<span class="codeReserved">footer</span>&gt;</td></tr>
-  <tr><td>203</td><td></td></tr>
-  <tr><td>204</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>205</td><td></td></tr>
-  <tr><td>206</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+  <tr><td>195</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>196</td><td>   Lorem ipsum dolor sit amet</td></tr>
+  <tr><td>197</td><td>   consectetur adipisicing elit.</td></tr>
+  <tr><td>198</td><td>   Omnis, eius. Quaerat alias</td></tr>
+  <tr><td>199</td><td>   facilis recusandae, voluptate</td></tr>
+  <tr><td>200</td><td>   cumque quod tenetur</td></tr>
+  <tr><td>201</td><td>   necessitatibus exercitationem</td></tr>
+  <tr><td>202</td><td>   beatae cupiditate iste</td></tr>
+  <tr><td>203</td><td>   voluptatum, optio debitis</td></tr>
+  <tr><td>204</td><td>   deserunt laboriosam placeat</td></tr>
+  <tr><td>205</td><td>   odit?.</td></tr>
+  <tr><td>206</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>207</td><td></td></tr>
+  <tr><td>208</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
+  <tr><td>209</td><td></td></tr>
+  <tr><td>210</td><td> &lt;<span class="codeReserved">aside</span>&gt;</td></tr>
+  <tr><td>211</td><td>  &lt;<span class="codeReserved">h2</span>&gt;Aside&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
+  <tr><td>212</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>213</td><td>   Este aside cambia su despliegue.</td></tr>
+  <tr><td>214</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>215</td><td> &lt;/<span class="codeReserved">aside</span>&gt;</td></tr>
+  <tr><td>216</td><td></td></tr>
+  <tr><td>217</td><td> &lt;<span class="codeReserved">footer</span>&gt;</td></tr>
+  <tr><td>218</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>219</td><td>   &copy; 2025</td></tr>
+  <tr><td>220</td><td>   Gilberto Pacheco Gallegos</td></tr>
+  <tr><td>221</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>222</td><td> &lt;/<span class="codeReserved">footer</span>&gt;</td></tr>
+  <tr><td>223</td><td></td></tr>
+  <tr><td>224</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>225</td><td></td></tr>
+  <tr><td>226</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
  </tbody>
 </table>
 </div>

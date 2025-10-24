@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>Radio y Checkbox</title>
+ <meta name="viewport"
+   content="width=device-width">
+
+</head>
+
+<body>
+
+ <form id="forma"
+   action="javascript:procesa()">
+
+  <h1>Radio y Checkbox</h1>
+
+  <fieldset>
+   <legend>Pasatiempos</legend>
+   <p>
+    <label>
+     <input type="checkbox"
+       name="pasatiempos[]"
+       value="fut">
+     Futbol
+    </label>
+   </p>
+   <p>
+    <label>
+     <input type="checkbox"
+       name="pasatiempos[]"
+       value="chess" checked>
+     Ajedrez
+    </label>
+   </p>
+   <p>
+    <label>
+     <input type="checkbox"
+       name="pasatiempos[]"
+       value="basket" checked>
+     Basketbol
+    </label>
+   </p>
+  </fieldset>
+
+  <fieldset>
+   <legend>Madrugador</legend>
+   <p>
+    <label>
+     <input type="radio"
+       name="madrugador" value="si"
+       checked>
+     Si
+    </label>
+    <label>
+     <input type="radio"
+       name="madrugador"
+       value="no">
+     No
+    </label>
+   </p>
+  </fieldset>
+
+  <p>
+   <button type="submit">
+    Procesar
+   </button>
+  </p>
+
+  <script>
+   function procesa() {
+    alert("Madrugador: "
+     + forma["madrugador"].value
+    )
+    const pasatiempos =
+     Array.from(
+      forma.querySelectorAll(
+       "[name='pasatiempos[]']:checked"
+      )
+     ).map(input => input.value)
+    alert("Pasatiempos: "
+     + pasatiempos.join(", "))
+   }
+  </script>
+
+ </form>
+
+</body>
+
+</html>

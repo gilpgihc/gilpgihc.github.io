@@ -80,6 +80,16 @@
    "description": "Recomienda."
   },
   {
+   "name": "mMradcheck.html",
+   "title": "Formulario con radio y checbox",
+   "description": "Formulario con radio y checbox."
+  },
+  {
+   "name": "mNFormData.html",
+   "title": "Formulario con FormData",
+   "description": "Formulario con FormData."
+  },
+  {
    "name": "mNresumen.html",
    "title": "Resumen",
    "description": "Resumen de la lección «Formularios»."

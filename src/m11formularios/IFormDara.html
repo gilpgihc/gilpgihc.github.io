@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>FormData</title>
+ <meta name="viewport"
+   content="width=device-width">
+
+</head>
+
+<body>
+
+ <form id="forma"
+   action="javascript:procesa()">
+
+  <h1>FormData</h1>
+
+  <p>
+   <label>
+    Nombre
+    <input name="nombre"
+      type="text">
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Edad
+    <input name="edad"
+      type="number">
+   </label>
+  </p>
+
+  <fieldset>
+   <legend>Pasatiempos</legend>
+   <p>
+    <label>
+     <input type="checkbox"
+       name="pasatiempos[]"
+       value="fut">
+     Futbol
+    </label>
+   </p>
+   <p>
+    <label>
+     <input type="checkbox"
+       name="pasatiempos[]"
+       value="chess">
+     Ajedrez
+    </label>
+   </p>
+   <p>
+    <label>
+     <input type="checkbox"
+       name="pasatiempos[]"
+       value="basket">
+     Basketbol
+    </label>
+   </p>
+  </fieldset>
+
+  <fieldset>
+   <legend>Madrugador</legend>
+   <p>
+    <label>
+     <input type="radio"
+       name="madrugador"
+       value="si">
+     Si
+    </label>
+    <label>
+     <input type="radio"
+       name="madrugador"
+       value="no">
+     No
+    </label>
+   </p>
+  </fieldset>
+
+  <p>
+   <label>
+    Género Musical
+    <select name="generoMusical">
+     <option value="">
+      Sin selección
+     </option>
+     <option value="pop">
+      Pop
+     </option>
+     <option value="reg">
+      Reguetón
+     </option>
+    </select>
+   </label>
+  </p>
+
+  <p>
+   <label>
+    Mi opinión sobre la comida
+    mexicana
+    <textarea name="opinion"
+      rows="10"
+      cols="25"></textarea>
+   </label>
+  </p>
+
+  <p>
+   <button type="submit">
+    Procesar
+   </button>
+  </p>
+
+ </form>
+
+ <script>
+  function procesa() {
+   const data =
+    new FormData(forma)
+
+   alert("Nombre: "
+    + data.get("nombre")
+   )
+
+   alert("Edad: "
+    + parseFloat(data.get("edad"))
+   )
+
+   alert("Madrugador: "
+    + data.get("madrugador")
+   )
+
+   alert("Pasatiempos: "
+    + (
+     data.getAll('pasatiempos[]')
+      .join(", "))
+   )
+
+   alert(" Género Musical: "
+    + data.get("generoMusical")
+   )
+
+   alert("Mi opinión: "
+    + data.get("opinion")
+   )
+
+  }
+ </script>
+
+</body>
+
+</html>
