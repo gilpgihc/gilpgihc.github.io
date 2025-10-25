@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Transiciones</title>
+ <style>
+  menu {
+   display: flex;
+   list-style-type: none;
+   gap: 0.5rem;
+   padding: 0;
+   margin: 0;
+  }
+
+  #hamburguesa {
+   anchor-name: --hamburguesa;
+  }
+
+  #navGeneral {
+   position: absolute;
+   position-anchor: --hamburguesa;
+   box-sizing: border-box;
+   top: 2rem;
+   top: anchor(bottom);
+   left: 0;
+   left: anchor(left);
+   margin: unset;
+   transform:
+    translateY(-50%) scaleY(0);
+   transition-property:
+    overlay, display, transform;
+   transition-behavior:
+    allow-discrete;
+   transition-duration: 1s;
+  }
+
+  #navGeneral:popover-open {
+   transform: translateY(0);
+  }
+
+  #sonrisa {
+   font-size: 5rem;
+   width: fit-content;
+   margin: 1rem auto;
+   transform: rotate(0);
+   transition-property: transform;
+   transition-duration: 0.5s;
+  }
+
+  #sonrisa:active {
+   transform: rotate(0.5turn);
+  }
+
+  #sonrisa.rota {
+   transform: rotate(0.8turn);
+  }
+
+  @starting-style {
+
+   #navGeneral:popover-open {
+    transform:
+     translateY(-50%) scaleY(0);
+   }
+
+  }
+ </style>
+
+</head>
+
+<body>
+ <menu>
+  <li>
+   <button type="button"
+     id="hamburguesa"
+     popovertarget="navGeneral">
+    ≡
+   </button>
+  </li>
+  <li>
+   <button type="button"
+     onclick="sonrisa.classList
+     .add('rota')">
+    Rota
+   </button>
+  <li>
+   <button type="button"
+     onclick="sonrisa.classList
+     .remove('rota')">
+    Regresa
+   </button>
+  </li>
+ </menu>
+ <h1>Transiciones</h1>
+ <nav popover="auto"
+   id="navGeneral">
+  <h2>Enlaces externos</h2>
+  <ul>
+   <li>
+    <p>
+     <a target="_blank"
+       rel="noreferrer"
+       href="https://savethecat.com/">
+      Salvar al gato.
+     </a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a target="_blank"
+       rel="noreferrer"
+       href="https://www.showrunner.xyz/">
+      Showrunner
+     </a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a target="_blank"
+       rel="noreferrer"
+       href="https://google.com/">
+      Google
+     </a>
+    </p>
+   </li>
+  </ul>
+ </nav>
+ <figure id="sonrisa">
+  😁
+ </figure>
+</body>
+
+</html>
