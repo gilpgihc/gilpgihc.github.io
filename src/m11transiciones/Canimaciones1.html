@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Animaciones 1</title>
+
+ <style>
+
+  p {
+   font-size: 5rem;
+   width: fit-content;
+   animation-name: vaYViene;
+   animation-duration: 5s;
+   animation-fill-mode: forwards;
+  }
+
+  #sonrisa:active {
+   transform: rotate(0.5turn);
+  }
+
+  #sonrisa.gira {
+   transform: rotate(0.8turn);
+  }
+
+  @keyframes vaYViene {
+   0% {
+    transform: translateX(0);
+    color: red;
+   }
+   50% {
+    transform: translateX(50vw);
+    color: blue;
+   }
+   100% {
+    transform: translateX(0);
+    color: green;
+   }
+
+  }
+ </style>
+
+</head>
+
+<body>
+ 
+ <h1>Animaciones 1</h1>
+
+ <p>Hola</p>
+
+</body>
+
+</html>

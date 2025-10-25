@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Transiciones 1</title>
+
+ <style>
+  menu {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   align-content: center;
+   list-style-type: none;
+   gap: 0.5rem;
+   padding: 0;
+   margin: 0;
+  }
+
+  h1 {
+   margin: 0;
+  }
+
+  #sonrisa {
+   font-size: 5rem;
+   width: fit-content;
+   margin: 1rem auto;
+   cursor: pointer;
+   transition-property: transform;
+   transition-duration: 0.5s;
+  }
+
+  #sonrisa:active {
+   transform: rotate(0.5turn);
+  }
+
+  #sonrisa.gira {
+   transform: rotate(0.8turn);
+  }
+ </style>
+
+</head>
+
+<body>
+
+ <menu>
+  <li>
+   <h1>Transiciones 1</h1>
+  </li>
+  <li>
+   <button type="button"
+     onclick="sonrisa.classList
+       .add('gira')">
+    Gira
+   </button>
+  </li>
+  <li>
+   <button type="button"
+     onclick="sonrisa.classList
+       .remove('gira')">
+    Regresa
+   </button>
+  </li>
+ </menu>
+
+ <figure id="sonrisa">😁</figure>
+
+</body>
+
+</html>

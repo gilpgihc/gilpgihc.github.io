@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Animaciones 2</title>
+
+ <style>
+  menu {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   align-content: center;
+   list-style-type: none;
+   gap: 0.5rem;
+   padding: 0;
+   margin: 0;
+  }
+
+  h1 {
+   margin: 0;
+  }
+
+  #sonrisa {
+   font-size: 5rem;
+   width: fit-content;
+   margin: 1rem;
+  }
+
+  #sonrisa.gira {
+   animation-name: gira;
+   animation-duration: 5s;
+   animation-timing-function: linear;
+   animation-iteration-count:
+    infinite;
+  }
+
+  @keyframes gira {
+   0% {
+    transform:
+     translate(0, 0) scale(1, 1) rotate(0);
+   }
+
+   25% {
+    transform:
+     translate(25vw, -25vh) scale(1, 2) rotate(0.25turn);
+   }
+
+   50% {
+    transform:
+     translate(50vw, 0) scale(2, 2) rotate(0.5turn);
+   }
+
+   75% {
+    transform:
+     translate(25vw, 25vh) scale(2, 1) rotate(0.75turn);
+   }
+
+   100% {
+    transform:
+     translate(0, 0) scale(1, 1) rotate(1turn);
+   }
+
+  }
+ </style>
+
+</head>
+
+<body>
+
+ <menu>
+  <li>
+   <h1>Animaciones 2</h1>
+  </li>
+  <li>
+   <button type="button"
+     onclick="sonrisa.classList
+       .add('gira')">
+    Gira sin cesar
+   </button>
+  </li>
+  <li>
+   <button type="button"
+     onclick="sonrisa.classList
+       .remove('gira')">
+    Detén
+   </button>
+  </li>
+ </menu>
+
+ <figure id="sonrisa">😁</figure>
+
+</body>
+
+</html>

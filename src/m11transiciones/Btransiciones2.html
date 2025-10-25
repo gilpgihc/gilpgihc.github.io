@@ -2,13 +2,18 @@
 <html lang="es">
 
 <head>
+
  <meta charset="UTF-8">
  <meta name="viewport"
    content="width=device-width">
- <title>Transiciones</title>
+ <title>Transiciones 2</title>
+
  <style>
   menu {
    display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   align-content: center;
    list-style-type: none;
    gap: 0.5rem;
    padding: 0;
@@ -19,11 +24,15 @@
    anchor-name: --hamburguesa;
   }
 
+  h1 {
+   margin: 0;
+  }
+
   #navGeneral {
    position: absolute;
    position-anchor: --hamburguesa;
    box-sizing: border-box;
-   top: 2rem;
+   top: 2.5rem;
    top: anchor(bottom);
    left: 0;
    left: anchor(left);
@@ -41,23 +50,6 @@
    transform: translateY(0);
   }
 
-  #sonrisa {
-   font-size: 5rem;
-   width: fit-content;
-   margin: 1rem auto;
-   transform: rotate(0);
-   transition-property: transform;
-   transition-duration: 0.5s;
-  }
-
-  #sonrisa:active {
-   transform: rotate(0.5turn);
-  }
-
-  #sonrisa.rota {
-   transform: rotate(0.8turn);
-  }
-
   @starting-style {
 
    #navGeneral:popover-open {
@@ -71,6 +63,7 @@
 </head>
 
 <body>
+
  <menu>
   <li>
    <button type="button"
@@ -80,20 +73,10 @@
    </button>
   </li>
   <li>
-   <button type="button"
-     onclick="sonrisa.classList
-     .add('rota')">
-    Rota
-   </button>
-  <li>
-   <button type="button"
-     onclick="sonrisa.classList
-     .remove('rota')">
-    Regresa
-   </button>
+   <h1>Transiciones 2</h1>
   </li>
  </menu>
- <h1>Transiciones</h1>
+
  <nav popover="auto"
    id="navGeneral">
   <h2>Enlaces externos</h2>
@@ -127,9 +110,8 @@
    </li>
   </ul>
  </nav>
- <figure id="sonrisa">
-  😁
- </figure>
+
+ <p>Hola</p>
 </body>
 
 </html>
