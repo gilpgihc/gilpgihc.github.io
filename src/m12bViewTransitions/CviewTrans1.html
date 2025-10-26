@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>View Transitions</title>
+
+ <style>
+  nav {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   align-content: center;
+   list-style-type: none;
+   gap: 0.5rem;
+  }
+
+  @view-transition {
+   navigation: auto;
+  }
+
+  @keyframes aparece {
+   from {
+    opacity: 0;
+   }
+  }
+
+  @keyframes desvanece {
+   to {
+    opacity: 0;
+   }
+  }
+
+  html::view-transition-group(root) {
+   animation-duration: 1s;
+  }
+
+  html::view-transition-old(root) {
+   animation-name: desvanece;
+  }
+
+  html::view-transition-new(root) {
+   animation-delay: 1s;
+   animation-name: aparece;
+  }
+ </style>
+
+</head>
+
+<body>
+
+ <nav>
+  <a href="CviewTrans1.html">Inicio</a>
+  <a href="DviewTrans2.html">Acerca de</a>
+ </nav>
+
+ <main>
+  <h1>View Transitions</h1>
+  <p>Esta es la página principal</p>
+ </main>
+
+ <footer>
+  <p>
+   © 2025
+   Gilberto Pacheco Gallegos.
+  </p>
+ </footer>
+
+ <script>
+
+  // https://www.w3.org/TR/css-view-transitions-2/
+
+ </script>
+
+</body>
+
+</html>

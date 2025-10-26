@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>
+  Single Page Application 1
+ </title>
+
+ <style>
+  nav {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   align-content: center;
+   list-style-type: none;
+   gap: 0.5rem;
+  }
+
+  @keyframes aparece {
+   from {
+    opacity: 0;
+   }
+  }
+
+  @keyframes desvanece {
+   to {
+    opacity: 0;
+   }
+  }
+
+  ::view-transition-old(root) {
+   animation-name: desvanece;
+   animation-duration: 1s;
+  }
+
+  ::view-transition-new(root) {
+   animation-name: aparece;
+   animation-delay: 1s;
+   animation-duration: 2s;
+  }
+ </style>
+
+</head>
+
+<body>
+
+ <nav>
+  <a href="inicio">Inicio</a>
+  <a href="acercade">Acerca de</a>
+  <a href="contacto">Contacto</a>
+ </nav>
+
+ <main id="inicio">
+  <h1>Single Page Application 1</h1>
+  <p>Esta es la página principal</p>
+ </main>
+
+ <main id="acercade" hidden>
+  <h1>Acerca de</h1>
+  <p>Esta es la página Acerca de</p>
+ </main>
+
+ <main id="contacto" hidden>
+  <h1>Contacto</h1>
+  <p>Esta es la página Contacto</p>
+ </main>
+
+ <footer>
+  <p>
+   © 2025
+   Gilberto Pacheco Gallegos.
+  </p>
+ </footer>
+
+ <script>
+
+// https://www.w3.org/TR/css-view-transitions-1/
+  const titles = new Map([
+   ["inicio", "Single Page Application 1"],
+   ["acercade", "Acerca de"],
+   ["contacto", "Contacto"],
+  ])
+
+  const vistas =
+   [inicio, acercade, contacto]
+
+  /**
+   * @param {string} estado
+   */
+  function muestraVista(estado) {
+   document.title =
+    (titles.get(estado) ?? "")
+    + " - Single Page Application 1"
+   for (const vista of vistas) {
+    vista.hidden = estado !== vista.id
+   }
+  }
+  /**
+   * @param {string} estado
+   */
+  function transicion(estado) {
+   if (typeof document.startViewTransition === "function") {
+    document.startViewTransition(() => muestraVista(estado))
+   } else {
+    // Fallback for browsers that don't support this API:
+    muestraVista(estado)
+   }
+  }
+
+  // When a link is clicked: update the page for that creature.
+  // From a user perspective, this will look like the loading of a new page.
+
+  document.addEventListener("click",
+   event => {
+    event.preventDefault()
+    const target = event.target
+    if (
+     target instanceof HTMLAnchorElement
+    ) {
+     try {
+      const href = target.href
+      const estado = href.substring(href.lastIndexOf("/") + 1)
+      transicion(estado)
+      // Add a new entry to the history.
+      // This simulates loading a new page.
+      history.pushState(estado, "", location.href)
+     } catch (err) {
+      console.error(err)
+     }
+    }
+   })
+
+  // Handle forward/back buttons
+  window.addEventListener("popstate",
+   event => {
+    // If a state has been provided, we have a "simulated" page
+    // and we update the current page.
+    if (event.state) {
+     // Simulate the loading of the previous page
+     transicion(event.state)
+    }
+   })
+
+  // Create state on page load and replace the current history with it
+  const estadoInicial = "inicio"
+  history.replaceState(estadoInicial, "", location.href)
+
+ </script>
+
+</body>
+
+</html>
