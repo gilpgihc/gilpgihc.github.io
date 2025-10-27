@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>
+  Aceca de - View Transitions
+ </title>
+
+ <style>
+  nav {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   align-content: center;
+   list-style-type: none;
+   gap: 0.5rem;
+  }
+
+  @view-transition {
+   navigation: auto;
+  }
+
+  main {
+   view-transition-name: main;
+  }
+
+  @keyframes desplazaALaDerecha {
+   from {
+    transform: translateX(100vw);
+   }
+  }
+
+  @keyframes desplazaALaIzquierda {
+   to {
+    transform: translateX(-100vw);
+   }
+  }
+
+  ::view-transition-group(main) {
+   animation-duration: 2s;
+  }
+
+  ::view-transition-old(main) {
+   animation-name:
+    desplazaALaIzquierda;
+  }
+
+  ::view-transition-new(main) {
+   animation-name:
+    desplazaALaDerecha;
+  }
+ </style>
+
+</head>
+
+<body>
+
+ <nav>
+  <a href="CviewTransitions1.html">
+   Inicio
+  </a>
+  <a href="DviewTransitions2.html">
+   Acerca de
+  </a>
+ </nav>
+
+ <main>
+  <h1>Acerca de</h1>
+  <p>
+   Esta es la página Acerca de.
+  </p>
+ </main>
+
+ <footer>
+  <p>
+   © 2025
+   Gilberto Pacheco Gallegos.
+  </p>
+ </footer>
+
+</body>
+
+</html>

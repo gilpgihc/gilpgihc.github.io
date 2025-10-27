@@ -1,0 +1,33 @@
+{
+ "type": "A",
+ "title": "View transitions",
+ "description": "Contenido de la lección «View transitions».",
+ "printDescription": "Página para imprimir de la lección «View transitions».",
+ "listado": [
+  {
+   "name": "mAspa1.html",
+   "title": "Single page applications 1",
+   "description": "Single page applications 1."
+  },
+  {
+   "name": "mBspa2.html",
+   "title": "Single page applications 2",
+   "description": "Single page applications 2."
+  },
+  {
+   "name": "mCviewTransitions1.html",
+   "title": "View transitions 1",
+   "description": "View transitions 1."
+  },
+  {
+   "name": "mDviewTransitions2.html",
+   "title": "View transitions 2",
+   "description": "View transitions 2."
+  },
+  {
+   "name": "mNresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «View transitions»."
+  }
+ ]
+}

@@ -9,6 +9,10 @@
  <title>View Transitions</title>
 
  <style>
+  /*
+   https://www.w3.org/TR/css-view-transitions-2/
+   */
+
   nav {
    display: flex;
    align-items: center;
@@ -18,6 +22,9 @@
    gap: 0.5rem;
   }
 
+  /* Activa transiciones de vistas
+   * entre documentos para esta
+   * página. */
   @view-transition {
    navigation: auto;
   }
@@ -34,15 +41,18 @@
    }
   }
 
-  html::view-transition-group(root) {
+  /* Definición que aplicab a todas
+   * las definiciones de
+   * view-transition para root. */
+  ::view-transition-group(root) {
    animation-duration: 1s;
   }
 
-  html::view-transition-old(root) {
+  ::view-transition-old(root) {
    animation-name: desvanece;
   }
 
-  html::view-transition-new(root) {
+  ::view-transition-new(root) {
    animation-delay: 1s;
    animation-name: aparece;
   }
@@ -53,13 +63,19 @@
 <body>
 
  <nav>
-  <a href="CviewTrans1.html">Inicio</a>
-  <a href="DviewTrans2.html">Acerca de</a>
+  <a href="CviewTransitions1.html">
+   Inicio
+  </a>
+  <a href="DviewTransitions2.html">
+   Acerca de
+  </a>
  </nav>
 
  <main>
   <h1>View Transitions</h1>
-  <p>Esta es la página principal</p>
+  <p>
+   Esta es la página principal.
+  </p>
  </main>
 
  <footer>
@@ -68,12 +84,6 @@
    Gilberto Pacheco Gallegos.
   </p>
  </footer>
-
- <script>
-
-  // https://www.w3.org/TR/css-view-transitions-2/
-
- </script>
 
 </body>
 

@@ -28,28 +28,30 @@
    view-transition-name: main;
   }
 
-  @keyframes desplazaHaciaLaDerecha {
+  @keyframes desplazaALaDerecha {
    from {
     transform: translateX(100vw);
    }
   }
 
-  @keyframes desplazaHaciaLaIzquierda {
+  @keyframes desplazaALaIzquierda {
    to {
     transform: translateX(-100vw);
    }
   }
 
-  html::view-transition-group(main) {
+  ::view-transition-group(main) {
    animation-duration: 2s;
   }
 
-  html::view-transition-old(main) {
-   animation-name: desplazaHaciaLaIzquierda;
+  ::view-transition-old(main) {
+   animation-name:
+    desplazaALaIzquierda;
   }
 
-  html::view-transition-new(main) {
-   animation-name: desplazaHaciaLaDerecha;
+  ::view-transition-new(main) {
+   animation-name:
+    desplazaALaDerecha;
   }
  </style>
 
@@ -58,13 +60,19 @@
 <body>
 
  <nav>
-  <a href="CviewTrans1.html">Inicio</a>
-  <a href="DviewTrans2.html">Acerca de</a>
+  <a href="CviewTransitions1.html">
+   Inicio
+  </a>
+  <a href="DviewTransitions2.html">
+   Acerca de
+  </a>
  </nav>
 
  <main>
   <h1>Acerca de</h1>
-  <p>Esta es la página Acerca de</p>
+  <p>
+   Esta es la página Acerca de.
+  </p>
  </main>
 
  <footer>

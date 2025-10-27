@@ -1,0 +1,178 @@
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m11transiciones/Btransiciones2.html" height="300"
+    title="Transiciones 2"></iframe>
+  <p class="noPrint">
+   <a target="_blank" rel="noreferrer"
+    href="/src/m11transiciones/Btransiciones2.html">Ábrelo en otra pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noreferrer"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3ETransiciones%202%3C%2Ftitle%3E%0A%0A%20%3Cstyle%3E%0A%20%20menu%20%7B%0A%20%20%20display%3A%20flex%3B%0A%20%20%20align-items%3A%20center%3B%0A%20%20%20flex-wrap%3A%20wrap%3B%0A%20%20%20align-content%3A%20center%3B%0A%20%20%20list-style-type%3A%20none%3B%0A%20%20%20gap%3A%200.5rem%3B%0A%20%20%20padding%3A%200%3B%0A%20%20%20margin%3A%200%3B%0A%20%20%7D%0A%0A%20%20%23hamburguesa%20%7B%0A%20%20%20%2F*%20La%20hamburguesa%20se%20usar%C3%A1%20como%0A%20%20%20%20*%20referencia%20para%20posicionar%0A%20%20%20%20*%20elementos%20usando%20el%20nombre%0A%20%20%20%20*%20--hamburguesa.%20*%2F%0A%20%20%20anchor-name%3A%20--hamburguesa%3B%0A%20%20%7D%0A%0A%20%20%23navGeneral%20%7B%0A%20%20%20position%3A%20absolute%3B%0A%20%20%20%2F*%20Indica%20la%20referencia%20para%0A%20%20%20%20*%20posicionar%20este%20elemento.%20*%2F%0A%20%20%20position-anchor%3A%20--hamburguesa%3B%0A%20%20%20top%3A%203.5rem%3B%0A%20%20%20top%3A%20anchor(bottom)%3B%0A%20%20%20left%3A%200.5rem%3B%0A%20%20%20left%3A%20anchor(left)%3B%0A%20%20%20margin%3A%20unset%3B%0A%20%20%20%2F*%20Originalmente%20el%20elemento%0A%20%20%20%20*%20est%C3%A1%20desplazado%20hacia%20arriba%0A%20%20%20%20*%20a%20un%2050%25%20de%20su%20tama%C3%B1o%20y%0A%20%20%20%20*%20contraido%20totalmente%20en%20su%0A%20%20%20%20*%20dimensi%C3%B3n%20vertical.%20Cuando%20se%0A%20%20%20%20*%20reduce%2C%20cierra%20en%20el%20centro%3B%0A%20%20%20%20*%20por%20eso%20hay%20que%20desplazarlo.%20*%2F%0A%20%20%20transform%3A%0A%20%20%20%20translateY(-50%25)%20scaleY(0)%3B%0A%20%20%20%2F*%20Este%20elemento%20cambia%0A%20%20%20%20*%20lentamente%20cuando%20se%20cambian%0A%20%20%20%20*%20las%20propiedades%20overlay%2C%0A%20%20%20%20*%20display%20y%20transform.%0A%20%20%20%20*%20por%20ser%20un%20popover%2C%0A%20%20%20%20*%20autom%C3%A1ticamente%20el%20display%20se%0A%20%20%20%20*%20mantiene%20cerrado%20y%20fuera%20de%0A%20%20%20%20*%20la%20capa%20de%20overlay.%20*%2F%0A%20%20%20transition-property%3A%0A%20%20%20%20overlay%2C%20display%2C%20transform%3B%0A%20%20%20%2F*%20Permite%20trabajar%20cin%20las%0A%20%20%20%20*%20propiedades%20que%20cambian%0A%20%20%20%20*%20abruptamente%20como%20overlay%2C%0A%20%20%20%20*%20y%20display.%20*%2F%0A%20%20%20transition-behavior%3A%0A%20%20%20%20allow-discrete%3B%0A%20%20%20transition-duration%3A%201s%3B%0A%20%20%7D%0A%0A%20%20%20%2F*%20Cuando%20el%20popover%20se%20abre%2C%0A%20%20%20%20*%20se%20elimina%20el%20desplazado%0A%20%20%20%20*%20hacia%20arriba%20y%20la%0A%20%20%20%20*%20constracci%C3%B3n%20vertical.%20*%2F%0A%20%20%23navGeneral%3Apopover-open%20%7B%0A%20%20%20transform%3A%20translateY(0)%3B%0A%20%20%7D%0A%0A%20%20%20%2F*%20Reglas%20para%20iniciar%20las%0A%20%20%20%20*%20propiedades%20que%20cambian%0A%20%20%20%20*%20abruptamente.%20*%2F%0A%20%20%40starting-style%20%7B%0A%0A%20%20%20%2F*%20Al%20empezar%20a%20abrir%2C%20el%0A%20%20%20%20*%20popover%20se%20mantiene%20arriba%20y%0A%20%20%20%20*%20cerrado.%20Autom%C3%A1ticamente%20pone%0A%20%20%20%20*%20display%20block%20y%20se%20pasa%20a%20la%0A%20%20%20%20*%20capa%20de%20overlay.%20*%2F%0A%20%20%20%23navGeneral%3Apopover-open%20%7B%0A%20%20%20%20transform%3A%0A%20%20%20%20%20translateY(-50%25)%20scaleY(0)%3B%0A%20%20%20%7D%0A%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%0A%20%3Cmenu%3E%0A%20%20%3Cli%3E%0A%20%20%20%3Cbutton%20type%3D%22button%22%0A%20%20%20%20%20id%3D%22hamburguesa%22%0A%20%20%20%20%20popovertarget%3D%22navGeneral%22%3E%0A%20%20%20%20%E2%89%A1%0A%20%20%20%3C%2Fbutton%3E%0A%20%20%3C%2Fli%3E%0A%20%20%3Cli%3E%0A%20%20%20%3Ch1%3ETransiciones%202%3C%2Fh1%3E%0A%20%20%3C%2Fli%3E%0A%20%3C%2Fmenu%3E%0A%0A%20%3Cnav%20popover%3D%22auto%22%0A%20%20%20id%3D%22navGeneral%22%3E%0A%20%20%3Ch2%3EEnlaces%20externos%3C%2Fh2%3E%0A%20%20%3Cul%3E%0A%20%20%20%3Cli%3E%0A%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%3Ca%20target%3D%22_blank%22%0A%20%20%20%20%20%20%20rel%3D%22noreferrer%22%0A%20%20%20%20%20%20%20href%3D%22https%3A%2F%2Fsavethecat.com%2F%22%3E%0A%20%20%20%20%20%20Salvar%20al%20gato.%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fp%3E%0A%20%20%20%3C%2Fli%3E%0A%20%20%20%3Cli%3E%0A%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%3Ca%20target%3D%22_blank%22%0A%20%20%20%20%20%20%20rel%3D%22noreferrer%22%0A%20%20%20%20%20%20%20href%3D%22https%3A%2F%2Fwww.showrunner.xyz%2F%22%3E%0A%20%20%20%20%20%20Showrunner%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fp%3E%0A%20%20%20%3C%2Fli%3E%0A%20%20%20%3Cli%3E%0A%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%3Ca%20target%3D%22_blank%22%0A%20%20%20%20%20%20%20rel%3D%22noreferrer%22%0A%20%20%20%20%20%20%20href%3D%22https%3A%2F%2Fgoogle.com%2F%22%3E%0A%20%20%20%20%20%20Google%0A%20%20%20%20%20%3C%2Fa%3E%0A%20%20%20%20%3C%2Fp%3E%0A%20%20%20%3C%2Fli%3E%0A%20%20%3C%2Ful%3E%0A%20%3C%2Fnav%3E%0A%0A%20%3Cp%3EHola%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+<table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>8</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;Transiciones 2&lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>10</td><td></td></tr>
+  <tr><td>11</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>12</td><td>  menu {</td></tr>
+  <tr><td>13</td><td>   <span class="codeReserved">display</span>: <span class="codeReserved">flex</span>;</td></tr>
+  <tr><td>14</td><td>   <span class="codeReserved">align-items</span>: center;</td></tr>
+  <tr><td>15</td><td>   flex-wrap: wrap;</td></tr>
+  <tr><td>16</td><td>   <span class="codeReserved">align-content</span>: center;</td></tr>
+  <tr><td>17</td><td>   <span class="codeReserved">list-style-type</span>: none;</td></tr>
+  <tr><td>18</td><td>   <span class="codeReserved">gap</span>: 0.5rem;</td></tr>
+  <tr><td>19</td><td>   <span class="codeReserved">padding</span>: 0;</td></tr>
+  <tr><td>20</td><td>   <span class="codeReserved">margin</span>: 0;</td></tr>
+  <tr><td>21</td><td>  }</td></tr>
+  <tr><td>22</td><td></td></tr>
+  <tr><td>23</td><td>  #hamburguesa {</td></tr>
+  <tr><td>24</td><td>   <span class="codeComment">/* La hamburguesa se usará como</span></td></tr>
+  <tr><td>25</td><td><span class="codeComment">    * referencia para posicionar</span></td></tr>
+  <tr><td>26</td><td><span class="codeComment">    * elementos usando el nombre</span></td></tr>
+  <tr><td>27</td><td><span class="codeComment">    * --hamburguesa. */</span></td></tr>
+  <tr><td>28</td><td>   anchor-name: --hamburguesa;</td></tr>
+  <tr><td>29</td><td>  }</td></tr>
+  <tr><td>30</td><td></td></tr>
+  <tr><td>31</td><td>  #navGeneral {</td></tr>
+  <tr><td>32</td><td>   <span class="codeReserved">position</span>: absolute;</td></tr>
+  <tr><td>33</td><td>   <span class="codeComment">/* Indica la referencia para</span></td></tr>
+  <tr><td>34</td><td><span class="codeComment">    * posicionar este elemento. */</span></td></tr>
+  <tr><td>35</td><td>   position-anchor: --hamburguesa;</td></tr>
+  <tr><td>36</td><td>   <span class="codeReserved">top</span>: 3.5rem;</td></tr>
+  <tr><td>37</td><td>   <span class="codeReserved">top</span>: anchor(<span class="codeReserved">bottom</span>);</td></tr>
+  <tr><td>38</td><td>   <span class="codeReserved">left</span>: 0.5rem;</td></tr>
+  <tr><td>39</td><td>   <span class="codeReserved">left</span>: anchor(<span class="codeReserved">left</span>);</td></tr>
+  <tr><td>40</td><td>   <span class="codeReserved">margin</span>: unset;</td></tr>
+  <tr><td>41</td><td>   <span class="codeComment">/* Originalmente el elemento</span></td></tr>
+  <tr><td>42</td><td><span class="codeComment">    * está desplazado hacia arriba</span></td></tr>
+  <tr><td>43</td><td><span class="codeComment">    * a un 50% de su tamaño y</span></td></tr>
+  <tr><td>44</td><td><span class="codeComment">    * contraido totalmente en su</span></td></tr>
+  <tr><td>45</td><td><span class="codeComment">    * dimensión vertical. Cuando se</span></td></tr>
+  <tr><td>46</td><td><span class="codeComment">    * reduce, cierra en el centro;</span></td></tr>
+  <tr><td>47</td><td><span class="codeComment">    * por eso hay que desplazarlo. */</span></td></tr>
+  <tr><td>48</td><td>   <span class="codeReserved">transform</span>:</td></tr>
+  <tr><td>49</td><td>    translateY(-50%) scaleY(0);</td></tr>
+  <tr><td>50</td><td>   <span class="codeComment">/* Este elemento cambia</span></td></tr>
+  <tr><td>51</td><td><span class="codeComment">    * lentamente cuando se cambian</span></td></tr>
+  <tr><td>52</td><td><span class="codeComment">    * las propiedades overlay,</span></td></tr>
+  <tr><td>53</td><td><span class="codeComment">    * <span class="codeReserved">display</span> y <span class="codeReserved">transform</span>.</span></td></tr>
+  <tr><td>54</td><td><span class="codeComment">    * por ser un popover,</span></td></tr>
+  <tr><td>55</td><td><span class="codeComment">    * automáticamente el <span class="codeReserved">display</span> se</span></td></tr>
+  <tr><td>56</td><td><span class="codeComment">    * mantiene cerrado y fuera de</span></td></tr>
+  <tr><td>57</td><td><span class="codeComment">    * la capa de overlay. */</span></td></tr>
+  <tr><td>58</td><td>   <span class="codeReserved">transition-property</span>:</td></tr>
+  <tr><td>59</td><td>    overlay, <span class="codeReserved">display</span>, <span class="codeReserved">transform</span>;</td></tr>
+  <tr><td>60</td><td>   <span class="codeComment">/* Permite trabajar cin las</span></td></tr>
+  <tr><td>61</td><td><span class="codeComment">    * propiedades que cambian</span></td></tr>
+  <tr><td>62</td><td><span class="codeComment">    * abruptamente como overlay,</span></td></tr>
+  <tr><td>63</td><td><span class="codeComment">    * y <span class="codeReserved">display</span>. */</span></td></tr>
+  <tr><td>64</td><td>   transition-behavior:</td></tr>
+  <tr><td>65</td><td>    allow-discrete;</td></tr>
+  <tr><td>66</td><td>   <span class="codeReserved">transition-duration</span>: 1s;</td></tr>
+  <tr><td>67</td><td>  }</td></tr>
+  <tr><td>68</td><td></td></tr>
+  <tr><td>69</td><td>   <span class="codeComment">/* Cuando el popover se abre,</span></td></tr>
+  <tr><td>70</td><td><span class="codeComment">    * se elimina el desplazado</span></td></tr>
+  <tr><td>71</td><td><span class="codeComment">    * hacia arriba y la</span></td></tr>
+  <tr><td>72</td><td><span class="codeComment">    * constracción vertical. */</span></td></tr>
+  <tr><td>73</td><td>  #navGeneral:popover-open {</td></tr>
+  <tr><td>74</td><td>   <span class="codeReserved">transform</span>: translateY(0);</td></tr>
+  <tr><td>75</td><td>  }</td></tr>
+  <tr><td>76</td><td></td></tr>
+  <tr><td>77</td><td>   <span class="codeComment">/* Reglas para iniciar las</span></td></tr>
+  <tr><td>78</td><td><span class="codeComment">    * propiedades que cambian</span></td></tr>
+  <tr><td>79</td><td><span class="codeComment">    * abruptamente. */</span></td></tr>
+  <tr><td>80</td><td>  <span class="codeReserved">@starting-style</span> {</td></tr>
+  <tr><td>81</td><td></td></tr>
+  <tr><td>82</td><td>   <span class="codeComment">/* Al empezar a abrir, el</span></td></tr>
+  <tr><td>83</td><td><span class="codeComment">    * popover se mantiene arriba y</span></td></tr>
+  <tr><td>84</td><td><span class="codeComment">    * cerrado. Automáticamente pone</span></td></tr>
+  <tr><td>85</td><td><span class="codeComment">    * <span class="codeReserved">display</span> block y se pasa a la</span></td></tr>
+  <tr><td>86</td><td><span class="codeComment">    * capa de overlay. */</span></td></tr>
+  <tr><td>87</td><td>   #navGeneral:popover-open {</td></tr>
+  <tr><td>88</td><td>    <span class="codeReserved">transform</span>:</td></tr>
+  <tr><td>89</td><td>     translateY(-50%) scaleY(0);</td></tr>
+  <tr><td>90</td><td>   }</td></tr>
+  <tr><td>91</td><td></td></tr>
+  <tr><td>92</td><td>  }</td></tr>
+  <tr><td>93</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>94</td><td></td></tr>
+  <tr><td>95</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>96</td><td></td></tr>
+  <tr><td>97</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>98</td><td></td></tr>
+  <tr><td>99</td><td> &lt;<span class="codeReserved">menu</span>&gt;</td></tr>
+  <tr><td>100</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>101</td><td>   &lt;<span class="codeReserved">button</span> type=<span class="codeString">"button"</span></td></tr>
+  <tr><td>102</td><td>     id=<span class="codeString">"hamburguesa"</span></td></tr>
+  <tr><td>103</td><td>     popovertarget=<span class="codeString">"navGeneral"</span>&gt;</td></tr>
+  <tr><td>104</td><td>    ≡</td></tr>
+  <tr><td>105</td><td>   &lt;/<span class="codeReserved">button</span>&gt;</td></tr>
+  <tr><td>106</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>107</td><td>  &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>108</td><td>   &lt;<span class="codeReserved">h1</span>&gt;Transiciones 2&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>109</td><td>  &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>110</td><td> &lt;/<span class="codeReserved">menu</span>&gt;</td></tr>
+  <tr><td>111</td><td></td></tr>
+  <tr><td>112</td><td> &lt;<span class="codeReserved">nav</span> popover=<span class="codeString">"auto"</span></td></tr>
+  <tr><td>113</td><td>   id=<span class="codeString">"navGeneral"</span>&gt;</td></tr>
+  <tr><td>114</td><td>  &lt;<span class="codeReserved">h2</span>&gt;Enlaces externos&lt;/<span class="codeReserved">h2</span>&gt;</td></tr>
+  <tr><td>115</td><td>  &lt;<span class="codeReserved">ul</span>&gt;</td></tr>
+  <tr><td>116</td><td>   &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>117</td><td>    &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>118</td><td>     &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span></td></tr>
+  <tr><td>119</td><td>       rel=<span class="codeString">"noreferrer"</span></td></tr>
+  <tr><td>120</td><td>       href=<span class="codeString">"https://savethecat.com/"</span>&gt;</td></tr>
+  <tr><td>121</td><td>      Salvar al gato.</td></tr>
+  <tr><td>122</td><td>     &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>123</td><td>    &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>124</td><td>   &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>125</td><td>   &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>126</td><td>    &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>127</td><td>     &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span></td></tr>
+  <tr><td>128</td><td>       rel=<span class="codeString">"noreferrer"</span></td></tr>
+  <tr><td>129</td><td>       href=<span class="codeString">"https://www.showrunner.xyz/"</span>&gt;</td></tr>
+  <tr><td>130</td><td>      Showrunner</td></tr>
+  <tr><td>131</td><td>     &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>132</td><td>    &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>133</td><td>   &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>134</td><td>   &lt;<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>135</td><td>    &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>136</td><td>     &lt;<span class="codeReserved">a</span> target=<span class="codeString">"_blank"</span></td></tr>
+  <tr><td>137</td><td>       rel=<span class="codeString">"noreferrer"</span></td></tr>
+  <tr><td>138</td><td>       href=<span class="codeString">"https://google.com/"</span>&gt;</td></tr>
+  <tr><td>139</td><td>      Google</td></tr>
+  <tr><td>140</td><td>     &lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>141</td><td>    &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>142</td><td>   &lt;/<span class="codeReserved">li</span>&gt;</td></tr>
+  <tr><td>143</td><td>  &lt;/<span class="codeReserved">ul</span>&gt;</td></tr>
+  <tr><td>144</td><td> &lt;/<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>145</td><td></td></tr>
+  <tr><td>146</td><td> &lt;<span class="codeReserved">p</span>&gt;Hola&lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>147</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>148</td><td></td></tr>
+  <tr><td>149</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
+</div>

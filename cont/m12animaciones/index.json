@@ -1,0 +1,23 @@
+{
+ "type": "A",
+ "title": "Animaciones",
+ "description": "Contenido de la lección «Animaciones».",
+ "printDescription": "Página para imprimir de la lección «Animaciones».",
+ "listado": [
+  {
+   "name": "mAanimaciones1.html",
+   "title": "Animaciones 1",
+   "description": "Animaciones 1."
+  },
+  {
+   "name": "mBanimaciones2.html",
+   "title": "Animaciones 2",
+   "description": "Animaciones 2."
+  },
+  {
+   "name": "mNresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «Animaciones»."
+  }
+ ]
+}

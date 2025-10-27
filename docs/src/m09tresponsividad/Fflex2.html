@@ -11,9 +11,22 @@
  <style>
   body {
    display: flex;
+   /* Alínea verticalmente el
+    * contenido cuando solo tiene
+    * 1 renglón, a la línea del
+    * primer renglón. */
+   align-items: baseline;
+   /* Si un elemento no cabe, se
+    * pasa al inicio del siguiente
+    * renglón. */
    flex-wrap: wrap;
+   /* Alínea verticalmente el
+    * contenido cuando hay varios
+    * renglones, a la línea del
+    * primer renglón. */
+   align-content: baseline;
    /* Espacio horizontal entre
-    *  elementos. */
+    * elementos. */
    row-gap: 1rem;
    /* Espacio vertical entre
     * elementos. */

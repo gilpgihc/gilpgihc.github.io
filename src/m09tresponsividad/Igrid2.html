@@ -19,6 +19,9 @@
    padding: 0.5rem;
    display: grid;
    gap: 0.5rem;
+   /* Las columnas se generan automáticamente con columnas que al menos deben
+   * tener 15rem de ancho y juntas todas las columnas se estiran uniformemente
+   * para llenar el ancho. */
    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   }
 

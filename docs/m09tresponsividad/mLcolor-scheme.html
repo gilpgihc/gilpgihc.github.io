@@ -861,7 +861,7 @@
   </p>
   <p class="noPrint">
    <a target="_blank" rel="noreferrer"
-     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Ctitle%3Ecolor-scheme%3C%2Ftitle%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%0A%20%3Cstyle%3E%0A%20%20html%20%7B%0A%20%20%20color-scheme%3A%20light%20dark%3B%0A%20%20%7D%0A%0A%20%20%40media%20(prefers-color-scheme%3A%20light)%20%7B%0A%20%20%20html%20%7B%0A%20%20%20%20--color%3A%20yellow%3B%0A%20%20%20%20--backgroundColor%3A%20blue%3B%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20%40media%20(prefers-color-scheme%3A%20dark)%20%7B%0A%20%20%20html%20%7B%0A%20%20%20%20--color%3A%20blue%3B%0A%20%20%20%20--backgroundColor%3A%20yellow%3B%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20h1%20%7B%0A%20%20%20color%3A%20var(--color)%3B%0A%20%20%20background-color%3A%20var(--backgroundColor)%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%0A%20%3Ch1%3Ecolor-scheme%3C%2Fh1%3E%0A%0A%20%3Cp%3E%0A%20%20Este%20ejemplo%20usa%20color-scheme.%0A%20%3C%2Fp%3E%0A%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Ctitle%3Ecolor-scheme%3C%2Ftitle%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%0A%20%3Cstyle%3E%0A%20%20%2F*%20Indica%20que%20esta%20p%C3%A1gina%20soporta%20los%0A%20%20%20*%20temas%20claro%20y%20oscuro%20*%2F%0A%20%20html%20%7B%0A%20%20%20color-scheme%3A%20light%20dark%3B%0A%20%20%7D%0A%0A%20%20%2F*%20Reglas%20solo%20para%20el%20tema%20claro.%20El%0A%20%20%20*%20color%20del%20fondo%20debe%20ser%0A%20%20%20*%20preferentemente%20claro%20y%20el%20color%20de%0A%20%20%20*%20texto%20dene%20ser%20oscuro.%20*%2F%0A%20%20%40media%20(prefers-color-scheme%3A%20light)%20%7B%0A%20%20%20html%20%7B%0A%20%20%20%20--backgroundColor%3A%20yellow%3B%0A%20%20%20%20--color%3A%20blue%3B%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20%2F*%20Reglas%20solo%20para%20el%20tema%20oscuro.%20El%0A%20%20%20*%20color%20del%20fondo%20debe%20ser%0A%20%20%20*%20preferentemente%20oscuro%20y%20el%20color%20de%0A%20%20%20*%20texto%20dene%20ser%20claro.%20*%2F%0A%20%20%40media%20(prefers-color-scheme%3A%20dark)%20%7B%0A%20%20%20html%20%7B%0A%20%20%20%20--backgroundColor%3A%20blue%3B%0A%20%20%20%20--color%3A%20yellow%3B%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20h1%20%7B%0A%20%20%20color%3A%20var(--color)%3B%0A%20%20%20background-color%3A%0A%20%20%20%20var(--backgroundColor)%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%0A%20%3Ch1%3Ecolor-scheme%3C%2Fh1%3E%0A%0A%20%3Cp%3E%0A%20%20Este%20ejemplo%20usa%20color-scheme.%0A%20%3C%2Fp%3E%0A%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
     Revísalo en gilpgedit.
    </a>
   </p>
@@ -887,43 +887,54 @@
   <tr><td>9</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
   <tr><td>10</td><td></td></tr>
   <tr><td>11</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
-  <tr><td>12</td><td>  html {</td></tr>
-  <tr><td>13</td><td>   <span class="codeReserved">color-scheme</span>: light dark;</td></tr>
-  <tr><td>14</td><td>  }</td></tr>
-  <tr><td>15</td><td></td></tr>
-  <tr><td>16</td><td>  <span class="codeReserved">@media</span> (<span class="codeReserved">prefers-color-scheme</span>: light) {</td></tr>
-  <tr><td>17</td><td>   html {</td></tr>
-  <tr><td>18</td><td>    --<span class="codeReserved">color</span>: yellow;</td></tr>
-  <tr><td>19</td><td>    --backgroundColor: blue;</td></tr>
-  <tr><td>20</td><td>   }</td></tr>
-  <tr><td>21</td><td>  }</td></tr>
-  <tr><td>22</td><td></td></tr>
-  <tr><td>23</td><td>  <span class="codeReserved">@media</span> (<span class="codeReserved">prefers-color-scheme</span>: dark) {</td></tr>
-  <tr><td>24</td><td>   html {</td></tr>
+  <tr><td>12</td><td>  <span class="codeComment">/* Indica que esta página soporta los</span></td></tr>
+  <tr><td>13</td><td><span class="codeComment">   * temas claro y oscuro */</span></td></tr>
+  <tr><td>14</td><td>  html {</td></tr>
+  <tr><td>15</td><td>   <span class="codeReserved">color-scheme</span>: light dark;</td></tr>
+  <tr><td>16</td><td>  }</td></tr>
+  <tr><td>17</td><td></td></tr>
+  <tr><td>18</td><td>  <span class="codeComment">/* Reglas solo para el tema claro. El</span></td></tr>
+  <tr><td>19</td><td><span class="codeComment">   * <span class="codeReserved">color</span> del fondo debe ser</span></td></tr>
+  <tr><td>20</td><td><span class="codeComment">   * preferentemente claro y el <span class="codeReserved">color</span> de</span></td></tr>
+  <tr><td>21</td><td><span class="codeComment">   * texto dene ser oscuro. */</span></td></tr>
+  <tr><td>22</td><td>  <span class="codeReserved">@media</span> (<span class="codeReserved">prefers-color-scheme</span>: light) {</td></tr>
+  <tr><td>23</td><td>   html {</td></tr>
+  <tr><td>24</td><td>    --backgroundColor: yellow;</td></tr>
   <tr><td>25</td><td>    --<span class="codeReserved">color</span>: blue;</td></tr>
-  <tr><td>26</td><td>    --backgroundColor: yellow;</td></tr>
-  <tr><td>27</td><td>   }</td></tr>
-  <tr><td>28</td><td>  }</td></tr>
-  <tr><td>29</td><td></td></tr>
-  <tr><td>30</td><td>  h1 {</td></tr>
-  <tr><td>31</td><td>   <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--<span class="codeReserved">color</span>);</td></tr>
-  <tr><td>32</td><td>   <span class="codeReserved">background-color</span>: <span class="codeReserved">var</span>(--backgroundColor);</td></tr>
-  <tr><td>33</td><td>  }</td></tr>
-  <tr><td>34</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
-  <tr><td>35</td><td></td></tr>
-  <tr><td>36</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
-  <tr><td>37</td><td></td></tr>
-  <tr><td>38</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>26</td><td>   }</td></tr>
+  <tr><td>27</td><td>  }</td></tr>
+  <tr><td>28</td><td></td></tr>
+  <tr><td>29</td><td>  <span class="codeComment">/* Reglas solo para el tema oscuro. El</span></td></tr>
+  <tr><td>30</td><td><span class="codeComment">   * <span class="codeReserved">color</span> del fondo debe ser</span></td></tr>
+  <tr><td>31</td><td><span class="codeComment">   * preferentemente oscuro y el <span class="codeReserved">color</span> de</span></td></tr>
+  <tr><td>32</td><td><span class="codeComment">   * texto dene ser claro. */</span></td></tr>
+  <tr><td>33</td><td>  <span class="codeReserved">@media</span> (<span class="codeReserved">prefers-color-scheme</span>: dark) {</td></tr>
+  <tr><td>34</td><td>   html {</td></tr>
+  <tr><td>35</td><td>    --backgroundColor: blue;</td></tr>
+  <tr><td>36</td><td>    --<span class="codeReserved">color</span>: yellow;</td></tr>
+  <tr><td>37</td><td>   }</td></tr>
+  <tr><td>38</td><td>  }</td></tr>
   <tr><td>39</td><td></td></tr>
-  <tr><td>40</td><td> &lt;<span class="codeReserved">h1</span>&gt;<span class="codeReserved">color-scheme</span>&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
-  <tr><td>41</td><td></td></tr>
-  <tr><td>42</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>43</td><td>  Este ejemplo usa <span class="codeReserved">color-scheme</span>.</td></tr>
-  <tr><td>44</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
-  <tr><td>45</td><td></td></tr>
-  <tr><td>46</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
-  <tr><td>47</td><td></td></tr>
-  <tr><td>48</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+  <tr><td>40</td><td>  h1 {</td></tr>
+  <tr><td>41</td><td>   <span class="codeReserved">color</span>: <span class="codeReserved">var</span>(--<span class="codeReserved">color</span>);</td></tr>
+  <tr><td>42</td><td>   <span class="codeReserved">background-color</span>:</td></tr>
+  <tr><td>43</td><td>    <span class="codeReserved">var</span>(--backgroundColor)</td></tr>
+  <tr><td>44</td><td>  }</td></tr>
+  <tr><td>45</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>46</td><td></td></tr>
+  <tr><td>47</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>48</td><td></td></tr>
+  <tr><td>49</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>50</td><td></td></tr>
+  <tr><td>51</td><td> &lt;<span class="codeReserved">h1</span>&gt;<span class="codeReserved">color-scheme</span>&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>52</td><td></td></tr>
+  <tr><td>53</td><td> &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>54</td><td>  Este ejemplo usa <span class="codeReserved">color-scheme</span>.</td></tr>
+  <tr><td>55</td><td> &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>56</td><td></td></tr>
+  <tr><td>57</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>58</td><td></td></tr>
+  <tr><td>59</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
  </tbody>
 </table>
 </div>

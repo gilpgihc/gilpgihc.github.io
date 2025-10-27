@@ -16,15 +16,18 @@
    column-gap: 0.5rem;
    row-gap: 1rem;
    /* Declara 3 columnas:
-    * columna 1 20vw de amcho
-    * columna 2: se ajusta ancho
-    * columna 3: 20vw de amcho */
+    * columna 1: 20vw de amcho.
+    * columna 2: 1fr ajusta a llenar ancho.
+    * columna 3: 20vw de amcho. */
    grid-template-columns: 20vw 1fr 20vw;
    /* Declara 3 renglones:
-    * remglón 1 4rem de alto
-    * remglón 2: se ajusta altura
-    * remglón 3: 4rem de alto */
-   grid-template-rows: 4rem 1fr 4rem;
+    * remglón 1: auto ajusta al contenido.
+    * remglón 2: 1fr ajusta a llenar altura.
+    * remglón 3: auto ajusta al contenido. */
+   grid-template-rows: auto 1fr auto;
+   /* Indica como se llena el grid
+    * en 2 dimensiones usando el nombre
+    * asignado en la propiedad grid-area. */
    grid-template-areas:
     "head head head"
     "nav  main aside"
@@ -32,9 +35,10 @@
   }
 
   h1 {
-   margin: 0;
    grid-area: head;
-   align-self: center;
+   /* El elemento se centra
+    * horizontalmente dentro de su
+    * grupo de celdas. */
    justify-self: center
   }
 
@@ -54,9 +58,7 @@
   }
 
   footer {
-   display: flow-root;
    grid-area: foot;
-   align-self: center;
    justify-self: center
   }
  </style>
@@ -105,8 +107,8 @@
 
  <footer>
   <p>
-    &copy; 2025
-    Gilberto Pacheco Gallegos
+   &copy; 2025
+   Gilberto Pacheco Gallegos
   </p>
  </footer>
 

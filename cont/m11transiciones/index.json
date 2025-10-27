@@ -1,0 +1,23 @@
+{
+ "type": "A",
+ "title": "Transiciones",
+ "description": "Contenido de la lección «Transiciones».",
+ "printDescription": "Página para imprimir de la lección «Transiciones».",
+ "listado": [
+  {
+   "name": "mAtransiciones1.html",
+   "title": "Transiciones 1",
+   "description": "Transiciones 1."
+  },
+  {
+   "name": "mBtransiciones2.html",
+   "title": "Transiciones 2",
+   "description": "Transiciones 2."
+  },
+  {
+   "name": "mNresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «Transiciones»."
+  }
+ ]
+}

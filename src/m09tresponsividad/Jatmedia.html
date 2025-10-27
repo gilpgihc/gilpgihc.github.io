@@ -14,10 +14,6 @@
    margin-top: 0;
   }
 
-  h1 {
-   margin: 0;
-  }
-
   menu,
   header {
    grid-area: head;
@@ -25,7 +21,7 @@
    top: 0;
    display: flex;
    gap: var(--gap);
-   align-items: center;
+   align-items: baseline;
   }
 
   @media screen and (max-width: 599px) {
@@ -46,11 +42,11 @@
     /* Posiciona con respecto a otro elemento.*/
     position-anchor: --hamburguesa;
     /* Extremo superior cuando no se soporta position-anchor, */
-    top: 2rem;
+    top: 3.5rem;
     /* El extremo superior va debajo de la hamburgjesa, */
     top: anchor(bottom);
     /* Extremo izquierdo cuando no se soporta position-anchor, */
-    left: 0;
+    left: 0.5rem;
     /* El extremo izquierdo se alinea con la izquierda de la hamburgjesa, */
     left: anchor(left);
     /* Evita que se centre el contenido, */
@@ -72,7 +68,7 @@
    body {
     display: grid;
     column-gap: var(--gap);
-    row-gap: 1rem;
+    align-items: baseline;
     grid-template-columns: 1fr 20vw;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:

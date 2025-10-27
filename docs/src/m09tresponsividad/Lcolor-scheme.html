@@ -9,27 +9,38 @@
    content="width=device-width">
 
  <style>
+  /* Indica que esta página soporta los
+   * temas claro y oscuro */
   html {
    color-scheme: light dark;
   }
 
+  /* Reglas solo para el tema claro. El
+   * color del fondo debe ser
+   * preferentemente claro y el color de
+   * texto dene ser oscuro. */
   @media (prefers-color-scheme: light) {
    html {
-    --color: yellow;
-    --backgroundColor: blue;
+    --backgroundColor: yellow;
+    --color: blue;
    }
   }
 
+  /* Reglas solo para el tema oscuro. El
+   * color del fondo debe ser
+   * preferentemente oscuro y el color de
+   * texto dene ser claro. */
   @media (prefers-color-scheme: dark) {
    html {
-    --color: blue;
-    --backgroundColor: yellow;
+    --backgroundColor: blue;
+    --color: yellow;
    }
   }
 
   h1 {
    color: var(--color);
-   background-color: var(--backgroundColor);
+   background-color:
+    var(--backgroundColor)
   }
  </style>
 

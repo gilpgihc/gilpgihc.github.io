@@ -20,16 +20,25 @@
   }
 
   html {
+   /* El elemento html responden a cambos en la
+    * posición de las barras de desplazamiento.
+    */
    container-type: scroll-state;
+   /* El nombre para @container es scroller.*/
    container-name: scroller;
   }
 
   main {
+   /* Los elementos main responden a cambos de
+    * tamaño. */
    container-type: inline-size;
+   /* El nombre para @container es main.*/
    container-name: main;
   }
 
-  @container main (min-width: 500px) {
+  /* Reglas cuando al ancho mínimo de main es 500px.
+   */
+  @container main (min-width: 300px) {
 
    p::first-letter {
     font-size: 3em;
@@ -42,6 +51,9 @@
 
   }
 
+  /* Reglas cuando la barra de desplazamiento
+   * vertical de scroller puede moverse hacia arriba.
+   */
   @container scroller scroll-state(scrollable: top) {
    h1 {
     border: solid;

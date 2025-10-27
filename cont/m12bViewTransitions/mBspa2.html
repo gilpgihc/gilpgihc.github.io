@@ -1,0 +1,212 @@
+<div class="horizontal">
+ <section>
+  <h1>Salida</h1>
+  <iframe src="/src/m12bViewTransitions/Bspa2.html" height="250"
+    title="Single page application 2"></iframe>
+  <p class="noPrint">
+   <a target="_blank" rel="noreferrer"
+    href="/src/m12bViewTransitions/Bspa2.html">Ábrelo en otra pestaña.</a>
+  </p>
+  <p class="noPrint">
+   <a target="_blank" rel="noreferrer"
+     href="https://gilpgedit.github.io/#%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22es%22%3E%0A%0A%3Chead%3E%0A%0A%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%3Cmeta%20name%3D%22viewport%22%0A%20%20%20content%3D%22width%3Ddevice-width%22%3E%0A%20%3Ctitle%3E%0A%20%20Single%20Page%20Application%202%0A%20%3C%2Ftitle%3E%0A%0A%20%3Cstyle%3E%0A%20%20nav%20%7B%0A%20%20%20display%3A%20flex%3B%0A%20%20%20align-items%3A%20center%3B%0A%20%20%20flex-wrap%3A%20wrap%3B%0A%20%20%20align-content%3A%20center%3B%0A%20%20%20list-style-type%3A%20none%3B%0A%20%20%20gap%3A%200.5rem%3B%0A%20%20%7D%0A%0A%20%20main%20%7B%0A%20%20%20%2F*%20Los%20elementos%20tppo%20main%0A%20%20%20%20*%20llevan%20una%20transici%C3%B3n%20con%0A%20%20%20%20*%20nombre%20main.%20*%2F%0A%20%20%20view-transition-name%3A%20main%3B%0A%20%20%7D%0A%0A%20%20%40keyframes%20desplazaALaDerecha%20%7B%0A%20%20%20from%20%7B%0A%20%20%20%20transform%3A%20translateX(100vw)%3B%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20%40keyframes%20desplazaALaIzquierda%20%7B%0A%20%20%20to%20%7B%0A%20%20%20%20transform%3A%20translateX(-100vw)%3B%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%20%3A%3Aview-transition-old(main)%20%7B%0A%20%20%20animation-name%3A%0A%20%20%20%20desplazaALaIzquierda%3B%0A%20%20%20animation-duration%3A%202s%3B%0A%20%20%7D%0A%0A%20%20%3A%3Aview-transition-new(main)%20%7B%0A%20%20%20animation-name%3A%0A%20%20%20%20desplazaALaDerecha%3B%0A%20%20%20animation-duration%3A%202s%3B%0A%20%20%7D%0A%20%3C%2Fstyle%3E%0A%0A%3C%2Fhead%3E%0A%0A%3Cbody%3E%0A%0A%20%3Cnav%3E%0A%20%20%3Ca%20href%3D%22inicio%22%3EInicio%3C%2Fa%3E%0A%20%20%3Ca%20href%3D%22acercade%22%3EAcerca%20de%3C%2Fa%3E%0A%20%20%3Ca%20href%3D%22contacto%22%3EContacto%3C%2Fa%3E%0A%20%3C%2Fnav%3E%0A%0A%20%3Cmain%20id%3D%22inicio%22%3E%0A%20%20%3Ch1%3E%0A%20%20%20Single%20Page%20Application%202%0A%20%20%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20Esta%20es%20la%20p%C3%A1gina%20principal.%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fmain%3E%0A%0A%20%3Cmain%20id%3D%22acercade%22%20hidden%3E%0A%20%20%3Ch1%3EAcerca%20de%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20Esta%20es%20la%20p%C3%A1gina%20Acerca%20de.%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fmain%3E%0A%0A%20%3Cmain%20id%3D%22contacto%22%20hidden%3E%0A%20%20%3Ch1%3EContacto%3C%2Fh1%3E%0A%20%20%3Cp%3E%0A%20%20%20Esta%20es%20la%20p%C3%A1gina%20Contacto.%0A%20%20%3C%2Fp%3E%0A%20%3C%2Fmain%3E%0A%0A%20%3Cfooter%3E%0A%20%20%3Cp%3E%0A%20%20%20%C2%A9%202025%0A%20%20%20Gilberto%20Pacheco%20Gallegos.%0A%20%20%3C%2Fp%3E%0A%20%3C%2Ffooter%3E%0A%0A%20%3Cscript%3E%0A%0A%20%20const%20titulos%20%3D%20new%20Map(%5B%0A%20%20%20%5B%0A%20%20%20%20%22inicio%22%2C%0A%20%20%20%20%22Single%20Page%20Application%202%22%0A%20%20%20%5D%2C%0A%20%20%20%5B%0A%20%20%20%20%22acercade%22%2C%0A%20%20%20%20%22Acerca%20de%20-%20Single%20Page%20Application%202%22%0A%20%20%20%5D%2C%0A%20%20%20%5B%0A%20%20%20%20%22contacto%22%2C%0A%20%20%20%20%22Contacto%20-%20Single%20Page%20Application%202%22%0A%20%20%20%5D%2C%0A%20%20%5D)%0A%0A%20%20const%20vistas%20%3D%0A%20%20%20%5Binicio%2C%20acercade%2C%20contacto%5D%0A%0A%20%20document.addEventListener(%22click%22%2C%0A%20%20%20event%20%3D%3E%20%7B%0A%20%20%20%20event.preventDefault()%0A%20%20%20%20const%20target%20%3D%20event.target%0A%20%20%20%20if%20(%0A%20%20%20%20%20target%20instanceof%20HTMLAnchorElement%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20try%20%7B%0A%20%20%20%20%20%20const%20href%20%3D%20target.href%0A%20%20%20%20%20%20const%20estado%20%3D%0A%20%20%20%20%20%20%20href.substring(%0A%20%20%20%20%20%20%20%20href.lastIndexOf(%22%2F%22)%20%2B%201%0A%20%20%20%20%20%20%20)%0A%20%20%20%20%20%20transicion(estado)%0A%20%20%20%20%20%20history.pushState(%0A%20%20%20%20%20%20%20estado%2C%20%22%22%2C%20location.href%0A%20%20%20%20%20%20)%0A%20%20%20%20%20%7D%20catch%20(err)%20%7B%0A%20%20%20%20%20%20console.error(err)%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%7D)%0A%0A%20%20window.addEventListener(%0A%20%20%20%22popstate%22%2C%0A%20%20%20event%20%3D%3E%20%7B%0A%20%20%20%20if%20(%0A%20%20%20%20%20typeof%20event.state%20%3D%3D%3D%20%22string%22%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20transicion(event.state)%0A%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20)%0A%0A%20%20history.replaceState(%0A%20%20%20%22inicio%22%2C%20%22%22%2C%20location.href%0A%20%20)%0A%0A%20%20%2F**%0A%20%20%20*%20%40param%20%7Bstring%7D%20estado%0A%20%20%20*%2F%0A%20%20function%20muestraVista(estado)%20%7B%0A%20%20%20document.title%20%3D%0A%20%20%20%20titulos.get(estado)%20%3F%3F%20%22%22%0A%20%20%20for%20(const%20vista%20of%20vistas)%20%7B%0A%20%20%20%20vista.hidden%20%3D%0A%20%20%20%20%20estado%20!%3D%3D%20vista.id%0A%20%20%20%7D%0A%20%20%7D%0A%20%20%2F**%0A%20%20%20*%20%40param%20%7Bstring%7D%20estado%0A%20%20%20*%2F%0A%20%20function%20transicion(estado)%20%7B%0A%20%20%20if%20(%0A%20%20%20%20typeof%20document.startViewTransition%20%3D%3D%3D%20%22function%22%0A%20%20%20)%20%7B%0A%20%20%20%20document.startViewTransition(%0A%20%20%20%20%20()%20%3D%3E%20muestraVista(estado)%0A%20%20%20%20)%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20muestraVista(estado)%0A%20%20%20%7D%0A%20%20%7D%0A%0A%20%3C%2Fscript%3E%0A%0A%3C%2Fbody%3E%0A%0A%3C%2Fhtml%3E">
+    Revísalo en gilpgedit.
+   </a>
+  </p>
+ </section>
+ <table class="codeShow">
+ <caption style="text-align: left">
+  <button type=button title="Copiar al portapapeles"
+    onclick="copyToClipboard(this)">
+   <span class="material-symbols-outlined">
+    content_copy
+   </span>
+  </button>
+ </caption>
+ <tbody>
+  <tr><td>1</td><td>&lt;!<span class="codeReserved">DOCTYPE</span> html&gt;</td></tr>
+  <tr><td>2</td><td>&lt;<span class="codeReserved">html</span> lang=<span class="codeString">"es"</span>&gt;</td></tr>
+  <tr><td>3</td><td></td></tr>
+  <tr><td>4</td><td>&lt;<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>5</td><td></td></tr>
+  <tr><td>6</td><td> &lt;<span class="codeReserved">meta</span> charset=<span class="codeString">"UTF-8"</span>&gt;</td></tr>
+  <tr><td>7</td><td> &lt;<span class="codeReserved">meta</span> name=<span class="codeString">"viewport"</span></td></tr>
+  <tr><td>8</td><td>   <span class="codeReserved">content</span>=<span class="codeString">"<span class="codeReserved">width</span>=device-width"</span>&gt;</td></tr>
+  <tr><td>9</td><td> &lt;<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>10</td><td>  Single Page Application 2</td></tr>
+  <tr><td>11</td><td> &lt;/<span class="codeReserved">title</span>&gt;</td></tr>
+  <tr><td>12</td><td></td></tr>
+  <tr><td>13</td><td> &lt;<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>14</td><td>  nav {</td></tr>
+  <tr><td>15</td><td>   <span class="codeReserved">display</span>: <span class="codeReserved">flex</span>;</td></tr>
+  <tr><td>16</td><td>   <span class="codeReserved">align-items</span>: center;</td></tr>
+  <tr><td>17</td><td>   flex-wrap: wrap;</td></tr>
+  <tr><td>18</td><td>   <span class="codeReserved">align-content</span>: center;</td></tr>
+  <tr><td>19</td><td>   <span class="codeReserved">list-style-type</span>: none;</td></tr>
+  <tr><td>20</td><td>   <span class="codeReserved">gap</span>: 0.5rem;</td></tr>
+  <tr><td>21</td><td>  }</td></tr>
+  <tr><td>22</td><td></td></tr>
+  <tr><td>23</td><td>  main {</td></tr>
+  <tr><td>24</td><td>   <span class="codeComment">/* Los elementos tppo main</span></td></tr>
+  <tr><td>25</td><td><span class="codeComment">    * llevan una transición con</span></td></tr>
+  <tr><td>26</td><td><span class="codeComment">    * nombre main. */</span></td></tr>
+  <tr><td>27</td><td>   view-transition-name: main;</td></tr>
+  <tr><td>28</td><td>  }</td></tr>
+  <tr><td>29</td><td></td></tr>
+  <tr><td>30</td><td>  <span class="codeReserved">@keyframes</span> desplazaALaDerecha {</td></tr>
+  <tr><td>31</td><td>   <span class="codeReserved">from</span> {</td></tr>
+  <tr><td>32</td><td>    <span class="codeReserved">transform</span>: translateX(100vw);</td></tr>
+  <tr><td>33</td><td>   }</td></tr>
+  <tr><td>34</td><td>  }</td></tr>
+  <tr><td>35</td><td></td></tr>
+  <tr><td>36</td><td>  <span class="codeReserved">@keyframes</span> desplazaALaIzquierda {</td></tr>
+  <tr><td>37</td><td>   <span class="codeReserved">to</span> {</td></tr>
+  <tr><td>38</td><td>    <span class="codeReserved">transform</span>: translateX(-100vw);</td></tr>
+  <tr><td>39</td><td>   }</td></tr>
+  <tr><td>40</td><td>  }</td></tr>
+  <tr><td>41</td><td></td></tr>
+  <tr><td>42</td><td>  ::view-transition-old(main) {</td></tr>
+  <tr><td>43</td><td>   <span class="codeReserved">animation-name</span>:</td></tr>
+  <tr><td>44</td><td>    desplazaALaIzquierda;</td></tr>
+  <tr><td>45</td><td>   <span class="codeReserved">animation-duration</span>: 2s;</td></tr>
+  <tr><td>46</td><td>  }</td></tr>
+  <tr><td>47</td><td></td></tr>
+  <tr><td>48</td><td>  ::view-transition-new(main) {</td></tr>
+  <tr><td>49</td><td>   <span class="codeReserved">animation-name</span>:</td></tr>
+  <tr><td>50</td><td>    desplazaALaDerecha;</td></tr>
+  <tr><td>51</td><td>   <span class="codeReserved">animation-duration</span>: 2s;</td></tr>
+  <tr><td>52</td><td>  }</td></tr>
+  <tr><td>53</td><td> &lt;/<span class="codeReserved">style</span>&gt;</td></tr>
+  <tr><td>54</td><td></td></tr>
+  <tr><td>55</td><td>&lt;/<span class="codeReserved">head</span>&gt;</td></tr>
+  <tr><td>56</td><td></td></tr>
+  <tr><td>57</td><td>&lt;<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>58</td><td></td></tr>
+  <tr><td>59</td><td> &lt;<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>60</td><td>  &lt;<span class="codeReserved">a</span> href=<span class="codeString">"inicio"</span>&gt;Inicio&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>61</td><td>  &lt;<span class="codeReserved">a</span> href=<span class="codeString">"acercade"</span>&gt;Acerca de&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>62</td><td>  &lt;<span class="codeReserved">a</span> href=<span class="codeString">"contacto"</span>&gt;Contacto&lt;/<span class="codeReserved">a</span>&gt;</td></tr>
+  <tr><td>63</td><td> &lt;/<span class="codeReserved">nav</span>&gt;</td></tr>
+  <tr><td>64</td><td></td></tr>
+  <tr><td>65</td><td> &lt;<span class="codeReserved">main</span> id=<span class="codeString">"inicio"</span>&gt;</td></tr>
+  <tr><td>66</td><td>  &lt;<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>67</td><td>   Single Page Application 2</td></tr>
+  <tr><td>68</td><td>  &lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>69</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>70</td><td>   Esta es la página principal.</td></tr>
+  <tr><td>71</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>72</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
+  <tr><td>73</td><td></td></tr>
+  <tr><td>74</td><td> &lt;<span class="codeReserved">main</span> id=<span class="codeString">"acercade"</span> hidden&gt;</td></tr>
+  <tr><td>75</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Acerca de&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>76</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>77</td><td>   Esta es la página Acerca de.</td></tr>
+  <tr><td>78</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>79</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
+  <tr><td>80</td><td></td></tr>
+  <tr><td>81</td><td> &lt;<span class="codeReserved">main</span> id=<span class="codeString">"contacto"</span> hidden&gt;</td></tr>
+  <tr><td>82</td><td>  &lt;<span class="codeReserved">h1</span>&gt;Contacto&lt;/<span class="codeReserved">h1</span>&gt;</td></tr>
+  <tr><td>83</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>84</td><td>   Esta es la página Contacto.</td></tr>
+  <tr><td>85</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>86</td><td> &lt;/<span class="codeReserved">main</span>&gt;</td></tr>
+  <tr><td>87</td><td></td></tr>
+  <tr><td>88</td><td> &lt;<span class="codeReserved">footer</span>&gt;</td></tr>
+  <tr><td>89</td><td>  &lt;<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>90</td><td>   © 2025</td></tr>
+  <tr><td>91</td><td>   Gilberto Pacheco Gallegos.</td></tr>
+  <tr><td>92</td><td>  &lt;/<span class="codeReserved">p</span>&gt;</td></tr>
+  <tr><td>93</td><td> &lt;/<span class="codeReserved">footer</span>&gt;</td></tr>
+  <tr><td>94</td><td></td></tr>
+  <tr><td>95</td><td> &lt;<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>96</td><td></td></tr>
+  <tr><td>97</td><td>  <span class="codeReserved">const</span> titulos = <span class="codeReserved">new</span> Map([</td></tr>
+  <tr><td>98</td><td>   [</td></tr>
+  <tr><td>99</td><td>    <span class="codeString">"inicio"</span>,</td></tr>
+  <tr><td>100</td><td>    <span class="codeString">"Single Page Application 2"</span></td></tr>
+  <tr><td>101</td><td>   ],</td></tr>
+  <tr><td>102</td><td>   [</td></tr>
+  <tr><td>103</td><td>    <span class="codeString">"acercade"</span>,</td></tr>
+  <tr><td>104</td><td>    <span class="codeString">"Acerca de - Single Page Application 2"</span></td></tr>
+  <tr><td>105</td><td>   ],</td></tr>
+  <tr><td>106</td><td>   [</td></tr>
+  <tr><td>107</td><td>    <span class="codeString">"contacto"</span>,</td></tr>
+  <tr><td>108</td><td>    <span class="codeString">"Contacto - Single Page Application 2"</span></td></tr>
+  <tr><td>109</td><td>   ],</td></tr>
+  <tr><td>110</td><td>  ])</td></tr>
+  <tr><td>111</td><td></td></tr>
+  <tr><td>112</td><td>  <span class="codeReserved">const</span> vistas =</td></tr>
+  <tr><td>113</td><td>   [inicio, acercade, contacto]</td></tr>
+  <tr><td>114</td><td></td></tr>
+  <tr><td>115</td><td>  document.addEventListener(<span class="codeString">"click"</span>,</td></tr>
+  <tr><td>116</td><td>   event =&gt; {</td></tr>
+  <tr><td>117</td><td>    event.preventDefault()</td></tr>
+  <tr><td>118</td><td>    <span class="codeReserved">const</span> target = event.target</td></tr>
+  <tr><td>119</td><td>    <span class="codeReserved">if</span> (</td></tr>
+  <tr><td>120</td><td>     target <span class="codeReserved">instanceof</span> HTMLAnchorElement</td></tr>
+  <tr><td>121</td><td>    ) {</td></tr>
+  <tr><td>122</td><td>     <span class="codeReserved">try</span> {</td></tr>
+  <tr><td>123</td><td>      <span class="codeReserved">const</span> href = target.href</td></tr>
+  <tr><td>124</td><td>      <span class="codeReserved">const</span> estado =</td></tr>
+  <tr><td>125</td><td>       href.substring(</td></tr>
+  <tr><td>126</td><td>        href.lastIndexOf(<span class="codeString">"/"</span>) + 1</td></tr>
+  <tr><td>127</td><td>       )</td></tr>
+  <tr><td>128</td><td>      transicion(estado)</td></tr>
+  <tr><td>129</td><td>      history.pushState(</td></tr>
+  <tr><td>130</td><td>       estado, <span class="codeString">""</span>, location.href</td></tr>
+  <tr><td>131</td><td>      )</td></tr>
+  <tr><td>132</td><td>     } <span class="codeReserved">catch</span> (err) {</td></tr>
+  <tr><td>133</td><td>      console.error(err)</td></tr>
+  <tr><td>134</td><td>     }</td></tr>
+  <tr><td>135</td><td>    }</td></tr>
+  <tr><td>136</td><td>   })</td></tr>
+  <tr><td>137</td><td></td></tr>
+  <tr><td>138</td><td>  window.addEventListener(</td></tr>
+  <tr><td>139</td><td>   <span class="codeString">"popstate"</span>,</td></tr>
+  <tr><td>140</td><td>   event =&gt; {</td></tr>
+  <tr><td>141</td><td>    <span class="codeReserved">if</span> (</td></tr>
+  <tr><td>142</td><td>     <span class="codeReserved">typeof</span> event.state === <span class="codeString">"string"</span></td></tr>
+  <tr><td>143</td><td>    ) {</td></tr>
+  <tr><td>144</td><td>     transicion(event.state)</td></tr>
+  <tr><td>145</td><td>    }</td></tr>
+  <tr><td>146</td><td>   }</td></tr>
+  <tr><td>147</td><td>  )</td></tr>
+  <tr><td>148</td><td></td></tr>
+  <tr><td>149</td><td>  history.replaceState(</td></tr>
+  <tr><td>150</td><td>   <span class="codeString">"inicio"</span>, <span class="codeString">""</span>, location.href</td></tr>
+  <tr><td>151</td><td>  )</td></tr>
+  <tr><td>152</td><td></td></tr>
+  <tr><td>153</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>154</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> {string} estado</span></td></tr>
+  <tr><td>155</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>156</td><td>  <span class="codeReserved">function</span> muestraVista(estado) {</td></tr>
+  <tr><td>157</td><td>   document.title =</td></tr>
+  <tr><td>158</td><td>    titulos.get(estado) ?? <span class="codeString">""</span></td></tr>
+  <tr><td>159</td><td>   <span class="codeReserved">for</span> (<span class="codeReserved">const</span> vista of vistas) {</td></tr>
+  <tr><td>160</td><td>    vista.hidden =</td></tr>
+  <tr><td>161</td><td>     estado !== vista.id</td></tr>
+  <tr><td>162</td><td>   }</td></tr>
+  <tr><td>163</td><td>  }</td></tr>
+  <tr><td>164</td><td>  <span class="codeComment">/**</span></td></tr>
+  <tr><td>165</td><td><span class="codeComment">   * <span class="codeReserved">@param</span> {string} estado</span></td></tr>
+  <tr><td>166</td><td><span class="codeComment">   */</span></td></tr>
+  <tr><td>167</td><td>  <span class="codeReserved">function</span> transicion(estado) {</td></tr>
+  <tr><td>168</td><td>   <span class="codeReserved">if</span> (</td></tr>
+  <tr><td>169</td><td>    <span class="codeReserved">typeof</span> document.startViewTransition === <span class="codeString">"<span class="codeReserved">function</span>"</span></td></tr>
+  <tr><td>170</td><td>   ) {</td></tr>
+  <tr><td>171</td><td>    document.startViewTransition(</td></tr>
+  <tr><td>172</td><td>     () =&gt; muestraVista(estado)</td></tr>
+  <tr><td>173</td><td>    )</td></tr>
+  <tr><td>174</td><td>   } <span class="codeReserved">else</span> {</td></tr>
+  <tr><td>175</td><td>    muestraVista(estado)</td></tr>
+  <tr><td>176</td><td>   }</td></tr>
+  <tr><td>177</td><td>  }</td></tr>
+  <tr><td>178</td><td></td></tr>
+  <tr><td>179</td><td> &lt;/<span class="codeReserved">script</span>&gt;</td></tr>
+  <tr><td>180</td><td></td></tr>
+  <tr><td>181</td><td>&lt;/<span class="codeReserved">body</span>&gt;</td></tr>
+  <tr><td>182</td><td></td></tr>
+  <tr><td>183</td><td>&lt;/<span class="codeReserved">html</span>&gt;</td></tr>
+ </tbody>
+</table>
+</div>
