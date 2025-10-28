@@ -1,5 +1,5 @@
-* Falta un proyecto de varias páginas sobre GitHub pages y custom elements para navegación.
 * La transición del cajón no llega a display: none.
+* Falta un proyecto de varias páginas sobre GitHub pages y custom elements para navegación.
 * Solo para los más rudos es un aside y un nav.
 * Regresar El ejemplo viejito de marcado antes de computadoras
 * HAblar del CERN y Tim Berners Lee

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Secciones</title>
+</head>
+
+<body>
+ <header>
+  <p>
+   <button type="button" popovertarget="enlacesExternos"
+     aria-controls="enlacesExternos" aria-label="Abrir enlaces externos">
+    ≡
+   </button>
+  </p>
+  <p>
+   En el <code>header</code> puedes colocar el título o información resumida
+   sobre el documento.
+  </p>
+  <nav popover="auto" id="enlacesExternos" aria-label="Enlaces externos">
+   <h2>Enlaces externos</h2>
+   <ul>
+    <li>
+     <a target="_blank" rel="noopener noreferrer"
+       href="https://savethecat.com/">
+      Salvar al gato.
+     </a>
+    </li>
+    <li>
+     <a target="_blank" rel="noopener noreferrer"
+       href="https://www.showrunner.xyz/">
+      Showrunner
+     </a>
+    </li>
+    <li>
+     <a target="_blank" rel="noopener noreferrer" href="https://google.com/">
+      Google
+     </a>
+    </li>
+   </ul>
+  </nav>
+ </header>
+
+ <main>
+  <header>
+   <hgroup>
+    <h1>Secciones</h1>
+    <p>O cómo escribir mejor tus documentos.</p>
+   </hgroup>
+   <nav aria-label="Tabla de contenido de la página">
+    <ol>
+     <li>
+      <a href="#secciones">Uso de secciones</a>
+     </li>
+     <li>
+      <a href="#otra">Otra sección</a>
+     </li>
+    </ol>
+   </nav>
+  </header>
+
+   <p>Este es el contenido principal de la página.</p>
+   <p>Cada párrafo representa una idea.</p>
+   <p>
+    El contenido de un párrafo puede llevar juntos muchos espacios y saltos de
+    línea, pero se muestran como un solo espacio.
+   </p>
+   <p>
+    Para que esta página funcione correctamente debes tener actualizado tu
+    navegador.
+   </p>
+
+  <section id="secciones">
+   <h2>Uso de secciones</h2>
+   <p>
+    El documento puede llevar secciones. Cada sección se usa para tocar un
+    aspecto del contenido general.
+   </p>
+   <p>
+    Las secciones se usan cuando el contenido es largo y/o complicado, siendo
+    mejor abordarlo por partes.
+   </p>
+  </section>
+
+  <section id="otra">
+   <header>
+    <h2>Otra sección</h2>
+    <p>
+     Las secciones pueden llevar sus propios <code>header</code> y
+     <code>footer</code>.
+    </p>
+   </header>
+   <p>
+    Esta sección se usa para introducir una parte del contenido general. También
+    pueden llevar subsecciones.
+   </p>
+   <section>
+    <h3>Sub sección</h3>
+    <p>
+     Podemos poner distintos niveles de subsecciones.
+    </p>
+   </section>
+   <footer>
+    <p>
+     Este <code>footer</code> es parte de una sección.
+    </p>
+   </footer>
+  </section>
+
+  <article>
+   <h2>Un artículo</h2>
+   <p>
+    El elemento <code>article</code> representa una composición completa o
+    autónoma en
+    un
+    documento, página, aplicación o sitio web, y que, en principio, puede
+    distribuirse o reutilizarse de forma independiente. Puede ser una
+    publicación en un foro, un artículo de revista o periódico, una entrada de
+    blog, un comentario enviado por un usuario, un widget o gadget interactivo,
+    o cualquier otro elemento de contenido independiente.
+   </p>
+  </article>
+
+  <aside>
+   <h2>El elemento <dfn><code>aside</code></dfn></h2>
+   <p>
+    Representa una sección de una página que tiene
+    contenido relacionado indirectamente con el contenido que lo rodea y que
+    podría considerarse independiente de dicho contenido. Estas secciones suelen
+    representarse como barras laterales en la tipografía impresa.
+   </p>
+   <p>
+    El elemento puede utilizarse para efectos tipográficos como citas destacadas
+    o barras laterales, para publicidad, para grupos de elementos de navegación
+    y para otro contenido que se considere independiente del contenido principal
+    de la página.
+   </p>
+  </aside>
+
+ </main>
+
+ <footer>
+  <p>
+   © 2025 Gilberto Pacheco Gallegos.
+  </p>
+ </footer>
+
+</body>
+
+</html>
